@@ -18,6 +18,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.environ.get("ALMANAC_DATA", os.path.join(ROOT, "data"))
 CACHE = os.path.join(DATA, "cache")
 EVIDENCE = os.path.join(CACHE, "evidence")
+# Records kept from month to month but not used by the build yet. Some
+# registers only publish their last few weeks; holding each month's copy lets
+# the records add up until there are enough to test.
+HELD = os.path.join(CACHE, "held")
 
 _contact = os.environ.get("ALMANAC_CONTACT")
 UA = "VelaAlmanac/0.1 (open US places dataset build; https://github.com/PimpinPumpkin/vela-almanac%s)" % (
@@ -61,9 +65,12 @@ from geocode import locate  # noqa: E402  (same folder)
 class Writer:
     """Writes evidence rows, dropping and counting the unusable ones."""
 
-    def __init__(self, name):
-        os.makedirs(EVIDENCE, exist_ok=True)
-        self.path = os.path.join(EVIDENCE, name + ".csv")
+    def __init__(self, name, held=False):
+        """held=True writes to the held folder and keeps the rows already there."""
+        folder = HELD if held else EVIDENCE
+        os.makedirs(folder, exist_ok=True)
+        self.held = held
+        self.path = os.path.join(folder, name + ".csv")
         self.f = open(self.path + ".part", "w", newline="")
         self.w = csv.writer(self.f)
         self.w.writerow(COLUMNS)
@@ -99,6 +106,8 @@ class Writer:
         self.f.close()
         if geocode:
             self._geocode()
+        if self.held:
+            self._keep_earlier()
         os.replace(self.path + ".part", self.path)
         for (source, state), n in sorted(self.kept.items()):
             print("%s %s: %d" % (source, state, n))
@@ -122,3 +131,16 @@ class Writer:
             w.writerows(rows)
         missing = sum(1 for r in rows if not r[lat])
         print("geocoded: %d placed, %d left with an address only" % (placed, missing))
+
+    def _keep_earlier(self):
+        """Add back rows from earlier runs that this run did not see again."""
+        if not os.path.exists(self.path):
+            return
+        with open(self.path + ".part", newline="") as f:
+            new = list(csv.reader(f))
+        have = {(r[0], r[1]) for r in new[1:]}
+        with open(self.path, newline="") as f:
+            old = [r for r in list(csv.reader(f))[1:] if (r[0], r[1]) not in have]
+        with open(self.path + ".part", "w", newline="") as f:
+            csv.writer(f).writerows(new + old)
+        print("held: %d rows from this run, %d kept from earlier" % (len(new) - 1, len(old)))

@@ -89,14 +89,15 @@ Done when "everything else" passes 15% in states with two or more of these.
   script, and a check that every adapter is documented.
 - **4.3 A failed state retries on its own** and the release notes say which
   states, if any, are a month old.
-- **4.5 Evidence archive.** Some registers only publish the last few weeks
-  (Missouri's "out of business" list, Colorado's expired and surrendered
-  list, Florida's weekly emergency closures). Keep each month's copy so the
-  records add up, both to test them and to use them. Needs a place to keep
-  a growing file between builds; a release asset carried forward will do.
 - **4.4 Source watch.** The build reports when a source's layout or row
   count shifts by more than a set amount, so a silent upstream change does
   not ship.
+
+- **4.5 Held records.** Done for Missouri's "out of business" list: each
+  build adds the current list to a file that rides along as a release
+  asset (`held.tar.gz`), unused until there is enough to test. Next:
+  Colorado's expired and surrendered list, Florida's weekly emergency
+  closures, and the test itself once a few months have piled up.
 
 ## 5. Readers
 

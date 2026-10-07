@@ -7,8 +7,9 @@ atc_mo      an active license for a Missouri premises (by the drink, package
 The state also lists licenses "Out of Business" with a date, which is the
 kind of record this project wants. It is not used yet: the list only
 reaches back a few weeks (59 premises statewide, 3 in a Kansas City box),
-too few to put through the independent check. It needs the list kept from
-month to month first (ROADMAP.md, section 4).
+too few to put through the independent check. Each run adds the current
+list to data/cache/held/atc_mo_oob.csv so the records add up; the build
+does not read that file.
 
 Solicitors, direct shippers, caterers, temporary licenses and licenses for
 boats and rail cars are left out. The active list repeats each license once
@@ -28,7 +29,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from evidence import Writer, address, get
 
 HOST = "https://data.mo.gov"
-ACTIVE = "yyhn-562y"
+ACTIVE, OUT_OF_BUSINESS = "yyhn-562y", "nytw-fmz3"
 PAGE = 50000
 NOT_A_PREMISES = ("solicitor", "shipper", "caterer", "temporary", "boat", "railroad", "state fair")
 
@@ -63,6 +64,18 @@ def main():
                 address(street, (r.get("city") or "").upper(), "MO %s" % (r.get("zipcode") or "")[:5]),
                 None, None, "open", updated)
     out.close(geocode=True)
+
+    held = Writer("atc_mo_oob", held=True)
+    for r in rows(OUT_OF_BUSINESS, "license_number,dba_name,licensee_name,street_number,street_name,"
+                                   "city,state,zip_code,status_effective_date"):
+        if r.get("state") != "Missouri":
+            continue
+        street = ("%s %s" % (r.get("street_number") or "", r.get("street_name") or "")).strip()
+        day = r.get("status_effective_date") or ""
+        held.row("atc_mo_oob", r.get("license_number"), (r.get("dba_name") or r.get("licensee_name") or "").strip(),
+                 address(street, (r.get("city") or "").upper(), "MO %s" % (r.get("zip_code") or "")[:5]),
+                 None, None, "closed", "%s-%s-%s" % (day[6:10], day[0:2], day[3:5]) if len(day) == 10 else "")
+    held.close(geocode=True)
 
 
 if __name__ == "__main__":

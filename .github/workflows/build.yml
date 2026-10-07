@@ -56,6 +56,12 @@ jobs:
           path: data/cache/geocode
           key: geocode-${{ github.run_id }}
           restore-keys: geocode-
+      - name: Bring forward the held records from the last release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data/cache/held
+          gh release download --pattern held.tar.gz --dir . 2>/dev/null && tar -xzf held.tar.gz -C data/cache/held || echo "no held records yet"
       - name: Fetch national files
         env:
           ATP_RUN: ${{ steps.plan.outputs.atp }}
@@ -66,10 +72,16 @@ jobs:
           mv data/cache/evidence data/cache/fsq shared/
           mv data/cache/atp/us-*.parquet shared/atp/
           mv data/cache/census/states.parquet shared/census/
+          tar -czf held.tar.gz -C data/cache/held .
       - uses: actions/upload-artifact@v4
         with:
           name: shared
           path: shared
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        with:
+          name: held
+          path: held.tar.gz
           retention-days: 3
 
   build:
@@ -125,6 +137,10 @@ jobs:
         with:
           pattern: out-*
           merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with:
+          name: held
+          path: data/out
       - name: List what was built
         run: |
           ls data/out | head -200

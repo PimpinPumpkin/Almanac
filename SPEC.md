@@ -112,6 +112,11 @@ Rules for adapters:
   the missing-license flag.
 - If the register uses a legal name the public never sees, the adapter maps
   it (see `TRADE_NAMES` in `adapters/fdic.py`). The matcher stays generic.
+- A register that only publishes its last few weeks can be held instead of
+  used: `Writer(name, held=True)` writes to `data/cache/held/` and keeps
+  the rows from earlier runs. The build does not read held files. The
+  scheduled build carries them from one release to the next as
+  `held.tar.gz`.
 - A record is evidence only if it says something about the premises. A
   record that only says something about paperwork is not (see SNAP end dates
   in section 9).
