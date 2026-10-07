@@ -5,8 +5,14 @@
 # glob DuckDB can read (after configuring credentials) and FSQ_RELEASE to its date.
 source "$(dirname "$0")/../lib/common.sh"
 
+# FSQ_COUNTRY picks the country, US by default. The US file keeps the short name.
 FSQ_RELEASE="${FSQ_RELEASE:-2025-02-06}"
-OUTFILE="$CACHE/fsq/closed-$FSQ_RELEASE.parquet"
+FSQ_COUNTRY="${FSQ_COUNTRY:-US}"
+if [ "$FSQ_COUNTRY" = US ]; then
+  OUTFILE="$CACHE/fsq/closed-$FSQ_RELEASE.parquet"
+else
+  OUTFILE="$CACHE/fsq/closed-$FSQ_RELEASE-$FSQ_COUNTRY.parquet"
+fi
 [ -s "$OUTFILE" ] && exit 0
 mkdir -p "$CACHE/fsq"
 
@@ -22,7 +28,7 @@ copy (
          latitude as lat, longitude as lng,
          try_cast(date_closed as date) as date_closed
   from read_parquet([$FILES])
-  where country = 'US' and date_closed is not null
+  where country = '$FSQ_COUNTRY' and date_closed is not null
 ) to '$OUTFILE.part' (format parquet, compression zstd);
 SQL
 mv "$OUTFILE.part" "$OUTFILE"

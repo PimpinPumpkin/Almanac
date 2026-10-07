@@ -34,5 +34,6 @@ def dull: ["parking","parking_space","parking_entrance","bench","bicycle_parking
     wikidata: $p.wikidata,
     check_date: ($p.check_date // $p["survey:date"]),
     end_date: $p.end_date,
+    siret: $p["ref:FR:SIRET"],
     geometry: .geometry
   }

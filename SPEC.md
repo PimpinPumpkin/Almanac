@@ -386,12 +386,52 @@ evidence from a different source for the same place.
 | Wikidata P576 on offices | 4 hits across two boxes, 2 of them a company merger date on an office building. | Skipped when the OSM feature is `office=*`. The 2 that remain (a hospital, a school) are right. |
 | Merging Overture duplicates on anything looser than an identical name | Same house number with a leading-words or near-spelling match: about 10 of 21 read were a part and its whole (a gift shop and its hospital, two advisors at one bank). No house number: mostly junk pages sharing a point. Different numbers within 30 m: 13 pairs, several wrong. | Only same number plus identical name merges. |
 | DC alcohol license cancellation means closed, for every license type | 283 places matched. Independent: open 18, closed 60. The open ones were grocery stores, hotels and places that had swapped one license for another. | Kept only for restaurants, taverns, nightclubs and clubs, and skipped when the same trade name has an active license at the address. After that: open 8, closed 54, in line with the Foursquare and OSM signals. |
+| France: a closed SIRENE establishment means the place closed | Paris box, places whose newest SIRENE record was a closure: independent evidence said open 1,082, closed 647. Joined by SIRET id it was still open 130, closed 40. | A SIRET closes when a shop changes owner or legal form. Closed establishments are not emitted. |
+| France: dating an active SIRENE record by the register's processing date | Nearly every record was processed in the last year. Dated that way, an active entry overrode 159 hand-tagged OSM closures and 152 Foursquare ones. | Dated by dateDebut, the last real change. Overrides fell to 39 and 14. Most SIRENE records are then old and inform `open_score` without setting a status. |
 | Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
 
 Carried over from earlier work and not retested: website liveness, and
 "missing from the chain's locator means closed".
 
-## 10. Publishing
+## 10. Other countries
+
+The base layer and four signals are global: Overture, OSM, AllThePlaces,
+Foursquare closing dates, OSM lifecycle and survey tags, Wikidata. A region
+with a country code in `regions.tsv` builds from those alone. Registers are
+then added per country, as adapters that write to
+`data/cache/evidence/<country>/`.
+
+What is tied to a country:
+
+- The house number is read from the front of the street line. Right for
+  the US, UK and France; wrong where the number follows the street name
+  (Germany, Spain, Italy), which needs its own rule before those are built.
+- `street_key` skips French street types and articles as well as English
+  compass words. Legal forms dropped from names include the French ones.
+- State outlines, `missing_license` and places minted from registers are
+  US only for now.
+
+**France.** Test area: a Paris box (48.815 2.224 48.902 2.470). Register:
+SIRENE, the national list of business establishments.
+
+| | Paris box |
+| --- | ---: |
+| places | 207,916 |
+| with a dated status | 41,514 (20%) |
+| with any evidence | 41% |
+| open, decided by OSM survey date | 22,922 |
+| open, decided by chain locator | 8,831 |
+| open, decided by SIRENE | 6,902 |
+| closed, by OSM lifecycle | 1,629 |
+| closed, by Foursquare | 1,220 |
+
+OSM carries far more here than in the US: 37% of named OSM features in the
+box have a survey date. SIRENE matched 69,000 places. 25 matches were read
+per rule: number 24 of 25, near 22 of 25 (the misses are a related company
+at the address, or a short name that is the start of a longer one). 18,000
+more joined exactly, through the SIRET that mappers tag on OSM features.
+
+## 11. Publishing
 
 Per region: `core-<region>.parquet`, `places-<region>.parquet`, and
 `manifest-<region>.json`. A real release has one region per state plus DC.

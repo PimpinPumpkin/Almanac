@@ -1,26 +1,28 @@
 #!/usr/bin/env bash
-# AllThePlaces, newest run, US brand locations -> $CACHE/atp/us-<run>.parquet (once per run)
+# AllThePlaces, newest run, brand locations in the region's country
+# -> $CACHE/atp/<country>-<run>.parquet (once per run and country)
 # and the slice inside a region box -> $OUT/atp.parquet
 #   base/atp.sh REGION   both steps
 #   base/atp.sh us       only the national file, for prepare.sh
 source "$(dirname "$0")/../lib/common.sh"
+if [ "$1" = us ]; then COUNTRY=US; else region "$1"; fi
+CC="$(printf %s "$COUNTRY" | tr A-Z a-z)"
 
 RUN="${ATP_RUN:-$(curl -fsS -A "$UA" https://data.alltheplaces.xyz/runs/latest.json | jq -r .run_id)}"
 ZIP="$CACHE/atp/$RUN.zip"
-US="$CACHE/atp/us-$RUN.parquet"
+US="$CACHE/atp/$CC-$RUN.parquet"
 
 if [ ! -s "$US" ]; then
   fetch "https://alltheplaces-data.openaddresses.io/runs/$RUN/output.zip" "$ZIP"
-  python3 "$ROOT/base/atp.py" "$ZIP" | duck -c "
+  python3 "$ROOT/base/atp.py" "$ZIP" "$COUNTRY" | duck -c "
     copy (
-      select * from read_csv('/dev/stdin', header = true, all_varchar = true, strict_mode = false)
+      select * from read_csv('/dev/stdin', header = true, all_varchar = true, delim = ',', quote = '\"', escape = '\"', strict_mode = false)
       -- a spider can list a store twice
       qualify row_number() over (partition by spider, ref, lat, lng) = 1
     ) to '$US.part' (format parquet, compression zstd);"
   mv "$US.part" "$US"
 fi
 [ "$1" = us ] && exit 0
-region "$1"
 echo "$RUN" > "$OUT/atp.run"
 
 duck -c "

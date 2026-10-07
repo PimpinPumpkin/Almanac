@@ -74,6 +74,10 @@ as [releases](https://github.com/PimpinPumpkin/vela-almanac/releases).
   the date and source of the evidence that decided it, and an `open_score`
   from 0 to 1 for every place.
 
+France is the first country after the US: a Paris test box builds with the
+global signals plus SIRENE, the French business register (SPEC.md
+section 10). It is not in the monthly release yet.
+
 ## What it is not
 
 - Not a new survey. Every fact comes from a source listed in `SOURCES.md`.
@@ -93,7 +97,7 @@ regions.tsv         region boxes and which OSM extracts cover them
 base/               importers: overture.sh, atp.sh + atp.py, osm.sh + osm.jq
 signals/            closing signals joined by id: fsq_closed.sh, wikidata_p576.py
 adapters/           one file per register: fdic, ncua, snap, cms, nces, nppes,
-                    irs, abc_ca, abca_dc
+                    irs, abc_ca, abca_dc; sirene.sh for France
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests
 reports/            numbers from the last build of each region

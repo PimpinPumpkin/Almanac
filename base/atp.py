@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""AllThePlaces run archive -> CSV on stdout, US brand locations only.
+"""AllThePlaces run archive -> CSV on stdout, brand locations in one country.
+
+Usage: atp.py ARCHIVE.zip [COUNTRY]   (COUNTRY defaults to US)
 
 The archive holds one GeoJSON file per spider, one feature per line. Only
 spiders in the brand lineage are read; the government and infrastructure
@@ -15,12 +17,15 @@ import zipfile
 HEAD = re.compile(rb'"spider:collection_time":\s*"(\d{4}-\d{2}-\d{2})')
 POINT = re.compile(rb'"type":\s*"Point",\s*"coordinates":\s*\[(-?[\d.]+),\s*(-?[\d.]+)\]')
 MAIN = ("amenity", "shop", "tourism", "leisure", "office", "craft", "healthcare")
+# Rough boxes, south north west east, to throw lines away before parsing them.
+BOUNDS = {"US": (17, 72, -180, -64), "FR": (41.0, 51.5, -5.5, 10.0)}
 COLUMNS = ["spider", "ref", "name", "branch", "brand", "brand_wikidata", "category", "address",
            "housenumber", "city", "region", "postcode", "phone", "website", "collected",
            "end_date", "lat", "lng"]
 
 
-def main(path):
+def main(path, country="US"):
+    south, north, west, east = BOUNDS[country]
     out = csv.writer(sys.stdout)
     out.writerow(COLUMNS)
     with zipfile.ZipFile(path) as z:
@@ -38,13 +43,13 @@ def main(path):
                     if not m:
                         continue
                     lng, lat = float(m.group(1)), float(m.group(2))
-                    if not (17 < lat < 72 and -180 < lng < -64):
+                    if not (south < lat < north and west < lng < east):
                         continue
                     try:
                         p = json.loads(line.rstrip().rstrip(b","))["properties"]
                     except ValueError:
                         continue
-                    if p.get("addr:country") not in (None, "US"):
+                    if p.get("addr:country") not in (None, country):
                         continue
                     name = p.get("name") or p.get("brand")
                     if not name:
@@ -61,4 +66,4 @@ def main(path):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main(*sys.argv[1:3])

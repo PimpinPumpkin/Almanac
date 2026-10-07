@@ -36,6 +36,6 @@ copy (
   from read_parquet([$FILES])
   where bbox.xmin >= $W and bbox.xmax <= $E and bbox.ymin >= $S and bbox.ymax <= $N
     and names."primary" is not null
-    and (addresses[1].country = 'US' or addresses[1].country is null)
+    and (addresses[1].country = '$COUNTRY' or addresses[1].country is null)
 ) to '$OUT/overture.parquet' (format parquet, compression zstd);
 SQL

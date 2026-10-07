@@ -57,6 +57,12 @@ create or replace table osm_evidence as
   join p576 w on w.qid = o.wikidata
   where o.category not like 'office=%'
   union all
+  -- France: an OSM feature tagged with its SIRET takes that establishment's
+  -- record directly, no matching needed
+  select m.place_id, r.source, r.source_id, r.state, r.date, 'id', 0.0, r.name, r.address
+  from osm_member m join osm_n o on o.id = 'osm:' || m.source_id
+  join register_n r on r.source = 'sirene' and r.source_id = replace(o.siret, ' ', '')
+  union all
   -- registers against the places only OSM has
   select * from matched_evidence('osm_only');
 

@@ -18,7 +18,7 @@ create or replace macro norm_name(s) as
         -- "Justice FCU" and "Justice Federal Credit Union" are the same name
         regexp_replace(regexp_replace(clean_name(s), '( [0-9]+)+$', ''),
                        '\b(federal credit union|credit union|fcu)\b', 'cu', 'g'),
-        '\b(the|inc|incorporated|llc|ltd|corp|corporation|company|co|national association|na|branch)\b', ' ', 'g'),
+        '\b(the|inc|incorporated|llc|ltd|corp|corporation|company|co|national association|na|branch|sarl|sas|sasu|eurl|sa|sci|snc|societe|ste|ets|etablissements)\b', ' ', 'g'),
       ' +', ' ', 'g')), ''),
     clean_name(s));
 
@@ -88,11 +88,13 @@ create or replace macro match_pairs(ta, tb) as table (
 -- For records that come with an address but no position.
 create or replace macro zip5(s) as nullif(regexp_extract(s, '([0-9]{5})(-[0-9]{4})?\s*$', 1), '');
 
--- First word of the street name, after the number and any compass word:
--- "1108 N Ross Clark Cir" -> "ross". Enough to tell two streets in one ZIP apart.
+-- First distinctive word of the street name, after the number and any
+-- compass word, French street type or article: "1108 N Ross Clark Cir" ->
+-- "ross", "12 bis Rue de la Paix" -> "paix". Enough to tell two streets in
+-- one postal code apart.
 create or replace macro street_key(addr) as
-  nullif(regexp_extract(lower(addr),
-    '^\s*#?\s*[0-9]+[a-z]?\s+(?:(?:n|s|e|w|ne|nw|se|sw|north|south|east|west)\.?\s+)?([a-z0-9]+)', 1), '');
+  nullif(regexp_extract(lower(strip_accents(addr)),
+    '^\s*#?\s*[0-9]+[a-z]?\s+(?:(?:bis|ter|n|s|e|w|ne|nw|se|sw|north|south|east|west|rue|avenue|av|boulevard|bd|place|pl|quai|impasse|allee|chemin|cours|passage|square|villa|cite|faubourg|fg|route|rte|de|du|des|la|le|les|l|d|saint|st)[. '']+)*([a-z0-9]+)', 1), '');
 
 -- match_address('a', 'b'): pairs with the same ZIP, house number and street
 -- word, and a name that passes the same test as the other rules.

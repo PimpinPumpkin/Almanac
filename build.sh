@@ -10,9 +10,26 @@ step() { printf '%s  %s\n' "$(date +%T)" "$*" >&2; }
 [ -s "$OUT/overture.parquet" ] || { step overture; base/overture.sh "$REGION" >/dev/null; }
 [ -s "$OUT/atp.parquet" ]      || { step alltheplaces; base/atp.sh "$REGION" >/dev/null; }
 [ -s "$OUT/osm.parquet" ]      || { step osm; base/osm.sh "$REGION" >/dev/null; }
-step foursquare closing dates; signals/fsq_closed.sh >/dev/null
-[ -s "$CACHE/evidence/fdic.csv" ] || { step fdic; adapters/fdic.py; }
-[ -s "$CACHE/evidence/snap.csv" ] || { step snap; adapters/snap.py; }
+step foursquare closing dates; FSQ_COUNTRY="$COUNTRY" signals/fsq_closed.sh >/dev/null
+# Registers are per country. US files sit in data/cache/evidence, another
+# country's in data/cache/evidence/<code>. prepare.sh fetches the US set.
+if [ "$COUNTRY" = US ]; then
+  [ -s "$CACHE/evidence/fdic.csv" ] || { step fdic; adapters/fdic.py; }
+  [ -s "$CACHE/evidence/snap.csv" ] || { step snap; adapters/snap.py; }
+  EVIDENCE_DIR="$CACHE/evidence"; FSQ_FILE="$CACHE/fsq/closed-${FSQ_RELEASE:-2025-02-06}.parquet"
+else
+  EVIDENCE_DIR="$CACHE/evidence/$(printf %s "$COUNTRY" | tr A-Z a-z)"; mkdir -p "$EVIDENCE_DIR"
+  FSQ_FILE="$CACHE/fsq/closed-${FSQ_RELEASE:-2025-02-06}-$COUNTRY.parquet"
+fi
+# Evidence comes as CSV from the Python adapters and as parquet from the SQL ones.
+EV_COLS="source, source_id, name, address, lat, lng, state, date"
+EV_SQL="select null::varchar as source, null::varchar as source_id, null::varchar as name, null::varchar as address, null::double as lat, null::double as lng, null::varchar as state, null::date as date where false"
+if ls "$EVIDENCE_DIR"/*.csv >/dev/null 2>&1; then
+  EV_SQL="$EV_SQL union all select $EV_COLS from read_csv('$EVIDENCE_DIR/*.csv', header = true, auto_detect = false, delim = ',', quote = '\"', escape = '\"', columns = {source: 'varchar', source_id: 'varchar', name: 'varchar', address: 'varchar', lat: 'double', lng: 'double', state: 'varchar', date: 'date'})"
+fi
+if ls "$EVIDENCE_DIR"/*.parquet >/dev/null 2>&1; then
+  EV_SQL="$EV_SQL union all select $EV_COLS from read_parquet('$EVIDENCE_DIR/*.parquet')"
+fi
 
 step wikidata
 duckdb -noheader -csv -c "select distinct wikidata from '$OUT/osm.parquet' where wikidata is not null" \
@@ -44,20 +61,20 @@ create table params as select date '$BUILD_DATE' as build_date, 730 as recent_da
 create table ovt as select * from '$OUT/overture.parquet';
 create table atp as select * from '$OUT/atp.parquet';
 create table osm as select * from '$OUT/osm.parquet';
+-- extracts cached before the SIRET column existed
+alter table osm add column if not exists siret varchar;
 $CLIP
 create table p576 as select qid, date from read_csv('$OUT/p576.csv', header = true, auto_detect = false,
   columns = {qid: 'varchar', date: 'date'});
 create table fsq_closed as
-  select * from '$CACHE/fsq/closed-${FSQ_RELEASE:-2025-02-06}.parquet'
+  select * from '$FSQ_FILE'
   where lat between $S and $N and lng between $W and $E;
 create table register as
-  select * from read_csv('$CACHE/evidence/*.csv', header = true, auto_detect = false,
-    delim = ',', quote = '"', escape = '"', columns = {
-    source: 'varchar', source_id: 'varchar', name: 'varchar', address: 'varchar',
-    lat: 'double', lng: 'double', state: 'varchar', date: 'date'})
-  where (lat between $S and $N and lng between $W and $E)
-     -- records with an address but no position: keep the ones in a ZIP the region has
-     or (lat is null and zip5(address) in (select distinct zip5(postcode) from ovt));
+  select * from ($EV_SQL)
+  where date between date '1900-01-01' and date '$BUILD_DATE'
+    and ((lat between $S and $N and lng between $W and $E)
+     -- records with an address but no position: keep the ones in a postal code the region has
+     or (lat is null and zip5(address) in (select distinct zip5(postcode) from ovt)));
 .read sql/core.sql
 .read sql/full.sql
 .read sql/publish.sql

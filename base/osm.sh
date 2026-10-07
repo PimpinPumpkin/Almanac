@@ -9,7 +9,11 @@ TMP="$OUT/osm.tmp"; rm -rf "$TMP"; mkdir -p "$TMP"
 PARTS=()
 for ex in ${OSM_EXTRACTS//,/ }; do
   pbf="$CACHE/osm/$(basename "$ex").osm.pbf"
-  fetch "https://download.geofabrik.de/north-america/us/$ex-latest.osm.pbf" "$pbf"
+  case "$ex" in
+    /*) url="https://download.geofabrik.de$ex-latest.osm.pbf" ;;
+    *)  url="https://download.geofabrik.de/north-america/us/$ex-latest.osm.pbf" ;;
+  esac
+  fetch "$url" "$pbf"
   osmium fileinfo -g header.option.osmosis_replication_timestamp "$pbf" >> "$TMP/dates"
   part="$TMP/$(basename "$ex").pbf"
   osmium extract -b "$W,$S,$E,$N" -s smart "$pbf" -o "$part" --overwrite
@@ -41,7 +45,7 @@ copy (
       osm_id: 'varchar', edited: 'bigint', name: 'varchar', category: 'varchar', lifecycle: 'varchar',
       housenumber: 'varchar', street: 'varchar', city: 'varchar', region: 'varchar', postcode: 'varchar',
       phone: 'varchar', website: 'varchar', brand: 'varchar', brand_wikidata: 'varchar',
-      wikidata: 'varchar', check_date: 'varchar', end_date: 'varchar', geometry: 'json'})
+      wikidata: 'varchar', check_date: 'varchar', end_date: 'varchar', siret: 'varchar', geometry: 'json'})
   )
   select * exclude (c), st_y(c) as lat, st_x(c) as lng
   from g

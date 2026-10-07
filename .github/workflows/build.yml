@@ -44,7 +44,7 @@ jobs:
           if [ -n "${{ inputs.regions }}" ]; then
             regions="$(printf '%s\n' ${{ inputs.regions }} | jq -R . | jq -cs .)"
           else
-            regions="$(awk -F'\t' '!/^#/ && $7 != "" {print $1}' regions.tsv | jq -R . | jq -cs .)"
+            regions="$(awk -F'\t' '!/^#/ && $7 != "" && $7 != "-" {print $1}' regions.tsv | jq -R . | jq -cs .)"
           fi
           echo "regions=$regions" >> "$GITHUB_OUTPUT"
           echo "build_date=$(date -u +%F)" >> "$GITHUB_OUTPUT"

@@ -108,6 +108,18 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: active licenses (open) and cancellations (closed, for
   restaurants, taverns, nightclubs and clubs).
 
+### France: SIRENE (INSEE)
+- License: Licence Ouverte 2.0 (Etalab). Attribution: "INSEE, base Sirene",
+  with the date of the file. Generally treated as compatible with the ODbL;
+  not checked with a lawyer.
+- Fetched from: the monthly parquet files listed at
+  https://www.data.gouv.fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret
+  read in place over HTTP.
+- Used for: active establishments (open, dated by the last change to the
+  entry). Closed establishments are not used; see SPEC.md section 9.
+- Privacy: only rows marked freely diffusible are read, and a sole trader's
+  row only when it carries a shop sign. Nothing creates a place from it.
+
 ### US Census cartographic boundary file, states
 - License: US federal government work, public domain.
 - Fetched from: `https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_500k.zip`

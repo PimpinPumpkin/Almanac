@@ -6,7 +6,7 @@
 source "$(dirname "$0")/lib/common.sh"
 cd "$ROOT"
 mkdir -p reports
-awk -F'\t' '!/^#/ && $7 != "" {print $1}' regions.tsv | while read -r r; do
+awk -F'\t' '!/^#/ && $7 != "" && $7 != "-" {print $1}' regions.tsv | while read -r r; do
   [ -s "$DATA/out/manifest-$r.json" ] && continue
   start=$(date +%s)
   if ./build.sh "$r" >"$DATA/$r.log" 2>&1; then

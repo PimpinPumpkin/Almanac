@@ -25,17 +25,20 @@ duck() {
   duckdb -cmd "load httpfs; load spatial; create or replace temporary secret ua (type http, extra_http_headers map{'User-Agent': '$UA'});" "$@"
 }
 
-# region NAME: load one row of regions.tsv into REGION, S, W, N, E, OSM_EXTRACTS, STATE, OUT.
+# region NAME: load one row of regions.tsv into REGION, S, W, N, E, OSM_EXTRACTS, STATE,
+# COUNTRY (US when blank) and OUT.
 # STATE is empty for a plain box. When set, build.sh clips every input to
 # that state's outline, since a state's bounding box spills into its neighbors.
 region() {
   local row
   row="$(awk -F'\t' -v r="$1" '$1==r' "$ROOT/regions.tsv")"
   [ -n "$row" ] || { echo "unknown region: $1" >&2; exit 1; }
-  IFS=$'\t' read -r REGION S W N E OSM_EXTRACTS STATE <<<"$row"
+  IFS=$'\t' read -r REGION S W N E OSM_EXTRACTS STATE COUNTRY <<<"$row"
+  COUNTRY="${COUNTRY:-US}"
+  [ "$STATE" = - ] && STATE=""
   OUT="$DATA/$REGION"
   mkdir -p "$OUT"
-  export REGION S W N E OSM_EXTRACTS STATE OUT
+  export REGION S W N E OSM_EXTRACTS STATE COUNTRY OUT
 }
 
 # state_outlines: Census cartographic boundaries (1:500,000), public domain,
