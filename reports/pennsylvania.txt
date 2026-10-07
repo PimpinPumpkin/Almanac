@@ -43,9 +43,9 @@
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   6285 │
-│ open    │ 118322 │
-│ unknown │ 586445 │
+│ closed  │   6284 │
+│ open    │ 118320 │
+│ unknown │ 586448 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -53,8 +53,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   4619 │
-│ open    │ 109615 │
-│ unknown │ 545220 │
+│ open    │ 109613 │
+│ unknown │ 545222 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -115,7 +115,7 @@
 │ abc_ca         │ open    │ address │     1 │      1 │
 │ agm_ny         │ open    │ self    │   959 │    959 │
 │ atp            │ open    │ near    │  1042 │   1020 │
-│ atp            │ open    │ number  │ 25197 │  23130 │
+│ atp            │ open    │ number  │ 25197 │  23129 │
 │ atp            │ open    │ self    │  3754 │   3754 │
 │ atp            │ open    │ spot    │    82 │     77 │
 │ biz_de         │ open    │ number  │     3 │      2 │
@@ -164,12 +164,12 @@
 │ closed  │ fdic_history        │    820 │
 │ closed  │ fsq_closed          │   3736 │
 │ closed  │ osm_history         │    824 │
-│ closed  │ osm_lifecycle       │    895 │
+│ closed  │ osm_lifecycle       │    894 │
 │ closed  │ wikidata_p576       │     10 │
 │ open    │ abc_ar              │      1 │
 │ open    │ abc_ca              │      1 │
 │ open    │ agm_ny              │    946 │
-│ open    │ atp                 │  17350 │
+│ open    │ atp                 │  17348 │
 │ open    │ biz_de              │      3 │
 │ open    │ cms_hospitals       │    114 │
 │ open    │ dmv_ny              │    769 │
@@ -178,18 +178,18 @@
 │ open    │ dph_de              │    974 │
 │ open    │ epa_ust_open        │    680 │
 │ open    │ fdic_locations      │   3553 │
-│ open    │ hrsa_health_centers │    163 │
-│ open    │ irs_eo              │   7035 │
+│ open    │ hrsa_health_centers │    165 │
+│ open    │ irs_eo              │   7032 │
 │ open    │ lcc_ne              │      1 │
-│ open    │ li_phl              │   1704 │
-│ open    │ nces_schools        │    425 │
+│ open    │ li_phl              │   1882 │
+│ open    │ nces_schools        │    428 │
 │ open    │ ncua_branches       │    429 │
 │ open    │ nppes_orgs          │   2046 │
 │ open    │ osm_check_date      │   6460 │
 │ open    │ rev_pa              │  61097 │
-│ open    │ rev_pa_tobacco      │   4945 │
+│ open    │ rev_pa_tobacco      │   4695 │
 │ open    │ sla_ny              │   1100 │
-│ open    │ snap_current        │   7754 │
+│ open    │ snap_current        │   7824 │
 │ open    │ snap_history        │    133 │
 └─────────┴─────────────────────┴────────┘
   30 rows                      3 columns
@@ -202,7 +202,7 @@
 │ fdic_history  │    967 │              92 │              37 │
 │ fsq_closed    │   3992 │             168 │             122 │
 │ osm_history   │    942 │             101 │              87 │
-│ osm_lifecycle │    991 │              84 │              58 │
+│ osm_lifecycle │    991 │              85 │              58 │
 │ wikidata_p576 │     12 │               2 │               0 │
 └───────────────┴────────┴─────────────────┴─────────────────┘
 == Overture operating_status against our status
@@ -213,10 +213,10 @@
 │ (none)             │ closed  │   1120 │
 │ (none)             │ open    │  15183 │
 │ (none)             │ unknown │ 151290 │
-│ open               │ closed  │   4577 │
-│ open               │ open    │  85691 │
-│ open               │ unknown │ 373132 │
+│ open               │ closed  │   4576 │
+│ open               │ open    │  85690 │
+│ open               │ unknown │ 373134 │
 │ permanently_closed │ closed  │     56 │
-│ permanently_closed │ open    │    523 │
-│ permanently_closed │ unknown │  15629 │
+│ permanently_closed │ open    │    522 │
+│ permanently_closed │ unknown │  15630 │
 └────────────────────┴─────────┴────────┘

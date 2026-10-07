@@ -170,13 +170,13 @@
 │ open    │ fdic_locations      │   1988 │
 │ open    │ hrsa_health_centers │     33 │
 │ open    │ irs_eo              │   2947 │
-│ open    │ mke_food            │   1129 │
-│ open    │ mke_liquor          │    478 │
+│ open    │ mke_food            │   1075 │
+│ open    │ mke_liquor          │    541 │
 │ open    │ nces_schools        │   1508 │
 │ open    │ ncua_branches       │    359 │
 │ open    │ nppes_orgs          │   1098 │
 │ open    │ osm_check_date      │   1321 │
-│ open    │ snap_current        │   4620 │
+│ open    │ snap_current        │   4611 │
 │ open    │ snap_history        │     93 │
 │ open    │ tabc_tx             │      1 │
 └─────────┴─────────────────────┴────────┘
@@ -199,12 +199,12 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    437 │
-│ (none)             │ open    │   4342 │
-│ (none)             │ unknown │  81234 │
+│ (none)             │ open    │   4343 │
+│ (none)             │ unknown │  81233 │
 │ open               │ closed  │   1609 │
-│ open               │ open    │  26968 │
-│ open               │ unknown │ 204541 │
+│ open               │ open    │  26966 │
+│ open               │ unknown │ 204543 │
 │ permanently_closed │ closed  │     27 │
-│ permanently_closed │ open    │     75 │
-│ permanently_closed │ unknown │   7100 │
+│ permanently_closed │ open    │     76 │
+│ permanently_closed │ unknown │   7099 │
 └────────────────────┴─────────┴────────┘

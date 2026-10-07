@@ -43,8 +43,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   3817 │
-│ open    │  36580 │
-│ unknown │ 376731 │
+│ open    │  36581 │
+│ unknown │ 376730 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -52,8 +52,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2961 │
-│ open    │  32559 │
-│ unknown │ 348041 │
+│ open    │  32560 │
+│ unknown │ 348040 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌───────────────────────┬─────────┬─────────┬─────────┐
@@ -113,7 +113,7 @@
 │ abc_ar         │ open    │ number  │     2 │      2 │
 │ agm_ny         │ open    │ self    │    37 │     37 │
 │ atp            │ open    │ near    │   291 │    289 │
-│ atp            │ open    │ number  │ 12048 │  10834 │
+│ atp            │ open    │ number  │ 12048 │  10835 │
 │ atp            │ open    │ self    │  1727 │   1727 │
 │ atp            │ open    │ spot    │    31 │     28 │
 │ childcare_ma   │ open    │ near    │    23 │     23 │
@@ -166,7 +166,7 @@
 │ closed  │ osm_lifecycle         │    368 │
 │ closed  │ wikidata_p576         │      9 │
 │ open    │ agm_ny                │     35 │
-│ open    │ atp                   │  11146 │
+│ open    │ atp                   │  11147 │
 │ open    │ childcare_ma          │   1258 │
 │ open    │ cms_hospitals         │    104 │
 │ open    │ dmv_ct                │      1 │
@@ -176,9 +176,9 @@
 │ open    │ fdic_locations        │   2725 │
 │ open    │ hrsa_health_centers   │     90 │
 │ open    │ irs_eo                │   4139 │
-│ open    │ isd_boston_food       │   1229 │
+│ open    │ isd_boston_food       │   1230 │
 │ open    │ isd_boston_inspection │     81 │
-│ open    │ lb_boston             │   1235 │
+│ open    │ lb_boston             │   1240 │
 │ open    │ lcc_ne                │      1 │
 │ open    │ led_co                │      1 │
 │ open    │ nces_schools          │   1459 │
@@ -186,7 +186,7 @@
 │ open    │ nppes_orgs            │   1303 │
 │ open    │ osm_check_date        │   3282 │
 │ open    │ sla_ny                │     44 │
-│ open    │ snap_current          │   7241 │
+│ open    │ snap_current          │   7235 │
 │ open    │ snap_history          │    193 │
 │ open    │ tabc_tx               │      1 │
 └─────────┴───────────────────────┴────────┘
@@ -212,8 +212,8 @@
 │ (none)             │ open    │   4253 │
 │ (none)             │ unknown │  86611 │
 │ open               │ closed  │   2940 │
-│ open               │ open    │  23432 │
-│ open               │ unknown │ 246473 │
+│ open               │ open    │  23433 │
+│ open               │ unknown │ 246472 │
 │ permanently_closed │ closed  │     39 │
 │ permanently_closed │ open    │     89 │
 │ permanently_closed │ unknown │  12211 │

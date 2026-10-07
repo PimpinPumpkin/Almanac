@@ -163,18 +163,18 @@
 │ closed  │ wikidata_p576       │      3 │
 │ open    │ abc_ar              │      1 │
 │ open    │ atp                 │   9605 │
-│ open    │ biz_nola            │   3521 │
+│ open    │ biz_nola            │   3520 │
 │ open    │ cms_hospitals       │    128 │
 │ open    │ cpa_tx              │      3 │
 │ open    │ epa_ust_open        │    862 │
 │ open    │ fdic_locations      │   1905 │
-│ open    │ hrsa_health_centers │     96 │
+│ open    │ hrsa_health_centers │     93 │
 │ open    │ irs_eo              │   1419 │
 │ open    │ nces_schools        │   1226 │
 │ open    │ ncua_branches       │    135 │
 │ open    │ nppes_orgs          │    837 │
 │ open    │ osm_check_date      │    705 │
-│ open    │ snap_current        │   5346 │
+│ open    │ snap_current        │   5350 │
 │ open    │ snap_history        │    223 │
 └─────────┴─────────────────────┴────────┘
   20 rows                      3 columns

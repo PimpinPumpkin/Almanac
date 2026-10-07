@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2908 │
-│ open    │  29321 │
-│ unknown │ 352683 │
+│ open    │  29322 │
+│ unknown │ 352682 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2438 │
-│ open    │  27648 │
-│ unknown │ 332205 │
+│ open    │  27649 │
+│ unknown │ 332204 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -108,7 +108,7 @@
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ abc_ca         │ open    │ address │     2 │      1 │
 │ atp            │ open    │ near    │   315 │    289 │
-│ atp            │ open    │ number  │ 15742 │  14376 │
+│ atp            │ open    │ number  │ 15742 │  14377 │
 │ atp            │ open    │ self    │  1889 │   1889 │
 │ atp            │ open    │ spot    │    60 │     55 │
 │ childcare_az   │ open    │ near    │     5 │      5 │
@@ -130,7 +130,7 @@
 │     ·          │  ·      │ ·       │    ·  │     ·  │
 │     ·          │  ·      │ ·       │    ·  │     ·  │
 │ osm_check_date │ open    │ near    │   720 │    715 │
-│ osm_check_date │ open    │ number  │  1626 │   1591 │
+│ osm_check_date │ open    │ number  │  1626 │   1590 │
 │ osm_check_date │ open    │ self    │   586 │    586 │
 │ osm_check_date │ open    │ spot    │    48 │     46 │
 │ osm_history    │ closed  │ id      │   331 │    331 │
@@ -162,7 +162,7 @@
 │ closed  │ osm_lifecycle       │    159 │
 │ closed  │ wikidata_p576       │      4 │
 │ open    │ abc_ca              │      1 │
-│ open    │ atp                 │  13925 │
+│ open    │ atp                 │  13926 │
 │ open    │ childcare_az        │    785 │
 │ open    │ cms_hospitals       │     79 │
 │ open    │ epa_ust_open        │    332 │
@@ -173,8 +173,8 @@
 │ open    │ ncua_branches       │    179 │
 │ open    │ nppes_orgs          │   1740 │
 │ open    │ osm_check_date      │   1208 │
-│ open    │ phx_liquor          │   1169 │
-│ open    │ snap_current        │   4928 │
+│ open    │ phx_liquor          │   1181 │
+│ open    │ snap_current        │   4916 │
 │ open    │ snap_history        │    106 │
 └─────────┴─────────────────────┴────────┘
   20 rows                      3 columns
@@ -199,8 +199,8 @@
 │ (none)             │ open    │   4587 │
 │ (none)             │ unknown │  86694 │
 │ open               │ closed  │   2300 │
-│ open               │ open    │  21021 │
-│ open               │ unknown │ 231690 │
+│ open               │ open    │  21022 │
+│ open               │ unknown │ 231689 │
 │ permanently_closed │ closed  │     34 │
 │ permanently_closed │ open    │     80 │
 │ permanently_closed │ unknown │  12678 │

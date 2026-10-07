@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   5342 │
-│ open    │  57765 │
-│ unknown │ 574243 │
+│ open    │  57764 │
+│ unknown │ 574244 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   4007 │
-│ open    │  54292 │
-│ unknown │ 534695 │
+│ open    │  54291 │
+│ unknown │ 534696 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -108,7 +108,7 @@
 ├───────────────────┼─────────┼─────────┼───────┼────────┤
 │ abt_fl            │ open    │ address │     1 │      1 │
 │ atp               │ open    │ near    │   487 │    474 │
-│ atp               │ open    │ number  │ 28968 │  26335 │
+│ atp               │ open    │ number  │ 28968 │  26334 │
 │ atp               │ open    │ self    │  3840 │   3840 │
 │ atp               │ open    │ spot    │   104 │     98 │
 │ bop_oh            │ open    │ address │   133 │    133 │
@@ -162,21 +162,21 @@
 │ closed  │ osm_lifecycle       │    611 │
 │ closed  │ wikidata_p576       │     12 │
 │ open    │ abt_fl              │      1 │
-│ open    │ atp                 │  25605 │
-│ open    │ bop_oh              │   1126 │
+│ open    │ atp                 │  25604 │
+│ open    │ bop_oh              │   1130 │
 │ open    │ cms_hospitals       │    160 │
-│ open    │ cph_columbus_food   │   3213 │
+│ open    │ cph_columbus_food   │   3201 │
 │ open    │ elicense_ct         │      1 │
 │ open    │ epa_ust_open        │   1195 │
 │ open    │ fdic_locations      │   3134 │
-│ open    │ hrsa_health_centers │    137 │
+│ open    │ hrsa_health_centers │    133 │
 │ open    │ irs_eo              │   6037 │
 │ open    │ nces_schools        │   2551 │
 │ open    │ ncua_branches       │    232 │
 │ open    │ nppes_orgs          │   2227 │
 │ open    │ osm_check_date      │   2576 │
 │ open    │ rev_pa              │      1 │
-│ open    │ snap_current        │   9257 │
+│ open    │ snap_current        │   9269 │
 │ open    │ snap_history        │    312 │
 └─────────┴─────────────────────┴────────┘
   22 rows                      3 columns
@@ -198,8 +198,8 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    912 │
-│ (none)             │ open    │   8822 │
-│ (none)             │ unknown │ 136631 │
+│ (none)             │ open    │   8821 │
+│ (none)             │ unknown │ 136632 │
 │ open               │ closed  │   3929 │
 │ open               │ open    │  39658 │
 │ open               │ unknown │ 379806 │

@@ -163,7 +163,7 @@
 │ closed  │ wikidata_p576       │      1 │
 │ open    │ abc_ca              │      2 │
 │ open    │ atp                 │   6341 │
-│ open    │ biz_lasvegas        │   5802 │
+│ open    │ biz_lasvegas        │   5821 │
 │ open    │ cms_hospitals       │     28 │
 │ open    │ epa_ust_open        │    239 │
 │ open    │ fdic_locations      │    645 │
@@ -173,7 +173,7 @@
 │ open    │ ncua_branches       │     58 │
 │ open    │ nppes_orgs          │    520 │
 │ open    │ osm_check_date      │    351 │
-│ open    │ snap_current        │   4272 │
+│ open    │ snap_current        │   4253 │
 │ open    │ snap_history        │     86 │
 └─────────┴─────────────────────┴────────┘
   19 rows                      3 columns

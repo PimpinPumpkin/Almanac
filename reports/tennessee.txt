@@ -169,12 +169,12 @@
 │ open    │ fdic_locations      │   2329 │
 │ open    │ hrsa_health_centers │     62 │
 │ open    │ irs_eo              │   2678 │
-│ open    │ nash_beer           │   1364 │
+│ open    │ nash_beer           │   1372 │
 │ open    │ nces_schools        │   1559 │
 │ open    │ ncua_branches       │    278 │
 │ open    │ nppes_orgs          │   1299 │
 │ open    │ osm_check_date      │   1748 │
-│ open    │ snap_current        │   7361 │
+│ open    │ snap_current        │   7353 │
 │ open    │ snap_history        │    203 │
 └─────────┴─────────────────────┴────────┘
   20 rows                      3 columns
@@ -196,11 +196,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    451 │
-│ (none)             │ open    │   5179 │
-│ (none)             │ unknown │  96636 │
+│ (none)             │ open    │   5178 │
+│ (none)             │ unknown │  96637 │
 │ open               │ closed  │   1895 │
-│ open               │ open    │  25754 │
-│ open               │ unknown │ 237051 │
+│ open               │ open    │  25755 │
+│ open               │ unknown │ 237050 │
 │ permanently_closed │ closed  │     28 │
 │ permanently_closed │ open    │     76 │
 │ permanently_closed │ unknown │   8869 │

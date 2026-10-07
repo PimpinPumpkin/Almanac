@@ -170,13 +170,13 @@
 │ open    │ fdic_locations      │   1119 │
 │ open    │ hrsa_health_centers │     12 │
 │ open    │ irs_eo              │    994 │
-│ open    │ lcc_ne              │   3564 │
+│ open    │ lcc_ne              │   3554 │
 │ open    │ nces_schools        │    457 │
 │ open    │ ncua_branches       │     76 │
 │ open    │ nppes_orgs          │    584 │
 │ open    │ osm_check_date      │    380 │
 │ open    │ rev_pa_tobacco      │      1 │
-│ open    │ snap_current        │   1387 │
+│ open    │ snap_current        │   1397 │
 │ open    │ snap_history        │     28 │
 └─────────┴─────────────────────┴────────┘
   22 rows                      3 columns

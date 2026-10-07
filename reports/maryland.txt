@@ -41,8 +41,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2983 │
-│ open    │  36830 │
-│ unknown │ 298558 │
+│ open    │  36831 │
+│ unknown │ 298557 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -50,8 +50,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2228 │
-│ open    │  34321 │
-│ unknown │ 277802 │
+│ open    │  34322 │
+│ unknown │ 277801 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌───────────────────┬─────────┬─────────┬─────────┐
@@ -112,7 +112,7 @@
 │ abca_dc_active │ open    │ number  │     3 │      3 │
 │ abca_dc_active │ open    │ self    │  2008 │   2008 │
 │ atp            │ open    │ near    │   305 │    292 │
-│ atp            │ open    │ number  │ 12051 │  11072 │
+│ atp            │ open    │ number  │ 12051 │  11073 │
 │ atp            │ open    │ self    │  1784 │   1784 │
 │ atp            │ open    │ spot    │    44 │     39 │
 │ bbl_dc         │ open    │ address │     1 │      1 │
@@ -164,7 +164,7 @@
 │ closed  │ osm_lifecycle       │    406 │
 │ closed  │ wikidata_p576       │      4 │
 │ open    │ abca_dc_active      │   2009 │
-│ open    │ atp                 │  11547 │
+│ open    │ atp                 │  11548 │
 │ open    │ bbl_dc              │     27 │
 │ open    │ biz_de              │      2 │
 │ open    │ cms_hospitals       │     33 │
@@ -202,11 +202,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    440 │
-│ (none)             │ open    │   4242 │
-│ (none)             │ unknown │  71613 │
+│ (none)             │ open    │   4244 │
+│ (none)             │ unknown │  71611 │
 │ open               │ closed  │   2289 │
-│ open               │ open    │  19876 │
-│ open               │ unknown │ 193712 │
+│ open               │ open    │  19875 │
+│ open               │ unknown │ 193713 │
 │ permanently_closed │ closed  │     26 │
 │ permanently_closed │ open    │     87 │
 │ permanently_closed │ unknown │  10732 │

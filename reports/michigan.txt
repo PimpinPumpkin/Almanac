@@ -165,22 +165,22 @@
 │ open    │ abc_ar              │      1 │
 │ open    │ atp                 │  15137 │
 │ open    │ cdph_chicago        │  10584 │
-│ open    │ childcare_mi        │   1778 │
+│ open    │ childcare_mi        │   1804 │
 │ open    │ childcare_wi        │      1 │
 │ open    │ cms_hospitals       │     87 │
-│ open    │ det_biz             │    378 │
+│ open    │ det_biz             │    361 │
 │ open    │ det_liquor          │    168 │
 │ open    │ dor_wi_liquor       │      1 │
 │ open    │ epa_ust_open        │   1287 │
 │ open    │ fdic_locations      │   5081 │
 │ open    │ hrsa_health_centers │     93 │
 │ open    │ irs_eo              │   4363 │
-│ open    │ mdard_mi_food       │  18698 │
+│ open    │ mdard_mi_food       │  18652 │
 │ open    │ nces_schools        │   1400 │
 │ open    │ ncua_branches       │    712 │
 │ open    │ nppes_orgs          │   1912 │
 │ open    │ osm_check_date      │   1723 │
-│ open    │ snap_current        │  15239 │
+│ open    │ snap_current        │  15276 │
 │ open    │ snap_history        │    294 │
 └─────────┴─────────────────────┴────────┘
   25 rows                      3 columns
@@ -202,11 +202,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    609 │
-│ (none)             │ open    │   7110 │
-│ (none)             │ unknown │ 120828 │
+│ (none)             │ open    │   7109 │
+│ (none)             │ unknown │ 120829 │
 │ open               │ closed  │   2965 │
-│ open               │ open    │  44131 │
-│ open               │ unknown │ 320318 │
+│ open               │ open    │  44132 │
+│ open               │ unknown │ 320317 │
 │ permanently_closed │ closed  │     45 │
 │ permanently_closed │ open    │    131 │
 │ permanently_closed │ unknown │  14153 │

@@ -172,9 +172,9 @@
 │ open    │ nces_schools        │   1130 │
 │ open    │ ncua_branches       │    246 │
 │ open    │ nppes_orgs          │    844 │
-│ open    │ olcc_or             │   7761 │
+│ open    │ olcc_or             │   7770 │
 │ open    │ osm_check_date      │   3188 │
-│ open    │ snap_current        │   2975 │
+│ open    │ snap_current        │   2966 │
 │ open    │ snap_history        │     71 │
 └─────────┴─────────────────────┴────────┘
   20 rows                      3 columns
@@ -196,12 +196,12 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    471 │
-│ (none)             │ open    │   3337 │
-│ (none)             │ unknown │  60538 │
-│ open               │ closed  │   2202 │
-│ open               │ open    │  19799 │
+│ (none)             │ open    │   3338 │
+│ (none)             │ unknown │  60537 │
+│ open               │ closed  │   2203 │
+│ open               │ open    │  19798 │
 │ open               │ unknown │ 149239 │
-│ permanently_closed │ closed  │     34 │
+│ permanently_closed │ closed  │     33 │
 │ permanently_closed │ open    │     39 │
-│ permanently_closed │ unknown │   4860 │
+│ permanently_closed │ unknown │   4861 │
 └────────────────────┴─────────┴────────┘

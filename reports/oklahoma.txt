@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1156 │
-│ open    │  23437 │
-│ unknown │ 218288 │
+│ open    │  23436 │
+│ unknown │ 218289 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    939 │
-│ open    │  22329 │
-│ unknown │ 204621 │
+│ open    │  22328 │
+│ unknown │ 204622 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────┬─────────┬─────────┬─────────┐
@@ -162,9 +162,9 @@
 │ closed  │ osm_lifecycle       │     56 │
 │ closed  │ wikidata_p576       │      2 │
 │ open    │ abc_ar              │      7 │
-│ open    │ able_ok             │   3680 │
+│ open    │ able_ok             │   3657 │
 │ open    │ atc_mo              │      1 │
-│ open    │ atp                 │  10152 │
+│ open    │ atp                 │  10151 │
 │ open    │ cms_hospitals       │     90 │
 │ open    │ cpa_tx              │      1 │
 │ open    │ epa_ust_open        │    719 │
@@ -175,7 +175,7 @@
 │ open    │ ncua_branches       │     79 │
 │ open    │ nppes_orgs          │    864 │
 │ open    │ osm_check_date      │    893 │
-│ open    │ snap_current        │   3657 │
+│ open    │ snap_current        │   3680 │
 │ open    │ snap_history        │     83 │
 └─────────┴─────────────────────┴────────┘
   21 rows                      3 columns
@@ -200,8 +200,8 @@
 │ (none)             │ open    │   3523 │
 │ (none)             │ unknown │  60099 │
 │ open               │ closed  │    874 │
-│ open               │ open    │  15558 │
-│ open               │ unknown │ 138440 │
+│ open               │ open    │  15557 │
+│ open               │ unknown │ 138441 │
 │ permanently_closed │ closed  │      8 │
 │ permanently_closed │ open    │     59 │
 │ permanently_closed │ unknown │   5335 │
