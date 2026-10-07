@@ -302,6 +302,8 @@ rows are the same place.
 | Ohio pharmacies | number | 30 of 30 (Columbus) | geocoded |
 | HRSA health center sites | number | 25 of 25 (DC box) |  |
 | Child care centers, ten states | number | 20 of 20 in each of AZ, CA, DE, MA, MI, MN, NJ, TN, VT, WI | a program inside a school matches the school |
+| Phoenix, Nashville, Anchorage and Huntsville alcohol licenses; Detroit business and liquor licenses; Sioux Falls food sites | number | 25 of 25 each | |
+| Milwaukee food and alcohol licenses | number | 49 of 50 | the miss is a campus library taking the college's bakery license |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -523,6 +525,8 @@ signal at all.
 | bop_tx, bop_oh | open | day the file was read, active retail pharmacies | matcher, positions from the Census geocoder |
 | hrsa_health_centers | open | day the file was made, active permanent sites | matcher |
 | childcare_az, _ca, _de, _ma, _mi, _mn, _nj, _tn, _vt, _wi | open | day the layer was last edited, or read; centers only | matcher |
+| phx_liquor, nash_beer, mke_food, mke_liquor, anc_liquor, hsv_liquor, det_biz, det_liquor | open | day the layer was last edited or read, licenses in force | matcher |
+| sux_food | open | day of the site's newest inspection | matcher |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |

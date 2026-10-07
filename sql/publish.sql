@@ -6,12 +6,13 @@ create or replace macro license_of(source) as
     when source in ('fsq', 'fsq_closed') then 'Apache-2.0'
     when source in ('atp', 'wikidata_p576', 'biz_nola') then 'CC0-1.0'
     when source like 'osm%' or source = 'dol_wa' then 'ODbL-1.0'
-    when source like 'abca_dc%' or source in ('bbl_dc', 'childcare_ca') then 'CC-BY-4.0'
+    when source like 'abca_dc%' or source in ('bbl_dc', 'childcare_ca', 'mke_food', 'mke_liquor') then 'CC-BY-4.0'
     when source in ('abc_ca', 'tabc_tx', 'dbpr_fl_food', 'abt_fl', 'atc_mo', 'olcc_or', 'tdlr_tx',
                     'bot_sac', 'emd_sac', 'lou_food', 'abc_ky_jefferson', 'li_phl', 'biz_seattle', 'biz_denver', 'childcare_wa',
                     'dor_wi_liquor', 'isp_id_liquor', 'lcb_wa', 'abc_nj', 'lcc_ne', 'bablo_me', 'abc_ar', 'able_ok',
                     'biz_lasvegas', 'dchd_omaha_food', 'mpls_food', 'mpls_liquor', 'llb_baltimore', 'cph_columbus_food',
-                    'mdard_mi_food', 'dph_sc_food', 'mda_mn_food', 'dpor_va', 'bop_tx', 'bop_oh')
+                    'mdard_mi_food', 'dph_sc_food', 'mda_mn_food', 'dpor_va', 'bop_tx', 'bop_oh',
+                    'phx_liquor', 'nash_beer', 'anc_liquor', 'sux_food', 'hsv_liquor', 'det_biz', 'det_liquor')
          or source like 'dca_ca_%' or (source like 'childcare_%' and source not in ('childcare_ca', 'childcare_co'))
          or source like 'dbpr_fl_%' then 'none-stated'
     when source in ('sla_ny', 'dmv_ny', 'dos_ny_salons', 'agm_ny', 'tax_ny_tobacco', 'ocm_ny', 'doh_ny_food') then 'OPEN-NY-terms'

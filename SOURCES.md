@@ -381,6 +381,29 @@ director, phone or email columns.
 - Found and not built yet: CMS's list of clinical laboratories (300,000
   rows, no positions).
 
+### City layers added 2026-10-07: Phoenix, Nashville, Milwaukee, Anchorage, Sioux Falls, Huntsville, Detroit
+Milwaukee's data is CC BY (City of Milwaukee, per data.milwaukee.gov);
+the others state no license and are marked `none-stated`. Agent, owner and
+licensee columns are not read.
+- Phoenix liquor licenses: `https://maps.phoenix.gov/pub/rest/services/Public/LIQUOR_RACMap/MapServer` (layers 0 to 13)
+- Nashville beer permits: `https://services2.arcgis.com/HdTo6HJqh92wn4D8/arcgis/rest/services/Beer_Permit_Locations_Feature_Layer_view/FeatureServer/0`
+- Milwaukee food and alcohol licenses: `https://milwaukeemaps.milwaukee.gov/arcgis/rest/services/regulation/license/MapServer` (layers 9 and 0)
+- Anchorage liquor licenses: `https://services2.arcgis.com/Ce3DhLRthdwbHlfF/arcgis/rest/services/LiquorLicenses_Hosted/FeatureServer/0`
+- Sioux Falls restaurant sites: `https://gis.siouxfalls.gov/arcgis/rest/services/Data/Safety/MapServer/17`
+- Huntsville alcohol licenses: `https://maps.huntsvilleal.gov/server/rest/services/Licenses/AlcoholBeverageLicenses/MapServer/0`
+- Detroit business licenses and liquor licenses: `https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/` (`bseed_active_business_licenses`, `Liquor_Licenses`)
+- Not used, and why:
+  - Maricopa County food permits (105,000 rows): the county's terms forbid
+    downloading for commercial use or resale, which the ODbL cannot honor.
+  - Virginia Beach business licenses: no positions and terms not read in full.
+  - Sioux Falls alcohol licenses: the layer carries no dates.
+  - Albuquerque business registrations: the export stopped in August 2025.
+  - Anchorage food inspections: stopped advancing in May 2026.
+  - Atlanta, Charlotte, Indianapolis, Oklahoma City, Salt Lake City,
+    Honolulu, Boise, Des Moines, Little Rock, Jackson, Wichita, Newark,
+    Manchester, Portland (Maine and Oregon), Burlington, Billings, Fargo,
+    Cheyenne, Charleston WV: nothing usable found.
+
 ### City layers: Las Vegas, Omaha, Minneapolis, Baltimore, Columbus
 None states a license; rows are marked `none-stated`.
 - Las Vegas active business licenses:
