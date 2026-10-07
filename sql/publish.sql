@@ -8,8 +8,9 @@ create or replace macro license_of(source) as
     when source like 'osm%' or source = 'dol_wa' then 'ODbL-1.0'
     when source like 'abca_dc%' or source = 'bbl_dc' then 'CC-BY-4.0'
     when source in ('abc_ca', 'tabc_tx', 'dbpr_fl_food', 'abt_fl', 'atc_mo', 'olcc_or', 'tdlr_tx',
-                    'bot_sac', 'emd_sac', 'lou_food', 'abc_ky_jefferson', 'li_phl', 'biz_seattle', 'biz_denver', 'childcare_wa') then 'none-stated'
-    when source in ('sla_ny', 'dmv_ny', 'dos_ny_salons', 'agm_ny', 'tax_ny_tobacco') then 'OPEN-NY-terms'
+                    'bot_sac', 'emd_sac', 'lou_food', 'abc_ky_jefferson', 'li_phl', 'biz_seattle', 'biz_denver', 'childcare_wa')
+         or source like 'dbpr_fl_%' then 'none-stated'
+    when source in ('sla_ny', 'dmv_ny', 'dos_ny_salons', 'agm_ny', 'tax_ny_tobacco', 'ocm_ny') then 'OPEN-NY-terms'
     when source in ('dohmh_nyc', 'dcwp_nyc') then 'NYC-Open-Data-terms'
     when source like 'cdph_chicago%' or source like 'bacp_chicago%' then 'Chicago-Data-Portal-terms'
     when source = 'sirene' then 'etalab-2.0'

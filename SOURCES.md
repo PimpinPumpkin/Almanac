@@ -255,6 +255,24 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: centers, preschools and school-age programs (open).
 - Privacy: family child care homes are not read.
 
+### Florida DBPR, establishment licenses
+- License: none stated. Florida public records; rows are marked `none-stated`.
+- Fetched from: `https://www2.myfloridalicense.com/sto/file_download/extracts/`
+  (`COSMETOLOGYLICENSE_1.csv`, `lic03bb.csv`, `lic26vt.csv`,
+  `hrlodge1..7.csv`, `hrfood1..7.csv`)
+- Used for: current salon, barbershop, veterinary premises, hotel, motel,
+  bed and breakfast and fixed-premises restaurant licenses (open).
+- Privacy: the profession files are mostly individual license holders,
+  which are not read. Vacation rentals, condominiums and apartments in the
+  lodging files are not read. Nothing creates a place from these files.
+
+### New York Office of Cannabis Management, current licenses
+- License: OPEN-NY Terms of Use.
+- Fetched from: `https://data.ny.gov/resource/jskf-tt3q.json`
+- Used for: retail dispensaries with an active license that the state
+  marks as operating (open).
+- Privacy: the contact name column is not read.
+
 ### Pennsylvania Department of Revenue, sales tax licenses
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.pa.gov/resource/ugeq-ckxd.json`

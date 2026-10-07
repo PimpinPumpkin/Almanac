@@ -44,8 +44,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   6224 │
-│ open    │  26526 │
-│ unknown │ 244395 │
+│ open    │  26576 │
+│ unknown │ 244345 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -53,8 +53,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   5447 │
-│ open    │  24585 │
-│ unknown │ 238281 │
+│ open    │  24624 │
+│ unknown │ 238242 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -72,17 +72,18 @@
 │ biz_denver             │ open    │       6 │       0 │
 │ bot_sac                │ open    │       6 │       0 │
 │ cdph_chicago           │ open    │       5 │       0 │
+│ childcare_co           │ open    │      13 │       0 │
+│ childcare_wa           │ open    │       3 │       0 │
 │ cms_hospitals          │ open    │     213 │       7 │
 │ cpa_tx                 │ open    │      49 │       0 │
 │ cpa_tx_tobacco         │ open    │       1 │       0 │
 │ dbpr_fl_food           │ open    │     212 │       0 │
-│ dcwp_nyc               │ open    │    6171 │    1886 │
-│ dmv_ny                 │ open    │     836 │     344 │
-│ dohmh_nyc              │ open    │   13348 │   11400 │
-│ dos_ny_salons          │ open    │    4132 │    2029 │
-│ dph_de                 │ open    │       1 │       0 │
-│ emd_sac                │ open    │       1 │       0 │
-│ epa_ust_open           │ open    │    1024 │     158 │
+│ dbpr_fl_lodging        │ open    │      32 │       0 │
+│ dbpr_fl_restaurant     │ open    │     389 │       0 │
+│ dbpr_fl_salon          │ open    │     257 │       0 │
+│      ·                 │  ·      │      ·  │       · │
+│      ·                 │  ·      │      ·  │       · │
+│      ·                 │  ·      │      ·  │       · │
 │ fdic_history           │ closed  │     616 │     223 │
 │ fdic_locations         │ open    │     616 │     527 │
 │ irs_eo                 │ open    │   94881 │    2734 │
@@ -93,6 +94,7 @@
 │ nces_schools           │ open    │     491 │     384 │
 │ ncua_branches          │ open    │     992 │      24 │
 │ nppes_orgs             │ open    │  144914 │    3699 │
+│ ocm_ny                 │ open    │     128 │      54 │
 │ olcc_or                │ open    │       4 │       0 │
 │ rev_pa                 │ open    │     114 │       0 │
 │ rev_pa_tobacco         │ open    │       2 │       0 │
@@ -103,7 +105,7 @@
 │ tax_ny_tobacco         │ open    │    1322 │     318 │
 │ tdlr_tx                │ open    │     372 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  41 rows                                    4 columns
+  51 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -153,7 +155,7 @@
 │ wikidata_p576  │ closed  │ number  │     6 │      6 │
 │ wikidata_p576  │ closed  │ self    │     1 │      1 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  69 rows (40 shown)                        5 columns
+  73 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -177,13 +179,14 @@
 │ open    │ nces_schools   │    388 │
 │ open    │ ncua_branches  │     21 │
 │ open    │ nppes_orgs     │    366 │
-│ open    │ osm_check_date │   1270 │
+│ open    │ ocm_ny         │     54 │
+│ open    │ osm_check_date │   1266 │
 │ open    │ sla_ny         │   6851 │
 │ open    │ snap_current   │    475 │
 │ open    │ snap_history   │     42 │
 │ open    │ tax_ny_tobacco │    147 │
 └─────────┴────────────────┴────────┘
-  23 rows                 3 columns
+  24 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -202,11 +205,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    807 │
-│ (none)             │ open    │   2262 │
-│ (none)             │ unknown │  67484 │
+│ (none)             │ open    │   2276 │
+│ (none)             │ unknown │  67470 │
 │ open               │ closed  │   5219 │
-│ open               │ open    │  18325 │
-│ open               │ unknown │ 152062 │
+│ open               │ open    │  18348 │
+│ open               │ unknown │ 152039 │
 │ permanently_closed │ closed  │     43 │
 │ permanently_closed │ open    │    138 │
 │ permanently_closed │ unknown │  17415 │
