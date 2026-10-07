@@ -37,7 +37,8 @@ The categories where a register can make coverage complete.
   with a status.
 - **1.2 Missing license flag** for each of those states whose list has
   positions (today: DC and New York).
-- **1.3 Restaurant inspections.** Statewide feeds first (Florida, New York),
+- **1.3 Restaurant inspections.** Done: Florida (Jacksonville restaurants
+  went to 31% with a status). Next New York State,
   then large cities and counties (New York City, Chicago, which has an
   explicit "out of business" result, Los Angeles County, King County).
   Target: independent restaurants from 18% to 40% in covered areas.

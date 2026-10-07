@@ -12,7 +12,7 @@ twenty public sources and merges them into one row per place:
 - **The open map datasets**: Overture Maps, OpenStreetMap, and AllThePlaces,
   which reads every chain's own store locator.
 - **Regulators and registers**: bank and credit union branch lists and
-  closings, liquor license boards, the food stamp retailer list, the federal
+  closings, liquor license boards, restaurant inspections, the food stamp retailer list, the federal
   fuel tank registry, school, hospital and health provider registers, and
   nonprofit tax filings.
 - **Signs of closure**: Foursquare closing dates, closures tagged by
@@ -133,7 +133,8 @@ regions.tsv         region boxes and which OSM extracts cover them
 base/               importers: overture.sh, atp.sh + atp.py, osm.sh + osm.jq
 signals/            closing signals joined by id: fsq_closed.sh, wikidata_p576.py
 adapters/           one file per register: fdic, ncua, snap, epa_ust, cms, nces, nppes,
-                    irs, abc_ca, abca_dc, sla_ny, tabc_tx; sirene.sh for France
+                    irs, abc_ca, abca_dc, sla_ny, tabc_tx, dbpr_fl_food; sirene.sh for
+                    France
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests
 reports/            numbers from the last build of each region

@@ -233,6 +233,7 @@ rows are the same place.
 | New York alcohol licenses | number | 40 of 40 (New York City) | |
 | | spot | 20 of 20 | mostly Queens addresses, where "30-08" and "3008" are the same door |
 | | near | 11 of 12 | the miss is a hotel landing on a place named only "New York" |
+| Florida restaurant inspections | number | 30 of 30 (Jacksonville) | geocoded; finds a place for 54% of inspected restaurants |
 | OSM lifecycle features to places | all | 40 of 40 (DC), 36 of 36 (Sacramento) | |
 
 ## 7. Status rules
@@ -369,6 +370,7 @@ unlicensed bars another source could check were open 20 times and closed
 | nces_schools | open | June 30 of the school year the file covers | matcher |
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
+| dbpr_fl_food | open | day of the establishment's newest inspection | matcher, positions from the Census geocoder |
 | abc_ca | open | the export's Updated date | matcher, positions from the Census geocoder |
 | tabc_tx | open | day the dataset was last updated | matcher, positions from the Census geocoder |
 | sla_ny | open | day the dataset was last updated | matcher |

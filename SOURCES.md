@@ -112,6 +112,14 @@ adapter is merged. If a source states no license, the entry says so.
   Census geocoder. The file gives no date for surrenders or revocations, so
   there is no closed evidence from it.
 
+### Florida DBPR, food service inspections
+- License: none stated on the download page. Florida public record. Rows it
+  touches are marked `none-stated`.
+- Fetched from: `https://www2.myfloridalicense.com/sto/file_download/extracts/<1..7>fdinspi.csv`,
+  linked on https://www2.myfloridalicense.com/hotels-restaurants/public-records/
+- Used for: restaurants inspected in the current fiscal year (open, dated
+  by the inspection), with positions from the Census geocoder.
+
 ### Texas Alcoholic Beverage Commission, license information
 - License: none stated by the dataset or by data.texas.gov. Texas public
   record. Rows it touches are marked `none-stated`.
@@ -166,7 +174,10 @@ adapter is merged. If a source states no license, the entry says so.
 Survey of what comes next, in order. None of these has been fetched or
 checked by this project.
 
-- More state alcohol license lists. Florida, Colorado, Missouri and Oregon
-  have not been fetched.
+- More state alcohol license lists. Florida's is found
+  (`.../extracts/bd400lic.csv`, 42 MB, status and dates, no positions) but
+  has no adapter yet. Colorado, Missouri and Oregon have not been fetched.
+- Florida also publishes new food licenses and changes of owner by fiscal
+  year, and lodging inspections.
 - Health inspections and city business licenses: many city portals state no
   license. Each one gets an entry here saying what it states before it is used.
