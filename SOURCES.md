@@ -331,6 +331,56 @@ None states a license; rows are marked `none-stated`.
   are years old. In most other states restaurants are licensed by counties
   and the state has a search form only.
 
+### California Department of Consumer Affairs, licensee files
+- License: none stated ("licensee data suitable for disclosure"); rows are
+  marked `none-stated`.
+- Fetched from: the shared folder linked from
+  `https://www.dca.ca.gov/consumers/public_info/index.shtml`
+  (`https://dca.box.com/s/oss6hf8jys2bmgxqd2gdz7w4oepm2il9`), folders for
+  Barbering and Cosmetology, Automotive Repair and Pharmacy.
+- Used for: establishment and barber shop licenses, automotive repair
+  dealers, smog and safety inspection stations, retail pharmacies (open).
+- Privacy: the files are mostly individual licensees, which are not read.
+  Only rows marked as organizations are read, and nothing creates a place.
+- Not used: licenses marked delinquent (12,600 salons, 8,200 repair
+  dealers). An ended registration has not passed as a closure signal
+  elsewhere (SPEC.md section 7), and this one has not been tested.
+
+### Virginia DPOR, Texas and Ohio boards of pharmacy
+None states a license; rows are marked `none-stated`.
+- Virginia DPOR current license lists for shop occupations:
+  `https://www.dpor.virginia.gov/RegulantLists`. The individual name and
+  email columns are not read.
+- Texas State Board of Pharmacy: `https://www.pharmacy.texas.gov/downloads/phydsk.csv`
+- Ohio Board of Pharmacy: `https://www.pharmacy.ohio.gov/licensing/rosterrequests.aspx?listid=7`
+- In both pharmacy files the pharmacist and responsible person columns
+  are not read.
+
+### HRSA health center sites
+- License: US government work, public domain.
+- Fetched from: `https://data.hrsa.gov/DataDownload/DD_Files/Health_Center_Service_Delivery_and_LookAlike_Sites.csv`
+- Used for: active permanent sites (open), with positions.
+
+### State child care licensing layers
+California's is CC BY (California Department of Social Services); the
+others state no license and are marked `none-stated`. Only centers are
+read, never family child care homes, and never the contact, owner,
+director, phone or email columns.
+- Arizona: `https://services1.arcgis.com/mpVYz37anSdrK4d8/arcgis/rest/services/AZLicensedFacilities/FeatureServer/17` (last run February 2025; rows carry that date)
+- California: `https://services.arcgis.com/XLPEppdz2H9dOiqp/arcgis/rest/services/CDSS_CCL_Facilities/FeatureServer/0`
+- Delaware: `https://enterprise.firstmap.delaware.gov/arcgis/rest/services/Society/DE_ChildCareCenters/FeatureServer/0`
+- Massachusetts: `https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Licensed_Child_Care_Programs/FeatureServer/0`
+- Michigan: `https://utility.arcgis.com/usrsvcs/servers/a79c3b0caedf412599085941e2af91d4/rest/services/CSS/CSS_LARA/MapServer/5`
+- Minnesota: `https://enterprise.gisdata.mn.gov/aghost/rest/services/us_mn_state_mngeo/econ_child_care/FeatureServer/0`
+- New Jersey: `https://mapsdep.nj.gov/arcgis/rest/services/Features/Structures/MapServer/4`
+- Tennessee: `https://services1.arcgis.com/YuVBSS7Y1of2Qud1/arcgis/rest/services/Active_ChildCare_Locations/FeatureServer/0`
+- Vermont: `https://services.arcgis.com/YKJ5JtnaPQ2jDbX8/arcgis/rest/services/Vermont%20Child%20Care%20Provider%20Data/FeatureServer/0`
+- Wisconsin: `https://dhsgis.wi.gov/server/rest/services/DHS_DCF/Child_Care/MapServer/0`
+- Not used: Maryland (a May 2024 snapshot), Kentucky (the layer stops at
+  exactly 2,001 rows).
+- Found and not built yet: CMS's list of clinical laboratories (300,000
+  rows, no positions).
+
 ### City layers: Las Vegas, Omaha, Minneapolis, Baltimore, Columbus
 None states a license; rows are marked `none-stated`.
 - Las Vegas active business licenses:

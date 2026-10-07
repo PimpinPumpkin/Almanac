@@ -293,6 +293,14 @@ rows are the same place.
 | Michigan food service licenses | number | 30 of 30 (Detroit) | |
 | South Carolina food inspections | number | 29 of 30 (Charleston) | the miss has the same number on the cross street |
 | Minnesota retail food handlers | number | 30 of 30 (Minneapolis) | geocoded |
+| California salons and barber shops | number | 30 of 30 (Sacramento) | geocoded |
+| California auto repair and smog stations | number | 30 of 30 (Sacramento) | geocoded |
+| California retail pharmacies | number | 30 of 30 (Sacramento) | geocoded |
+| Virginia salons, barber shops and parlors | number | 29 of 30 (DC box, Virginia side) | the miss is a salon inside a retirement home taking the home; geocoded |
+| Texas community pharmacies | number | 30 of 30 (Houston) | geocoded |
+| Ohio pharmacies | number | 30 of 30 (Columbus) | geocoded |
+| HRSA health center sites | number | 25 of 25 (DC box) |  |
+| Child care centers, ten states | number | 20 of 20 in each of AZ, CA, DE, MA, MI, MN, NJ, TN, VT, WI | a program inside a school matches the school |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -509,6 +517,11 @@ signal at all.
 | mdard_mi_food | open | day the layer was read, active fixed establishments | matcher |
 | dph_sc_food | open | day of the permit's newest inspection, active permits | matcher |
 | mda_mn_food | open | day the list was read, unexpired licenses | matcher, positions from the Census geocoder |
+| dca_ca_salon, dca_ca_auto, dca_ca_pharmacy | open | day the files were read, licenses in force held by organizations | matcher, positions from the Census geocoder |
+| dpor_va | open | day the lists were read, unexpired shop licenses | matcher, positions from the Census geocoder |
+| bop_tx, bop_oh | open | day the file was read, active retail pharmacies | matcher, positions from the Census geocoder |
+| hrsa_health_centers | open | day the file was made, active permanent sites | matcher |
+| childcare_az, _ca, _de, _ma, _mi, _mn, _nj, _tn, _vt, _wi | open | day the layer was last edited, or read; centers only | matcher |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |

@@ -59,8 +59,11 @@ The categories where a register can make coverage complete.
 Salons, repair shops, small retail. 84% of all rows, 8% with a status.
 
 - **2.1 Auto repair registrations.** Done: New York (repair shops,
-  inspection stations, dealers). Next California, Florida, Michigan.
-- **2.2 Cosmetology and barber shop licenses.** Done: New York and Texas
+  inspection stations, dealers), California (repair dealers, smog and
+  safety stations), Connecticut, Washington dealers. No other state file
+  was found in the search of 2026-10-07.
+- **2.2 Cosmetology and barber shop licenses.** Done: California, Florida,
+  New York, Texas and Virginia
   (Houston nail salons went from 7% with a status to 52%). Next: state by
   state.
 - **2.3 Sales tax permit lists.** Done: Texas, the biggest long-tail source
