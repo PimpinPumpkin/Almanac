@@ -23,7 +23,7 @@ FILES="$(curl -fsS -A "$UA" "$BUCKET/?list-type=2&prefix=$PREFIX/conflated-parqu
 
 duck <<SQL
 copy (
-  select overture_id, osm_type, osm_id, conf_mean,
+  select overture_id, osm_type, osm_id, conf_mean, osm_name, overture_name,
          shadow_event_type as event, shadow_event_timestamp::date as event_date
   from read_parquet([$FILES])
   where bbox.xmin >= $W and bbox.xmax <= $E and bbox.ymin >= $S and bbox.ymax <= $N

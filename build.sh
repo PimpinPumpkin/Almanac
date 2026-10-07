@@ -35,8 +35,8 @@ fi
 if [ "$COUNTRY" = US ] && [ ! -s "$OUT/openpois.parquet" ]; then
   step openpois; signals/openpois.sh "$REGION" >/dev/null || rm -f "$OUT/openpois.parquet"
 fi
-OPENPOIS_SQL="select null::varchar as overture_id, null::varchar as osm_type, null::bigint as osm_id, null::double as conf_mean, null::varchar as event, null::date as event_date where false"
-[ -s "$OUT/openpois.parquet" ] && OPENPOIS_SQL="select overture_id, osm_type, osm_id, conf_mean, event, event_date from '$OUT/openpois.parquet'"
+OPENPOIS_SQL="select null::varchar as overture_id, null::varchar as osm_type, null::bigint as osm_id, null::double as conf_mean, null::varchar as osm_name, null::varchar as overture_name, null::varchar as event, null::date as event_date where false"
+[ -s "$OUT/openpois.parquet" ] && OPENPOIS_SQL="select overture_id, osm_type, osm_id, conf_mean, osm_name, overture_name, event, event_date from '$OUT/openpois.parquet'"
 
 step wikidata
 duckdb -noheader -csv -c "select distinct wikidata from '$OUT/osm.parquet' where wikidata is not null" \

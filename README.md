@@ -1,11 +1,45 @@
 # Vela Almanac
 
-An open, continuously updated table of places in the United States, with dated evidence of whether
-each one is still open. Pulls from business license databases, FDIC records, etc.
+An open table of every place in the United States a person can walk into,
+rebuilt every month, that says for each one whether it is open, closed, or
+has gone quiet, and shows the dated record behind that answer.
 
-Three open datasets already list most US places. Vela Almanac merges them and adds
-the part none of them has: for each place, the records that say it was open
-or closed on a specific day, and where each record came from.
+Maps go stale because nobody tells them when a shop closes. Regulators,
+licensing boards and the chains themselves do know, and they publish it.
+Vela Almanac collects what they publish. Each month it pulls from about
+twenty public sources and merges them into one row per place:
+
+- **The open map datasets**: Overture Maps, OpenStreetMap, and AllThePlaces,
+  which reads every chain's own store locator.
+- **Regulators and registers**: bank and credit union branch lists and
+  closings, liquor license boards, the food stamp retailer list, the federal
+  fuel tank registry, school, hospital and health provider registers, and
+  nonprofit tax filings.
+- **Signs of closure**: Foursquare closing dates, closures tagged by
+  OpenStreetMap mappers, and places deleted or renamed in OpenStreetMap's
+  edit history.
+
+What comes out of the build of 2026-10-07, for all 50 states and DC:
+
+| | |
+| --- | ---: |
+| Places | 19.4 million |
+| Confirmed open by a dated record from the last two years | 1.6 million |
+| Marked closed, with the date and the source | 129,000 |
+| Added from a register because no map dataset had them | 212,000 |
+
+Every place also gets an `open_score` from 0 to 1, so a reader can dim or
+drop the ones nobody has vouched for in years.
+
+The last row is the part a map cannot do on its own. A new bank branch, a
+newly licensed bar or a store newly authorized for food stamps appears in
+its register when the regulator lists it, which can be before anyone has
+added it to a map.
+
+Nothing is guessed. A place is only called closed when a source says so
+with a date and nothing newer says otherwise, and every rule in the build
+was checked by reading its matches. The rules that failed that check are
+written down with their numbers in [SPEC.md](SPEC.md).
 
 ## Coverage by state
 
@@ -63,11 +97,11 @@ as [releases](https://github.com/PimpinPumpkin/vela-almanac/releases).
 - **Evidence layer**: public records that say a specific place was open or
   closed on a specific date. Today: Foursquare closing dates, OSM lifecycle
   tags and survey dates, OSM edit history (through OpenPOIs), Wikidata
-  dissolution dates, FDIC bank branches and
-  branch closings, USDA SNAP authorized stores, CMS hospitals, NCES public
-  schools, NPPES health care organizations, IRS exempt organizations, alcohol
-  licenses in California and the District of Columbia, and presence in a
-  chain's own store locator.
+  dissolution dates, FDIC bank branches and branch closings, NCUA credit
+  union offices, USDA SNAP authorized stores, the EPA fuel tank registry,
+  CMS hospitals, NCES public schools, NPPES health care organizations, IRS
+  exempt organizations, alcohol licenses in California and the District of
+  Columbia, and presence in a chain's own store locator.
 - **New places from registers**: a bank branch, SNAP store or licensed
   premises that none of the three base datasets lists is added as a place.
 - **Output**: one row per place with a stable id, merged attributes, every
@@ -83,7 +117,8 @@ section 10). It is not in the monthly release yet.
 
 - Not a new survey. Every fact comes from a source listed in `SOURCES.md`.
 - Not complete on status. Most places have no dated evidence and are
-  `unknown`. Nationally 8.9% of places get a status. `unknown` means nobody has said, not "probably open".
+  `unknown`. Nationally 8.9% of places get a status. `unknown` means nobody
+  has said, not "probably open".
 - Maintained by the Vela Maps project (github.com/PimpinPumpkin/Vela).
   Anyone can use it, and nothing in it depends on Vela: readers fetch the
   published files.

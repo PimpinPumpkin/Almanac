@@ -16,7 +16,8 @@ fetch() {
   local url="$1" out="$2"
   if [ -s "$out" ]; then return 0; fi
   mkdir -p "$(dirname "$out")"
-  curl -fL --retry 3 --retry-delay 5 -sS -A "$UA" -o "$out.part" "$url"
+  # download servers answer 502 or 504 now and then when many jobs ask at once
+  curl -fL --retry 8 --retry-delay 30 --retry-all-errors -sS -A "$UA" -o "$out.part" "$url"
   mv "$out.part" "$out"
 }
 

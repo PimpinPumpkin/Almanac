@@ -129,7 +129,9 @@ create or replace table core_evidence as
   select k.place_id, 'fsq_closed' as source, f.fsq_place_id as source_id, 'closed' as state,
          f.date_closed as date, 'id' as rule, 0.0 as dist, f.name as ev_name, f.address as ev_address
   from ovt_all o join ovt_canon k on k.id = o.id join fsq_closed f on f.fsq_place_id = o.fsq_id
-  where f.date_closed is not null
+  -- An id outlives the business: Overture can keep the row and rename it for
+  -- the next tenant. The closure applies only while the names still agree.
+  where f.date_closed is not null and same_name(f.name, o.name)
   union all
   -- present in the chain's own store locator on the day it was collected
   select m.place_id, 'atp', a.id, 'open', a.collected, m.rule, m.dist, a.name, a.address

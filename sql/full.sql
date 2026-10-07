@@ -63,7 +63,12 @@ create or replace table osm_evidence as
   -- the osm_lifecycle rows above.)
   select k.place_id, 'osm_history', h.overture_id, 'closed', h.event_date, 'id', 0.0, h.event, null
   from openpois h join ovt_canon k on k.id = 'ovt:' || h.overture_id
+  join ovt_all o on o.id = 'ovt:' || h.overture_id
   where h.event in ('hard_delete', 'primary_tag_deleted', 'substantial_rename') and h.event_date is not null
+    -- the place must still carry the name OpenPOIs matched the event to,
+    -- and must not already be the business the OSM feature was renamed to
+    and same_name(h.overture_name, o.name)
+    and not (h.event = 'substantial_rename' and h.osm_name is not null and same_name(h.osm_name, o.name))
   union all
   -- France: an OSM feature tagged with its SIRET takes that establishment's
   -- record directly, no matching needed

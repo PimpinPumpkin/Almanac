@@ -112,3 +112,8 @@ create or replace macro needs_alcohol_license(category) as
   category in ('bar', 'pub', 'sports_bar', 'cocktail_bar', 'wine_bar', 'dive_bar', 'lounge', 'beer_bar',
                'irish_pub', 'gay_bar', 'night_club', 'dance_club', 'hookah_bar', 'gastropub', 'brewery',
                'amenity=bar', 'amenity=pub', 'amenity=nightclub');
+
+-- Do two names pass the matcher's name test? Used to check that a closure
+-- joined by id still belongs to the business the place is named for today.
+create or replace macro same_name(a, b) as
+  name_sim(norm_name(a), norm_name(b)) in (1.0, 0.9) or name_sim(norm_name(a), norm_name(b)) >= 0.95;

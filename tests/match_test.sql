@@ -73,3 +73,8 @@ select case when (select count(*) from ac c
                   left join (select * from match_address('aa', 'ab') where a_id = b_id) m on m.a_id = c.n
                   where c.want <> (m.rule is not null)) = 0
             then 'ok 5 address cases' else error('address test failed') end as result;
+
+-- A closure joined by id only applies while the names still agree.
+select case when same_name('Sunoco', 'SUNOCO #1234') and same_name('Bar Pilar', 'Bar Pilar')
+                 and not same_name('Sunoco', 'Shell') and not same_name('Mirabelle', 'Le Diplomate')
+            then 'ok 4 name check cases' else error('name check test failed') end as result;
