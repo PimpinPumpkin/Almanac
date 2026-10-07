@@ -4,9 +4,9 @@ What gets built next, in order, and what counts as done. The aim is the
 coverage and freshness people expect from a commercial map, from open
 sources only, United States first.
 
-Where things stand (build of 2026-10-07): 19.4 million places, 9.4% with a
-dated status. Banks 67%, chain restaurants 62%, gas stations 48%, grocery
-45%, independent restaurants 22%, bars 14%, everything else 6%.
+Where things stand (build of 2026-10-07): 19.5 million places, 11.2% with a
+dated status. Banks 67%, chain restaurants 64%, gas stations 48%, grocery
+47%, independent restaurants 28%, bars 20%, everything else 8%.
 
 ## How every item is done
 
@@ -53,7 +53,7 @@ The categories where a register can make coverage complete.
 
 ## 2. United States: the long tail
 
-Salons, repair shops, small retail. 84% of all rows, 6% with a status.
+Salons, repair shops, small retail. 84% of all rows, 8% with a status.
 
 - **2.1 Auto repair registrations.** Done: New York (repair shops,
   inspection stations, dealers). Next California, Florida, Michigan.
@@ -157,7 +157,8 @@ Asked for by the owner on 2026-10-07.
   December 2024 (an October 2024 crawl), with 42 million LocalBusiness
   records from 1.5 million sites in 23 GB. So hours from it would be dated
   2024, and its terms are Common Crawl's, which is not on the list of
-  licenses that may be added without asking. Waits for the owner.
+  licenses that may be added without asking. The owner said yes on
+  2026-10-07, so this is next.
 - **8.3 A crawler of our own** for the websites Overture lists, reading
   only schema.org markup, obeying robots.txt, a few pages per site per
   month. Only if 8.2 leaves a large gap, because it is the first part of
@@ -182,7 +183,8 @@ Set by the owner on 2026-10-06.
   that state's largest city.
 - **Keys.** None for now. Sources that need a key wait.
 - **Licenses.** Public domain, CC0, ODbL, CC BY and open government
-  licences (Licence Ouverte, OGL) may be added without asking, credited in
+  licences (Licence Ouverte, OGL) and Common Crawl's terms of use may be
+  added without asking, credited in
   NOTICE. US state and local public records that state no license may also
   be added, marked `none-stated` on every row they touch. Anything else
   with no stated license is asked about first.
@@ -198,7 +200,6 @@ Everything above can proceed without asking, except these.
 - **Keys and accounts**, if that decision is revisited, and where a key
   would be stored.
 - **License calls** outside the list above.
-  Open now: Common Crawl's terms of use, for hours from website markup (8.2).
 - **Anything that costs money or needs a server** beyond GitHub Actions and
   release storage.
 - **Speaking for the project**: contacting another project or a data owner.

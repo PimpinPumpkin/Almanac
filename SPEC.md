@@ -52,7 +52,7 @@ Both layers have the same columns.
 | missing_license | boolean | true for a bar in a state with a complete license list when no active license matched it. Null where the question does not apply. Section 7. |
 | overture_status | string | Overture's own operating_status, carried as is. It has no date and does not feed status. |
 | sources | list of {source, id} | every source row this place was built from |
-| licenses | list of string | licenses of everything that touched the row |
+| licenses | list of string | licenses of the inputs that touched the row, for credit. It is not the row's own license: every row is part of this database and is under the ODbL, whatever its inputs were |
 | evidence | list of {source, source_id, state, date, rule, dist_m} | every evidence record, newest first |
 | lat, lng | double | plain columns so row group statistics work |
 | geometry | point | GeoParquet, WGS 84 |
@@ -542,6 +542,21 @@ filled from OSM, is OSM-derived too.
   with OSM in it never can.
 - Every row carries `sources` and `licenses`, the licenses of the inputs
   that touched it.
+
+What that asks of anyone who uses the files, closed source or not:
+
+- show the credit line in NOTICE wherever the data, or anything made from
+  it, is shown to the public;
+- if they change the data or merge it into another database and let the
+  public use the result, publish that database under the ODbL too;
+- keep the notices with any copy.
+
+An app does not have to open its own code to read the files, but it cannot
+drop the credit, and it cannot keep an improved copy of the data to itself.
+Public domain inputs do not weaken this: the license covers the merged
+database, and nobody gets the matching, the statuses or the merged rows
+except through it. One limit to be plain about: a single fact, such as one
+shop's address, is not something any license can own.
 
 Open point: whether the Wikidata P576 signal belongs in the core layer.
 Wikidata is CC0, but the link from place to item comes from an OSM tag, so
