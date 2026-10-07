@@ -23,7 +23,7 @@
 │  core  │  full  │ osm_only │ atp_only │ from_registers │
 │ int64  │ int64  │  int64   │  int64   │     int64      │
 ├────────┼────────┼──────────┼──────────┼────────────────┤
-│ 305114 │ 329492 │    24378 │     1965 │           2917 │
+│ 305113 │ 329491 │    24378 │     1965 │           2916 │
 └────────┴────────┴──────────┴──────────┴────────────────┘
 == places minted from a register
 ┌────────────────┬────────┐
@@ -31,76 +31,76 @@
 │    varchar     │ int64  │
 ├────────────────┼────────┤
 │ fdic_locations │    934 │
-│ snap_current   │   1983 │
+│ snap_current   │   1982 │
 └────────────────┴────────┘
 == status, full layer
 ┌─────────┬────────┐
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   2403 │
-│ open    │  28019 │
-│ unknown │ 299070 │
+│ closed  │   2396 │
+│ open    │  31002 │
+│ unknown │ 296093 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   1757 │
-│ open    │  25352 │
-│ unknown │ 278005 │
+│ closed  │   1755 │
+│ open    │  28440 │
+│ unknown │ 274918 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
 │         source         │  state  │ records │ matched │
 │        varchar         │ varchar │  int64  │  int64  │
 ├────────────────────────┼─────────┼─────────┼─────────┤
+│ abc_ar                 │ open    │       8 │       0 │
 │ abc_ca                 │ open    │      95 │       0 │
+│ abc_nj                 │ open    │       1 │       0 │
+│ able_ok                │ open    │      18 │       0 │
 │ abt_fl                 │ open    │      79 │       0 │
 │ agm_ny                 │ open    │       1 │       0 │
 │ atc_mo                 │ open    │      37 │       0 │
+│ bablo_me               │ open    │       9 │       0 │
 │ bacp_chicago           │ open    │      12 │       0 │
 │ bacp_chicago_cancelled │ closed  │       2 │       0 │
 │ bbl_dc                 │ open    │      50 │       0 │
 │ biz_de                 │ open    │     189 │       1 │
+│ bop_oh                 │ open    │       4 │       0 │
+│ bop_tx                 │ open    │      10 │       0 │
 │ bot_sac                │ open    │      15 │       0 │
 │ cdph_chicago           │ open    │       7 │       0 │
 │ childcare_co           │ open    │       6 │       0 │
+│ childcare_mi           │ open    │       6 │       0 │
+│ childcare_mn           │ open    │    2394 │    1125 │
 │ childcare_wa           │ open    │       2 │       0 │
-│ cms_hospitals          │ open    │     243 │      90 │
-│ cpa_tx                 │ open    │    1258 │       0 │
-│ cpa_tx_tobacco         │ open    │      76 │       0 │
-│ dbpr_fl_food           │ open    │      66 │       0 │
-│ dbpr_fl_lodging        │ open    │      15 │       0 │
-│ dbpr_fl_restaurant     │ open    │     118 │       0 │
-│ dbpr_fl_salon          │ open    │      34 │       0 │
-│ dbpr_fl_vet            │ open    │       5 │       0 │
-│      ·                 │  ·      │       · │       · │
-│      ·                 │  ·      │       · │       · │
-│      ·                 │  ·      │       · │       · │
-│ elicense_ct            │ open    │       9 │       0 │
-│ emd_sac                │ open    │       1 │       0 │
-│ epa_ust_open           │ open    │    5402 │     883 │
-│ fdic_history           │ closed  │    1375 │     229 │
-│ fdic_locations         │ open    │    2288 │    2134 │
-│ irs_eo                 │ open    │   62474 │    4456 │
+│   ·                    │  ·      │       · │       · │
+│   ·                    │  ·      │       · │       · │
+│   ·                    │  ·      │       · │       · │
+│ lcb_wa                 │ open    │       8 │       0 │
+│ lcc_ne                 │ open    │       4 │       0 │
 │ led_co                 │ open    │      29 │       0 │
 │ lou_food               │ open    │       2 │       0 │
+│ mda_mn_food            │ open    │    6032 │    3216 │
+│ mdard_mi_food          │ open    │      85 │       0 │
 │ moco_md                │ open    │       5 │       0 │
+│ mpls_food              │ open    │    2860 │    1509 │
+│ mpls_liquor            │ open    │     516 │     428 │
 │ nces_schools           │ open    │    3770 │    1284 │
-│ ncua_branches          │ open    │    1005 │     313 │
+│ ncua_branches          │ open    │     751 │     308 │
 │ nppes_orgs             │ open    │   76448 │    7960 │
 │ olcc_or                │ open    │      13 │       0 │
 │ rev_pa                 │ open    │      52 │       0 │
 │ sla_ny                 │ open    │      13 │       0 │
-│ snap_current           │ open    │    5117 │    4584 │
+│ snap_current           │ open    │    5101 │    4572 │
 │ snap_history           │ open    │    5144 │    2602 │
 │ tabc_tx                │ open    │     174 │       0 │
 │ tax_ny_tobacco         │ open    │       5 │       0 │
 │ tdlr_tx                │ open    │     165 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  45 rows (40 shown)                         4 columns
+  69 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -111,7 +111,13 @@
 │ atp            │ open    │ self    │  1964 │   1964 │
 │ atp            │ open    │ spot    │    42 │     35 │
 │ biz_de         │ open    │ address │     1 │      1 │
-│ cms_hospitals  │ open    │ address │   114 │    114 │
+│ childcare_mn   │ open    │ near    │    20 │     19 │
+│ childcare_mn   │ open    │ number  │  1115 │   1112 │
+│ childcare_mn   │ open    │ spot    │     5 │      5 │
+│ childcare_wi   │ open    │ number  │    17 │     17 │
+│ cms_hospitals  │ open    │ address │    19 │     19 │
+│ cms_hospitals  │ open    │ near    │     1 │      1 │
+│ cms_hospitals  │ open    │ number  │    99 │     99 │
 │ epa_ust_open   │ open    │ near    │    33 │     31 │
 │ epa_ust_open   │ open    │ number  │   873 │    868 │
 │ epa_ust_open   │ open    │ spot    │     3 │      3 │
@@ -120,14 +126,11 @@
 │ fdic_history   │ closed  │ spot    │     3 │      3 │
 │ fdic_locations │ open    │ near    │    22 │     22 │
 │ fdic_locations │ open    │ number  │  1281 │   1275 │
-│ fdic_locations │ open    │ self    │   934 │    934 │
-│ fdic_locations │ open    │ spot    │     9 │      9 │
-│ fsq_closed     │ closed  │ id      │  1577 │   1577 │
-│ irs_eo         │ open    │ address │  4619 │   4322 │
-│ nces_schools   │ open    │ near    │    62 │     61 │
-│ nces_schools   │ open    │ number  │  1282 │   1222 │
-│ nces_schools   │ open    │ spot    │     5 │      5 │
-│ ncua_branches  │ open    │ address │   333 │    330 │
+│       ·        │  ·      │   ·     │    ·  │     ·  │
+│       ·        │  ·      │   ·     │    ·  │     ·  │
+│       ·        │  ·      │   ·     │    ·  │     ·  │
+│ ncua_branches  │ open    │ number  │   277 │    275 │
+│ ncua_branches  │ open    │ spot    │     1 │      1 │
 │ nppes_orgs     │ open    │ address │  8914 │   7319 │
 │ osm_check_date │ open    │ near    │   666 │    655 │
 │ osm_check_date │ open    │ number  │  2156 │   2132 │
@@ -139,39 +142,45 @@
 │ osm_lifecycle  │ closed  │ self    │    85 │     85 │
 │ osm_lifecycle  │ closed  │ spot    │     1 │      1 │
 │ snap_current   │ open    │ near    │    47 │     47 │
-│ snap_current   │ open    │ number  │  2745 │   2742 │
-│ snap_current   │ open    │ self    │  1983 │   1983 │
+│ snap_current   │ open    │ number  │  2735 │   2733 │
+│ snap_current   │ open    │ self    │  1982 │   1982 │
 │ snap_current   │ open    │ spot    │    15 │     15 │
 │ snap_history   │ open    │ near    │    49 │     49 │
 │ snap_history   │ open    │ number  │  2742 │   2742 │
 │ snap_history   │ open    │ spot    │    17 │     17 │
 │ wikidata_p576  │ closed  │ self    │     2 │      2 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  40 rows                                   5 columns
+  60 rows (40 shown)                        5 columns
 == what decided the status
-┌─────────┬────────────────┬────────┐
-│ status  │ status_source  │ places │
-│ varchar │    varchar     │ int64  │
-├─────────┼────────────────┼────────┤
-│ closed  │ fdic_history   │    193 │
-│ closed  │ fsq_closed     │   1535 │
-│ closed  │ osm_history    │    444 │
-│ closed  │ osm_lifecycle  │    229 │
-│ closed  │ wikidata_p576  │      2 │
-│ open    │ atp            │  12709 │
-│ open    │ biz_de         │      1 │
-│ open    │ cms_hospitals  │    107 │
-│ open    │ epa_ust_open   │    512 │
-│ open    │ fdic_locations │   2235 │
-│ open    │ irs_eo         │   3433 │
-│ open    │ nces_schools   │   1161 │
-│ open    │ ncua_branches  │    262 │
-│ open    │ nppes_orgs     │   1324 │
-│ open    │ osm_check_date │   2440 │
-│ open    │ snap_current   │   3773 │
-│ open    │ snap_history   │     62 │
-└─────────┴────────────────┴────────┘
-  17 rows                 3 columns
+┌─────────┬─────────────────────┬────────┐
+│ status  │    status_source    │ places │
+│ varchar │       varchar       │ int64  │
+├─────────┼─────────────────────┼────────┤
+│ closed  │ fdic_history        │    193 │
+│ closed  │ fsq_closed          │   1533 │
+│ closed  │ osm_history         │    439 │
+│ closed  │ osm_lifecycle       │    229 │
+│ closed  │ wikidata_p576       │      2 │
+│ open    │ atp                 │  11329 │
+│ open    │ biz_de              │      1 │
+│ open    │ childcare_mn        │   1127 │
+│ open    │ childcare_wi        │     12 │
+│ open    │ cms_hospitals       │    112 │
+│ open    │ epa_ust_open        │    437 │
+│ open    │ fdic_locations      │   2230 │
+│ open    │ hrsa_health_centers │     29 │
+│ open    │ irs_eo              │   3280 │
+│ open    │ mda_mn_food         │   2490 │
+│ open    │ mpls_food           │    630 │
+│ open    │ mpls_liquor         │    388 │
+│ open    │ nces_schools        │   1107 │
+│ open    │ ncua_branches       │    252 │
+│ open    │ nppes_orgs          │   1276 │
+│ open    │ osm_check_date      │   2226 │
+│ open    │ snap_current        │   4031 │
+│ open    │ snap_history        │     45 │
+└─────────┴─────────────────────┴────────┘
+  23 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -179,8 +188,8 @@
 │    varchar    │ int64  │      int64      │      int64      │
 ├───────────────┼────────┼─────────────────┼─────────────────┤
 │ fdic_history  │    229 │              17 │               5 │
-│ fsq_closed    │   1577 │               4 │              45 │
-│ osm_history   │    465 │              12 │              37 │
+│ fsq_closed    │   1577 │               6 │              45 │
+│ osm_history   │    465 │              17 │              37 │
 │ osm_lifecycle │    233 │               2 │              11 │
 │ wikidata_p576 │      2 │               0 │               0 │
 └───────────────┴────────┴─────────────────┴─────────────────┘
@@ -189,13 +198,13 @@
 │  overture_status   │ status  │ places │
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
-│ (none)             │ closed  │    423 │
-│ (none)             │ open    │   4394 │
-│ (none)             │ unknown │  76107 │
-│ open               │ closed  │   1855 │
-│ open               │ open    │  17549 │
-│ open               │ unknown │ 191881 │
+│ (none)             │ closed  │    421 │
+│ (none)             │ open    │   4689 │
+│ (none)             │ unknown │  75814 │
+│ open               │ closed  │   1850 │
+│ open               │ open    │  20051 │
+│ open               │ unknown │ 189384 │
 │ permanently_closed │ closed  │     25 │
-│ permanently_closed │ open    │     66 │
-│ permanently_closed │ unknown │   7932 │
+│ permanently_closed │ open    │     73 │
+│ permanently_closed │ unknown │   7925 │
 └────────────────────┴─────────┴────────┘
