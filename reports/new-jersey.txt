@@ -3,7 +3,7 @@
 │ overture │ alltheplaces │  osm  │ osm_closed_features │
 │  int64   │    int64     │ int64 │        int64        │
 ├──────────┼──────────────┼───────┼─────────────────────┤
-│   462524 │        19021 │ 61182 │                 262 │
+│   462524 │        19021 │ 61188 │                 264 │
 └──────────┴──────────────┴───────┴─────────────────────┘
 == merged (rows that joined an existing place, by rule)
 ┌──────────────────────────┬───────────────────┬───────┐
@@ -13,8 +13,8 @@
 │ alltheplaces -> overture │ near              │   505 │
 │ alltheplaces -> overture │ number            │ 16003 │
 │ alltheplaces -> overture │ spot              │    78 │
-│ osm -> core              │ near              │ 16159 │
-│ osm -> core              │ number            │ 19466 │
+│ osm -> core              │ near              │ 16157 │
+│ osm -> core              │ number            │ 19469 │
 │ osm -> core              │ spot              │   475 │
 │ overture duplicates      │ number, same name │  1654 │
 └──────────────────────────┴───────────────────┴───────┘
@@ -23,26 +23,30 @@
 │  core  │  full  │ osm_only │ atp_only │ from_registers │
 │ int64  │ int64  │  int64   │  int64   │     int64      │
 ├────────┼────────┼──────────┼──────────┼────────────────┤
-│ 500910 │ 525992 │    25082 │     2435 │          37605 │
+│ 513216 │ 538303 │    25087 │     2435 │          49911 │
 └────────┴────────┴──────────┴──────────┴────────────────┘
 == places minted from a register
 ┌────────────────┬────────┐
 │     source     │ places │
 │    varchar     │ int64  │
 ├────────────────┼────────┤
-│ dohmh_nyc      │  21729 │
+│ agm_ny         │   9294 │
+│ dmv_ny         │    927 │
+│ dohmh_nyc      │  21724 │
+│ dos_ny_salons  │   2412 │
+│ dph_de         │   1118 │
 │ fdic_locations │   2509 │
-│ sla_ny         │   7689 │
-│ snap_current   │   5678 │
+│ sla_ny         │   6693 │
+│ snap_current   │   5234 │
 └────────────────┴────────┘
 == status, full layer
 ┌─────────┬────────┐
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   3831 │
-│ open    │  68498 │
-│ unknown │ 453663 │
+│ closed  │   3833 │
+│ open    │  80471 │
+│ unknown │ 453999 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -50,8 +54,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   3214 │
-│ open    │  65506 │
-│ unknown │ 432190 │
+│ open    │  77479 │
+│ unknown │ 432523 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -59,77 +63,100 @@
 │    varchar     │ varchar │  int64  │  int64  │
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │      87 │       0 │
-│ abt_fl         │ open    │     411 │       0 │
+│ abt_fl         │ open    │     412 │       0 │
+│ agm_ny         │ open    │    9471 │    9296 │
 │ atc_mo         │ open    │      25 │       0 │
+│ bacp_chicago   │ open    │       2 │       0 │
+│ bbl_dc         │ open    │      50 │       0 │
+│ biz_de         │ open    │    9655 │       0 │
+│ biz_denver     │ open    │       8 │       0 │
+│ bot_sac        │ open    │       2 │       0 │
+│ childcare_co   │ open    │      21 │       0 │
+│ childcare_wa   │ open    │      12 │       0 │
 │ cms_hospitals  │ open    │     293 │      50 │
+│ cpa_tx         │ open    │    2495 │       0 │
+│ cpa_tx_tobacco │ open    │     191 │       0 │
 │ dbpr_fl_food   │ open    │     235 │       0 │
-│ dohmh_nyc      │ open    │   22227 │   21793 │
+│ dcwp_nyc       │ open    │   13332 │       5 │
+│ dmv_ct         │ open    │       2 │       0 │
+│ dmv_ny         │ open    │    3608 │     927 │
+│ dohmh_nyc      │ open    │   22227 │   21788 │
+│ dol_wa         │ open    │      11 │       0 │
+│ dos_ny_salons  │ open    │    9011 │    2415 │
+│ dph_de         │ open    │    1246 │    1118 │
+│ elicense_ct    │ open    │      44 │       0 │
 │ epa_ust_open   │ open    │    8895 │    1167 │
 │ fdic_history   │ closed  │    4851 │     756 │
 │ fdic_locations │ open    │    4543 │    4295 │
 │ irs_eo         │ open    │  117023 │    4342 │
 │ kc_wa_food     │ open    │      67 │       0 │
 │ led_co         │ open    │      42 │       0 │
+│ li_phl         │ open    │    7841 │       1 │
+│ moco_md        │ open    │      11 │       0 │
 │ nces_schools   │ open    │    5073 │    1863 │
 │ ncua_branches  │ open    │    1315 │     163 │
-│ nppes_orgs     │ open    │  194456 │   14359 │
+│ nppes_orgs     │ open    │  194456 │   14360 │
 │ olcc_or        │ open    │       5 │       0 │
-│ sla_ny         │ open    │   17942 │    7692 │
-│ snap_current   │ open    │   15149 │    8893 │
+│ rev_pa         │ open    │   65485 │      11 │
+│ rev_pa_tobacco │ open    │    5225 │       0 │
+│ sla_ny         │ open    │   17942 │    6696 │
+│ snap_current   │ open    │   15149 │    8449 │
 │ snap_history   │ open    │   15962 │    3306 │
 │ tabc_tx        │ open    │     387 │       0 │
+│ tax_ny_tobacco │ open    │    3490 │       1 │
+│ tdlr_tx        │ open    │     368 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  20 rows                            4 columns
+  43 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
+│ agm_ny         │ open    │ near    │     1 │      1 │
+│ agm_ny         │ open    │ number  │     1 │      1 │
+│ agm_ny         │ open    │ self    │  9294 │   9294 │
 │ atp            │ open    │ near    │   505 │    498 │
 │ atp            │ open    │ number  │ 15957 │  14507 │
 │ atp            │ open    │ self    │  2421 │   2421 │
 │ atp            │ open    │ spot    │    78 │     68 │
 │ cms_hospitals  │ open    │ address │    65 │     65 │
+│ dcwp_nyc       │ open    │ number  │     5 │      3 │
+│ dmv_ny         │ open    │ self    │   927 │    927 │
 │ dohmh_nyc      │ open    │ near    │     2 │      2 │
 │ dohmh_nyc      │ open    │ number  │    65 │     63 │
-│ dohmh_nyc      │ open    │ self    │ 21729 │  21729 │
+│ dohmh_nyc      │ open    │ self    │ 21724 │  21724 │
 │ dohmh_nyc      │ open    │ spot    │     1 │      1 │
+│ dos_ny_salons  │ open    │ number  │     2 │      2 │
+│ dos_ny_salons  │ open    │ self    │  2412 │   2412 │
+│ dos_ny_salons  │ open    │ spot    │     1 │      1 │
+│ dph_de         │ open    │ self    │  1118 │   1118 │
 │ epa_ust_open   │ open    │ near    │    62 │     62 │
 │ epa_ust_open   │ open    │ number  │  1109 │   1109 │
-│ epa_ust_open   │ open    │ spot    │    20 │     20 │
-│ fdic_history   │ closed  │ near    │    43 │     41 │
-│ fdic_history   │ closed  │ number  │   728 │    720 │
-│ fdic_history   │ closed  │ spot    │     6 │      6 │
-│ fdic_locations │ open    │ near    │    36 │     36 │
-│ fdic_locations │ open    │ number  │  1781 │   1779 │
-│ fdic_locations │ open    │ self    │  2509 │   2509 │
-│ fdic_locations │ open    │ spot    │    11 │     11 │
-│ fsq_closed     │ closed  │ id      │  2547 │   2536 │
-│     ·          │  ·      │ ·       │    ·  │     ·  │
-│     ·          │  ·      │ ·       │    ·  │     ·  │
-│     ·          │  ·      │ ·       │    ·  │     ·  │
-│ nppes_orgs     │ open    │ address │ 15046 │  12854 │
-│ osm_check_date │ open    │ near    │   891 │    878 │
-│ osm_check_date │ open    │ number  │  3053 │   3001 │
-│ osm_check_date │ open    │ self    │  1037 │   1037 │
+│      ·         │  ·      │  ·      │     · │      · │
+│      ·         │  ·      │  ·      │     · │      · │
+│      ·         │  ·      │  ·      │     · │      · │
 │ osm_check_date │ open    │ spot    │    54 │     53 │
 │ osm_history    │ closed  │ id      │   382 │    382 │
 │ osm_lifecycle  │ closed  │ near    │    53 │     53 │
 │ osm_lifecycle  │ closed  │ number  │    64 │     64 │
-│ osm_lifecycle  │ closed  │ self    │   145 │    145 │
+│ osm_lifecycle  │ closed  │ self    │   147 │    147 │
+│ rev_pa         │ open    │ near    │     2 │      2 │
+│ rev_pa         │ open    │ number  │     8 │      8 │
+│ rev_pa         │ open    │ spot    │     1 │      1 │
 │ sla_ny         │ open    │ number  │     3 │      3 │
-│ sla_ny         │ open    │ self    │  7689 │   7689 │
+│ sla_ny         │ open    │ self    │  6693 │   6693 │
 │ snap_current   │ open    │ near    │    38 │     38 │
 │ snap_current   │ open    │ number  │  3392 │   3384 │
-│ snap_current   │ open    │ self    │  5678 │   5678 │
+│ snap_current   │ open    │ self    │  5234 │   5234 │
 │ snap_current   │ open    │ spot    │    35 │     35 │
 │ snap_history   │ open    │ near    │    47 │     47 │
 │ snap_history   │ open    │ number  │  3478 │   3452 │
 │ snap_history   │ open    │ spot    │    35 │     35 │
+│ tax_ny_tobacco │ open    │ number  │     1 │      1 │
 │ wikidata_p576  │ closed  │ near    │     6 │      6 │
 │ wikidata_p576  │ closed  │ self    │     6 │      6 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  45 rows (40 shown)                        5 columns
+  59 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -138,23 +165,31 @@
 │ closed  │ fdic_history   │    713 │
 │ closed  │ fsq_closed     │   2493 │
 │ closed  │ osm_history    │    358 │
-│ closed  │ osm_lifecycle  │    256 │
+│ closed  │ osm_lifecycle  │    258 │
 │ closed  │ wikidata_p576  │     11 │
-│ open    │ atp            │  16743 │
+│ open    │ agm_ny         │   8971 │
+│ open    │ atp            │  16730 │
 │ open    │ cms_hospitals  │     64 │
-│ open    │ dohmh_nyc      │  21012 │
+│ open    │ dcwp_nyc       │      1 │
+│ open    │ dmv_ny         │    927 │
+│ open    │ dohmh_nyc      │  21007 │
+│ open    │ dos_ny_salons  │   2415 │
+│ open    │ dph_de         │   1104 │
 │ open    │ epa_ust_open   │    829 │
 │ open    │ fdic_locations │   4335 │
 │ open    │ irs_eo         │   3520 │
+│ open    │ li_phl         │      1 │
 │ open    │ nces_schools   │   1840 │
 │ open    │ ncua_branches  │    139 │
 │ open    │ nppes_orgs     │   1763 │
 │ open    │ osm_check_date │   2479 │
-│ open    │ sla_ny         │   7692 │
-│ open    │ snap_current   │   7895 │
+│ open    │ rev_pa         │     11 │
+│ open    │ sla_ny         │   6696 │
+│ open    │ snap_current   │   7451 │
 │ open    │ snap_history   │    187 │
+│ open    │ tax_ny_tobacco │      1 │
 └─────────┴────────────────┴────────┘
-  18 rows                 3 columns
+  26 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -164,7 +199,7 @@
 │ fdic_history  │    766 │               9 │              27 │
 │ fsq_closed    │   2536 │               5 │              50 │
 │ osm_history   │    382 │              22 │              41 │
-│ osm_lifecycle │    262 │               3 │              20 │
+│ osm_lifecycle │    264 │               3 │              20 │
 │ wikidata_p576 │     12 │               0 │               1 │
 └───────────────┴────────┴─────────────────┴─────────────────┘
 == Overture operating_status against our status
@@ -173,11 +208,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    850 │
-│ (none)             │ open    │   5523 │
-│ (none)             │ unknown │ 115170 │
+│ (none)             │ open    │   5524 │
+│ (none)             │ unknown │ 115169 │
 │ open               │ closed  │   2756 │
-│ open               │ open    │  22276 │
-│ open               │ unknown │ 298390 │
+│ open               │ open    │  22279 │
+│ open               │ unknown │ 298387 │
 │ permanently_closed │ closed  │     32 │
 │ permanently_closed │ open    │    102 │
 │ permanently_closed │ unknown │  15771 │

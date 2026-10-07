@@ -3,7 +3,7 @@
 │ overture │ alltheplaces │  osm  │ osm_closed_features │
 │  int64   │    int64     │ int64 │        int64        │
 ├──────────┼──────────────┼───────┼─────────────────────┤
-│   149388 │         8226 │ 27130 │                 109 │
+│   149388 │         8226 │ 27134 │                 109 │
 └──────────┴──────────────┴───────┴─────────────────────┘
 == merged (rows that joined an existing place, by rule)
 ┌──────────────────────────┬───────────────────┬───────┐
@@ -13,7 +13,7 @@
 │ alltheplaces -> overture │ near              │   179 │
 │ alltheplaces -> overture │ number            │  7348 │
 │ alltheplaces -> overture │ spot              │    16 │
-│ osm -> core              │ near              │  6436 │
+│ osm -> core              │ near              │  6437 │
 │ osm -> core              │ number            │  4589 │
 │ osm -> core              │ spot              │   116 │
 │ overture duplicates      │ number, same name │   536 │
@@ -23,7 +23,7 @@
 │  core  │  full  │ osm_only │ atp_only │ from_registers │
 │ int64  │ int64  │  int64   │  int64   │     int64      │
 ├────────┼────────┼──────────┼──────────┼────────────────┤
-│ 152577 │ 168566 │    15989 │      683 │           3042 │
+│ 152577 │ 168569 │    15992 │      683 │           3042 │
 └────────┴────────┴──────────┴──────────┴────────────────┘
 == places minted from a register
 ┌────────────────┬────────┐
@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    812 │
-│ open    │  15524 │
-│ unknown │ 152230 │
+│ open    │  15525 │
+│ unknown │ 152232 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -59,25 +59,37 @@
 │ abc_ca           │ open    │      31 │       0 │
 │ abt_fl           │ open    │     130 │       0 │
 │ atc_mo           │ open    │      53 │       0 │
+│ bbl_dc           │ open    │       4 │       0 │
+│ biz_denver       │ open    │       1 │       0 │
 │ cdph_chicago     │ open    │       3 │       0 │
 │ cdph_chicago_oob │ closed  │       1 │       0 │
+│ childcare_co     │ open    │       9 │       0 │
 │ cms_hospitals    │ open    │     224 │      69 │
-│ dbpr_fl_food     │ open    │      66 │       0 │
+│ cpa_tx           │ open    │    1405 │       0 │
+│ cpa_tx_tobacco   │ open    │     143 │       0 │
+│ dbpr_fl_food     │ open    │      67 │       0 │
+│ dmv_ny           │ open    │       2 │       0 │
+│ dol_wa           │ open    │       1 │       0 │
 │ epa_ust_open     │ open    │    4029 │    1055 │
 │ fdic_history     │ closed  │    1199 │     128 │
 │ fdic_locations   │ open    │    1593 │    1489 │
 │ irs_eo           │ open    │   33708 │     924 │
 │ kc_wa_food       │ open    │       2 │       0 │
 │ led_co           │ open    │       9 │       0 │
+│ li_phl           │ open    │      17 │       0 │
+│ lou_food         │ open    │     521 │       0 │
 │ nces_schools     │ open    │    1565 │     745 │
 │ ncua_branches    │ open    │     724 │     115 │
 │ nppes_orgs       │ open    │   59673 │    3786 │
+│ rev_pa           │ open    │      42 │       0 │
+│ rev_pa_tobacco   │ open    │       1 │       0 │
 │ sla_ny           │ open    │       2 │       0 │
 │ snap_current     │ open    │    4603 │    4049 │
 │ snap_history     │ open    │    4860 │    1876 │
 │ tabc_tx          │ open    │     240 │       0 │
+│ tdlr_tx          │ open    │     239 │       0 │
 └──────────────────┴─────────┴─────────┴─────────┘
-  20 rows                              4 columns
+  32 rows                              4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -107,7 +119,7 @@
 │ nppes_orgs     │ open    │ address │  3962 │   3226 │
 │ osm_check_date │ open    │ near    │   219 │    215 │
 │ osm_check_date │ open    │ number  │   260 │    259 │
-│ osm_check_date │ open    │ self    │   208 │    208 │
+│ osm_check_date │ open    │ self    │   209 │    209 │
 │ osm_check_date │ open    │ spot    │     2 │      2 │
 │ osm_history    │ closed  │ id      │    73 │     73 │
 │ osm_lifecycle  │ closed  │ near    │    12 │     12 │
@@ -142,7 +154,7 @@
 │ open    │ nces_schools   │    765 │
 │ open    │ ncua_branches  │     63 │
 │ open    │ nppes_orgs     │    575 │
-│ open    │ osm_check_date │    280 │
+│ open    │ osm_check_date │    281 │
 │ open    │ snap_current   │   3246 │
 │ open    │ snap_history   │     83 │
 └─────────┴────────────────┴────────┘

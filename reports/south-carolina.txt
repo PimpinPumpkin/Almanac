@@ -3,7 +3,7 @@
 │ overture │ alltheplaces │  osm  │ osm_closed_features │
 │  int64   │    int64     │ int64 │        int64        │
 ├──────────┼──────────────┼───────┼─────────────────────┤
-│   285875 │        15554 │ 54769 │                 246 │
+│   285875 │        15554 │ 54777 │                 246 │
 └──────────┴──────────────┴───────┴─────────────────────┘
 == merged (rows that joined an existing place, by rule)
 ┌──────────────────────────┬───────────────────┬───────┐
@@ -13,8 +13,8 @@
 │ alltheplaces -> overture │ near              │   287 │
 │ alltheplaces -> overture │ number            │ 13586 │
 │ alltheplaces -> overture │ spot              │    42 │
-│ osm -> core              │ near              │ 14446 │
-│ osm -> core              │ number            │ 17464 │
+│ osm -> core              │ near              │ 14448 │
+│ osm -> core              │ number            │ 17467 │
 │ osm -> core              │ spot              │   437 │
 │ overture duplicates      │ number, same name │  1341 │
 └──────────────────────────┴───────────────────┴───────┘
@@ -23,7 +23,7 @@
 │  core  │  full  │ osm_only │ atp_only │ from_registers │
 │ int64  │ int64  │  int64   │  int64   │     int64      │
 ├────────┼────────┼──────────┼──────────┼────────────────┤
-│ 290729 │ 313151 │    22422 │     1639 │           4556 │
+│ 290729 │ 313154 │    22425 │     1639 │           4556 │
 └────────┴────────┴──────────┴──────────┴────────────────┘
 == places minted from a register
 ┌────────────────┬────────┐
@@ -38,9 +38,9 @@
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   2233 │
-│ open    │  28597 │
-│ unknown │ 282321 │
+│ closed  │   2231 │
+│ open    │  28665 │
+│ unknown │ 282258 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1589 │
-│ open    │  26522 │
-│ unknown │ 262618 │
+│ open    │  26523 │
+│ unknown │ 262617 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -58,25 +58,46 @@
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │      82 │       0 │
 │ abt_fl         │ open    │     306 │       0 │
+│ agm_ny         │ open    │       5 │       0 │
 │ atc_mo         │ open    │      78 │       0 │
+│ bbl_dc         │ open    │       1 │       0 │
+│ biz_de         │ open    │     189 │       0 │
+│ biz_denver     │ open    │       3 │       0 │
+│ bot_sac        │ open    │       2 │       0 │
+│ childcare_co   │ open    │       4 │       0 │
 │ cms_hospitals  │ open    │     205 │      39 │
-│ dbpr_fl_food   │ open    │     273 │       0 │
+│ cpa_tx         │ open    │     703 │       0 │
+│ cpa_tx_tobacco │ open    │      61 │       0 │
+│ dbpr_fl_food   │ open    │     274 │       0 │
+│ dcwp_nyc       │ open    │      15 │       0 │
+│ dmv_ct         │ open    │       1 │       0 │
+│ dmv_ny         │ open    │       5 │       0 │
 │ dohmh_nyc      │ open    │       6 │       0 │
+│ dol_wa         │ open    │       4 │       0 │
+│ dos_ny_salons  │ open    │       4 │       0 │
+│ dph_de         │ open    │       4 │       0 │
+│ elicense_ct    │ open    │       7 │       1 │
 │ epa_ust_open   │ open    │    6340 │    1767 │
 │ fdic_history   │ closed  │    1540 │     238 │
 │ fdic_locations │ open    │    1853 │    1791 │
 │ irs_eo         │ open    │   53542 │    2197 │
 │ led_co         │ open    │      21 │       0 │
+│ lou_food       │ open    │      24 │       0 │
+│ moco_md        │ open    │      52 │       0 │
 │ nces_schools   │ open    │    2047 │    1098 │
 │ ncua_branches  │ open    │    1060 │     272 │
-│ nppes_orgs     │ open    │  101705 │    7035 │
+│ nppes_orgs     │ open    │  101705 │    7036 │
 │ olcc_or        │ open    │      32 │       0 │
+│ rev_pa         │ open    │      96 │       0 │
+│ rev_pa_tobacco │ open    │       2 │       0 │
 │ sla_ny         │ open    │       9 │       0 │
 │ snap_current   │ open    │    7898 │    7368 │
 │ snap_history   │ open    │    8174 │    3712 │
 │ tabc_tx        │ open    │     131 │       1 │
+│ tax_ny_tobacco │ open    │       8 │       0 │
+│ tdlr_tx        │ open    │      76 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  19 rows                            4 columns
+  40 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -87,6 +108,7 @@
 │ atp            │ open    │ self    │  1634 │   1634 │
 │ atp            │ open    │ spot    │    42 │     38 │
 │ cms_hospitals  │ open    │ address │    44 │     44 │
+│ elicense_ct    │ open    │ address │     1 │      1 │
 │ epa_ust_open   │ open    │ near    │   106 │    105 │
 │ epa_ust_open   │ open    │ number  │  1708 │   1708 │
 │ epa_ust_open   │ open    │ spot    │    47 │     47 │
@@ -103,11 +125,11 @@
 │ nces_schools   │ open    │ number  │  1109 │   1106 │
 │ nces_schools   │ open    │ spot    │     3 │      3 │
 │ ncua_branches  │ open    │ address │   281 │    273 │
-│ nppes_orgs     │ open    │ address │  7520 │   6361 │
-│ osm_check_date │ open    │ near    │  1213 │   1203 │
-│ osm_check_date │ open    │ number  │   905 │    902 │
-│ osm_check_date │ open    │ self    │   831 │    831 │
-│ osm_check_date │ open    │ spot    │    18 │     18 │
+│ nppes_orgs     │ open    │ address │  7521 │   6362 │
+│ osm_check_date │ open    │ near    │  1254 │   1243 │
+│ osm_check_date │ open    │ number  │   917 │    914 │
+│ osm_check_date │ open    │ self    │   862 │    862 │
+│ osm_check_date │ open    │ spot    │    19 │     19 │
 │ osm_history    │ closed  │ id      │   447 │    447 │
 │ osm_lifecycle  │ closed  │ near    │    37 │     36 │
 │ osm_lifecycle  │ closed  │ number  │    32 │     32 │
@@ -123,38 +145,39 @@
 │ tabc_tx        │ open    │ address │     1 │      1 │
 │ wikidata_p576  │ closed  │ self    │     3 │      3 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  40 rows                                   5 columns
+  41 rows                                   5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
 │ varchar │    varchar     │ int64  │
 ├─────────┼────────────────┼────────┤
-│ closed  │ fdic_history   │    210 │
+│ closed  │ fdic_history   │    208 │
 │ closed  │ fsq_closed     │   1358 │
 │ closed  │ osm_history    │    423 │
 │ closed  │ osm_lifecycle  │    240 │
 │ closed  │ wikidata_p576  │      2 │
-│ open    │ atp            │  14205 │
+│ open    │ atp            │  14192 │
 │ open    │ cms_hospitals  │     42 │
-│ open    │ epa_ust_open   │    857 │
-│ open    │ fdic_locations │   1811 │
-│ open    │ irs_eo         │   1717 │
+│ open    │ elicense_ct    │      1 │
+│ open    │ epa_ust_open   │    856 │
+│ open    │ fdic_locations │   1810 │
+│ open    │ irs_eo         │   1716 │
 │ open    │ nces_schools   │   1054 │
-│ open    │ ncua_branches  │    237 │
+│ open    │ ncua_branches  │    236 │
 │ open    │ nppes_orgs     │    996 │
-│ open    │ osm_check_date │   1773 │
-│ open    │ snap_current   │   5744 │
-│ open    │ snap_history   │    160 │
+│ open    │ osm_check_date │   1861 │
+│ open    │ snap_current   │   5741 │
+│ open    │ snap_history   │    159 │
 │ open    │ tabc_tx        │      1 │
 └─────────┴────────────────┴────────┘
-  17 rows                 3 columns
+  18 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
 │    source     │ places │ says_open_after │ says_closed_too │
 │    varchar    │ int64  │      int64      │      int64      │
 ├───────────────┼────────┼─────────────────┼─────────────────┤
-│ fdic_history  │    240 │              13 │              11 │
+│ fdic_history  │    240 │              15 │              11 │
 │ fsq_closed    │   1397 │               7 │              45 │
 │ osm_history   │    447 │              22 │              33 │
 │ osm_lifecycle │    245 │               2 │               7 │
@@ -166,11 +189,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    458 │
-│ (none)             │ open    │   3539 │
-│ (none)             │ unknown │  72000 │
-│ open               │ closed  │   1563 │
-│ open               │ open    │  17776 │
-│ open               │ unknown │ 182922 │
+│ (none)             │ open    │   3545 │
+│ (none)             │ unknown │  71994 │
+│ open               │ closed  │   1562 │
+│ open               │ open    │  17808 │
+│ open               │ unknown │ 182891 │
 │ permanently_closed │ closed  │     16 │
 │ permanently_closed │ open    │     50 │
 │ permanently_closed │ unknown │   6210 │

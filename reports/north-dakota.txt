@@ -3,7 +3,7 @@
 │ overture │ alltheplaces │  osm  │ osm_closed_features │
 │  int64   │    int64     │ int64 │        int64        │
 ├──────────┼──────────────┼───────┼─────────────────────┤
-│    48051 │         2447 │  8223 │                  22 │
+│    48051 │         2447 │  8228 │                  22 │
 └──────────┴──────────────┴───────┴─────────────────────┘
 == merged (rows that joined an existing place, by rule)
 ┌──────────────────────────┬───────────────────┬───────┐
@@ -13,8 +13,8 @@
 │ alltheplaces -> overture │ near              │   104 │
 │ alltheplaces -> overture │ number            │  1925 │
 │ alltheplaces -> overture │ spot              │     5 │
-│ osm -> core              │ near              │  1635 │
-│ osm -> core              │ number            │  1717 │
+│ osm -> core              │ near              │  1636 │
+│ osm -> core              │ number            │  1720 │
 │ osm -> core              │ spot              │    33 │
 │ overture duplicates      │ number, same name │   128 │
 └──────────────────────────┴───────────────────┴───────┘
@@ -23,7 +23,7 @@
 │ core  │ full  │ osm_only │ atp_only │ from_registers │
 │ int64 │ int64 │  int64   │  int64   │     int64      │
 ├───────┼───────┼──────────┼──────────┼────────────────┤
-│ 48652 │ 53490 │     4838 │      413 │            316 │
+│ 48652 │ 53491 │     4839 │      413 │            316 │
 └───────┴───────┴──────────┴──────────┴────────────────┘
 == places minted from a register
 ┌────────────────┬────────┐
@@ -40,7 +40,7 @@
 ├─────────┼────────┤
 │ closed  │    237 │
 │ open    │   4462 │
-│ unknown │  48791 │
+│ unknown │  48792 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -58,8 +58,14 @@
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │      21 │       0 │
 │ abt_fl         │ open    │      45 │       0 │
+│ bot_sac        │ open    │       2 │       0 │
+│ childcare_wa   │ open    │       1 │       0 │
 │ cms_hospitals  │ open    │      79 │      27 │
+│ cpa_tx         │ open    │     264 │       0 │
+│ cpa_tx_tobacco │ open    │      18 │       0 │
 │ dbpr_fl_food   │ open    │      39 │       0 │
+│ dmv_ny         │ open    │      10 │       0 │
+│ elicense_ct    │ open    │       4 │       0 │
 │ epa_ust_open   │ open    │     942 │     307 │
 │ fdic_history   │ closed  │     183 │      53 │
 │ fdic_locations │ open    │     449 │     394 │
@@ -69,12 +75,16 @@
 │ ncua_branches  │ open    │     276 │      85 │
 │ nppes_orgs     │ open    │   17275 │    1423 │
 │ olcc_or        │ open    │      17 │       0 │
+│ rev_pa         │ open    │      29 │       0 │
+│ rev_pa_tobacco │ open    │       1 │       0 │
 │ sla_ny         │ open    │       4 │       0 │
 │ snap_current   │ open    │     603 │     531 │
 │ snap_history   │ open    │     631 │     375 │
 │ tabc_tx        │ open    │      47 │       0 │
+│ tax_ny_tobacco │ open    │       1 │       0 │
+│ tdlr_tx        │ open    │      18 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  17 rows                            4 columns
+  27 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
