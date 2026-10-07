@@ -99,7 +99,7 @@ def svg(cells, theme):
          'aria-label="Share of places with a dated open or closed status, by state and category">'
          % (width, height, width, height),
          '<rect width="100%%" height="100%%" fill="%s"/>' % t["surface"],
-         '<text x="%d" y="34" font-size="20" font-weight="600" fill="%s">Places with a dated open or closed status</text>'
+         '<text x="%d" y="34" font-size="20" font-weight="600" fill="%s">Vela Almanac: places with a dated open or closed status</text>'
          % (pad, t["ink"]),
          '<text x="%d" y="56" font-size="13" fill="%s">Share of listed places in each category, by state. '
          'Numbers are in COVERAGE.md.</text>' % (pad, t["muted"])]
@@ -141,7 +141,7 @@ def table(cells, totals):
     states = sorted(totals)
     short = ["Fast food", "Banks", "Gas", "Grocery", "Pharmacy", "Restaurants", "Bars", "Hotels",
              "Schools", "Hospitals", "Museums", "Other"]
-    o = ["# Coverage by state", "",
+    o = ["# Vela Almanac coverage by state", "",
          "Share of listed places that have a dated open or closed status, by state and",
          "category. Made by `tools/coverage_map.py` from the published state files.",
          "Categories are rough buckets (`sql/buckets.sql`).", "",

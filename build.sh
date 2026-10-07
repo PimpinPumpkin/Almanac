@@ -93,7 +93,10 @@ jq -n --arg region "$REGION" --arg build_date "$BUILD_DATE" \
   --arg osm "$(cat "$OUT/osm.date")" --arg fsq "${FSQ_RELEASE:-2025-02-06}" \
   --argjson core "$(entry "$PUB/core-$REGION.parquet" core "ODbL-1.0")" \
   --argjson full "$(entry "$PUB/places-$REGION.parquet" full "ODbL-1.0")" \
-  '{region: $region, build_date: $build_date, bbox: $bbox,
+  '{dataset: "Vela Almanac", license: "ODbL-1.0",
+    credit: "Vela Almanac, (c) its contributors. Open Database License 1.0. https://github.com/PimpinPumpkin/vela-almanac",
+    notice: "https://github.com/PimpinPumpkin/vela-almanac/blob/main/NOTICE",
+    region: $region, build_date: $build_date, bbox: $bbox,
     sources: {overture: $overture, alltheplaces: $atp, openstreetmap: $osm, foursquare_os_places: $fsq},
     files: [$core, $full]}' > "$PUB/manifest-$REGION.json"
 step done

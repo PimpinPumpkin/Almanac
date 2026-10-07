@@ -1,9 +1,9 @@
-# Almanac
+# Vela Almanac
 
 An open table of places in the United States, with dated evidence of whether
 each one is still open.
 
-Three open datasets already list most US places. Almanac merges them and adds
+Three open datasets already list most US places. Vela Almanac merges them and adds
 the part none of them has: for each place, the records that say it was open
 or closed on a specific day, and where each record came from.
 
@@ -15,12 +15,12 @@ or closed on a specific day, and where each record came from.
 </picture>
 
 Interactive version, with the numbers on hover:
-https://pimpinpumpkin.github.io/Almanac/ . The same numbers as a table are
+https://pimpinpumpkin.github.io/vela-almanac/ . The same numbers as a table are
 in [COVERAGE.md](COVERAGE.md). Both are made by `tools/coverage_map.py`.
 
 ## Coverage by category
 
-What Almanac lists today, how much of it has a dated open or closed record,
+What the Almanac lists today, how much of it has a dated open or closed record,
 and which public register can close the gap. Counts are from the four test
 regions (a District of Columbia box, a Sacramento box, Delaware and
 Kentucky), 480,000 places in all.
@@ -82,8 +82,9 @@ published yet.
   status. `unknown` means nobody has said, not "probably open".
 - Not a source of new places from registers. A bank branch or licensed
   premises that the base layer lacks is not added yet.
-- Not tied to any app. Readers fetch the published files. Nothing here
-  imports code from a reader.
+- Maintained by the Vela Maps project (github.com/PimpinPumpkin/Vela).
+  Anyone can use it, and nothing in it depends on Vela: readers fetch the
+  published files.
 
 ## Layout
 
@@ -121,7 +122,8 @@ Downloads are cached under `data/`, which is not in git. The first build
 fetches about 5 GB (AllThePlaces is 2.6 GB and NPPES 1.2 GB of that). After that a region
 the size of Kentucky builds in about 35 seconds.
 
-Every fetch sends `User-Agent: Almanac/0.1 (open US places dataset build)`.
+Every fetch sends
+`User-Agent: VelaAlmanac/0.1 (open US places dataset build; https://github.com/PimpinPumpkin/vela-almanac)`.
 Set `ALMANAC_CONTACT` to a URL or address to append a way to reach you.
 
 ## Output
@@ -151,5 +153,11 @@ Copyleft throughout.
   core file is built from permissive inputs only and is placed under the
   ODbL by choice.
 
-Attribution for every input is in `NOTICE`. Per-source terms are in
+Credit it as:
+
+    Vela Almanac, (c) its contributors. Open Database License 1.0.
+    https://github.com/PimpinPumpkin/vela-almanac
+
+That line and the source notices in `NOTICE` must accompany any copy of the
+data or any database built from it. Each manifest carries the same credit. Per-source terms are in
 `SOURCES.md` and `SPEC.md` section 8.

@@ -1,6 +1,16 @@
-Almanac data files are released under the Open Database License 1.0
+Vela Almanac
+
+Credit the data with this line:
+
+  Vela Almanac, (c) its contributors. Open Database License 1.0.
+  https://github.com/PimpinPumpkin/vela-almanac
+
+That line, together with the source notices below, must accompany any copy
+of the data and any database built from it.
+
+Vela Almanac data files are released under the Open Database License 1.0
 (https://opendatacommons.org/licenses/odbl/1-0/). They are built from the
-sources below. Keep this notice with any copy of the data.
+sources below.
 
 Overture Maps Foundation, places theme.
   CDLA-Permissive-2.0. https://overturemaps.org
@@ -8,7 +18,7 @@ Overture Maps Foundation, places theme.
 Foursquare Open Source Places.
   Copyright Foursquare Labs, Inc. Licensed under the Apache License,
   Version 2.0. https://www.apache.org/licenses/LICENSE-2.0
-  Reaches Almanac two ways: rows Overture took from Foursquare, and the
+  Reaches the Almanac two ways: rows Overture took from Foursquare, and the
   date_closed field joined by Foursquare place id.
 
 AllThePlaces.

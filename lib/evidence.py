@@ -20,7 +20,8 @@ CACHE = os.path.join(DATA, "cache")
 EVIDENCE = os.path.join(CACHE, "evidence")
 
 _contact = os.environ.get("ALMANAC_CONTACT")
-UA = "Almanac/0.1 (open US places dataset build%s)" % ("; " + _contact if _contact else "")
+UA = "VelaAlmanac/0.1 (open US places dataset build; https://github.com/PimpinPumpkin/vela-almanac%s)" % (
+    "; " + _contact if _contact else "")
 
 COLUMNS = ["source", "source_id", "name", "address", "lat", "lng", "state", "date"]
 

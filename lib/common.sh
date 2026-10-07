@@ -8,7 +8,7 @@ mkdir -p "$CACHE"
 
 # Every fetch identifies itself. Set ALMANAC_CONTACT to a URL or address
 # so a source operator can reach whoever runs the build.
-UA="Almanac/0.1 (open US places dataset build${ALMANAC_CONTACT:+; $ALMANAC_CONTACT})"
+UA="VelaAlmanac/0.1 (open US places dataset build; https://github.com/PimpinPumpkin/vela-almanac${ALMANAC_CONTACT:+; $ALMANAC_CONTACT})"
 export UA DATA CACHE ROOT
 
 # fetch URL OUT: download once, keep the cached copy on later runs.

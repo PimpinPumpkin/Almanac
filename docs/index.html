@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Almanac coverage by state</title>
+<title>Vela Almanac coverage by state</title>
 <style>
   :root {
     --surface: #fcfcfb; --ink: #1f1f1e; --muted: #6b6b68; --line: #e4e3df;
@@ -38,6 +38,7 @@
   #tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--surface); padding: 6px 9px;
          border-radius: 6px; font-size: 13px; max-width: 260px; display: none; z-index: 2; }
   details { margin-top: 36px; }
+  footer { margin-top: 36px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
   summary { cursor: pointer; font-weight: 600; }
   .scroll { overflow-x: auto; }
   table { border-collapse: collapse; font-size: 13px; margin-top: 12px; white-space: nowrap; }
@@ -47,16 +48,19 @@
 </head>
 <body>
 <main>
-  <h1>Places with a dated open or closed status</h1>
-  <p>Share of the places Almanac lists in each category that have a dated record saying they are open or
+  <h1>Vela Almanac: places with a dated open or closed status</h1>
+  <p>Share of the places the Almanac lists in each category that have a dated record saying they are open or
      closed, by state. Hover or tab to a state for the numbers. <span id="made"></span>
-     <a href="https://github.com/PimpinPumpkin/Almanac">Source and method</a>.</p>
+     <a href="https://github.com/PimpinPumpkin/vela-almanac">Source and method</a>.</p>
   <div class="legend" id="legend"></div>
   <div class="panels" id="panels"></div>
   <details>
     <summary>Table</summary>
     <div class="scroll"><table id="table"></table></div>
   </details>
+  <footer>Vela Almanac, &copy; its contributors. Open Database License 1.0.
+    <a href="https://github.com/PimpinPumpkin/vela-almanac">github.com/PimpinPumpkin/vela-almanac</a>.
+    Source notices: <a href="https://github.com/PimpinPumpkin/vela-almanac/blob/main/NOTICE">NOTICE</a>.</footer>
 </main>
 <div id="tip" role="status"></div>
 <script>

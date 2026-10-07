@@ -1,4 +1,4 @@
-# Almanac spec
+# Vela Almanac spec
 
 Version 0.1. This describes what the code in this repo does today. Where a
 choice is still open it says so.
@@ -338,7 +338,7 @@ filled from OSM, is OSM-derived too.
 - `places-<region>.parquet` is the core plus OSM. It must be under the ODbL.
 - `core-<region>.parquet` is built without reading OSM. Its inputs are all
   permissive, so its license is a choice, and the choice is the ODbL as
-  well, so that anything built on Almanac stays open.
+  well, so that anything built on the Almanac stays open.
 - The core layer is still built separately. That keeps the choice open: a
   file with no OSM in it can be offered under other terms later, a file
   with OSM in it never can.
@@ -384,7 +384,18 @@ Per region: `core-<region>.parquet`, `places-<region>.parquet`, and
   works over HTTP range requests with DuckDB, pyarrow or GDAL. Prune on
   those, not on the geometry.
 - The manifest lists the build date, the box, each source's release, and for
-  each file its row count, size, license and SHA-256.
+  each file its row count, size, license and SHA-256. It also carries the
+  credit, so it travels with the data:
+
+  | field | value |
+  | --- | --- |
+  | dataset | `Vela Almanac` |
+  | license | `ODbL-1.0` |
+  | credit | the credit line a reuser must show, as in NOTICE |
+  | notice | URL of the NOTICE file with the source notices |
+  | region, build_date, bbox | what was built and when |
+  | sources | the release of each base source |
+  | files | name, layer, license, rows, bytes, sha256 per file |
 - First host: GitHub release assets, one release per monthly build. The
   largest state should come out near 200 MB, well under the 2 GB cap
   (Kentucky is 25 MB for 247,000 places).
