@@ -29,6 +29,7 @@ def dull: ["parking","parking_space","parking_entrance","bench","bicycle_parking
     postcode: $p["addr:postcode"],
     phone: ($p.phone // $p["contact:phone"]),
     website: ($p.website // $p["contact:website"]),
+    opening_hours: $p.opening_hours,
     brand: $p.brand,
     brand_wikidata: $p["brand:wikidata"],
     wikidata: $p.wikidata,

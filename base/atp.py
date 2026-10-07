@@ -20,7 +20,7 @@ MAIN = ("amenity", "shop", "tourism", "leisure", "office", "craft", "healthcare"
 # Rough boxes, south north west east, to throw lines away before parsing them.
 BOUNDS = {"US": (17, 72, -180, -64), "FR": (41.0, 51.5, -5.5, 10.0)}
 COLUMNS = ["spider", "ref", "name", "branch", "brand", "brand_wikidata", "category", "address",
-           "housenumber", "city", "region", "postcode", "phone", "website", "collected",
+           "housenumber", "city", "region", "postcode", "phone", "website", "opening_hours", "collected",
            "end_date", "lat", "lng"]
 
 
@@ -61,7 +61,7 @@ def main(path, country="US"):
                         p.get("@spider", ""), p.get("ref", ""), name, p.get("branch", ""), p.get("brand", ""),
                         p.get("brand:wikidata", ""), category, street, p.get("addr:housenumber", ""),
                         p.get("addr:city", ""), p.get("addr:state", ""), p.get("addr:postcode", ""),
-                        p.get("phone", ""), p.get("website", ""), collected, p.get("end_date", ""),
+                        p.get("phone", ""), p.get("website", ""), p.get("opening_hours", ""), collected, p.get("end_date", ""),
                         "%.6f" % lat, "%.6f" % lng])
 
 

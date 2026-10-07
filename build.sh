@@ -73,6 +73,9 @@ create table atp as select * from '$OUT/atp.parquet';
 create table osm as select * from '$OUT/osm.parquet';
 -- extracts cached before the SIRET column existed
 alter table osm add column if not exists siret varchar;
+-- files cached before opening hours were kept
+alter table osm add column if not exists opening_hours varchar;
+alter table atp add column if not exists opening_hours varchar;
 $CLIP
 create table p576 as select qid, date from read_csv('$OUT/p576.csv', header = true, auto_detect = false,
   columns = {qid: 'varchar', date: 'date'});

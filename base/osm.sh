@@ -44,7 +44,7 @@ copy (
     from read_ndjson('$TMP/poi.ndjson', maximum_object_size = 1073741824, columns = {
       osm_id: 'varchar', edited: 'bigint', name: 'varchar', category: 'varchar', lifecycle: 'varchar',
       housenumber: 'varchar', street: 'varchar', city: 'varchar', region: 'varchar', postcode: 'varchar',
-      phone: 'varchar', website: 'varchar', brand: 'varchar', brand_wikidata: 'varchar',
+      phone: 'varchar', website: 'varchar', opening_hours: 'varchar', brand: 'varchar', brand_wikidata: 'varchar',
       wikidata: 'varchar', check_date: 'varchar', end_date: 'varchar', siret: 'varchar', geometry: 'json'})
   )
   select * exclude (c), st_y(c) as lat, st_x(c) as lng

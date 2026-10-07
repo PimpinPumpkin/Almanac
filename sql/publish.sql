@@ -46,7 +46,27 @@ create or replace macro open_score(status, status_date, conflict, overture_statu
 create or replace table license_list as
   select * from (values ('DC', 'abca_dc_active'), ('NY', 'sla_ny')) t(region, source);
 
-create or replace macro published(place, member, status, conf) as table (
+-- Opening hours, in OpenStreetMap's opening_hours syntax. AllThePlaces reads
+-- them off each brand's own store pages; OSM mappers write them by hand. A
+-- place takes the newest one among its members. The core layer only has the
+-- AllThePlaces ones.
+create or replace table hours_core as
+  select m.place_id, arg_max(a.opening_hours, a.collected) as opening_hours,
+         'atp' as hours_source, max(a.collected) as hours_date
+  from core_member m join atp a on a.atp_id = m.source_id
+  where m.source = 'atp' and nullif(trim(a.opening_hours), '') is not null
+  group by m.place_id;
+create or replace table hours_full as
+  select place_id, arg_max(opening_hours, hours_date) as opening_hours,
+         arg_max(hours_source, hours_date) as hours_source, max(hours_date) as hours_date
+  from (select * from hours_core
+        union all
+        select m.place_id, o.opening_hours, 'osm', o.edited
+        from osm_member m join osm o on o.osm_id = m.source_id
+        where m.source = 'osm' and o.lifecycle is null and nullif(trim(o.opening_hours), '') is not null)
+  group by place_id;
+
+create or replace macro published(place, member, status, conf, hours) as table (
   with m as (
     select place_id,
            list(struct_pack(source, id := source_id) order by source, source_id) as sources,
@@ -57,6 +77,7 @@ create or replace macro published(place, member, status, conf) as table (
          coalesce(og.category_group, group_of(p.category)) as category_group,
          p.brand, p.brand_wikidata,
          p.address, p.city, p.region, p.postcode, p.phone, p.website,
+         h.opening_hours, h.hours_source, h.hours_date,
          coalesce(s.status, 'unknown') as status, s.status_date, s.status_source,
          open_score(coalesce(s.status, 'unknown'), s.status_date, coalesce(s.conflict, false),
                     p.overture_status, coalesce(ml.missing, false), cf.conf, (select build_date from params)) as open_score,
@@ -75,6 +96,7 @@ create or replace macro published(place, member, status, conf) as table (
   join m on m.place_id = p.id
   left join query_table(status) s on s.place_id = p.id
   left join query_table(conf) cf on cf.place_id = p.id
+  left join query_table(hours) h on h.place_id = p.id
   left join ovt_all og on og.id = p.id
   -- true: a bar in a state with a license list, and no active license matched it.
   -- null: the question does not apply to this place.
@@ -88,7 +110,7 @@ create or replace macro published(place, member, status, conf) as table (
 );
 
 create or replace table out_core as
-  select * from published('core_place', 'core_member', 'core_status', 'core_conf');
+  select * from published('core_place', 'core_member', 'core_status', 'core_conf', 'hours_core');
 
 -- The full layer: core places with OSM folded in, then the places only OSM has.
 create or replace table full_place as
@@ -106,4 +128,4 @@ create or replace table full_member as
   select * from core_member union all select * from osm_member;
 
 create or replace table out_full as
-  select * from published('full_place', 'full_member', 'full_status', 'full_conf');
+  select * from published('full_place', 'full_member', 'full_status', 'full_conf', 'hours_full');

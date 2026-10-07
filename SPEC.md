@@ -41,6 +41,9 @@ Both layers have the same columns.
 | brand, brand_wikidata | string | |
 | address, city, region, postcode | string | address is the street line |
 | phone, website | string | |
+| opening_hours | string | in OpenStreetMap's `opening_hours` syntax, null when no source has them |
+| hours_source | string | `atp` (read from the brand's own store page by AllThePlaces) or `osm` (full layer only) |
+| hours_date | date | when that source last collected or edited the record |
 | status | string | open, closed or unknown, section 7 |
 | status_date | date | date of the evidence that decided the status |
 | status_source | string | source of that evidence |
@@ -498,6 +501,16 @@ The ATP and OSM check_date rows were not in the brief. Being listed in a chain's
 a known day, and a mapper's dated survey tag, are both dated records of
 life, and both come for free with the base layer. Absence from a locator is
 still not evidence of anything.
+
+### Opening hours
+
+Hours are carried, not judged. A place takes the hours of its newest
+member that has any: an AllThePlaces record (dated by the day the spider
+ran) or, in the full layer, an OSM feature (dated by its last edit, which
+is not always an edit of the hours). Nothing checks them against anything
+else yet, so `hours_date` is the reader's guide to how far to trust them.
+On the DC test box that gives hours to 6% of all places and 24% of food
+and drink; the core layer, with AllThePlaces alone, has 2%.
 
 ## 8. Licensing
 

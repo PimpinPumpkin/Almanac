@@ -141,6 +141,32 @@ Each country starts with the global signals alone, then gains registers.
   OpenStreetMap as a survey date or a closure tag, and so in the next build.
 - **7.2 Owner updates**, if 7.1 proves people use it.
 
+## 8. Hours, popularity, reviews
+
+Asked for by the owner on 2026-10-07.
+
+- **8.1 Hours from what is already open.** Done: `opening_hours` from
+  AllThePlaces and OSM, with its source and date.
+- **8.2 Hours from places' own websites, without crawling.** Common Crawl
+  and Web Data Commons publish the schema.org markup found on the public
+  web. Take LocalBusiness records with opening hours and match them to
+  places by website and address. Measure how many are right against OSM
+  and AllThePlaces hours for the same place before using them.
+- **8.3 A crawler of our own** for the websites Overture lists, reading
+  only schema.org markup, obeying robots.txt, a few pages per site per
+  month. Only if 8.2 leaves a large gap, because it is the first part of
+  this project that would not be a bulk download.
+- **8.4 Popularity.** No open source has foot traffic. A stand-in can be
+  built from what is open: how many sources list the place, Wikipedia page
+  views for places with an article, how often mappers touch it. To be
+  tested before it is called popularity.
+- **8.5 Reviews.** A separate project. Mangrove (open reviews, CC BY) is
+  the only open review set found so far and it is small. Nothing here
+  until the owner decides where reviews would be stored.
+- **8.6 Owners keeping their own listing current.** Open question. The
+  cheapest form is 7.2: an owner edits OSM, or their own site's markup,
+  and the next build picks it up.
+
 ## Standing decisions
 
 Set by the owner on 2026-10-06.
@@ -155,6 +181,9 @@ Set by the owner on 2026-10-06.
   be added, marked `none-stated` on every row they touch. Anything else
   with no stated license is asked about first.
 - **Order.** Section 1 first.
+- **New York outside the city.** Buffalo is the test area for sources that
+  leave New York City out (2026-10-07).
+- **Git history** stays as it is; no rewrite (2026-10-07).
 
 ## What needs the owner
 
@@ -166,5 +195,5 @@ Everything above can proceed without asking, except these.
 - **Anything that costs money or needs a server** beyond GitHub Actions and
   release storage.
 - **Speaking for the project**: contacting another project or a data owner.
-- **Rewriting git history** or deleting a release.
+- **Deleting a release.**
 - **A source or rule that fails in a way the rules above do not settle.**
