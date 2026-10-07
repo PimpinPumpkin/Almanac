@@ -247,6 +247,7 @@ rows are the same place.
 | Chicago business licenses, live and cancelled | number | 40 of 40 | live licenses matched 10,100 places in the box |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
+| Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
 | Texas sales tax locations | number | 30 of 30 (Houston) | geocoded; live permits matched 14,000 places in the box |
 | New York salons and barber shops | number | 25 of 25 (New York City) | finds a place for about half |
 | New York DMV repair shops and dealers | number | 20 of 20 (New York City) | finds a place for about 4 in 10; the register uses company names |
@@ -421,6 +422,7 @@ signal at all.
 | bacp_chicago_cancelled | closed | day the license status changed to cancelled | matcher; places with no brand only, and only when the site has no live license |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
+| tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |
 | cpa_tx | open | day the dataset was last updated, live permits only | matcher, positions from the Census geocoder |
 | dos_ny_salons | open | day the dataset was last updated, unexpired licenses only | matcher |
 | dmv_ny | open | day the dataset was last updated, unexpired registrations only | matcher |

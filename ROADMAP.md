@@ -56,8 +56,9 @@ Salons, repair shops, small retail. 84% of all rows, 6% with a status.
 
 - **2.1 Auto repair registrations.** Done: New York (repair shops,
   inspection stations, dealers). Next California, Florida, Michigan.
-- **2.2 Cosmetology and barber shop licenses.** Done: New York. Next Texas
-  (TDLR), then state by state.
+- **2.2 Cosmetology and barber shop licenses.** Done: New York and Texas
+  (Houston nail salons went from 7% with a status to 52%). Next: state by
+  state.
 - **2.3 Sales tax permit lists.** Done: Texas, the biggest long-tail source
   so far. In a Houston box a quarter of auto repair, clothing, furniture
   and jewelry stores now have a status. Also done: Delaware's business

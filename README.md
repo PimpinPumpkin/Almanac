@@ -136,7 +136,7 @@ base/               importers: overture.sh, atp.sh + atp.py, osm.sh + osm.jq
 signals/            closing signals joined by id: fsq_closed.sh, wikidata_p576.py
 adapters/           one file per register. Federal: fdic, ncua, snap, epa_ust,
                     cms, nces, nppes, irs. State and city: abc_ca, abca_dc,
-                    sla_ny, tabc_tx, cpa_tx, biz_de, rev_pa, abt_fl, led_co, atc_mo, olcc_or, dbpr_fl_food,
+                    sla_ny, tabc_tx, cpa_tx, tdlr_tx, biz_de, rev_pa, abt_fl, led_co, atc_mo, olcc_or, dbpr_fl_food,
                     kc_wa_food, dmv_ny, dos_ny_salons, dohmh_nyc,
                     cdph_chicago, bacp_chicago, agm_ny, dcwp_nyc, dph_de,
                     moco_md. France: sirene.sh

@@ -193,6 +193,15 @@ adapter is merged. If a source states no license, the entry says so.
 - Privacy: many licensees are one person working from home. Nothing creates
   a place from this source.
 
+### Texas Department of Licensing and Regulation, all licenses
+- License: none stated. Texas public record. Rows it touches are marked
+  `none-stated`.
+- Fetched from: `https://data.texas.gov/resource/7358-krk7.json`
+- Used for: unexpired salon and barber establishment licenses (open), with
+  positions from the Census geocoder.
+- Privacy: the dataset is mostly licenses held by people. Only
+  establishment licenses are read.
+
 ### Texas Comptroller, permitted sales tax locations
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.texas.gov/resource/3kx8-uryv.json`
