@@ -4,9 +4,10 @@ What gets built next, in order, and what counts as done. The aim is the
 coverage and freshness people expect from a commercial map, from open
 sources only, United States first.
 
-Where things stand (build of 2026-10-07): 19.5 million places, 11.2% with a
-dated status. Banks 67%, chain restaurants 64%, gas stations 48%, grocery
-47%, independent restaurants 28%, bars 20%, everything else 8%.
+Where things stand (build of 2026-10-07): 19.5 million places, 12.0% with a
+dated status. Banks 66%, chain restaurants 64%, gas stations 49%, grocery
+48%, pharmacies 40%, independent restaurants 31%, bars 24%, everything
+else 8%.
 
 ## How every item is done
 
