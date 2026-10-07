@@ -273,6 +273,14 @@ adapter is merged. If a source states no license, the entry says so.
   marks as operating (open).
 - Privacy: the contact name column is not read.
 
+### New York State Department of Health, food service inspections
+- License: OPEN-NY Terms of Use.
+- Fetched from: `https://health.data.ny.gov/resource/cnih-y5dw.json`
+- Used for: food service operations with an unexpired permit, dated by
+  their last inspection (open), with positions. New York City, Suffolk
+  County and Erie County are not in the file.
+- Privacy: the operator name columns are not read.
+
 ### Pennsylvania Department of Revenue, sales tax licenses
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.pa.gov/resource/ugeq-ckxd.json`
