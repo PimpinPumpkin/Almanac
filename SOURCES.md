@@ -309,7 +309,9 @@ licensee, owner, manager or phone columns, and nothing creates a place.
   `https://oklahoma.gov/able-commission/brand-registration/brand-registration-reports/listing-of-licensees-by-license-type.html`
 - Not used yet: Massachusetts ABCC publishes its active retail licenses as
   an old binary .xls (`https://www.mass.gov/doc/abcc-active-retail-licenses/download`),
-  which needs a reader the build does not have.
+  which needs a reader the build does not have. On a second fetch the
+  site answered "Not allowed" to this project's User-Agent, so it is left
+  alone.
 - Looked for and not found as a file: Pennsylvania, Ohio, Illinois,
   Michigan, Virginia, North Carolina, Arizona, Minnesota, South Carolina,
   Louisiana, Kansas, Utah, Vermont (search forms or blocked pages), and
