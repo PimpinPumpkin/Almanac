@@ -92,9 +92,10 @@ Done when "everything else" passes 15% in states with two or more of these.
 
 ## 4. Operations
 
-- **4.1 Monthly change file.** For each release: places that opened, closed,
-  appeared or vanished since the last one. This is also what measures id
-  churn, due at the second monthly build.
+- **4.1 Monthly change file.** Built: each release compares its status
+  files with the release before and publishes `changes.parquet`. It first
+  produces something at the second release that has status files. That is
+  also what will measure id churn.
 - **4.2 Tests on every push.** Done: matcher tests, a syntax check of every
   script, and a check that every adapter is documented.
 - **4.3 A failed state retries on its own** and the release notes say which
@@ -115,8 +116,7 @@ Work in this repo that makes the files easier to consume. Changes to Vela
 itself happen in Vela.
 
 - **5.1 Region ids in the manifest** that match the reader's region catalog.
-- **5.2 A small status file per state** (id, status, date, source, score)
-  for readers that only need to join on Overture id.
+- **5.2 A small status file per state.** Done: `status-<region>.parquet`.
 
 ## 6. Other countries
 

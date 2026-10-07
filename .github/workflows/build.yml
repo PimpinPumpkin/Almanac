@@ -150,6 +150,20 @@ jobs:
                   build_date: .[0].build_date, sources: .[0].sources,
                   regions: [.[] | {region, bbox, files}]}' data/out/manifest-*.json > data/out/manifest.json
           jq -r '"\(.regions | length) regions, build \(.build_date)"' data/out/manifest.json
+      - name: Compare with the last release
+        if: ${{ inputs.regions == '' }}
+        run: |
+          curl -fsSL -o duckdb.zip "https://github.com/duckdb/duckdb/releases/download/$DUCKDB_VERSION/duckdb_cli-linux-amd64.zip"
+          unzip -q duckdb.zip && sudo mv duckdb /usr/local/bin/ && rm duckdb.zip
+          mkdir -p prev
+          # the newest release that is not today's build
+          last="$(gh release list --limit 10 --json tagName -q '.[].tagName' | grep -v "^$BUILD_DATE$" | head -1 || true)"
+          if [ -n "$last" ] && gh release download "$last" --pattern 'status-*.parquet' --dir prev 2>/dev/null && ls prev/status-*.parquet >/dev/null 2>&1; then
+            duckdb -c "set variable prev = 'prev'; set variable cur = 'data/out';" -c ".read tools/changes.sql"
+            echo "Changes since $last:"; cat data/out/changes-summary.csv
+          else
+            echo "no earlier release with status files; nothing to compare"
+          fi
       - name: Release
         if: ${{ inputs.regions == '' }}
         run: |
@@ -163,8 +177,6 @@ jobs:
         # only from a complete build, so a state that failed does not vanish from the map
         if: ${{ inputs.regions == '' && needs.build.result == 'success' }}
         run: |
-          curl -fsSL -o duckdb.zip "https://github.com/duckdb/duckdb/releases/download/$DUCKDB_VERSION/duckdb_cli-linux-amd64.zip"
-          unzip -q duckdb.zip && sudo mv duckdb /usr/local/bin/ && rm duckdb.zip
           python3 tools/coverage_map.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

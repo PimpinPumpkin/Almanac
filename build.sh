@@ -94,6 +94,7 @@ SQL
 # Publish: two GeoParquet files per region and one manifest.
 #   core-REGION.parquet    Overture + AllThePlaces + non-OSM evidence
 #   places-REGION.parquet  the same places plus OpenStreetMap
+#   status-REGION.parquet  id, status and score only, from the places file
 # Both are released under the ODbL.
 # Rows are in Hilbert order with small row groups, and lat/lng are plain
 # columns, so a reader can prune on their statistics over HTTP range requests.
@@ -108,6 +109,13 @@ copy (
 ) to '$f' (format parquet, compression zstd, row_group_size 20000);
 SQL
 done
+# A small file for readers that only join on id, and for the monthly change file.
+duck -readonly "$DB" >/dev/null <<SQL
+copy (
+  select id, status, status_date, status_source, open_score, missing_license
+  from out_full order by id
+) to '$PUB/status-$REGION.parquet' (format parquet, compression zstd);
+SQL
 
 entry() {  # entry FILE LAYER LICENSE
   jq -n --arg name "$(basename "$1")" --arg layer "$2" --arg license "$3" \
@@ -122,10 +130,11 @@ jq -n --arg region "$REGION" --arg build_date "$BUILD_DATE" \
   --arg openpois "$(cat "$OUT/openpois.version" 2>/dev/null || true)" \
   --argjson core "$(entry "$PUB/core-$REGION.parquet" core "ODbL-1.0")" \
   --argjson full "$(entry "$PUB/places-$REGION.parquet" full "ODbL-1.0")" \
+  --argjson status "$(entry "$PUB/status-$REGION.parquet" status "ODbL-1.0")" \
   '{dataset: "Vela Almanac", license: "ODbL-1.0",
     credit: "Vela Almanac, (c) its contributors. Open Database License 1.0. https://github.com/PimpinPumpkin/vela-almanac",
     notice: "https://github.com/PimpinPumpkin/vela-almanac/blob/main/NOTICE",
     region: $region, build_date: $build_date, bbox: $bbox,
     sources: {overture: $overture, alltheplaces: $atp, openstreetmap: $osm, foursquare_os_places: $fsq, openpois: $openpois},
-    files: [$core, $full]}' > "$PUB/manifest-$REGION.json"
+    files: [$core, $full, $status]}' > "$PUB/manifest-$REGION.json"
 step done

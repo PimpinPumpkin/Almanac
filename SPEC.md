@@ -573,8 +573,13 @@ more joined exactly, through the SIRET that mappers tag on OSM features.
 
 ## 11. Publishing
 
-Per region: `core-<region>.parquet`, `places-<region>.parquet`, and
-`manifest-<region>.json`. A real release has one region per state plus DC.
+Per region: `core-<region>.parquet`, `places-<region>.parquet`,
+`status-<region>.parquet` (id, status, status_date, status_source,
+open_score and missing_license only, for readers that just join on id) and
+`manifest-<region>.json`. Each release from the second one on also carries
+`changes.parquet`: every place that appeared, vanished, closed, reopened,
+was newly confirmed open, or went quiet since the release before, made by
+`tools/changes.sql`. A real release has one region per state plus DC.
 
 - GeoParquet, zstd, rows in Hilbert order, 20,000 rows per row group.
 - `lat` and `lng` are ordinary double columns. A reader filtering
