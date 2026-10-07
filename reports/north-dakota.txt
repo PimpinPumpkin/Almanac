@@ -52,39 +52,42 @@
 │ unknown │  44164 │
 └─────────┴────────┘
 == register records in the box and how many found a place
-┌────────────────┬─────────┬─────────┬─────────┐
-│     source     │  state  │ records │ matched │
-│    varchar     │ varchar │  int64  │  int64  │
-├────────────────┼─────────┼─────────┼─────────┤
-│ abc_ca         │ open    │      21 │       0 │
-│ abt_fl         │ open    │      45 │       0 │
-│ bot_sac        │ open    │       2 │       0 │
-│ childcare_wa   │ open    │       1 │       0 │
-│ cms_hospitals  │ open    │      79 │      27 │
-│ cpa_tx         │ open    │     264 │       0 │
-│ cpa_tx_tobacco │ open    │      18 │       0 │
-│ dbpr_fl_food   │ open    │      39 │       0 │
-│ dmv_ny         │ open    │      10 │       0 │
-│ elicense_ct    │ open    │       4 │       0 │
-│ epa_ust_open   │ open    │     942 │     307 │
-│ fdic_history   │ closed  │     183 │      53 │
-│ fdic_locations │ open    │     449 │     394 │
-│ irs_eo         │ open    │   11406 │     564 │
-│ kc_wa_food     │ open    │       8 │       0 │
-│ nces_schools   │ open    │     597 │     277 │
-│ ncua_branches  │ open    │     276 │      85 │
-│ nppes_orgs     │ open    │   17275 │    1423 │
-│ olcc_or        │ open    │      17 │       0 │
-│ rev_pa         │ open    │      29 │       0 │
-│ rev_pa_tobacco │ open    │       1 │       0 │
-│ sla_ny         │ open    │       4 │       0 │
-│ snap_current   │ open    │     603 │     531 │
-│ snap_history   │ open    │     631 │     375 │
-│ tabc_tx        │ open    │      47 │       0 │
-│ tax_ny_tobacco │ open    │       1 │       0 │
-│ tdlr_tx        │ open    │      18 │       0 │
-└────────────────┴─────────┴─────────┴─────────┘
-  27 rows                            4 columns
+┌────────────────────┬─────────┬─────────┬─────────┐
+│       source       │  state  │ records │ matched │
+│      varchar       │ varchar │  int64  │  int64  │
+├────────────────────┼─────────┼─────────┼─────────┤
+│ abc_ca             │ open    │      21 │       0 │
+│ abt_fl             │ open    │      45 │       0 │
+│ bot_sac            │ open    │       2 │       0 │
+│ childcare_wa       │ open    │       1 │       0 │
+│ cms_hospitals      │ open    │      79 │      27 │
+│ cpa_tx             │ open    │     264 │       0 │
+│ cpa_tx_tobacco     │ open    │      18 │       0 │
+│ dbpr_fl_food       │ open    │      39 │       0 │
+│ dbpr_fl_lodging    │ open    │       2 │       0 │
+│ dbpr_fl_restaurant │ open    │      48 │       0 │
+│ dbpr_fl_salon      │ open    │      27 │       0 │
+│ dmv_ny             │ open    │      10 │       0 │
+│ elicense_ct        │ open    │       4 │       0 │
+│ epa_ust_open       │ open    │     942 │     307 │
+│ fdic_history       │ closed  │     183 │      53 │
+│ fdic_locations     │ open    │     449 │     394 │
+│ irs_eo             │ open    │   11406 │     564 │
+│ kc_wa_food         │ open    │       8 │       0 │
+│ nces_schools       │ open    │     597 │     277 │
+│ ncua_branches      │ open    │     276 │      85 │
+│ nppes_orgs         │ open    │   17275 │    1423 │
+│ olcc_or            │ open    │      17 │       0 │
+│ rev_pa             │ open    │      29 │       0 │
+│ rev_pa_tobacco     │ open    │       1 │       0 │
+│ sla_ny             │ open    │       4 │       0 │
+│ snap_current       │ open    │     603 │     531 │
+│ snap_history       │ open    │     631 │     375 │
+│ tabc_tx            │ open    │      47 │       0 │
+│ tax_ny_tobacco     │ open    │       1 │       0 │
+│ tdlr_tx            │ open    │      18 │       0 │
+└────────────────────┴─────────┴─────────┴─────────┘
+  30 rows                                4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │

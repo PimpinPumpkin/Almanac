@@ -73,9 +73,12 @@
 │ cpa_tx                 │ open    │    1043 │       0 │
 │ cpa_tx_tobacco         │ open    │      61 │       0 │
 │ dbpr_fl_food           │ open    │     154 │       0 │
-│ dcwp_nyc               │ open    │       2 │       0 │
-│ dmv_ny                 │ open    │       4 │       0 │
-│ dohmh_nyc              │ open    │       7 │       0 │
+│ dbpr_fl_lodging        │ open    │      28 │       0 │
+│ dbpr_fl_restaurant     │ open    │     238 │       0 │
+│ dbpr_fl_salon          │ open    │     135 │       0 │
+│   ·                    │  ·      │       · │       · │
+│   ·                    │  ·      │       · │       · │
+│   ·                    │  ·      │       · │       · │
 │ dol_wa                 │ open    │       7 │       0 │
 │ elicense_ct            │ open    │       3 │       0 │
 │ epa_ust_open           │ open    │    4843 │    1635 │
@@ -97,7 +100,7 @@
 │ tax_ny_tobacco         │ open    │       1 │       0 │
 │ tdlr_tx                │ open    │     279 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  40 rows                                    4 columns
+  44 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │

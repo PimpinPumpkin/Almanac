@@ -54,55 +54,55 @@
 │ unknown │ 278433 │
 └─────────┴────────┘
 == register records in the box and how many found a place
-┌───────────────────┬─────────┬─────────┬─────────┐
-│      source       │  state  │ records │ matched │
-│      varchar      │ varchar │  int64  │  int64  │
-├───────────────────┼─────────┼─────────┼─────────┤
-│ abc_ca            │ open    │      79 │       0 │
-│ abca_dc_active    │ open    │    2075 │    2012 │
-│ abca_dc_cancelled │ closed  │     337 │       0 │
-│ abt_fl            │ open    │     284 │       0 │
-│ agm_ny            │ open    │       3 │       0 │
-│ atc_mo            │ open    │      11 │       0 │
-│ bbl_dc            │ open    │    7346 │      31 │
-│ biz_de            │ open    │   24228 │       2 │
-│ biz_denver        │ open    │       6 │       0 │
-│ bot_sac           │ open    │       5 │       0 │
-│ cdph_chicago      │ open    │       4 │       0 │
-│ childcare_co      │ open    │      17 │       0 │
-│ childcare_wa      │ open    │       7 │       0 │
-│ cms_hospitals     │ open    │     208 │      35 │
-│ cpa_tx            │ open    │     612 │       0 │
-│ cpa_tx_tobacco    │ open    │      56 │       0 │
-│ dbpr_fl_food      │ open    │     228 │       0 │
-│ dcwp_nyc          │ open    │      26 │       0 │
-│ dmv_ny            │ open    │      16 │       0 │
-│ dohmh_nyc         │ open    │       9 │       0 │
-│ dol_wa            │ open    │       7 │       0 │
-│ dos_ny_salons     │ open    │       2 │       0 │
-│ dph_de            │ open    │    2717 │    2430 │
-│ epa_ust_open      │ open    │    5344 │     954 │
-│ fdic_history      │ closed  │    2943 │     446 │
-│ fdic_locations    │ open    │    2402 │    2315 │
-│ irs_eo            │ open    │   84813 │    4339 │
-│ kc_wa_food        │ open    │      87 │       0 │
-│ led_co            │ open    │      27 │       0 │
-│ li_phl            │ open    │       1 │       0 │
-│ moco_md           │ open    │   12496 │    8102 │
-│ nces_schools      │ open    │    2900 │    1298 │
-│ ncua_branches     │ open    │    1171 │     175 │
-│ nppes_orgs        │ open    │  130763 │   12997 │
-│ olcc_or           │ open    │      21 │       0 │
-│ rev_pa            │ open    │     416 │       2 │
-│ rev_pa_tobacco    │ open    │      11 │       0 │
-│ sla_ny            │ open    │      15 │       0 │
-│ snap_current      │ open    │    7127 │    6334 │
-│ snap_history      │ open    │    7116 │    2591 │
-│ tabc_tx           │ open    │     106 │       0 │
-│ tax_ny_tobacco    │ open    │       6 │       0 │
-│ tdlr_tx           │ open    │      93 │       0 │
-└───────────────────┴─────────┴─────────┴─────────┘
-  43 rows                               4 columns
+┌────────────────────┬─────────┬─────────┬─────────┐
+│       source       │  state  │ records │ matched │
+│      varchar       │ varchar │  int64  │  int64  │
+├────────────────────┼─────────┼─────────┼─────────┤
+│ abc_ca             │ open    │      79 │       0 │
+│ abca_dc_active     │ open    │    2075 │    2012 │
+│ abca_dc_cancelled  │ closed  │     337 │       0 │
+│ abt_fl             │ open    │     284 │       0 │
+│ agm_ny             │ open    │       3 │       0 │
+│ atc_mo             │ open    │      11 │       0 │
+│ bbl_dc             │ open    │    7346 │      31 │
+│ biz_de             │ open    │   24228 │       2 │
+│ biz_denver         │ open    │       6 │       0 │
+│ bot_sac            │ open    │       5 │       0 │
+│ cdph_chicago       │ open    │       4 │       0 │
+│ childcare_co       │ open    │      17 │       0 │
+│ childcare_wa       │ open    │       7 │       0 │
+│ cms_hospitals      │ open    │     208 │      35 │
+│ cpa_tx             │ open    │     612 │       0 │
+│ cpa_tx_tobacco     │ open    │      56 │       0 │
+│ dbpr_fl_food       │ open    │     228 │       0 │
+│ dbpr_fl_lodging    │ open    │      29 │       0 │
+│ dbpr_fl_restaurant │ open    │     381 │       0 │
+│ dbpr_fl_salon      │ open    │     186 │       0 │
+│      ·             │  ·      │      ·  │       · │
+│      ·             │  ·      │      ·  │       · │
+│      ·             │  ·      │      ·  │       · │
+│ fdic_history       │ closed  │    2943 │     446 │
+│ fdic_locations     │ open    │    2402 │    2315 │
+│ irs_eo             │ open    │   84813 │    4339 │
+│ kc_wa_food         │ open    │      87 │       0 │
+│ led_co             │ open    │      27 │       0 │
+│ li_phl             │ open    │       1 │       0 │
+│ moco_md            │ open    │   12496 │    8102 │
+│ nces_schools       │ open    │    2900 │    1298 │
+│ ncua_branches      │ open    │    1171 │     175 │
+│ nppes_orgs         │ open    │  130763 │   12997 │
+│ ocm_ny             │ open    │       1 │       0 │
+│ olcc_or            │ open    │      21 │       0 │
+│ rev_pa             │ open    │     416 │       2 │
+│ rev_pa_tobacco     │ open    │      11 │       0 │
+│ sla_ny             │ open    │      15 │       0 │
+│ snap_current       │ open    │    7127 │    6334 │
+│ snap_history       │ open    │    7116 │    2591 │
+│ tabc_tx            │ open    │     106 │       0 │
+│ tax_ny_tobacco     │ open    │       6 │       0 │
+│ tdlr_tx            │ open    │      93 │       0 │
+└────────────────────┴─────────┴─────────┴─────────┘
+  48 rows (40 shown)                     4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -200,11 +200,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    440 │
-│ (none)             │ open    │   4224 │
-│ (none)             │ unknown │  71631 │
+│ (none)             │ open    │   4225 │
+│ (none)             │ unknown │  71630 │
 │ open               │ closed  │   2293 │
-│ open               │ open    │  19333 │
-│ open               │ unknown │ 194251 │
+│ open               │ open    │  19332 │
+│ open               │ unknown │ 194252 │
 │ permanently_closed │ closed  │     26 │
 │ permanently_closed │ open    │     83 │
 │ permanently_closed │ unknown │  10736 │

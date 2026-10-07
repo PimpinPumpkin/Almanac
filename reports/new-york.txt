@@ -43,18 +43,18 @@
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │  14174 │
-│ open    │ 164003 │
-│ unknown │ 994327 │
+│ closed  │  14166 │
+│ open    │ 168601 │
+│ unknown │ 989737 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │  11606 │
-│ open    │ 156014 │
-│ unknown │ 937957 │
+│ closed  │  11603 │
+│ open    │ 160525 │
+│ unknown │ 933449 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -78,13 +78,12 @@
 │ cpa_tx                 │ open    │    5464 │       0 │
 │ cpa_tx_tobacco         │ open    │     305 │       0 │
 │ dbpr_fl_food           │ open    │     656 │       0 │
-│ dcwp_nyc               │ open    │   17999 │    5980 │
-│ dmv_ct                 │ open    │    4639 │       0 │
-│ dmv_ny                 │ open    │   24278 │   15023 │
-│   ·                    │  ·      │      ·  │      ·  │
-│   ·                    │  ·      │      ·  │      ·  │
-│   ·                    │  ·      │      ·  │      ·  │
-│ fdic_history           │ closed  │    7182 │    1121 │
+│ dbpr_fl_lodging        │ open    │      91 │       0 │
+│ dbpr_fl_restaurant     │ open    │    1169 │       0 │
+│ dbpr_fl_salon          │ open    │     574 │       0 │
+│       ·                │  ·      │      ·  │       · │
+│       ·                │  ·      │      ·  │       · │
+│       ·                │  ·      │      ·  │       · │
 │ fdic_locations         │ open    │    7783 │    7305 │
 │ irs_eo                 │ open    │  205393 │   11068 │
 │ kc_wa_food             │ open    │     111 │       0 │
@@ -95,6 +94,7 @@
 │ nces_schools           │ open    │    8953 │    3635 │
 │ ncua_branches          │ open    │    3072 │     669 │
 │ nppes_orgs             │ open    │  317762 │   23059 │
+│ ocm_ny                 │ open    │     643 │     257 │
 │ olcc_or                │ open    │       4 │       0 │
 │ rev_pa                 │ open    │   62794 │       8 │
 │ rev_pa_tobacco         │ open    │    4143 │       3 │
@@ -105,7 +105,7 @@
 │ tax_ny_tobacco         │ open    │   14028 │    3556 │
 │ tdlr_tx                │ open    │     853 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  47 rows (40 shown)                         4 columns
+  53 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -155,42 +155,44 @@
 │ wikidata_p576  │ closed  │ number  │     8 │      8 │
 │ wikidata_p576  │ closed  │ self    │    15 │     15 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  82 rows (40 shown)                        5 columns
+  89 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
 │ varchar │    varchar     │ int64  │
 ├─────────┼────────────────┼────────┤
 │ closed  │ fdic_history   │    979 │
-│ closed  │ fsq_closed     │  10434 │
-│ closed  │ osm_history    │   1468 │
-│ closed  │ osm_lifecycle  │   1273 │
+│ closed  │ fsq_closed     │  10431 │
+│ closed  │ osm_history    │   1465 │
+│ closed  │ osm_lifecycle  │   1271 │
 │ closed  │ wikidata_p576  │     20 │
 │ open    │ abt_fl         │      1 │
-│ open    │ agm_ny         │  13148 │
+│ open    │ agm_ny         │  13145 │
 │ open    │ atp            │  26412 │
 │ open    │ cms_hospitals  │    169 │
 │ open    │ dcwp_nyc       │   2734 │
-│ open    │ dmv_ny         │  14977 │
-│ open    │ dohmh_nyc      │  13547 │
-│ open    │ dos_ny_salons  │  15594 │
+│ open    │ dmv_ny         │  14973 │
+│ open    │ doh_ny_food    │   4898 │
+│ open    │ dohmh_nyc      │  13548 │
+│ open    │ dos_ny_salons  │  15599 │
 │ open    │ elicense_ct    │      1 │
-│ open    │ epa_ust_open   │   1435 │
+│ open    │ epa_ust_open   │   1415 │
 │ open    │ fdic_locations │   7357 │
-│ open    │ irs_eo         │   9023 │
+│ open    │ irs_eo         │   8942 │
 │ open    │ led_co         │      1 │
-│ open    │ nces_schools   │   3533 │
+│ open    │ nces_schools   │   3147 │
 │ open    │ ncua_branches  │    476 │
-│ open    │ nppes_orgs     │   2230 │
-│ open    │ osm_check_date │   4734 │
+│ open    │ nppes_orgs     │   2222 │
+│ open    │ ocm_ny         │    261 │
+│ open    │ osm_check_date │   4677 │
 │ open    │ rev_pa         │      5 │
 │ open    │ rev_pa_tobacco │      3 │
-│ open    │ sla_ny         │  34351 │
+│ open    │ sla_ny         │  34346 │
 │ open    │ snap_current   │  12503 │
-│ open    │ snap_history   │    371 │
+│ open    │ snap_history   │    368 │
 │ open    │ tax_ny_tobacco │   1398 │
 └─────────┴────────────────┴────────┘
-  28 rows                 3 columns
+  30 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -198,9 +200,9 @@
 │    varchar    │ int64  │      int64      │      int64      │
 ├───────────────┼────────┼─────────────────┼─────────────────┤
 │ fdic_history  │   1106 │              27 │              55 │
-│ fsq_closed    │  10723 │              76 │             257 │
-│ osm_history   │   1593 │             105 │             196 │
-│ osm_lifecycle │   1349 │              65 │              79 │
+│ fsq_closed    │  10723 │              79 │             257 │
+│ osm_history   │   1593 │             108 │             196 │
+│ osm_lifecycle │   1349 │              67 │              79 │
 │ wikidata_p576 │     27 │               5 │               2 │
 └───────────────┴────────┴─────────────────┴─────────────────┘
 == Overture operating_status against our status
@@ -208,13 +210,13 @@
 │  overture_status   │ status  │ places │
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
-│ (none)             │ closed  │   2024 │
-│ (none)             │ open    │  14532 │
-│ (none)             │ unknown │ 267043 │
-│ open               │ closed  │  11269 │
-│ open               │ open    │  97702 │
-│ open               │ unknown │ 623301 │
+│ (none)             │ closed  │   2022 │
+│ (none)             │ open    │  14828 │
+│ (none)             │ unknown │ 266749 │
+│ open               │ closed  │  11263 │
+│ open               │ open    │ 101814 │
+│ open               │ unknown │ 619195 │
 │ permanently_closed │ closed  │    114 │
-│ permanently_closed │ open    │    502 │
-│ permanently_closed │ unknown │  43248 │
+│ permanently_closed │ open    │    512 │
+│ permanently_closed │ unknown │  43238 │
 └────────────────────┴─────────┴────────┘

@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2985 │
-│ open    │  37140 │
-│ unknown │ 355719 │
+│ open    │  37139 │
+│ unknown │ 355720 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2135 │
-│ open    │  33454 │
-│ unknown │ 334236 │
+│ open    │  33453 │
+│ unknown │ 334237 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -74,12 +74,11 @@
 │ cpa_tx                 │ open    │    3140 │       1 │
 │ cpa_tx_tobacco         │ open    │     250 │       0 │
 │ dbpr_fl_food           │ open    │     392 │       0 │
-│ dcwp_nyc               │ open    │       9 │       0 │
-│ dmv_ct                 │ open    │       3 │       0 │
-│   ·                    │  ·      │       · │       · │
-│   ·                    │  ·      │       · │       · │
-│   ·                    │  ·      │       · │       · │
-│ emd_sac                │ open    │       4 │       0 │
+│ dbpr_fl_lodging        │ open    │      43 │       0 │
+│ dbpr_fl_restaurant     │ open    │     550 │       0 │
+│      ·                 │  ·      │      ·  │       · │
+│      ·                 │  ·      │      ·  │       · │
+│      ·                 │  ·      │      ·  │       · │
 │ epa_ust_open           │ open    │    2661 │    1246 │
 │ fdic_history           │ closed  │    1144 │     317 │
 │ fdic_locations         │ open    │    1388 │    1305 │
@@ -90,6 +89,7 @@
 │ nces_schools           │ open    │    1917 │    1509 │
 │ ncua_branches          │ open    │    1635 │     258 │
 │ nppes_orgs             │ open    │  161143 │   11164 │
+│ ocm_ny                 │ open    │       1 │       0 │
 │ olcc_or                │ open    │      30 │       0 │
 │ rev_pa                 │ open    │      98 │       0 │
 │ rev_pa_tobacco         │ open    │       3 │       0 │
@@ -100,7 +100,7 @@
 │ tax_ny_tobacco         │ open    │      11 │       0 │
 │ tdlr_tx                │ open    │     598 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  45 rows (40 shown)                         4 columns
+  50 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -108,7 +108,7 @@
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ agm_ny         │ open    │ address │     1 │      1 │
 │ atp            │ open    │ near    │   244 │    238 │
-│ atp            │ open    │ number  │ 14102 │  12819 │
+│ atp            │ open    │ number  │ 14102 │  12818 │
 │ atp            │ open    │ self    │  2002 │   2002 │
 │ atp            │ open    │ spot    │   157 │     42 │
 │ biz_denver     │ open    │ address │    71 │     61 │
@@ -162,7 +162,7 @@
 │ closed  │ osm_lifecycle  │    222 │
 │ closed  │ wikidata_p576  │      2 │
 │ open    │ agm_ny         │      1 │
-│ open    │ atp            │  14262 │
+│ open    │ atp            │  14261 │
 │ open    │ biz_denver     │   2766 │
 │ open    │ childcare_co   │   1100 │
 │ open    │ cms_hospitals  │     85 │
@@ -197,8 +197,8 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    568 │
-│ (none)             │ open    │   5116 │
-│ (none)             │ unknown │  86745 │
+│ (none)             │ open    │   5115 │
+│ (none)             │ unknown │  86746 │
 │ open               │ closed  │   2219 │
 │ open               │ open    │  27398 │
 │ open               │ unknown │ 231163 │

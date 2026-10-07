@@ -41,7 +41,7 @@
 <text x="209" y="197" font-size="10" text-anchor="middle" fill="#ffffff">WI</text>
 <rect x="224" y="180" width="26" height="26" rx="4" fill="#0d366b"><title>MI, fast food: 64.9% of 3609</title></rect>
 <text x="237" y="197" font-size="10" text-anchor="middle" fill="#ffffff">MI</text>
-<rect x="252" y="180" width="26" height="26" rx="4" fill="#1c5cab"><title>NY, fast food: 55.5% of 5559</title></rect>
+<rect x="252" y="180" width="26" height="26" rx="4" fill="#1c5cab"><title>NY, fast food: 56.4% of 5559</title></rect>
 <text x="265" y="197" font-size="10" text-anchor="middle" fill="#ffffff">NY</text>
 <rect x="280" y="180" width="26" height="26" rx="4" fill="#0d366b"><title>RI, fast food: 60.4% of 273</title></rect>
 <text x="293" y="197" font-size="10" text-anchor="middle" fill="#ffffff">RI</text>
@@ -117,7 +117,7 @@
 <text x="41" y="337" font-size="10" text-anchor="middle" fill="#ffffff">HI</text>
 <rect x="112" y="320" width="26" height="26" rx="4" fill="#0d366b"><title>TX, fast food: 68.2% of 14380</title></rect>
 <text x="125" y="337" font-size="10" text-anchor="middle" fill="#ffffff">TX</text>
-<rect x="252" y="320" width="26" height="26" rx="4" fill="#0d366b"><title>FL, fast food: 62.4% of 7706</title></rect>
+<rect x="252" y="320" width="26" height="26" rx="4" fill="#0d366b"><title>FL, fast food: 64.1% of 7706</title></rect>
 <text x="265" y="337" font-size="10" text-anchor="middle" fill="#ffffff">FL</text>
 <text x="392" y="112" font-size="14" font-weight="600" fill="#1f1f1e">Banks and credit unions</text>
 <rect x="392" y="124" width="26" height="26" rx="4" fill="#1c5cab"><title>AK, banks and credit unions: 58.3% of 348</title></rect>
@@ -196,7 +196,7 @@
 <text x="461" y="281" font-size="10" text-anchor="middle" fill="#ffffff">NM</text>
 <rect x="476" y="264" width="26" height="26" rx="4" fill="#0d366b"><title>KS, banks and credit unions: 67.0% of 2647</title></rect>
 <text x="489" y="281" font-size="10" text-anchor="middle" fill="#ffffff">KS</text>
-<rect x="504" y="264" width="26" height="26" rx="4" fill="#0d366b"><title>AR, banks and credit unions: 73.1% of 2699</title></rect>
+<rect x="504" y="264" width="26" height="26" rx="4" fill="#0d366b"><title>AR, banks and credit unions: 73.1% of 2700</title></rect>
 <text x="517" y="281" font-size="10" text-anchor="middle" fill="#ffffff">AR</text>
 <rect x="532" y="264" width="26" height="26" rx="4" fill="#0d366b"><title>TN, banks and credit unions: 61.8% of 4706</title></rect>
 <text x="545" y="281" font-size="10" text-anchor="middle" fill="#ffffff">TN</text>
@@ -529,7 +529,7 @@
 <text x="405" y="623" font-size="10" text-anchor="middle" fill="#ffffff">HI</text>
 <rect x="476" y="606" width="26" height="26" rx="4" fill="#1c5cab"><title>TX, pharmacies: 49.2% of 5704</title></rect>
 <text x="489" y="623" font-size="10" text-anchor="middle" fill="#ffffff">TX</text>
-<rect x="616" y="606" width="26" height="26" rx="4" fill="#6da7ec"><title>FL, pharmacies: 28.8% of 4352</title></rect>
+<rect x="616" y="606" width="26" height="26" rx="4" fill="#6da7ec"><title>FL, pharmacies: 28.9% of 4352</title></rect>
 <text x="629" y="623" font-size="10" text-anchor="middle" fill="#1f1f1e">FL</text>
 <text x="756" y="398" font-size="14" font-weight="600" fill="#1f1f1e">Restaurants and cafes</text>
 <rect x="756" y="410" width="26" height="26" rx="4" fill="#9ec5f4"><title>AK, restaurants and cafes: 9.0% of 2975</title></rect>
@@ -556,7 +556,7 @@
 <text x="937" y="483" font-size="10" text-anchor="middle" fill="#1f1f1e">WI</text>
 <rect x="952" y="466" width="26" height="26" rx="4" fill="#6da7ec"><title>MI, restaurants and cafes: 17.3% of 29984</title></rect>
 <text x="965" y="483" font-size="10" text-anchor="middle" fill="#1f1f1e">MI</text>
-<rect x="980" y="466" width="26" height="26" rx="4" fill="#3987e5"><title>NY, restaurants and cafes: 40.2% of 86351</title></rect>
+<rect x="980" y="466" width="26" height="26" rx="4" fill="#3987e5"><title>NY, restaurants and cafes: 43.1% of 86351</title></rect>
 <text x="993" y="483" font-size="10" text-anchor="middle" fill="#ffffff">NY</text>
 <rect x="1008" y="466" width="26" height="26" rx="4" fill="#9ec5f4"><title>RI, restaurants and cafes: 11.6% of 4468</title></rect>
 <text x="1021" y="483" font-size="10" text-anchor="middle" fill="#1f1f1e">RI</text>
@@ -632,7 +632,7 @@
 <text x="769" y="623" font-size="10" text-anchor="middle" fill="#1f1f1e">HI</text>
 <rect x="840" y="606" width="26" height="26" rx="4" fill="#3987e5"><title>TX, restaurants and cafes: 41.5% of 106853</title></rect>
 <text x="853" y="623" font-size="10" text-anchor="middle" fill="#ffffff">TX</text>
-<rect x="980" y="606" width="26" height="26" rx="4" fill="#3987e5"><title>FL, restaurants and cafes: 32.9% of 83212</title></rect>
+<rect x="980" y="606" width="26" height="26" rx="4" fill="#3987e5"><title>FL, restaurants and cafes: 36.6% of 83212</title></rect>
 <text x="993" y="623" font-size="10" text-anchor="middle" fill="#ffffff">FL</text>
 <text x="28" y="684" font-size="14" font-weight="600" fill="#1f1f1e">Bars</text>
 <rect x="28" y="696" width="26" height="26" rx="4" fill="#cde2fb"><title>AK, bars: 2.0% of 443</title></rect>
@@ -659,7 +659,7 @@
 <text x="209" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">WI</text>
 <rect x="224" y="752" width="26" height="26" rx="4" fill="#9ec5f4"><title>MI, bars: 6.6% of 4608</title></rect>
 <text x="237" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">MI</text>
-<rect x="252" y="752" width="26" height="26" rx="4" fill="#3987e5"><title>NY, bars: 40.5% of 11495</title></rect>
+<rect x="252" y="752" width="26" height="26" rx="4" fill="#3987e5"><title>NY, bars: 41.3% of 11495</title></rect>
 <text x="265" y="769" font-size="10" text-anchor="middle" fill="#ffffff">NY</text>
 <rect x="280" y="752" width="26" height="26" rx="4" fill="#9ec5f4"><title>RI, bars: 5.8% of 705</title></rect>
 <text x="293" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">RI</text>
@@ -735,7 +735,7 @@
 <text x="41" y="909" font-size="10" text-anchor="middle" fill="#1f1f1e">HI</text>
 <rect x="112" y="892" width="26" height="26" rx="4" fill="#3987e5"><title>TX, bars: 36.3% of 13477</title></rect>
 <text x="125" y="909" font-size="10" text-anchor="middle" fill="#ffffff">TX</text>
-<rect x="252" y="892" width="26" height="26" rx="4" fill="#6da7ec"><title>FL, bars: 26.7% of 11280</title></rect>
+<rect x="252" y="892" width="26" height="26" rx="4" fill="#6da7ec"><title>FL, bars: 28.0% of 11280</title></rect>
 <text x="265" y="909" font-size="10" text-anchor="middle" fill="#1f1f1e">FL</text>
 <text x="392" y="684" font-size="14" font-weight="600" fill="#1f1f1e">Hotels</text>
 <rect x="392" y="696" width="26" height="26" rx="4" fill="#9ec5f4"><title>AK, hotels: 5.2% of 732</title></rect>
@@ -762,7 +762,7 @@
 <text x="573" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">WI</text>
 <rect x="588" y="752" width="26" height="26" rx="4" fill="#9ec5f4"><title>MI, hotels: 11.3% of 3249</title></rect>
 <text x="601" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">MI</text>
-<rect x="616" y="752" width="26" height="26" rx="4" fill="#6da7ec"><title>NY, hotels: 18.5% of 5150</title></rect>
+<rect x="616" y="752" width="26" height="26" rx="4" fill="#6da7ec"><title>NY, hotels: 19.3% of 5150</title></rect>
 <text x="629" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">NY</text>
 <rect x="644" y="752" width="26" height="26" rx="4" fill="#9ec5f4"><title>RI, hotels: 13.6% of 280</title></rect>
 <text x="657" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">RI</text>
@@ -838,7 +838,7 @@
 <text x="405" y="909" font-size="10" text-anchor="middle" fill="#1f1f1e">HI</text>
 <rect x="476" y="892" width="26" height="26" rx="4" fill="#6da7ec"><title>TX, hotels: 27.3% of 10522</title></rect>
 <text x="489" y="909" font-size="10" text-anchor="middle" fill="#1f1f1e">TX</text>
-<rect x="616" y="892" width="26" height="26" rx="4" fill="#6da7ec"><title>FL, hotels: 17.1% of 10070</title></rect>
+<rect x="616" y="892" width="26" height="26" rx="4" fill="#6da7ec"><title>FL, hotels: 29.5% of 10070</title></rect>
 <text x="629" y="909" font-size="10" text-anchor="middle" fill="#1f1f1e">FL</text>
 <text x="756" y="684" font-size="14" font-weight="600" fill="#1f1f1e">Schools</text>
 <rect x="756" y="696" width="26" height="26" rx="4" fill="#3987e5"><title>AK, schools: 30.3% of 1267</title></rect>
@@ -865,7 +865,7 @@
 <text x="937" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">WI</text>
 <rect x="952" y="752" width="26" height="26" rx="4" fill="#6da7ec"><title>MI, schools: 21.2% of 14471</title></rect>
 <text x="965" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">MI</text>
-<rect x="980" y="752" width="26" height="26" rx="4" fill="#6da7ec"><title>NY, schools: 20.1% of 23919</title></rect>
+<rect x="980" y="752" width="26" height="26" rx="4" fill="#6da7ec"><title>NY, schools: 21.0% of 23919</title></rect>
 <text x="993" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">NY</text>
 <rect x="1008" y="752" width="26" height="26" rx="4" fill="#6da7ec"><title>RI, schools: 17.9% of 1534</title></rect>
 <text x="1021" y="769" font-size="10" text-anchor="middle" fill="#1f1f1e">RI</text>
@@ -941,7 +941,7 @@
 <text x="769" y="909" font-size="10" text-anchor="middle" fill="#1f1f1e">HI</text>
 <rect x="840" y="892" width="26" height="26" rx="4" fill="#9ec5f4"><title>TX, schools: 12.3% of 36148</title></rect>
 <text x="853" y="909" font-size="10" text-anchor="middle" fill="#1f1f1e">TX</text>
-<rect x="980" y="892" width="26" height="26" rx="4" fill="#6da7ec"><title>FL, schools: 17.6% of 24084</title></rect>
+<rect x="980" y="892" width="26" height="26" rx="4" fill="#6da7ec"><title>FL, schools: 17.7% of 24084</title></rect>
 <text x="993" y="909" font-size="10" text-anchor="middle" fill="#1f1f1e">FL</text>
 <text x="28" y="970" font-size="14" font-weight="600" fill="#1f1f1e">Hospitals</text>
 <rect x="28" y="982" width="26" height="26" rx="4" fill="#9ec5f4"><title>AK, hospitals: 14.0% of 114</title></rect>
@@ -1071,7 +1071,7 @@
 <text x="573" y="1055" font-size="10" text-anchor="middle" fill="#1f1f1e">WI</text>
 <rect x="588" y="1038" width="26" height="26" rx="4" fill="#9ec5f4"><title>MI, museums: 9.9% of 1263</title></rect>
 <text x="601" y="1055" font-size="10" text-anchor="middle" fill="#1f1f1e">MI</text>
-<rect x="616" y="1038" width="26" height="26" rx="4" fill="#9ec5f4"><title>NY, museums: 13.9% of 2444</title></rect>
+<rect x="616" y="1038" width="26" height="26" rx="4" fill="#9ec5f4"><title>NY, museums: 14.0% of 2444</title></rect>
 <text x="629" y="1055" font-size="10" text-anchor="middle" fill="#1f1f1e">NY</text>
 <rect x="644" y="1038" width="26" height="26" rx="4" fill="#6da7ec"><title>RI, museums: 21.3% of 183</title></rect>
 <text x="657" y="1055" font-size="10" text-anchor="middle" fill="#1f1f1e">RI</text>
@@ -1147,7 +1147,7 @@
 <text x="405" y="1195" font-size="10" text-anchor="middle" fill="#1f1f1e">HI</text>
 <rect x="476" y="1178" width="26" height="26" rx="4" fill="#6da7ec"><title>TX, museums: 16.5% of 2249</title></rect>
 <text x="489" y="1195" font-size="10" text-anchor="middle" fill="#1f1f1e">TX</text>
-<rect x="616" y="1178" width="26" height="26" rx="4" fill="#9ec5f4"><title>FL, museums: 11.0% of 1576</title></rect>
+<rect x="616" y="1178" width="26" height="26" rx="4" fill="#9ec5f4"><title>FL, museums: 11.3% of 1576</title></rect>
 <text x="629" y="1195" font-size="10" text-anchor="middle" fill="#1f1f1e">FL</text>
 <text x="756" y="970" font-size="14" font-weight="600" fill="#1f1f1e">Everything else</text>
 <rect x="756" y="982" width="26" height="26" rx="4" fill="#cde2fb"><title>AK, everything else: 4.5% of 43012</title></rect>
@@ -1174,7 +1174,7 @@
 <text x="937" y="1055" font-size="10" text-anchor="middle" fill="#1f1f1e">WI</text>
 <rect x="952" y="1038" width="26" height="26" rx="4" fill="#9ec5f4"><title>MI, everything else: 8.8% of 480493</title></rect>
 <text x="965" y="1055" font-size="10" text-anchor="middle" fill="#1f1f1e">MI</text>
-<rect x="980" y="1038" width="26" height="26" rx="4" fill="#9ec5f4"><title>NY, everything else: 11.0% of 977526</title></rect>
+<rect x="980" y="1038" width="26" height="26" rx="4" fill="#9ec5f4"><title>NY, everything else: 11.1% of 977526</title></rect>
 <text x="993" y="1055" font-size="10" text-anchor="middle" fill="#1f1f1e">NY</text>
 <rect x="1008" y="1038" width="26" height="26" rx="4" fill="#9ec5f4"><title>RI, everything else: 6.0% of 53352</title></rect>
 <text x="1021" y="1055" font-size="10" text-anchor="middle" fill="#1f1f1e">RI</text>
@@ -1250,6 +1250,6 @@
 <text x="769" y="1195" font-size="10" text-anchor="middle" fill="#1f1f1e">HI</text>
 <rect x="840" y="1178" width="26" height="26" rx="4" fill="#9ec5f4"><title>TX, everything else: 12.1% of 1456552</title></rect>
 <text x="853" y="1195" font-size="10" text-anchor="middle" fill="#1f1f1e">TX</text>
-<rect x="980" y="1178" width="26" height="26" rx="4" fill="#cde2fb"><title>FL, everything else: 4.7% of 1246499</title></rect>
+<rect x="980" y="1178" width="26" height="26" rx="4" fill="#9ec5f4"><title>FL, everything else: 5.9% of 1246499</title></rect>
 <text x="993" y="1195" font-size="10" text-anchor="middle" fill="#1f1f1e">FL</text>
 </svg>

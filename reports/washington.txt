@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   4742 │
-│ open    │  50900 │
-│ unknown │ 378486 │
+│ open    │  50896 │
+│ unknown │ 378490 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2751 │
-│ open    │  39288 │
-│ unknown │ 348048 │
+│ open    │  39284 │
+│ unknown │ 348052 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -73,12 +73,12 @@
 │ cpa_tx                 │ open    │     921 │       0 │
 │ cpa_tx_tobacco         │ open    │      52 │       0 │
 │ dbpr_fl_food           │ open    │      40 │       0 │
-│ dcwp_nyc               │ open    │       6 │       0 │
-│ dmv_ny                 │ open    │       5 │       0 │
-│ dohmh_nyc              │ open    │      20 │       0 │
-│ dol_wa                 │ open    │    4058 │    2228 │
-│ dos_ny_salons          │ open    │       2 │       0 │
-│ dph_de                 │ open    │       1 │       0 │
+│ dbpr_fl_lodging        │ open    │      10 │       0 │
+│ dbpr_fl_restaurant     │ open    │      72 │       0 │
+│ dbpr_fl_salon          │ open    │      38 │       0 │
+│    ·                   │  ·      │       · │       · │
+│    ·                   │  ·      │       · │       · │
+│    ·                   │  ·      │       · │       · │
 │ emd_sac                │ open    │       2 │       0 │
 │ epa_ust_open           │ open    │    3746 │    1330 │
 │ fdic_history           │ closed  │    1368 │     410 │
@@ -100,7 +100,7 @@
 │ tax_ny_tobacco         │ open    │       8 │       0 │
 │ tdlr_tx                │ open    │     266 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  43 rows                                    4 columns
+  47 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -118,9 +118,9 @@
 │ childcare_wa   │ open    │ number  │   987 │    977 │
 │ childcare_wa   │ open    │ spot    │     7 │      7 │
 │ cms_hospitals  │ open    │ address │    93 │     93 │
-│ dol_wa         │ open    │ address │   141 │    105 │
+│ dol_wa         │ open    │ address │   134 │    103 │
 │ dol_wa         │ open    │ near    │    48 │     36 │
-│ dol_wa         │ open    │ number  │  2161 │   1608 │
+│ dol_wa         │ open    │ number  │  2090 │   1599 │
 │ dol_wa         │ open    │ spot    │     3 │      3 │
 │ epa_ust_open   │ open    │ near    │    80 │     80 │
 │ epa_ust_open   │ open    │ number  │  1309 │   1307 │
@@ -165,7 +165,7 @@
 │ open    │ biz_seattle    │   6227 │
 │ open    │ childcare_wa   │   1035 │
 │ open    │ cms_hospitals  │     89 │
-│ open    │ dol_wa         │   1437 │
+│ open    │ dol_wa         │   1433 │
 │ open    │ epa_ust_open   │    582 │
 │ open    │ fdic_locations │   1474 │
 │ open    │ irs_eo         │   2822 │
@@ -197,11 +197,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    716 │
-│ (none)             │ open    │   6157 │
-│ (none)             │ unknown │  90787 │
+│ (none)             │ open    │   6156 │
+│ (none)             │ unknown │  90788 │
 │ open               │ closed  │   3437 │
-│ open               │ open    │  34369 │
-│ open               │ unknown │ 238241 │
+│ open               │ open    │  34366 │
+│ open               │ unknown │ 238244 │
 │ permanently_closed │ closed  │     95 │
 │ permanently_closed │ open    │    136 │
 │ permanently_closed │ unknown │  11717 │

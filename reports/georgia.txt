@@ -73,12 +73,12 @@
 │ cpa_tx                 │ open    │    4062 │       3 │
 │ cpa_tx_tobacco         │ open    │     288 │       2 │
 │ dbpr_fl_food           │ open    │    1068 │       0 │
-│ dcwp_nyc               │ open    │      25 │       0 │
-│ dmv_ct                 │ open    │       2 │       0 │
-│ dmv_ny                 │ open    │       5 │       0 │
-│   ·                    │  ·      │       · │       · │
-│   ·                    │  ·      │       · │       · │
-│   ·                    │  ·      │       · │       · │
+│ dbpr_fl_lodging        │ open    │     236 │       0 │
+│ dbpr_fl_restaurant     │ open    │    2034 │       0 │
+│ dbpr_fl_salon          │ open    │    1382 │       0 │
+│      ·                 │  ·      │      ·  │       · │
+│      ·                 │  ·      │      ·  │       · │
+│      ·                 │  ·      │      ·  │       · │
 │ epa_ust_open           │ open    │   11994 │    3049 │
 │ fdic_history           │ closed  │    3162 │     472 │
 │ fdic_locations         │ open    │    2975 │    2856 │
@@ -100,7 +100,7 @@
 │ tax_ny_tobacco         │ open    │       9 │       0 │
 │ tdlr_tx                │ open    │     588 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  45 rows (40 shown)                         4 columns
+  49 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -194,11 +194,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    759 │
-│ (none)             │ open    │   8277 │
-│ (none)             │ unknown │ 145048 │
+│ (none)             │ open    │   8278 │
+│ (none)             │ unknown │ 145047 │
 │ open               │ closed  │   3089 │
-│ open               │ open    │  35490 │
-│ open               │ unknown │ 379369 │
+│ open               │ open    │  35489 │
+│ open               │ unknown │ 379370 │
 │ permanently_closed │ closed  │     31 │
 │ permanently_closed │ open    │    112 │
 │ permanently_closed │ unknown │  19786 │

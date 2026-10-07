@@ -74,11 +74,11 @@
 │ cpa_tx                 │ open    │    3357 │       0 │
 │ cpa_tx_tobacco         │ open    │     265 │       0 │
 │ dbpr_fl_food           │ open    │     164 │       0 │
-│ dcwp_nyc               │ open    │      14 │       0 │
-│ dmv_ny                 │ open    │      11 │       0 │
-│   ·                    │  ·      │       · │       · │
-│   ·                    │  ·      │       · │       · │
-│   ·                    │  ·      │       · │       · │
+│ dbpr_fl_lodging        │ open    │      17 │       0 │
+│ dbpr_fl_restaurant     │ open    │     265 │       0 │
+│      ·                 │  ·      │      ·  │       · │
+│      ·                 │  ·      │      ·  │       · │
+│      ·                 │  ·      │      ·  │       · │
 │ epa_ust_open           │ open    │    6038 │    2149 │
 │ fdic_history           │ closed  │    2164 │     385 │
 │ fdic_locations         │ open    │    2356 │    2174 │
@@ -100,7 +100,7 @@
 │ tax_ny_tobacco         │ open    │       4 │       0 │
 │ tdlr_tx                │ open    │     590 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  46 rows (40 shown)                         4 columns
+  50 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -162,8 +162,8 @@
 │ open    │ cms_hospitals  │     94 │
 │ open    │ epa_ust_open   │    954 │
 │ open    │ fdic_locations │   2329 │
-│ open    │ irs_eo         │   2748 │
-│ open    │ nces_schools   │   1565 │
+│ open    │ irs_eo         │   2750 │
+│ open    │ nces_schools   │   1563 │
 │ open    │ ncua_branches  │    296 │
 │ open    │ nppes_orgs     │   1298 │
 │ open    │ osm_check_date │   1806 │

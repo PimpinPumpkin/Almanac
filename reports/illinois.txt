@@ -75,12 +75,11 @@
 │ cpa_tx                 │ open    │    4173 │       0 │
 │ cpa_tx_tobacco         │ open    │     269 │       0 │
 │ dbpr_fl_food           │ open    │     196 │       0 │
-│ dcwp_nyc               │ open    │      35 │       0 │
-│ dmv_ny                 │ open    │      25 │       0 │
-│   ·                    │  ·      │       · │       · │
-│   ·                    │  ·      │       · │       · │
-│   ·                    │  ·      │       · │       · │
-│ epa_ust_open           │ open    │    8438 │    2496 │
+│ dbpr_fl_lodging        │ open    │      34 │       0 │
+│ dbpr_fl_restaurant     │ open    │     376 │       0 │
+│      ·                 │  ·      │      ·  │       · │
+│      ·                 │  ·      │      ·  │       · │
+│      ·                 │  ·      │      ·  │       · │
 │ fdic_history           │ closed  │    4054 │     788 │
 │ fdic_locations         │ open    │    4797 │    4380 │
 │ irs_eo                 │ open    │  130941 │   11201 │
@@ -91,6 +90,7 @@
 │ nces_schools           │ open    │    5656 │    2503 │
 │ ncua_branches          │ open    │    2096 │     381 │
 │ nppes_orgs             │ open    │  196459 │   19799 │
+│ ocm_ny                 │ open    │       5 │       0 │
 │ olcc_or                │ open    │      19 │       0 │
 │ rev_pa                 │ open    │     239 │       0 │
 │ rev_pa_tobacco         │ open    │       5 │       0 │
@@ -101,7 +101,7 @@
 │ tax_ny_tobacco         │ open    │      20 │       0 │
 │ tdlr_tx                │ open    │     738 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  45 rows (40 shown)                         4 columns
+  50 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────────────┬─────────┬─────────┬───────┬────────┐
 │         source         │  state  │  rule   │ rows  │ places │
@@ -157,8 +157,8 @@
 │ status  │     status_source      │ places │
 │ varchar │        varchar         │ int64  │
 ├─────────┼────────────────────────┼────────┤
-│ closed  │ bacp_chicago_cancelled │   1338 │
-│ closed  │ cdph_chicago_oob       │   1562 │
+│ closed  │ bacp_chicago_cancelled │   1337 │
+│ closed  │ cdph_chicago_oob       │   1563 │
 │ closed  │ fdic_history           │    660 │
 │ closed  │ fsq_closed             │   4628 │
 │ closed  │ osm_history            │   1002 │
@@ -171,8 +171,8 @@
 │ open    │ cms_hospitals          │    144 │
 │ open    │ epa_ust_open           │   1133 │
 │ open    │ fdic_locations         │   4514 │
-│ open    │ irs_eo                 │   5915 │
-│ open    │ nces_schools           │   2290 │
+│ open    │ irs_eo                 │   5919 │
+│ open    │ nces_schools           │   2286 │
 │ open    │ ncua_branches          │    280 │
 │ open    │ nppes_orgs             │   2692 │
 │ open    │ osm_check_date         │   4767 │
@@ -200,11 +200,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │   1412 │
-│ (none)             │ open    │   9882 │
-│ (none)             │ unknown │ 180764 │
+│ (none)             │ open    │   9881 │
+│ (none)             │ unknown │ 180765 │
 │ open               │ closed  │   7718 │
-│ open               │ open    │  53961 │
-│ open               │ unknown │ 422218 │
+│ open               │ open    │  53962 │
+│ open               │ unknown │ 422217 │
 │ permanently_closed │ closed  │    215 │
 │ permanently_closed │ open    │    264 │
 │ permanently_closed │ unknown │  22777 │

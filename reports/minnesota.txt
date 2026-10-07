@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2403 │
-│ open    │  28018 │
-│ unknown │ 299071 │
+│ open    │  28019 │
+│ unknown │ 299070 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -72,11 +72,13 @@
 │ cpa_tx                 │ open    │    1258 │       0 │
 │ cpa_tx_tobacco         │ open    │      76 │       0 │
 │ dbpr_fl_food           │ open    │      66 │       0 │
-│ dcwp_nyc               │ open    │      22 │       0 │
-│ dmv_ny                 │ open    │       5 │       0 │
-│ dohmh_nyc              │ open    │      16 │       0 │
-│ dol_wa                 │ open    │       2 │       0 │
-│ dph_de                 │ open    │       5 │       0 │
+│ dbpr_fl_lodging        │ open    │      15 │       0 │
+│ dbpr_fl_restaurant     │ open    │     118 │       0 │
+│ dbpr_fl_salon          │ open    │      34 │       0 │
+│ dbpr_fl_vet            │ open    │       5 │       0 │
+│      ·                 │  ·      │       · │       · │
+│      ·                 │  ·      │       · │       · │
+│      ·                 │  ·      │       · │       · │
 │ elicense_ct            │ open    │       9 │       0 │
 │ emd_sac                │ open    │       1 │       0 │
 │ epa_ust_open           │ open    │    5402 │     883 │
@@ -98,7 +100,7 @@
 │ tax_ny_tobacco         │ open    │       5 │       0 │
 │ tdlr_tx                │ open    │     165 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  41 rows                                    4 columns
+  45 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -165,7 +167,7 @@
 │ open    │ nces_schools   │   1161 │
 │ open    │ ncua_branches  │    262 │
 │ open    │ nppes_orgs     │   1324 │
-│ open    │ osm_check_date │   2439 │
+│ open    │ osm_check_date │   2440 │
 │ open    │ snap_current   │   3773 │
 │ open    │ snap_history   │     62 │
 └─────────┴────────────────┴────────┘
@@ -191,8 +193,8 @@
 │ (none)             │ open    │   4394 │
 │ (none)             │ unknown │  76107 │
 │ open               │ closed  │   1855 │
-│ open               │ open    │  17548 │
-│ open               │ unknown │ 191882 │
+│ open               │ open    │  17549 │
+│ open               │ unknown │ 191881 │
 │ permanently_closed │ closed  │     25 │
 │ permanently_closed │ open    │     66 │
 │ permanently_closed │ unknown │   7932 │

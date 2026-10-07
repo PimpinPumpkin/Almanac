@@ -52,52 +52,55 @@
 │ unknown │ 262617 │
 └─────────┴────────┘
 == register records in the box and how many found a place
-┌────────────────┬─────────┬─────────┬─────────┐
-│     source     │  state  │ records │ matched │
-│    varchar     │ varchar │  int64  │  int64  │
-├────────────────┼─────────┼─────────┼─────────┤
-│ abc_ca         │ open    │      82 │       0 │
-│ abt_fl         │ open    │     306 │       0 │
-│ agm_ny         │ open    │       5 │       0 │
-│ atc_mo         │ open    │      78 │       0 │
-│ bbl_dc         │ open    │       1 │       0 │
-│ biz_de         │ open    │     189 │       0 │
-│ biz_denver     │ open    │       3 │       0 │
-│ bot_sac        │ open    │       2 │       0 │
-│ childcare_co   │ open    │       4 │       0 │
-│ cms_hospitals  │ open    │     205 │      39 │
-│ cpa_tx         │ open    │     703 │       0 │
-│ cpa_tx_tobacco │ open    │      61 │       0 │
-│ dbpr_fl_food   │ open    │     274 │       0 │
-│ dcwp_nyc       │ open    │      15 │       0 │
-│ dmv_ct         │ open    │       1 │       0 │
-│ dmv_ny         │ open    │       5 │       0 │
-│ dohmh_nyc      │ open    │       6 │       0 │
-│ dol_wa         │ open    │       4 │       0 │
-│ dos_ny_salons  │ open    │       4 │       0 │
-│ dph_de         │ open    │       4 │       0 │
-│ elicense_ct    │ open    │       7 │       1 │
-│ epa_ust_open   │ open    │    6340 │    1767 │
-│ fdic_history   │ closed  │    1540 │     238 │
-│ fdic_locations │ open    │    1853 │    1791 │
-│ irs_eo         │ open    │   53542 │    2197 │
-│ led_co         │ open    │      21 │       0 │
-│ lou_food       │ open    │      24 │       0 │
-│ moco_md        │ open    │      52 │       0 │
-│ nces_schools   │ open    │    2047 │    1098 │
-│ ncua_branches  │ open    │    1060 │     272 │
-│ nppes_orgs     │ open    │  101705 │    7036 │
-│ olcc_or        │ open    │      32 │       0 │
-│ rev_pa         │ open    │      96 │       0 │
-│ rev_pa_tobacco │ open    │       2 │       0 │
-│ sla_ny         │ open    │       9 │       0 │
-│ snap_current   │ open    │    7898 │    7368 │
-│ snap_history   │ open    │    8174 │    3712 │
-│ tabc_tx        │ open    │     131 │       1 │
-│ tax_ny_tobacco │ open    │       8 │       0 │
-│ tdlr_tx        │ open    │      76 │       0 │
-└────────────────┴─────────┴─────────┴─────────┘
-  40 rows                            4 columns
+┌────────────────────┬─────────┬─────────┬─────────┐
+│       source       │  state  │ records │ matched │
+│      varchar       │ varchar │  int64  │  int64  │
+├────────────────────┼─────────┼─────────┼─────────┤
+│ abc_ca             │ open    │      82 │       0 │
+│ abt_fl             │ open    │     306 │       0 │
+│ agm_ny             │ open    │       5 │       0 │
+│ atc_mo             │ open    │      78 │       0 │
+│ bbl_dc             │ open    │       1 │       0 │
+│ biz_de             │ open    │     189 │       0 │
+│ biz_denver         │ open    │       3 │       0 │
+│ bot_sac            │ open    │       2 │       0 │
+│ childcare_co       │ open    │       4 │       0 │
+│ cms_hospitals      │ open    │     205 │      39 │
+│ cpa_tx             │ open    │     703 │       0 │
+│ cpa_tx_tobacco     │ open    │      61 │       0 │
+│ dbpr_fl_food       │ open    │     274 │       0 │
+│ dbpr_fl_lodging    │ open    │      50 │       0 │
+│ dbpr_fl_restaurant │ open    │     493 │       0 │
+│ dbpr_fl_salon      │ open    │     147 │       0 │
+│ dbpr_fl_vet        │ open    │       9 │       0 │
+│ dcwp_nyc           │ open    │      15 │       0 │
+│ dmv_ct             │ open    │       1 │       0 │
+│ dmv_ny             │ open    │       5 │       0 │
+│   ·                │  ·      │       · │       · │
+│   ·                │  ·      │       · │       · │
+│   ·                │  ·      │       · │       · │
+│ epa_ust_open       │ open    │    6340 │    1767 │
+│ fdic_history       │ closed  │    1540 │     238 │
+│ fdic_locations     │ open    │    1853 │    1791 │
+│ irs_eo             │ open    │   53542 │    2197 │
+│ led_co             │ open    │      21 │       0 │
+│ lou_food           │ open    │      24 │       0 │
+│ moco_md            │ open    │      52 │       0 │
+│ nces_schools       │ open    │    2047 │    1098 │
+│ ncua_branches      │ open    │    1060 │     272 │
+│ nppes_orgs         │ open    │  101705 │    7036 │
+│ ocm_ny             │ open    │       1 │       0 │
+│ olcc_or            │ open    │      32 │       0 │
+│ rev_pa             │ open    │      96 │       0 │
+│ rev_pa_tobacco     │ open    │       2 │       0 │
+│ sla_ny             │ open    │       9 │       0 │
+│ snap_current       │ open    │    7898 │    7368 │
+│ snap_history       │ open    │    8174 │    3712 │
+│ tabc_tx            │ open    │     131 │       1 │
+│ tax_ny_tobacco     │ open    │       8 │       0 │
+│ tdlr_tx            │ open    │      76 │       0 │
+└────────────────────┴─────────┴─────────┴─────────┘
+  45 rows (40 shown)                     4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │

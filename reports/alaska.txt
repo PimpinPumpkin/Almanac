@@ -52,42 +52,45 @@
 │ unknown │  41945 │
 └─────────┴────────┘
 == register records in the box and how many found a place
-┌────────────────┬─────────┬─────────┬─────────┐
-│     source     │  state  │ records │ matched │
-│    varchar     │ varchar │  int64  │  int64  │
-├────────────────┼─────────┼─────────┼─────────┤
-│ abc_ca         │ open    │      36 │       0 │
-│ abt_fl         │ open    │       9 │       0 │
-│ agm_ny         │ open    │       2 │       0 │
-│ atc_mo         │ open    │       1 │       0 │
-│ bacp_chicago   │ open    │       8 │       0 │
-│ cms_hospitals  │ open    │      50 │      13 │
-│ cpa_tx         │ open    │     297 │       0 │
-│ cpa_tx_tobacco │ open    │      17 │       0 │
-│ dbpr_fl_food   │ open    │       2 │       0 │
-│ dcwp_nyc       │ open    │       5 │       0 │
-│ dmv_ct         │ open    │       2 │       0 │
-│ dmv_ny         │ open    │       1 │       0 │
-│ dohmh_nyc      │ open    │       8 │       0 │
-│ dol_wa         │ open    │       8 │       0 │
-│ elicense_ct    │ open    │      17 │       0 │
-│ epa_ust_open   │ open    │     431 │     122 │
-│ fdic_history   │ closed  │      53 │      20 │
-│ fdic_locations │ open    │     112 │     108 │
-│ irs_eo         │ open    │   10204 │     557 │
-│ led_co         │ open    │      12 │       0 │
-│ nces_schools   │ open    │     501 │     342 │
-│ ncua_branches  │ open    │     191 │      62 │
-│ nppes_orgs     │ open    │   16249 │    1585 │
-│ rev_pa         │ open    │       3 │       0 │
-│ sla_ny         │ open    │      12 │       0 │
-│ snap_current   │ open    │     496 │     414 │
-│ snap_history   │ open    │     497 │     188 │
-│ tabc_tx        │ open    │      51 │       0 │
-│ tax_ny_tobacco │ open    │       4 │       0 │
-│ tdlr_tx        │ open    │      73 │       0 │
-└────────────────┴─────────┴─────────┴─────────┘
-  30 rows                            4 columns
+┌────────────────────┬─────────┬─────────┬─────────┐
+│       source       │  state  │ records │ matched │
+│      varchar       │ varchar │  int64  │  int64  │
+├────────────────────┼─────────┼─────────┼─────────┤
+│ abc_ca             │ open    │      36 │       0 │
+│ abt_fl             │ open    │       9 │       0 │
+│ agm_ny             │ open    │       2 │       0 │
+│ atc_mo             │ open    │       1 │       0 │
+│ bacp_chicago       │ open    │       8 │       0 │
+│ cms_hospitals      │ open    │      50 │      13 │
+│ cpa_tx             │ open    │     297 │       0 │
+│ cpa_tx_tobacco     │ open    │      17 │       0 │
+│ dbpr_fl_food       │ open    │       2 │       0 │
+│ dbpr_fl_restaurant │ open    │      10 │       0 │
+│ dbpr_fl_salon      │ open    │       6 │       0 │
+│ dbpr_fl_vet        │ open    │       2 │       0 │
+│ dcwp_nyc           │ open    │       5 │       0 │
+│ dmv_ct             │ open    │       2 │       0 │
+│ dmv_ny             │ open    │       1 │       0 │
+│ dohmh_nyc          │ open    │       8 │       0 │
+│ dol_wa             │ open    │       8 │       0 │
+│ elicense_ct        │ open    │      17 │       0 │
+│ epa_ust_open       │ open    │     431 │     122 │
+│ fdic_history       │ closed  │      53 │      20 │
+│ fdic_locations     │ open    │     112 │     108 │
+│ irs_eo             │ open    │   10204 │     557 │
+│ led_co             │ open    │      12 │       0 │
+│ nces_schools       │ open    │     501 │     342 │
+│ ncua_branches      │ open    │     191 │      62 │
+│ nppes_orgs         │ open    │   16249 │    1585 │
+│ rev_pa             │ open    │       3 │       0 │
+│ sla_ny             │ open    │      12 │       0 │
+│ snap_current       │ open    │     496 │     414 │
+│ snap_history       │ open    │     497 │     188 │
+│ tabc_tx            │ open    │      51 │       0 │
+│ tax_ny_tobacco     │ open    │       4 │       0 │
+│ tdlr_tx            │ open    │      73 │       0 │
+└────────────────────┴─────────┴─────────┴─────────┘
+  33 rows                                4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
