@@ -10,8 +10,6 @@ RELEASE="${OVERTURE_RELEASE:-$(curl -fsS -A "$UA" "$BUCKET/?list-type=2&prefix=r
   | tr '<' '\n' | sed -n 's|^Prefix>release/\(.*\)/$|\1|p' | sort | tail -1)}"
 FILES="$(curl -fsS -A "$UA" "$BUCKET/?list-type=2&prefix=release/$RELEASE/theme=places/type=place/" \
   | tr '<' '\n' | sed -n "s|^Key>\(.*parquet\)$|'$BUCKET/\1'|p" | paste -sd, -)"
-STATE_FILTER=""
-[ -n "${STATE:-}" ] && STATE_FILTER="and addresses[1].region = '$STATE'"
 [ -n "$FILES" ] || { echo "no Overture place files for $RELEASE" >&2; exit 1; }
 echo "$RELEASE" > "$OUT/overture.release"
 
@@ -39,6 +37,5 @@ copy (
   where bbox.xmin >= $W and bbox.xmax <= $E and bbox.ymin >= $S and bbox.ymax <= $N
     and names."primary" is not null
     and (addresses[1].country = 'US' or addresses[1].country is null)
-    $STATE_FILTER
 ) to '$OUT/overture.parquet' (format parquet, compression zstd);
 SQL

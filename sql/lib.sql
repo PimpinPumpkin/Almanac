@@ -81,3 +81,23 @@ create or replace macro match_pairs(ta, tb) as table (
   from c
   where rule is not null
 );
+
+-- For records that come with an address but no position.
+create or replace macro zip5(s) as nullif(regexp_extract(s, '([0-9]{5})(-[0-9]{4})?\s*$', 1), '');
+
+-- First word of the street name, after the number and any compass word:
+-- "1108 N Ross Clark Cir" -> "ross". Enough to tell two streets in one ZIP apart.
+create or replace macro street_key(addr) as
+  nullif(regexp_extract(lower(addr),
+    '^\s*#?\s*[0-9]+[a-z]?\s+(?:(?:n|s|e|w|ne|nw|se|sw|north|south|east|west)\.?\s+)?([a-z0-9]+)', 1), '');
+
+-- match_address('a', 'b'): pairs with the same ZIP, house number and street
+-- word, and a name that passes the same test as the other rules.
+-- Both tables need: id, nn, hn, zip, sk.
+create or replace macro match_address(ta, tb) as table (
+  select a.id as a_id, b.id as b_id, null::double as dist, round(name_sim(a.nn, b.nn), 3) as sim,
+         'address' as rule
+  from query_table(ta) a join query_table(tb) b
+    on a.zip = b.zip and a.hn = b.hn and a.sk = b.sk
+  where name_sim(a.nn, b.nn) in (1.0, 0.9) or name_sim(a.nn, b.nn) >= 0.95
+);

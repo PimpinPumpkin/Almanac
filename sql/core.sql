@@ -77,6 +77,7 @@ create or replace table atp_fill as
   qualify row_number() over (partition by m.place_id order by m.dist) = 1;
 
 create or replace table core_place as
+  select *, zip5(postcode) as zip, street_key(address) as sk from (
   select o.id, o.name, o.category,
          coalesce(o.brand, nullif(f.brand, '')) as brand,
          coalesce(o.brand_wikidata, nullif(f.brand_wikidata, '')) as brand_wikidata,
@@ -95,24 +96,32 @@ create or replace table core_place as
          nullif(a.address, ''), nullif(a.city, ''), nullif(a.region, ''), nullif(a.postcode, ''),
          nullif(a.phone, ''), nullif(a.website, ''), a.lat, a.lng, null, a.nn, a.hn, false
   from atp_n a
-  where a.id not in (select atp_id from atp_match);
+  where a.id not in (select atp_id from atp_match)
+  );
 
 -- Evidence. Every row: place_id, source, source_id, state, date, rule, dist,
 -- plus the name and address the source used, kept for review.
 
 -- Registers and other located records, through the matcher.
 create or replace table register_n as
-  select source || ':' || source_id as id, *, norm_name(name) as nn, house_number(address) as hn
+  select source || ':' || source_id as id, *, norm_name(name) as nn, house_number(address) as hn,
+         zip5(address) as zip, street_key(address) as sk
   from register;
+create or replace table register_pos as select * from register_n where lat is not null;
+create or replace table register_addr as select * from register_n where lat is null;
 
 create or replace macro matched_evidence(places) as table (
-  select p.a_id as place_id, r.source, r.source_id, r.state, r.date, p.rule, p.dist,
+  select m.a_id as place_id, r.source, r.source_id, r.state, r.date, m.rule, m.dist,
          r.name as ev_name, r.address as ev_address
-  from match_pairs(places, 'register_n') p join register_n r on r.id = p.b_id
-  -- a shared house number may hit every listing of the place; without one, only the nearest
-  qualify p.rule = 'number'
-       or (max(p.rule = 'number') over (partition by p.b_id) = false
-           and row_number() over (partition by p.b_id order by p.sim desc, p.dist) = 1)
+  from (
+    select * from match_pairs(places, 'register_pos')
+    -- a shared house number may hit every listing of the place; without one, only the nearest
+    qualify rule = 'number'
+         or (max(rule = 'number') over (partition by b_id) = false
+             and row_number() over (partition by b_id order by sim desc, dist) = 1)
+    union all
+    select * from match_address(places, 'register_addr')
+  ) m join register_n r on r.id = m.b_id
 );
 
 create or replace table core_evidence as

@@ -3,10 +3,13 @@
 Every adapter writes one CSV with the same eight columns:
 source, source_id, name, address, lat, lng, state, date
 state is open or closed. date is ISO (YYYY-MM-DD) and means "open as of" or
-"closed on". Rows without a usable position or date are dropped and counted.
+"closed on". lat and lng may be blank when the address ends in a ZIP code;
+such rows are matched by address. Rows with neither, or with no date or
+name, are dropped and counted.
 """
 import csv
 import os
+import re
 import sys
 import time
 import urllib.request
@@ -30,7 +33,7 @@ def get(url, tries=4):
             with urllib.request.urlopen(req, timeout=120) as r:
                 return r.read()
         except Exception as e:  # network errors are retried, then raised
-            if attempt == tries - 1:
+            if getattr(e, "code", None) == 404 or attempt == tries - 1:
                 raise
             print("retry %s: %s" % (url[:80], e), file=sys.stderr)
             time.sleep(5 * (attempt + 1))
@@ -67,17 +70,22 @@ class Writer:
         self.dropped[why] = self.dropped.get(why, 0) + 1
 
     def row(self, source, source_id, name, addr, lat, lng, state, date):
-        try:
-            lat, lng = float(lat), float(lng)
-        except (TypeError, ValueError):
-            return self.drop("no position")
-        if not (17 < lat < 72 and -180 < lng < -64):
-            return self.drop("no position")
+        if lat in (None, "") and lng in (None, ""):
+            if not re.search(r"\d{5}(-\d{4})?\s*$", addr or ""):
+                return self.drop("no position and no ZIP")
+            lat = lng = ""
+        else:
+            try:
+                lat, lng = "%.6f" % float(lat), "%.6f" % float(lng)
+            except (TypeError, ValueError):
+                return self.drop("no position")
+            if not (17 < float(lat) < 72 and -180 < float(lng) < -64):
+                return self.drop("no position")
         if not date or len(date) != 10:
             return self.drop("no date")
         if not name:
             return self.drop("no name")
-        self.w.writerow([source, source_id, name.strip(), addr, "%.6f" % lat, "%.6f" % lng, state, date])
+        self.w.writerow([source, source_id, name.strip(), addr, lat, lng, state, date])
         key = (source, state)
         self.kept[key] = self.kept.get(key, 0) + 1
 

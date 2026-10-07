@@ -18,6 +18,21 @@ step wikidata
 duckdb -noheader -csv -c "select distinct wikidata from '$OUT/osm.parquet' where wikidata is not null" \
   | python3 signals/wikidata_p576.py > "$OUT/p576.csv"
 
+# A state region is clipped to the state's outline. The outline is
+# generalized, so a row just outside it (a pier, a shoreline shop) is kept
+# when its own address names the state and it is within about 5 km.
+CLIP=""
+if [ -n "${STATE:-}" ]; then
+  state_outlines
+  CLIP="create table outline as select st_geomfromwkb(wkb) as g from '$CACHE/census/states.parquet' where state = '$STATE';"
+  for t in ovt atp osm; do
+    CLIP="$CLIP
+delete from $t where not (
+  st_contains((select g from outline), st_point(lng, lat))
+  or (region = '$STATE' and st_dwithin((select g from outline), st_point(lng, lat), 0.05)));"
+  done
+fi
+
 DB="$OUT/build.duckdb"; rm -f "$DB"
 step merge and match
 duck "$DB" >/dev/null <<SQL
@@ -29,6 +44,7 @@ create table params as select date '$BUILD_DATE' as build_date, 730 as recent_da
 create table ovt as select * from '$OUT/overture.parquet';
 create table atp as select * from '$OUT/atp.parquet';
 create table osm as select * from '$OUT/osm.parquet';
+$CLIP
 create table p576 as select qid, date from read_csv('$OUT/p576.csv', header = true, auto_detect = false,
   columns = {qid: 'varchar', date: 'date'});
 create table fsq_closed as
@@ -39,7 +55,9 @@ create table register as
     delim = ',', quote = '"', escape = '"', columns = {
     source: 'varchar', source_id: 'varchar', name: 'varchar', address: 'varchar',
     lat: 'double', lng: 'double', state: 'varchar', date: 'date'})
-  where lat between $S and $N and lng between $W and $E;
+  where (lat between $S and $N and lng between $W and $E)
+     -- records with an address but no position: keep the ones in a ZIP the region has
+     or (lat is null and zip5(address) in (select distinct zip5(postcode) from ovt));
 .read sql/core.sql
 .read sql/full.sql
 .read sql/publish.sql

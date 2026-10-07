@@ -89,7 +89,7 @@ Every adapter writes one CSV with exactly these columns:
 | source_id | the register's own id for the record |
 | name | the name the public would see on the building |
 | address | street line, city, state and ZIP in one string, street number first |
-| lat, lng | WGS 84 |
+| lat, lng | WGS 84. May be blank when the address ends in a ZIP code; the record is then matched by address. |
 | state | `open` or `closed` |
 | date | ISO date. For open: the day the source says the place was operating. For closed: the day it closed. |
 
@@ -98,7 +98,8 @@ Rules for adapters:
 - One file per source in `adapters/`, no shared state, standard library only.
 - One current state per `source_id`. If the register has a history, emit the
   newest state.
-- Rows with no position, no date or no name are dropped and counted.
+- Rows with no date or no name, or with neither a position nor a ZIP code,
+  are dropped and counted.
 - If the register uses a legal name the public never sees, the adapter maps
   it (see `TRADE_NAMES` in `adapters/fdic.py`). The matcher stays generic.
 - A record is evidence only if it says something about the premises. A
@@ -137,7 +138,10 @@ association, na, branch) and trailing store numbers.
 | near | missing on one or both sides | up to 60 m | same |
 | spot | present and different | up to 30 m | 1.0 only |
 
-Chains repeat names, so the name alone never matches. Two branches of a
+| address | equal | none: same ZIP code and same first word of the street name | same as number |
+
+The `address` rule is only for records that have no position (CMS, NPPES,
+IRS). Chains repeat names, so the name alone never matches. Two branches of a
 chain across the street from each other have different house numbers and
 fail `number`; they are more than 30 m apart or fail `spot`.
 
@@ -183,6 +187,11 @@ rows are the same place.
 | | near, spot | 12 of 12 | |
 | SNAP authorized stores | number | 40 of 40 | |
 | | near, spot | 19 of 19 | |
+| NCES schools | number | 39 of 40 | the miss is a school's aquatic center |
+| | near | 12 of 12 | |
+| CMS hospitals | address | 10 of 15 | all 10 hospitals are right; the other 5 rows are the hospital's gift shop, emergency room or a department sharing its name and address |
+| NPPES organizations | address | 37 of 40 | the 3 misses are hospital departments |
+| IRS exempt organizations | address | 36 of 40 | the 4 misses are a related body at the same address, such as a foundation arm |
 | OSM lifecycle features to places | all | 40 of 40 (DC), 36 of 36 (Sacramento) | |
 
 ## 7. Status rules
@@ -247,10 +256,20 @@ mappers survey open places more readily than they tag closed ones.
 | fdic_locations | open | run date of the list | matcher |
 | snap_current | open | last data edit of the layer | matcher |
 | snap_history | open | last day the file covers, open-ended authorizations only | matcher |
+| nces_schools | open | June 30 of the school year the file covers | matcher |
+| cms_hospitals | open | the dataset's modified date | matcher, by address |
+| nppes_orgs | open | later of last update and certification date | matcher, by address |
+| irs_eo | open | last day of the month the newest return covers | matcher, by address |
 | atp | open | day the spider collected the chain's locator | the AllThePlaces row's own merge |
 | osm_check_date | open | `check_date` or `survey:date` tag | the OSM feature's own merge |
 
-The last two were not in the brief. Being listed in a chain's own locator on
+A current list can be stale. CMS still lists United Medical Center in
+Washington as of 2026-07, and OSM tags it disused with an edit dated
+2026-05. The list is newer, so the place comes out open, and the closing
+record stays visible in `evidence`. One case in ten hospitals read; watch
+this as more lists are added.
+
+The ATP and OSM check_date rows were not in the brief. Being listed in a chain's own locator on
 a known day, and a mapper's dated survey tag, are both dated records of
 life, and both come for free with the base layer. Absence from a locator is
 still not evidence of anything.
@@ -327,6 +346,7 @@ Per region: `core-<region>.parquet`, `places-<region>.parquet`, and
   largest state should come out near 200 MB, well under the 2 GB cap
   (Kentucky is 25 MB for 247,000 places).
 
-Open point: state builds filter by the state code in the address and the
-state's bounding box. Rows with no state code near a border can land in the
-wrong file. Clipping by the Census state outline is the fix.
+State builds are clipped to the Census state outline (cartographic
+boundary file, 1:500,000, public domain). The outline is generalized, so a
+row just outside it is kept when its own address names the state and it is
+within about 5 km.

@@ -19,8 +19,6 @@ if [ ! -s "$US" ]; then
   mv "$US.part" "$US"
 fi
 echo "$RUN" > "$OUT/atp.run"
-STATE_FILTER=""
-[ -n "${STATE:-}" ] && STATE_FILTER="and coalesce(nullif(region, ''), '$STATE') = '$STATE'"
 
 duck -c "
   copy (
@@ -35,5 +33,4 @@ duck -c "
         'amenity=atm', 'amenity=bicycle_rental', 'amenity=charging_station', 'amenity=public_bookcase',
         'amenity=post_box', 'amenity=parcel_locker', 'amenity=vending_machine', 'amenity=money_transfer',
         'amenity=parking', 'amenity=yes')
-      $STATE_FILTER
   ) to '$OUT/atp.parquet' (format parquet, compression zstd);"

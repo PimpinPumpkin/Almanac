@@ -26,9 +26,8 @@ duck() {
 }
 
 # region NAME: load one row of regions.tsv into REGION, S, W, N, E, OSM_EXTRACTS, STATE, OUT.
-# STATE is empty for a plain box. When set, Overture and AllThePlaces rows are
-# also filtered to that state code, since a state's bounding box spills into
-# its neighbors.
+# STATE is empty for a plain box. When set, build.sh clips every input to
+# that state's outline, since a state's bounding box spills into its neighbors.
 region() {
   local row
   row="$(awk -F'\t' -v r="$1" '$1==r' "$ROOT/regions.tsv")"
@@ -37,4 +36,14 @@ region() {
   OUT="$DATA/$REGION"
   mkdir -p "$OUT"
   export REGION S W N E OSM_EXTRACTS STATE OUT
+}
+
+# state_outlines: Census cartographic boundaries (1:500,000), public domain,
+# as $CACHE/census/states.parquet with columns state (postal code) and wkb.
+state_outlines() {
+  local zip="$CACHE/census/cb_2023_us_state_500k.zip" out="$CACHE/census/states.parquet"
+  [ -s "$out" ] && return 0
+  fetch https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_500k.zip "$zip"
+  duck -c "copy (select STUSPS as state, st_aswkb(geom) as wkb from st_read('/vsizip/$zip'))
+           to '$out' (format parquet);" >/dev/null
 }

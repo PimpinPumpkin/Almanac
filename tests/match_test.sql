@@ -51,3 +51,21 @@ select * from got where want is distinct from rule order by n;
 select case when (select count(*) from got where want is distinct from rule) = 0
             then 'ok ' || (select count(*) from got) || ' cases'
             else error('matcher test failed') end as result;
+
+-- The address rule, for records with no position.
+create table ac (n int, a_name text, a_addr text, a_zip text, b_name text, b_addr text, want boolean);
+insert into ac values
+  (1, 'Sibley Memorial Hospital', '5255 Loughboro Rd NW', '20016', 'SIBLEY MEMORIAL HOSPITAL', '5255 LOUGHBORO RD NW, WASHINGTON, DC 20016', true),
+  (2, 'Elite Dental', '1025 N Fillmore St', '22201', 'ELITE DENTAL', '1025 N FILLMORE ST, ARLINGTON, VA 22201', true),
+  -- same number and name, another street in the ZIP
+  (3, 'Elite Dental', '1025 N Fillmore St', '22201', 'ELITE DENTAL', '1025 N GLEBE RD, ARLINGTON, VA 22201', false),
+  -- same address, another ZIP
+  (4, 'Elite Dental', '1025 N Fillmore St', '22201', 'ELITE DENTAL', '1025 N FILLMORE ST, ARLINGTON, VA 22203', false),
+  -- same address, another tenant
+  (5, 'Elite Dental', '1025 N Fillmore St', '22201', 'FILLMORE EYE CARE', '1025 N FILLMORE ST, ARLINGTON, VA 22201', false);
+create table aa as select n as id, norm_name(a_name) nn, house_number(a_addr) hn, a_zip as zip, street_key(a_addr) sk from ac;
+create table ab as select n as id, norm_name(b_name) nn, house_number(b_addr) hn, zip5(b_addr) as zip, street_key(b_addr) sk from ac;
+select case when (select count(*) from ac c
+                  left join (select * from match_address('aa', 'ab') where a_id = b_id) m on m.a_id = c.n
+                  where c.want <> (m.rule is not null)) = 0
+            then 'ok 5 address cases' else error('address test failed') end as result;

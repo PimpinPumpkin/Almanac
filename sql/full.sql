@@ -23,7 +23,8 @@ create or replace table osm_member as
 
 create or replace table osm_only as
   select o.id, o.name, o.category, o.brand, o.brand_wikidata, o.address, o.city, o.region, o.postcode,
-         o.phone, o.website, o.lat, o.lng, null::varchar as overture_status, o.nn, o.hn, false as has_fsq
+         o.phone, o.website, o.lat, o.lng, null::varchar as overture_status, o.nn, o.hn, false as has_fsq,
+         zip5(o.postcode) as zip, street_key(o.address) as sk
   from osm_n o
   where o.id not in (select osm_id from osm_match);
 

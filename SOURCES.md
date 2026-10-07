@@ -61,15 +61,45 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: stores currently authorized (open). End dates are not used; see
   SPEC.md section 9.
 
+### CMS Hospital General Information
+- License: US federal government work, public domain.
+- Fetched from: the CSV named in
+  `https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items/xubh-q36u`
+- Used for: Medicare-registered hospitals (open). No positions; matched by address.
+
+### NCES public school locations (EDGE geocodes)
+- License: US federal government work, public domain.
+- Fetched from: `https://nces.ed.gov/programs/edge/data/EDGE_GEOCODE_PUBLICSCH_<years>.zip`
+- Used for: public schools that operated in the file's school year (open).
+
+### NPPES, the National Provider Identifier registry
+- License: US federal government work, public domain.
+- Fetched from: the monthly file linked on https://download.cms.gov/nppes/NPI_Files.html
+- Used for: health care organizations (open, dated by the last update or
+  certification). No positions; matched by address.
+
+### IRS Exempt Organizations Business Master File
+- License: US federal government work, public domain.
+- Fetched from: `https://www.irs.gov/pub/irs-soi/eo1.csv` to `eo4.csv`
+- Used for: nonprofits that filed a return (open, dated by the tax period).
+  No positions; matched by address.
+
+### US Census cartographic boundary file, states
+- License: US federal government work, public domain.
+- Fetched from: `https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_500k.zip`
+- Used for: clipping state builds to the state outline. Not evidence.
+
 ## Not used yet
 
 Survey of what comes next, in order. None of these has been fetched or
 checked by this project.
 
-- CMS hospitals, NCES public schools, NPPES organizations, IRS exempt
-  organizations: federal, public domain, mostly confirm-open.
+- NCUA credit union branches: federal, public domain.
 - State alcohol license lists (California, Texas, New York, Colorado,
   Missouri, Oregon) and Florida restaurant and hotel licenses: license terms
   to be read per state.
 - Health inspections and city business licenses: many city portals state no
   license. Each one gets an entry here saying what it states before it is used.
+- OpenPOIs (https://github.com/henryspatialanalysis/openpois): data under the
+  ODbL. Its per-place confidence, modeled from OSM edit history, is a
+  candidate input to `open_score`.

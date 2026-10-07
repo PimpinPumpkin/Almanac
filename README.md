@@ -14,24 +14,27 @@ be read in bulk, so this table does not compare against it. It shows what
 Almanac lists today, how much of that has a dated open or closed record, and
 which public register can close the gap. Counts are from the four test
 regions (a District of Columbia box, a Sacramento box, Delaware and
-Kentucky), 477,000 places in all.
+Kentucky), 480,000 places in all.
 
 | Category | Listed | Has a dated status | What it comes from, and what comes next | Can it be complete? |
 | --- | ---: | ---: | --- | --- |
-| Fast food and chain restaurants | 3,762 | 65% | Chain store locators (built) | Yes, for chains with a locator |
-| Banks and credit unions | 4,619 | 52% | FDIC branches and closings (built). Next: NCUA credit union branches | Yes |
-| Gas stations | 4,600 | 44% | Chain locators (built). Next: underground storage tank registries | Mostly |
-| Grocery and convenience stores | 6,079 | 39% | SNAP authorized stores, chain locators (built) | Mostly |
-| Pharmacies | 1,845 | 28% | Chain locators (built). Next: NPPES, state pharmacy boards | Mostly |
-| Restaurants and cafes, independent | 29,625 | 20% | Foursquare closing dates, OSM (built). Next: state alcohol licenses, health inspections | State by state, never everywhere |
-| Hotels | 2,598 | 17% | Chain locators (built). Next: state lodging licenses where published | Chains yes, independents patchy |
-| Bars | 3,552 | 10% | Foursquare, OSM (built). Next: state alcohol licenses | Yes, in states that publish the list |
-| Hospitals | 1,446 | 3% | Next: CMS | Yes |
-| Museums | 1,005 | 3% | Next: IRS exempt organizations | Partly |
+| Fast food and chain restaurants | 3,736 | 65% | Chain store locators (built) | Yes, for chains with a locator |
+| Banks and credit unions | 4,603 | 52% | FDIC branches and closings (built). Next: NCUA credit union branches | Yes |
+| Gas stations | 4,566 | 44% | Chain locators (built). Next: underground storage tank registries | Mostly |
+| Grocery and convenience stores | 5,964 | 38% | SNAP authorized stores, chain locators (built) | Mostly |
+| Pharmacies | 1,848 | 32% | Chain locators, NPPES (built). Next: state pharmacy boards | Mostly |
+| Schools | 11,116 | 21% | NCES public schools (built). The category also holds preschools, private and trade schools, which NCES public data does not cover | Public schools yes |
+| Restaurants and cafes, independent | 29,539 | 20% | Foursquare closing dates, OSM (built). Next: state alcohol licenses, health inspections | State by state, never everywhere |
+| Hotels | 2,571 | 17% | Chain locators (built). Next: state lodging licenses where published | Chains yes, independents patchy |
+| Museums | 999 | 11% | IRS exempt organizations (built) | Partly |
+| Hospitals | 1,441 | 11% | CMS hospitals, NPPES (built). The category also holds departments and clinics listed as hospitals | Real hospitals yes |
+| Bars | 3,535 | 10% | Foursquare, OSM (built). Next: state alcohol licenses | Yes, in states that publish the list |
+| Everything else | 403,680 | 5% | Salons, repair shops, offices, clinics, churches. NPPES and IRS exempt organizations (built). Next: state professional and repair licenses | No. This is the long tail |
 | EV chargers | 614 | 3% | Not handled yet. The federal station list needs a free API key | Yes, if a key is allowed |
-| Schools | 11,124 | 1% | Next: NCES | Yes |
-| Parks | 6,045 | 0.2% | OSM. Parks rarely close, so a listing is most of the job | Listing yes, status not needed |
-| Everything else | 404,901 | 4% | Salons, repair shops, offices, clinics, churches. Next: NPPES, IRS, state professional licenses | No. This is the long tail |
+| Parks | 6,122 | 0.2% | OSM. Parks rarely close, so a listing is most of the job | Listing yes, status not needed |
+
+Across all 480,000 places, 8.6% have a dated status. The table is made by
+`duckdb < sql/coverage.sql`.
 
 "Next" sources are a plan. None has been fetched or checked yet.
 
@@ -45,8 +48,9 @@ published yet.
 - **Evidence layer**: public records that say a specific place was open or
   closed on a specific date. Today: Foursquare closing dates, OSM lifecycle
   tags and survey dates, Wikidata dissolution dates, FDIC bank branches and
-  branch closings, USDA SNAP authorized stores, and presence in a chain's own
-  store locator.
+  branch closings, USDA SNAP authorized stores, CMS hospitals, NCES public
+  schools, NPPES health care organizations, IRS exempt organizations, and
+  presence in a chain's own store locator.
 - **Output**: one row per place with a stable id, merged attributes, every
   source id it was built from, a status of open, closed or unknown with
   the date and source of the evidence that decided it, and an `open_score`
@@ -56,7 +60,7 @@ published yet.
 
 - Not a new survey. Every fact comes from a source listed in `SOURCES.md`.
 - Not complete on status. Most places have no dated evidence and are
-  `unknown`. In the District of Columbia test box, 6.6% of places get a
+  `unknown`. In the District of Columbia test box, 9.7% of places get a
   status. `unknown` means nobody has said, not "probably open".
 - Not a source of new places from registers. A bank branch or licensed
   premises that the base layer lacks is not added yet.
@@ -72,7 +76,7 @@ review.sh           print a fixed sample of matches for a person to read
 regions.tsv         region boxes and which OSM extracts cover them
 base/               importers: overture.sh, atp.sh + atp.py, osm.sh + osm.jq
 signals/            closing signals joined by id: fsq_closed.sh, wikidata_p576.py
-adapters/           one file per register: fdic.py, snap.py
+adapters/           one file per register: fdic, snap, cms, nces, nppes, irs
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests
 reports/            numbers from the last build of each test region
@@ -92,7 +96,7 @@ duckdb < tests/match_test.sql
 ```
 
 Downloads are cached under `data/`, which is not in git. The first build
-fetches about 3.5 GB (AllThePlaces is 2.6 GB of that). After that a region
+fetches about 5 GB (AllThePlaces is 2.6 GB and NPPES 1.2 GB of that). After that a region
 the size of Kentucky builds in about 35 seconds.
 
 Every fetch sends `User-Agent: Almanac/0.1 (open US places dataset build)`.
