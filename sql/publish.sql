@@ -6,7 +6,7 @@ create or replace macro license_of(source) as
     when source in ('fsq', 'fsq_closed') then 'Apache-2.0'
     when source in ('atp', 'wikidata_p576') then 'CC0-1.0'
     when source like 'osm%' then 'ODbL-1.0'
-    when source like 'abca_dc%' then 'CC-BY-4.0'
+    when source like 'abca_dc%' or source = 'bbl_dc' then 'CC-BY-4.0'
     when source in ('abc_ca', 'tabc_tx', 'dbpr_fl_food', 'abt_fl', 'atc_mo', 'olcc_or', 'tdlr_tx') then 'none-stated'
     when source in ('sla_ny', 'dmv_ny', 'dos_ny_salons', 'agm_ny') then 'OPEN-NY-terms'
     when source in ('dohmh_nyc', 'dcwp_nyc') then 'NYC-Open-Data-terms'

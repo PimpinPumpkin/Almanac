@@ -269,6 +269,15 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: unexpired repair shop, inspection station and dealer
   registrations (open), with positions. The owner's name is not read.
 
+### District of Columbia, Basic Business Licenses
+- License: CC-BY-4.0, as stated on opendata.dc.gov. Attribution is in NOTICE.
+- Fetched from: `https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/0`
+- Used for: active licenses that carry a trade name and are not housing
+  rentals (open), with positions from the Census geocoder.
+- Privacy: most rows are rentals or people trading under their own names.
+  Owner, agent and billing fields are never read, and nothing creates a
+  place from this source.
+
 ### District of Columbia ABCA liquor licenses
 - License: CC-BY-4.0, as stated on opendata.dc.gov. Attribution is in NOTICE.
   Open question: whether CC-BY-4.0 data may sit inside an ODbL database

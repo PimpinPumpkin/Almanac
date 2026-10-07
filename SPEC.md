@@ -244,6 +244,7 @@ rows are the same place.
 | New York City DCWP licensed businesses | number | 15 of 15 | |
 | Delaware food inspections | number | 14 of 15 (Delaware) | the miss is a school's wellness center taking the school's inspection |
 | Montgomery County food inspections | number | 15 of 15 (the Maryland part of the DC box) | geocoded |
+| DC Basic Business Licenses | number | 25 of 25 | geocoded; only the licenses that carry a trade name and are not housing |
 | Chicago business licenses, live and cancelled | number | 40 of 40 | live licenses matched 10,100 places in the box |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
@@ -418,6 +419,7 @@ signal at all.
 | dcwp_nyc | open | day the dataset was last updated, active premises licenses only | matcher |
 | dph_de | open | day of the establishment's newest inspection | matcher |
 | moco_md | open | day of the newest inspection that ended in a pass or fail | matcher, positions from the Census geocoder |
+| bbl_dc | open | day the data was refreshed, active licenses with a trade name | matcher, positions from the Census geocoder |
 | bacp_chicago | open | day the dataset was last updated, unexpired issued licenses only | matcher |
 | bacp_chicago_cancelled | closed | day the license status changed to cancelled | matcher; places with no brand only, and only when the site has no live license |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
