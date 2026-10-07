@@ -52,7 +52,9 @@ create or replace macro published(place, member, status, conf) as table (
            list(distinct license_of(source)) as member_licenses
     from query_table(member) group by place_id
   )
-  select p.id, p.name, p.category, p.brand, p.brand_wikidata,
+  select p.id, p.name, p.category,
+         coalesce(og.category_group, group_of(p.category)) as category_group,
+         p.brand, p.brand_wikidata,
          p.address, p.city, p.region, p.postcode, p.phone, p.website,
          coalesce(s.status, 'unknown') as status, s.status_date, s.status_source,
          open_score(coalesce(s.status, 'unknown'), s.status_date, coalesce(s.conflict, false),
@@ -72,6 +74,7 @@ create or replace macro published(place, member, status, conf) as table (
   join m on m.place_id = p.id
   left join query_table(status) s on s.place_id = p.id
   left join query_table(conf) cf on cf.place_id = p.id
+  left join ovt_all og on og.id = p.id
   -- true: a bar in a state with a license list, and no active license matched it.
   -- null: the question does not apply to this place.
   left join (

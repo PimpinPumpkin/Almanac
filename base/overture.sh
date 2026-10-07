@@ -19,6 +19,8 @@ copy (
     id,
     names."primary" as name,
     coalesce(taxonomy."primary", basic_category) as category,
+    taxonomy.hierarchy[1] as category_group,
+    taxonomy.hierarchy[2] as category_subgroup,
     brand.names."primary" as brand,
     brand.wikidata as brand_wikidata,
     addresses[1].freeform as address,

@@ -36,7 +36,8 @@ Both layers have the same columns.
 | --- | --- | --- |
 | id | string | stable id, section 4 |
 | name | string | from the anchor source |
-| category | string | Overture taxonomy term, or an OSM style `key=value` for AllThePlaces and OSM rows. Not harmonized yet. |
+| category | string | The source's own term: an Overture taxonomy term, an OSM style `key=value` for AllThePlaces and OSM rows, or a coarse word for places minted from registers. |
+| category_group | string | One of Overture's thirteen top-level groups (food_and_drink, shopping, health_care, services_and_business, and so on), for every row whatever its source. `sql/groups.sql` maps OSM tags and register categories onto them. Null when the source gave no category. |
 | brand, brand_wikidata | string | |
 | address, city, region, postcode | string | address is the street line |
 | phone, website | string | |

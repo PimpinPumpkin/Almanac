@@ -77,8 +77,9 @@ Done when "everything else" passes 15% in states with two or more of these.
 
 ## 3. Quality
 
-- **3.1 One category vocabulary.** Today a row carries an Overture term or
-  an OSM tag. A reader needs one list.
+- **3.1 One category vocabulary.** First step done: every row has a
+  `category_group`, one of Overture's thirteen top-level groups. Still to
+  do: a finer shared list (restaurant, bar, bank, salon) below the groups.
 - **3.2 Trade name aliases.** About a third of unmatched DC licenses are the
   same place under a longer or shorter name. Learn aliases from the pairs
   that share an exact address.

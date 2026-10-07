@@ -62,10 +62,13 @@ step merge and match
 duck "$DB" >/dev/null <<SQL
 .bail on
 .read sql/lib.sql
+.read sql/groups.sql
 .read sql/status.sql
 create table params as select date '$BUILD_DATE' as build_date, 730 as recent_days,
   $S as s, $W as w, $N as n, $E as e;
 create table ovt as select * from '$OUT/overture.parquet';
+-- imports cached before the category group was kept
+alter table ovt add column if not exists category_group varchar;
 create table atp as select * from '$OUT/atp.parquet';
 create table osm as select * from '$OUT/osm.parquet';
 -- extracts cached before the SIRET column existed
