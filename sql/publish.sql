@@ -7,7 +7,7 @@ create or replace macro license_of(source) as
     when source in ('atp', 'wikidata_p576') then 'CC0-1.0'
     when source like 'osm%' then 'ODbL-1.0'
     when source like 'abca_dc%' then 'CC-BY-4.0'
-    when source in ('abc_ca', 'tabc_tx', 'dbpr_fl_food') then 'none-stated'
+    when source in ('abc_ca', 'tabc_tx', 'dbpr_fl_food', 'abt_fl') then 'none-stated'
     when source = 'sla_ny' then 'OPEN-NY-terms'
     when source = 'sirene' then 'etalab-2.0'
     -- everything else is a US federal register

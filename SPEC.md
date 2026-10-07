@@ -233,6 +233,7 @@ rows are the same place.
 | New York alcohol licenses | number | 40 of 40 (New York City) | |
 | | spot | 20 of 20 | mostly Queens addresses, where "30-08" and "3008" are the same door |
 | | near | 11 of 12 | the miss is a hotel landing on a place named only "New York" |
+| Florida alcohol licenses | number | 25 of 25 (Jacksonville) | geocoded; finds a place for 53% of licenses |
 | Florida restaurant inspections | number | 30 of 30 (Jacksonville) | geocoded; finds a place for 54% of inspected restaurants |
 | OSM lifecycle features to places | all | 40 of 40 (DC), 36 of 36 (Sacramento) | |
 
@@ -349,10 +350,11 @@ So the result is a flag and a lower score, not a status: `missing_license`
 is true and `open_score` is 0.30 when there is no other evidence. In DC
 that covers 390 bars. New York is on the list too. Restaurants and liquor stores are left alone: a
 restaurant can run without a license, and liquor stores showed no signal
-(2 open, 2 closed). California and Texas are not on the list: their
-positions are geocoded and too many licenses miss their place (in Houston,
-unlicensed bars another source could check were open 20 times and closed
-77, a weaker split than New York's or DC's).
+(2 open, 2 closed). California, Texas and Florida are not on the list:
+their positions are geocoded and too many licenses miss their place. Among
+unlicensed bars another source could check, Houston's were open 20 times
+and closed 77, and Jacksonville's open 15 and closed 11, which is no
+signal at all.
 
 ### Evidence sources in this version
 
@@ -371,6 +373,7 @@ unlicensed bars another source could check were open 20 times and closed
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
 | dbpr_fl_food | open | day of the establishment's newest inspection | matcher, positions from the Census geocoder |
+| abt_fl | open | day the file was read | matcher, positions from the Census geocoder |
 | abc_ca | open | the export's Updated date | matcher, positions from the Census geocoder |
 | tabc_tx | open | day the dataset was last updated | matcher, positions from the Census geocoder |
 | sla_ny | open | day the dataset was last updated | matcher |

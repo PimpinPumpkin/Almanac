@@ -112,6 +112,13 @@ adapter is merged. If a source states no license, the entry says so.
   Census geocoder. The file gives no date for surrenders or revocations, so
   there is no closed evidence from it.
 
+### Florida DBPR, alcoholic beverage licenses
+- License: none stated on the download page. Florida public record. Rows it
+  touches are marked `none-stated`.
+- Fetched from: `https://www2.myfloridalicense.com/sto/file_download/extracts/bd400lic.csv`
+- Used for: current retail beverage licenses (open), with positions from
+  the Census geocoder.
+
 ### Florida DBPR, food service inspections
 - License: none stated on the download page. Florida public record. Rows it
   touches are marked `none-stated`.
@@ -174,9 +181,8 @@ adapter is merged. If a source states no license, the entry says so.
 Survey of what comes next, in order. None of these has been fetched or
 checked by this project.
 
-- More state alcohol license lists. Florida's is found
-  (`.../extracts/bd400lic.csv`, 42 MB, status and dates, no positions) but
-  has no adapter yet. Colorado, Missouri and Oregon have not been fetched.
+- More state alcohol license lists. Colorado, Missouri and Oregon have not
+  been fetched.
 - Florida also publishes new food licenses and changes of owner by fiscal
   year, and lodging inspections.
 - Health inspections and city business licenses: many city portals state no
