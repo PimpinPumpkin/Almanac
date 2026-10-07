@@ -414,7 +414,10 @@ Per region: `core-<region>.parquet`, `places-<region>.parquet`, and
   | region, build_date, bbox | what was built and when |
   | sources | the release of each base source |
   | files | name, layer, license, rows, bytes, sha256 per file |
-- First host: GitHub release assets, one release per monthly build. The
+- First host: GitHub release assets, one release per monthly build, tagged
+  with the build date. The release also carries `manifest.json`, which
+  lists every region's files. The scheduled workflow pins one Overture
+  release and one AllThePlaces run for the whole build. The
   largest state should come out near 200 MB, well under the 2 GB cap
   (Kentucky is 25 MB for 247,000 places).
 

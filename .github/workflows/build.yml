@@ -1,0 +1,147 @@
+name: Monthly build
+
+# Builds every state, publishes the files as a release, and redraws the
+# coverage map. Runs on the first of each month, after the month's Overture
+# release, and by hand from the Actions tab.
+on:
+  schedule:
+    - cron: "0 7 1 * *"
+  workflow_dispatch:
+    inputs:
+      regions:
+        description: "Regions to build, space separated (blank for every state). A partial run is a test: it publishes nothing."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+env:
+  DUCKDB_VERSION: v1.5.4
+  ALMANAC_CONTACT: "scheduled build"
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    outputs:
+      regions: ${{ steps.plan.outputs.regions }}
+      build_date: ${{ steps.plan.outputs.build_date }}
+      overture: ${{ steps.plan.outputs.overture }}
+      atp: ${{ steps.plan.outputs.atp }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: |
+          curl -fsSL -o duckdb.zip "https://github.com/duckdb/duckdb/releases/download/$DUCKDB_VERSION/duckdb_cli-linux-amd64.zip"
+          unzip -q duckdb.zip && sudo mv duckdb /usr/local/bin/ && rm duckdb.zip
+          duckdb -c "install httpfs; install spatial;"
+      - name: Plan
+        id: plan
+        # One release of each base source for the whole run, so every state is built from the same data.
+        run: |
+          source lib/common.sh
+          if [ -n "${{ inputs.regions }}" ]; then
+            regions="$(printf '%s\n' ${{ inputs.regions }} | jq -R . | jq -cs .)"
+          else
+            regions="$(awk -F'\t' '!/^#/ && $7 != "" {print $1}' regions.tsv | jq -R . | jq -cs .)"
+          fi
+          echo "regions=$regions" >> "$GITHUB_OUTPUT"
+          echo "build_date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+          echo "overture=$(curl -fsS -A "$UA" 'https://overturemaps-us-west-2.s3.amazonaws.com/?list-type=2&prefix=release/&delimiter=/' | tr '<' '\n' | sed -n 's|^Prefix>release/\(.*\)/$|\1|p' | sort | tail -1)" >> "$GITHUB_OUTPUT"
+          echo "atp=$(curl -fsS -A "$UA" https://data.alltheplaces.xyz/runs/latest.json | jq -r .run_id)" >> "$GITHUB_OUTPUT"
+      - name: Fetch national files
+        env:
+          ATP_RUN: ${{ steps.plan.outputs.atp }}
+        run: ./prepare.sh
+      - name: Keep what the state jobs need
+        run: |
+          mkdir -p shared/atp shared/census
+          mv data/cache/evidence data/cache/fsq shared/
+          mv data/cache/atp/us-*.parquet shared/atp/
+          mv data/cache/census/states.parquet shared/census/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shared
+          path: shared
+          retention-days: 3
+
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        region: ${{ fromJson(needs.prepare.outputs.regions) }}
+    env:
+      BUILD_DATE: ${{ needs.prepare.outputs.build_date }}
+      OVERTURE_RELEASE: ${{ needs.prepare.outputs.overture }}
+      ATP_RUN: ${{ needs.prepare.outputs.atp }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+          curl -fsSL -o duckdb.zip "https://github.com/duckdb/duckdb/releases/download/$DUCKDB_VERSION/duckdb_cli-linux-amd64.zip"
+          unzip -q duckdb.zip && sudo mv duckdb /usr/local/bin/ && rm duckdb.zip
+          duckdb -c "install httpfs; install spatial;"
+      - uses: actions/download-artifact@v4
+        with:
+          name: shared
+          path: data/cache
+      - name: Build
+        run: |
+          ./build.sh "${{ matrix.region }}"
+          mkdir -p reports && ./stats.sh "${{ matrix.region }}" > "reports/${{ matrix.region }}.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: out-${{ matrix.region }}
+          path: |
+            data/out/
+            reports/${{ matrix.region }}.txt
+          retention-days: 3
+
+  publish:
+    needs: [prepare, build]
+    # A state that failed is left out of the release rather than blocking it.
+    if: ${{ !cancelled() && needs.prepare.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      BUILD_DATE: ${{ needs.prepare.outputs.build_date }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: out-*
+          merge-multiple: true
+      - name: List what was built
+        run: |
+          ls data/out | head -200
+          jq -s '{dataset: "Vela Almanac", license: "ODbL-1.0",
+                  credit: .[0].credit, notice: .[0].notice,
+                  build_date: .[0].build_date, sources: .[0].sources,
+                  regions: [.[] | {region, bbox, files}]}' data/out/manifest-*.json > data/out/manifest.json
+          jq -r '"\(.regions | length) regions, build \(.build_date)"' data/out/manifest.json
+      - name: Release
+        if: ${{ inputs.regions == '' }}
+        run: |
+          notes="Vela Almanac build of $BUILD_DATE. One core and one places file per state, plus manifests. Credit and source notices: https://github.com/${{ github.repository }}/blob/main/NOTICE"
+          if gh release view "$BUILD_DATE" >/dev/null 2>&1; then
+            gh release upload "$BUILD_DATE" data/out/* --clobber
+          else
+            gh release create "$BUILD_DATE" data/out/* --title "$BUILD_DATE" --notes "$notes"
+          fi
+      - name: Redraw the coverage map
+        if: ${{ inputs.regions == '' }}
+        run: |
+          curl -fsSL -o duckdb.zip "https://github.com/duckdb/duckdb/releases/download/$DUCKDB_VERSION/duckdb_cli-linux-amd64.zip"
+          unzip -q duckdb.zip && sudo mv duckdb /usr/local/bin/ && rm duckdb.zip
+          python3 tools/coverage_map.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs COVERAGE.md reports
+          git diff --cached --quiet || git commit -m "Coverage and reports for the $BUILD_DATE build"
+          git push

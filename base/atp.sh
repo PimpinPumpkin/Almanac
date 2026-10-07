@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# AllThePlaces, newest run, US brand locations -> $CACHE/atp/us.parquet (once per run)
+# AllThePlaces, newest run, US brand locations -> $CACHE/atp/us-<run>.parquet (once per run)
 # and the slice inside a region box -> $OUT/atp.parquet
+#   base/atp.sh REGION   both steps
+#   base/atp.sh us       only the national file, for prepare.sh
 source "$(dirname "$0")/../lib/common.sh"
-region "$1"
 
 RUN="${ATP_RUN:-$(curl -fsS -A "$UA" https://data.alltheplaces.xyz/runs/latest.json | jq -r .run_id)}"
 ZIP="$CACHE/atp/$RUN.zip"
@@ -18,6 +19,8 @@ if [ ! -s "$US" ]; then
     ) to '$US.part' (format parquet, compression zstd);"
   mv "$US.part" "$US"
 fi
+[ "$1" = us ] && exit 0
+region "$1"
 echo "$RUN" > "$OUT/atp.run"
 
 duck -c "

@@ -102,7 +102,8 @@ tests/              matcher threshold tests
 reports/            numbers from the last build of each region
 tools/              coverage_map.py, which draws the by-state map and table
 docs/               the map, and the interactive page served by GitHub Pages
-build_all.sh        build every state in regions.tsv
+build_all.sh        build every state in regions.tsv, on one machine
+prepare.sh          fetch the files every state shares
 ```
 
 ## Build
@@ -125,6 +126,15 @@ the size of Kentucky builds in about 35 seconds.
 Every fetch sends
 `User-Agent: VelaAlmanac/0.1 (open US places dataset build; https://github.com/PimpinPumpkin/vela-almanac)`.
 Set `ALMANAC_CONTACT` to a URL or address to append a way to reach you.
+
+## Scheduled build
+
+`.github/workflows/build.yml` runs on the first of each month and can be
+started by hand from the Actions tab. One job fetches the national files
+(`prepare.sh`), one job per state runs `build.sh`, and a last job publishes
+every state's files as a GitHub release named for the build date, then
+redraws the coverage map. A run started by hand with a list of regions is a
+test and publishes nothing.
 
 ## Output
 
