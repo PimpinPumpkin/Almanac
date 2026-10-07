@@ -290,6 +290,9 @@ rows are the same place.
 | Minneapolis liquor licenses | number | 30 of 30 |  |
 | Baltimore liquor licenses | number | 30 of 30 | dated by the start of the license year; geocoded |
 | Columbus restaurant and market inspections | number | 30 of 30 |  |
+| Michigan food service licenses | number | 30 of 30 (Detroit) | |
+| South Carolina food inspections | number | 29 of 30 (Charleston) | the miss has the same number on the cross street |
+| Minnesota retail food handlers | number | 30 of 30 (Minneapolis) | geocoded |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -503,6 +506,9 @@ signal at all.
 | mpls_liquor | open | day the layer was last edited, approved licenses | matcher |
 | llb_baltimore | open | day the newest license year began | matcher, positions from the Census geocoder |
 | cph_columbus_food | open | day the layer was read, permits that have not run out | matcher |
+| mdard_mi_food | open | day the layer was read, active fixed establishments | matcher |
+| dph_sc_food | open | day of the permit's newest inspection, active permits | matcher |
+| mda_mn_food | open | day the list was read, unexpired licenses | matcher, positions from the Census geocoder |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |

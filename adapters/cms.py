@@ -29,7 +29,7 @@ def main():
         out.row("cms_hospitals", r["Facility ID"], r["Facility Name"],
                 address(r["Address"], r["City/Town"], "%s %s" % (r["State"], r["ZIP Code"][:5])),
                 None, None, "open", as_of)
-    out.close()
+    out.close(geocode=True)
 
 
 if __name__ == "__main__":

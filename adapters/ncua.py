@@ -62,7 +62,7 @@ def main():
                     address(r["PhysicalAddressLine1"], r["PhysicalAddressCity"],
                             "%s %s" % (r["PhysicalAddressStateCode"], r["PhysicalAddressPostalCode"][:5])),
                     None, None, "open", mdy(r["CYCLE_DATE"]))
-    out.close()
+    out.close(geocode=True)
 
 
 if __name__ == "__main__":

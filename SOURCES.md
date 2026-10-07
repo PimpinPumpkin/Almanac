@@ -317,6 +317,20 @@ licensee, owner, manager or phone columns, and nothing creates a place.
   Louisiana, Kansas, Utah, Vermont (search forms or blocked pages), and
   Indiana (sold per record).
 
+### Statewide food establishment lists found on agency sites (2026-10-07)
+None states a license; rows are marked `none-stated`.
+- Michigan MDARD food service licenses, with positions:
+  `https://gisagomdard.state.mi.us/arcgis/rest/services/MDARD/RestaurantsCommissariesOpenData/FeatureServer/0`
+- South Carolina food grades (inspections, with positions):
+  `https://services5.arcgis.com/G4BLIH7rTQoIjCFv/arcgis/rest/services/Restaurants/FeatureServer` (layers 0 and 4)
+- Minnesota Department of Agriculture retail food handlers (grocers and
+  the like, not restaurants): the license lookup's text download at
+  `https://www2.mda.state.mn.us/webapp/lis/LisResults.jsp`
+- Not used: Vermont's food and lodging layer is a working map for
+  inspectors, not a published dataset. Hawaii's and Rhode Island's files
+  are years old. In most other states restaurants are licensed by counties
+  and the state has a search form only.
+
 ### City layers: Las Vegas, Omaha, Minneapolis, Baltimore, Columbus
 None states a license; rows are marked `none-stated`.
 - Las Vegas active business licenses:
