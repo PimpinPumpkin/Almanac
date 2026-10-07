@@ -167,6 +167,9 @@ Asked for by the owner on 2026-10-07.
   note in SPEC.md section 9 says website liveness was not retested).
   Rules if built: schema.org markup only, robots.txt obeyed, a few pages
   per site per month, the project User-Agent.
+  On hold by the owner's decision of 2026-10-07: registers come first. The
+  crawler is to be built later, robust and for every country, as its own
+  project or as an add-on once the rest is in place.
 - **8.4 Popularity.** No open source has foot traffic. A stand-in can be
   built from what is open: how many sources list the place, Wikipedia page
   views for places with an article, how often mappers touch it. To be
