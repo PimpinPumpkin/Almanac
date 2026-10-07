@@ -178,6 +178,14 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: restaurants inspected in the current fiscal year (open, dated
   by the inspection), with positions from the Census geocoder.
 
+### Philadelphia Licenses and Inspections, business licenses
+- License: none stated on the table. City public record via OpenDataPhilly;
+  rows it touches are marked `none-stated`.
+- Fetched from: `https://phl.carto.com/api/v2/sql` (table `business_licenses`)
+- Used for: active company-held licenses for food, vehicle repair and fuel,
+  child care, tire and precious metal businesses (open), with positions.
+- Privacy: rental licenses and licenses held by individuals are not read.
+
 ### Pennsylvania Department of Revenue, sales tax licenses
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.pa.gov/resource/ugeq-ckxd.json`

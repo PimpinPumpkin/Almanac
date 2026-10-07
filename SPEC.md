@@ -252,6 +252,7 @@ rows are the same place.
 | Jefferson County, Kentucky alcohol licenses | number | 15 of 15 (Kentucky) | |
 | DC Basic Business Licenses | number | 25 of 25 | geocoded; only the licenses that carry a trade name and are not housing |
 | Chicago business licenses, live and cancelled | number | 40 of 40 | live licenses matched 10,100 places in the box |
+| Philadelphia business licenses | number | 20 of 20 | company-held food, vehicle and child care licenses only |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -433,6 +434,7 @@ signal at all.
 | bbl_dc | open | day the data was refreshed, active licenses with a trade name | matcher, positions from the Census geocoder |
 | bacp_chicago | open | day the dataset was last updated, unexpired issued licenses only | matcher |
 | bacp_chicago_cancelled | closed | day the license status changed to cancelled | matcher; places with no brand only, and only when the site has no live license |
+| li_phl | open | day the file was read, active company-held licenses | matcher |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |
