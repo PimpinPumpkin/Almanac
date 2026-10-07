@@ -59,8 +59,10 @@ Salons, repair shops, small retail. 84% of all rows, 6% with a status.
   (TDLR), then state by state.
 - **2.3 Sales tax permit lists.** Done: Texas, the biggest long-tail source
   so far. In a Houston box a quarter of auto repair, clothing, furniture
-  and jewelry stores now have a status. Next: other states that publish
-  active permits.
+  and jewelry stores now have a status. Also done: Delaware's business
+  license list, which took the whole state from 8% of places with a status
+  to 19%. Next: Pennsylvania (found, with positions) and any other state
+  that publishes active permits or licenses.
 - **2.4 State inspection and emissions station lists.**
 - **2.5 Geocode the address-only registers.** Done for California and Texas
   licenses with the Census geocoder: California went from 25% of licenses

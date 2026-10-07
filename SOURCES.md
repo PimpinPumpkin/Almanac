@@ -168,6 +168,14 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: restaurants inspected in the current fiscal year (open, dated
   by the inspection), with positions from the Census geocoder.
 
+### Delaware Division of Revenue, business licenses
+- License: public domain, as stated on the dataset.
+- Fetched from: `https://data.delaware.gov/resource/5zy2-grhr.json`
+- Used for: current licenses in storefront trades (open), with positions
+  from the Census geocoder.
+- Privacy: many licensees are one person working from home. Nothing creates
+  a place from this source.
+
 ### Texas Comptroller, permitted sales tax locations
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.texas.gov/resource/3kx8-uryv.json`

@@ -239,6 +239,7 @@ rows are the same place.
 | New York alcohol licenses | number | 40 of 40 (New York City) | |
 | | spot | 20 of 20 | mostly Queens addresses, where "30-08" and "3008" are the same door |
 | | near | 11 of 12 | the miss is a hotel landing on a place named only "New York" |
+| Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas sales tax locations | number | 30 of 30 (Houston) | geocoded; live permits matched 14,000 places in the box |
 | New York salons and barber shops | number | 25 of 25 (New York City) | finds a place for about half |
 | New York DMV repair shops and dealers | number | 20 of 20 (New York City) | finds a place for about 4 in 10; the register uses company names |
@@ -389,6 +390,7 @@ signal at all.
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
 | dbpr_fl_food | open | day of the establishment's newest inspection | matcher, positions from the Census geocoder |
+| biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | cpa_tx | open | day the dataset was last updated, live permits only | matcher, positions from the Census geocoder |
 | dos_ny_salons | open | day the dataset was last updated, unexpired licenses only | matcher |
 | dmv_ny | open | day the dataset was last updated, unexpired registrations only | matcher |
