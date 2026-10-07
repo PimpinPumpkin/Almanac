@@ -115,9 +115,15 @@ where lat between 38.0 and 38.1 and lng between -84.6 and -84.4;
 
 ## Licenses
 
-The data files carry the licenses of their inputs. The core file is
-permissive (CDLA-Permissive-2.0, Apache-2.0, CC0). The full file contains
-OpenStreetMap data and is under the ODbL. Details in `SPEC.md` section 8,
-`SOURCES.md` and `NOTICE`.
+Copyleft throughout.
 
-The code in this repo has no license yet.
+- **Code**: GNU Affero General Public License, version 3 or later. See
+  `LICENSE`.
+- **Data**: both published files are under the Open Database License 1.0.
+  If you publish a database built from them, it has to be under the ODbL
+  too. The full file has to be, because it contains OpenStreetMap data. The
+  core file is built from permissive inputs only and is placed under the
+  ODbL by choice.
+
+Attribution for every input is in `NOTICE`. Per-source terms are in
+`SOURCES.md` and `SPEC.md` section 8.

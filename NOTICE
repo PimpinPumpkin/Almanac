@@ -1,5 +1,6 @@
-Almanac data files are built from the sources below. Keep this notice with
-any copy of the data.
+Almanac data files are released under the Open Database License 1.0
+(https://opendatacommons.org/licenses/odbl/1-0/). They are built from the
+sources below. Keep this notice with any copy of the data.
 
 Overture Maps Foundation, places theme.
   CDLA-Permissive-2.0. https://overturemaps.org
@@ -27,5 +28,4 @@ Full layer only (places-*.parquet):
 OpenStreetMap.
   (c) OpenStreetMap contributors. Open Database License 1.0.
   https://www.openstreetmap.org/copyright
-  The full layer is a derived database under the ODbL. If you publish a
-  database derived from it, the ODbL applies to yours as well.
+  The full layer is a derived database of OpenStreetMap.

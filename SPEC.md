@@ -271,16 +271,18 @@ ODbL derived database. That reaches further than the OSM-only rows: a core
 place whose status was decided by an OSM lifecycle tag, or whose phone was
 filled from OSM, is OSM-derived too.
 
-**Decision: separable layers, built in order.**
+**Decision: copyleft, with separable layers.**
 
-- `core-<region>.parquet` is built without reading OSM. It can be used
-  under the permissive terms of its inputs.
-- `places-<region>.parquet` is the core plus OSM and is released under the
-  ODbL. This is the file a map app that already shows OSM should read.
-- Every row carries `sources` and `licenses`, so a reader can see what
-  touched it. Filtering the full file down to rows without `ODbL-1.0` in
-  `licenses` gives rows no OSM data touched, but the core file is the clean
-  way to get that.
+- The code is AGPL-3.0-or-later.
+- `places-<region>.parquet` is the core plus OSM. It must be under the ODbL.
+- `core-<region>.parquet` is built without reading OSM. Its inputs are all
+  permissive, so its license is a choice, and the choice is the ODbL as
+  well, so that anything built on Almanac stays open.
+- The core layer is still built separately. That keeps the choice open: a
+  file with no OSM in it can be offered under other terms later, a file
+  with OSM in it never can.
+- Every row carries `sources` and `licenses`, the licenses of the inputs
+  that touched it.
 
 Open point: whether the Wikidata P576 signal belongs in the core layer.
 Wikidata is CC0, but the link from place to item comes from an OSM tag, so

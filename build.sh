@@ -47,7 +47,8 @@ SQL
 
 # Publish: two GeoParquet files per region and one manifest.
 #   core-REGION.parquet    Overture + AllThePlaces + non-OSM evidence
-#   places-REGION.parquet  the same places plus OpenStreetMap (ODbL)
+#   places-REGION.parquet  the same places plus OpenStreetMap
+# Both are released under the ODbL.
 # Rows are in Hilbert order with small row groups, and lat/lng are plain
 # columns, so a reader can prune on their statistics over HTTP range requests.
 PUB="$DATA/out"; mkdir -p "$PUB"
@@ -72,7 +73,7 @@ jq -n --arg region "$REGION" --arg build_date "$BUILD_DATE" \
   --argjson bbox "[$W, $S, $E, $N]" \
   --arg overture "$(cat "$OUT/overture.release")" --arg atp "$(cat "$OUT/atp.run")" \
   --arg osm "$(cat "$OUT/osm.date")" --arg fsq "${FSQ_RELEASE:-2025-02-06}" \
-  --argjson core "$(entry "$PUB/core-$REGION.parquet" core "CDLA-Permissive-2.0 AND Apache-2.0 AND CC0-1.0")" \
+  --argjson core "$(entry "$PUB/core-$REGION.parquet" core "ODbL-1.0")" \
   --argjson full "$(entry "$PUB/places-$REGION.parquet" full "ODbL-1.0")" \
   '{region: $region, build_date: $build_date, bbox: $bbox,
     sources: {overture: $overture, alltheplaces: $atp, openstreetmap: $osm, foursquare_os_places: $fsq},
