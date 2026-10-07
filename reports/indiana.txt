@@ -11,8 +11,8 @@
 │         varchar          │      varchar      │ int64 │
 ├──────────────────────────┼───────────────────┼───────┤
 │ alltheplaces -> overture │ near              │   277 │
-│ alltheplaces -> overture │ number            │ 16725 │
-│ alltheplaces -> overture │ spot              │    52 │
+│ alltheplaces -> overture │ number            │ 16724 │
+│ alltheplaces -> overture │ spot              │    53 │
 │ osm -> core              │ near              │ 11928 │
 │ osm -> core              │ number            │ 17262 │
 │ osm -> core              │ spot              │   399 │
@@ -59,6 +59,7 @@
 ├──────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca           │ open    │     123 │       0 │
 │ abt_fl           │ open    │     301 │       0 │
+│ atc_mo           │ open    │      62 │       0 │
 │ cdph_chicago     │ open    │    1673 │    1404 │
 │ cdph_chicago_oob │ closed  │     707 │       0 │
 │ cms_hospitals    │ open    │     322 │     118 │
@@ -68,24 +69,27 @@
 │ fdic_history     │ closed  │    2545 │     370 │
 │ fdic_locations   │ open    │    2653 │    2495 │
 │ irs_eo           │ open    │   67236 │    5305 │
+│ kc_wa_food       │ open    │       2 │       0 │
+│ led_co           │ open    │      24 │       0 │
 │ nces_schools     │ open    │    3091 │    1524 │
 │ ncua_branches    │ open    │    1361 │     440 │
 │ nppes_orgs       │ open    │  100759 │    8128 │
+│ olcc_or          │ open    │      20 │       0 │
 │ sla_ny           │ open    │       2 │       0 │
 │ snap_current     │ open    │    8135 │    6746 │
 │ snap_history     │ open    │    8362 │    3740 │
 │ tabc_tx          │ open    │     244 │       0 │
 └──────────────────┴─────────┴─────────┴─────────┘
-  18 rows                              4 columns
+  22 rows                              4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ atp            │ open    │ near    │   274 │    264 │
-│ atp            │ open    │ number  │ 16698 │  15227 │
+│ atp            │ open    │ number  │ 16697 │  15226 │
 │ atp            │ open    │ self    │  2052 │   2052 │
-│ atp            │ open    │ spot    │    52 │     47 │
+│ atp            │ open    │ spot    │    53 │     48 │
 │ cdph_chicago   │ open    │ number  │     3 │      3 │
 │ cdph_chicago   │ open    │ self    │  1401 │   1401 │
 │ cms_hospitals  │ open    │ address │   194 │    194 │

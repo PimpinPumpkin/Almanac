@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1159 │
-│ open    │  21159 │
-│ unknown │ 220566 │
+│ open    │  21161 │
+│ unknown │ 220564 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    940 │
-│ open    │  20039 │
-│ unknown │ 206913 │
+│ open    │  20040 │
+│ unknown │ 206912 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -58,6 +58,7 @@
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │     123 │       0 │
 │ abt_fl         │ open    │      81 │       0 │
+│ atc_mo         │ open    │     221 │       1 │
 │ cms_hospitals  │ open    │     284 │     102 │
 │ dbpr_fl_food   │ open    │      58 │       0 │
 │ dohmh_nyc      │ open    │       4 │       0 │
@@ -65,20 +66,24 @@
 │ fdic_history   │ closed  │     745 │     107 │
 │ fdic_locations │ open    │    1610 │    1475 │
 │ irs_eo         │ open    │   49104 │    1672 │
+│ kc_wa_food     │ open    │      49 │       0 │
+│ led_co         │ open    │      19 │       0 │
 │ nces_schools   │ open    │    2297 │     287 │
 │ ncua_branches  │ open    │     914 │     191 │
 │ nppes_orgs     │ open    │   82556 │    5702 │
+│ olcc_or        │ open    │      24 │       0 │
 │ sla_ny         │ open    │       4 │       0 │
 │ snap_current   │ open    │    4701 │    4277 │
 │ snap_history   │ open    │    4805 │    2744 │
 │ tabc_tx        │ open    │    2340 │       1 │
 └────────────────┴─────────┴─────────┴─────────┘
-  16 rows                            4 columns
+  20 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
+│ atc_mo         │ open    │ near    │     1 │      1 │
 │ atp            │ open    │ near    │   335 │    331 │
 │ atp            │ open    │ number  │ 10742 │  10121 │
 │ atp            │ open    │ self    │  1501 │   1501 │
@@ -119,7 +124,7 @@
 │ tabc_tx        │ open    │ address │     1 │      1 │
 │ wikidata_p576  │ closed  │ number  │     2 │      2 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  39 rows                                   5 columns
+  40 rows                                   5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -130,7 +135,8 @@
 │ closed  │ osm_history    │    166 │
 │ closed  │ osm_lifecycle  │     56 │
 │ closed  │ wikidata_p576  │      2 │
-│ open    │ atp            │  11900 │
+│ open    │ atc_mo         │      1 │
+│ open    │ atp            │  11901 │
 │ open    │ cms_hospitals  │     96 │
 │ open    │ epa_ust_open   │    831 │
 │ open    │ fdic_locations │   1473 │
@@ -143,7 +149,7 @@
 │ open    │ snap_history   │    123 │
 │ open    │ tabc_tx        │      1 │
 └─────────┴────────────────┴────────┘
-  17 rows                 3 columns
+  18 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -165,8 +171,8 @@
 │ (none)             │ open    │   3326 │
 │ (none)             │ unknown │  60296 │
 │ open               │ closed  │    877 │
-│ open               │ open    │  13530 │
-│ open               │ unknown │ 140465 │
+│ open               │ open    │  13531 │
+│ open               │ unknown │ 140464 │
 │ permanently_closed │ closed  │      8 │
 │ permanently_closed │ open    │     49 │
 │ permanently_closed │ unknown │   5345 │

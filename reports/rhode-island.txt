@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    454 │
-│ open    │   4932 │
-│ unknown │  58570 │
+│ open    │   4933 │
+│ unknown │  58569 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    354 │
-│ open    │   4648 │
-│ unknown │  55417 │
+│ open    │   4649 │
+│ unknown │  55416 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -58,6 +58,7 @@
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │       5 │       0 │
 │ abt_fl         │ open    │     104 │       0 │
+│ atc_mo         │ open    │       6 │       0 │
 │ cms_hospitals  │ open    │      42 │      10 │
 │ dbpr_fl_food   │ open    │      67 │       0 │
 │ dohmh_nyc      │ open    │       1 │       0 │
@@ -65,6 +66,8 @@
 │ fdic_history   │ closed  │     209 │      47 │
 │ fdic_locations │ open    │     321 │     290 │
 │ irs_eo         │ open    │   13262 │     849 │
+│ kc_wa_food     │ open    │      57 │       0 │
+│ led_co         │ open    │      15 │       0 │
 │ nces_schools   │ open    │     405 │     189 │
 │ ncua_branches  │ open    │     233 │      76 │
 │ nppes_orgs     │ open    │   21568 │    1821 │
@@ -73,14 +76,14 @@
 │ snap_history   │ open    │    1190 │     597 │
 │ tabc_tx        │ open    │      53 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  16 rows                            4 columns
+  19 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ atp            │ open    │ near    │    40 │     39 │
-│ atp            │ open    │ number  │  1927 │   1751 │
+│ atp            │ open    │ number  │  1927 │   1752 │
 │ atp            │ open    │ self    │   526 │    526 │
 │ atp            │ open    │ spot    │     6 │      6 │
 │ cms_hospitals  │ open    │ address │    14 │     14 │
@@ -130,7 +133,7 @@
 │ closed  │ osm_history    │     59 │
 │ closed  │ osm_lifecycle  │     41 │
 │ closed  │ wikidata_p576  │      1 │
-│ open    │ atp            │   2295 │
+│ open    │ atp            │   2296 │
 │ open    │ cms_hospitals  │     12 │
 │ open    │ epa_ust_open   │    100 │
 │ open    │ fdic_locations │    294 │
@@ -164,8 +167,8 @@
 │ (none)             │ open    │    553 │
 │ (none)             │ unknown │  13318 │
 │ open               │ closed  │    339 │
-│ open               │ open    │   3186 │
-│ open               │ unknown │  40001 │
+│ open               │ open    │   3187 │
+│ open               │ unknown │  40000 │
 │ permanently_closed │ closed  │      5 │
 │ permanently_closed │ open    │     13 │
 │ permanently_closed │ unknown │   1886 │

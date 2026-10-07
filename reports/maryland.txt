@@ -61,6 +61,7 @@
 │ abca_dc_active    │ open    │    2075 │    2012 │
 │ abca_dc_cancelled │ closed  │     337 │       0 │
 │ abt_fl            │ open    │     281 │       0 │
+│ atc_mo            │ open    │      11 │       0 │
 │ cdph_chicago      │ open    │       4 │       0 │
 │ cms_hospitals     │ open    │     208 │      35 │
 │ dbpr_fl_food      │ open    │     227 │       0 │
@@ -69,15 +70,18 @@
 │ fdic_history      │ closed  │    2943 │     446 │
 │ fdic_locations    │ open    │    2402 │    2315 │
 │ irs_eo            │ open    │   84813 │    4339 │
+│ kc_wa_food        │ open    │      86 │       0 │
+│ led_co            │ open    │      27 │       0 │
 │ nces_schools      │ open    │    2900 │    1298 │
 │ ncua_branches     │ open    │    1171 │     175 │
 │ nppes_orgs        │ open    │  130763 │   12995 │
+│ olcc_or           │ open    │      21 │       0 │
 │ sla_ny            │ open    │      15 │       0 │
 │ snap_current      │ open    │    7127 │    6403 │
 │ snap_history      │ open    │    7116 │    2591 │
 │ tabc_tx           │ open    │     106 │       0 │
 └───────────────────┴─────────┴─────────┴─────────┘
-  19 rows                               4 columns
+  23 rows                               4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -170,11 +174,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    441 │
-│ (none)             │ open    │   4114 │
-│ (none)             │ unknown │  71740 │
+│ (none)             │ open    │   4115 │
+│ (none)             │ unknown │  71739 │
 │ open               │ closed  │   2299 │
-│ open               │ open    │  17873 │
-│ open               │ unknown │ 195705 │
+│ open               │ open    │  17872 │
+│ open               │ unknown │ 195706 │
 │ permanently_closed │ closed  │     26 │
 │ permanently_closed │ open    │     77 │
 │ permanently_closed │ unknown │  10742 │

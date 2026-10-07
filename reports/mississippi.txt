@@ -58,6 +58,7 @@
 ├──────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca           │ open    │      31 │       0 │
 │ abt_fl           │ open    │     130 │       0 │
+│ atc_mo           │ open    │      53 │       0 │
 │ cdph_chicago     │ open    │       3 │       0 │
 │ cdph_chicago_oob │ closed  │       1 │       0 │
 │ cms_hospitals    │ open    │     224 │      69 │
@@ -66,6 +67,8 @@
 │ fdic_history     │ closed  │    1199 │     128 │
 │ fdic_locations   │ open    │    1593 │    1489 │
 │ irs_eo           │ open    │   33708 │     924 │
+│ kc_wa_food       │ open    │       2 │       0 │
+│ led_co           │ open    │       9 │       0 │
 │ nces_schools     │ open    │    1565 │     745 │
 │ ncua_branches    │ open    │     724 │     115 │
 │ nppes_orgs       │ open    │   59673 │    3786 │
@@ -74,7 +77,7 @@
 │ snap_history     │ open    │    4860 │    1876 │
 │ tabc_tx          │ open    │     240 │       0 │
 └──────────────────┴─────────┴─────────┴─────────┘
-  17 rows                              4 columns
+  20 rows                              4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │

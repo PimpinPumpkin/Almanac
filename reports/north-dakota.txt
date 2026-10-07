@@ -64,15 +64,17 @@
 │ fdic_history   │ closed  │     183 │      53 │
 │ fdic_locations │ open    │     449 │     394 │
 │ irs_eo         │ open    │   11406 │     564 │
+│ kc_wa_food     │ open    │       8 │       0 │
 │ nces_schools   │ open    │     597 │     277 │
 │ ncua_branches  │ open    │     276 │      85 │
 │ nppes_orgs     │ open    │   17275 │    1423 │
+│ olcc_or        │ open    │      17 │       0 │
 │ sla_ny         │ open    │       4 │       0 │
 │ snap_current   │ open    │     603 │     531 │
 │ snap_history   │ open    │     631 │     375 │
 │ tabc_tx        │ open    │      47 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  15 rows                            4 columns
+  17 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │

@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1579 │
-│ open    │  24974 │
-│ unknown │ 227667 │
+│ open    │  24975 │
+│ unknown │ 227666 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -58,6 +58,7 @@
 ├──────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca           │ open    │      71 │       0 │
 │ abt_fl           │ open    │      96 │       0 │
+│ atc_mo           │ open    │     261 │       1 │
 │ cdph_chicago_oob │ closed  │       3 │       0 │
 │ cms_hospitals    │ open    │     250 │      80 │
 │ dbpr_fl_food     │ open    │      48 │       0 │
@@ -66,20 +67,23 @@
 │ fdic_history     │ closed  │    2024 │     279 │
 │ fdic_locations   │ open    │    2571 │    2344 │
 │ irs_eo           │ open    │   49630 │    2190 │
+│ led_co           │ open    │       9 │       0 │
 │ nces_schools     │ open    │    2836 │    1219 │
 │ ncua_branches    │ open    │     967 │     156 │
 │ nppes_orgs       │ open    │   81032 │    5995 │
+│ olcc_or          │ open    │       8 │       0 │
 │ sla_ny           │ open    │      27 │       0 │
 │ snap_current     │ open    │    7621 │    6889 │
 │ snap_history     │ open    │    7732 │    2905 │
 │ tabc_tx          │ open    │     168 │       0 │
 └──────────────────┴─────────┴─────────┴─────────┘
-  17 rows                              4 columns
+  20 rows                              4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
+│ atc_mo         │ open    │ near    │     1 │      1 │
 │ atp            │ open    │ near    │   375 │    372 │
 │ atp            │ open    │ number  │ 11302 │  10346 │
 │ atp            │ open    │ self    │  1225 │   1225 │
@@ -121,7 +125,7 @@
 │ wikidata_p576  │ closed  │ near    │     1 │      1 │
 │ wikidata_p576  │ closed  │ self    │     3 │      3 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  40 rows                                   5 columns
+  41 rows                                   5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -132,6 +136,7 @@
 │ closed  │ osm_history    │    161 │
 │ closed  │ osm_lifecycle  │    146 │
 │ closed  │ wikidata_p576  │      3 │
+│ open    │ atc_mo         │      1 │
 │ open    │ atp            │  11701 │
 │ open    │ cms_hospitals  │    135 │
 │ open    │ epa_ust_open   │    490 │
@@ -144,7 +149,7 @@
 │ open    │ snap_current   │   5446 │
 │ open    │ snap_history   │    119 │
 └─────────┴────────────────┴────────┘
-  16 rows                 3 columns
+  17 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐

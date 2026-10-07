@@ -40,8 +40,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1717 │
-│ open    │   6804 │
-│ unknown │  49167 │
+│ open    │   6805 │
+│ unknown │  49166 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -49,8 +49,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1312 │
-│ open    │   6176 │
-│ unknown │  46257 │
+│ open    │   6177 │
+│ unknown │  46256 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌───────────────────┬─────────┬─────────┬─────────┐
@@ -61,6 +61,7 @@
 │ abca_dc_active    │ open    │    2075 │    1780 │
 │ abca_dc_cancelled │ closed  │     337 │     219 │
 │ abt_fl            │ open    │      35 │       0 │
+│ atc_mo            │ open    │      35 │       0 │
 │ cdph_chicago      │ open    │       1 │       0 │
 │ cms_hospitals     │ open    │      60 │       7 │
 │ dbpr_fl_food      │ open    │      21 │       0 │
@@ -69,6 +70,8 @@
 │ fdic_history      │ closed  │     449 │      91 │
 │ fdic_locations    │ open    │     352 │     343 │
 │ irs_eo            │ open    │   37731 │    2823 │
+│ kc_wa_food        │ open    │     104 │       0 │
+│ led_co            │ open    │       8 │       1 │
 │ nces_schools      │ open    │     404 │      51 │
 │ ncua_branches     │ open    │     452 │      39 │
 │ nppes_orgs        │ open    │   40607 │    1200 │
@@ -77,7 +80,7 @@
 │ snap_history      │ open    │     906 │     231 │
 │ tabc_tx           │ open    │     111 │       0 │
 └───────────────────┴─────────┴─────────┴─────────┘
-  19 rows                               4 columns
+  22 rows                               4 columns
 == evidence by source and rule (places is distinct places)
 ┌───────────────────┬─────────┬─────────┬───────┬────────┐
 │      source       │  state  │  rule   │ rows  │ places │
@@ -127,7 +130,7 @@
 │ snap_history      │ open    │ spot    │     4 │      4 │
 │ wikidata_p576     │ closed  │ number  │     2 │      2 │
 └───────────────────┴─────────┴─────────┴───────┴────────┘
-  44 rows (40 shown)                           5 columns
+  45 rows (40 shown)                           5 columns
 == what decided the status
 ┌─────────┬───────────────────┬────────┐
 │ status  │   status_source   │ places │
@@ -143,15 +146,16 @@
 │ open    │ cms_hospitals     │     11 │
 │ open    │ epa_ust_open      │     56 │
 │ open    │ fdic_locations    │    349 │
-│ open    │ irs_eo            │   1929 │
-│ open    │ nces_schools      │     45 │
+│ open    │ irs_eo            │   1930 │
+│ open    │ led_co            │      1 │
+│ open    │ nces_schools      │     44 │
 │ open    │ ncua_branches     │     29 │
 │ open    │ nppes_orgs        │    138 │
 │ open    │ osm_check_date    │    529 │
 │ open    │ snap_current      │    693 │
 │ open    │ snap_history      │     20 │
 └─────────┴───────────────────┴────────┘
-  17 rows                    3 columns
+  18 rows                    3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────────┬────────┬─────────────────┬─────────────────┐
@@ -174,8 +178,8 @@
 │ (none)             │ open    │    761 │
 │ (none)             │ unknown │   9846 │
 │ open               │ closed  │   1265 │
-│ open               │ open    │   4406 │
-│ open               │ unknown │  31996 │
+│ open               │ open    │   4407 │
+│ open               │ unknown │  31995 │
 │ permanently_closed │ closed  │     49 │
 │ permanently_closed │ open    │     66 │
 │ permanently_closed │ unknown │   3811 │

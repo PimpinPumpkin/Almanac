@@ -59,6 +59,7 @@
 ├──────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca           │ open    │     200 │       0 │
 │ abt_fl           │ open    │      72 │       0 │
+│ atc_mo           │ open    │      19 │       0 │
 │ cdph_chicago     │ open    │   15043 │   12282 │
 │ cdph_chicago_oob │ closed  │    5563 │       0 │
 │ cms_hospitals    │ open    │     294 │     112 │
@@ -68,15 +69,18 @@
 │ fdic_history     │ closed  │    6019 │     785 │
 │ fdic_locations   │ open    │    5313 │    5119 │
 │ irs_eo           │ open    │   74953 │    6088 │
+│ kc_wa_food       │ open    │      52 │       0 │
+│ led_co           │ open    │      39 │       0 │
 │ nces_schools     │ open    │    7536 │    2642 │
 │ ncua_branches    │ open    │    2025 │     866 │
 │ nppes_orgs       │ open    │  128736 │   16099 │
+│ olcc_or          │ open    │      17 │       0 │
 │ sla_ny           │ open    │      14 │       0 │
 │ snap_current     │ open    │   17996 │   14993 │
 │ snap_history     │ open    │   17980 │    6214 │
 │ tabc_tx          │ open    │     352 │       0 │
 └──────────────────┴─────────┴─────────┴─────────┘
-  18 rows                              4 columns
+  22 rows                              4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -167,11 +171,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    610 │
-│ (none)             │ open    │   6321 │
-│ (none)             │ unknown │ 121616 │
+│ (none)             │ open    │   6322 │
+│ (none)             │ unknown │ 121615 │
 │ open               │ closed  │   2988 │
-│ open               │ open    │  30234 │
-│ open               │ unknown │ 334192 │
+│ open               │ open    │  30233 │
+│ open               │ unknown │ 334193 │
 │ permanently_closed │ closed  │     45 │
 │ permanently_closed │ open    │    110 │
 │ permanently_closed │ unknown │  14174 │

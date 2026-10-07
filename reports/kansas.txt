@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1206 │
-│ open    │  15247 │
-│ unknown │ 162041 │
+│ open    │  15250 │
+│ unknown │ 162038 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    967 │
-│ open    │  14683 │
-│ unknown │ 149878 │
+│ open    │  14684 │
+│ unknown │ 149877 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌──────────────────┬─────────┬─────────┬─────────┐
@@ -58,6 +58,7 @@
 ├──────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca           │ open    │     292 │       0 │
 │ abt_fl           │ open    │     451 │       1 │
+│ atc_mo           │ open    │    1346 │       5 │
 │ cdph_chicago     │ open    │       7 │       0 │
 │ cdph_chicago_oob │ closed  │       1 │       0 │
 │ cms_hospitals    │ open    │     473 │     103 │
@@ -67,21 +68,26 @@
 │ fdic_history     │ closed  │     846 │     166 │
 │ fdic_locations   │ open    │    1469 │    1377 │
 │ irs_eo           │ open    │  100344 │    1988 │
+│ kc_wa_food       │ open    │      62 │       0 │
+│ led_co           │ open    │      92 │       1 │
 │ nces_schools     │ open    │    1477 │     766 │
 │ ncua_branches    │ open    │    1871 │     177 │
 │ nppes_orgs       │ open    │  173332 │    4716 │
+│ olcc_or          │ open    │      63 │       0 │
 │ sla_ny           │ open    │      18 │       0 │
 │ snap_current     │ open    │    2301 │    2107 │
 │ snap_history     │ open    │    2328 │    1633 │
 │ tabc_tx          │ open    │     874 │       0 │
 └──────────────────┴─────────┴─────────┴─────────┘
-  18 rows                              4 columns
+  22 rows                              4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ abt_fl         │ open    │ address │     1 │      1 │
+│ atc_mo         │ open    │ near    │     1 │      1 │
+│ atc_mo         │ open    │ number  │     6 │      6 │
 │ atp            │ open    │ near    │   371 │    366 │
 │ atp            │ open    │ number  │  7039 │   6584 │
 │ atp            │ open    │ self    │  1303 │   1303 │
@@ -99,6 +105,7 @@
 │ fdic_locations │ open    │ spot    │     8 │      8 │
 │ fsq_closed     │ closed  │ id      │   847 │    847 │
 │ irs_eo         │ open    │ address │  2089 │   1960 │
+│ led_co         │ open    │ address │     1 │      1 │
 │ nces_schools   │ open    │ near    │    85 │     85 │
 │ nces_schools   │ open    │ number  │   742 │    740 │
 │ nces_schools   │ open    │ spot    │     6 │      6 │
@@ -121,7 +128,7 @@
 │ snap_history   │ open    │ number  │  1726 │   1725 │
 │ snap_history   │ open    │ spot    │     8 │      8 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  39 rows                                   5 columns
+  42 rows                                   5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -132,11 +139,13 @@
 │ closed  │ osm_history    │    154 │
 │ closed  │ osm_lifecycle  │     93 │
 │ open    │ abt_fl         │      1 │
-│ open    │ atp            │   8203 │
+│ open    │ atc_mo         │      7 │
+│ open    │ atp            │   8198 │
 │ open    │ cms_hospitals  │    106 │
 │ open    │ epa_ust_open   │    443 │
 │ open    │ fdic_locations │   1391 │
 │ open    │ irs_eo         │   1653 │
+│ open    │ led_co         │      1 │
 │ open    │ nces_schools   │    674 │
 │ open    │ ncua_branches  │    145 │
 │ open    │ nppes_orgs     │    732 │
@@ -144,7 +153,7 @@
 │ open    │ snap_current   │   1510 │
 │ open    │ snap_history   │     79 │
 └─────────┴────────────────┴────────┘
-  16 rows                 3 columns
+  18 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -162,8 +171,8 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    203 │
-│ (none)             │ open    │   2364 │
-│ (none)             │ unknown │  41581 │
+│ (none)             │ open    │   2365 │
+│ (none)             │ unknown │  41580 │
 │ open               │ closed  │    918 │
 │ open               │ open    │  10200 │
 │ open               │ unknown │ 103762 │

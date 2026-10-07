@@ -60,6 +60,7 @@
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │      87 │       0 │
 │ abt_fl         │ open    │     411 │       0 │
+│ atc_mo         │ open    │      25 │       0 │
 │ cms_hospitals  │ open    │     293 │      50 │
 │ dbpr_fl_food   │ open    │     235 │       0 │
 │ dohmh_nyc      │ open    │   22227 │   21793 │
@@ -67,15 +68,18 @@
 │ fdic_history   │ closed  │    4851 │     756 │
 │ fdic_locations │ open    │    4543 │    4295 │
 │ irs_eo         │ open    │  117023 │    4342 │
+│ kc_wa_food     │ open    │      67 │       0 │
+│ led_co         │ open    │      42 │       0 │
 │ nces_schools   │ open    │    5073 │    1863 │
 │ ncua_branches  │ open    │    1315 │     163 │
 │ nppes_orgs     │ open    │  194456 │   14359 │
+│ olcc_or        │ open    │       5 │       0 │
 │ sla_ny         │ open    │   17942 │    7692 │
 │ snap_current   │ open    │   15149 │    8893 │
 │ snap_history   │ open    │   15962 │    3306 │
 │ tabc_tx        │ open    │     387 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  16 rows                            4 columns
+  20 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -141,8 +145,8 @@
 │ open    │ dohmh_nyc      │  21012 │
 │ open    │ epa_ust_open   │    829 │
 │ open    │ fdic_locations │   4335 │
-│ open    │ irs_eo         │   3519 │
-│ open    │ nces_schools   │   1841 │
+│ open    │ irs_eo         │   3520 │
+│ open    │ nces_schools   │   1840 │
 │ open    │ ncua_branches  │    139 │
 │ open    │ nppes_orgs     │   1763 │
 │ open    │ osm_check_date │   2479 │

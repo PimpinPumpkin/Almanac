@@ -58,6 +58,7 @@
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │     277 │       0 │
 │ abt_fl         │ open    │   51222 │   31254 │
+│ atc_mo         │ open    │      49 │       0 │
 │ cdph_chicago   │ open    │      11 │       0 │
 │ cms_hospitals  │ open    │     617 │     177 │
 │ dbpr_fl_food   │ open    │   33913 │   19720 │
@@ -66,15 +67,18 @@
 │ fdic_history   │ closed  │    5024 │    1154 │
 │ fdic_locations │ open    │    4450 │    4129 │
 │ irs_eo         │ open    │  185880 │    9262 │
+│ kc_wa_food     │ open    │      65 │       0 │
+│ led_co         │ open    │     118 │       1 │
 │ nces_schools   │ open    │    4396 │    3324 │
 │ ncua_branches  │ open    │    3175 │     834 │
 │ nppes_orgs     │ open    │  363151 │   37506 │
+│ olcc_or        │ open    │      94 │       0 │
 │ sla_ny         │ open    │      42 │       0 │
 │ snap_current   │ open    │   14552 │   13241 │
 │ snap_history   │ open    │   15276 │   10920 │
 │ tabc_tx        │ open    │     798 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  17 rows                            4 columns
+  21 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -124,7 +128,7 @@
 │ wikidata_p576  │ closed  │ number  │     1 │      1 │
 │ wikidata_p576  │ closed  │ self    │     6 │      4 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  48 rows (40 shown)                        5 columns
+  49 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -141,15 +145,16 @@
 │ open    │ dbpr_fl_food   │   7521 │
 │ open    │ epa_ust_open   │   1283 │
 │ open    │ fdic_locations │   4408 │
-│ open    │ irs_eo         │   7665 │
-│ open    │ nces_schools   │   3311 │
+│ open    │ irs_eo         │   7722 │
+│ open    │ led_co         │      1 │
+│ open    │ nces_schools   │   3254 │
 │ open    │ ncua_branches  │    586 │
 │ open    │ nppes_orgs     │   5673 │
 │ open    │ osm_check_date │   2987 │
-│ open    │ snap_current   │   5111 │
+│ open    │ snap_current   │   5110 │
 │ open    │ snap_history   │    346 │
 └─────────┴────────────────┴────────┘
-  18 rows                 3 columns
+  19 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -168,12 +173,12 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │   1462 │
-│ (none)             │ open    │  15651 │
-│ (none)             │ unknown │ 343596 │
-│ open               │ closed  │   6381 │
-│ open               │ open    │  85054 │
-│ open               │ unknown │ 877471 │
-│ permanently_closed │ closed  │     73 │
+│ (none)             │ open    │  15652 │
+│ (none)             │ unknown │ 343595 │
+│ open               │ closed  │   6380 │
+│ open               │ open    │  85053 │
+│ open               │ unknown │ 877473 │
+│ permanently_closed │ closed  │     74 │
 │ permanently_closed │ open    │    329 │
-│ permanently_closed │ unknown │  56938 │
+│ permanently_closed │ unknown │  56937 │
 └────────────────────┴─────────┴────────┘

@@ -58,20 +58,24 @@
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │      65 │       0 │
 │ abt_fl         │ open    │      50 │       0 │
+│ atc_mo         │ open    │       7 │       0 │
 │ cms_hospitals  │ open    │     102 │      42 │
 │ dbpr_fl_food   │ open    │      48 │       0 │
 │ epa_ust_open   │ open    │    1776 │     464 │
 │ fdic_history   │ closed  │     501 │     129 │
 │ fdic_locations │ open    │     690 │     625 │
 │ irs_eo         │ open    │   19079 │     777 │
+│ kc_wa_food     │ open    │       6 │       0 │
+│ led_co         │ open    │      24 │       0 │
 │ nces_schools   │ open    │    1363 │     614 │
 │ ncua_branches  │ open    │     615 │     199 │
 │ nppes_orgs     │ open    │   36236 │    3379 │
+│ olcc_or        │ open    │     178 │       0 │
 │ snap_current   │ open    │    1706 │    1516 │
 │ snap_history   │ open    │    1734 │     828 │
 │ tabc_tx        │ open    │      96 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  14 rows                            4 columns
+  18 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -132,8 +136,8 @@
 │ open    │ cms_hospitals  │     50 │
 │ open    │ epa_ust_open   │    241 │
 │ open    │ fdic_locations │    655 │
-│ open    │ irs_eo         │    634 │
-│ open    │ nces_schools   │    611 │
+│ open    │ irs_eo         │    635 │
+│ open    │ nces_schools   │    610 │
 │ open    │ ncua_branches  │    127 │
 │ open    │ nppes_orgs     │    632 │
 │ open    │ osm_check_date │    400 │
