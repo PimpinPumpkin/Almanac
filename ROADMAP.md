@@ -153,6 +153,11 @@ Asked for by the owner on 2026-10-07.
   web. Take LocalBusiness records with opening hours and match them to
   places by website and address. Measure how many are right against OSM
   and AllThePlaces hours for the same place before using them.
+  Looked at on 2026-10-07: the newest Web Data Commons release is from
+  December 2024 (an October 2024 crawl), with 42 million LocalBusiness
+  records from 1.5 million sites in 23 GB. So hours from it would be dated
+  2024, and its terms are Common Crawl's, which is not on the list of
+  licenses that may be added without asking. Waits for the owner.
 - **8.3 A crawler of our own** for the websites Overture lists, reading
   only schema.org markup, obeying robots.txt, a few pages per site per
   month. Only if 8.2 leaves a large gap, because it is the first part of
@@ -193,6 +198,7 @@ Everything above can proceed without asking, except these.
 - **Keys and accounts**, if that decision is revisited, and where a key
   would be stored.
 - **License calls** outside the list above.
+  Open now: Common Crawl's terms of use, for hours from website markup (8.2).
 - **Anything that costs money or needs a server** beyond GitHub Actions and
   release storage.
 - **Speaking for the project**: contacting another project or a data owner.
