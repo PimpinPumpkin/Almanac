@@ -118,7 +118,9 @@ Overture, OSM to core, and evidence to places.
 
 **Name.** Lowercase, strip accents and punctuation, `&` becomes `and`. Then
 drop legal words (the, inc, llc, ltd, corp, company, co, national
-association, na, branch) and trailing store numbers.
+association, na, branch) and trailing store numbers. Every spelling of
+"credit union" (FCU, Federal Credit Union) becomes one word, so a credit
+union matches itself and not the agency it is named after.
 
 **House number.** The leading digits of the street line.
 
@@ -167,7 +169,7 @@ degrees of latitude by 0.008 of longitude, one side is copied into its nine
 neighbor cells, and the join is an equality on the cell. No distance
 predicate, OR, or correlated subquery is used to find candidates.
 
-**Tests.** `tests/match_test.sql` holds 22 invented pairs, one per case the
+**Tests.** `tests/match_test.sql` holds 25 invented pairs, plus 5 for the address rule, one per case the
 rules are meant to accept or refuse. Run `duckdb < tests/match_test.sql`.
 
 **Measured.** 40 matched pairs per rule were read in the District of
@@ -197,6 +199,7 @@ rows are the same place.
 | DC alcohol licenses, active | number | 40 of 40 | finds a place for 77% of licenses |
 | | spot | 20 of 20 | |
 | DC alcohol license cancellations | number | 40 of 40 | |
+| NCUA credit union offices | address | 38 of 40 | both misses are a church's credit union landing on the church |
 | OSM lifecycle features to places | all | 40 of 40 (DC), 36 of 36 (Sacramento) | |
 
 ## 7. Status rules
@@ -297,6 +300,7 @@ matched by address and only a quarter find their place.
 | abc_ca | open | the export's Updated date | matcher, by address |
 | abca_dc_active | open | day the layer was last loaded | matcher |
 | abca_dc_cancelled | closed | day the layer was last loaded (an upper bound) | matcher; restaurants, taverns, nightclubs and clubs only |
+| ncua_branches | open | the quarter's cycle date | matcher, by address |
 | irs_eo | open | last day of the month the newest return covers | matcher, by address |
 | atp | open | day the spider collected the chain's locator | the AllThePlaces row's own merge |
 | osm_check_date | open | `check_date` or `survey:date` tag | the OSM feature's own merge |

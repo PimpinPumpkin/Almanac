@@ -28,7 +28,7 @@ Kentucky), 480,000 places in all.
 | Category | Listed | Has a dated status | What it comes from, and what comes next | Can it be complete? |
 | --- | ---: | ---: | --- | --- |
 | Fast food and chain restaurants | 3,736 | 66% | Chain store locators (built) | Yes, for chains with a locator |
-| Banks and credit unions | 4,603 | 52% | FDIC branches and closings (built). Next: NCUA credit union branches | Yes |
+| Banks and credit unions | 4,603 | 52% | FDIC branches and closings, NCUA credit union offices (built) | Yes |
 | Gas stations | 4,566 | 45% | Chain locators (built). Next: underground storage tank registries | Mostly |
 | Grocery and convenience stores | 5,964 | 39% | SNAP authorized stores, chain locators (built) | Mostly |
 | Pharmacies | 1,848 | 32% | Chain locators, NPPES (built). Next: state pharmacy boards | Mostly |
@@ -94,8 +94,8 @@ review.sh           print a fixed sample of matches for a person to read
 regions.tsv         region boxes and which OSM extracts cover them
 base/               importers: overture.sh, atp.sh + atp.py, osm.sh + osm.jq
 signals/            closing signals joined by id: fsq_closed.sh, wikidata_p576.py
-adapters/           one file per register: fdic, snap, cms, nces, nppes, irs,
-                    abc_ca, abca_dc
+adapters/           one file per register: fdic, ncua, snap, cms, nces, nppes,
+                    irs, abc_ca, abca_dc
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests
 reports/            numbers from the last build of each region

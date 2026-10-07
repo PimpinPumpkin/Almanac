@@ -14,7 +14,10 @@ create or replace macro norm_name(s) as
   coalesce(
     nullif(trim(regexp_replace(
       regexp_replace(
-        regexp_replace(clean_name(s), '( [0-9]+)+$', ''),
+        -- every way of writing "credit union" becomes one word, so that
+        -- "Justice FCU" and "Justice Federal Credit Union" are the same name
+        regexp_replace(regexp_replace(clean_name(s), '( [0-9]+)+$', ''),
+                       '\b(federal credit union|credit union|fcu)\b', 'cu', 'g'),
         '\b(the|inc|incorporated|llc|ltd|corp|corporation|company|co|national association|na|branch)\b', ' ', 'g'),
       ' +', ' ', 'g')), ''),
     clean_name(s));

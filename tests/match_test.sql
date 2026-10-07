@@ -37,6 +37,10 @@ insert into cases values
   (21, 'Royal Tobacco', '2604 Connecticut Ave NW', 38.9240, -77.0520, 'Royal Tobaco', '2604 Connecticut Avenue Northwest', 38.9240, -77.0521, 'number'),
   -- a branch is not the cash machine at the same address
   (22, 'Bank of America', '4301 49th St NW', 38.9450, -77.0960, 'Bank of America ATM', '4301 49th St NW', 38.9450, -77.0960, null),
+  -- a credit union is not the agency it is named after
+  (23, 'Library of Congress Credit Union', '101 Independence Ave SE', 38.8870, -77.0050, 'Library of Congress Federal Credit Union', '101 Independence Ave SE', 38.8870, -77.0050, 'number'),
+  (24, 'Library of Congress Credit Union', '101 Independence Ave SE', 38.8870, -77.0050, 'Library of Congress, Law Library', '101 Independence Ave SE', 38.8870, -77.0050, null),
+  (25, 'Justice Credit Union', '601 4th St NW', 38.8970, -77.0160, 'Justice FCU', '601 4th St NW', 38.8970, -77.0160, 'number'),
   (17, 'Inn', '10 Main St', 38.9000, -77.0000, 'Capitol Inn', '10 Main St', 38.9000, -77.0000, null);
 
 create table a as select n as id, norm_name(a_name) nn, house_number(a_addr) hn, a_lat lat, a_lng lng from cases;

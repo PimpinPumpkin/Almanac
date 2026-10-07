@@ -78,6 +78,12 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: health care organizations (open, dated by the last update or
   certification). No positions; matched by address.
 
+### NCUA quarterly call report data
+- License: US federal government work, public domain.
+- Fetched from: `https://ncua.gov/files/publications/analysis/call-report-data-<year>-<month>.zip`
+- Used for: credit union offices (open, dated by the quarter). No positions;
+  matched by address.
+
 ### IRS Exempt Organizations Business Master File
 - License: US federal government work, public domain.
 - Fetched from: `https://www.irs.gov/pub/irs-soi/eo1.csv` to `eo4.csv`
@@ -112,7 +118,6 @@ adapter is merged. If a source states no license, the entry says so.
 Survey of what comes next, in order. None of these has been fetched or
 checked by this project.
 
-- NCUA credit union branches: federal, public domain.
 - More state alcohol license lists. Texas (data.texas.gov, dataset
   7hf9-qc9f) and New York (data.ny.gov, dataset 9s3h-dpkz) were fetched once
   to confirm they answer without a key; both carry addresses and status or
