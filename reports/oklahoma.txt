@@ -13,8 +13,8 @@
 │ alltheplaces -> overture │ near              │   335 │
 │ alltheplaces -> overture │ number            │ 10756 │
 │ alltheplaces -> overture │ spot              │    49 │
-│ osm -> core              │ near              │  8368 │
-│ osm -> core              │ number            │  9672 │
+│ osm -> core              │ near              │  8367 │
+│ osm -> core              │ number            │  9669 │
 │ osm -> core              │ spot              │   286 │
 │ overture duplicates      │ number, same name │   837 │
 └──────────────────────────┴───────────────────┴───────┘
@@ -23,15 +23,15 @@
 │  core  │  full  │ osm_only │ atp_only │ from_registers │
 │ int64  │ int64  │  int64   │  int64   │     int64      │
 ├────────┼────────┼──────────┼──────────┼────────────────┤
-│ 228085 │ 243073 │    14988 │     1504 │           2448 │
+│ 227892 │ 242884 │    14992 │     1504 │           2255 │
 └────────┴────────┴──────────┴──────────┴────────────────┘
 == places minted from a register
 ┌────────────────┬────────┐
 │     source     │ places │
 │    varchar     │ int64  │
 ├────────────────┼────────┤
-│ fdic_locations │    672 │
-│ snap_current   │   1776 │
+│ fdic_locations │    644 │
+│ snap_current   │   1611 │
 └────────────────┴────────┘
 == status, full layer
 ┌─────────┬────────┐
@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1159 │
-│ open    │  21349 │
-│ unknown │ 220565 │
+│ open    │  21159 │
+│ unknown │ 220566 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,7 +48,7 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    940 │
-│ open    │  20232 │
+│ open    │  20039 │
 │ unknown │ 206913 │
 └─────────┴────────┘
 == register records in the box and how many found a place
@@ -56,19 +56,22 @@
 │     source     │  state  │ records │ matched │
 │    varchar     │ varchar │  int64  │  int64  │
 ├────────────────┼─────────┼─────────┼─────────┤
-│ abc_ca         │ open    │    2167 │       0 │
+│ abc_ca         │ open    │     123 │       0 │
 │ cms_hospitals  │ open    │     284 │     102 │
+│ dbpr_fl_food   │ open    │      58 │       0 │
 │ epa_ust_open   │ open    │    4161 │    1576 │
 │ fdic_history   │ closed  │     745 │     107 │
-│ fdic_locations │ open    │    1610 │    1503 │
+│ fdic_locations │ open    │    1610 │    1475 │
 │ irs_eo         │ open    │   49104 │    1672 │
 │ nces_schools   │ open    │    2297 │     287 │
 │ ncua_branches  │ open    │     914 │     191 │
 │ nppes_orgs     │ open    │   82556 │    5702 │
-│ snap_current   │ open    │    4701 │    4439 │
-│ snap_history   │ open    │    4805 │    2741 │
+│ sla_ny         │ open    │       4 │       0 │
+│ snap_current   │ open    │    4701 │    4277 │
+│ snap_history   │ open    │    4805 │    2744 │
+│ tabc_tx        │ open    │    2340 │       1 │
 └────────────────┴─────────┴─────────┴─────────┘
-  11 rows                            4 columns
+  14 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -87,7 +90,7 @@
 │ fdic_history   │ closed  │ spot    │     4 │      4 │
 │ fdic_locations │ open    │ near    │    11 │     11 │
 │ fdic_locations │ open    │ number  │   818 │    810 │
-│ fdic_locations │ open    │ self    │   672 │    672 │
+│ fdic_locations │ open    │ self    │   644 │    644 │
 │ fdic_locations │ open    │ spot    │    10 │     10 │
 │ fsq_closed     │ closed  │ id      │   868 │    868 │
 │ irs_eo         │ open    │ address │  1761 │   1696 │
@@ -105,15 +108,16 @@
 │ osm_lifecycle  │ closed  │ number  │    18 │     18 │
 │ osm_lifecycle  │ closed  │ self    │    28 │     28 │
 │ snap_current   │ open    │ near    │    34 │     34 │
-│ snap_current   │ open    │ number  │  2824 │   2820 │
-│ snap_current   │ open    │ self    │  1776 │   1776 │
+│ snap_current   │ open    │ number  │  2827 │   2823 │
+│ snap_current   │ open    │ self    │  1611 │   1611 │
 │ snap_current   │ open    │ spot    │    23 │     23 │
 │ snap_history   │ open    │ near    │    37 │     37 │
-│ snap_history   │ open    │ number  │  2905 │   2903 │
+│ snap_history   │ open    │ number  │  2908 │   2906 │
 │ snap_history   │ open    │ spot    │    22 │     22 │
+│ tabc_tx        │ open    │ address │     1 │      1 │
 │ wikidata_p576  │ closed  │ number  │     2 │      2 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  38 rows                                   5 columns
+  39 rows                                   5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -124,19 +128,20 @@
 │ closed  │ osm_history    │    166 │
 │ closed  │ osm_lifecycle  │     56 │
 │ closed  │ wikidata_p576  │      2 │
-│ open    │ atp            │  11901 │
+│ open    │ atp            │  11900 │
 │ open    │ cms_hospitals  │     96 │
 │ open    │ epa_ust_open   │    831 │
-│ open    │ fdic_locations │   1501 │
+│ open    │ fdic_locations │   1473 │
 │ open    │ irs_eo         │   1432 │
 │ open    │ nces_schools   │    264 │
 │ open    │ ncua_branches  │     83 │
 │ open    │ nppes_orgs     │    872 │
 │ open    │ osm_check_date │    962 │
-│ open    │ snap_current   │   3284 │
+│ open    │ snap_current   │   3122 │
 │ open    │ snap_history   │    123 │
+│ open    │ tabc_tx        │      1 │
 └─────────┴────────────────┴────────┘
-  16 rows                 3 columns
+  17 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -155,11 +160,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    237 │
-│ (none)             │ open    │   3325 │
-│ (none)             │ unknown │  60297 │
+│ (none)             │ open    │   3326 │
+│ (none)             │ unknown │  60296 │
 │ open               │ closed  │    877 │
-│ open               │ open    │  13531 │
-│ open               │ unknown │ 140464 │
+│ open               │ open    │  13530 │
+│ open               │ unknown │ 140465 │
 │ permanently_closed │ closed  │      8 │
 │ permanently_closed │ open    │     49 │
 │ permanently_closed │ unknown │   5345 │
