@@ -24,9 +24,9 @@ What comes out of the build of 2026-10-07, for all 50 states and DC:
 | | |
 | --- | ---: |
 | Places | 19.4 million |
-| Confirmed open by a dated record from the last two years | 1.6 million |
-| Marked closed, with the date and the source | 129,000 |
-| Added from a register because no map dataset had them | 212,000 |
+| Confirmed open by a dated record from the last two years | 1.7 million |
+| Marked closed, with the date and the source | 147,000 |
+| Added from a register because no map dataset had them | 204,000 |
 
 Every place also gets an `open_score` from 0 to 1, so a reader can dim or
 drop the ones nobody has vouched for in years.
@@ -56,32 +56,32 @@ in [COVERAGE.md](COVERAGE.md). Both are made by `tools/coverage_map.py`.
 
 What the Almanac lists today, how much of it has a dated open or closed
 record, and which public register can close the gap. Counts are from the
-2026-10-07 build of all 50 states and DC: 19.4 million places, 8.9% of them
+2026-10-07 build of all 50 states and DC: 19.4 million places, 9.4% of them
 with a dated status.
 
 | Category | Listed | Has a dated status | What it comes from, and what comes next | Can it be complete? |
 | --- | ---: | ---: | --- | --- |
-| Banks and credit unions | 215,405 | 67% | FDIC branches and closings, NCUA credit union offices (built) | Yes |
-| Fast food and chain restaurants | 128,275 | 62% | Chain store locators (built) | Yes, for chains with a locator |
-| Gas stations | 170,218 | 42% | Chain locators, EPA fuel tank registry (built) | Mostly |
-| Grocery and convenience stores | 237,239 | 39% | SNAP authorized stores, chain locators (built) | Mostly |
-| Pharmacies | 63,376 | 33% | Chain locators, NPPES (built). Next: state pharmacy boards | Mostly |
-| Schools | 433,930 | 19% | NCES public schools (built). The category also holds preschools, private and trade schools, which NCES public data does not cover | Public schools yes |
-| Restaurants and cafes, independent | 1,168,366 | 18% | Foursquare closing dates, OSM, alcohol licenses in California, Florida, New York, Texas and DC (built). Next: more state license lists, health inspections | State by state, never everywhere |
-| Hotels | 115,020 | 13% | Chain locators (built). Next: state lodging licenses where published | Chains yes, independents patchy |
-| Hospitals | 53,984 | 13% | CMS hospitals, NPPES (built). The category also holds departments and clinics listed as hospitals | Real hospitals yes |
+| Banks and credit unions | 214,171 | 67% | FDIC branches and closings, NCUA credit union offices (built) | Yes |
+| Fast food and chain restaurants | 128,264 | 62% | Chain store locators (built) | Yes, for chains with a locator |
+| Gas stations | 170,296 | 48% | Chain locators, EPA fuel tank registry (built) | Mostly |
+| Grocery and convenience stores | 237,551 | 45% | SNAP authorized stores, chain locators (built) | Mostly |
+| Pharmacies | 63,382 | 34% | Chain locators, NPPES (built). Next: state pharmacy boards | Mostly |
+| Schools | 433,929 | 20% | NCES public schools (built). The category also holds preschools, private and trade schools, which NCES public data does not cover | Public schools yes |
+| Restaurants and cafes, independent | 1,168,194 | 22% | Foursquare closing dates, OSM, alcohol licenses in California, Florida, New York, Texas and DC (built). Next: more state license lists, health inspections | State by state, never everywhere |
+| Hotels | 115,009 | 14% | Chain locators (built). Next: state lodging licenses where published | Chains yes, independents patchy |
+| Hospitals | 53,984 | 14% | CMS hospitals, NPPES (built). The category also holds departments and clinics listed as hospitals | Real hospitals yes |
 | Museums | 37,106 | 11% | IRS exempt organizations (built) | Partly |
-| Bars | 160,434 | 9% | Foursquare, OSM, alcohol licenses in California, Florida, New York, Texas and DC (built). Next: more state license lists | Where the state publishes its list, about half today. See below |
-| Everything else | 16,374,029 | 6% | Salons, repair shops, offices, clinics, churches. NPPES and IRS exempt organizations (built). Next: state professional and repair licenses | No. This is the long tail |
+| Bars | 160,371 | 14% | Foursquare, OSM, alcohol licenses in California, Florida, New York, Texas and DC (built). Next: more state license lists | Where the state publishes its list, about half today. See below |
+| Everything else | 16,367,089 | 6% | Salons, repair shops, offices, clinics, churches. NPPES and IRS exempt organizations (built). Next: state professional and repair licenses | No. This is the long tail |
 | EV chargers | | | Not handled yet. The federal station list needs a free API key | Yes, if a key is allowed |
 | Parks | | | OSM. Parks rarely close, so a listing is most of the job | Listing yes, status not needed |
 
 The split by state is in [COVERAGE.md](COVERAGE.md).
 
-Bars and restaurants are low because only California and DC have a license
-list loaded. Where there is one, it helps but does not finish the job:
-inside the District of Columbia 48% of bars and 42% of restaurants have a
-status, and in California 31% and 30%. Most of the rest are bar listings
+Bars and restaurants are low because only five places have a license list
+loaded so far. Where there is one, it helps but does not finish the job:
+bars with a status are 49% in the District of Columbia, 37% in New York,
+33% in California and 31% in Texas, against 14% nationally. Most of the rest are bar listings
 that match no license at all. In DC those get a low `open_score` and a
 `missing_license` flag, not a closed status (SPEC.md section 7).
 
@@ -117,7 +117,7 @@ section 10). It is not in the monthly release yet.
 
 - Not a new survey. Every fact comes from a source listed in `SOURCES.md`.
 - Not complete on status. Most places have no dated evidence and are
-  `unknown`. Nationally 8.9% of places get a status. `unknown` means nobody
+  `unknown`. Nationally 9.4% of places get a status. `unknown` means nobody
   has said, not "probably open".
 - Maintained by the Vela Maps project (github.com/PimpinPumpkin/Vela).
   Anyone can use it, and nothing in it depends on Vela: readers fetch the
