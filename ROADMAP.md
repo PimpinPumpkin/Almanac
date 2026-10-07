@@ -148,21 +148,25 @@ Asked for by the owner on 2026-10-07.
 
 - **8.1 Hours from what is already open.** Done: `opening_hours` from
   AllThePlaces and OSM, with its source and date.
-- **8.2 Hours from places' own websites, without crawling.** Common Crawl
-  and Web Data Commons publish the schema.org markup found on the public
-  web. Take LocalBusiness records with opening hours and match them to
-  places by website and address. Measure how many are right against OSM
-  and AllThePlaces hours for the same place before using them.
-  Looked at on 2026-10-07: the newest Web Data Commons release is from
-  December 2024 (an October 2024 crawl), with 42 million LocalBusiness
-  records from 1.5 million sites in 23 GB. So hours from it would be dated
-  2024, and its terms are Common Crawl's, which is not on the list of
-  licenses that may be added without asking. The owner said yes on
-  2026-10-07, so this is next.
-- **8.3 A crawler of our own** for the websites Overture lists, reading
-  only schema.org markup, obeying robots.txt, a few pages per site per
-  month. Only if 8.2 leaves a large gap, because it is the first part of
-  this project that would not be a bulk download.
+- **8.2 Hours from website markup already collected by others.** Measured
+  and set aside on 2026-10-07. Web Data Commons (December 2024, from
+  Common Crawl) has schema.org LocalBusiness markup from 1.46 million
+  sites, 254,000 of them with opening hours. Places whose own website is
+  one of those: 866 of 101,082 in the DC box and 563 of 63,574 in a
+  Seattle box, under 1%. Not worth 23 GB of two-year-old data.
+- **8.3 A crawler of our own.** First measurement, 2026-10-07: the home
+  pages of 400 independent places in the DC box that have a website and
+  no hours, fetched once each, robots.txt obeyed. 28 (7%) carry opening
+  hours markup, 17 more (4%) state hours in plain text, 218 (55%) say
+  nothing about hours on the home page, 10 forbid crawlers, and 127 (32%)
+  did not answer at all. So a home page crawler would add hours to about
+  one in fourteen of those places. Still to measure before building it:
+  whether contact and hours pages raise that, how right the markup is
+  against OSM and AllThePlaces hours, and whether the third of sites that
+  do not answer says anything about the place being closed (an earlier
+  note in SPEC.md section 9 says website liveness was not retested).
+  Rules if built: schema.org markup only, robots.txt obeyed, a few pages
+  per site per month, the project User-Agent.
 - **8.4 Popularity.** No open source has foot traffic. A stand-in can be
   built from what is open: how many sources list the place, Wikipedia page
   views for places with an article, how often mappers touch it. To be
