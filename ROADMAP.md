@@ -61,7 +61,8 @@ Salons, repair shops, small retail. 84% of all rows, 6% with a status.
   so far. In a Houston box a quarter of auto repair, clothing, furniture
   and jewelry stores now have a status. Also done: Delaware's business
   license list, which took the whole state from 8% of places with a status
-  to 19%, and Pennsylvania's retail sales licenses. Next: any other state
+  to 19%, Pennsylvania's retail sales licenses, and Chicago's business
+  licenses, whose cancellations also work as closures. Next: any other state
   that publishes active permits or licenses.
 - **2.4 State inspection and emissions station lists.**
 - **2.5 Geocode the address-only registers.** Done for California and Texas

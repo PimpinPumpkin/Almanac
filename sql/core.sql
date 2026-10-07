@@ -144,7 +144,7 @@ create or replace table core_evidence as
 -- permit ends, the outlet usually carries on under a new franchisee, so
 -- these sources do not close a place that carries a brand.
 create or replace table independents_only as
-  select * from (values ('cdph_chicago_oob'), ('abca_dc_cancelled')) t(source);
+  select * from (values ('cdph_chicago_oob'), ('abca_dc_cancelled'), ('bacp_chicago_cancelled')) t(source);
 delete from core_evidence
   where source in (select source from independents_only)
     and place_id in (select id from core_place where brand is not null);

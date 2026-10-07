@@ -153,6 +153,16 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: active premises licenses (open), with positions from the Census
   geocoder. The file names each license's manager; that field is not read.
 
+### Chicago BACP, business licenses
+- License: "See Terms of Use" of the City of Chicago Data Portal; rows it
+  touches are marked `Chicago-Data-Portal-terms`.
+- Fetched from: `https://data.cityofchicago.org/resource/r5kz-chrr.json`
+- Used for: sites with a live license (open), and sites whose newest
+  record is a cancellation (closed, places with no brand only). Positions
+  come with the data.
+- Privacy: the legal name is not read, and nothing creates a place from
+  this source.
+
 ### Florida DBPR, alcoholic beverage licenses
 - License: none stated on the download page. Florida public record. Rows it
   touches are marked `none-stated`.

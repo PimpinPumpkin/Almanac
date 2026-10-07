@@ -10,7 +10,7 @@ create or replace macro license_of(source) as
     when source in ('abc_ca', 'tabc_tx', 'dbpr_fl_food', 'abt_fl', 'atc_mo', 'olcc_or') then 'none-stated'
     when source in ('sla_ny', 'dmv_ny', 'dos_ny_salons') then 'OPEN-NY-terms'
     when source = 'dohmh_nyc' then 'NYC-Open-Data-terms'
-    when source like 'cdph_chicago%' then 'Chicago-Data-Portal-terms'
+    when source like 'cdph_chicago%' or source like 'bacp_chicago%' then 'Chicago-Data-Portal-terms'
     when source = 'sirene' then 'etalab-2.0'
     -- everything else is a US federal register
     else 'US-public-domain'

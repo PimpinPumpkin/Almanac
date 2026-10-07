@@ -239,6 +239,7 @@ rows are the same place.
 | New York alcohol licenses | number | 40 of 40 (New York City) | |
 | | spot | 20 of 20 | mostly Queens addresses, where "30-08" and "3008" are the same door |
 | | near | 11 of 12 | the miss is a hotel landing on a place named only "New York" |
+| Chicago business licenses, live and cancelled | number | 40 of 40 | live licenses matched 10,100 places in the box |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas sales tax locations | number | 30 of 30 (Houston) | geocoded; live permits matched 14,000 places in the box |
@@ -335,6 +336,22 @@ closures than the 0.4 band), so only the top band is used: a place with no
 evidence and a confidence of 0.80 or more takes that confidence as its
 `open_score`. In the box that lifts 12,700 places off the flat 0.75.
 
+### Why most "ended" lists fail and two pass
+
+Eight registers that record an ended license, permit or registration were
+tested as closures. Six failed: SNAP end dates, French register closures,
+Texas ended alcohol licenses, Texas sales tax out-of-business dates, Oregon
+expired licenses, and fuel tank removals. In each, the paperwork ends when
+an owner or legal entity changes and the shop carries on.
+
+Two pass, both limited to places with no brand: DC alcohol license
+cancellations (1 open, 73 closed) and Chicago business license
+cancellations (21 open, 292 closed, for sites with no live license). Both
+record an explicit cancellation against a premises, not a lapse against a
+taxpayer. The signals that work best are still the ones where someone saw
+the place: an inspector's "out of business", a mapper's tag, Foursquare,
+OSM edit history.
+
 ### Missing license
 
 A bar cannot trade without an alcohol license, so in a state whose active
@@ -391,6 +408,8 @@ signal at all.
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
 | dbpr_fl_food | open | day of the establishment's newest inspection | matcher, positions from the Census geocoder |
+| bacp_chicago | open | day the dataset was last updated, unexpired issued licenses only | matcher |
+| bacp_chicago_cancelled | closed | day the license status changed to cancelled | matcher; places with no brand only, and only when the site has no live license |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | cpa_tx | open | day the dataset was last updated, live permits only | matcher, positions from the Census geocoder |
