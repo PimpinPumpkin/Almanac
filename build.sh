@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+# Build one region end to end: ./build.sh dc-box
+# Imports are cached under data/. Delete a file there to refetch it.
+source "$(dirname "$0")/lib/common.sh"
+region "$1"
+cd "$ROOT"
+BUILD_DATE="${BUILD_DATE:-$(date -u +%F)}"
+step() { printf '%s  %s\n' "$(date +%T)" "$*" >&2; }
+
+[ -s "$OUT/overture.parquet" ] || { step overture; base/overture.sh "$REGION" >/dev/null; }
+[ -s "$OUT/atp.parquet" ]      || { step alltheplaces; base/atp.sh "$REGION" >/dev/null; }
+[ -s "$OUT/osm.parquet" ]      || { step osm; base/osm.sh "$REGION" >/dev/null; }
+step foursquare closing dates; signals/fsq_closed.sh >/dev/null
+[ -s "$CACHE/evidence/fdic.csv" ] || { step fdic; adapters/fdic.py; }
+[ -s "$CACHE/evidence/snap.csv" ] || { step snap; adapters/snap.py; }
+
+step wikidata
+duckdb -noheader -csv -c "select distinct wikidata from '$OUT/osm.parquet' where wikidata is not null" \
+  | python3 signals/wikidata_p576.py > "$OUT/p576.csv"
+
+DB="$OUT/build.duckdb"; rm -f "$DB"
+step merge and match
+duck "$DB" >/dev/null <<SQL
+.bail on
+.read sql/lib.sql
+.read sql/status.sql
+create table params as select date '$BUILD_DATE' as build_date, 730 as recent_days,
+  $S as s, $W as w, $N as n, $E as e;
+create table ovt as select * from '$OUT/overture.parquet';
+create table atp as select * from '$OUT/atp.parquet';
+create table osm as select * from '$OUT/osm.parquet';
+create table p576 as select qid, date from read_csv('$OUT/p576.csv', header = true, auto_detect = false,
+  columns = {qid: 'varchar', date: 'date'});
+create table fsq_closed as
+  select * from '$CACHE/fsq/closed-${FSQ_RELEASE:-2025-02-06}.parquet'
+  where lat between $S and $N and lng between $W and $E;
+create table register as
+  select * from read_csv('$CACHE/evidence/*.csv', header = true, auto_detect = false,
+    delim = ',', quote = '"', escape = '"', columns = {
+    source: 'varchar', source_id: 'varchar', name: 'varchar', address: 'varchar',
+    lat: 'double', lng: 'double', state: 'varchar', date: 'date'})
+  where lat between $S and $N and lng between $W and $E;
+.read sql/core.sql
+.read sql/full.sql
+.read sql/publish.sql
+SQL
+
+# Publish: two GeoParquet files per region and one manifest.
+#   core-REGION.parquet    Overture + AllThePlaces + non-OSM evidence
+#   places-REGION.parquet  the same places plus OpenStreetMap (ODbL)
+# Rows are in Hilbert order with small row groups, and lat/lng are plain
+# columns, so a reader can prune on their statistics over HTTP range requests.
+PUB="$DATA/out"; mkdir -p "$PUB"
+step publish
+for layer in core full; do
+  [ "$layer" = core ] && f="$PUB/core-$REGION.parquet" || f="$PUB/places-$REGION.parquet"
+  duck -readonly "$DB" >/dev/null <<SQL
+copy (
+  select * from out_$layer
+  order by st_hilbert(geometry, st_makebox2d(st_point($W, $S), st_point($E, $N)))
+) to '$f' (format parquet, compression zstd, row_group_size 20000);
+SQL
+done
+
+entry() {  # entry FILE LAYER LICENSE
+  jq -n --arg name "$(basename "$1")" --arg layer "$2" --arg license "$3" \
+    --argjson rows "$(duckdb -noheader -csv -c "select count(*) from '$1'")" \
+    --argjson bytes "$(wc -c < "$1")" --arg sha256 "$(shasum -a 256 "$1" | cut -d' ' -f1)" \
+    '{name: $name, layer: $layer, license: $license, rows: $rows, bytes: $bytes, sha256: $sha256}'
+}
+jq -n --arg region "$REGION" --arg build_date "$BUILD_DATE" \
+  --argjson bbox "[$W, $S, $E, $N]" \
+  --arg overture "$(cat "$OUT/overture.release")" --arg atp "$(cat "$OUT/atp.run")" \
+  --arg osm "$(cat "$OUT/osm.date")" --arg fsq "${FSQ_RELEASE:-2025-02-06}" \
+  --argjson core "$(entry "$PUB/core-$REGION.parquet" core "CDLA-Permissive-2.0 AND Apache-2.0 AND CC0-1.0")" \
+  --argjson full "$(entry "$PUB/places-$REGION.parquet" full "ODbL-1.0")" \
+  '{region: $region, build_date: $build_date, bbox: $bbox,
+    sources: {overture: $overture, alltheplaces: $atp, openstreetmap: $osm, foursquare_os_places: $fsq},
+    files: [$core, $full]}' > "$PUB/manifest-$REGION.json"
+step done

@@ -1,0 +1,5 @@
+# name	south	west	north	east	geofabrik extracts (comma separated, under north-america/us/)	state code (blank for a plain box)
+dc-box	38.79	-77.12	39.0	-76.91	district-of-columbia,maryland,virginia
+sac-box	38.43	-121.80	38.72	-121.20	california/norcal
+delaware	38.45	-75.79	39.84	-75.04	delaware	DE
+kentucky	36.49	-89.58	39.15	-81.96	kentucky	KY

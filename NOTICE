@@ -1,0 +1,31 @@
+Almanac data files are built from the sources below. Keep this notice with
+any copy of the data.
+
+Overture Maps Foundation, places theme.
+  CDLA-Permissive-2.0. https://overturemaps.org
+
+Foursquare Open Source Places.
+  Copyright Foursquare Labs, Inc. Licensed under the Apache License,
+  Version 2.0. https://www.apache.org/licenses/LICENSE-2.0
+  Reaches Almanac two ways: rows Overture took from Foursquare, and the
+  date_closed field joined by Foursquare place id.
+
+AllThePlaces.
+  CC0-1.0. https://www.alltheplaces.xyz
+
+Wikidata.
+  CC0-1.0. https://www.wikidata.org
+
+Federal Deposit Insurance Corporation, BankFind Suite.
+  US government work, public domain.
+
+US Department of Agriculture, Food and Nutrition Service, SNAP retailer data.
+  US government work, public domain.
+
+Full layer only (places-*.parquet):
+
+OpenStreetMap.
+  (c) OpenStreetMap contributors. Open Database License 1.0.
+  https://www.openstreetmap.org/copyright
+  The full layer is a derived database under the ODbL. If you publish a
+  database derived from it, the ODbL applies to yours as well.

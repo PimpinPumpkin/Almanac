@@ -1,0 +1,283 @@
+# Almanac spec
+
+Version 0.1. This describes what the code in this repo does today. Where a
+choice is still open it says so.
+
+## 1. What a place is
+
+One row per physical place a person could walk into or stand in front of: a
+shop, a restaurant, a bank branch, a school, a park, a monument. Not a
+machine or a box (ATMs, bike share docks, parcel lockers, charging points,
+bus stops), and not an agent counter inside another store.
+
+## 2. Layers and build order
+
+The build order is fixed by licensing (section 8), not by convenience.
+
+1. **Overture places** is the spine. Every Overture row is a place.
+2. **AllThePlaces** rows (brand lineage only) join the Overture place they
+   match, or become new places.
+3. Evidence that does not come from OSM is attached. The result is the
+   **core layer**.
+4. **OpenStreetMap** named features join the core place they match, or become
+   new places. OSM evidence is attached. The result is the **full layer**.
+
+Nothing made in steps 1 to 3 reads OSM data. A place keeps the same id in
+both layers.
+
+## 3. Place schema
+
+Both layers have the same columns.
+
+| column | type | notes |
+| --- | --- | --- |
+| id | string | stable id, section 4 |
+| name | string | from the anchor source |
+| category | string | Overture taxonomy term, or an OSM style `key=value` for AllThePlaces and OSM rows. Not harmonized yet. |
+| brand, brand_wikidata | string | |
+| address, city, region, postcode | string | address is the street line |
+| phone, website | string | |
+| status | string | open, closed or unknown, section 7 |
+| status_date | date | date of the evidence that decided the status |
+| status_source | string | source of that evidence |
+| overture_status | string | Overture's own operating_status, carried as is. It has no date and does not feed status. |
+| sources | list of {source, id} | every source row this place was built from |
+| licenses | list of string | licenses of everything that touched the row |
+| evidence | list of {source, source_id, state, date, rule, dist_m} | every evidence record, newest first |
+| lat, lng | double | plain columns so row group statistics work |
+| geometry | point | GeoParquet, WGS 84 |
+
+Attributes come from the anchor source. Gaps (phone, website, brand, address)
+are filled from one matched AllThePlaces row, then one matched OSM row.
+
+## 4. Stable ids
+
+An id is the id of the source row the place is anchored on, with a prefix:
+
+- `ovt:<Overture id>` for every place with an Overture row. Overture ids
+  (GERS) are stable across Overture releases.
+- `atp:<spider>/<ref>` for a place only AllThePlaces has. `ref` is the
+  chain's own store number.
+- `osm:<n|w|r><OSM id>` for a place only OSM has.
+- `alm:<hash of source and source_id>` is reserved for places minted from a
+  register row. Nothing mints these yet.
+
+Nothing is renumbered between builds, so a reader can diff two monthly files
+on `id`.
+
+Known gap: when a place that was `atp:` or `osm:` last month gains an
+Overture match this month, its id becomes the `ovt:` one. The old id is
+still in the row's `sources`, so a reader can follow the change. If this
+churn turns out to matter, the fix is for the build to read the previous
+file and keep the old id. It is not built because the churn has not been
+measured; the second monthly build will measure it.
+
+## 5. Evidence format
+
+Every adapter writes one CSV with exactly these columns:
+
+| column | meaning |
+| --- | --- |
+| source | adapter and list, for example `fdic_history` |
+| source_id | the register's own id for the record |
+| name | the name the public would see on the building |
+| address | street line, city, state and ZIP in one string, street number first |
+| lat, lng | WGS 84 |
+| state | `open` or `closed` |
+| date | ISO date. For open: the day the source says the place was operating. For closed: the day it closed. |
+
+Rules for adapters:
+
+- One file per source in `adapters/`, no shared state, standard library only.
+- One current state per `source_id`. If the register has a history, emit the
+  newest state.
+- Rows with no position, no date or no name are dropped and counted.
+- If the register uses a legal name the public never sees, the adapter maps
+  it (see `TRADE_NAMES` in `adapters/fdic.py`). The matcher stays generic.
+- A record is evidence only if it says something about the premises. A
+  record that only says something about paperwork is not (see SNAP end dates
+  in section 9).
+
+Signals that arrive by id rather than by position (Foursquare closing dates,
+OSM tags, AllThePlaces rows) use the same evidence shape inside the build
+but skip the matcher.
+
+## 6. Entity matching
+
+One matcher, `match_pairs` in `sql/lib.sql`, is used for AllThePlaces to
+Overture, OSM to core, and evidence to places.
+
+**Name.** Lowercase, strip accents and punctuation, `&` becomes `and`. Then
+drop legal words (the, inc, llc, ltd, corp, company, co, national
+association, na, branch) and trailing store numbers.
+
+**House number.** The leading digits of the street line.
+
+**Name similarity.**
+
+| value | when |
+| --- | --- |
+| 1.0 | normalized names are identical |
+| 0.9 | the shorter name, at least 4 letters, is the leading words of the longer: "giant" and "giant food" |
+| Jaro-Winkler | otherwise, on the names with spaces removed. Counts only at 0.95 or more. |
+| 0 | one side is an ATM and the other is not |
+
+**Rules.** A pair matches under the first rule it passes.
+
+| rule | house numbers | distance | name |
+| --- | --- | --- | --- |
+| number | equal | up to 250 m | 1.0, 0.9, or Jaro-Winkler from 0.95 |
+| near | missing on one or both sides | up to 60 m | same |
+| spot | present and different | up to 30 m | 1.0 only |
+
+Chains repeat names, so the name alone never matches. Two branches of a
+chain across the street from each other have different house numbers and
+fail `number`; they are more than 30 m apart or fail `spot`.
+
+**Who gets the match.**
+
+- Base merge: each incoming row joins the single best place (rule order
+  number, near, spot; then similarity; then distance). A place can absorb
+  several rows.
+- Evidence: a `number` match applies to every place that passes, because
+  the base has duplicate listings of the same shop. Without a `number`
+  match, only the best single place gets the record.
+
+**Join shape.** Candidates come from a grid hash join: cells are 0.004
+degrees of latitude by 0.008 of longitude, one side is copied into its nine
+neighbor cells, and the join is an equality on the cell. No distance
+predicate, OR, or correlated subquery is used to find candidates.
+
+**Tests.** `tests/match_test.sql` holds 22 invented pairs, one per case the
+rules are meant to accept or refuse. Run `duckdb < tests/match_test.sql`.
+
+**Measured.** 40 matched pairs per rule were read in the District of
+Columbia box, fewer where a rule has fewer than 40. "Right" means the two
+rows are the same place.
+
+| match | rule | right | notes |
+| --- | --- | --- | --- |
+| AllThePlaces to Overture | number | 39 of 40 | the miss joined a hospital department to its parent listing |
+| | near | 38 of 40 | both misses are library rows listed under the parent institution's name |
+| | spot | 12 of 14 | one store that moved across the street, one doubtful pair |
+| OSM to core | number | 40 of 40 | |
+| | near | 38 of 40 | both misses are part and whole (a dog park in a park, a clinic in a health department) |
+| | spot | 40 of 40 | |
+| FDIC closings to places | number | 40 of 40 (DC), 38 of 40 (Sacramento) | Sacramento misses: an office tower named after the bank, and a wealth advisor listing |
+| | near, spot | 6 of 6 | |
+| FDIC open branches | number | 39 of 40 | the miss is a loan officer's listing at the branch |
+| | near, spot | 12 of 12 | |
+| SNAP authorized stores | number | 40 of 40 | |
+| | near, spot | 19 of 19 | |
+| OSM lifecycle features to places | all | 40 of 40 (DC), 36 of 36 (Sacramento) | |
+
+## 7. Status rules
+
+Evidence is a list of dated open and closed records per place.
+
+- **closed**: the place has a closed record with a date, and no open record
+  dated after it. Any open record counts, whatever its source. The newest
+  closed record supplies `status_date` and `status_source`.
+- **open**: the newest record is open and is dated within 730 days of the
+  build date.
+- **unknown**: everything else. That includes places with no evidence, which
+  is most of them, and places whose only evidence is an old open record.
+
+Closed does not expire. A place closed in 2014 with nothing newer stays
+closed.
+
+A closed record that a newer open record overrode stays in `evidence`, so
+the conflict is visible. Overture's confidence, update_time and
+operating_status are never evidence: none carries a date of observation.
+
+### Evidence sources in this version
+
+| source | state | date used | how it attaches |
+| --- | --- | --- | --- |
+| fsq_closed | closed | Foursquare `date_closed` | Foursquare id carried in the Overture row |
+| osm_lifecycle | closed | `end_date` tag if it parses, else the feature's last edit (an upper bound) | the OSM feature's own merge |
+| wikidata_p576 | closed | P576 value | `wikidata` tag on a merged OSM feature, offices excluded |
+| fdic_history | closed | effective date of change code 721 | matcher |
+| fdic_locations | open | run date of the list | matcher |
+| snap_current | open | last data edit of the layer | matcher |
+| snap_history | open | last day the file covers, open-ended authorizations only | matcher |
+| atp | open | day the spider collected the chain's locator | the AllThePlaces row's own merge |
+| osm_check_date | open | `check_date` or `survey:date` tag | the OSM feature's own merge |
+
+The last two were not in the brief. Being listed in a chain's own locator on
+a known day, and a mapper's dated survey tag, are both dated records of
+life, and both come for free with the base layer. Absence from a locator is
+still not evidence of anything.
+
+## 8. Licensing
+
+| source | license | consequence |
+| --- | --- | --- |
+| Overture places | CDLA-Permissive-2.0 (rows from Foursquare are Apache-2.0) | attribution |
+| AllThePlaces | CC0-1.0 | none |
+| Foursquare OS Places | Apache-2.0 | keep the notice, see NOTICE |
+| FDIC, USDA | US federal work, public domain | none |
+| Wikidata | CC0-1.0 | none |
+| OpenStreetMap | ODbL-1.0 | attribution and share-alike on any derived database |
+
+A table that contains OSM-derived rows, or values computed from OSM, is an
+ODbL derived database. That reaches further than the OSM-only rows: a core
+place whose status was decided by an OSM lifecycle tag, or whose phone was
+filled from OSM, is OSM-derived too.
+
+**Decision: separable layers, built in order.**
+
+- `core-<region>.parquet` is built without reading OSM. It can be used
+  under the permissive terms of its inputs.
+- `places-<region>.parquet` is the core plus OSM and is released under the
+  ODbL. This is the file a map app that already shows OSM should read.
+- Every row carries `sources` and `licenses`, so a reader can see what
+  touched it. Filtering the full file down to rows without `ODbL-1.0` in
+  `licenses` gives rows no OSM data touched, but the core file is the clean
+  way to get that.
+
+Open point: whether the Wikidata P576 signal belongs in the core layer.
+Wikidata is CC0, but the link from place to item comes from an OSM tag, so
+for now it sits in the full layer only.
+
+`SOURCES.md` records each source's license and URL. Sources with no stated
+license (many city feeds) get an entry that says so before any adapter for
+them is merged.
+
+## 9. Rejected rules
+
+Measured in the District of Columbia box unless noted. "Independent" means
+evidence from a different source for the same place.
+
+| rule | result | why it is out |
+| --- | --- | --- |
+| SNAP End Date means closed | 499 places matched. Independent evidence said still open 98 times, closed 27 times. | An ended authorization is a change of owner or a store leaving the program far more often than a closing. The adapter reads these rows and emits nothing. |
+| Foursquare `date_closed` matched by name and position, for rows Overture does not link by id | 2,142 places matched. Independent: open 101, closed 129. | Foursquare often closes one of its own duplicate records for a place that is still there. Joined by id the same field is good: open 6, closed 33. |
+| Jaro-Winkler from 0.93 | 10 pairs read between 0.93 and 0.95: 2 wrong ("Embassy of Albania" and "Embassy of Mali"), 1 doubtful. 30 read at 0.95 and up: none wrong. | Threshold raised to 0.95. |
+| Name contained anywhere in the longer name | Joined a shop to the mall it is named after, and a department to its hospital. | Only leading words count now. |
+| A bank branch record matching the bank's ATM | 3 of 40 FDIC closings landed on an ATM or mortgage desk listing. | A name with ATM on one side only never matches. |
+| Wikidata P576 on offices | 4 hits across two boxes, 2 of them a company merger date on an office building. | Skipped when the OSM feature is `office=*`. The 2 that remain (a hospital, a school) are right. |
+| Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
+
+Carried over from earlier work and not retested: website liveness, and
+"missing from the chain's locator means closed".
+
+## 10. Publishing
+
+Per region: `core-<region>.parquet`, `places-<region>.parquet`, and
+`manifest-<region>.json`. A real release has one region per state plus DC.
+
+- GeoParquet, zstd, rows in Hilbert order, 20,000 rows per row group.
+- `lat` and `lng` are ordinary double columns. A reader filtering
+  `lat between .. and lng between ..` skips row groups by statistics, which
+  works over HTTP range requests with DuckDB, pyarrow or GDAL. Prune on
+  those, not on the geometry.
+- The manifest lists the build date, the box, each source's release, and for
+  each file its row count, size, license and SHA-256.
+- First host: GitHub release assets, one release per monthly build. The
+  largest state should come out near 200 MB, well under the 2 GB cap
+  (Kentucky is 25 MB for 247,000 places).
+
+Open point: state builds filter by the state code in the address and the
+state's bounding box. Rows with no state code near a border can land in the
+wrong file. Clipping by the Census state outline is the fix.
