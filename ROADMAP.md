@@ -93,11 +93,11 @@ Done when "everything else" passes 15% in states with two or more of these.
   count shifts by more than a set amount, so a silent upstream change does
   not ship.
 
-- **4.5 Held records.** Done for Missouri's "out of business" list: each
+- **4.5 Held records.** Done for Missouri's "out of business" list and
+  Colorado's expired and surrendered list: each
   build adds the current list to a file that rides along as a release
   asset (`held.tar.gz`), unused until there is enough to test. Next:
-  Colorado's expired and surrendered list, Florida's weekly emergency
-  closures, and the test itself once a few months have piled up.
+  Florida's weekly emergency closures, and the test itself once a few months have piled up.
 
 ## 5. Readers
 

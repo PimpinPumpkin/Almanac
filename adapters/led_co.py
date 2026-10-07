@@ -7,6 +7,8 @@ led_co        an active license for a premises (restaurant, tavern, store,
 The companion list of recently expired and surrendered licenses is not
 used: it is a few hundred rows statewide, "expired" often means a renewal
 that is late, and the 14 that matched in a Denver box were too few to test.
+Each run adds it to data/cache/held/led_co_ended.csv so the records add up;
+the build does not read that file.
 
 Permits that ride on another license (takeout, delivery, sidewalk, storage),
 shippers, importers, wholesalers and festival permits are left out. Rows
@@ -25,7 +27,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from evidence import Writer, address, get
 
 HOST = "https://data.colorado.gov"
-ACTIVE = "ier5-5ms2"
+ACTIVE, ENDED = "ier5-5ms2", "pwjb-9dd5"
 PAGE = 50000
 NOT_A_PREMISES = ("permit", "shipper", "importer", "wholesale", "master file", "sidewalk", "nonresident",
                   "alternating", "optional premises", "related facility", "festival", "special event")
@@ -71,6 +73,10 @@ def main():
     out = Writer("led_co")
     emit(out, "led_co", ACTIVE, "open", lambda r: updated)
     out.close(geocode=True)
+
+    held = Writer("led_co_ended", held=True)
+    emit(held, "led_co_ended", ENDED, "closed", lambda r: pick(r, "expirationdate", "expiration")[:10])
+    held.close(geocode=True)
 
 
 if __name__ == "__main__":
