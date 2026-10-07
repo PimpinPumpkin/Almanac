@@ -23,7 +23,8 @@ env:
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    # the first run geocodes about a million addresses; later runs reuse the answers
+    timeout-minutes: 240
     outputs:
       regions: ${{ steps.plan.outputs.regions }}
       build_date: ${{ steps.plan.outputs.build_date }}

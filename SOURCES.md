@@ -168,6 +168,15 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: restaurants inspected in the current fiscal year (open, dated
   by the inspection), with positions from the Census geocoder.
 
+### Texas Comptroller, permitted sales tax locations
+- License: public domain, as stated on the dataset.
+- Fetched from: `https://data.texas.gov/resource/3kx8-uryv.json`
+- Used for: storefront locations with a live permit (open), with positions
+  from the Census geocoder. Out-of-business dates are not used; see SPEC.md
+  section 9.
+- Privacy: non-store retailers are skipped, the taxpayer's own name and
+  address are not read, and nothing creates a place from it.
+
 ### Texas Alcoholic Beverage Commission, license information
 - License: none stated by the dataset or by data.texas.gov. Texas public
   record. Rows it touches are marked `none-stated`.

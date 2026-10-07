@@ -239,6 +239,7 @@ rows are the same place.
 | New York alcohol licenses | number | 40 of 40 (New York City) | |
 | | spot | 20 of 20 | mostly Queens addresses, where "30-08" and "3008" are the same door |
 | | near | 11 of 12 | the miss is a hotel landing on a place named only "New York" |
+| Texas sales tax locations | number | 30 of 30 (Houston) | geocoded; live permits matched 14,000 places in the box |
 | New York salons and barber shops | number | 25 of 25 (New York City) | finds a place for about half |
 | New York DMV repair shops and dealers | number | 20 of 20 (New York City) | finds a place for about 4 in 10; the register uses company names |
 | King County (Seattle) food inspections | number | 25 of 25 | geocoded; finds a place for 61% of businesses |
@@ -388,6 +389,7 @@ signal at all.
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
 | dbpr_fl_food | open | day of the establishment's newest inspection | matcher, positions from the Census geocoder |
+| cpa_tx | open | day the dataset was last updated, live permits only | matcher, positions from the Census geocoder |
 | dos_ny_salons | open | day the dataset was last updated, unexpired licenses only | matcher |
 | dmv_ny | open | day the dataset was last updated, unexpired registrations only | matcher |
 | kc_wa_food | open | day of the business's newest inspection | matcher, positions from the Census geocoder |
@@ -477,6 +479,7 @@ evidence from a different source for the same place.
 | Texas: a surrendered, cancelled or expired alcohol license means closed | Houston box, on-premise license types only, skipping names with an active license at the address: 1,212 places. Independent: open 79, closed 89. | Not emitted. |
 | Chicago "Out of Business" inspections, for every place | Chicago box, places with no later inspection: independent open 63, closed 187. Split by whether the place carries a brand: chains open 36, closed 3; independents open 27, closed 184. | A chain outlet changes franchisee and license and carries on. The closure is kept for places with no brand only. The same limit now applies to DC license cancellations, which went from 8 open and 54 closed to 1 and 73. |
 | Oregon: an expired on-premises alcohol license means closed | Portland box, places with no brand and no live license under the same name: independent open 6, closed 26. | 81% on a small sample is below the signals that are kept (87% and up). Not emitted. |
+| Texas Comptroller out-of-business dates for sales tax locations | Houston box, places with no brand and no live permit under the same name: independent open 87, closed 85. | The date marks one taxpayer leaving; the shop often carries on under the next. Not emitted. Live permits are good open evidence: of 13,980 places with one, other sources called 79 closed and 5,053 open. |
 | Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
 
 Carried over from earlier work and not retested: website liveness, and

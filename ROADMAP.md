@@ -57,8 +57,10 @@ Salons, repair shops, small retail. 84% of all rows, 6% with a status.
   inspection stations, dealers). Next California, Florida, Michigan.
 - **2.2 Cosmetology and barber shop licenses.** Done: New York. Next Texas
   (TDLR), then state by state.
-- **2.3 Sales tax permit lists** where a state publishes active permits
-  (Texas does).
+- **2.3 Sales tax permit lists.** Done: Texas, the biggest long-tail source
+  so far. In a Houston box a quarter of auto repair, clothing, furniture
+  and jewelry stores now have a status. Next: other states that publish
+  active permits.
 - **2.4 State inspection and emissions station lists.**
 - **2.5 Geocode the address-only registers.** Done for California and Texas
   licenses with the Census geocoder: California went from 25% of licenses
