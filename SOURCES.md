@@ -168,6 +168,13 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: restaurants inspected in the current fiscal year (open, dated
   by the inspection), with positions from the Census geocoder.
 
+### Pennsylvania Department of Revenue, sales tax licenses
+- License: public domain, as stated on the dataset.
+- Fetched from: `https://data.pa.gov/resource/ugeq-ckxd.json`
+- Used for: current retail sales licenses (open), with positions.
+- Privacy: the legal name is not read, and nothing creates a place from
+  this source; it holds home sellers as well as shops.
+
 ### Delaware Division of Revenue, business licenses
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.delaware.gov/resource/5zy2-grhr.json`
