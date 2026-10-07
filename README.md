@@ -67,11 +67,11 @@ with a dated status.
 | Grocery and convenience stores | 237,551 | 45% | SNAP authorized stores, chain locators (built) | Mostly |
 | Pharmacies | 63,382 | 34% | Chain locators, NPPES (built). Next: state pharmacy boards | Mostly |
 | Schools | 433,929 | 20% | NCES public schools (built). The category also holds preschools, private and trade schools, which NCES public data does not cover | Public schools yes |
-| Restaurants and cafes, independent | 1,168,194 | 22% | Foursquare closing dates, OSM, alcohol licenses in six states and DC (built). Next: more state license lists, health inspections | State by state, never everywhere |
+| Restaurants and cafes, independent | 1,168,194 | 22% | Foursquare closing dates, OSM, alcohol licenses in five states and DC (built). Next: more state license lists, health inspections | State by state, never everywhere |
 | Hotels | 115,009 | 14% | Chain locators (built). Next: state lodging licenses where published | Chains yes, independents patchy |
 | Hospitals | 53,984 | 14% | CMS hospitals, NPPES (built). The category also holds departments and clinics listed as hospitals | Real hospitals yes |
 | Museums | 37,106 | 11% | IRS exempt organizations (built) | Partly |
-| Bars | 160,371 | 14% | Foursquare, OSM, alcohol licenses in six states and DC (built). Next: more state license lists | Where the state publishes its list, about half today. See below |
+| Bars | 160,371 | 14% | Foursquare, OSM, alcohol licenses in five states and DC (built). Next: more state license lists | Where the state publishes its list, about half today. See below |
 | Everything else | 16,367,089 | 6% | Salons, repair shops, offices, clinics, churches. NPPES and IRS exempt organizations (built). Next: state professional and repair licenses | No. This is the long tail |
 | EV chargers | | | Not handled yet. The federal station list needs a free API key | Yes, if a key is allowed |
 | Parks | | | OSM. Parks rarely close, so a listing is most of the job | Listing yes, status not needed |
