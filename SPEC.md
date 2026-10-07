@@ -48,6 +48,7 @@ Both layers have the same columns.
 | status_date | date | date of the evidence that decided the status |
 | status_source | string | source of that evidence |
 | open_score | double | rough chance the place is open on the build date, 0 to 1, section 7 |
+| overture_sources | list of string | the sources Overture itself took the place from (`meta`, `microsoft`, `foursquare`, `brightquery`, ...), null for a place Overture does not have |
 | openpois_conf | double | OpenPOIs' confidence that the place exists and is open, full layer only, null when OpenPOIs does not list it |
 | missing_license | boolean | true for a bar in a state with a complete license list when no active license matched it. Null where the question does not apply. Section 7. |
 | overture_status | string | Overture's own operating_status, carried as is. It has no date and does not feed status. |
@@ -350,7 +351,7 @@ evidence. It is a rule of thumb with stated parts, not a fitted model.
 | no evidence, Overture says permanently_closed | 0.30 |
 | no evidence, `missing_license` is true | 0.30 |
 | no evidence, OpenPOIs confidence 0.80 or more (full layer) | that confidence |
-| no evidence otherwise | 0.75 |
+| no evidence otherwise | 0.75, or less for a place only Overture has: 0.60, 0.40 or 0.25 by the source Overture took it from ("Listings nobody vouches for" below) |
 
 The 0.90 a year assumes about one business in ten closes each year. The
 0.30 comes from this build: of places Overture marks permanently_closed that
@@ -557,6 +558,58 @@ a known day, and a mapper's dated survey tag, are both dated records of
 life, and both come for free with the base layer. Absence from a locator is
 still not evidence of anything.
 
+### Listings nobody vouches for
+
+Most places have no evidence at all, and in a big city a large share of
+those are listings that exist in Overture and nowhere else: a company
+registration at an office suite, a page someone made once, a venue that
+closed before anyone recorded it. Nothing can call them closed. But who
+lists a place turns out to predict whether it is real.
+
+Overture says which source each place came from. In a Seattle box 37% of
+its places come from BrightQuery alone (company records), 37% from Meta,
+14% from Microsoft, 10% from Foursquare. Seven percent of the BrightQuery
+ones are also in OSM or AllThePlaces, against 29% of the Meta ones.
+
+The test uses cities where a register is complete for one kind of place,
+so a real one should be found in it. Restaurants and cafes against the
+local inspection list, for places only Overture has and with no closing
+record, share that match an inspection:
+
+| city | Meta | BrightQuery | Foursquare | Microsoft | for comparison, places OSM also has |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Seattle | 25% | 4% | 4% | 5% | 51 to 78% |
+| Chicago | 36% | 5% | 5% | 9% | 40 to 80% |
+| New York | 33% | 5% | 8% | 9% | 44 to 83% |
+| Boston | 30% | 6% | 4% | 5% | 17 to 41% |
+| Detroit | 33% | 8% | 3% | 12% | 4 to 63% |
+| Columbus | 27% | 5% | 7% | 8% | 24 to 65% |
+
+The same in a Sacramento box against California's license files, where
+OSM has too few of these trades to compare with:
+
+| kind | Meta | BrightQuery | Foursquare | Microsoft |
+| --- | ---: | ---: | ---: | ---: |
+| salons and barber shops | 40% | 16% | 5% | too few |
+| auto repair | 43% | 28% | 12% | 21% |
+
+So a restaurant that only Overture has, taken from BrightQuery, Foursquare
+or Microsoft, is found by the inspectors about a tenth as often as one a
+mapper has confirmed. For salons and repair shops the gap is smaller but
+runs the same way.
+
+What is done with it: `overture_sources` is published, and a place with no
+evidence that only Overture has starts from a lower `open_score` (0.60 for
+Meta or several sources, 0.40 for BrightQuery or Microsoft alone, 0.25 for
+Foursquare alone) than one OSM or AllThePlaces also has (0.75). The
+numbers are set by hand from the tables above, measured on three kinds of
+place and applied to all, so they are a rule of thumb like the rest of the
+score. Status is not touched: these places stay `unknown`.
+
+What was tried and not done: calling a restaurant suspect because the
+inspection list does not have it, the way `missing_license` works for
+bars. See section 9.
+
 ### Opening hours
 
 Hours are carried, not judged. A place takes the hours of its newest
@@ -643,6 +696,7 @@ evidence from a different source for the same place.
 | Texas Comptroller out-of-business dates for sales tax locations | Houston box, places with no brand and no live permit under the same name: independent open 87, closed 85. | The date marks one taxpayer leaving; the shop often carries on under the next. Not emitted. Live permits are good open evidence: of 13,980 places with one, other sources called 79 closed and 5,053 open. |
 | City of Sacramento close dates on business tax accounts | Sacramento box, places with no brand and no active account under the same name: independent open 33, closed 33. | Not emitted. |
 | Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
+| Restaurant with no inspection record, in a city whose inspection list is complete | Where another source could speak, restaurants with no inspection were closed 48% of the time in Seattle, 72% in Chicago, 79% in New York, 47% in Boston, 44% in Detroit, 41% in Omaha, 47% in Columbus. A bar with no license was closed 89% of the time. Restaurants trade under too many names for the absence to mean much. | No flag. The listing's source is used for the score instead (section 7). |
 
 Carried over from earlier work and not retested: website liveness, and
 "missing from the chain's locator means closed".

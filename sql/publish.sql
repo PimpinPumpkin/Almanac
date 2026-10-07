@@ -31,11 +31,29 @@ create or replace macro license_of(source) as
 --                                        (about 1 business in 10 closes each year)
 --   same, but it overrode an
 --   older closing record          0.80 * 0.90 ^ years
---   no evidence                   0.75, or 0.30 when Overture says permanently_closed
---                                 or when missing_license is true, or OpenPOIs'
---                                 confidence when that is 0.80 or more
--- A stale open record never scores below the no-evidence value.
-create or replace macro open_score(status, status_date, conflict, overture_status, missing_license, conf, build_date) as
+--   no evidence                   0.30 when Overture says permanently_closed or when
+--                                 missing_license is true; OpenPOIs' confidence
+--                                 when that is 0.80 or more; otherwise the
+--                                 listing's own standing (unvouched_score below)
+-- A stale open record never scores below 0.75.
+--
+-- unvouched_score: what a place with no evidence is worth, from who lists it.
+-- A place that OSM or AllThePlaces also has, or that does not come from
+-- Overture at all, keeps 0.75. A place only Overture has is scored by the
+-- source Overture took it from, because that predicts whether a register
+-- will ever find it (SPEC.md section 7, "Listings nobody vouches for"):
+--   Meta, or more than one source   0.60
+--   BrightQuery or Microsoft alone  0.40
+--   Foursquare alone                0.25
+create or replace macro overture_sources_of(datasets) as
+  list_sort(list_filter(list_transform(datasets, lambda d: lower(d)), lambda d: d not in ('overture', 'overture-signals')));
+create or replace macro unvouched_score(id, in_map, datasets) as
+  case when in_map or id not like 'ovt:%' or datasets is null then 0.75
+       when len(overture_sources_of(datasets)) <> 1 then 0.60
+       when overture_sources_of(datasets)[1] = 'foursquare' then 0.25
+       when overture_sources_of(datasets)[1] in ('brightquery', 'microsoft') then 0.40
+       else 0.60 end;
+create or replace macro open_score(status, status_date, conflict, overture_status, missing_license, conf, build_date, base) as
   round(case
     when status = 'closed' then 0.10
     when status_date is not null then greatest(
@@ -43,7 +61,7 @@ create or replace macro open_score(status, status_date, conflict, overture_statu
       case when conflict then 0.50 else 0.75 end)
     when overture_status = 'permanently_closed' or missing_license then 0.30
     when conf >= 0.80 then conf
-    else 0.75
+    else base
   end, 2);
 
 -- States whose active alcohol license list is complete and carries positions,
@@ -75,7 +93,8 @@ create or replace macro published(place, member, status, conf, hours) as table (
   with m as (
     select place_id,
            list(struct_pack(source, id := source_id) order by source, source_id) as sources,
-           list(distinct license_of(source)) as member_licenses
+           list(distinct license_of(source)) as member_licenses,
+           bool_or(source in ('osm', 'atp')) as in_map
     from query_table(member) group by place_id
   )
   select p.id, p.name, p.category,
@@ -85,10 +104,12 @@ create or replace macro published(place, member, status, conf, hours) as table (
          h.opening_hours, h.hours_source, h.hours_date,
          coalesce(s.status, 'unknown') as status, s.status_date, s.status_source,
          open_score(coalesce(s.status, 'unknown'), s.status_date, coalesce(s.conflict, false),
-                    p.overture_status, coalesce(ml.missing, false), cf.conf, (select build_date from params)) as open_score,
+                    p.overture_status, coalesce(ml.missing, false), cf.conf, (select build_date from params),
+                    unvouched_score(p.id, m.in_map, og.datasets)) as open_score,
          round(cf.conf, 2) as openpois_conf,
          ml.missing as missing_license,
          p.overture_status,
+         overture_sources_of(og.datasets) as overture_sources,
          m.sources,
          list_sort(list_distinct(
            m.member_licenses

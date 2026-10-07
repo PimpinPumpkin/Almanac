@@ -30,7 +30,8 @@ What comes out of the build of 2026-10-07, for all 50 states and DC:
 | Added from a register because no map dataset had them | 282,000 |
 
 Every place also gets an `open_score` from 0 to 1, so a reader can dim or
-drop the ones nobody has vouched for in years.
+drop the ones nobody has vouched for in years, and the listings that
+exist in one upstream source and nowhere else.
 
 The last row is the part a map cannot do on its own. A new bank branch, a
 newly licensed bar or a store newly authorized for food stamps appears in

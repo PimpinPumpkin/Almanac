@@ -98,6 +98,12 @@ Done when "everything else" passes 15% in states with two or more of these.
   names and streets: title case, store numbers stripped. Still to do: carry
   the register's own business type.
 - **3.5 Duplicates inside Overture** beyond exact name matches.
+- **3.6 Listings only Overture has.** First step done: the source Overture
+  took a place from is published and sets the starting score of a place
+  with no evidence (SPEC.md section 7). Still to do: fit those numbers
+  instead of setting them by hand (with 3.3), test more kinds of place,
+  and decide whether company-record listings at a home or an office suite
+  belong in a map of places at all.
 
 ## 4. Operations
 
