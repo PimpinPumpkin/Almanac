@@ -108,9 +108,22 @@ adapter is merged. If a source states no license, the entry says so.
 - License: none stated on the download page. California public record.
 - Fetched from: `https://www.abc.ca.gov/wp-content/uploads/DailyExport-CSV.zip`,
   linked on https://www.abc.ca.gov/licensing/licensing-reports/
-- Used for: active retail alcohol licenses (open). No positions; matched by
-  address. The file gives no date for surrenders or revocations, so there is
-  no closed evidence from it.
+- Used for: active retail alcohol licenses (open), with positions from the
+  Census geocoder. The file gives no date for surrenders or revocations, so
+  there is no closed evidence from it.
+
+### Texas Alcoholic Beverage Commission, license information
+- License: none stated by the dataset or by data.texas.gov. Texas public
+  record. Rows it touches are marked `none-stated`.
+- Fetched from: `https://data.texas.gov/resource/7hf9-qc9f.json`
+- Used for: active retail licenses (open). Ended licenses are not used; see
+  SPEC.md section 9.
+
+### US Census Bureau geocoder
+- License: US federal government work, public domain.
+- Fetched from: `https://geocoding.geo.census.gov/geocoder/locations/addressbatch`
+- Used for: positions for register rows that have only an address
+  (California and Texas licenses).
 
 ### New York State Liquor Authority, active licenses
 - License: OPEN-NY Terms of Use (2013). Free reuse for any lawful purpose,
@@ -153,9 +166,7 @@ adapter is merged. If a source states no license, the entry says so.
 Survey of what comes next, in order. None of these has been fetched or
 checked by this project.
 
-- More state alcohol license lists. Texas (data.texas.gov, dataset
-  7hf9-qc9f) answers without a key and has status and dates, but neither
-  the dataset nor the portal states a license, so it waits for the owner.
-  Colorado, Missouri, Oregon and Florida have not been fetched.
+- More state alcohol license lists. Florida, Colorado, Missouri and Oregon
+  have not been fetched.
 - Health inspections and city business licenses: many city portals state no
   license. Each one gets an entry here saying what it states before it is used.

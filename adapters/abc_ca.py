@@ -8,7 +8,8 @@ abc_ca  issued, active retail licenses (bars, restaurants, stores, breweries,
 Surrendered, suspended and revoked licenses are in the file with no date of
 the change, so they are not emitted. Applications, caterer and event
 permits, wholesalers and importers are left out: none is a premises a
-person can walk into. No positions; matched by address.
+person can walk into. The file has no positions; addresses are sent to the
+Census geocoder, and the ones it cannot place are matched by address.
 
 The download page states no license. California public record.
 https://www.abc.ca.gov/licensing/licensing-reports/
@@ -56,7 +57,7 @@ def main():
             out.row("abc_ca", r["File Number"], r["DBA Name"] or r["Primary Name"],
                     address(r["Prem Addr 1"], r["Prem City"], "%s %s" % (r["Prem State"], r["Prem Zip"][:5])),
                     None, None, "open", as_of)
-    out.close()
+    out.close(geocode=True)
 
 
 if __name__ == "__main__":

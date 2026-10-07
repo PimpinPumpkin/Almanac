@@ -31,8 +31,7 @@ These rules do not change from item to item.
 The categories where a register can make coverage complete.
 
 - **1.1 State alcohol license lists.** One adapter per state. Done:
-  California, DC, New York. Texas is reachable but states no license.
-  Then Florida, Colorado,
+  California, DC, New York, Texas. Then Florida, Colorado,
   Missouri, Oregon, Washington, Pennsylvania, Illinois, and on through
   every state that publishes one. Done for a state when its bars pass 40%
   with a status.
@@ -57,10 +56,11 @@ Salons, repair shops, small retail. 84% of all rows, 6% with a status.
 - **2.3 Sales tax permit lists** where a state publishes active permits
   (Texas does).
 - **2.4 State inspection and emissions station lists.**
-- **2.5 Geocode the address-only registers** with the Census geocoder, which
-  is free and keyless. California licenses match 25% of the time by address
-  against 77% for DC by position; this should close most of that gap, and
-  lets those registers add missing places.
+- **2.5 Geocode the address-only registers.** Done for California and Texas
+  licenses with the Census geocoder: California went from 25% of licenses
+  finding a place to 61%. Still to do: the federal address-only registers
+  (NPPES, IRS, CMS, NCUA), and a way to pin a geocoded point to the right
+  building so these registers can add missing places.
 
 Done when "everything else" passes 15% in states with two or more of these.
 
@@ -125,7 +125,9 @@ Set by the owner on 2026-10-06.
 - **Keys.** None for now. Sources that need a key wait.
 - **Licenses.** Public domain, CC0, ODbL, CC BY and open government
   licences (Licence Ouverte, OGL) may be added without asking, credited in
-  NOTICE. A file that states no license is asked about first.
+  NOTICE. US state and local public records that state no license may also
+  be added, marked `none-stated` on every row they touch. Anything else
+  with no stated license is asked about first.
 - **Order.** Section 1 first.
 
 ## What needs the owner
@@ -134,8 +136,7 @@ Everything above can proceed without asking, except these.
 
 - **Keys and accounts**, if that decision is revisited, and where a key
   would be stored.
-- **License calls** outside the list above, including state files that
-  state no license at all.
+- **License calls** outside the list above.
 - **Anything that costs money or needs a server** beyond GitHub Actions and
   release storage.
 - **Speaking for the project**: contacting another project or a data owner.

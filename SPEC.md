@@ -104,6 +104,12 @@ Rules for adapters:
   newest state.
 - Rows with no date or no name, or with neither a position nor a ZIP code,
   are dropped and counted.
+- A US register with addresses but no positions can ask for them:
+  `out.close(geocode=True)` sends the addresses to the Census Bureau's
+  batch geocoder and caches every answer. It places about 9 in 10. A
+  geocoded point sits on the street, often 50 to 100 m from the door, so
+  these registers match by house number but do not mint places or drive
+  the missing-license flag.
 - If the register uses a legal name the public never sees, the adapter maps
   it (see `TRADE_NAMES` in `adapters/fdic.py`). The matcher stays generic.
 - A record is evidence only if it says something about the premises. A
@@ -217,7 +223,8 @@ rows are the same place.
 | CMS hospitals | address | 10 of 15 | all 10 hospitals are right; the other 5 rows are the hospital's gift shop, emergency room or a department sharing its name and address |
 | NPPES organizations | address | 37 of 40 | the 3 misses are hospital departments |
 | IRS exempt organizations | address | 36 of 40 | the 4 misses are a related body at the same address, such as a foundation arm |
-| California alcohol licenses | address | 40 of 40 (Sacramento) | finds a place for 25% of licenses; the address rule is strict |
+| California alcohol licenses | number | 25 of 25 (Sacramento) | positions from the Census geocoder; finds a place for 61% of licenses, up from 25% by address alone |
+| Texas alcohol licenses | number | 40 of 40 (Houston) | geocoded; finds a place for 40% of licenses |
 | DC alcohol licenses, active | number | 40 of 40 | finds a place for 77% of licenses |
 | | spot | 20 of 20 | |
 | DC alcohol license cancellations | number | 40 of 40 | |
@@ -341,8 +348,10 @@ So the result is a flag and a lower score, not a status: `missing_license`
 is true and `open_score` is 0.30 when there is no other evidence. In DC
 that covers 390 bars. New York is on the list too. Restaurants and liquor stores are left alone: a
 restaurant can run without a license, and liquor stores showed no signal
-(2 open, 2 closed). California is not on the list because its licenses are
-matched by address and only a quarter find their place.
+(2 open, 2 closed). California and Texas are not on the list: their
+positions are geocoded and too many licenses miss their place (in Houston,
+unlicensed bars another source could check were open 20 times and closed
+77, a weaker split than New York's or DC's).
 
 ### Evidence sources in this version
 
@@ -360,7 +369,8 @@ matched by address and only a quarter find their place.
 | nces_schools | open | June 30 of the school year the file covers | matcher |
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
-| abc_ca | open | the export's Updated date | matcher, by address |
+| abc_ca | open | the export's Updated date | matcher, positions from the Census geocoder |
+| tabc_tx | open | day the dataset was last updated | matcher, positions from the Census geocoder |
 | sla_ny | open | day the dataset was last updated | matcher |
 | abca_dc_active | open | day the layer was last loaded | matcher |
 | abca_dc_cancelled | closed | day the layer was last loaded (an upper bound) | matcher; restaurants, taverns, nightclubs and clubs only |
@@ -435,6 +445,7 @@ evidence from a different source for the same place.
 | France: a closed SIRENE establishment means the place closed | Paris box, places whose newest SIRENE record was a closure: independent evidence said open 1,082, closed 647. Joined by SIRET id it was still open 130, closed 40. | A SIRET closes when a shop changes owner or legal form. Closed establishments are not emitted. |
 | France: dating an active SIRENE record by the register's processing date | Nearly every record was processed in the last year. Dated that way, an active entry overrode 159 hand-tagged OSM closures and 152 Foursquare ones. | Dated by dateDebut, the last real change. Overrides fell to 39 and 14. Most SIRENE records are then old and inform `open_score` without setting a status. |
 | A fuel site whose last underground tank was removed is closed (EPA) | Kentucky: 1,153 places matched. Independent: open 353, closed 15. | Tanks are replaced under a new record, and many sites are not fuel stations. Only sites with tanks in use are emitted, as open evidence. |
+| Texas: a surrendered, cancelled or expired alcohol license means closed | Houston box, on-premise license types only, skipping names with an active license at the address: 1,212 places. Independent: open 79, closed 89. | Not emitted. |
 | Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
 
 Carried over from earlier work and not retested: website liveness, and

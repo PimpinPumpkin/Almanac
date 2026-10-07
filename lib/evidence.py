@@ -55,6 +55,9 @@ def address(*parts):
     return ", ".join(p.strip() for p in parts if p and p.strip())
 
 
+from geocode import locate  # noqa: E402  (same folder)
+
+
 class Writer:
     """Writes evidence rows, dropping and counting the unusable ones."""
 
@@ -90,10 +93,32 @@ class Writer:
         key = (source, state)
         self.kept[key] = self.kept.get(key, 0) + 1
 
-    def close(self):
+    def close(self, geocode=False):
+        """Finish the file. With geocode=True, rows that have an address but no
+        position are sent to the Census geocoder first (US addresses only)."""
         self.f.close()
+        if geocode:
+            self._geocode()
         os.replace(self.path + ".part", self.path)
         for (source, state), n in sorted(self.kept.items()):
             print("%s %s: %d" % (source, state, n))
         for why, n in sorted(self.dropped.items()):
             print("dropped, %s: %d" % (why, n))
+
+    def _geocode(self):
+        with open(self.path + ".part", newline="") as f:
+            rows = list(csv.reader(f))
+        head, rows = rows[0], rows[1:]
+        a, lat, lng = head.index("address"), head.index("lat"), head.index("lng")
+        found = locate([r[a] for r in rows if not r[lat]], os.path.join(CACHE, "geocode"), UA)
+        placed = 0
+        for r in rows:
+            if not r[lat] and r[a] in found:
+                r[lat], r[lng] = ("%.6f" % float(v) for v in found[r[a]])
+                placed += 1
+        with open(self.path + ".part", "w", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(head)
+            w.writerows(rows)
+        missing = sum(1 for r in rows if not r[lat])
+        print("geocoded: %d placed, %d left with an address only" % (placed, missing))

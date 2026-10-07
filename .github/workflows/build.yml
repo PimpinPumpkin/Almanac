@@ -50,6 +50,12 @@ jobs:
           echo "build_date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
           echo "overture=$(curl -fsS -A "$UA" 'https://overturemaps-us-west-2.s3.amazonaws.com/?list-type=2&prefix=release/&delimiter=/' | tr '<' '\n' | sed -n 's|^Prefix>release/\(.*\)/$|\1|p' | sort | tail -1)" >> "$GITHUB_OUTPUT"
           echo "atp=$(curl -fsS -A "$UA" https://data.alltheplaces.xyz/runs/latest.json | jq -r .run_id)" >> "$GITHUB_OUTPUT"
+      # Geocoder answers from earlier runs, so each month only new addresses are asked about.
+      - uses: actions/cache@v4
+        with:
+          path: data/cache/geocode
+          key: geocode-${{ github.run_id }}
+          restore-keys: geocode-
       - name: Fetch national files
         env:
           ATP_RUN: ${{ steps.plan.outputs.atp }}
