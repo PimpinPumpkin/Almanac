@@ -102,7 +102,7 @@ as [releases](https://github.com/PimpinPumpkin/vela-almanac/releases).
   CMS hospitals, NCES public schools, NPPES health care organizations, IRS
   exempt organizations, alcohol licenses in California, Colorado, Florida,
   Missouri, New York, Oregon, Texas and the District of Columbia, restaurant inspections in Florida,
-  New York City and Chicago, and presence in a chain's own store locator.
+  New York City, Chicago and King County (Seattle), and presence in a chain's own store locator.
 - **New places from registers**: a bank branch, SNAP store or licensed
   premises that none of the three base datasets lists is added as a place.
 - **Output**: one row per place with a stable id, merged attributes, every
@@ -136,7 +136,7 @@ signals/            closing signals joined by id: fsq_closed.sh, wikidata_p576.p
 adapters/           one file per register. Federal: fdic, ncua, snap, epa_ust,
                     cms, nces, nppes, irs. State and city: abc_ca, abca_dc,
                     sla_ny, tabc_tx, abt_fl, led_co, atc_mo, olcc_or, dbpr_fl_food,
-                    dohmh_nyc,
+                    kc_wa_food, dohmh_nyc,
                     cdph_chicago. France: sirene.sh
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests

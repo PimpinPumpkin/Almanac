@@ -119,6 +119,12 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: restaurants by newest inspection (open), with positions. Also
   mints missing places.
 
+### King County, Washington, food establishment inspections
+- License: public domain, as stated on the dataset.
+- Fetched from: `https://data.kingcounty.gov/resource/r878-4sxa.json`
+- Used for: food businesses by newest inspection in the last three years
+  (open), with positions from the Census geocoder.
+
 ### Chicago Department of Public Health, food inspections
 - License: "See Terms of Use" of the City of Chicago Data Portal; rows it
   touches are marked `Chicago-Data-Portal-terms`.

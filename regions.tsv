@@ -1,6 +1,7 @@
 # name	south	west	north	east	geofabrik extracts (comma separated, under north-america/us/, or from the root with a leading /)	state code (blank for a plain box, - when a country follows)	country (blank for US)
 dc-box	38.79	-77.12	39.0	-76.91	district-of-columbia,maryland,virginia
 sac-box	38.43	-121.80	38.72	-121.20	california/norcal
+seattle-box	47.50	-122.44	47.74	-122.24	washington
 portland-box	45.45	-122.76	45.60	-122.55	oregon
 kansas-city-box	38.95	-94.70	39.20	-94.45	missouri,kansas
 denver-box	39.62	-105.11	39.80	-104.87	colorado
