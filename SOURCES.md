@@ -127,6 +127,12 @@ adapter is merged. If a source states no license, the entry says so.
   Business" result (closed, places with no brand only). Positions come
   with the data. Also mints missing places.
 
+### Colorado Liquor Enforcement Division, liquor licenses
+- License: public domain, as stated on the dataset.
+- Fetched from: `https://data.colorado.gov/resource/ier5-5ms2.json`
+- Used for: active premises licenses (open). The list of recently expired
+  and surrendered licenses is not used.
+
 ### Florida DBPR, alcoholic beverage licenses
 - License: none stated on the download page. Florida public record. Rows it
   touches are marked `none-stated`.
@@ -196,8 +202,9 @@ adapter is merged. If a source states no license, the entry says so.
 Survey of what comes next, in order. None of these has been fetched or
 checked by this project.
 
-- More state alcohol license lists. Colorado, Missouri and Oregon have not
-  been fetched.
+- More state alcohol license lists. Found, not yet built: Oregon
+  (data.oregon.gov, srxe-qkm2), Missouri (data.mo.gov, including a list of
+  licenses out of business, nytw-fmz3), Washington (data.wa.gov, 9dee-kzm5).
 - Florida also publishes new food licenses and changes of owner by fiscal
   year, and lodging inspections.
 - Health inspections and city business licenses: many city portals state no

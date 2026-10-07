@@ -236,6 +236,7 @@ rows are the same place.
 | New York City restaurant inspections | number | 25 of 25 | finds a place for 75% of restaurants |
 | Chicago food inspections, out of business | number | 30 of 30 | |
 | Chicago food inspections, open | number | 20 of 20 | finds a place for 68% of businesses |
+| Colorado alcohol licenses | number | 25 of 25 (Denver) | positions with the data or geocoded; finds a place for 67% of licenses |
 | Florida alcohol licenses | number | 25 of 25 (Jacksonville) | geocoded; finds a place for 53% of licenses |
 | Florida restaurant inspections | number | 30 of 30 (Jacksonville) | geocoded; finds a place for 54% of inspected restaurants |
 | OSM lifecycle features to places | all | 40 of 40 (DC), 36 of 36 (Sacramento) | |
@@ -379,6 +380,7 @@ signal at all.
 | dohmh_nyc | open | day of the restaurant's newest inspection | matcher |
 | cdph_chicago | open | day of the newest inspection that got in (pass or fail) | matcher |
 | cdph_chicago_oob | closed | day of an inspection that found the business gone | matcher; places with no brand only |
+| led_co | open | day the dataset was last updated | matcher |
 | abt_fl | open | day the file was read | matcher, positions from the Census geocoder |
 | abc_ca | open | the export's Updated date | matcher, positions from the Census geocoder |
 | tabc_tx | open | day the dataset was last updated | matcher, positions from the Census geocoder |

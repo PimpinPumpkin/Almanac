@@ -31,7 +31,7 @@ These rules do not change from item to item.
 The categories where a register can make coverage complete.
 
 - **1.1 State alcohol license lists.** One adapter per state. Done:
-  California, DC, Florida, New York, Texas. Then Colorado,
+  California, Colorado, DC, Florida, New York, Texas. Then Colorado,
   Missouri, Oregon, Washington, Pennsylvania, Illinois, and on through
   every state that publishes one. Done for a state when its bars pass 40%
   with a status.
