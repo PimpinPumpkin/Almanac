@@ -192,6 +192,10 @@ rows are the same place.
 | CMS hospitals | address | 10 of 15 | all 10 hospitals are right; the other 5 rows are the hospital's gift shop, emergency room or a department sharing its name and address |
 | NPPES organizations | address | 37 of 40 | the 3 misses are hospital departments |
 | IRS exempt organizations | address | 36 of 40 | the 4 misses are a related body at the same address, such as a foundation arm |
+| California alcohol licenses | address | 40 of 40 (Sacramento) | finds a place for 25% of licenses; the address rule is strict |
+| DC alcohol licenses, active | number | 40 of 40 | finds a place for 77% of licenses |
+| | spot | 20 of 20 | |
+| DC alcohol license cancellations | number | 40 of 40 | |
 | OSM lifecycle features to places | all | 40 of 40 (DC), 36 of 36 (Sacramento) | |
 
 ## 7. Status rules
@@ -259,6 +263,9 @@ mappers survey open places more readily than they tag closed ones.
 | nces_schools | open | June 30 of the school year the file covers | matcher |
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
+| abc_ca | open | the export's Updated date | matcher, by address |
+| abca_dc_active | open | day the layer was last loaded | matcher |
+| abca_dc_cancelled | closed | day the layer was last loaded (an upper bound) | matcher; restaurants, taverns, nightclubs and clubs only |
 | irs_eo | open | last day of the month the newest return covers | matcher, by address |
 | atp | open | day the spider collected the chain's locator | the AllThePlaces row's own merge |
 | osm_check_date | open | `check_date` or `survey:date` tag | the OSM feature's own merge |
@@ -325,6 +332,7 @@ evidence from a different source for the same place.
 | A bank branch record matching the bank's ATM | 3 of 40 FDIC closings landed on an ATM or mortgage desk listing. | A name with ATM on one side only never matches. |
 | Wikidata P576 on offices | 4 hits across two boxes, 2 of them a company merger date on an office building. | Skipped when the OSM feature is `office=*`. The 2 that remain (a hospital, a school) are right. |
 | Merging Overture duplicates on anything looser than an identical name | Same house number with a leading-words or near-spelling match: about 10 of 21 read were a part and its whole (a gift shop and its hospital, two advisors at one bank). No house number: mostly junk pages sharing a point. Different numbers within 30 m: 13 pairs, several wrong. | Only same number plus identical name merges. |
+| DC alcohol license cancellation means closed, for every license type | 283 places matched. Independent: open 18, closed 60. The open ones were grocery stores, hotels and places that had swapped one license for another. | Kept only for restaurants, taverns, nightclubs and clubs, and skipped when the same trade name has an active license at the address. After that: open 8, closed 54, in line with the Foursquare and OSM signals. |
 | Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
 
 Carried over from earlier work and not retested: website liveness, and

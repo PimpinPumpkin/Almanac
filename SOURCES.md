@@ -84,6 +84,24 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: nonprofits that filed a return (open, dated by the tax period).
   No positions; matched by address.
 
+### California ABC daily license export
+- License: none stated on the download page. California public record.
+- Fetched from: `https://www.abc.ca.gov/wp-content/uploads/DailyExport-CSV.zip`,
+  linked on https://www.abc.ca.gov/licensing/licensing-reports/
+- Used for: active retail alcohol licenses (open). No positions; matched by
+  address. The file gives no date for surrenders or revocations, so there is
+  no closed evidence from it.
+
+### District of Columbia ABCA liquor licenses
+- License: CC-BY-4.0, as stated on opendata.dc.gov. Attribution is in NOTICE.
+  Open question: whether CC-BY-4.0 data may sit inside an ODbL database
+  without a waiver. OpenStreetMap asks for one. Only the status and its date
+  are taken from this source, not the listing itself.
+- Fetched from: layers 5 (locations) and 42 (cancellations) of
+  `https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Business_Licensing_and_Grants_WebMercator/FeatureServer`
+- Used for: active licenses (open) and cancellations (closed, for
+  restaurants, taverns, nightclubs and clubs).
+
 ### US Census cartographic boundary file, states
 - License: US federal government work, public domain.
 - Fetched from: `https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_500k.zip`
@@ -95,9 +113,11 @@ Survey of what comes next, in order. None of these has been fetched or
 checked by this project.
 
 - NCUA credit union branches: federal, public domain.
-- State alcohol license lists (California, Texas, New York, Colorado,
-  Missouri, Oregon) and Florida restaurant and hotel licenses: license terms
-  to be read per state.
+- More state alcohol license lists. Texas (data.texas.gov, dataset
+  7hf9-qc9f) and New York (data.ny.gov, dataset 9s3h-dpkz) were fetched once
+  to confirm they answer without a key; both carry addresses and status or
+  expiration dates. No adapter yet, because no test region lies in either
+  state. Colorado, Missouri, Oregon and Florida have not been fetched.
 - Health inspections and city business licenses: many city portals state no
   license. Each one gets an entry here saying what it states before it is used.
 - OpenPOIs (https://github.com/henryspatialanalysis/openpois): data under the

@@ -18,23 +18,31 @@ Kentucky), 480,000 places in all.
 
 | Category | Listed | Has a dated status | What it comes from, and what comes next | Can it be complete? |
 | --- | ---: | ---: | --- | --- |
-| Fast food and chain restaurants | 3,736 | 65% | Chain store locators (built) | Yes, for chains with a locator |
+| Fast food and chain restaurants | 3,736 | 66% | Chain store locators (built) | Yes, for chains with a locator |
 | Banks and credit unions | 4,603 | 52% | FDIC branches and closings (built). Next: NCUA credit union branches | Yes |
-| Gas stations | 4,566 | 44% | Chain locators (built). Next: underground storage tank registries | Mostly |
-| Grocery and convenience stores | 5,964 | 38% | SNAP authorized stores, chain locators (built) | Mostly |
+| Gas stations | 4,566 | 45% | Chain locators (built). Next: underground storage tank registries | Mostly |
+| Grocery and convenience stores | 5,964 | 39% | SNAP authorized stores, chain locators (built) | Mostly |
 | Pharmacies | 1,848 | 32% | Chain locators, NPPES (built). Next: state pharmacy boards | Mostly |
 | Schools | 11,116 | 21% | NCES public schools (built). The category also holds preschools, private and trade schools, which NCES public data does not cover | Public schools yes |
-| Restaurants and cafes, independent | 29,539 | 20% | Foursquare closing dates, OSM (built). Next: state alcohol licenses, health inspections | State by state, never everywhere |
-| Hotels | 2,571 | 17% | Chain locators (built). Next: state lodging licenses where published | Chains yes, independents patchy |
+| Restaurants and cafes, independent | 29,539 | 25% | Foursquare closing dates, OSM, alcohol licenses in California and DC (built). Next: more state license lists, health inspections | State by state, never everywhere |
+| Hotels | 2,571 | 20% | Chain locators (built). Next: state lodging licenses where published | Chains yes, independents patchy |
 | Museums | 999 | 11% | IRS exempt organizations (built) | Partly |
 | Hospitals | 1,441 | 11% | CMS hospitals, NPPES (built). The category also holds departments and clinics listed as hospitals | Real hospitals yes |
-| Bars | 3,535 | 10% | Foursquare, OSM (built). Next: state alcohol licenses | Yes, in states that publish the list |
-| Everything else | 403,680 | 5% | Salons, repair shops, offices, clinics, churches. NPPES and IRS exempt organizations (built). Next: state professional and repair licenses | No. This is the long tail |
+| Bars | 3,535 | 20% | Foursquare, OSM, alcohol licenses in California and DC (built). Next: more state license lists | Where the state publishes its list, about half today. See below |
+| Everything else | 403,680 | 6% | Salons, repair shops, offices, clinics, churches. NPPES and IRS exempt organizations (built). Next: state professional and repair licenses | No. This is the long tail |
 | EV chargers | 614 | 3% | Not handled yet. The federal station list needs a free API key | Yes, if a key is allowed |
 | Parks | 6,122 | 0.2% | OSM. Parks rarely close, so a listing is most of the job | Listing yes, status not needed |
 
-Across all 480,000 places, 8.6% have a dated status. The table is made by
+Across all 480,000 places, 9.1% have a dated status. The table is made by
 `duckdb < sql/coverage.sql`.
+
+Bars and restaurants are low in the table because two of the four regions
+(Delaware, Kentucky) have no license list yet. Where there is one, it helps
+but does not finish the job: inside the District of Columbia, with the full
+license list loaded, 49% of bars and 42% of restaurants have a status. Most
+of the rest are listings that match no license at all, and many of those
+are probably long gone. Using "no license" as a sign of closure is not
+built or tested.
 
 "Next" sources are a plan. None has been fetched or checked yet.
 
@@ -49,8 +57,9 @@ published yet.
   closed on a specific date. Today: Foursquare closing dates, OSM lifecycle
   tags and survey dates, Wikidata dissolution dates, FDIC bank branches and
   branch closings, USDA SNAP authorized stores, CMS hospitals, NCES public
-  schools, NPPES health care organizations, IRS exempt organizations, and
-  presence in a chain's own store locator.
+  schools, NPPES health care organizations, IRS exempt organizations, alcohol
+  licenses in California and the District of Columbia, and presence in a
+  chain's own store locator.
 - **Output**: one row per place with a stable id, merged attributes, every
   source id it was built from, a status of open, closed or unknown with
   the date and source of the evidence that decided it, and an `open_score`
@@ -60,7 +69,7 @@ published yet.
 
 - Not a new survey. Every fact comes from a source listed in `SOURCES.md`.
 - Not complete on status. Most places have no dated evidence and are
-  `unknown`. In the District of Columbia test box, 9.7% of places get a
+  `unknown`. In the District of Columbia test box, 11% of places get a
   status. `unknown` means nobody has said, not "probably open".
 - Not a source of new places from registers. A bank branch or licensed
   premises that the base layer lacks is not added yet.
@@ -76,7 +85,8 @@ review.sh           print a fixed sample of matches for a person to read
 regions.tsv         region boxes and which OSM extracts cover them
 base/               importers: overture.sh, atp.sh + atp.py, osm.sh + osm.jq
 signals/            closing signals joined by id: fsq_closed.sh, wikidata_p576.py
-adapters/           one file per register: fdic, snap, cms, nces, nppes, irs
+adapters/           one file per register: fdic, snap, cms, nces, nppes, irs,
+                    abc_ca, abca_dc
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests
 reports/            numbers from the last build of each test region
