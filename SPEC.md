@@ -38,6 +38,7 @@ Both layers have the same columns.
 | name | string | from the anchor source |
 | category | string | The source's own term: an Overture taxonomy term, an OSM style `key=value` for AllThePlaces and OSM rows, or a coarse word for places minted from registers. |
 | category_group | string | One of Overture's thirteen top-level groups (food_and_drink, shopping, health_care, services_and_business, and so on), for every row whatever its source. `sql/groups.sql` maps OSM tags and register categories onto them. Null when the source gave no category. |
+| category_subgroup | string | the second level of the same vocabulary, about 110 values such as `restaurant`, `casual_eatery`, `financial_service`, `personal_or_beauty_service`, `vehicle_service`. Overture's own for Overture rows, mapped from the commonest tags for the rest (`sql/groups.sql`). Null where neither gives one: 8% of rows in the DC box |
 | brand, brand_wikidata | string | |
 | address, city, region, postcode | string | address is the street line |
 | phone, website | string | |

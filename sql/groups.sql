@@ -46,3 +46,54 @@ create or replace macro group_of(category) as
     when category like 'leisure=%' then 'sports_and_recreation'
     else null
   end;
+
+-- The second level of the same vocabulary: Overture's subgroups (about 110
+-- of them). Overture rows carry their own. This maps the commonest OSM tags
+-- and register categories onto them, in Overture's own terms: a cafe is a
+-- casual_eatery, a pharmacy a specialty_store, a car repair shop a
+-- vehicle_service. A tag that is not listed gets no subgroup.
+create or replace macro subgroup_of(category) as
+  case
+    when category in ('bank', 'amenity=bank', 'amenity=atm', 'amenity=bureau_de_change', 'amenity=money_transfer') then 'financial_service'
+    when category in ('restaurant', 'food_service', 'amenity=restaurant', 'amenity=food_court') then 'restaurant'
+    when category in ('amenity=fast_food', 'amenity=ice_cream', 'shop=bakery') then 'casual_eatery'
+    when category = 'amenity=cafe' then 'non_alcoholic_beverage_venue'
+    when category in ('licensed_premises', 'amenity=bar', 'amenity=pub', 'amenity=biergarten', 'craft=brewery',
+                      'craft=winery', 'craft=distillery') then 'alcoholic_beverage_venue'
+    when category in ('grocery_or_convenience_store', 'food_store', 'shop=supermarket', 'shop=greengrocer',
+                      'shop=butcher', 'shop=alcohol', 'shop=wine', 'shop=beverages', 'shop=tobacco',
+                      'shop=deli', 'shop=seafood', 'shop=confectionery') then 'food_and_beverage_store'
+    when category = 'shop=convenience' then 'convenience_store'
+    when category = 'shop=department_store' then 'department_store'
+    when category in ('shop=clothes', 'shop=shoes', 'shop=jewelry', 'shop=fashion_accessories', 'shop=bag') then 'fashion_and_apparel_store'
+    when category in ('shop=car', 'shop=motorcycle', 'shop=trailer', 'shop=caravan') then 'vehicle_dealer'
+    when category in ('amenity=pharmacy', 'shop=chemist', 'shop=hardware', 'shop=florist', 'shop=pet', 'shop=books',
+                      'shop=furniture', 'shop=electronics', 'shop=mobile_phone', 'shop=gift', 'shop=sports',
+                      'shop=bicycle', 'shop=toys', 'shop=optician', 'shop=doityourself') then 'specialty_store'
+    when category in ('salon_or_barber_shop', 'shop=hairdresser', 'shop=beauty', 'shop=massage', 'shop=tattoo',
+                      'shop=cosmetics') then 'personal_or_beauty_service'
+    when category in ('shop=laundry', 'shop=dry_cleaning') then 'laundry_service'
+    when category in ('vehicle_repair_or_dealer', 'shop=car_repair', 'shop=tyres', 'amenity=car_wash') then 'vehicle_service'
+    when category = 'amenity=fuel' then 'fueling_station'
+    when category in ('amenity=parking') then 'parking'
+    when category in ('amenity=bus_station', 'amenity=ferry_terminal', 'amenity=taxi', 'amenity=car_rental') then 'ground_transport_facility_or_service'
+    when category = 'amenity=hospital' then 'hospital'
+    when category in ('amenity=clinic', 'amenity=doctors', 'amenity=dentist') then 'outpatient_care_facility'
+    when category = 'amenity=veterinary' then 'animal_or_pet_service'
+    when category in ('amenity=school', 'amenity=college', 'amenity=university', 'amenity=kindergarten',
+                      'amenity=language_school', 'amenity=music_school') then 'place_of_learning'
+    when category = 'amenity=library' then 'library'
+    when category = 'amenity=childcare' then 'family_service'
+    when category = 'amenity=place_of_worship' then 'place_of_worship'
+    when category like 'historic=%' then 'historic_site'
+    when category in ('tourism=hotel', 'tourism=motel') then 'hotel'
+    when category = 'tourism=museum' then 'museum'
+    when category = 'amenity=cinema' then 'movie_theater'
+    when category in ('amenity=theatre', 'amenity=arts_centre') then 'performing_arts_venue'
+    when category in ('amenity=townhall', 'amenity=courthouse', 'amenity=embassy', 'office=government', 'office=diplomatic') then 'government_office'
+    when category in ('amenity=community_centre', 'amenity=social_facility', 'amenity=social_centre') then 'social_or_community_service'
+    when category = 'amenity=post_office' then 'shipping_or_delivery_service'
+    when category in ('leisure=park', 'leisure=playground', 'leisure=dog_park', 'leisure=garden') then 'park'
+    when category in ('leisure=fitness_centre', 'leisure=sports_centre', 'leisure=stadium') then 'sport_or_fitness_facility'
+    else null
+  end;

@@ -86,12 +86,14 @@ Done when "everything else" passes 15% in states with two or more of these.
 
 ## 3. Quality
 
-- **3.1 One category vocabulary.** First step done: every row has a
-  `category_group`, one of Overture's thirteen top-level groups. Still to
-  do: a finer shared list (restaurant, bar, bank, salon) below the groups.
-- **3.2 Trade name aliases.** About a third of unmatched DC licenses are the
-  same place under a longer or shorter name. Learn aliases from the pairs
-  that share an exact address.
+- **3.1 One category vocabulary.** Done: every row has a `category_group`
+  (Overture's thirteen top-level groups) and, for 92% of rows in the DC
+  box, a `category_subgroup` (Overture's second level, about 110 values).
+  OSM tags and register categories are mapped onto both.
+- **3.2 Trade name aliases.** Looked at on 2026-10-07 and set aside for
+  salons: most unmatched salon licenses are stylists renting a chair in a
+  shared salon-suite building, licensed under a name the sign does not
+  show. Still worth a look for restaurants and bars.
 - **3.3 Score calibration.** Build a labeled set (places with both a
   register verdict and an independent one) and fit `open_score` to it
   instead of the current rule of thumb.

@@ -100,6 +100,7 @@ create or replace macro published(place, member, status, conf, hours) as table (
   )
   select p.id, p.name, p.category,
          coalesce(og.category_group, group_of(p.category)) as category_group,
+         coalesce(og.category_subgroup, subgroup_of(p.category)) as category_subgroup,
          p.brand, p.brand_wikidata,
          p.address, p.city, p.region, p.postcode, p.phone, p.website,
          h.opening_hours, h.hours_source, h.hours_date,
