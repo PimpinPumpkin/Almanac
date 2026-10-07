@@ -159,7 +159,7 @@ jobs:
           jq -s '{dataset: "Vela Almanac", license: "ODbL-1.0",
                   credit: .[0].credit, notice: .[0].notice,
                   build_date: .[0].build_date, sources: .[0].sources,
-                  regions: [.[] | {region, bbox, files}]}' data/out/manifest-*.json > data/out/manifest.json
+                  regions: [.[] | {region, country, iso_3166_2, osm_extracts, bbox, files}]}' data/out/manifest-*.json > data/out/manifest.json
           jq -r '"\(.regions | length) regions, build \(.build_date)"' data/out/manifest.json
       - name: Compare with the last release
         if: ${{ inputs.regions == '' }}

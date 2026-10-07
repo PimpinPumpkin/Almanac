@@ -87,8 +87,9 @@ Done when "everything else" passes 15% in states with two or more of these.
 - **3.3 Score calibration.** Build a labeled set (places with both a
   register verdict and an independent one) and fit `open_score` to it
   instead of the current rule of thumb.
-- **3.4 Names and categories for places minted from registers.** Title case,
-  strip store numbers, and carry the register's own business type.
+- **3.4 Names and categories for places minted from registers.** Done for
+  names and streets: title case, store numbers stripped. Still to do: carry
+  the register's own business type.
 - **3.5 Duplicates inside Overture** beyond exact name matches.
 
 ## 4. Operations
@@ -120,7 +121,8 @@ Done when "everything else" passes 15% in states with two or more of these.
 Work in this repo that makes the files easier to consume. Changes to Vela
 itself happen in Vela.
 
-- **5.1 Region ids in the manifest** that match the reader's region catalog.
+- **5.1 Region ids in the manifest.** Done: each region carries its country,
+  its ISO 3166-2 code and the names of the OSM extracts it was built from.
 - **5.2 A small status file per state.** Done: `status-<region>.parquet`.
 
 ## 6. Other countries

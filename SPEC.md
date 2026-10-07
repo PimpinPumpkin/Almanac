@@ -621,6 +621,8 @@ was newly confirmed open, or went quiet since the release before, made by
   | credit | the credit line a reuser must show, as in NOTICE |
   | notice | URL of the NOTICE file with the source notices |
   | region, build_date, bbox | what was built and when |
+  | country, iso_3166_2 | `US` and `US-NY`, so a reader can map a file to its own regions without knowing ours (null for a test box) |
+  | osm_extracts | the Geofabrik extract names the region was built from |
   | sources | the release of each base source |
   | files | name, layer, license, rows, bytes, sha256 per file |
 - First host: GitHub release assets, one release per monthly build, tagged

@@ -117,3 +117,21 @@ create or replace macro needs_alcohol_license(category) as
 -- joined by id still belongs to the business the place is named for today.
 create or replace macro same_name(a, b) as
   name_sim(norm_name(a), norm_name(b)) in (1.0, 0.9) or name_sim(norm_name(a), norm_name(b)) >= 0.95;
+
+-- Registers write names and streets in capitals. For a place that exists
+-- only because a register lists it, show the text the way a sign would:
+-- "MARCO POLO BAR & GRILL #2" becomes "Marco Polo Bar & Grill". Words with
+-- no vowel (BBQ, CVS), compass points and roman numerals stay in capitals.
+-- Text that already has lowercase letters is left alone.
+create or replace macro title_case(s) as
+  case when s is null or s <> upper(s) or not regexp_matches(s, '[A-Z]') then s
+  else replace(array_to_string(list_transform(
+         string_split(regexp_replace(trim(s), '([-&/.(])', '\1' || chr(1) || ' ', 'g'), ' '),
+         lambda w: case
+           when regexp_matches(w, '^(NE|NW|SE|SW|II|III|IV|VI|VII|USA|US|PO)$') or regexp_matches(w, '^[0-9]+[A-Z]$') then w
+           when regexp_matches(w, '^(ST|RD|DR|LN|CT|PL|PLZ|HWY|PKY|TRL|SQ|FL|MR|MRS|JR|SR|LTD|STE|BLDG)[-&/.]?' || chr(1) || '?$')
+             then upper(w[1]) || lower(w[2:])
+           when length(replace(w, chr(1), '')) between 2 and 4 and regexp_matches(w, '^[B-DF-HJ-NP-TV-XZ]+[-&/.]?' || chr(1) || '?$') then w
+           else upper(w[1]) || lower(w[2:]) end), ' '), chr(1) || ' ', '') end;
+create or replace macro display_name(s) as
+  title_case(trim(regexp_replace(s, '\s*(#\s*[0-9]+[A-Z]?|\bSTORE\s+#?[0-9]+)\s*$', '')));

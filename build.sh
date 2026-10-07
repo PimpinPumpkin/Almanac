@@ -125,6 +125,7 @@ entry() {  # entry FILE LAYER LICENSE
 }
 jq -n --arg region "$REGION" --arg build_date "$BUILD_DATE" \
   --argjson bbox "[$W, $S, $E, $N]" \
+  --arg country "${COUNTRY:-US}" --arg state "$STATE" --arg extracts "$OSM_EXTRACTS" \
   --arg overture "$(cat "$OUT/overture.release")" --arg atp "$(cat "$OUT/atp.run")" \
   --arg osm "$(cat "$OUT/osm.date")" --arg fsq "${FSQ_RELEASE:-2025-02-06}" \
   --arg openpois "$(cat "$OUT/openpois.version" 2>/dev/null || true)" \
@@ -135,6 +136,9 @@ jq -n --arg region "$REGION" --arg build_date "$BUILD_DATE" \
     credit: "Vela Almanac, (c) its contributors. Open Database License 1.0. https://github.com/PimpinPumpkin/vela-almanac",
     notice: "https://github.com/PimpinPumpkin/vela-almanac/blob/main/NOTICE",
     region: $region, build_date: $build_date, bbox: $bbox,
+    country: $country,
+    iso_3166_2: (if ($state | test("^[A-Z]{2}$")) then "\($country)-\($state)" else null end),
+    osm_extracts: ($extracts | split(",")),
     sources: {overture: $overture, alltheplaces: $atp, openstreetmap: $osm, foursquare_os_places: $fsq, openpois: $openpois},
     files: [$core, $full, $status]}' > "$PUB/manifest-$REGION.json"
 step done

@@ -78,3 +78,14 @@ select case when (select count(*) from ac c
 select case when same_name('Sunoco', 'SUNOCO #1234') and same_name('Bar Pilar', 'Bar Pilar')
                  and not same_name('Sunoco', 'Shell') and not same_name('Mirabelle', 'Le Diplomate')
             then 'ok 4 name check cases' else error('name check test failed') end as result;
+
+-- Names and streets for places that come from a register.
+select case when display_name('MARCO POLO BAR & GRILL #2') = 'Marco Polo Bar & Grill'
+                 and display_name('BOB''S BBQ') = 'Bob''s BBQ'
+                 and display_name('T-MOBILE') = 'T-Mobile'
+                 and display_name('7-ELEVEN STORE 22358A') = '7-Eleven Store 22358A'
+                 and display_name('FAMILY DOLLAR STORE #31487') = 'Family Dollar'
+                 and display_name('Café Loup') = 'Café Loup'
+                 and title_case('1312 NE 43RD ST') = '1312 NE 43rd St'
+                 and title_case('100 A&P PLZ') = '100 A&P Plz'
+            then 'ok 8 display name cases' else error('display name test failed') end as result;
