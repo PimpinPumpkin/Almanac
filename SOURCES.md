@@ -230,6 +230,30 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: unexpired appearance enhancement business and barber shop
   licenses (open), with positions. The license holder's name is not read.
 
+### New York Agriculture and Markets, food safety inspections
+- License: OPEN-NY Terms of Use, as above.
+- Fetched from: `https://data.ny.gov/resource/d6dy-3h7r.json`
+- Used for: retail food stores by newest inspection (open), with positions.
+  Also mints missing places.
+
+### New York City DCWP, issued licenses
+- License: none named on the dataset. NYC Open Data; rows it touches are
+  marked `NYC-Open-Data-terms`.
+- Fetched from: `https://data.cityofnewyork.us/resource/w7w3-xahh.json`
+- Used for: active premises licenses (open), with positions.
+
+### Delaware Division of Public Health, food establishment inspections
+- License: public domain, as stated on the dataset.
+- Fetched from: `https://data.delaware.gov/resource/384s-wygj.json`
+- Used for: food establishments by newest inspection (open), with
+  positions. Also mints missing places.
+
+### Montgomery County, Maryland, food inspections
+- License: public domain, as stated on the dataset.
+- Fetched from: `https://data.montgomerycountymd.gov/resource/dkrp-gr48.json`
+- Used for: food businesses by newest inspection (open), with positions
+  from the Census geocoder.
+
 ### New York DMV, licensed facilities
 - License: OPEN-NY Terms of Use, as above.
 - Fetched from: `https://data.ny.gov/resource/nhjr-rpi2.json`

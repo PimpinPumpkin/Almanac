@@ -164,7 +164,9 @@ create or replace table storefront_source as
     ('dohmh_nyc', 'restaurant'),
     ('cdph_chicago', 'food_service'),
     ('dmv_ny', 'vehicle_repair_or_dealer'),
-    ('dos_ny_salons', 'salon_or_barber_shop')) t(source, category);
+    ('dos_ny_salons', 'salon_or_barber_shop'),
+    ('agm_ny', 'food_store'),
+    ('dph_de', 'restaurant')) t(source, category);
 
 create or replace table born as
   with unmatched as (

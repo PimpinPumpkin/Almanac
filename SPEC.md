@@ -181,7 +181,8 @@ looser cases are rejected, section 9.
 **Places minted from a register.** Some registers list the storefront
 itself: FDIC branches, SNAP authorized stores, DC and New York licensed
 premises, New York City and Chicago inspected food businesses, New York
-salons, barber shops, repair shops and dealers. A row
+salons, barber shops, repair shops, dealers and food stores, and Delaware
+inspected food establishments. A row
 from one of them becomes a new place when it is open, has a position,
 matched no place, and no listed place within 80 m has a similar name
 (leading words, Jaro-Winkler 0.7 or more, or same house number and same
@@ -239,6 +240,10 @@ rows are the same place.
 | New York alcohol licenses | number | 40 of 40 (New York City) | |
 | | spot | 20 of 20 | mostly Queens addresses, where "30-08" and "3008" are the same door |
 | | near | 11 of 12 | the miss is a hotel landing on a place named only "New York" |
+| New York retail food store inspections | number | 15 of 15 (New York City) | |
+| New York City DCWP licensed businesses | number | 15 of 15 | |
+| Delaware food inspections | number | 14 of 15 (Delaware) | the miss is a school's wellness center taking the school's inspection |
+| Montgomery County food inspections | number | 15 of 15 (the Maryland part of the DC box) | geocoded |
 | Chicago business licenses, live and cancelled | number | 40 of 40 | live licenses matched 10,100 places in the box |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
@@ -408,6 +413,10 @@ signal at all.
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
 | dbpr_fl_food | open | day of the establishment's newest inspection | matcher, positions from the Census geocoder |
+| agm_ny | open | day of the store's newest inspection | matcher |
+| dcwp_nyc | open | day the dataset was last updated, active premises licenses only | matcher |
+| dph_de | open | day of the establishment's newest inspection | matcher |
+| moco_md | open | day of the newest inspection that ended in a pass or fail | matcher, positions from the Census geocoder |
 | bacp_chicago | open | day the dataset was last updated, unexpired issued licenses only | matcher |
 | bacp_chicago_cancelled | closed | day the license status changed to cancelled | matcher; places with no brand only, and only when the site has no live license |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |

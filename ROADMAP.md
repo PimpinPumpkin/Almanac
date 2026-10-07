@@ -40,7 +40,8 @@ The categories where a register can make coverage complete.
 - **1.3 Restaurant inspections.** Done: Florida (Jacksonville restaurants
   went to 31% with a status), New York City, and Chicago (56% in the test
   box, with an "out of business" result that works as a closure for
-  independents), and King County, Washington (52% in a Seattle box).
+  independents), King County, Washington (52% in a Seattle box), Delaware,
+  Montgomery County, Maryland, and New York's retail food stores.
   Next New York State, Los Angeles County, then other large cities.
   Target: independent restaurants from 18% to 40% in covered areas.
 - **1.4 Fuel.** Use the tank registry's "temporarily out of service" count
