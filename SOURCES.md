@@ -112,6 +112,21 @@ adapter is merged. If a source states no license, the entry says so.
   Census geocoder. The file gives no date for surrenders or revocations, so
   there is no closed evidence from it.
 
+### New York City DOHMH, restaurant inspection results
+- License: none named on the dataset. NYC Open Data, a city public record;
+  rows it touches are marked `NYC-Open-Data-terms`.
+- Fetched from: `https://data.cityofnewyork.us/resource/43nn-pn8j.json`
+- Used for: restaurants by newest inspection (open), with positions. Also
+  mints missing places.
+
+### Chicago Department of Public Health, food inspections
+- License: "See Terms of Use" of the City of Chicago Data Portal; rows it
+  touches are marked `Chicago-Data-Portal-terms`.
+- Fetched from: `https://data.cityofchicago.org/resource/4ijn-s7e5.json`
+- Used for: food businesses by newest inspection (open), and the "Out of
+  Business" result (closed, places with no brand only). Positions come
+  with the data. Also mints missing places.
+
 ### Florida DBPR, alcoholic beverage licenses
 - License: none stated on the download page. Florida public record. Rows it
   touches are marked `none-stated`.

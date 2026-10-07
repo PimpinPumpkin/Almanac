@@ -140,6 +140,15 @@ create or replace table core_evidence as
   union all
   select * from matched_evidence('core_place');
 
+-- Closures that only hold for independents. When a chain outlet's license or
+-- permit ends, the outlet usually carries on under a new franchisee, so
+-- these sources do not close a place that carries a brand.
+create or replace table independents_only as
+  select * from (values ('cdph_chicago_oob'), ('abca_dc_cancelled')) t(source);
+delete from core_evidence
+  where source in (select source from independents_only)
+    and place_id in (select id from core_place where brand is not null);
+
 -- Places minted from a register. Some registers list the storefront itself:
 -- a bank branch, a store authorized for SNAP, a licensed premises. A row
 -- from one of those becomes a new place when it is open, has a position,
@@ -151,7 +160,9 @@ create or replace table storefront_source as
     ('fdic_locations', 'bank'),
     ('snap_current', 'grocery_or_convenience_store'),
     ('abca_dc_active', 'licensed_premises'),
-    ('sla_ny', 'licensed_premises')) t(source, category);
+    ('sla_ny', 'licensed_premises'),
+    ('dohmh_nyc', 'restaurant'),
+    ('cdph_chicago', 'food_service')) t(source, category);
 
 create or replace table born as
   with unmatched as (

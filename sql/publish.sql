@@ -9,6 +9,8 @@ create or replace macro license_of(source) as
     when source like 'abca_dc%' then 'CC-BY-4.0'
     when source in ('abc_ca', 'tabc_tx', 'dbpr_fl_food', 'abt_fl') then 'none-stated'
     when source = 'sla_ny' then 'OPEN-NY-terms'
+    when source = 'dohmh_nyc' then 'NYC-Open-Data-terms'
+    when source like 'cdph_chicago%' then 'Chicago-Data-Portal-terms'
     when source = 'sirene' then 'etalab-2.0'
     -- everything else is a US federal register
     else 'US-public-domain'

@@ -175,7 +175,7 @@ looser cases are rejected, section 9.
 
 **Places minted from a register.** Some registers list the storefront
 itself: FDIC branches, SNAP authorized stores, DC and New York licensed
-premises. A row
+premises, New York City and Chicago inspected food businesses. A row
 from one of them becomes a new place when it is open, has a position,
 matched no place, and no listed place within 80 m has a similar name
 (leading words, Jaro-Winkler 0.7 or more, or same house number and same
@@ -233,6 +233,9 @@ rows are the same place.
 | New York alcohol licenses | number | 40 of 40 (New York City) | |
 | | spot | 20 of 20 | mostly Queens addresses, where "30-08" and "3008" are the same door |
 | | near | 11 of 12 | the miss is a hotel landing on a place named only "New York" |
+| New York City restaurant inspections | number | 25 of 25 | finds a place for 75% of restaurants |
+| Chicago food inspections, out of business | number | 30 of 30 | |
+| Chicago food inspections, open | number | 20 of 20 | finds a place for 68% of businesses |
 | Florida alcohol licenses | number | 25 of 25 (Jacksonville) | geocoded; finds a place for 53% of licenses |
 | Florida restaurant inspections | number | 30 of 30 (Jacksonville) | geocoded; finds a place for 54% of inspected restaurants |
 | OSM lifecycle features to places | all | 40 of 40 (DC), 36 of 36 (Sacramento) | |
@@ -373,6 +376,9 @@ signal at all.
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
 | dbpr_fl_food | open | day of the establishment's newest inspection | matcher, positions from the Census geocoder |
+| dohmh_nyc | open | day of the restaurant's newest inspection | matcher |
+| cdph_chicago | open | day of the newest inspection that got in (pass or fail) | matcher |
+| cdph_chicago_oob | closed | day of an inspection that found the business gone | matcher; places with no brand only |
 | abt_fl | open | day the file was read | matcher, positions from the Census geocoder |
 | abc_ca | open | the export's Updated date | matcher, positions from the Census geocoder |
 | tabc_tx | open | day the dataset was last updated | matcher, positions from the Census geocoder |
@@ -451,6 +457,7 @@ evidence from a different source for the same place.
 | France: dating an active SIRENE record by the register's processing date | Nearly every record was processed in the last year. Dated that way, an active entry overrode 159 hand-tagged OSM closures and 152 Foursquare ones. | Dated by dateDebut, the last real change. Overrides fell to 39 and 14. Most SIRENE records are then old and inform `open_score` without setting a status. |
 | A fuel site whose last underground tank was removed is closed (EPA) | Kentucky: 1,153 places matched. Independent: open 353, closed 15. | Tanks are replaced under a new record, and many sites are not fuel stations. Only sites with tanks in use are emitted, as open evidence. |
 | Texas: a surrendered, cancelled or expired alcohol license means closed | Houston box, on-premise license types only, skipping names with an active license at the address: 1,212 places. Independent: open 79, closed 89. | Not emitted. |
+| Chicago "Out of Business" inspections, for every place | Chicago box, places with no later inspection: independent open 63, closed 187. Split by whether the place carries a brand: chains open 36, closed 3; independents open 27, closed 184. | A chain outlet changes franchisee and license and carries on. The closure is kept for places with no brand only. The same limit now applies to DC license cancellations, which went from 8 open and 54 closed to 1 and 73. |
 | Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
 
 Carried over from earlier work and not retested: website liveness, and

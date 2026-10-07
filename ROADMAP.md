@@ -38,9 +38,10 @@ The categories where a register can make coverage complete.
 - **1.2 Missing license flag** for each of those states whose list has
   positions (today: DC and New York).
 - **1.3 Restaurant inspections.** Done: Florida (Jacksonville restaurants
-  went to 31% with a status). Next New York State,
-  then large cities and counties (New York City, Chicago, which has an
-  explicit "out of business" result, Los Angeles County, King County).
+  went to 31% with a status), New York City, and Chicago (56% in the test
+  box, with an "out of business" result that works as a closure for
+  independents). Next New York State, Los Angeles County, King County,
+  then other large cities.
   Target: independent restaurants from 18% to 40% in covered areas.
 - **1.4 Fuel.** Use the tank registry's "temporarily out of service" count
   to lower the score of mothballed stations. EV chargers from the federal

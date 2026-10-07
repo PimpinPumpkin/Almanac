@@ -79,6 +79,10 @@ create or replace table osm_evidence as
   -- registers against the places only OSM has
   select * from matched_evidence('osm_only');
 
+delete from osm_evidence
+  where source in (select source from independents_only)
+    and place_id in (select id from osm_only where brand is not null);
+
 create or replace table full_evidence as
   select * from core_evidence union all select * from osm_evidence;
 

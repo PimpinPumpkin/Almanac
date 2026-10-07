@@ -101,7 +101,8 @@ as [releases](https://github.com/PimpinPumpkin/vela-almanac/releases).
   union offices, USDA SNAP authorized stores, the EPA fuel tank registry,
   CMS hospitals, NCES public schools, NPPES health care organizations, IRS
   exempt organizations, alcohol licenses in California, Florida, New York,
-  Texas and the District of Columbia, Florida restaurant inspections, and presence in a chain's own store locator.
+  Texas and the District of Columbia, restaurant inspections in Florida,
+  New York City and Chicago, and presence in a chain's own store locator.
 - **New places from registers**: a bank branch, SNAP store or licensed
   premises that none of the three base datasets lists is added as a place.
 - **Output**: one row per place with a stable id, merged attributes, every
@@ -132,9 +133,10 @@ review.sh           print a fixed sample of matches for a person to read
 regions.tsv         region boxes and which OSM extracts cover them
 base/               importers: overture.sh, atp.sh + atp.py, osm.sh + osm.jq
 signals/            closing signals joined by id: fsq_closed.sh, wikidata_p576.py
-adapters/           one file per register: fdic, ncua, snap, epa_ust, cms, nces, nppes,
-                    irs, abc_ca, abca_dc, sla_ny, tabc_tx, abt_fl, dbpr_fl_food; sirene.sh for
-                    France
+adapters/           one file per register. Federal: fdic, ncua, snap, epa_ust,
+                    cms, nces, nppes, irs. State and city: abc_ca, abca_dc,
+                    sla_ny, tabc_tx, abt_fl, dbpr_fl_food, dohmh_nyc,
+                    cdph_chicago. France: sirene.sh
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests
 reports/            numbers from the last build of each region
