@@ -122,8 +122,8 @@
 │ open    │ atp            │   4428 │
 │ open    │ cms_hospitals  │     50 │
 │ open    │ fdic_locations │    665 │
-│ open    │ irs_eo         │    638 │
-│ open    │ nces_schools   │    612 │
+│ open    │ irs_eo         │    637 │
+│ open    │ nces_schools   │    613 │
 │ open    │ ncua_branches  │    127 │
 │ open    │ nppes_orgs     │    631 │
 │ open    │ osm_check_date │    400 │
