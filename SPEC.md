@@ -253,6 +253,8 @@ rows are the same place.
 | DC Basic Business Licenses | number | 25 of 25 | geocoded; only the licenses that carry a trade name and are not housing |
 | Chicago business licenses, live and cancelled | number | 40 of 40 | live licenses matched 10,100 places in the box |
 | Philadelphia business licenses | number | 20 of 20 | company-held food, vehicle and child care licenses only |
+| Seattle business licenses | number | 40 of 40 | storefront industry codes only; 6,200 places in a Seattle box gained a status |
+| Denver business licenses | number | 40 of 40 | food, liquor, tobacco, marijuana, repair and lodging licenses, geocoded |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -435,6 +437,8 @@ signal at all.
 | bacp_chicago | open | day the dataset was last updated, unexpired issued licenses only | matcher |
 | bacp_chicago_cancelled | closed | day the license status changed to cancelled | matcher; places with no brand only, and only when the site has no live license |
 | li_phl | open | day the file was read, active company-held licenses | matcher |
+| biz_seattle | open | day the layer was last edited, active locations in storefront trades | matcher |
+| biz_denver | open | the layer's report date, active licenses | matcher, positions from the Census geocoder |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |

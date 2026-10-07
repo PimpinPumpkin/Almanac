@@ -64,7 +64,8 @@ Salons, repair shops, small retail. 84% of all rows, 6% with a status.
   and jewelry stores now have a status. Also done: Delaware's business
   license list, which took the whole state from 8% of places with a status
   to 19%, Pennsylvania's retail sales licenses, and Chicago's business
-  licenses, whose cancellations also work as closures. Next: any other state
+  licenses, whose cancellations also work as closures, and city business
+  licenses for DC, Philadelphia, Sacramento, Seattle and Denver. Next: any other state
   that publishes active permits or licenses.
 - **2.4 State inspection and emissions station lists.**
 - **2.5 Geocode the address-only registers.** Done for California and Texas

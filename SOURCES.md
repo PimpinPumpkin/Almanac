@@ -186,6 +186,27 @@ adapter is merged. If a source states no license, the entry says so.
   child care, tire and precious metal businesses (open), with positions.
 - Privacy: rental licenses and licenses held by individuals are not read.
 
+### City of Seattle, business license locations
+- License: none stated beyond an accuracy disclaimer. City public record;
+  rows it touches are marked `none-stated`.
+- Fetched from: `https://services.arcgis.com/ZOyb2t4B0UYuYNYH/arcgis/rest/services/Seattle_Business_License/FeatureServer/0`
+- Used for: active business locations in retail, food and lodging,
+  recreation, and repair and personal services (open), with positions.
+- Privacy: the file covers every business in the city, home businesses
+  included. Only storefront industry codes are read, only the trade name
+  and location address, never the contact fields, and nothing creates a
+  place from it.
+
+### City and County of Denver, active business licenses
+- License: none stated on the layer. City public record; rows it touches
+  are marked `none-stated`.
+- Fetched from: `https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_active_business_licenses/FeatureServer/42`
+- Used for: active licenses for food, liquor, tobacco and marijuana stores,
+  repair garages, lodging, body art, kennels and similar (open), with
+  positions from the Census geocoder.
+- Privacy: residential and short-term rental licenses, four fifths of the
+  file, are not read.
+
 ### Pennsylvania Department of Revenue, sales tax licenses
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.pa.gov/resource/ugeq-ckxd.json`

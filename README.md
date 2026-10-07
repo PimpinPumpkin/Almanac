@@ -140,7 +140,7 @@ adapters/           one file per register. Federal: fdic, ncua, snap, epa_ust,
                     kc_wa_food, dmv_ny, dos_ny_salons, dohmh_nyc,
                     cdph_chicago, bacp_chicago, agm_ny, dcwp_nyc, dph_de,
                     moco_md, bot_sac, emd_sac, lou_food, abc_ky_jefferson,
-                    li_phl. France: sirene.sh
+                    li_phl, biz_seattle, biz_denver. France: sirene.sh
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests
 reports/            numbers from the last build of each region
