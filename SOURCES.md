@@ -269,6 +269,31 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: unexpired repair shop, inspection station and dealer
   registrations (open), with positions. The owner's name is not read.
 
+### City of Sacramento, Business Operation Tax accounts
+- License: none stated on the layer. City public record; rows it touches
+  are marked `none-stated`.
+- Fetched from: `https://services5.arcgis.com/54falWtcpty3V47Z/arcgis/rest/services/account_data_with_header_NEW/FeatureServer/0`
+- Used for: active accounts (open), with positions from the Census
+  geocoder. Close dates are not used; see SPEC.md section 9.
+- Privacy: owner and mailing fields are not read, and nothing creates a
+  place from this source.
+
+### Sacramento County, food facility inspections
+- License: none stated on the layer. County public record; rows it touches
+  are marked `none-stated`.
+- Fetched from: `https://services1.arcgis.com/5NARefyPVtAeuJPU/arcgis/rest/services/Food_Inspections/FeatureServer/0`
+- Used for: food facilities by most recent inspection (open), with
+  positions. Also mints missing places.
+
+### Louisville Metro, Kentucky, restaurant inspections and ABC licenses
+- License: none stated on the layers. Louisville Metro Open Data; rows
+  they touch are marked `none-stated`.
+- Fetched from: `https://services1.arcgis.com/79kfd2K6fskCAkyg/arcgis/rest/services/FoodServiceData/FeatureServer/0`
+  and `.../ABC_State_ActiveLicenses/FeatureServer/0`
+- Used for: food establishments by newest inspection (open, geocoded), and
+  active state alcohol licenses in Jefferson County (open, with positions,
+  also mints missing places).
+
 ### District of Columbia, Basic Business Licenses
 - License: CC-BY-4.0, as stated on opendata.dc.gov. Attribution is in NOTICE.
 - Fetched from: `https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/FeatureServer/0`

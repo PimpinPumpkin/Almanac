@@ -181,8 +181,9 @@ looser cases are rejected, section 9.
 **Places minted from a register.** Some registers list the storefront
 itself: FDIC branches, SNAP authorized stores, DC and New York licensed
 premises, New York City and Chicago inspected food businesses, New York
-salons, barber shops, repair shops, dealers and food stores, and Delaware
-inspected food establishments. A row
+salons, barber shops, repair shops, dealers and food stores, Delaware and
+Sacramento County inspected food establishments, and Jefferson County,
+Kentucky licensed premises. A row
 from one of them becomes a new place when it is open, has a position,
 matched no place, and no listed place within 80 m has a similar name
 (leading words, Jaro-Winkler 0.7 or more, or same house number and same
@@ -244,6 +245,10 @@ rows are the same place.
 | New York City DCWP licensed businesses | number | 15 of 15 | |
 | Delaware food inspections | number | 14 of 15 (Delaware) | the miss is a school's wellness center taking the school's inspection |
 | Montgomery County food inspections | number | 15 of 15 (the Maryland part of the DC box) | geocoded |
+| Sacramento business tax accounts | number | 15 of 15 (Sacramento) | geocoded |
+| Sacramento County food inspections | number | 15 of 15 (Sacramento) | |
+| Louisville food inspections | number | 15 of 15 (Kentucky) | geocoded |
+| Jefferson County, Kentucky alcohol licenses | number | 15 of 15 (Kentucky) | |
 | DC Basic Business Licenses | number | 25 of 25 | geocoded; only the licenses that carry a trade name and are not housing |
 | Chicago business licenses, live and cancelled | number | 40 of 40 | live licenses matched 10,100 places in the box |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
@@ -345,10 +350,11 @@ evidence and a confidence of 0.80 or more takes that confidence as its
 
 ### Why most "ended" lists fail and two pass
 
-Eight registers that record an ended license, permit or registration were
-tested as closures. Six failed: SNAP end dates, French register closures,
-Texas ended alcohol licenses, Texas sales tax out-of-business dates, Oregon
-expired licenses, and fuel tank removals. In each, the paperwork ends when
+Nine registers that record an ended license, permit or registration were
+tested as closures. Seven failed: SNAP end dates, French register
+closures, Texas ended alcohol licenses, Texas sales tax out-of-business
+dates, Oregon expired licenses, Sacramento business tax close dates, and
+fuel tank removals. In each, the paperwork ends when
 an owner or legal entity changes and the shop carries on.
 
 Two pass, both limited to places with no brand: DC alcohol license
@@ -419,6 +425,10 @@ signal at all.
 | dcwp_nyc | open | day the dataset was last updated, active premises licenses only | matcher |
 | dph_de | open | day of the establishment's newest inspection | matcher |
 | moco_md | open | day of the newest inspection that ended in a pass or fail | matcher, positions from the Census geocoder |
+| bot_sac | open | day the layer was last edited, active accounts only | matcher, positions from the Census geocoder |
+| emd_sac | open | day of the facility's most recent inspection | matcher |
+| lou_food | open | day of the establishment's newest inspection | matcher, positions from the Census geocoder |
+| abc_ky_jefferson | open | day the layer was last edited | matcher |
 | bbl_dc | open | day the data was refreshed, active licenses with a trade name | matcher, positions from the Census geocoder |
 | bacp_chicago | open | day the dataset was last updated, unexpired issued licenses only | matcher |
 | bacp_chicago_cancelled | closed | day the license status changed to cancelled | matcher; places with no brand only, and only when the site has no live license |
@@ -516,6 +526,7 @@ evidence from a different source for the same place.
 | Chicago "Out of Business" inspections, for every place | Chicago box, places with no later inspection: independent open 63, closed 187. Split by whether the place carries a brand: chains open 36, closed 3; independents open 27, closed 184. | A chain outlet changes franchisee and license and carries on. The closure is kept for places with no brand only. The same limit now applies to DC license cancellations, which went from 8 open and 54 closed to 1 and 73. |
 | Oregon: an expired on-premises alcohol license means closed | Portland box, places with no brand and no live license under the same name: independent open 6, closed 26. | 81% on a small sample is below the signals that are kept (87% and up). Not emitted. |
 | Texas Comptroller out-of-business dates for sales tax locations | Houston box, places with no brand and no live permit under the same name: independent open 87, closed 85. | The date marks one taxpayer leaving; the shop often carries on under the next. Not emitted. Live permits are good open evidence: of 13,980 places with one, other sources called 79 closed and 5,053 open. |
+| City of Sacramento close dates on business tax accounts | Sacramento box, places with no brand and no active account under the same name: independent open 33, closed 33. | Not emitted. |
 | Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
 
 Carried over from earlier work and not retested: website liveness, and
