@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1392 │
-│ open    │  11699 │
-│ unknown │  50483 │
+│ open    │  11835 │
+│ unknown │  50347 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    894 │
-│ open    │   9317 │
-│ unknown │  48337 │
+│ open    │   9458 │
+│ unknown │  48196 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -60,10 +60,12 @@
 │ abt_fl         │ open    │      16 │       0 │
 │ bbl_dc         │ open    │      24 │       0 │
 │ biz_seattle    │ open    │   20806 │    6542 │
+│ childcare_wa   │ open    │     392 │     147 │
 │ cms_hospitals  │ open    │      44 │       5 │
 │ dbpr_fl_food   │ open    │      23 │       0 │
 │ dcwp_nyc       │ open    │       3 │       0 │
 │ dohmh_nyc      │ open    │      14 │       0 │
+│ dol_wa         │ open    │     254 │     100 │
 │ epa_ust_open   │ open    │     260 │      93 │
 │ fdic_history   │ closed  │     146 │      69 │
 │ fdic_locations │ open    │     165 │     158 │
@@ -73,13 +75,15 @@
 │ ncua_branches  │ open    │     245 │      18 │
 │ nppes_orgs     │ open    │   21341 │    1244 │
 │ rev_pa         │ open    │       8 │       0 │
+│ rev_pa_tobacco │ open    │       2 │       0 │
 │ sla_ny         │ open    │       1 │       0 │
 │ snap_current   │ open    │     410 │     342 │
 │ snap_history   │ open    │     425 │     292 │
 │ tabc_tx        │ open    │      18 │       0 │
+│ tax_ny_tobacco │ open    │       2 │       0 │
 │ tdlr_tx        │ open    │     120 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  22 rows                            4 columns
+  26 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -92,22 +96,22 @@
 │ biz_seattle    │ open    │ near    │   102 │    100 │
 │ biz_seattle    │ open    │ number  │  7129 │   6024 │
 │ biz_seattle    │ open    │ spot    │    98 │     95 │
+│ childcare_wa   │ open    │ address │     2 │      2 │
+│ childcare_wa   │ open    │ number  │   144 │    142 │
+│ childcare_wa   │ open    │ spot    │     2 │      2 │
 │ cms_hospitals  │ open    │ address │    11 │     11 │
+│ dol_wa         │ open    │ address │     1 │      1 │
+│ dol_wa         │ open    │ near    │     1 │      1 │
+│ dol_wa         │ open    │ number  │   103 │     92 │
 │ epa_ust_open   │ open    │ near    │     4 │      4 │
 │ epa_ust_open   │ open    │ number  │    95 │     95 │
 │ fdic_history   │ closed  │ near    │     2 │      2 │
 │ fdic_history   │ closed  │ number  │    74 │     71 │
 │ fdic_history   │ closed  │ spot    │     1 │      1 │
 │ fdic_locations │ open    │ near    │     1 │      1 │
-│ fdic_locations │ open    │ number  │   166 │    164 │
-│ fdic_locations │ open    │ self    │     7 │      7 │
-│ fsq_closed     │ closed  │ id      │   852 │    852 │
-│ irs_eo         │ open    │ address │   863 │    833 │
-│ kc_wa_food     │ open    │ address │    45 │     39 │
-│ kc_wa_food     │ open    │ near    │    51 │     42 │
-│     ·          │  ·      │  ·      │     · │      · │
-│     ·          │  ·      │  ·      │     · │      · │
-│     ·          │  ·      │  ·      │     · │      · │
+│      ·         │  ·      │  ·      │     · │      · │
+│      ·         │  ·      │  ·      │     · │      · │
+│      ·         │  ·      │  ·      │     · │      · │
 │ nces_schools   │ open    │ spot    │     1 │      1 │
 │ ncua_branches  │ open    │ address │    19 │     18 │
 │ nppes_orgs     │ open    │ address │  1673 │   1062 │
@@ -129,7 +133,7 @@
 │ snap_history   │ open    │ spot    │     3 │      3 │
 │ wikidata_p576  │ closed  │ self    │     4 │      4 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  44 rows (40 shown)                        5 columns
+  50 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -140,21 +144,23 @@
 │ closed  │ osm_history    │    279 │
 │ closed  │ osm_lifecycle  │    240 │
 │ closed  │ wikidata_p576  │      3 │
-│ open    │ atp            │   1587 │
+│ open    │ atp            │   1585 │
 │ open    │ biz_seattle    │   6216 │
+│ open    │ childcare_wa   │    140 │
 │ open    │ cms_hospitals  │     11 │
+│ open    │ dol_wa         │     42 │
 │ open    │ epa_ust_open   │     40 │
 │ open    │ fdic_locations │    171 │
-│ open    │ irs_eo         │    525 │
-│ open    │ kc_wa_food     │    973 │
+│ open    │ irs_eo         │    503 │
+│ open    │ kc_wa_food     │    969 │
 │ open    │ nces_schools   │     25 │
 │ open    │ ncua_branches  │      6 │
 │ open    │ nppes_orgs     │    162 │
-│ open    │ osm_check_date │   1835 │
+│ open    │ osm_check_date │   1817 │
 │ open    │ snap_current   │    140 │
 │ open    │ snap_history   │      8 │
 └─────────┴────────────────┴────────┘
-  18 rows                 3 columns
+  20 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -173,11 +179,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    163 │
-│ (none)             │ open    │   1316 │
-│ (none)             │ unknown │   9833 │
+│ (none)             │ open    │   1332 │
+│ (none)             │ unknown │   9817 │
 │ open               │ closed  │   1084 │
-│ open               │ open    │   8453 │
-│ open               │ unknown │  34050 │
+│ open               │ open    │   8567 │
+│ open               │ unknown │  33936 │
 │ permanently_closed │ closed  │     38 │
 │ permanently_closed │ open    │     57 │
 │ permanently_closed │ unknown │   3092 │

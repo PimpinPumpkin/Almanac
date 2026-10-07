@@ -1,0 +1,169 @@
+== places in
+┌──────────┬──────────────┬───────┬─────────────────────┐
+│ overture │ alltheplaces │  osm  │ osm_closed_features │
+│  int64   │    int64     │ int64 │        int64        │
+├──────────┼──────────────┼───────┼─────────────────────┤
+│    10097 │          420 │  1851 │                   9 │
+└──────────┴──────────────┴───────┴─────────────────────┘
+== merged (rows that joined an existing place, by rule)
+┌──────────────────────────┬───────────────────┬───────┐
+│           step           │       rule        │ rows  │
+│         varchar          │      varchar      │ int64 │
+├──────────────────────────┼───────────────────┼───────┤
+│ alltheplaces -> overture │ near              │     8 │
+│ alltheplaces -> overture │ number            │   358 │
+│ osm -> core              │ near              │   455 │
+│ osm -> core              │ number            │   503 │
+│ osm -> core              │ spot              │    20 │
+│ overture duplicates      │ number, same name │    26 │
+└──────────────────────────┴───────────────────┴───────┘
+== places out
+┌───────┬───────┬──────────┬──────────┬────────────────┐
+│ core  │ full  │ osm_only │ atp_only │ from_registers │
+│ int64 │ int64 │  int64   │  int64   │     int64      │
+├───────┼───────┼──────────┼──────────┼────────────────┤
+│ 10183 │ 11056 │      873 │       54 │             58 │
+└───────┴───────┴──────────┴──────────┴────────────────┘
+== places minted from a register
+┌────────────────┬────────┐
+│     source     │ places │
+│    varchar     │ int64  │
+├────────────────┼────────┤
+│ fdic_locations │      5 │
+│ snap_current   │     53 │
+└────────────────┴────────┘
+== status, full layer
+┌─────────┬────────┐
+│ status  │ places │
+│ varchar │ int64  │
+├─────────┼────────┤
+│ closed  │     67 │
+│ open    │   1210 │
+│ unknown │   9779 │
+└─────────┴────────┘
+== status, core layer (no OSM)
+┌─────────┬────────┐
+│ status  │ places │
+│ varchar │ int64  │
+├─────────┼────────┤
+│ closed  │     54 │
+│ open    │   1153 │
+│ unknown │   8976 │
+└─────────┴────────┘
+== register records in the box and how many found a place
+┌────────────────┬─────────┬─────────┬─────────┐
+│     source     │  state  │ records │ matched │
+│    varchar     │ varchar │  int64  │  int64  │
+├────────────────┼─────────┼─────────┼─────────┤
+│ abc_ca         │ open    │       1 │       0 │
+│ cms_hospitals  │ open    │      15 │       3 │
+│ dcwp_nyc       │ open    │       2 │       0 │
+│ dmv_ct         │ open    │     308 │     154 │
+│ dmv_ny         │ open    │       5 │       0 │
+│ elicense_ct    │ open    │    1027 │     506 │
+│ epa_ust_open   │ open    │     123 │      16 │
+│ fdic_history   │ closed  │      42 │       9 │
+│ fdic_locations │ open    │      31 │      31 │
+│ irs_eo         │ open    │    4981 │     120 │
+│ nces_schools   │ open    │      66 │      48 │
+│ ncua_branches  │ open    │      84 │       3 │
+│ nppes_orgs     │ open    │    8427 │     303 │
+│ rev_pa         │ open    │       7 │       0 │
+│ snap_current   │ open    │     180 │     132 │
+│ snap_history   │ open    │     177 │      89 │
+│ tax_ny_tobacco │ open    │       2 │       0 │
+└────────────────┴─────────┴─────────┴─────────┘
+  17 rows                            4 columns
+== evidence by source and rule (places is distinct places)
+┌────────────────┬─────────┬─────────┬───────┬────────┐
+│     source     │  state  │  rule   │ rows  │ places │
+│    varchar     │ varchar │ varchar │ int64 │ int64  │
+├────────────────┼─────────┼─────────┼───────┼────────┤
+│ atp            │ open    │ near    │     8 │      8 │
+│ atp            │ open    │ number  │   356 │    319 │
+│ atp            │ open    │ self    │    53 │     53 │
+│ cms_hospitals  │ open    │ address │     5 │      5 │
+│ dmv_ct         │ open    │ near    │     5 │      3 │
+│ dmv_ct         │ open    │ number  │   149 │    144 │
+│ dmv_ct         │ open    │ spot    │     5 │      5 │
+│ elicense_ct    │ open    │ address │     8 │      8 │
+│ elicense_ct    │ open    │ near    │     9 │      9 │
+│ elicense_ct    │ open    │ number  │   488 │    440 │
+│ elicense_ct    │ open    │ spot    │    13 │     13 │
+│ epa_ust_open   │ open    │ near    │    10 │     10 │
+│ epa_ust_open   │ open    │ number  │     6 │      6 │
+│ epa_ust_open   │ open    │ spot    │     1 │      1 │
+│ fdic_history   │ closed  │ near    │     1 │      1 │
+│ fdic_history   │ closed  │ number  │     8 │      8 │
+│ fdic_locations │ open    │ number  │    26 │     26 │
+│ fdic_locations │ open    │ self    │     5 │      5 │
+│ fsq_closed     │ closed  │ id      │    47 │     47 │
+│ irs_eo         │ open    │ address │   125 │    120 │
+│ nces_schools   │ open    │ near    │     3 │      3 │
+│ nces_schools   │ open    │ number  │    44 │     44 │
+│ nces_schools   │ open    │ spot    │     1 │      1 │
+│ ncua_branches  │ open    │ address │     4 │      4 │
+│ nppes_orgs     │ open    │ address │   324 │    264 │
+│ osm_check_date │ open    │ near    │    12 │     12 │
+│ osm_check_date │ open    │ number  │    44 │     44 │
+│ osm_check_date │ open    │ self    │    19 │     19 │
+│ osm_check_date │ open    │ spot    │     1 │      1 │
+│ osm_history    │ closed  │ id      │     4 │      4 │
+│ osm_lifecycle  │ closed  │ number  │     3 │      3 │
+│ osm_lifecycle  │ closed  │ self    │     6 │      6 │
+│ snap_current   │ open    │ near    │     3 │      3 │
+│ snap_current   │ open    │ number  │    81 │     81 │
+│ snap_current   │ open    │ self    │    53 │     53 │
+│ snap_history   │ open    │ near    │     4 │      4 │
+│ snap_history   │ open    │ number  │    90 │     90 │
+└────────────────┴─────────┴─────────┴───────┴────────┘
+  37 rows                                   5 columns
+== what decided the status
+┌─────────┬────────────────┬────────┐
+│ status  │ status_source  │ places │
+│ varchar │    varchar     │ int64  │
+├─────────┼────────────────┼────────┤
+│ closed  │ fdic_history   │      9 │
+│ closed  │ fsq_closed     │     46 │
+│ closed  │ osm_history    │      4 │
+│ closed  │ osm_lifecycle  │      8 │
+│ open    │ atp            │    291 │
+│ open    │ cms_hospitals  │      4 │
+│ open    │ dmv_ct         │    152 │
+│ open    │ elicense_ct    │    467 │
+│ open    │ epa_ust_open   │      9 │
+│ open    │ fdic_locations │     31 │
+│ open    │ irs_eo         │     89 │
+│ open    │ nces_schools   │     48 │
+│ open    │ ncua_branches  │      2 │
+│ open    │ nppes_orgs     │     30 │
+│ open    │ osm_check_date │     13 │
+│ open    │ snap_current   │     68 │
+│ open    │ snap_history   │      6 │
+└─────────┴────────────────┴────────┘
+  17 rows                 3 columns
+== closing signals against independent evidence
+== (says_open_after: a different source saw the place open after the closing date)
+┌───────────────┬────────┬─────────────────┬─────────────────┐
+│    source     │ places │ says_open_after │ says_closed_too │
+│    varchar    │ int64  │      int64      │      int64      │
+├───────────────┼────────┼─────────────────┼─────────────────┤
+│ fdic_history  │      9 │               0 │               0 │
+│ fsq_closed    │     47 │               1 │               0 │
+│ osm_history   │      4 │               0 │               0 │
+│ osm_lifecycle │      9 │               1 │               0 │
+└───────────────┴────────┴─────────────────┴─────────────────┘
+== Overture operating_status against our status
+┌────────────────────┬─────────┬────────┐
+│  overture_status   │ status  │ places │
+│      varchar       │ varchar │ int64  │
+├────────────────────┼─────────┼────────┤
+│ (none)             │ closed  │     12 │
+│ (none)             │ open    │    150 │
+│ (none)             │ unknown │   2327 │
+│ open               │ closed  │     47 │
+│ open               │ open    │    899 │
+│ open               │ unknown │   6376 │
+│ permanently_closed │ closed  │      1 │
+│ permanently_closed │ unknown │    259 │
+└────────────────────┴─────────┴────────┘

@@ -222,6 +222,39 @@ adapter is merged. If a source states no license, the entry says so.
 - Not used: Colorado's tobacco license list (`data.colorado.gov` ejz2-rwds).
   On 2026-10-07 one of its 4,910 rows had an expiry date still ahead.
 
+### Connecticut state licenses and DMV dealers and repairers
+- License: public domain, as stated on both datasets.
+- Fetched from: `https://data.ct.gov/resource/ngch-56tr.json`,
+  `https://data.ct.gov/resource/apne-w8c6.json`
+- Used for: active shop-front license types (liquor, bakeries, dairy
+  stores, pharmacies, vapor dealers, lottery agents, gasoline dealers,
+  child care centers, funeral homes, health clubs, kennels, opticians) and
+  unexpired dealer, repairer and recycler licenses (open).
+- Privacy: of 2.7 million credentials only business license types are
+  read. The DMV list has people's names among its trading names, so
+  nothing creates a place from it.
+
+### City of New Orleans, active occupational licenses
+- License: CC0, as stated on the dataset.
+- Fetched from: `https://data.nola.gov/resource/iqay-p646.json`
+- Used for: businesses with an active license (open), with positions.
+- Privacy: home-based, driver and street vendor trades are not read, nor
+  the owner name and phone columns, and nothing creates a place from it.
+
+### Washington vehicle dealers and child care centers
+- License: dealers under the Open Database License, as stated on the
+  dataset; child care list states none and is marked `none-stated`.
+- Fetched from: `https://data.wa.gov/resource/ucdg-xgbj.json`,
+  `https://data.wa.gov/resource/was8-3ni8.json`
+- Used for: active dealer licenses and active child care centers (open).
+- Privacy: the contact person, phone and email columns are not read.
+
+### Colorado licensed child care facilities
+- License: Open Data Commons Public Domain Dedication and License.
+- Fetched from: `https://data.colorado.gov/resource/a9rr-k8mu.json`
+- Used for: centers, preschools and school-age programs (open).
+- Privacy: family child care homes are not read.
+
 ### Pennsylvania Department of Revenue, sales tax licenses
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.pa.gov/resource/ugeq-ckxd.json`

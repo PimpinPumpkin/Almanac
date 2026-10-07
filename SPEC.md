@@ -258,6 +258,12 @@ rows are the same place.
 | New York tobacco retailers | number | 40 of 40 | registrant names, so only a quarter find a place |
 | Pennsylvania tobacco licenses | number | 39 of 40 | the miss is a pharmacy counter taking the store's license |
 | Texas tobacco retailers | number | 40 of 40 (Houston) | geocoded |
+| Connecticut state licenses | number | 40 of 40 (Bridgeport) | liquor, bakeries, pharmacies, lottery agents and similar, geocoded |
+| Connecticut dealers and repairers | number | 40 of 40 (Bridgeport) | one row per trading name of a license |
+| New Orleans occupational licenses | number | 40 of 40 | home, driver and street vendor trades left out |
+| Washington vehicle dealers | number | 40 of 40 (Seattle) | geocoded |
+| Washington child care centers | number | 40 of 40 (Seattle) | geocoded |
+| Colorado child care centers | number | 40 of 40 (Denver) | family homes left out, geocoded |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -445,6 +451,12 @@ signal at all.
 | tax_ny_tobacco | open | day the dataset was last updated | matcher |
 | rev_pa_tobacco | open | day the dataset was last updated, unexpired retail licenses only | matcher |
 | cpa_tx_tobacco | open | day the dataset was last updated | matcher, positions from the Census geocoder |
+| elicense_ct | open | day the dataset was last updated, active unexpired shop-front license types | matcher, positions from the Census geocoder |
+| dmv_ct | open | day the dataset was last updated, unexpired dealer, repairer and recycler licenses | matcher |
+| biz_nola | open | day the dataset was last updated | matcher |
+| dol_wa | open | day the dataset was last updated, active dealer licenses | matcher, positions from the Census geocoder |
+| childcare_wa | open | day the dataset was last updated, active centers | matcher, positions from the Census geocoder |
+| childcare_co | open | day the dataset was last updated, centers and preschools | matcher, positions from the Census geocoder |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |

@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    852 │
-│ open    │   7257 │
-│ unknown │  76050 │
+│ open    │   7388 │
+│ unknown │  75919 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    628 │
-│ open    │   6705 │
-│ unknown │  72583 │
+│ open    │   6832 │
+│ unknown │  72456 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌──────────────────┬─────────┬─────────┬─────────┐
@@ -62,8 +62,10 @@
 │ biz_denver       │ open    │    4367 │    3039 │
 │ bot_sac          │ open    │       3 │       0 │
 │ cdph_chicago_oob │ closed  │       1 │       0 │
+│ childcare_co     │ open    │     628 │     179 │
 │ cms_hospitals    │ open    │      57 │       7 │
 │ cpa_tx           │ open    │     114 │       0 │
+│ cpa_tx_tobacco   │ open    │       6 │       0 │
 │ dbpr_fl_food     │ open    │      52 │       0 │
 │ dcwp_nyc         │ open    │       4 │       0 │
 │ dmv_ny           │ open    │       2 │       0 │
@@ -82,9 +84,10 @@
 │ snap_current     │ open    │     466 │     416 │
 │ snap_history     │ open    │     478 │     369 │
 │ tabc_tx          │ open    │      33 │       0 │
+│ tax_ny_tobacco   │ open    │       3 │       0 │
 │ tdlr_tx          │ open    │      27 │       0 │
 └──────────────────┴─────────┴─────────┴─────────┘
-  27 rows                              4 columns
+  30 rows                              4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -98,6 +101,9 @@
 │ biz_denver     │ open    │ near    │    24 │     22 │
 │ biz_denver     │ open    │ number  │  3062 │   2523 │
 │ biz_denver     │ open    │ spot    │    20 │     19 │
+│ childcare_co   │ open    │ address │     2 │      2 │
+│ childcare_co   │ open    │ number  │   180 │    172 │
+│ childcare_co   │ open    │ spot    │     1 │      1 │
 │ cms_hospitals  │ open    │ address │    10 │     10 │
 │ epa_ust_open   │ open    │ near    │     3 │      3 │
 │ epa_ust_open   │ open    │ number  │   189 │    188 │
@@ -107,12 +113,9 @@
 │ fdic_history   │ closed  │ spot    │     1 │      1 │
 │ fdic_locations │ open    │ near    │     1 │      1 │
 │ fdic_locations │ open    │ number  │   180 │    180 │
-│ fdic_locations │ open    │ self    │    29 │     29 │
-│ fdic_locations │ open    │ spot    │     1 │      1 │
-│ fsq_closed     │ closed  │ id      │   585 │    585 │
-│     ·          │  ·      │ ·       │     · │      · │
-│     ·          │  ·      │ ·       │     · │      · │
-│     ·          │  ·      │ ·       │     · │      · │
+│      ·         │  ·      │  ·      │     · │      · │
+│      ·         │  ·      │  ·      │     · │      · │
+│      ·         │  ·      │  ·      │     · │      · │
 │ nces_schools   │ open    │ spot    │     2 │      2 │
 │ ncua_branches  │ open    │ address │    34 │     34 │
 │ nppes_orgs     │ open    │ address │  2385 │   1825 │
@@ -134,7 +137,7 @@
 │ snap_history   │ open    │ spot    │     2 │      2 │
 │ wikidata_p576  │ closed  │ self    │     1 │      1 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  47 rows (40 shown)                        5 columns
+  50 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -145,21 +148,22 @@
 │ closed  │ osm_history    │    186 │
 │ closed  │ osm_lifecycle  │     55 │
 │ closed  │ wikidata_p576  │      1 │
-│ open    │ atp            │   1940 │
+│ open    │ atp            │   1934 │
 │ open    │ biz_denver     │   2608 │
+│ open    │ childcare_co   │    173 │
 │ open    │ cms_hospitals  │      6 │
 │ open    │ epa_ust_open   │     72 │
 │ open    │ fdic_locations │    211 │
-│ open    │ irs_eo         │    752 │
-│ open    │ led_co         │    589 │
-│ open    │ nces_schools   │    194 │
+│ open    │ irs_eo         │    726 │
+│ open    │ led_co         │    588 │
+│ open    │ nces_schools   │    186 │
 │ open    │ ncua_branches  │     18 │
 │ open    │ nppes_orgs     │    325 │
-│ open    │ osm_check_date │    385 │
+│ open    │ osm_check_date │    384 │
 │ open    │ snap_current   │    143 │
 │ open    │ snap_history   │     14 │
 └─────────┴────────────────┴────────┘
-  18 rows                 3 columns
+  19 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -178,12 +182,12 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    148 │
-│ (none)             │ open    │    886 │
-│ (none)             │ unknown │  15873 │
+│ (none)             │ open    │    905 │
+│ (none)             │ unknown │  15854 │
 │ open               │ closed  │    645 │
-│ open               │ open    │   5622 │
-│ open               │ unknown │  51853 │
+│ open               │ open    │   5727 │
+│ open               │ unknown │  51748 │
 │ permanently_closed │ closed  │     16 │
-│ permanently_closed │ open    │     28 │
-│ permanently_closed │ unknown │   4450 │
+│ permanently_closed │ open    │     30 │
+│ permanently_closed │ unknown │   4448 │
 └────────────────────┴─────────┴────────┘
