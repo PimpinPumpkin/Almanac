@@ -27,7 +27,7 @@ jobs:
       - name: Every adapter is listed in SOURCES.md
         run: |
           missing=0
-          for f in adapters/*; do
+          for f in adapters/*.py adapters/*.sh; do
             name="$(basename "$f" | sed 's/\..*//')"
             grep -qi "$name\|$(echo "$name" | tr _ ' ')" SOURCES.md README.md || { echo "not documented: $name"; missing=1; }
           done
