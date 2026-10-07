@@ -18,16 +18,22 @@ create or replace macro license_of(source) as
 --   same, but it overrode an
 --   older closing record          0.80 * 0.90 ^ years
 --   no evidence                   0.75, or 0.30 when Overture says permanently_closed
+--                                 or when missing_license is true
 -- A stale open record never scores below the no-evidence value.
-create or replace macro open_score(status, status_date, conflict, overture_status, build_date) as
+create or replace macro open_score(status, status_date, conflict, overture_status, missing_license, build_date) as
   round(case
     when status = 'closed' then 0.10
     when status_date is not null then greatest(
       case when conflict then 0.80 else 0.97 end * pow(0.90, greatest(build_date - status_date, 0) / 365.25),
       case when conflict then 0.50 else 0.75 end)
-    when overture_status = 'permanently_closed' then 0.30
+    when overture_status = 'permanently_closed' or missing_license then 0.30
     else 0.75
   end, 2);
+
+-- States whose active alcohol license list is complete and carries positions,
+-- so that finding no license for a bar means something. See SPEC.md section 7.
+create or replace table license_list as
+  select * from (values ('DC', 'abca_dc_active')) t(region, source);
 
 create or replace macro published(place, member, status) as table (
   with m as (
@@ -40,7 +46,8 @@ create or replace macro published(place, member, status) as table (
          p.address, p.city, p.region, p.postcode, p.phone, p.website,
          coalesce(s.status, 'unknown') as status, s.status_date, s.status_source,
          open_score(coalesce(s.status, 'unknown'), s.status_date, coalesce(s.conflict, false),
-                    p.overture_status, (select build_date from params)) as open_score,
+                    p.overture_status, coalesce(ml.missing, false), (select build_date from params)) as open_score,
+         ml.missing as missing_license,
          p.overture_status,
          m.sources,
          list_sort(list_distinct(
@@ -53,6 +60,15 @@ create or replace macro published(place, member, status) as table (
   from query_table(place) p
   join m on m.place_id = p.id
   left join query_table(status) s on s.place_id = p.id
+  -- true: a bar in a state with a license list, and no active license matched it.
+  -- null: the question does not apply to this place.
+  left join (
+    select p2.id, not exists (
+             select 1 from query_table(status) s2, unnest(s2.evidence) as u(e)
+             where s2.place_id = p2.id and u.e.source = l.source) as missing
+    from query_table(place) p2 join license_list l on l.region = p2.region
+    where needs_alcohol_license(p2.category)
+  ) ml on ml.id = p.id
 );
 
 create or replace table out_core as

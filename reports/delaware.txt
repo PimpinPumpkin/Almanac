@@ -48,6 +48,7 @@
 │     source     │  state  │ records │ matched │
 │    varchar     │ varchar │  int64  │  int64  │
 ├────────────────┼─────────┼─────────┼─────────┤
+│ abc_ca         │ open    │    1026 │       0 │
 │ cms_hospitals  │ open    │      43 │      10 │
 │ fdic_history   │ closed  │     303 │      49 │
 │ fdic_locations │ open    │     335 │     164 │

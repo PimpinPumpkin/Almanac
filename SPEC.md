@@ -42,6 +42,7 @@ Both layers have the same columns.
 | status_date | date | date of the evidence that decided the status |
 | status_source | string | source of that evidence |
 | open_score | double | rough chance the place is open on the build date, 0 to 1, section 7 |
+| missing_license | boolean | true for a bar in a state with a complete license list when no active license matched it. Null where the question does not apply. Section 7. |
 | overture_status | string | Overture's own operating_status, carried as is. It has no date and does not feed status. |
 | sources | list of {source, id} | every source row this place was built from |
 | licenses | list of string | licenses of everything that touched the row |
@@ -228,6 +229,7 @@ evidence. It is a rule of thumb with stated parts, not a fitted model.
 | newest evidence is open | 0.97 x 0.90 ^ years since that date, never below 0.75 |
 | newest evidence is open but it overrode an older closing record | 0.80 x 0.90 ^ years, never below 0.50 |
 | no evidence, Overture says permanently_closed | 0.30 |
+| no evidence, `missing_license` is true | 0.30 |
 | no evidence otherwise | 0.75 |
 
 The 0.90 a year assumes about one business in ten closes each year. The
@@ -248,6 +250,35 @@ what the evidence says and no better than the evidence. The 0.75 for no
 evidence is likely low: among places with no core evidence that OSM can
 speak to, 1,899 were surveyed open and 261 tagged closed (88% open), though
 mappers survey open places more readily than they tag closed ones.
+
+### Missing license
+
+A bar cannot trade without an alcohol license, so in a state whose active
+license list is complete, a bar that matches no license is suspect. Tested
+in the District of Columbia, the one test area with such a list and with
+positions on it.
+
+| bars in DC | places | another source says open | another source says closed |
+| --- | ---: | ---: | ---: |
+| matched an active license | 228 | 32 | 3 |
+| matched none | 560 | 17 | 131 |
+
+Among the bars another source can speak to, no license means closed 89% of
+the time. It is still not used as a closed verdict, for two reasons. The 17
+open ones are real bars the matcher missed: the license is under another
+trade name, or the bar sits inside a hotel or restaurant that holds the
+license. And a sample of 40 unmatched bars with no other evidence held
+several that looked like going concerns of that kind, so the true error
+rate is likely higher than the 11% measured. Checking for another license
+at the same address did not separate the two groups (bars with one: 9 open,
+85 closed).
+
+So the result is a flag and a lower score, not a status: `missing_license`
+is true and `open_score` is 0.30 when there is no other evidence. In DC
+that covers 390 bars. Restaurants and liquor stores are left alone: a
+restaurant can run without a license, and liquor stores showed no signal
+(2 open, 2 closed). California is not on the list because its licenses are
+matched by address and only a quarter find their place.
 
 ### Evidence sources in this version
 

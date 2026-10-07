@@ -9,10 +9,8 @@ or closed on a specific day, and where each record came from.
 
 ## Coverage by category
 
-The goal is the coverage people expect from Google Maps. Google's data cannot
-be read in bulk, so this table does not compare against it. It shows what
-Almanac lists today, how much of that has a dated open or closed record, and
-which public register can close the gap. Counts are from the four test
+What Almanac lists today, how much of it has a dated open or closed record,
+and which public register can close the gap. Counts are from the four test
 regions (a District of Columbia box, a Sacramento box, Delaware and
 Kentucky), 480,000 places in all.
 
@@ -40,9 +38,9 @@ Bars and restaurants are low in the table because two of the four regions
 (Delaware, Kentucky) have no license list yet. Where there is one, it helps
 but does not finish the job: inside the District of Columbia, with the full
 license list loaded, 49% of bars and 42% of restaurants have a status. Most
-of the rest are listings that match no license at all, and many of those
-are probably long gone. Using "no license" as a sign of closure is not
-built or tested.
+of the rest are bar listings that match no license at all. Those get a low
+`open_score` and a `missing_license` flag, not a closed status (SPEC.md
+section 7).
 
 "Next" sources are a plan. None has been fetched or checked yet.
 

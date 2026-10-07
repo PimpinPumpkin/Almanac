@@ -101,3 +101,9 @@ create or replace macro match_address(ta, tb) as table (
     on a.zip = b.zip and a.hn = b.hn and a.sk = b.sk
   where name_sim(a.nn, b.nn) in (1.0, 0.9) or name_sim(a.nn, b.nn) >= 0.95
 );
+
+-- Kinds of place that cannot trade without an alcohol license.
+create or replace macro needs_alcohol_license(category) as
+  category in ('bar', 'pub', 'sports_bar', 'cocktail_bar', 'wine_bar', 'dive_bar', 'lounge', 'beer_bar',
+               'irish_pub', 'gay_bar', 'night_club', 'dance_club', 'hookah_bar', 'gastropub', 'brewery',
+               'amenity=bar', 'amenity=pub', 'amenity=nightclub');
