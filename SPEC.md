@@ -593,6 +593,10 @@ OSM has too few of these trades to compare with:
 | salons and barber shops | 40% | 16% | 5% | too few |
 | auto repair | 43% | 28% | 12% | 21% |
 
+Bars against the liquor license list run the same way: in a New York
+City box 21% of Meta's Overture-only bars hold a license, 4 to 6% of the
+others; in the DC box 14% and 1 to 6%.
+
 So a restaurant that only Overture has, taken from BrightQuery, Foursquare
 or Microsoft, is found by the inspectors about a tenth as often as one a
 mapper has confirmed. For salons and repair shops the gap is smaller but
