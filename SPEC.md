@@ -123,6 +123,10 @@ Rules for adapters:
   the rows from earlier runs. The build does not read held files. The
   scheduled build carries them from one release to the next as
   `held.tar.gz`.
+- The same held folder gets `vanished.csv`: every open record that was in a
+  register file last run and is not in it this run, dated the day it was
+  first missed (`tools/source_watch.py`). Held until it has been tested
+  like any other closure signal.
 - A record is evidence only if it says something about the premises. A
   record that only says something about paperwork is not (see SNAP end dates
   in section 9).

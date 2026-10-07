@@ -16,7 +16,7 @@ for adapter in adapters/*.py; do
   python3 "$adapter" || { echo "FAILED: $adapter"; failed+=("$(basename "$adapter" .py)"); }
 done
 echo "== source watch"
-python3 tools/source_watch.py "$CACHE/evidence" "$CACHE/evidence.prev" "$CACHE/watch/sources.txt" ${failed[@]+"${failed[@]}"}
+python3 tools/source_watch.py "$CACHE/evidence" "$CACHE/evidence.prev" "$CACHE/watch/sources.txt" "$CACHE/held" ${failed[@]+"${failed[@]}"}
 rm -rf "$CACHE/evidence.prev"
 echo "== foursquare closing dates"; signals/fsq_closed.sh >/dev/null
 echo "== alltheplaces";             base/atp.sh us >/dev/null

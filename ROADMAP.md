@@ -129,7 +129,12 @@ Done when "everything else" passes 15% in states with two or more of these.
 - **4.5 Held records.** Done for Missouri's "out of business" list and
   Colorado's expired and surrendered list: each
   build adds the current list to a file that rides along as a release
-  asset (`held.tar.gz`), unused until there is enough to test. Next:
+  asset (`held.tar.gz`), unused until there is enough to test. Also held
+  from 2026-10-07: every record that was on an active register one run and
+  is gone the next, dated the day it was first missed (`vanished.csv`).
+  That is the closure signal with the best chance of working for the long
+  tail, because it sees an ending when it happens. It can be tested from
+  the third monthly build on. Next:
   Florida's weekly emergency closures, and the test itself once a few months have piled up.
 
 ## 5. Readers
