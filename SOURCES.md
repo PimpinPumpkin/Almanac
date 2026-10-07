@@ -133,6 +133,13 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: active premises licenses (open). The list of recently expired
   and surrendered licenses is not used.
 
+### Missouri Division of Alcohol and Tobacco Control, active licenses
+- License: none stated. Missouri public record. Rows it touches are marked
+  `none-stated`.
+- Fetched from: `https://data.mo.gov/resource/yyhn-562y.json`
+- Used for: active premises licenses (open), with positions from the Census
+  geocoder. The file names each license's manager; that field is not read.
+
 ### Florida DBPR, alcoholic beverage licenses
 - License: none stated on the download page. Florida public record. Rows it
   touches are marked `none-stated`.
@@ -203,8 +210,9 @@ Survey of what comes next, in order. None of these has been fetched or
 checked by this project.
 
 - More state alcohol license lists. Found, not yet built: Oregon
-  (data.oregon.gov, srxe-qkm2), Missouri (data.mo.gov, including a list of
-  licenses out of business, nytw-fmz3), Washington (data.wa.gov, 9dee-kzm5).
+  (data.oregon.gov, srxe-qkm2) and Washington (data.wa.gov, 9dee-kzm5).
+  Missouri's "out of business" list (nytw-fmz3) and its new license list
+  (dymb-xy5c) are found but not used yet.
 - Florida also publishes new food licenses and changes of owner by fiscal
   year, and lodging inspections.
 - Health inspections and city business licenses: many city portals state no

@@ -31,7 +31,7 @@ These rules do not change from item to item.
 The categories where a register can make coverage complete.
 
 - **1.1 State alcohol license lists.** One adapter per state. Done:
-  California, Colorado, DC, Florida, New York, Texas. Then Colorado,
+  California, Colorado, DC, Florida, Missouri, New York, Texas. Then Colorado,
   Missouri, Oregon, Washington, Pennsylvania, Illinois, and on through
   every state that publishes one. Done for a state when its bars pass 40%
   with a status.
@@ -88,6 +88,11 @@ Done when "everything else" passes 15% in states with two or more of these.
 - **4.2 Tests on every push**, not only before a build.
 - **4.3 A failed state retries on its own** and the release notes say which
   states, if any, are a month old.
+- **4.5 Evidence archive.** Some registers only publish the last few weeks
+  (Missouri's "out of business" list, Colorado's expired and surrendered
+  list, Florida's weekly emergency closures). Keep each month's copy so the
+  records add up, both to test them and to use them. Needs a place to keep
+  a growing file between builds; a release asset carried forward will do.
 - **4.4 Source watch.** The build reports when a source's layout or row
   count shifts by more than a set amount, so a silent upstream change does
   not ship.
