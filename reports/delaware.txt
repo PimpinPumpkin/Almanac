@@ -6,41 +6,42 @@
 │    56376 │         2423 │  7940 │                  63 │
 └──────────┴──────────────┴───────┴─────────────────────┘
 == merged (rows that joined an existing place, by rule)
-┌──────────────────────────┬─────────┬───────┐
-│           step           │  rule   │ rows  │
-│         varchar          │ varchar │ int64 │
-├──────────────────────────┼─────────┼───────┤
-│ alltheplaces -> overture │ near    │    49 │
-│ alltheplaces -> overture │ number  │  2084 │
-│ alltheplaces -> overture │ spot    │     8 │
-│ osm -> core              │ near    │  1350 │
-│ osm -> core              │ number  │  3443 │
-│ osm -> core              │ spot    │   120 │
-└──────────────────────────┴─────────┴───────┘
+┌──────────────────────────┬───────────────────┬───────┐
+│           step           │       rule        │ rows  │
+│         varchar          │      varchar      │ int64 │
+├──────────────────────────┼───────────────────┼───────┤
+│ alltheplaces -> overture │ near              │    49 │
+│ alltheplaces -> overture │ number            │  2084 │
+│ alltheplaces -> overture │ spot              │     8 │
+│ osm -> core              │ near              │  1349 │
+│ osm -> core              │ number            │  3443 │
+│ osm -> core              │ spot              │   119 │
+│ overture duplicates      │ number, same name │   185 │
+└──────────────────────────┴───────────────────┴───────┘
 == places out
 ┌───────┬───────┬──────────┬──────────┐
 │ core  │ full  │ osm_only │ atp_only │
 │ int64 │ int64 │  int64   │  int64   │
 ├───────┼───────┼──────────┼──────────┤
-│ 56658 │ 59685 │     3027 │      282 │
+│ 56473 │ 59502 │     3029 │      282 │
 └───────┴───────┴──────────┴──────────┘
 == status, full layer
 ┌─────────┬────────┐
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │    331 │
-│ open    │   3437 │
-│ unknown │  55917 │
+│ closed  │    330 │
+│ open    │   3387 │
+│ unknown │  55785 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │    269 │
-│ open    │   2752 │
-│ unknown │  53637 │
+│ closed  │    268 │
+│ open    │   2703 │
+│ unknown │  53502 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -74,10 +75,10 @@
 │ osm_lifecycle  │ closed  │ number  │    13 │     13 │
 │ osm_lifecycle  │ closed  │ self    │    40 │     40 │
 │ snap_current   │ open    │ near    │    10 │     10 │
-│ snap_current   │ open    │ number  │   620 │    620 │
+│ snap_current   │ open    │ number  │   572 │    572 │
 │ snap_current   │ open    │ spot    │     6 │      6 │
 │ snap_history   │ open    │ near    │    12 │     12 │
-│ snap_history   │ open    │ number  │   629 │    629 │
+│ snap_history   │ open    │ number  │   581 │    581 │
 │ snap_history   │ open    │ spot    │     7 │      7 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
   22 rows                                   5 columns
@@ -87,13 +88,13 @@
 │ varchar │    varchar     │ int64  │
 ├─────────┼────────────────┼────────┤
 │ closed  │ fdic_history   │     38 │
-│ closed  │ fsq_closed     │    232 │
+│ closed  │ fsq_closed     │    231 │
 │ closed  │ osm_lifecycle  │     61 │
 │ open    │ atp            │   2161 │
 │ open    │ fdic_locations │    160 │
-│ open    │ osm_check_date │    655 │
-│ open    │ snap_current   │    420 │
-│ open    │ snap_history   │     41 │
+│ open    │ osm_check_date │    654 │
+│ open    │ snap_current   │    372 │
+│ open    │ snap_history   │     40 │
 └─────────┴────────────────┴────────┘
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
@@ -102,7 +103,7 @@
 │    varchar    │ int64  │      int64      │      int64      │
 ├───────────────┼────────┼─────────────────┼─────────────────┤
 │ fdic_history  │     44 │               2 │               0 │
-│ fsq_closed    │    233 │               1 │               0 │
+│ fsq_closed    │    233 │               2 │               0 │
 │ osm_lifecycle │     63 │               2 │               0 │
 └───────────────┴────────┴─────────────────┴─────────────────┘
 == Overture operating_status against our status
@@ -111,11 +112,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │     55 │
-│ (none)             │ open    │    529 │
-│ (none)             │ unknown │  14854 │
-│ open               │ closed  │    233 │
-│ open               │ open    │   2458 │
-│ open               │ unknown │  35929 │
+│ (none)             │ open    │    482 │
+│ (none)             │ unknown │  14781 │
+│ open               │ closed  │    232 │
+│ open               │ open    │   2455 │
+│ open               │ unknown │  35868 │
 │ permanently_closed │ closed  │      1 │
 │ permanently_closed │ open    │      4 │
 │ permanently_closed │ unknown │   2313 │

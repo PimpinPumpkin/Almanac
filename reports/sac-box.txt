@@ -6,23 +6,24 @@
 │    67869 │         3208 │  8192 │                  54 │
 └──────────┴──────────────┴───────┴─────────────────────┘
 == merged (rows that joined an existing place, by rule)
-┌──────────────────────────┬─────────┬───────┐
-│           step           │  rule   │ rows  │
-│         varchar          │ varchar │ int64 │
-├──────────────────────────┼─────────┼───────┤
-│ alltheplaces -> overture │ near    │    53 │
-│ alltheplaces -> overture │ number  │  2783 │
-│ alltheplaces -> overture │ spot    │     6 │
-│ osm -> core              │ near    │  2354 │
-│ osm -> core              │ number  │  2998 │
-│ osm -> core              │ spot    │    59 │
-└──────────────────────────┴─────────┴───────┘
+┌──────────────────────────┬───────────────────┬───────┐
+│           step           │       rule        │ rows  │
+│         varchar          │      varchar      │ int64 │
+├──────────────────────────┼───────────────────┼───────┤
+│ alltheplaces -> overture │ near              │    53 │
+│ alltheplaces -> overture │ number            │  2783 │
+│ alltheplaces -> overture │ spot              │     6 │
+│ osm -> core              │ near              │  2351 │
+│ osm -> core              │ number            │  2998 │
+│ osm -> core              │ spot              │    59 │
+│ overture duplicates      │ number, same name │   225 │
+└──────────────────────────┴───────────────────┴───────┘
 == places out
 ┌───────┬───────┬──────────┬──────────┐
 │ core  │ full  │ osm_only │ atp_only │
 │ int64 │ int64 │  int64   │  int64   │
 ├───────┼───────┼──────────┼──────────┤
-│ 68235 │ 71016 │     2781 │      366 │
+│ 68010 │ 70794 │     2784 │      366 │
 └───────┴───────┴──────────┴──────────┘
 == status, full layer
 ┌─────────┬────────┐
@@ -30,8 +31,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    720 │
-│ open    │   4349 │
-│ unknown │  65947 │
+│ open    │   4269 │
+│ unknown │  65805 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -39,8 +40,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    670 │
-│ open    │   3758 │
-│ unknown │  63807 │
+│ open    │   3679 │
+│ unknown │  63661 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -58,12 +59,12 @@
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ atp            │ open    │ near    │    53 │     50 │
-│ atp            │ open    │ number  │  2778 │   2542 │
+│ atp            │ open    │ number  │  2778 │   2540 │
 │ atp            │ open    │ self    │   364 │    364 │
 │ atp            │ open    │ spot    │     6 │      6 │
 │ fdic_history   │ closed  │ number  │    59 │     57 │
 │ fdic_locations │ open    │ near    │     5 │      5 │
-│ fdic_locations │ open    │ number  │   146 │    145 │
+│ fdic_locations │ open    │ number  │   145 │    144 │
 │ fsq_closed     │ closed  │ id      │   623 │    618 │
 │ osm_check_date │ open    │ near    │   239 │    238 │
 │ osm_check_date │ open    │ number  │   371 │    370 │
@@ -74,10 +75,10 @@
 │ osm_lifecycle  │ closed  │ self    │    18 │     18 │
 │ osm_lifecycle  │ closed  │ spot    │     1 │      1 │
 │ snap_current   │ open    │ near    │    12 │     12 │
-│ snap_current   │ open    │ number  │  1053 │   1050 │
+│ snap_current   │ open    │ number  │   975 │    972 │
 │ snap_current   │ open    │ spot    │     6 │      6 │
 │ snap_history   │ open    │ near    │    13 │     13 │
-│ snap_history   │ open    │ number  │   829 │    828 │
+│ snap_history   │ open    │ number  │   753 │    752 │
 │ snap_history   │ open    │ spot    │     4 │      4 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
   22 rows                                   5 columns
@@ -89,10 +90,10 @@
 │ closed  │ fdic_history   │     55 │
 │ closed  │ fsq_closed     │    613 │
 │ closed  │ osm_lifecycle  │     52 │
-│ open    │ atp            │   2899 │
-│ open    │ fdic_locations │    150 │
-│ open    │ osm_check_date │    559 │
-│ open    │ snap_current   │    696 │
+│ open    │ atp            │   2897 │
+│ open    │ fdic_locations │    149 │
+│ open    │ osm_check_date │    558 │
+│ open    │ snap_current   │    620 │
 │ open    │ snap_history   │     45 │
 └─────────┴────────────────┴────────┘
 == closing signals against independent evidence
@@ -111,12 +112,12 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │     99 │
-│ (none)             │ open    │    636 │
-│ (none)             │ unknown │  15082 │
+│ (none)             │ open    │    563 │
+│ (none)             │ unknown │  15008 │
 │ open               │ closed  │    595 │
-│ open               │ open    │   3109 │
-│ open               │ unknown │  45568 │
+│ open               │ open    │   3102 │
+│ open               │ unknown │  45499 │
 │ permanently_closed │ closed  │      5 │
 │ permanently_closed │ open    │      4 │
-│ permanently_closed │ unknown │   2771 │
+│ permanently_closed │ unknown │   2769 │
 └────────────────────┴─────────┴────────┘

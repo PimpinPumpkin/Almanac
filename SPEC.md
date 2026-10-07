@@ -14,7 +14,8 @@ bus stops), and not an agent counter inside another store.
 
 The build order is fixed by licensing (section 8), not by convenience.
 
-1. **Overture places** is the spine. Every Overture row is a place.
+1. **Overture places** is the spine. Duplicate listings inside Overture are
+   merged first (section 6), then every remaining row is a place.
 2. **AllThePlaces** rows (brand lineage only) join the Overture place they
    match, or become new places.
 3. Evidence that does not come from OSM is attached. The result is the
@@ -40,6 +41,7 @@ Both layers have the same columns.
 | status | string | open, closed or unknown, section 7 |
 | status_date | date | date of the evidence that decided the status |
 | status_source | string | source of that evidence |
+| open_score | double | rough chance the place is open on the build date, 0 to 1, section 7 |
 | overture_status | string | Overture's own operating_status, carried as is. It has no date and does not feed status. |
 | sources | list of {source, id} | every source row this place was built from |
 | licenses | list of string | licenses of everything that touched the row |
@@ -63,7 +65,12 @@ An id is the id of the source row the place is anchored on, with a prefix:
   register row. Nothing mints these yet.
 
 Nothing is renumbered between builds, so a reader can diff two monthly files
-on `id`.
+on `id`. When Overture listings are merged as duplicates, the smallest id of
+the group is the place id and the others stay in `sources`.
+
+Measured on Overture alone, District of Columbia box, release 2026-08-19.0
+against 2026-09-23.1: 76,147 of 78,098 ids carried over (97.5%), 1,951
+disappeared, 18,041 were new.
 
 Known gap: when a place that was `atp:` or `osm:` last month gains an
 Overture match this month, its id becomes the `ovt:` one. The old id is
@@ -143,6 +150,13 @@ fail `number`; they are more than 30 m apart or fail `spot`.
   the base has duplicate listings of the same shop. Without a `number`
   match, only the best single place gets the record.
 
+**Duplicates inside Overture.** The same matcher runs Overture against
+itself, but only the strictest case merges: same house number, within
+250 m, identical normalized name. In the District of Columbia box that
+merges 303 of 94,188 rows; 40 merged pairs were read and all 40 are the same
+business (often a store and the money transfer counter inside it). The
+looser cases are rejected, section 9.
+
 **Join shape.** Candidates come from a grid hash join: cells are 0.004
 degrees of latitude by 0.008 of longitude, one side is copied into its nine
 neighbor cells, and the join is an equality on the cell. No distance
@@ -189,6 +203,38 @@ closed.
 A closed record that a newer open record overrode stays in `evidence`, so
 the conflict is visible. Overture's confidence, update_time and
 operating_status are never evidence: none carries a date of observation.
+
+### Open score
+
+`open_score` puts every place on one scale, including the ones with no
+evidence. It is a rule of thumb with stated parts, not a fitted model.
+
+| case | score |
+| --- | --- |
+| status is closed | 0.10 |
+| newest evidence is open | 0.97 x 0.90 ^ years since that date, never below 0.75 |
+| newest evidence is open but it overrode an older closing record | 0.80 x 0.90 ^ years, never below 0.50 |
+| no evidence, Overture says permanently_closed | 0.30 |
+| no evidence otherwise | 0.75 |
+
+The 0.90 a year assumes about one business in ten closes each year. The
+0.30 comes from this build: of places Overture marks permanently_closed that
+OSM can speak to, 7 were surveyed open and 20 were tagged closed.
+
+Check, all four test regions: the score from the core layer, which has seen
+no OSM data, against what OSM says about the same place.
+
+| OSM says | places | mean core score | scored 0.30 or less | scored 0.80 or more |
+| --- | ---: | ---: | ---: | ---: |
+| closed (lifecycle tag) | 338 | 0.64 | 65 | 12 |
+| open (surveyed in the last 2 years) | 2,771 | 0.82 | 11 | 861 |
+
+So a low score is rarely wrong about an open place (11 of 2,771), but the
+core layer only catches 65 of 338 known closures. The score is honest about
+what the evidence says and no better than the evidence. The 0.75 for no
+evidence is likely low: among places with no core evidence that OSM can
+speak to, 1,899 were surveyed open and 261 tagged closed (88% open), though
+mappers survey open places more readily than they tag closed ones.
 
 ### Evidence sources in this version
 
@@ -257,6 +303,7 @@ evidence from a different source for the same place.
 | Name contained anywhere in the longer name | Joined a shop to the mall it is named after, and a department to its hospital. | Only leading words count now. |
 | A bank branch record matching the bank's ATM | 3 of 40 FDIC closings landed on an ATM or mortgage desk listing. | A name with ATM on one side only never matches. |
 | Wikidata P576 on offices | 4 hits across two boxes, 2 of them a company merger date on an office building. | Skipped when the OSM feature is `office=*`. The 2 that remain (a hospital, a school) are right. |
+| Merging Overture duplicates on anything looser than an identical name | Same house number with a leading-words or near-spelling match: about 10 of 21 read were a part and its whole (a gift shop and its hospital, two advisors at one bank). No house number: mostly junk pages sharing a point. Different numbers within 30 m: 13 pairs, several wrong. | Only same number plus identical name merges. |
 | Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
 
 Carried over from earlier work and not retested: website liveness, and

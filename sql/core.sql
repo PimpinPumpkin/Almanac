@@ -3,9 +3,49 @@
 -- core layer free of ODbL terms. Inputs (made by build.sh): ovt, atp,
 -- fsq_closed, register (evidence rows inside the region), params.
 
-create or replace table ovt_n as
+create or replace table ovt_all as
   select 'ovt:' || id as id, * exclude (id), norm_name(name) as nn, house_number(address) as hn
   from ovt;
+
+-- Duplicate listings inside Overture. Only the strictest case merges: same
+-- house number, within 250 m, identical normalized name. Looser pairs were
+-- read and are mostly a part and its whole (a gift shop and its hospital),
+-- see SPEC.md section 9. Groups are closed over chains of pairs by passing
+-- the smallest id along the pairs three times; the smallest id is kept.
+create or replace table ovt_pair as
+  select a_id, b_id from match_pairs('ovt_all', 'ovt_all')
+  where a_id <> b_id and rule = 'number' and sim = 1.0;
+
+create or replace table ovt_canon as
+  with l0 as (select id, id as c from ovt_all),
+  l1 as (select l.id, least(l.c, coalesce(min(n.c), l.c)) as c
+         from l0 l left join ovt_pair p on p.a_id = l.id left join l0 n on n.id = p.b_id group by l.id, l.c),
+  l2 as (select l.id, least(l.c, coalesce(min(n.c), l.c)) as c
+         from l1 l left join ovt_pair p on p.a_id = l.id left join l1 n on n.id = p.b_id group by l.id, l.c),
+  l3 as (select l.id, least(l.c, coalesce(min(n.c), l.c)) as c
+         from l2 l left join ovt_pair p on p.a_id = l.id left join l2 n on n.id = p.b_id group by l.id, l.c)
+  select id, c as place_id from l3;
+
+-- One row per Overture place: the kept listing, gaps filled from its duplicates.
+create or replace table ovt_n as
+  with fill as (
+    select k.place_id,
+           any_value(o.category) as category, any_value(o.brand) as brand,
+           any_value(o.brand_wikidata) as brand_wikidata, any_value(o.postcode) as postcode,
+           any_value(o.phone) as phone, any_value(o.website) as website,
+           bool_or(list_contains(o.datasets, 'Foursquare')) as has_fsq,
+           -- closed only if every listing says so
+           case when bool_and(o.operating_status = 'permanently_closed') then 'permanently_closed'
+                else any_value(nullif(o.operating_status, 'permanently_closed')) end as operating_status
+    from ovt_canon k join ovt_all o on o.id = k.id group by k.place_id
+  )
+  select o.* replace (
+           coalesce(o.category, f.category) as category, coalesce(o.brand, f.brand) as brand,
+           coalesce(o.brand_wikidata, f.brand_wikidata) as brand_wikidata,
+           coalesce(o.postcode, f.postcode) as postcode, coalesce(o.phone, f.phone) as phone,
+           coalesce(o.website, f.website) as website, f.operating_status as operating_status),
+         f.has_fsq
+  from ovt_all o join fill f on f.place_id = o.id;
 
 create or replace table atp_n as
   select 'atp:' || atp_id as id, * exclude (atp_id, housenumber),
@@ -22,8 +62,9 @@ create or replace table atp_match as
     order by case rule when 'number' then 1 when 'near' then 2 else 3 end, sim desc, dist) = 1;
 
 create or replace table core_member as
-  select id as place_id, 'overture' as source, substr(id, 5) as source_id,
-         'self' as rule, 0.0 as dist, 1.0 as sim from ovt_n
+  select place_id, 'overture' as source, substr(id, 5) as source_id,
+         case when id = place_id then 'self' else 'duplicate' end as rule, 0.0 as dist, 1.0 as sim
+  from ovt_canon
   union all
   select coalesce(m.place_id, a.id), 'atp', substr(a.id, 5),
          coalesce(m.rule, 'self'), coalesce(m.dist, 0.0), coalesce(m.sim, 1.0)
@@ -47,7 +88,7 @@ create or replace table core_place as
          coalesce(o.website, nullif(f.website, '')) as website,
          o.lat, o.lng, o.operating_status as overture_status,
          o.nn, coalesce(o.hn, f.hn) as hn,
-         list_contains(o.datasets, 'Foursquare') as has_fsq
+         o.has_fsq
   from ovt_n o left join atp_fill f on f.place_id = o.id
   union all
   select a.id, a.name, nullif(a.category, ''), nullif(a.brand, ''), nullif(a.brand_wikidata, ''),
@@ -76,9 +117,9 @@ create or replace macro matched_evidence(places) as table (
 
 create or replace table core_evidence as
   -- Foursquare's own closing date, joined on the Foursquare id Overture carries
-  select o.id as place_id, 'fsq_closed' as source, f.fsq_place_id as source_id, 'closed' as state,
+  select k.place_id, 'fsq_closed' as source, f.fsq_place_id as source_id, 'closed' as state,
          f.date_closed as date, 'id' as rule, 0.0 as dist, f.name as ev_name, f.address as ev_address
-  from ovt_n o join fsq_closed f on f.fsq_place_id = o.fsq_id
+  from ovt_all o join ovt_canon k on k.id = o.id join fsq_closed f on f.fsq_place_id = o.fsq_id
   where f.date_closed is not null
   union all
   -- present in the chain's own store locator on the day it was collected

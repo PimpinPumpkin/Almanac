@@ -48,8 +48,9 @@ published yet.
   branch closings, USDA SNAP authorized stores, and presence in a chain's own
   store locator.
 - **Output**: one row per place with a stable id, merged attributes, every
-  source id it was built from, and a status of open, closed or unknown with
-  the date and source of the evidence that decided it.
+  source id it was built from, a status of open, closed or unknown with
+  the date and source of the evidence that decided it, and an `open_score`
+  from 0 to 1 for every place.
 
 ## What it is not
 

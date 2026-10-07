@@ -9,6 +9,26 @@ create or replace macro license_of(source) as
     when source like 'fdic%' or source like 'snap%' then 'US-public-domain'
   end;
 
+-- open_score: a rough chance, 0 to 1, that the place is open on the build date.
+-- It is a rule of thumb, not a fitted model. The parts:
+--   closed                        0.10  (a closing record is wrong about 1 time in 8
+--                                        where a second source can check it)
+--   newest evidence is open       0.97 * 0.90 ^ years since that date
+--                                        (about 1 business in 10 closes each year)
+--   same, but it overrode an
+--   older closing record          0.80 * 0.90 ^ years
+--   no evidence                   0.75, or 0.30 when Overture says permanently_closed
+-- A stale open record never scores below the no-evidence value.
+create or replace macro open_score(status, status_date, conflict, overture_status, build_date) as
+  round(case
+    when status = 'closed' then 0.10
+    when status_date is not null then greatest(
+      case when conflict then 0.80 else 0.97 end * pow(0.90, greatest(build_date - status_date, 0) / 365.25),
+      case when conflict then 0.50 else 0.75 end)
+    when overture_status = 'permanently_closed' then 0.30
+    else 0.75
+  end, 2);
+
 create or replace macro published(place, member, status) as table (
   with m as (
     select place_id,
@@ -19,6 +39,8 @@ create or replace macro published(place, member, status) as table (
   select p.id, p.name, p.category, p.brand, p.brand_wikidata,
          p.address, p.city, p.region, p.postcode, p.phone, p.website,
          coalesce(s.status, 'unknown') as status, s.status_date, s.status_source,
+         open_score(coalesce(s.status, 'unknown'), s.status_date, coalesce(s.conflict, false),
+                    p.overture_status, (select build_date from params)) as open_score,
          p.overture_status,
          m.sources,
          list_sort(list_distinct(

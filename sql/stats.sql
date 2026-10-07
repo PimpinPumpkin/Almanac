@@ -4,6 +4,8 @@ select (select count(*) from ovt) as overture, (select count(*) from atp) as all
        (select count(*) from osm) as osm, (select count(*) from osm where lifecycle is not null) as osm_closed_features;
 
 .print == merged (rows that joined an existing place, by rule)
+select 'overture duplicates' as step, 'number, same name' as rule, count(*) as "rows" from ovt_canon where id <> place_id
+union all
 select 'alltheplaces -> overture' as step, rule, count(*) as "rows" from atp_match group by all
 union all
 select 'osm -> core', rule, count(*) from osm_match group by all
