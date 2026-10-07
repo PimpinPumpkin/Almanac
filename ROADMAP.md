@@ -85,7 +85,8 @@ Done when "everything else" passes 15% in states with two or more of these.
 - **4.1 Monthly change file.** For each release: places that opened, closed,
   appeared or vanished since the last one. This is also what measures id
   churn, due at the second monthly build.
-- **4.2 Tests on every push**, not only before a build.
+- **4.2 Tests on every push.** Done: matcher tests, a syntax check of every
+  script, and a check that every adapter is documented.
 - **4.3 A failed state retries on its own** and the release notes say which
   states, if any, are a month old.
 - **4.5 Evidence archive.** Some registers only publish the last few weeks
