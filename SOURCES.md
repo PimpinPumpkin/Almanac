@@ -207,6 +207,21 @@ adapter is merged. If a source states no license, the entry says so.
 - Privacy: residential and short-term rental licenses, four fifths of the
   file, are not read.
 
+### Tobacco retailer lists (New York, Pennsylvania, Texas)
+- License: New York under the OPEN-NY Terms of Use; Pennsylvania and Texas
+  public domain, as stated on the datasets.
+- Fetched from: `https://data.ny.gov/resource/55xf-9jat.json`,
+  `https://data.pa.gov/resource/ut72-sft8.json`,
+  `https://data.texas.gov/resource/n4rp-ar9b.json`
+- Used for: retail locations with a current cigarette, tobacco or vapor
+  registration (open). Mostly convenience stores, delis, gas stations and
+  smoke shops.
+- Privacy: New York gives the registrant's name, which can be a person, so
+  nothing creates a place from these lists. Pennsylvania's legal name and
+  Texas's taxpayer name are not read.
+- Not used: Colorado's tobacco license list (`data.colorado.gov` ejz2-rwds).
+  On 2026-10-07 one of its 4,910 rows had an expiry date still ahead.
+
 ### Pennsylvania Department of Revenue, sales tax licenses
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.pa.gov/resource/ugeq-ckxd.json`

@@ -255,6 +255,9 @@ rows are the same place.
 | Philadelphia business licenses | number | 20 of 20 | company-held food, vehicle and child care licenses only |
 | Seattle business licenses | number | 40 of 40 | storefront industry codes only; 6,200 places in a Seattle box gained a status |
 | Denver business licenses | number | 40 of 40 | food, liquor, tobacco, marijuana, repair and lodging licenses, geocoded |
+| New York tobacco retailers | number | 40 of 40 | registrant names, so only a quarter find a place |
+| Pennsylvania tobacco licenses | number | 39 of 40 | the miss is a pharmacy counter taking the store's license |
+| Texas tobacco retailers | number | 40 of 40 (Houston) | geocoded |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -439,6 +442,9 @@ signal at all.
 | li_phl | open | day the file was read, active company-held licenses | matcher |
 | biz_seattle | open | day the layer was last edited, active locations in storefront trades | matcher |
 | biz_denver | open | the layer's report date, active licenses | matcher, positions from the Census geocoder |
+| tax_ny_tobacco | open | day the dataset was last updated | matcher |
+| rev_pa_tobacco | open | day the dataset was last updated, unexpired retail licenses only | matcher |
+| cpa_tx_tobacco | open | day the dataset was last updated | matcher, positions from the Census geocoder |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |
