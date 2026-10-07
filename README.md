@@ -7,6 +7,17 @@ Three open datasets already list most US places. Almanac merges them and adds
 the part none of them has: for each place, the records that say it was open
 or closed on a specific day, and where each record came from.
 
+## Coverage by state
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/coverage-dark.svg">
+  <img alt="Share of places with a dated open or closed status, by state and category" src="docs/coverage-light.svg">
+</picture>
+
+Interactive version, with the numbers on hover:
+https://pimpinpumpkin.github.io/Almanac/ . The same numbers as a table are
+in [COVERAGE.md](COVERAGE.md). Both are made by `tools/coverage_map.py`.
+
 ## Coverage by category
 
 What Almanac lists today, how much of it has a dated open or closed record,
@@ -87,7 +98,10 @@ adapters/           one file per register: fdic, snap, cms, nces, nppes, irs,
                     abc_ca, abca_dc
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests
-reports/            numbers from the last build of each test region
+reports/            numbers from the last build of each region
+tools/              coverage_map.py, which draws the by-state map and table
+docs/               the map, and the interactive page served by GitHub Pages
+build_all.sh        build every state in regions.tsv
 ```
 
 ## Build

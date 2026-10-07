@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Almanac coverage by state</title>
+<style>
+  :root {
+    --surface: #fcfcfb; --ink: #1f1f1e; --muted: #6b6b68; --line: #e4e3df;
+    --s0: #cde2fb; --s1: #9ec5f4; --s2: #6da7ec; --s3: #3987e5; --s4: #1c5cab; --s5: #0d366b;
+    --on0: #1f1f1e; --on1: #1f1f1e; --on2: #1f1f1e; --on3: #fff; --on4: #fff; --on5: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface: #1a1a19; --ink: #ecebe7; --muted: #a3a29e; --line: #3a3a37;
+      --s0: #0d366b; --s1: #184f95; --s2: #256abf; --s3: #3987e5; --s4: #86b6ef; --s5: #cde2fb;
+      --on0: #ecebe7; --on1: #ecebe7; --on2: #fff; --on3: #fff; --on4: #1a1a19; --on5: #1a1a19;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px 16px 48px; background: var(--surface); color: var(--ink);
+         font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 1120px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  p { margin: 0 0 12px; color: var(--muted); max-width: 70ch; }
+  a { color: inherit; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 16px 0 8px; font-size: 13px; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+  .sw.none { border: 1.5px solid var(--line); }
+  .panels { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px 24px; margin-top: 16px; }
+  h2 { font-size: 15px; margin: 0 0 8px; }
+  .grid { display: grid; gap: 2px; }
+  .cell { aspect-ratio: 1; border-radius: 4px; border: 0; padding: 0; font: 600 10px/1 inherit; font-family: inherit;
+          display: flex; align-items: center; justify-content: center; cursor: default; }
+  .cell.none { background: none; border: 1.5px solid var(--line); color: var(--muted); font-weight: 400; }
+  .cell:hover, .cell:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+  #tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--surface); padding: 6px 9px;
+         border-radius: 6px; font-size: 13px; max-width: 260px; display: none; z-index: 2; }
+  details { margin-top: 36px; }
+  summary { cursor: pointer; font-weight: 600; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 13px; margin-top: 12px; white-space: nowrap; }
+  th, td { padding: 4px 10px; text-align: right; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+  th:first-child, td:first-child { text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Places with a dated open or closed status</h1>
+  <p>Share of the places Almanac lists in each category that have a dated record saying they are open or
+     closed, by state. Hover or tab to a state for the numbers. <span id="made"></span>
+     <a href="https://github.com/PimpinPumpkin/Almanac">Source and method</a>.</p>
+  <div class="legend" id="legend"></div>
+  <div class="panels" id="panels"></div>
+  <details>
+    <summary>Table</summary>
+    <div class="scroll"><table id="table"></table></div>
+  </details>
+</main>
+<div id="tip" role="status"></div>
+<script>
+const NAMES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",
+  DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",
+  IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",
+  MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",
+  NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",
+  OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",
+  UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
+const el = (tag, props = {}, text) => { const e = Object.assign(document.createElement(tag), props); if (text != null) e.textContent = text; return e; };
+const cap = s => s[0].toUpperCase() + s.slice(1);
+const tip = document.getElementById("tip");
+
+function show(e, text) {
+  tip.textContent = text; tip.style.display = "block";
+  const r = e.currentTarget.getBoundingClientRect();
+  const x = Math.min(window.innerWidth - tip.offsetWidth - 8, Math.max(8, r.left + r.width / 2 - tip.offsetWidth / 2));
+  const above = r.top - tip.offsetHeight - 8;
+  tip.style.left = x + "px"; tip.style.top = (above > 4 ? above : r.bottom + 8) + "px";
+}
+const hide = () => { tip.style.display = "none"; };
+
+fetch("coverage.json").then(r => r.json()).then(d => {
+  const step = pct => { const i = d.bins.findIndex(edge => pct < edge); return i < 0 ? d.bins.length : i; };
+  document.getElementById("made").textContent = "Built " + d.made + " from " + Object.keys(d.states).length + " state files.";
+  const legend = document.getElementById("legend");
+  d.labels.forEach((lab, i) => { const s = el("span"); const sw = el("i", {className: "sw"}); sw.style.background = `var(--s${i})`; s.append(sw, lab); legend.append(s); });
+  const none = el("span"); none.append(el("i", {className: "sw none"}), "not built yet"); legend.append(none);
+
+  const panels = document.getElementById("panels");
+  for (const panel of d.panels) {
+    const sec = el("section"); sec.append(el("h2", {}, cap(panel)));
+    const grid = el("div", {className: "grid"});
+    grid.style.gridTemplateColumns = `repeat(${d.grid[0].length}, 1fr)`;
+    for (const row of d.grid) for (const st of row) {
+      if (st === ".") { grid.append(el("span")); continue; }
+      const hit = d.states[st] && d.states[st].cats[panel];
+      const b = el("button", {className: "cell", type: "button"}, st);
+      let text;
+      if (hit) {
+        const s = step(hit[1]); b.style.background = `var(--s${s})`; b.style.color = `var(--on${s})`;
+        text = `${NAMES[st]}, ${panel}: ${hit[1]}% of ${hit[0].toLocaleString()} places have a dated status`;
+      } else { b.classList.add("none"); text = `${NAMES[st]}: ${d.states[st] ? "none listed in this category" : "not built yet"}`; }
+      b.setAttribute("aria-label", text);
+      for (const ev of ["mouseenter", "focus"]) b.addEventListener(ev, e => show(e, text));
+      for (const ev of ["mouseleave", "blur"]) b.addEventListener(ev, hide);
+      grid.append(b);
+    }
+    sec.append(grid); panels.append(sec);
+  }
+
+  const table = document.getElementById("table");
+  const head = el("tr"); ["State", "Places", "All", ...d.panels.map(cap)].forEach(h => head.append(el("th", {}, h)));
+  table.append(head);
+  for (const [st, v] of Object.entries(d.states)) {
+    const tr = el("tr"); tr.append(el("td", {}, NAMES[st]), el("td", {}, v.places.toLocaleString()), el("td", {}, v.pct + "%"));
+    for (const p of d.panels) tr.append(el("td", {}, v.cats[p] ? v.cats[p][1] + "%" : ""));
+    table.append(tr);
+  }
+});
+</script>
+</body>
+</html>

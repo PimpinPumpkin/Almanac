@@ -1,0 +1,1255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 1240" width="1120" height="1240" font-family="system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="Share of places with a dated open or closed status, by state and category">
+<rect width="100%" height="100%" fill="#1a1a19"/>
+<text x="28" y="34" font-size="20" font-weight="600" fill="#ecebe7">Places with a dated open or closed status</text>
+<text x="28" y="56" font-size="13" fill="#a3a29e">Share of listed places in each category, by state. Numbers are in COVERAGE.md.</text>
+<rect x="28" y="70" width="14" height="14" rx="3" fill="#0d366b"/>
+<text x="48" y="82" font-size="12" fill="#a3a29e">under 5%</text>
+<rect x="118" y="70" width="14" height="14" rx="3" fill="#184f95"/>
+<text x="138" y="82" font-size="12" fill="#a3a29e">5 to 15%</text>
+<rect x="208" y="70" width="14" height="14" rx="3" fill="#256abf"/>
+<text x="228" y="82" font-size="12" fill="#a3a29e">15 to 30%</text>
+<rect x="305" y="70" width="14" height="14" rx="3" fill="#3987e5"/>
+<text x="325" y="82" font-size="12" fill="#a3a29e">30 to 45%</text>
+<rect x="402" y="70" width="14" height="14" rx="3" fill="#86b6ef"/>
+<text x="422" y="82" font-size="12" fill="#a3a29e">45 to 60%</text>
+<rect x="499" y="70" width="14" height="14" rx="3" fill="#cde2fb"/>
+<text x="519" y="82" font-size="12" fill="#a3a29e">60% and up</text>
+<rect x="603" y="70" width="14" height="14" rx="3" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="623" y="82" font-size="12" fill="#a3a29e">not built yet</text>
+<text x="28" y="112" font-size="14" font-weight="600" fill="#ecebe7">Fast food</text>
+<rect x="28" y="124" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="141" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="336" y="124" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="349" y="141" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="308" y="152" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="321" y="169" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="336" y="152" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="349" y="169" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="28" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="56" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="84" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="112" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="140" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="168" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="196" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="224" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="252" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="280" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="293" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="308" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="321" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="28" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="56" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="84" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="112" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="140" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="168" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="196" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="224" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="252" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="280" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="293" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="28" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="56" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="84" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="112" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="140" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="168" y="236" width="26" height="26" rx="4" fill="#cde2fb"><title>KY, fast food: 67.9% of 2337</title></rect>
+<text x="181" y="253" font-size="10" text-anchor="middle" fill="#1a1a19">KY</text>
+<rect x="196" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="224" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="252" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="280" y="236" width="26" height="26" rx="4" fill="#cde2fb"><title>DE, fast food: 66.5% of 325</title></rect>
+<text x="293" y="253" font-size="10" text-anchor="middle" fill="#1a1a19">DE</text>
+<rect x="56" y="264" width="26" height="26" rx="4" fill="#cde2fb"><title>AZ, fast food: 61.3% of 3122</title></rect>
+<text x="69" y="281" font-size="10" text-anchor="middle" fill="#1a1a19">AZ</text>
+<rect x="84" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="112" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="140" y="264" width="26" height="26" rx="4" fill="#cde2fb"><title>AR, fast food: 68.0% of 1455</title></rect>
+<text x="153" y="281" font-size="10" text-anchor="middle" fill="#1a1a19">AR</text>
+<rect x="168" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="196" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="224" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="252" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="112" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="140" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="168" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="196" y="292" width="26" height="26" rx="4" fill="#cde2fb"><title>AL, fast food: 68.9% of 2499</title></rect>
+<text x="209" y="309" font-size="10" text-anchor="middle" fill="#1a1a19">AL</text>
+<rect x="224" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="28" y="320" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="337" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="112" y="320" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="337" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="252" y="320" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="337" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="392" y="112" font-size="14" font-weight="600" fill="#ecebe7">Banks and credit unions</text>
+<rect x="392" y="124" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="141" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="700" y="124" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="713" y="141" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="672" y="152" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="685" y="169" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="700" y="152" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="713" y="169" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="392" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="420" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="448" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="476" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="504" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="532" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="560" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="588" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="616" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="644" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="657" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="672" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="685" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="392" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="420" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="448" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="476" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="504" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="532" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="560" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="588" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="616" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="644" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="657" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="392" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="420" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="448" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="476" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="504" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="532" y="236" width="26" height="26" rx="4" fill="#86b6ef"><title>KY, banks and credit unions: 55.5% of 2568</title></rect>
+<text x="545" y="253" font-size="10" text-anchor="middle" fill="#1a1a19">KY</text>
+<rect x="560" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="588" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="616" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="644" y="236" width="26" height="26" rx="4" fill="#3987e5"><title>DE, banks and credit unions: 44.1% of 526</title></rect>
+<text x="657" y="253" font-size="10" text-anchor="middle" fill="#ffffff">DE</text>
+<rect x="420" y="264" width="26" height="26" rx="4" fill="#86b6ef"><title>AZ, banks and credit unions: 46.9% of 2702</title></rect>
+<text x="433" y="281" font-size="10" text-anchor="middle" fill="#1a1a19">AZ</text>
+<rect x="448" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="476" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="504" y="264" width="26" height="26" rx="4" fill="#86b6ef"><title>AR, banks and credit unions: 59.8% of 1965</title></rect>
+<text x="517" y="281" font-size="10" text-anchor="middle" fill="#1a1a19">AR</text>
+<rect x="532" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="560" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="588" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="616" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="476" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="504" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="532" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="560" y="292" width="26" height="26" rx="4" fill="#86b6ef"><title>AL, banks and credit unions: 48.7% of 2861</title></rect>
+<text x="573" y="309" font-size="10" text-anchor="middle" fill="#1a1a19">AL</text>
+<rect x="588" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="392" y="320" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="337" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="476" y="320" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="337" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="616" y="320" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="337" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="756" y="112" font-size="14" font-weight="600" fill="#ecebe7">Gas stations</text>
+<rect x="756" y="124" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="141" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="1064" y="124" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1077" y="141" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="1036" y="152" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1049" y="169" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="1064" y="152" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1077" y="169" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="756" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="784" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="812" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="840" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="868" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="896" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="924" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="952" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="980" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="1008" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1021" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="1036" y="180" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1049" y="197" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="756" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="784" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="812" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="840" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="868" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="896" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="924" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="952" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="980" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="1008" y="208" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1021" y="225" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="756" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="784" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="812" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="840" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="868" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="896" y="236" width="26" height="26" rx="4" fill="#86b6ef"><title>KY, gas stations: 47.6% of 3209</title></rect>
+<text x="909" y="253" font-size="10" text-anchor="middle" fill="#1a1a19">KY</text>
+<rect x="924" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="952" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="980" y="236" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="253" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="1008" y="236" width="26" height="26" rx="4" fill="#86b6ef"><title>DE, gas stations: 45.0% of 380</title></rect>
+<text x="1021" y="253" font-size="10" text-anchor="middle" fill="#1a1a19">DE</text>
+<rect x="784" y="264" width="26" height="26" rx="4" fill="#3987e5"><title>AZ, gas stations: 42.5% of 2180</title></rect>
+<text x="797" y="281" font-size="10" text-anchor="middle" fill="#ffffff">AZ</text>
+<rect x="812" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="840" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="868" y="264" width="26" height="26" rx="4" fill="#3987e5"><title>AR, gas stations: 31.7% of 2207</title></rect>
+<text x="881" y="281" font-size="10" text-anchor="middle" fill="#ffffff">AR</text>
+<rect x="896" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="924" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="952" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="980" y="264" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="281" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="840" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="868" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="896" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="924" y="292" width="26" height="26" rx="4" fill="#3987e5"><title>AL, gas stations: 44.9% of 4384</title></rect>
+<text x="937" y="309" font-size="10" text-anchor="middle" fill="#ffffff">AL</text>
+<rect x="952" y="292" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="309" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="756" y="320" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="337" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="840" y="320" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="337" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="980" y="320" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="337" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="28" y="398" font-size="14" font-weight="600" fill="#ecebe7">Grocery and convenience</text>
+<rect x="28" y="410" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="427" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="336" y="410" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="349" y="427" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="308" y="438" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="321" y="455" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="336" y="438" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="349" y="455" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="28" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="56" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="84" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="112" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="140" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="168" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="196" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="224" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="252" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="280" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="293" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="308" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="321" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="28" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="56" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="84" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="112" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="140" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="168" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="196" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="224" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="252" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="280" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="293" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="28" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="56" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="84" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="112" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="140" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="168" y="522" width="26" height="26" rx="4" fill="#3987e5"><title>KY, grocery and convenience: 33.7% of 3506</title></rect>
+<text x="181" y="539" font-size="10" text-anchor="middle" fill="#ffffff">KY</text>
+<rect x="196" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="224" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="252" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="280" y="522" width="26" height="26" rx="4" fill="#3987e5"><title>DE, grocery and convenience: 42.5% of 630</title></rect>
+<text x="293" y="539" font-size="10" text-anchor="middle" fill="#ffffff">DE</text>
+<rect x="56" y="550" width="26" height="26" rx="4" fill="#86b6ef"><title>AZ, grocery and convenience: 47.7% of 3702</title></rect>
+<text x="69" y="567" font-size="10" text-anchor="middle" fill="#1a1a19">AZ</text>
+<rect x="84" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="112" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="140" y="550" width="26" height="26" rx="4" fill="#256abf"><title>AR, grocery and convenience: 26.6% of 2377</title></rect>
+<text x="153" y="567" font-size="10" text-anchor="middle" fill="#ffffff">AR</text>
+<rect x="168" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="196" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="224" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="252" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="112" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="140" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="168" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="196" y="578" width="26" height="26" rx="4" fill="#3987e5"><title>AL, grocery and convenience: 34.1% of 4384</title></rect>
+<text x="209" y="595" font-size="10" text-anchor="middle" fill="#ffffff">AL</text>
+<rect x="224" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="28" y="606" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="623" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="112" y="606" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="623" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="252" y="606" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="623" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="392" y="398" font-size="14" font-weight="600" fill="#ecebe7">Pharmacies</text>
+<rect x="392" y="410" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="427" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="700" y="410" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="713" y="427" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="672" y="438" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="685" y="455" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="700" y="438" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="713" y="455" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="392" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="420" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="448" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="476" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="504" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="532" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="560" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="588" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="616" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="644" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="657" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="672" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="685" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="392" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="420" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="448" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="476" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="504" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="532" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="560" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="588" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="616" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="644" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="657" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="392" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="420" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="448" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="476" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="504" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="532" y="522" width="26" height="26" rx="4" fill="#256abf"><title>KY, pharmacies: 29.3% of 1228</title></rect>
+<text x="545" y="539" font-size="10" text-anchor="middle" fill="#ffffff">KY</text>
+<rect x="560" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="588" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="616" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="644" y="522" width="26" height="26" rx="4" fill="#3987e5"><title>DE, pharmacies: 37.9% of 169</title></rect>
+<text x="657" y="539" font-size="10" text-anchor="middle" fill="#ffffff">DE</text>
+<rect x="420" y="550" width="26" height="26" rx="4" fill="#86b6ef"><title>AZ, pharmacies: 48.2% of 1087</title></rect>
+<text x="433" y="567" font-size="10" text-anchor="middle" fill="#1a1a19">AZ</text>
+<rect x="448" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="476" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="504" y="550" width="26" height="26" rx="4" fill="#3987e5"><title>AR, pharmacies: 32.2% of 847</title></rect>
+<text x="517" y="567" font-size="10" text-anchor="middle" fill="#ffffff">AR</text>
+<rect x="532" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="560" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="588" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="616" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="476" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="504" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="532" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="560" y="578" width="26" height="26" rx="4" fill="#256abf"><title>AL, pharmacies: 24.5% of 1251</title></rect>
+<text x="573" y="595" font-size="10" text-anchor="middle" fill="#ffffff">AL</text>
+<rect x="588" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="392" y="606" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="623" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="476" y="606" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="623" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="616" y="606" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="623" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="756" y="398" font-size="14" font-weight="600" fill="#ecebe7">Restaurants and cafes</text>
+<rect x="756" y="410" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="427" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="1064" y="410" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1077" y="427" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="1036" y="438" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1049" y="455" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="1064" y="438" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1077" y="455" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="756" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="784" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="812" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="840" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="868" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="896" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="924" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="952" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="980" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="1008" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1021" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="1036" y="466" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1049" y="483" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="756" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="784" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="812" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="840" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="868" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="896" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="924" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="952" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="980" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="1008" y="494" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1021" y="511" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="756" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="784" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="812" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="840" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="868" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="896" y="522" width="26" height="26" rx="4" fill="#256abf"><title>KY, restaurants and cafes: 17.4% of 13215</title></rect>
+<text x="909" y="539" font-size="10" text-anchor="middle" fill="#ffffff">KY</text>
+<rect x="924" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="952" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="980" y="522" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="539" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="1008" y="522" width="26" height="26" rx="4" fill="#256abf"><title>DE, restaurants and cafes: 16.0% of 3442</title></rect>
+<text x="1021" y="539" font-size="10" text-anchor="middle" fill="#ffffff">DE</text>
+<rect x="784" y="550" width="26" height="26" rx="4" fill="#256abf"><title>AZ, restaurants and cafes: 18.3% of 22500</title></rect>
+<text x="797" y="567" font-size="10" text-anchor="middle" fill="#ffffff">AZ</text>
+<rect x="812" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="840" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="868" y="550" width="26" height="26" rx="4" fill="#256abf"><title>AR, restaurants and cafes: 15.2% of 9788</title></rect>
+<text x="881" y="567" font-size="10" text-anchor="middle" fill="#ffffff">AR</text>
+<rect x="896" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="924" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="952" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="980" y="550" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="567" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="840" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="868" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="896" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="924" y="578" width="26" height="26" rx="4" fill="#256abf"><title>AL, restaurants and cafes: 18.2% of 14885</title></rect>
+<text x="937" y="595" font-size="10" text-anchor="middle" fill="#ffffff">AL</text>
+<rect x="952" y="578" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="595" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="756" y="606" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="623" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="840" y="606" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="623" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="980" y="606" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="623" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="28" y="684" font-size="14" font-weight="600" fill="#ecebe7">Bars</text>
+<rect x="28" y="696" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="713" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="336" y="696" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="349" y="713" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="308" y="724" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="321" y="741" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="336" y="724" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="349" y="741" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="28" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="56" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="84" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="112" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="140" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="168" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="196" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="224" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="252" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="280" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="293" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="308" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="321" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="28" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="56" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="84" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="112" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="140" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="168" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="196" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="224" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="252" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="280" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="293" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="28" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="56" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="84" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="112" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="140" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="168" y="808" width="26" height="26" rx="4" fill="#0d366b"><title>KY, bars: 4.7% of 1601</title></rect>
+<text x="181" y="825" font-size="10" text-anchor="middle" fill="#ecebe7">KY</text>
+<rect x="196" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="224" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="252" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="280" y="808" width="26" height="26" rx="4" fill="#184f95"><title>DE, bars: 8.4% of 358</title></rect>
+<text x="293" y="825" font-size="10" text-anchor="middle" fill="#ecebe7">DE</text>
+<rect x="56" y="836" width="26" height="26" rx="4" fill="#184f95"><title>AZ, bars: 7.3% of 2677</title></rect>
+<text x="69" y="853" font-size="10" text-anchor="middle" fill="#ecebe7">AZ</text>
+<rect x="84" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="112" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="140" y="836" width="26" height="26" rx="4" fill="#0d366b"><title>AR, bars: 4.2% of 834</title></rect>
+<text x="153" y="853" font-size="10" text-anchor="middle" fill="#ecebe7">AR</text>
+<rect x="168" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="196" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="224" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="252" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="112" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="140" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="168" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="196" y="864" width="26" height="26" rx="4" fill="#0d366b"><title>AL, bars: 4.8% of 1671</title></rect>
+<text x="209" y="881" font-size="10" text-anchor="middle" fill="#ecebe7">AL</text>
+<rect x="224" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="28" y="892" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="909" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="112" y="892" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="909" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="252" y="892" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="909" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="392" y="684" font-size="14" font-weight="600" fill="#ecebe7">Hotels</text>
+<rect x="392" y="696" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="713" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="700" y="696" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="713" y="713" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="672" y="724" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="685" y="741" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="700" y="724" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="713" y="741" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="392" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="420" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="448" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="476" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="504" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="532" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="560" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="588" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="616" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="644" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="657" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="672" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="685" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="392" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="420" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="448" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="476" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="504" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="532" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="560" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="588" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="616" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="644" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="657" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="392" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="420" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="448" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="476" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="504" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="532" y="808" width="26" height="26" rx="4" fill="#256abf"><title>KY, hotels: 15.9% of 1474</title></rect>
+<text x="545" y="825" font-size="10" text-anchor="middle" fill="#ffffff">KY</text>
+<rect x="560" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="588" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="616" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="644" y="808" width="26" height="26" rx="4" fill="#184f95"><title>DE, hotels: 13.1% of 335</title></rect>
+<text x="657" y="825" font-size="10" text-anchor="middle" fill="#ecebe7">DE</text>
+<rect x="420" y="836" width="26" height="26" rx="4" fill="#184f95"><title>AZ, hotels: 13.7% of 2397</title></rect>
+<text x="433" y="853" font-size="10" text-anchor="middle" fill="#ecebe7">AZ</text>
+<rect x="448" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="476" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="504" y="836" width="26" height="26" rx="4" fill="#184f95"><title>AR, hotels: 12.7% of 1405</title></rect>
+<text x="517" y="853" font-size="10" text-anchor="middle" fill="#ecebe7">AR</text>
+<rect x="532" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="560" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="588" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="616" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="476" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="504" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="532" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="560" y="864" width="26" height="26" rx="4" fill="#184f95"><title>AL, hotels: 14.6% of 1791</title></rect>
+<text x="573" y="881" font-size="10" text-anchor="middle" fill="#ecebe7">AL</text>
+<rect x="588" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="392" y="892" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="909" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="476" y="892" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="909" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="616" y="892" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="909" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="756" y="684" font-size="14" font-weight="600" fill="#ecebe7">Schools</text>
+<rect x="756" y="696" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="713" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="1064" y="696" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1077" y="713" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="1036" y="724" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1049" y="741" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="1064" y="724" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1077" y="741" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="756" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="784" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="812" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="840" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="868" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="896" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="924" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="952" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="980" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="1008" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1021" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="1036" y="752" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1049" y="769" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="756" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="784" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="812" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="840" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="868" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="896" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="924" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="952" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="980" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="1008" y="780" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1021" y="797" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="756" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="784" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="812" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="840" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="868" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="896" y="808" width="26" height="26" rx="4" fill="#256abf"><title>KY, schools: 21.7% of 6368</title></rect>
+<text x="909" y="825" font-size="10" text-anchor="middle" fill="#ffffff">KY</text>
+<rect x="924" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="952" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="980" y="808" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="825" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="1008" y="808" width="26" height="26" rx="4" fill="#256abf"><title>DE, schools: 21.2% of 1039</title></rect>
+<text x="1021" y="825" font-size="10" text-anchor="middle" fill="#ffffff">DE</text>
+<rect x="784" y="836" width="26" height="26" rx="4" fill="#256abf"><title>AZ, schools: 24.6% of 7890</title></rect>
+<text x="797" y="853" font-size="10" text-anchor="middle" fill="#ffffff">AZ</text>
+<rect x="812" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="840" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="868" y="836" width="26" height="26" rx="4" fill="#256abf"><title>AR, schools: 20.1% of 4893</title></rect>
+<text x="881" y="853" font-size="10" text-anchor="middle" fill="#ffffff">AR</text>
+<rect x="896" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="924" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="952" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="980" y="836" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="853" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="840" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="868" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="896" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="924" y="864" width="26" height="26" rx="4" fill="#256abf"><title>AL, schools: 21.2% of 6756</title></rect>
+<text x="937" y="881" font-size="10" text-anchor="middle" fill="#ffffff">AL</text>
+<rect x="952" y="864" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="881" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="756" y="892" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="909" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="840" y="892" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="909" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="980" y="892" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="909" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="28" y="970" font-size="14" font-weight="600" fill="#ecebe7">Hospitals</text>
+<rect x="28" y="982" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="999" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="336" y="982" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="349" y="999" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="308" y="1010" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="321" y="1027" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="336" y="1010" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="349" y="1027" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="28" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="56" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="84" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="112" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="140" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="168" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="196" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="224" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="252" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="280" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="293" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="308" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="321" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="28" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="56" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="84" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="112" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="140" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="168" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="196" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="224" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="252" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="280" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="293" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="28" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="56" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="69" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="84" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="112" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="140" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="168" y="1094" width="26" height="26" rx="4" fill="#184f95"><title>KY, hospitals: 11.6% of 924</title></rect>
+<text x="181" y="1111" font-size="10" text-anchor="middle" fill="#ecebe7">KY</text>
+<rect x="196" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="224" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="252" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="280" y="1094" width="26" height="26" rx="4" fill="#184f95"><title>DE, hospitals: 5.2% of 154</title></rect>
+<text x="293" y="1111" font-size="10" text-anchor="middle" fill="#ecebe7">DE</text>
+<rect x="56" y="1122" width="26" height="26" rx="4" fill="#184f95"><title>AZ, hospitals: 10.0% of 954</title></rect>
+<text x="69" y="1139" font-size="10" text-anchor="middle" fill="#ecebe7">AZ</text>
+<rect x="84" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="97" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="112" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="140" y="1122" width="26" height="26" rx="4" fill="#256abf"><title>AR, hospitals: 19.5% of 662</title></rect>
+<text x="153" y="1139" font-size="10" text-anchor="middle" fill="#ffffff">AR</text>
+<rect x="168" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="196" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="209" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="224" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="252" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="112" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="140" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="153" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="168" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="181" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="196" y="1150" width="26" height="26" rx="4" fill="#184f95"><title>AL, hospitals: 10.9% of 792</title></rect>
+<text x="209" y="1167" font-size="10" text-anchor="middle" fill="#ecebe7">AL</text>
+<rect x="224" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="237" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="28" y="1178" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="41" y="1195" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="112" y="1178" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="125" y="1195" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="252" y="1178" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="265" y="1195" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="392" y="970" font-size="14" font-weight="600" fill="#ecebe7">Museums</text>
+<rect x="392" y="982" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="999" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="700" y="982" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="713" y="999" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="672" y="1010" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="685" y="1027" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="700" y="1010" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="713" y="1027" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="392" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="420" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="448" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="476" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="504" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="532" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="560" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="588" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="616" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="644" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="657" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="672" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="685" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="392" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="420" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="448" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="476" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="504" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="532" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="560" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="588" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="616" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="644" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="657" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="392" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="420" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="433" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="448" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="476" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="504" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="532" y="1094" width="26" height="26" rx="4" fill="#184f95"><title>KY, museums: 10.2% of 449</title></rect>
+<text x="545" y="1111" font-size="10" text-anchor="middle" fill="#ecebe7">KY</text>
+<rect x="560" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="588" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="616" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="644" y="1094" width="26" height="26" rx="4" fill="#184f95"><title>DE, museums: 11.0% of 136</title></rect>
+<text x="657" y="1111" font-size="10" text-anchor="middle" fill="#ecebe7">DE</text>
+<rect x="420" y="1122" width="26" height="26" rx="4" fill="#184f95"><title>AZ, museums: 8.5% of 551</title></rect>
+<text x="433" y="1139" font-size="10" text-anchor="middle" fill="#ecebe7">AZ</text>
+<rect x="448" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="461" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="476" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="504" y="1122" width="26" height="26" rx="4" fill="#184f95"><title>AR, museums: 9.2% of 368</title></rect>
+<text x="517" y="1139" font-size="10" text-anchor="middle" fill="#ecebe7">AR</text>
+<rect x="532" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="560" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="573" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="588" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="616" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="476" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="504" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="517" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="532" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="545" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="560" y="1150" width="26" height="26" rx="4" fill="#184f95"><title>AL, museums: 8.5% of 481</title></rect>
+<text x="573" y="1167" font-size="10" text-anchor="middle" fill="#ecebe7">AL</text>
+<rect x="588" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="601" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="392" y="1178" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="405" y="1195" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="476" y="1178" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="489" y="1195" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="616" y="1178" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="629" y="1195" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+<text x="756" y="970" font-size="14" font-weight="600" fill="#ecebe7">Everything else</text>
+<rect x="756" y="982" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="999" font-size="10" text-anchor="middle" fill="#a3a29e">AK</text>
+<rect x="1064" y="982" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1077" y="999" font-size="10" text-anchor="middle" fill="#a3a29e">ME</text>
+<rect x="1036" y="1010" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1049" y="1027" font-size="10" text-anchor="middle" fill="#a3a29e">VT</text>
+<rect x="1064" y="1010" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1077" y="1027" font-size="10" text-anchor="middle" fill="#a3a29e">NH</text>
+<rect x="756" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">WA</text>
+<rect x="784" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">ID</text>
+<rect x="812" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MT</text>
+<rect x="840" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">ND</text>
+<rect x="868" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MN</text>
+<rect x="896" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">IL</text>
+<rect x="924" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">WI</text>
+<rect x="952" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MI</text>
+<rect x="980" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">NY</text>
+<rect x="1008" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1021" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">RI</text>
+<rect x="1036" y="1038" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1049" y="1055" font-size="10" text-anchor="middle" fill="#a3a29e">MA</text>
+<rect x="756" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">OR</text>
+<rect x="784" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">NV</text>
+<rect x="812" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">WY</text>
+<rect x="840" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">SD</text>
+<rect x="868" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">IA</text>
+<rect x="896" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">IN</text>
+<rect x="924" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">OH</text>
+<rect x="952" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">PA</text>
+<rect x="980" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">NJ</text>
+<rect x="1008" y="1066" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="1021" y="1083" font-size="10" text-anchor="middle" fill="#a3a29e">CT</text>
+<rect x="756" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">CA</text>
+<rect x="784" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="797" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">UT</text>
+<rect x="812" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">CO</text>
+<rect x="840" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">NE</text>
+<rect x="868" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">MO</text>
+<rect x="896" y="1094" width="26" height="26" rx="4" fill="#184f95"><title>KY, everything else: 5.0% of 209242</title></rect>
+<text x="909" y="1111" font-size="10" text-anchor="middle" fill="#ecebe7">KY</text>
+<rect x="924" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">WV</text>
+<rect x="952" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">VA</text>
+<rect x="980" y="1094" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="1111" font-size="10" text-anchor="middle" fill="#a3a29e">MD</text>
+<rect x="1008" y="1094" width="26" height="26" rx="4" fill="#184f95"><title>DE, everything else: 5.6% of 51322</title></rect>
+<text x="1021" y="1111" font-size="10" text-anchor="middle" fill="#ecebe7">DE</text>
+<rect x="784" y="1122" width="26" height="26" rx="4" fill="#0d366b"><title>AZ, everything else: 4.8% of 329024</title></rect>
+<text x="797" y="1139" font-size="10" text-anchor="middle" fill="#ecebe7">AZ</text>
+<rect x="812" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="825" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">NM</text>
+<rect x="840" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">KS</text>
+<rect x="868" y="1122" width="26" height="26" rx="4" fill="#184f95"><title>AR, everything else: 5.1% of 151462</title></rect>
+<text x="881" y="1139" font-size="10" text-anchor="middle" fill="#ecebe7">AR</text>
+<rect x="896" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">TN</text>
+<rect x="924" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="937" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">NC</text>
+<rect x="952" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">SC</text>
+<rect x="980" y="1122" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="1139" font-size="10" text-anchor="middle" fill="#a3a29e">DC</text>
+<rect x="840" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">OK</text>
+<rect x="868" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="881" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">LA</text>
+<rect x="896" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="909" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">MS</text>
+<rect x="924" y="1150" width="26" height="26" rx="4" fill="#0d366b"><title>AL, everything else: 4.8% of 241454</title></rect>
+<text x="937" y="1167" font-size="10" text-anchor="middle" fill="#ecebe7">AL</text>
+<rect x="952" y="1150" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="965" y="1167" font-size="10" text-anchor="middle" fill="#a3a29e">GA</text>
+<rect x="756" y="1178" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="769" y="1195" font-size="10" text-anchor="middle" fill="#a3a29e">HI</text>
+<rect x="840" y="1178" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="853" y="1195" font-size="10" text-anchor="middle" fill="#a3a29e">TX</text>
+<rect x="980" y="1178" width="26" height="26" rx="4" fill="none" stroke="#3a3a37" stroke-width="1.5"/>
+<text x="993" y="1195" font-size="10" text-anchor="middle" fill="#a3a29e">FL</text>
+</svg>

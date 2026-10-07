@@ -36,7 +36,8 @@ copy (
   with g as (
     select * exclude (geometry, edited), to_timestamp(edited)::date as edited,
            st_centroid(st_geomfromgeojson(geometry)) as c
-    from read_ndjson('$TMP/poi.ndjson', columns = {
+    -- a large park or refuge outline can be tens of MB on one line
+    from read_ndjson('$TMP/poi.ndjson', maximum_object_size = 1073741824, columns = {
       osm_id: 'varchar', edited: 'bigint', name: 'varchar', category: 'varchar', lifecycle: 'varchar',
       housenumber: 'varchar', street: 'varchar', city: 'varchar', region: 'varchar', postcode: 'varchar',
       phone: 'varchar', website: 'varchar', brand: 'varchar', brand_wikidata: 'varchar',
