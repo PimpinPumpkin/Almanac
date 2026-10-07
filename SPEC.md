@@ -273,6 +273,9 @@ rows are the same place.
 | Florida restaurant licenses | number | 40 of 40 (Jacksonville) | |
 | New York dispensaries | number | 40 of 40 | only shops the state marks as operating |
 | New York State food inspections | number | 39 of 40 (Buffalo box, Niagara County rows) | the miss is a place whose own name is only the city's |
+| Boston food establishment licenses | number | 29 of 30 | the miss is a coffee kiosk taking the department store around it |
+| Boston food inspections | number | 30 of 30 | |
+| Boston Licensing Board licenses | number | 30 of 30 | geocoded |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -469,6 +472,9 @@ signal at all.
 | dbpr_fl_salon, dbpr_fl_vet, dbpr_fl_lodging, dbpr_fl_restaurant | open | day the files were read, current licenses only | matcher, positions from the Census geocoder |
 | ocm_ny | open | day the dataset was last updated, active license and active operational status | matcher, positions from the Census geocoder |
 | doh_ny_food | open | day of the operation's last inspection, unexpired permits only | matcher |
+| isd_boston_food | open | day the list was last changed, active licenses | matcher |
+| isd_boston_inspection | open | day of the establishment's newest inspection | matcher |
+| lb_boston | open | day the list was last changed, active licenses | matcher, positions from the Census geocoder |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |

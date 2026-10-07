@@ -281,6 +281,16 @@ adapter is merged. If a source states no license, the entry says so.
   County and Erie County are not in the file.
 - Privacy: the operator name columns are not read.
 
+### City of Boston, food licenses, inspections and Licensing Board licenses
+- License: Open Data Commons Public Domain Dedication and License, as
+  stated on each dataset.
+- Fetched from: `https://data.boston.gov/datastore/dump/<resource>` for
+  `active-food-establishment-licenses`, `food-establishment-inspections`
+  and `licensing-board-licenses`
+- Used for: active food establishment licenses, establishments dated by
+  their newest inspection, and active Licensing Board licenses (open).
+- Privacy: the owner, applicant, manager and phone columns are not read.
+
 ### Pennsylvania Department of Revenue, sales tax licenses
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.pa.gov/resource/ugeq-ckxd.json`
