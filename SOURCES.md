@@ -69,6 +69,12 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: stores currently authorized (open). End dates are not used; see
   SPEC.md section 9.
 
+### EPA UST Finder
+- License: US federal government work, public domain.
+- Fetched from: `https://services.arcgis.com/cJ9YHowT8TU7DUyn/arcgis/rest/services/UST_Finder_Feature_Layer_2/FeatureServer`
+- Used for: sites with underground fuel tanks in use (open). The layer was
+  last edited in December 2024.
+
 ### CMS Hospital General Information
 - License: US federal government work, public domain.
 - Fetched from: the CSV named in

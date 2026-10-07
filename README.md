@@ -29,7 +29,7 @@ with a dated status.
 | --- | ---: | ---: | --- | --- |
 | Banks and credit unions | 215,405 | 67% | FDIC branches and closings, NCUA credit union offices (built) | Yes |
 | Fast food and chain restaurants | 128,275 | 62% | Chain store locators (built) | Yes, for chains with a locator |
-| Gas stations | 170,218 | 42% | Chain locators (built). Next: underground storage tank registries | Mostly |
+| Gas stations | 170,218 | 42% | Chain locators, EPA fuel tank registry (built) | Mostly |
 | Grocery and convenience stores | 237,239 | 39% | SNAP authorized stores, chain locators (built) | Mostly |
 | Pharmacies | 63,376 | 33% | Chain locators, NPPES (built). Next: state pharmacy boards | Mostly |
 | Schools | 433,930 | 19% | NCES public schools (built). The category also holds preschools, private and trade schools, which NCES public data does not cover | Public schools yes |
@@ -97,7 +97,7 @@ review.sh           print a fixed sample of matches for a person to read
 regions.tsv         region boxes and which OSM extracts cover them
 base/               importers: overture.sh, atp.sh + atp.py, osm.sh + osm.jq
 signals/            closing signals joined by id: fsq_closed.sh, wikidata_p576.py
-adapters/           one file per register: fdic, ncua, snap, cms, nces, nppes,
+adapters/           one file per register: fdic, ncua, snap, epa_ust, cms, nces, nppes,
                     irs, abc_ca, abca_dc; sirene.sh for France
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests

@@ -219,6 +219,7 @@ rows are the same place.
 | | spot | 20 of 20 | |
 | DC alcohol license cancellations | number | 40 of 40 | |
 | NCUA credit union offices | address | 38 of 40 | both misses are a church's credit union landing on the church |
+| EPA fuel tank sites | all | 30 of 30 (Kentucky) | |
 | OSM lifecycle features to places | all | 40 of 40 (DC), 36 of 36 (Sacramento) | |
 
 ## 7. Status rules
@@ -340,6 +341,7 @@ matched by address and only a quarter find their place.
 | wikidata_p576 | closed | P576 value | `wikidata` tag on a merged OSM feature, offices excluded |
 | fdic_history | closed | effective date of change code 721 | matcher |
 | fdic_locations | open | run date of the list | matcher |
+| epa_ust_open | open | day the national layer was last edited | matcher |
 | snap_current | open | last data edit of the layer | matcher |
 | snap_history | open | last day the file covers, open-ended authorizations only | matcher |
 | nces_schools | open | June 30 of the school year the file covers | matcher |
@@ -418,6 +420,7 @@ evidence from a different source for the same place.
 | DC alcohol license cancellation means closed, for every license type | 283 places matched. Independent: open 18, closed 60. The open ones were grocery stores, hotels and places that had swapped one license for another. | Kept only for restaurants, taverns, nightclubs and clubs, and skipped when the same trade name has an active license at the address. After that: open 8, closed 54, in line with the Foursquare and OSM signals. |
 | France: a closed SIRENE establishment means the place closed | Paris box, places whose newest SIRENE record was a closure: independent evidence said open 1,082, closed 647. Joined by SIRET id it was still open 130, closed 40. | A SIRET closes when a shop changes owner or legal form. Closed establishments are not emitted. |
 | France: dating an active SIRENE record by the register's processing date | Nearly every record was processed in the last year. Dated that way, an active entry overrode 159 hand-tagged OSM closures and 152 Foursquare ones. | Dated by dateDebut, the last real change. Overrides fell to 39 and 14. Most SIRENE records are then old and inform `open_score` without setting a status. |
+| A fuel site whose last underground tank was removed is closed (EPA) | Kentucky: 1,153 places matched. Independent: open 353, closed 15. | Tanks are replaced under a new record, and many sites are not fuel stations. Only sites with tanks in use are emitted, as open evidence. |
 | Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
 
 Carried over from earlier work and not retested: website liveness, and
