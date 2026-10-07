@@ -237,6 +237,7 @@ rows are the same place.
 | Chicago food inspections, out of business | number | 30 of 30 | |
 | Chicago food inspections, open | number | 20 of 20 | finds a place for 68% of businesses |
 | Colorado alcohol licenses | number | 25 of 25 (Denver) | positions with the data or geocoded; finds a place for 67% of licenses |
+| Oregon alcohol licenses | number | 20 of 20 (Portland) | geocoded; finds a place for 71% of licenses |
 | Missouri alcohol licenses | number | 25 of 25 (Kansas City) | geocoded; finds a place for 55% of licenses |
 | Florida alcohol licenses | number | 25 of 25 (Jacksonville) | geocoded; finds a place for 53% of licenses |
 | Florida restaurant inspections | number | 30 of 30 (Jacksonville) | geocoded; finds a place for 54% of inspected restaurants |
@@ -382,6 +383,7 @@ signal at all.
 | cdph_chicago | open | day of the newest inspection that got in (pass or fail) | matcher |
 | cdph_chicago_oob | closed | day of an inspection that found the business gone | matcher; places with no brand only |
 | led_co | open | day the dataset was last updated | matcher |
+| olcc_or | open | day the dataset was last updated | matcher, positions from the Census geocoder |
 | atc_mo | open | day the dataset was last updated | matcher, positions from the Census geocoder |
 | abt_fl | open | day the file was read | matcher, positions from the Census geocoder |
 | abc_ca | open | the export's Updated date | matcher, positions from the Census geocoder |
@@ -462,6 +464,7 @@ evidence from a different source for the same place.
 | A fuel site whose last underground tank was removed is closed (EPA) | Kentucky: 1,153 places matched. Independent: open 353, closed 15. | Tanks are replaced under a new record, and many sites are not fuel stations. Only sites with tanks in use are emitted, as open evidence. |
 | Texas: a surrendered, cancelled or expired alcohol license means closed | Houston box, on-premise license types only, skipping names with an active license at the address: 1,212 places. Independent: open 79, closed 89. | Not emitted. |
 | Chicago "Out of Business" inspections, for every place | Chicago box, places with no later inspection: independent open 63, closed 187. Split by whether the place carries a brand: chains open 36, closed 3; independents open 27, closed 184. | A chain outlet changes franchisee and license and carries on. The closure is kept for places with no brand only. The same limit now applies to DC license cancellations, which went from 8 open and 54 closed to 1 and 73. |
+| Oregon: an expired on-premises alcohol license means closed | Portland box, places with no brand and no live license under the same name: independent open 6, closed 26. | 81% on a small sample is below the signals that are kept (87% and up). Not emitted. |
 | Overture operating_status as a closed verdict | 6,175 rows say permanently_closed, nearly all from one supplier, with no date. Where this build has dated evidence for them: closed 31, open 12. | No date, and wrong too often. Carried as `overture_status`, never used. |
 
 Carried over from earlier work and not retested: website liveness, and

@@ -133,6 +133,13 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: active premises licenses (open). The list of recently expired
   and surrendered licenses is not used.
 
+### Oregon Liquor and Cannabis Commission, liquor licenses
+- License: none stated. Oregon public record. Rows it touches are marked
+  `none-stated`.
+- Fetched from: `https://data.oregon.gov/resource/srxe-qkm2.json`
+- Used for: unexpired premises licenses (open), with positions from the
+  Census geocoder. Expired licenses are not used; see SPEC.md section 9.
+
 ### Missouri Division of Alcohol and Tobacco Control, active licenses
 - License: none stated. Missouri public record. Rows it touches are marked
   `none-stated`.
@@ -209,8 +216,8 @@ adapter is merged. If a source states no license, the entry says so.
 Survey of what comes next, in order. None of these has been fetched or
 checked by this project.
 
-- More state alcohol license lists. Found, not yet built: Oregon
-  (data.oregon.gov, srxe-qkm2) and Washington (data.wa.gov, 9dee-kzm5).
+- More state alcohol license lists. Found, not yet built: Washington
+  (data.wa.gov, 9dee-kzm5).
   Missouri's "out of business" list (nytw-fmz3) and its new license list
   (dymb-xy5c) are found but not used yet.
 - Florida also publishes new food licenses and changes of owner by fiscal
