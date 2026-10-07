@@ -180,7 +180,8 @@ looser cases are rejected, section 9.
 
 **Places minted from a register.** Some registers list the storefront
 itself: FDIC branches, SNAP authorized stores, DC and New York licensed
-premises, New York City and Chicago inspected food businesses. A row
+premises, New York City and Chicago inspected food businesses, New York
+salons, barber shops, repair shops and dealers. A row
 from one of them becomes a new place when it is open, has a position,
 matched no place, and no listed place within 80 m has a similar name
 (leading words, Jaro-Winkler 0.7 or more, or same house number and same
@@ -238,6 +239,8 @@ rows are the same place.
 | New York alcohol licenses | number | 40 of 40 (New York City) | |
 | | spot | 20 of 20 | mostly Queens addresses, where "30-08" and "3008" are the same door |
 | | near | 11 of 12 | the miss is a hotel landing on a place named only "New York" |
+| New York salons and barber shops | number | 25 of 25 (New York City) | finds a place for about half |
+| New York DMV repair shops and dealers | number | 20 of 20 (New York City) | finds a place for about 4 in 10; the register uses company names |
 | King County (Seattle) food inspections | number | 25 of 25 | geocoded; finds a place for 61% of businesses |
 | New York City restaurant inspections | number | 25 of 25 | finds a place for 75% of restaurants |
 | Chicago food inspections, out of business | number | 30 of 30 | |
@@ -385,6 +388,8 @@ signal at all.
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
 | dbpr_fl_food | open | day of the establishment's newest inspection | matcher, positions from the Census geocoder |
+| dos_ny_salons | open | day the dataset was last updated, unexpired licenses only | matcher |
+| dmv_ny | open | day the dataset was last updated, unexpired registrations only | matcher |
 | kc_wa_food | open | day of the business's newest inspection | matcher, positions from the Census geocoder |
 | dohmh_nyc | open | day of the restaurant's newest inspection | matcher |
 | cdph_chicago | open | day of the newest inspection that got in (pass or fail) | matcher |

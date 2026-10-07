@@ -13,8 +13,9 @@ twenty public sources and merges them into one row per place:
   which reads every chain's own store locator.
 - **Regulators and registers**: bank and credit union branch lists and
   closings, liquor license boards, restaurant inspections, the food stamp retailer list, the federal
-  fuel tank registry, school, hospital and health provider registers, and
-  nonprofit tax filings.
+  fuel tank registry, school, hospital and health provider registers,
+  nonprofit tax filings, and state lists of licensed salons, barber shops
+  and repair shops.
 - **Signs of closure**: Foursquare closing dates, closures tagged by
   OpenStreetMap mappers, and places deleted or renamed in OpenStreetMap's
   edit history.
@@ -136,7 +137,7 @@ signals/            closing signals joined by id: fsq_closed.sh, wikidata_p576.p
 adapters/           one file per register. Federal: fdic, ncua, snap, epa_ust,
                     cms, nces, nppes, irs. State and city: abc_ca, abca_dc,
                     sla_ny, tabc_tx, abt_fl, led_co, atc_mo, olcc_or, dbpr_fl_food,
-                    kc_wa_food, dohmh_nyc,
+                    kc_wa_food, dmv_ny, dos_ny_salons, dohmh_nyc,
                     cdph_chicago. France: sirene.sh
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests

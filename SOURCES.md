@@ -190,6 +190,18 @@ adapter is merged. If a source states no license, the entry says so.
 - Used for: active licenses with a premises (open), with positions. Also
   mints missing places and drives the missing-license flag in New York.
 
+### New York Department of State, salon and barber shop licenses
+- License: OPEN-NY Terms of Use, as above.
+- Fetched from: `https://data.ny.gov/resource/y3u4-jbgh.json`
+- Used for: unexpired appearance enhancement business and barber shop
+  licenses (open), with positions. The license holder's name is not read.
+
+### New York DMV, licensed facilities
+- License: OPEN-NY Terms of Use, as above.
+- Fetched from: `https://data.ny.gov/resource/nhjr-rpi2.json`
+- Used for: unexpired repair shop, inspection station and dealer
+  registrations (open), with positions. The owner's name is not read.
+
 ### District of Columbia ABCA liquor licenses
 - License: CC-BY-4.0, as stated on opendata.dc.gov. Attribution is in NOTICE.
   Open question: whether CC-BY-4.0 data may sit inside an ODbL database
