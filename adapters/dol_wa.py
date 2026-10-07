@@ -29,13 +29,18 @@ HOST, DATASET = "data.wa.gov", "ucdg-xgbj"
 def main():
     as_of = updated(HOST, DATASET)
     out = Writer("dol_wa")
+    seen = set()
     where = ("license_status = 'Active' AND location_state = 'WA' AND license_type like '%Dealer%' "
              "AND license_type not like '%Wholesaler%'")
     for r in rows(HOST, DATASET, where=where,
                   select="license_type,license_number,location_name,location_street,location_city,location_postal_code"):
         # a license number covers every lot of the same dealer
         lot = hashlib.sha1((r.get("location_street") or "").upper().encode()).hexdigest()[:8]
-        out.row("dol_wa", "%s-%s-%s" % (r.get("license_type"), r.get("license_number"), lot), r.get("location_name"),
+        key = "%s-%s-%s" % (r.get("license_type"), r.get("license_number"), lot)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.row("dol_wa", key, r.get("location_name"),
                 address(r.get("location_street"), r.get("location_city"), "WA %s" % (r.get("location_postal_code") or "")[:5]),
                 None, None, "open", as_of)
     out.close(geocode=True)
