@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1266 │
-│ open    │  13581 │
-│ unknown │ 175397 │
+│ open    │  13582 │
+│ unknown │ 175396 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    791 │
-│ open    │  11353 │
-│ unknown │ 159630 │
+│ open    │  11354 │
+│ unknown │ 159629 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -57,8 +57,10 @@
 │    varchar     │ varchar │  int64  │  int64  │
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │     118 │       0 │
+│ abt_fl         │ open    │      23 │       0 │
 │ cms_hospitals  │ open    │     109 │      42 │
 │ dbpr_fl_food   │ open    │      13 │       0 │
+│ dohmh_nyc      │ open    │       3 │       0 │
 │ epa_ust_open   │ open    │    1377 │     635 │
 │ fdic_history   │ closed  │     450 │     108 │
 │ fdic_locations │ open    │     549 │     419 │
@@ -71,7 +73,7 @@
 │ snap_history   │ open    │    1617 │    1124 │
 │ tabc_tx        │ open    │      54 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  14 rows                            4 columns
+  16 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -128,7 +130,7 @@
 │ closed  │ osm_history    │    317 │
 │ closed  │ osm_lifecycle  │    165 │
 │ closed  │ wikidata_p576  │      8 │
-│ open    │ atp            │   7312 │
+│ open    │ atp            │   7313 │
 │ open    │ cms_hospitals  │    115 │
 │ open    │ epa_ust_open   │    338 │
 │ open    │ fdic_locations │    433 │
@@ -147,7 +149,7 @@
 │    source     │ places │ says_open_after │ says_closed_too │
 │    varchar    │ int64  │      int64      │      int64      │
 ├───────────────┼────────┼─────────────────┼─────────────────┤
-│ fdic_history  │    105 │               6 │               9 │
+│ fdic_history  │    105 │               5 │               9 │
 │ fsq_closed    │    705 │               2 │              23 │
 │ osm_history   │    322 │               2 │              13 │
 │ osm_lifecycle │    173 │               6 │               9 │
@@ -162,8 +164,8 @@
 │ (none)             │ open    │   2172 │
 │ (none)             │ unknown │  44554 │
 │ open               │ closed  │    925 │
-│ open               │ open    │   8967 │
-│ open               │ unknown │ 108248 │
+│ open               │ open    │   8968 │
+│ open               │ unknown │ 108247 │
 │ permanently_closed │ closed  │     16 │
 │ permanently_closed │ open    │     36 │
 │ permanently_closed │ unknown │   5085 │

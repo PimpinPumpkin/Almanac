@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2513 │
-│ open    │  35356 │
-│ unknown │ 372026 │
+│ open    │  35357 │
+│ unknown │ 372025 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,37 +48,41 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2098 │
-│ open    │  33260 │
-│ unknown │ 345811 │
+│ open    │  33261 │
+│ unknown │ 345810 │
 └─────────┴────────┘
 == register records in the box and how many found a place
-┌────────────────┬─────────┬─────────┬─────────┐
-│     source     │  state  │ records │ matched │
-│    varchar     │ varchar │  int64  │  int64  │
-├────────────────┼─────────┼─────────┼─────────┤
-│ abc_ca         │ open    │      80 │       0 │
-│ cms_hospitals  │ open    │     324 │      91 │
-│ dbpr_fl_food   │ open    │     159 │       0 │
-│ epa_ust_open   │ open    │    6038 │    2149 │
-│ fdic_history   │ closed  │    2164 │     385 │
-│ fdic_locations │ open    │    2356 │    2174 │
-│ irs_eo         │ open    │   69084 │    3301 │
-│ nces_schools   │ open    │    2442 │    1566 │
-│ ncua_branches  │ open    │    1396 │     361 │
-│ nppes_orgs     │ open    │  113744 │    8459 │
-│ sla_ny         │ open    │       5 │       0 │
-│ snap_current   │ open    │    7816 │    7111 │
-│ snap_history   │ open    │    8029 │    4676 │
-│ tabc_tx        │ open    │     562 │       0 │
-└────────────────┴─────────┴─────────┴─────────┘
-  14 rows                            4 columns
+┌──────────────────┬─────────┬─────────┬─────────┐
+│      source      │  state  │ records │ matched │
+│     varchar      │ varchar │  int64  │  int64  │
+├──────────────────┼─────────┼─────────┼─────────┤
+│ abc_ca           │ open    │      80 │       0 │
+│ abt_fl           │ open    │     267 │       0 │
+│ cdph_chicago     │ open    │      19 │       0 │
+│ cdph_chicago_oob │ closed  │       2 │       0 │
+│ cms_hospitals    │ open    │     324 │      91 │
+│ dbpr_fl_food     │ open    │     159 │       0 │
+│ dohmh_nyc        │ open    │       4 │       0 │
+│ epa_ust_open     │ open    │    6038 │    2149 │
+│ fdic_history     │ closed  │    2164 │     385 │
+│ fdic_locations   │ open    │    2356 │    2174 │
+│ irs_eo           │ open    │   69084 │    3301 │
+│ nces_schools     │ open    │    2442 │    1566 │
+│ ncua_branches    │ open    │    1396 │     361 │
+│ nppes_orgs       │ open    │  113744 │    8459 │
+│ sla_ny           │ open    │       5 │       0 │
+│ snap_current     │ open    │    7816 │    7111 │
+│ snap_history     │ open    │    8029 │    4676 │
+│ tabc_tx          │ open    │     562 │       0 │
+└──────────────────┴─────────┴─────────┴─────────┘
+  18 rows                              4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ atp            │ open    │ near    │   350 │    345 │
-│ atp            │ open    │ number  │ 18148 │  16885 │
+│ atp            │ open    │ number  │ 18148 │  16886 │
 │ atp            │ open    │ self    │  1990 │   1990 │
 │ atp            │ open    │ spot    │    65 │     59 │
 │ cms_hospitals  │ open    │ address │   104 │    104 │
@@ -129,7 +133,7 @@
 │ closed  │ osm_history    │    236 │
 │ closed  │ osm_lifecycle  │    181 │
 │ closed  │ wikidata_p576  │      3 │
-│ open    │ atp            │  18917 │
+│ open    │ atp            │  18918 │
 │ open    │ cms_hospitals  │     94 │
 │ open    │ epa_ust_open   │    954 │
 │ open    │ fdic_locations │   2329 │
@@ -160,8 +164,8 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    452 │
-│ (none)             │ open    │   5039 │
-│ (none)             │ unknown │  96775 │
+│ (none)             │ open    │   5040 │
+│ (none)             │ unknown │  96774 │
 │ open               │ closed  │   1900 │
 │ open               │ open    │  24049 │
 │ open               │ unknown │ 238751 │

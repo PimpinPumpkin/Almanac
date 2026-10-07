@@ -39,18 +39,18 @@
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   1730 │
-│ open    │   6802 │
-│ unknown │  49156 │
+│ closed  │   1717 │
+│ open    │   6804 │
+│ unknown │  49167 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   1325 │
+│ closed  │   1312 │
 │ open    │   6176 │
-│ unknown │  46244 │
+│ unknown │  46257 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌───────────────────┬─────────┬─────────┬─────────┐
@@ -59,9 +59,12 @@
 ├───────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca            │ open    │       4 │       0 │
 │ abca_dc_active    │ open    │    2075 │    1780 │
-│ abca_dc_cancelled │ closed  │     337 │     236 │
+│ abca_dc_cancelled │ closed  │     337 │     219 │
+│ abt_fl            │ open    │      35 │       0 │
+│ cdph_chicago      │ open    │       1 │       0 │
 │ cms_hospitals     │ open    │      60 │       7 │
 │ dbpr_fl_food      │ open    │      21 │       0 │
+│ dohmh_nyc         │ open    │      16 │       0 │
 │ epa_ust_open      │ open    │     575 │      71 │
 │ fdic_history      │ closed  │     449 │      91 │
 │ fdic_locations    │ open    │     352 │     343 │
@@ -74,7 +77,7 @@
 │ snap_history      │ open    │     906 │     231 │
 │ tabc_tx           │ open    │     111 │       0 │
 └───────────────────┴─────────┴─────────┴─────────┘
-  16 rows                               4 columns
+  19 rows                               4 columns
 == evidence by source and rule (places is distinct places)
 ┌───────────────────┬─────────┬─────────┬───────┬────────┐
 │      source       │  state  │  rule   │ rows  │ places │
@@ -85,8 +88,8 @@
 │ abca_dc_active    │ open    │ self    │   251 │    251 │
 │ abca_dc_active    │ open    │ spot    │    44 │     44 │
 │ abca_dc_cancelled │ closed  │ near    │     6 │      6 │
-│ abca_dc_cancelled │ closed  │ number  │   226 │    226 │
-│ abca_dc_cancelled │ closed  │ spot    │     7 │      7 │
+│ abca_dc_cancelled │ closed  │ number  │   210 │    210 │
+│ abca_dc_cancelled │ closed  │ spot    │     6 │      6 │
 │ atp               │ open    │ near    │    54 │     52 │
 │ atp               │ open    │ number  │  1202 │   1151 │
 │ atp               │ open    │ self    │   258 │    258 │
@@ -130,7 +133,7 @@
 │ status  │   status_source   │ places │
 │ varchar │      varchar      │ int64  │
 ├─────────┼───────────────────┼────────┤
-│ closed  │ abca_dc_cancelled │    229 │
+│ closed  │ abca_dc_cancelled │    216 │
 │ closed  │ fdic_history      │     70 │
 │ closed  │ fsq_closed        │    967 │
 │ closed  │ osm_history       │    249 │
@@ -144,7 +147,7 @@
 │ open    │ nces_schools      │     45 │
 │ open    │ ncua_branches     │     29 │
 │ open    │ nppes_orgs        │    138 │
-│ open    │ osm_check_date    │    527 │
+│ open    │ osm_check_date    │    529 │
 │ open    │ snap_current      │    693 │
 │ open    │ snap_history      │     20 │
 └─────────┴───────────────────┴────────┘
@@ -155,7 +158,7 @@
 │      source       │ places │ says_open_after │ says_closed_too │
 │      varchar      │ int64  │      int64      │      int64      │
 ├───────────────────┼────────┼─────────────────┼─────────────────┤
-│ abca_dc_cancelled │    239 │               5 │              73 │
+│ abca_dc_cancelled │    222 │               1 │              73 │
 │ fdic_history      │     89 │               3 │              16 │
 │ fsq_closed        │   1064 │               8 │              99 │
 │ osm_history       │    284 │               6 │              93 │
@@ -170,9 +173,9 @@
 │ (none)             │ closed  │    286 │
 │ (none)             │ open    │    761 │
 │ (none)             │ unknown │   9846 │
-│ open               │ closed  │   1278 │
-│ open               │ open    │   4404 │
-│ open               │ unknown │  31985 │
+│ open               │ closed  │   1265 │
+│ open               │ open    │   4406 │
+│ open               │ unknown │  31996 │
 │ permanently_closed │ closed  │     49 │
 │ permanently_closed │ open    │     66 │
 │ permanently_closed │ unknown │   3811 │

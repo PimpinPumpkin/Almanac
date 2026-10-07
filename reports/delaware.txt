@@ -52,25 +52,29 @@
 │ unknown │  52735 │
 └─────────┴────────┘
 == register records in the box and how many found a place
-┌────────────────┬─────────┬─────────┬─────────┐
-│     source     │  state  │ records │ matched │
-│    varchar     │ varchar │  int64  │  int64  │
-├────────────────┼─────────┼─────────┼─────────┤
-│ abc_ca         │ open    │      31 │       0 │
-│ cms_hospitals  │ open    │      43 │      10 │
-│ dbpr_fl_food   │ open    │      31 │       0 │
-│ epa_ust_open   │ open    │     659 │     149 │
-│ fdic_history   │ closed  │     303 │      49 │
-│ fdic_locations │ open    │     335 │     307 │
-│ irs_eo         │ open    │   20850 │     674 │
-│ nces_schools   │ open    │     386 │     161 │
-│ ncua_branches  │ open    │     231 │      47 │
-│ nppes_orgs     │ open    │   26620 │    1644 │
-│ snap_current   │ open    │    1050 │     900 │
-│ snap_history   │ open    │    1091 │     543 │
-│ tabc_tx        │ open    │      29 │       0 │
-└────────────────┴─────────┴─────────┴─────────┘
-  13 rows                            4 columns
+┌──────────────────┬─────────┬─────────┬─────────┐
+│      source      │  state  │ records │ matched │
+│     varchar      │ varchar │  int64  │  int64  │
+├──────────────────┼─────────┼─────────┼─────────┤
+│ abc_ca           │ open    │      31 │       0 │
+│ abt_fl           │ open    │      53 │       0 │
+│ cdph_chicago     │ open    │       1 │       0 │
+│ cdph_chicago_oob │ closed  │       1 │       0 │
+│ cms_hospitals    │ open    │      43 │      10 │
+│ dbpr_fl_food     │ open    │      31 │       0 │
+│ dohmh_nyc        │ open    │       2 │       0 │
+│ epa_ust_open     │ open    │     659 │     149 │
+│ fdic_history     │ closed  │     303 │      49 │
+│ fdic_locations   │ open    │     335 │     307 │
+│ irs_eo           │ open    │   20850 │     674 │
+│ nces_schools     │ open    │     386 │     161 │
+│ ncua_branches    │ open    │     231 │      47 │
+│ nppes_orgs       │ open    │   26620 │    1644 │
+│ snap_current     │ open    │    1050 │     900 │
+│ snap_history     │ open    │    1091 │     543 │
+│ tabc_tx          │ open    │      29 │       0 │
+└──────────────────┴─────────┴─────────┴─────────┘
+  17 rows                              4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │

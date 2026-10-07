@@ -58,8 +58,10 @@
 │    varchar     │ varchar │  int64  │  int64  │
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │     199 │       1 │
+│ abt_fl         │ open    │     589 │       0 │
 │ cms_hospitals  │ open    │     464 │     138 │
 │ dbpr_fl_food   │ open    │     424 │       0 │
+│ dohmh_nyc      │ open    │      42 │       0 │
 │ epa_ust_open   │ open    │    8660 │    2509 │
 │ fdic_history   │ closed  │    4383 │     982 │
 │ fdic_locations │ open    │    3957 │    3688 │
@@ -72,7 +74,7 @@
 │ snap_history   │ open    │   11837 │    6668 │
 │ tabc_tx        │ open    │     409 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  14 rows                            4 columns
+  16 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -138,8 +140,8 @@
 │ open    │ cms_hospitals  │    183 │
 │ open    │ epa_ust_open   │   1045 │
 │ open    │ fdic_locations │   3704 │
-│ open    │ irs_eo         │   8285 │
-│ open    │ nces_schools   │    469 │
+│ open    │ irs_eo         │   8284 │
+│ open    │ nces_schools   │    470 │
 │ open    │ ncua_branches  │    493 │
 │ open    │ nppes_orgs     │   2284 │
 │ open    │ osm_check_date │   8249 │

@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1525 │
-│ open    │  26794 │
-│ unknown │ 262164 │
+│ open    │  26795 │
+│ unknown │ 262163 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -57,8 +57,10 @@
 │    varchar     │ varchar │  int64  │  int64  │
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │      72 │       0 │
+│ abt_fl         │ open    │    2831 │       1 │
 │ cms_hospitals  │ open    │     230 │      69 │
 │ dbpr_fl_food   │ open    │    1521 │       0 │
+│ dohmh_nyc      │ open    │       3 │       0 │
 │ epa_ust_open   │ open    │    6343 │    1570 │
 │ fdic_history   │ closed  │    1518 │     238 │
 │ fdic_locations │ open    │    1829 │    1738 │
@@ -71,12 +73,13 @@
 │ snap_history   │ open    │    7232 │    3271 │
 │ tabc_tx        │ open    │     211 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  14 rows                            4 columns
+  16 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
+│ abt_fl         │ open    │ number  │     1 │      1 │
 │ atp            │ open    │ near    │   243 │    234 │
 │ atp            │ open    │ number  │ 13565 │  12158 │
 │ atp            │ open    │ self    │  1487 │   1487 │
@@ -117,7 +120,7 @@
 │ wikidata_p576  │ closed  │ number  │     1 │      1 │
 │ wikidata_p576  │ closed  │ self    │     2 │      2 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  39 rows                                   5 columns
+  40 rows                                   5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -128,6 +131,7 @@
 │ closed  │ osm_history    │    229 │
 │ closed  │ osm_lifecycle  │    163 │
 │ closed  │ wikidata_p576  │      4 │
+│ open    │ abt_fl         │      1 │
 │ open    │ atp            │  13770 │
 │ open    │ cms_hospitals  │     75 │
 │ open    │ epa_ust_open   │    915 │
@@ -140,7 +144,7 @@
 │ open    │ snap_current   │   4814 │
 │ open    │ snap_history   │    174 │
 └─────────┴────────────────┴────────┘
-  16 rows                 3 columns
+  17 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐

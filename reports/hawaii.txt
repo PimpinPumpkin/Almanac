@@ -57,6 +57,7 @@
 │    varchar     │ varchar │  int64  │  int64  │
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │      17 │       0 │
+│ abt_fl         │ open    │      16 │       0 │
 │ cms_hospitals  │ open    │      37 │      14 │
 │ dbpr_fl_food   │ open    │       4 │       0 │
 │ epa_ust_open   │ open    │     637 │     156 │
@@ -69,7 +70,7 @@
 │ snap_current   │ open    │     854 │     705 │
 │ snap_history   │ open    │     878 │     535 │
 └────────────────┴─────────┴─────────┴─────────┘
-  12 rows                            4 columns
+  13 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │

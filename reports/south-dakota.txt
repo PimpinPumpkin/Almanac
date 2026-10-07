@@ -57,8 +57,10 @@
 │    varchar     │ varchar │  int64  │  int64  │
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │       2 │       0 │
+│ abt_fl         │ open    │      40 │       0 │
 │ cms_hospitals  │ open    │     103 │      45 │
 │ dbpr_fl_food   │ open    │       9 │       0 │
+│ dohmh_nyc      │ open    │       5 │       0 │
 │ epa_ust_open   │ open    │    1089 │     457 │
 │ fdic_history   │ closed  │     223 │      60 │
 │ fdic_locations │ open    │     501 │     471 │
@@ -71,7 +73,7 @@
 │ snap_history   │ open    │     853 │     539 │
 │ tabc_tx        │ open    │      78 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  14 rows                            4 columns
+  16 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │

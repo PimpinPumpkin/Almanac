@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   5345 │
-│ open    │  55218 │
-│ unknown │ 576785 │
+│ open    │  55219 │
+│ unknown │ 576784 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   4006 │
-│ open    │  51840 │
-│ unknown │ 537151 │
+│ open    │  51841 │
+│ unknown │ 537150 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -57,8 +57,11 @@
 │    varchar     │ varchar │  int64  │  int64  │
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca         │ open    │     157 │       0 │
+│ abt_fl         │ open    │     268 │       1 │
+│ cdph_chicago   │ open    │       1 │       0 │
 │ cms_hospitals  │ open    │     395 │     146 │
 │ dbpr_fl_food   │ open    │     147 │       0 │
+│ dohmh_nyc      │ open    │      20 │       0 │
 │ epa_ust_open   │ open    │    7724 │    2755 │
 │ fdic_history   │ closed  │    3093 │     867 │
 │ fdic_locations │ open    │    3446 │    3071 │
@@ -71,12 +74,13 @@
 │ snap_history   │ open    │   11022 │    6912 │
 │ tabc_tx        │ open    │     237 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  14 rows                            4 columns
+  17 rows                            4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
+│ abt_fl         │ open    │ address │     1 │      1 │
 │ atp            │ open    │ near    │   487 │    474 │
 │ atp            │ open    │ number  │ 28968 │  26335 │
 │ atp            │ open    │ self    │  3840 │   3840 │
@@ -119,7 +123,7 @@
 │ wikidata_p576  │ closed  │ number  │     4 │      4 │
 │ wikidata_p576  │ closed  │ self    │     7 │      7 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  41 rows                                   5 columns
+  42 rows                                   5 columns
 == what decided the status
 ┌─────────┬────────────────┬────────┐
 │ status  │ status_source  │ places │
@@ -130,19 +134,20 @@
 │ closed  │ osm_history    │    743 │
 │ closed  │ osm_lifecycle  │    614 │
 │ closed  │ wikidata_p576  │     12 │
+│ open    │ abt_fl         │      1 │
 │ open    │ atp            │  30013 │
 │ open    │ cms_hospitals  │    196 │
 │ open    │ epa_ust_open   │   1218 │
 │ open    │ fdic_locations │   3134 │
-│ open    │ irs_eo         │   6084 │
-│ open    │ nces_schools   │   2677 │
+│ open    │ irs_eo         │   6083 │
+│ open    │ nces_schools   │   2678 │
 │ open    │ ncua_branches  │    252 │
 │ open    │ nppes_orgs     │   2346 │
 │ open    │ osm_check_date │   2637 │
 │ open    │ snap_current   │   6357 │
 │ open    │ snap_history   │    304 │
 └─────────┴────────────────┴────────┘
-  16 rows                 3 columns
+  17 rows                 3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -161,8 +166,8 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    912 │
-│ (none)             │ open    │   8601 │
-│ (none)             │ unknown │ 136852 │
+│ (none)             │ open    │   8602 │
+│ (none)             │ unknown │ 136851 │
 │ open               │ closed  │   3931 │
 │ open               │ open    │  37469 │
 │ open               │ unknown │ 381993 │
