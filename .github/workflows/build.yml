@@ -112,11 +112,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install tools
+        # a hung package mirror once held four states for two hours
+        timeout-minutes: 20
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
-          curl -fsSL -o duckdb.zip "https://github.com/duckdb/duckdb/releases/download/$DUCKDB_VERSION/duckdb_cli-linux-amd64.zip"
-          unzip -q duckdb.zip && sudo mv duckdb /usr/local/bin/ && rm duckdb.zip
-          duckdb -c "install httpfs; install spatial;"
+          install() {
+            sudo timeout 300 apt-get update -qq && sudo timeout 300 apt-get install -y -qq osmium-tool &&
+            curl -fsSL --max-time 300 -o duckdb.zip "https://github.com/duckdb/duckdb/releases/download/$DUCKDB_VERSION/duckdb_cli-linux-amd64.zip" &&
+            unzip -oq duckdb.zip && sudo mv duckdb /usr/local/bin/ && rm duckdb.zip &&
+            timeout 300 duckdb -c "install httpfs; install spatial;"
+          }
+          install || { sleep 60; install; }
       - uses: actions/download-artifact@v4
         with:
           name: shared

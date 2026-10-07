@@ -17,7 +17,9 @@ fetch() {
   if [ -s "$out" ]; then return 0; fi
   mkdir -p "$(dirname "$out")"
   # download servers answer 502 or 504 now and then when many jobs ask at once
-  curl -fL --retry 8 --retry-delay 30 --retry-all-errors -sS -A "$UA" -o "$out.part" "$url"
+  # a transfer that stalls (under 1 kB/s for two minutes) is dropped and tried again
+  curl -fL --retry 8 --retry-delay 30 --retry-all-errors --connect-timeout 60 --speed-limit 1000 --speed-time 120 \
+    -sS -A "$UA" -o "$out.part" "$url"
   mv "$out.part" "$out"
 }
 

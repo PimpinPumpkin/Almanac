@@ -9,6 +9,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.parse
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "lib"))
@@ -25,8 +26,17 @@ def ask(qids):
     req = urllib.request.Request(
         ENDPOINT, data=urllib.parse.urlencode({"query": query}).encode(),
         headers={"User-Agent": UA, "Accept": "application/sparql-results+json"})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        return json.load(r)["results"]["bindings"]
+    # the endpoint sheds load with 429s and 502s; wait and ask again
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                return json.load(r)["results"]["bindings"]
+        except Exception as e:
+            if attempt == 4:
+                # a small signal: lose this batch rather than the whole state
+                print("wikidata: gave up on a batch of %d items: %s" % (len(qids), e), file=sys.stderr)
+                return []
+            time.sleep(30 * (attempt + 1))
 
 
 def main():
