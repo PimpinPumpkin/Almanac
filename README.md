@@ -7,6 +7,34 @@ Three open datasets already list most US places. Almanac merges them and adds
 the part none of them has: for each place, the records that say it was open
 or closed on a specific day, and where each record came from.
 
+## Coverage by category
+
+The goal is the coverage people expect from Google Maps. Google's data cannot
+be read in bulk, so this table does not compare against it. It shows what
+Almanac lists today, how much of that has a dated open or closed record, and
+which public register can close the gap. Counts are from the four test
+regions (a District of Columbia box, a Sacramento box, Delaware and
+Kentucky), 477,000 places in all.
+
+| Category | Listed | Has a dated status | What it comes from, and what comes next | Can it be complete? |
+| --- | ---: | ---: | --- | --- |
+| Fast food and chain restaurants | 3,762 | 65% | Chain store locators (built) | Yes, for chains with a locator |
+| Banks and credit unions | 4,619 | 52% | FDIC branches and closings (built). Next: NCUA credit union branches | Yes |
+| Gas stations | 4,600 | 44% | Chain locators (built). Next: underground storage tank registries | Mostly |
+| Grocery and convenience stores | 6,079 | 39% | SNAP authorized stores, chain locators (built) | Mostly |
+| Pharmacies | 1,845 | 28% | Chain locators (built). Next: NPPES, state pharmacy boards | Mostly |
+| Restaurants and cafes, independent | 29,625 | 20% | Foursquare closing dates, OSM (built). Next: state alcohol licenses, health inspections | State by state, never everywhere |
+| Hotels | 2,598 | 17% | Chain locators (built). Next: state lodging licenses where published | Chains yes, independents patchy |
+| Bars | 3,552 | 10% | Foursquare, OSM (built). Next: state alcohol licenses | Yes, in states that publish the list |
+| Hospitals | 1,446 | 3% | Next: CMS | Yes |
+| Museums | 1,005 | 3% | Next: IRS exempt organizations | Partly |
+| EV chargers | 614 | 3% | Not handled yet. The federal station list needs a free API key | Yes, if a key is allowed |
+| Schools | 11,124 | 1% | Next: NCES | Yes |
+| Parks | 6,045 | 0.2% | OSM. Parks rarely close, so a listing is most of the job | Listing yes, status not needed |
+| Everything else | 404,901 | 4% | Salons, repair shops, offices, clinics, churches. Next: NPPES, IRS, state professional licenses | No. This is the long tail |
+
+"Next" sources are a plan. None has been fetched or checked yet.
+
 Status: first milestone. It builds test regions end to end. Nothing is
 published yet.
 
