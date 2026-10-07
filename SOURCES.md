@@ -291,6 +291,48 @@ adapter is merged. If a source states no license, the entry says so.
   their newest inspection, and active Licensing Board licenses (open).
 - Privacy: the owner, applicant, manager and phone columns are not read.
 
+### State alcohol license lists found on agency sites (2026-10-07)
+None of these pages states a license; rows are marked `none-stated`. In
+each, only the trading name and premises address are read, never the
+licensee, owner, manager or phone columns, and nothing creates a place.
+- Washington LCB: on-premises and off-premises spreadsheets linked from
+  `https://lcb.wa.gov/records/frequently-requested-lists` (dated file names)
+- New Jersey ABC: retail license report linked from
+  `https://www.njoag.gov/about/divisions-and-offices/division-of-alcoholic-beverage-control-home/licensing-bureau-applications-and-information/licensing-reports/`
+  (monthly). Licenses with an inactivity date are not read.
+- Wisconsin DOR: `https://ww2.revenue.wi.gov/WebServicesPublicWeb/rest/liquor/all` (CSV)
+- Nebraska LCC: roster linked from `https://lcc.nebraska.gov/licensing-sdl/active-license-roster`
+- Maine BABLO: file linked from `https://www.maine.gov/dafs/bablo/liquor-licensing/license-data`
+- Idaho State Police ABC: `https://apps.isp.idaho.gov/AbcReporting/license/search/csv?licenseTypes=retail&status=ISSUED`
+- Arkansas ABC: `https://www.dfa.arkansas.gov/wp-content/uploads/FullPermitYYYYMM.xlsx` (monthly)
+- Oklahoma ABLE: one list per license type linked from
+  `https://oklahoma.gov/able-commission/brand-registration/brand-registration-reports/listing-of-licensees-by-license-type.html`
+- Not used yet: Massachusetts ABCC publishes its active retail licenses as
+  an old binary .xls (`https://www.mass.gov/doc/abcc-active-retail-licenses/download`),
+  which needs a reader the build does not have.
+- Looked for and not found as a file: Pennsylvania, Ohio, Illinois,
+  Michigan, Virginia, North Carolina, Arizona, Minnesota, South Carolina,
+  Louisiana, Kansas, Utah, Vermont (search forms or blocked pages), and
+  Indiana (sold per record).
+
+### City layers: Las Vegas, Omaha, Minneapolis, Baltimore, Columbus
+None states a license; rows are marked `none-stated`.
+- Las Vegas active business licenses:
+  `https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/Business_Licenses_OpenData/FeatureServer/0`.
+  Owner and phone columns are not read; home, mobile and office-only
+  trades are left out. Its "Closed" licenses carry no date and are not used.
+- Douglas County, Nebraska restaurant inspections:
+  `https://services.arcgis.com/pDAi2YK0L0QxVJHj/arcgis/rest/services/Restaurant_Inspections/FeatureServer/14`
+- Minneapolis food inspections and on-sale and off-sale liquor licenses:
+  `https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/` (`Food_Inspections`, `On_Sale_Liquor`, `Off_Sale_Liquor`)
+- Baltimore liquor licenses:
+  `https://services1.arcgis.com/UWYHeuuJISiGmgXx/arcgis/rest/services/LIquor_Licenses/FeatureServer/0`.
+  The licensee's name is not read.
+- Columbus inspected restaurants and markets:
+  `https://maps2.columbus.gov/arcgis/rest/services/Schemas/Health/MapServer/3`
+- Not used: Southern Nevada Health District restaurant inspections on the
+  Las Vegas portal. The rows have no names or addresses.
+
 ### Pennsylvania Department of Revenue, sales tax licenses
 - License: public domain, as stated on the dataset.
 - Fetched from: `https://data.pa.gov/resource/ugeq-ckxd.json`

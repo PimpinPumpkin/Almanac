@@ -31,10 +31,13 @@ These rules do not change from item to item.
 The categories where a register can make coverage complete.
 
 - **1.1 State alcohol license lists.** One adapter per state. Done:
-  California, Colorado, DC, Florida, Missouri, New York, Oregon, Texas. Then Colorado,
-  Missouri, Oregon, Washington, Pennsylvania, Illinois, and on through
-  every state that publishes one. Done for a state when its bars pass 40%
-  with a status.
+  Arkansas, California, Colorado, Connecticut, DC, Florida, Idaho, Maine,
+  Missouri, Nebraska, New Jersey, New York, Oklahoma, Oregon, Texas,
+  Washington, Wisconsin. Massachusetts has a file in an old Excel format
+  that still needs a reader. The other states were searched on 2026-10-07
+  and offer a search form only, block fetches, or sell the list (the
+  findings are in SOURCES.md). Done for a state when its bars pass 40% with
+  a status.
 - **1.2 Missing license flag** for each of those states whose list has
   positions (today: DC and New York).
 - **1.3 Restaurant inspections.** Done: Florida (Jacksonville restaurants

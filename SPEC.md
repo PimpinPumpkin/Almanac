@@ -276,6 +276,20 @@ rows are the same place.
 | Boston food establishment licenses | number | 29 of 30 | the miss is a coffee kiosk taking the department store around it |
 | Boston food inspections | number | 30 of 30 | |
 | Boston Licensing Board licenses | number | 30 of 30 | geocoded |
+| Washington liquor licenses | number | 30 of 30 (Seattle) | geocoded |
+| New Jersey retail liquor licenses | number | 30 of 30 (Newark) | unused licenses left out; geocoded |
+| Wisconsin retail alcohol licenses | number | 30 of 30 (Milwaukee) | dated by each record's own update; geocoded |
+| Nebraska liquor licenses | number | 30 of 30 (Omaha) | geocoded |
+| Maine liquor licenses | number | 30 of 30 (Portland) | geocoded |
+| Idaho retail alcohol licenses | number | 30 of 30 (Boise) | geocoded |
+| Arkansas alcohol permits | number | 30 of 30 (Little Rock) | geocoded |
+| Oklahoma alcohol licenses | number | 30 of 30 (Oklahoma City) | geocoded |
+| Las Vegas business licenses | number | 30 of 30 | home, mobile and office-only trades left out; geocoded |
+| Omaha restaurant inspections | number | 30 of 30 |  |
+| Minneapolis food inspections | number | 30 of 30 |  |
+| Minneapolis liquor licenses | number | 30 of 30 |  |
+| Baltimore liquor licenses | number | 30 of 30 | dated by the start of the license year; geocoded |
+| Columbus restaurant and market inspections | number | 30 of 30 |  |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -475,6 +489,20 @@ signal at all.
 | isd_boston_food | open | day the list was last changed, active licenses | matcher |
 | isd_boston_inspection | open | day of the establishment's newest inspection | matcher |
 | lb_boston | open | day the list was last changed, active licenses | matcher, positions from the Census geocoder |
+| lcb_wa | open | day the file was read, active unexpired licenses | matcher, positions from the Census geocoder |
+| abc_nj | open | first day of the month of the report, licenses in use | matcher, positions from the Census geocoder |
+| dor_wi_liquor | open | day the record was last updated, unexpired licenses | matcher, positions from the Census geocoder |
+| lcc_ne | open | day the roster was read, active retail licenses | matcher, positions from the Census geocoder |
+| bablo_me | open | day the file was read, active licenses for premises in Maine | matcher, positions from the Census geocoder |
+| isp_id_liquor | open | day the file was read, issued unexpired retail licenses | matcher, positions from the Census geocoder |
+| abc_ar | open | first day of the month of the list, active retail alcohol permits | matcher, positions from the Census geocoder |
+| able_ok | open | day the lists were read, unexpired retail license types | matcher, positions from the Census geocoder |
+| biz_lasvegas | open | day the layer was last edited, active licenses inside the city | matcher, positions from the Census geocoder |
+| dchd_omaha_food | open | day of the establishment's newest inspection | matcher |
+| mpls_food | open | day of the facility's newest inspection | matcher |
+| mpls_liquor | open | day the layer was last edited, approved licenses | matcher |
+| llb_baltimore | open | day the newest license year began | matcher, positions from the Census geocoder |
+| cph_columbus_food | open | day the layer was read, permits that have not run out | matcher |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |

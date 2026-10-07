@@ -75,6 +75,7 @@ class Writer:
         self.w = csv.writer(self.f)
         self.w.writerow(COLUMNS)
         self.kept = {}
+        self.ids = set()
         self.dropped = {}
 
     def drop(self, why):
@@ -96,6 +97,10 @@ class Writer:
             return self.drop("no date")
         if not name:
             return self.drop("no name")
+        # an id must name one record; a register that repeats one keeps its first row
+        if (source, source_id) in self.ids:
+            return self.drop("same id twice")
+        self.ids.add((source, source_id))
         self.w.writerow([source, source_id, name.strip(), addr, lat, lng, state, date])
         key = (source, state)
         self.kept[key] = self.kept.get(key, 0) + 1
