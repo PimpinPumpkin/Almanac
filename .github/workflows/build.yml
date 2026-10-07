@@ -202,6 +202,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs COVERAGE.md reports
           git diff --cached --quiet || git commit -m "Coverage and reports for the $BUILD_DATE build"
-          # someone may have pushed while the build ran
-          git pull --rebase origin main
+          # someone may have pushed while the build ran; where both touched a
+          # report, the one from this build wins
+          git pull --rebase -X theirs origin main
           git push
