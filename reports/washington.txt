@@ -164,7 +164,7 @@
 │ open    │ abc_ar              │     13 │
 │ open    │ atp                 │  14389 │
 │ open    │ biz_lasvegas        │      1 │
-│ open    │ biz_seattle         │   5518 │
+│ open    │ biz_seattle         │   5495 │
 │ open    │ childcare_wa        │   1035 │
 │ open    │ cms_hospitals       │     91 │
 │ open    │ dol_wa              │   1432 │
@@ -174,13 +174,13 @@
 │ open    │ irs_eo              │   2762 │
 │ open    │ isp_id_liquor       │      1 │
 │ open    │ kc_wa_food          │   2446 │
-│ open    │ lcb_wa              │   8874 │
+│ open    │ lcb_wa              │   8710 │
 │ open    │ nces_schools        │   1694 │
 │ open    │ ncua_branches       │    233 │
 │ open    │ nppes_orgs          │   1384 │
-│ open    │ olcc_or             │      6 │
+│ open    │ olcc_or             │      5 │
 │ open    │ osm_check_date      │   9790 │
-│ open    │ snap_current        │   3674 │
+│ open    │ snap_current        │   3862 │
 │ open    │ snap_history        │    104 │
 └─────────┴─────────────────────┴────────┘
   26 rows                      3 columns

@@ -157,37 +157,38 @@
 │ status  │    status_source    │ places │
 │ varchar │       varchar       │ int64  │
 ├─────────┼─────────────────────┼────────┤
-│ closed  │ fdic_history        │   1426 │
-│ closed  │ fsq_closed          │   9299 │
+│ closed  │ fdic_history        │   1425 │
+│ closed  │ fsq_closed          │   9300 │
 │ closed  │ osm_history         │   2130 │
 │ closed  │ osm_lifecycle       │   2705 │
 │ closed  │ wikidata_p576       │     22 │
 │ open    │ abc_ar              │     18 │
-│ open    │ abc_ca              │  42050 │
+│ open    │ abc_ca              │  44497 │
 │ open    │ abt_fl              │      1 │
-│ open    │ atp                 │  59379 │
+│ open    │ atp                 │  59378 │
 │ open    │ biz_de              │      1 │
-│ open    │ bot_sac             │   5246 │
+│ open    │ bot_sac             │   5284 │
 │ open    │ cdph_chicago        │      1 │
-│ open    │ childcare_ca        │   4172 │
+│ open    │ childcare_ca        │   4175 │
 │ open    │ cms_hospitals       │    226 │
-│ open    │ dca_ca_auto         │  20636 │
-│ open    │ dca_ca_pharmacy     │   2594 │
-│ open    │ dca_ca_salon        │  25158 │
-│ open    │ emd_sac             │   2631 │
+│ open    │ dca_ca_auto         │  20663 │
+│ open    │ dca_ca_pharmacy     │   2826 │
+│ open    │ dca_ca_salon        │  25154 │
+│ open    │ emd_sac             │   2630 │
 │ open    │ epa_ust_open        │   2129 │
-│ open    │ fdic_locations      │   6036 │
-│ open    │ hrsa_health_centers │    745 │
-│ open    │ irs_eo              │  13620 │
+│ open    │ fdic_locations      │   6034 │
+│ open    │ hrsa_health_centers │    750 │
+│ open    │ irs_eo              │  13923 │
+│ open    │ lcb_wa              │      1 │
 │ open    │ led_co              │      2 │
-│ open    │ nces_schools        │   8108 │
+│ open    │ nces_schools        │   7805 │
 │ open    │ ncua_branches       │    934 │
 │ open    │ nppes_orgs          │   5310 │
-│ open    │ osm_check_date      │  14460 │
-│ open    │ snap_current        │  25635 │
+│ open    │ osm_check_date      │  14464 │
+│ open    │ snap_current        │  22886 │
 │ open    │ snap_history        │    588 │
 └─────────┴─────────────────────┴────────┘
-  29 rows                      3 columns
+  30 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -206,12 +207,12 @@
 │      varchar       │ varchar │  int64  │
 ├────────────────────┼─────────┼─────────┤
 │ (none)             │ closed  │    2387 │
-│ (none)             │ open    │   26936 │
-│ (none)             │ unknown │  468132 │
+│ (none)             │ open    │   26937 │
+│ (none)             │ unknown │  468131 │
 │ open               │ closed  │   11508 │
-│ open               │ open    │  181824 │
-│ open               │ unknown │ 1243922 │
+│ open               │ open    │  181821 │
+│ open               │ unknown │ 1243925 │
 │ permanently_closed │ closed  │     260 │
-│ permanently_closed │ open    │     720 │
-│ permanently_closed │ unknown │   86582 │
+│ permanently_closed │ open    │     722 │
+│ permanently_closed │ unknown │   86580 │
 └────────────────────┴─────────┴─────────┘

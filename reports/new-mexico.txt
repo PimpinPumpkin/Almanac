@@ -164,7 +164,7 @@
 │ open    │ abc_ar              │      1 │
 │ open    │ atp                 │   4537 │
 │ open    │ cms_hospitals       │     38 │
-│ open    │ cpa_tx              │      7 │
+│ open    │ cpa_tx              │      6 │
 │ open    │ epa_ust_open        │    237 │
 │ open    │ fdic_locations      │    478 │
 │ open    │ hrsa_health_centers │     30 │
@@ -175,8 +175,9 @@
 │ open    │ osm_check_date      │    356 │
 │ open    │ snap_current        │   2261 │
 │ open    │ snap_history        │     60 │
+│ open    │ tabc_tx             │      1 │
 └─────────┴─────────────────────┴────────┘
-  19 rows                      3 columns
+  20 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐

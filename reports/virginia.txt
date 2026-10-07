@@ -41,8 +41,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   4445 │
-│ open    │  51355 │
-│ unknown │ 432385 │
+│ open    │  51354 │
+│ unknown │ 432386 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -50,8 +50,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   3109 │
-│ open    │  47681 │
-│ unknown │ 399392 │
+│ open    │  47680 │
+│ unknown │ 399393 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌───────────────────┬─────────┬─────────┬─────────┐
@@ -110,7 +110,7 @@
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ abca_dc_active │ open    │ self    │  2015 │   2015 │
 │ atp            │ open    │ near    │   393 │    382 │
-│ atp            │ open    │ number  │ 19257 │  17729 │
+│ atp            │ open    │ number  │ 19257 │  17728 │
 │ atp            │ open    │ self    │  2381 │   2381 │
 │ atp            │ open    │ spot    │    77 │     75 │
 │ bbl_dc         │ open    │ number  │     3 │      3 │
@@ -132,7 +132,7 @@
 │     ·          │  ·      │  ·      │     · │      · │
 │     ·          │  ·      │  ·      │     · │      · │
 │ nppes_orgs     │ open    │ address │ 11795 │  10353 │
-│ osm_check_date │ open    │ near    │  1210 │   1204 │
+│ osm_check_date │ open    │ near    │  1210 │   1203 │
 │ osm_check_date │ open    │ number  │  3580 │   3551 │
 │ osm_check_date │ open    │ self    │  1602 │   1602 │
 │ osm_check_date │ open    │ spot    │   105 │    105 │
@@ -164,7 +164,7 @@
 │ closed  │ osm_lifecycle       │    555 │
 │ closed  │ wikidata_p576       │      6 │
 │ open    │ abca_dc_active      │   2015 │
-│ open    │ atp                 │  17655 │
+│ open    │ atp                 │  17654 │
 │ open    │ bbl_dc              │      3 │
 │ open    │ cms_hospitals       │     81 │
 │ open    │ dph_de              │   1029 │
@@ -202,8 +202,8 @@
 │ (none)             │ open    │   5714 │
 │ (none)             │ unknown │ 102805 │
 │ open               │ closed  │   3345 │
-│ open               │ open    │  29151 │
-│ open               │ unknown │ 279651 │
+│ open               │ open    │  29150 │
+│ open               │ unknown │ 279652 │
 │ permanently_closed │ closed  │     57 │
 │ permanently_closed │ open    │    119 │
 │ permanently_closed │ unknown │  13940 │

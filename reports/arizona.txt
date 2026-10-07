@@ -38,18 +38,18 @@
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   2910 │
-│ open    │  28571 │
-│ unknown │ 353431 │
+│ closed  │   2908 │
+│ open    │  29321 │
+│ unknown │ 352683 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   2440 │
-│ open    │  26908 │
-│ unknown │ 332943 │
+│ closed  │   2438 │
+│ open    │  27648 │
+│ unknown │ 332205 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -76,10 +76,9 @@
 │ childcare_az           │ open    │    2258 │     892 │
 │ childcare_ca           │ open    │       6 │       0 │
 │ childcare_co           │ open    │      12 │       0 │
-│      ·                 │  ·      │       · │       · │
-│      ·                 │  ·      │       · │       · │
-│      ·                 │  ·      │       · │       · │
-│ hrsa_health_centers    │ open    │     252 │      90 │
+│   ·                    │  ·      │       · │       · │
+│   ·                    │  ·      │       · │       · │
+│   ·                    │  ·      │       · │       · │
 │ irs_eo                 │ open    │   58142 │    2846 │
 │ isp_id_liquor          │ open    │       6 │       0 │
 │ kc_wa_food             │ open    │      26 │       0 │
@@ -92,6 +91,7 @@
 │ ncua_branches          │ open    │     415 │     249 │
 │ nppes_orgs             │ open    │  113087 │   10628 │
 │ olcc_or                │ open    │      41 │       0 │
+│ phx_liquor             │ open    │    1956 │    1374 │
 │ rev_pa                 │ open    │      11 │       0 │
 │ sla_ny                 │ open    │      13 │       0 │
 │ snap_current           │ open    │    4771 │    4434 │
@@ -100,7 +100,7 @@
 │ tax_ny_tobacco         │ open    │       4 │       0 │
 │ tdlr_tx                │ open    │     467 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  62 rows (40 shown)                         4 columns
+  63 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -108,7 +108,7 @@
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ abc_ca         │ open    │ address │     2 │      1 │
 │ atp            │ open    │ near    │   315 │    289 │
-│ atp            │ open    │ number  │ 15742 │  14377 │
+│ atp            │ open    │ number  │ 15742 │  14376 │
 │ atp            │ open    │ self    │  1889 │   1889 │
 │ atp            │ open    │ spot    │    60 │     55 │
 │ childcare_az   │ open    │ near    │     5 │      5 │
@@ -126,12 +126,9 @@
 │ fdic_locations │ open    │ number  │   801 │    800 │
 │ fdic_locations │ open    │ self    │   157 │    157 │
 │ fsq_closed     │ closed  │ id      │  2188 │   2188 │
-│     ·          │  ·      │ ·       │     · │      · │
-│     ·          │  ·      │ ·       │     · │      · │
-│     ·          │  ·      │ ·       │     · │      · │
-│ ncua_branches  │ open    │ near    │     1 │      1 │
-│ ncua_branches  │ open    │ number  │   228 │    220 │
-│ nppes_orgs     │ open    │ address │ 11566 │  10052 │
+│     ·          │  ·      │ ·       │    ·  │     ·  │
+│     ·          │  ·      │ ·       │    ·  │     ·  │
+│     ·          │  ·      │ ·       │    ·  │     ·  │
 │ osm_check_date │ open    │ near    │   720 │    715 │
 │ osm_check_date │ open    │ number  │  1626 │   1591 │
 │ osm_check_date │ open    │ self    │   586 │    586 │
@@ -141,6 +138,9 @@
 │ osm_lifecycle  │ closed  │ number  │    54 │     53 │
 │ osm_lifecycle  │ closed  │ self    │    85 │     85 │
 │ osm_lifecycle  │ closed  │ spot    │     1 │      1 │
+│ phx_liquor     │ open    │ near    │    14 │     12 │
+│ phx_liquor     │ open    │ number  │  1407 │   1370 │
+│ phx_liquor     │ open    │ spot    │    20 │     20 │
 │ snap_current   │ open    │ near    │    34 │     34 │
 │ snap_current   │ open    │ number  │  4428 │   4428 │
 │ snap_current   │ open    │ self    │   700 │    700 │
@@ -150,33 +150,34 @@
 │ snap_history   │ open    │ spot    │    17 │     17 │
 │ wikidata_p576  │ closed  │ self    │     4 │      4 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  47 rows (40 shown)                        5 columns
+  50 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
 │ varchar │       varchar       │ int64  │
 ├─────────┼─────────────────────┼────────┤
 │ closed  │ fdic_history        │    283 │
-│ closed  │ fsq_closed          │   2162 │
+│ closed  │ fsq_closed          │   2160 │
 │ closed  │ osm_history         │    302 │
 │ closed  │ osm_lifecycle       │    159 │
 │ closed  │ wikidata_p576       │      4 │
 │ open    │ abc_ca              │      1 │
-│ open    │ atp                 │  14024 │
+│ open    │ atp                 │  13925 │
 │ open    │ childcare_az        │    785 │
 │ open    │ cms_hospitals       │     79 │
-│ open    │ epa_ust_open        │    351 │
+│ open    │ epa_ust_open        │    332 │
 │ open    │ fdic_locations      │    959 │
 │ open    │ hrsa_health_centers │     87 │
-│ open    │ irs_eo              │   2170 │
+│ open    │ irs_eo              │   2158 │
 │ open    │ nces_schools        │   1665 │
 │ open    │ ncua_branches       │    179 │
 │ open    │ nppes_orgs          │   1740 │
-│ open    │ osm_check_date      │   1230 │
-│ open    │ snap_current        │   5188 │
-│ open    │ snap_history        │    113 │
+│ open    │ osm_check_date      │   1208 │
+│ open    │ phx_liquor          │   1169 │
+│ open    │ snap_current        │   4928 │
+│ open    │ snap_history        │    106 │
 └─────────┴─────────────────────┴────────┘
-  19 rows                      3 columns
+  20 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -184,7 +185,7 @@
 │    varchar    │ int64  │      int64      │      int64      │
 ├───────────────┼────────┼─────────────────┼─────────────────┤
 │ fdic_history  │    302 │               8 │               5 │
-│ fsq_closed    │   2188 │               4 │              27 │
+│ fsq_closed    │   2188 │               6 │              27 │
 │ osm_history   │    331 │              26 │              19 │
 │ osm_lifecycle │    164 │               4 │               7 │
 │ wikidata_p576 │      4 │               0 │               0 │
@@ -195,11 +196,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    456 │
-│ (none)             │ open    │   4557 │
-│ (none)             │ unknown │  86724 │
-│ open               │ closed  │   2302 │
-│ open               │ open    │  20332 │
-│ open               │ unknown │ 232377 │
+│ (none)             │ open    │   4587 │
+│ (none)             │ unknown │  86694 │
+│ open               │ closed  │   2300 │
+│ open               │ open    │  21021 │
+│ open               │ unknown │ 231690 │
 │ permanently_closed │ closed  │     34 │
 │ permanently_closed │ open    │     80 │
 │ permanently_closed │ unknown │  12678 │

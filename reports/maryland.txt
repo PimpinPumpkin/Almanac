@@ -202,11 +202,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    440 │
-│ (none)             │ open    │   4243 │
-│ (none)             │ unknown │  71612 │
+│ (none)             │ open    │   4242 │
+│ (none)             │ unknown │  71613 │
 │ open               │ closed  │   2289 │
-│ open               │ open    │  19875 │
-│ open               │ unknown │ 193713 │
+│ open               │ open    │  19876 │
+│ open               │ unknown │ 193712 │
 │ permanently_closed │ closed  │     26 │
 │ permanently_closed │ open    │     87 │
 │ permanently_closed │ unknown │  10732 │

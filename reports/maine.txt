@@ -161,7 +161,7 @@
 │ closed  │ osm_history         │    132 │
 │ closed  │ osm_lifecycle       │     82 │
 │ open    │ atp                 │   2319 │
-│ open    │ bablo_me            │   2711 │
+│ open    │ bablo_me            │   2707 │
 │ open    │ cms_hospitals       │     28 │
 │ open    │ epa_ust_open        │    244 │
 │ open    │ fdic_locations      │    476 │
@@ -171,7 +171,7 @@
 │ open    │ ncua_branches       │     40 │
 │ open    │ nppes_orgs          │    342 │
 │ open    │ osm_check_date      │    295 │
-│ open    │ snap_current        │   1040 │
+│ open    │ snap_current        │   1044 │
 │ open    │ snap_history        │     26 │
 └─────────┴─────────────────────┴────────┘
   17 rows                      3 columns

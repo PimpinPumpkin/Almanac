@@ -11,8 +11,8 @@
 │         varchar          │      varchar      │ int64 │
 ├──────────────────────────┼───────────────────┼───────┤
 │ alltheplaces -> overture │ near              │    33 │
-│ alltheplaces -> overture │ number            │  1228 │
-│ alltheplaces -> overture │ spot              │     4 │
+│ alltheplaces -> overture │ number            │  1227 │
+│ alltheplaces -> overture │ spot              │     5 │
 │ osm -> core              │ near              │  1360 │
 │ osm -> core              │ number            │  3768 │
 │ osm -> core              │ spot              │   161 │
@@ -114,9 +114,9 @@
 │ abt_fl         │ open    │ address │     1 │      1 │
 │ agm_ny         │ open    │ self    │   116 │    116 │
 │ atp            │ open    │ near    │    33 │     30 │
-│ atp            │ open    │ number  │  1228 │   1087 │
+│ atp            │ open    │ number  │  1227 │   1086 │
 │ atp            │ open    │ self    │   231 │    231 │
-│ atp            │ open    │ spot    │     4 │      4 │
+│ atp            │ open    │ spot    │     5 │      5 │
 │ childcare_vt   │ open    │ near    │    11 │     11 │
 │ childcare_vt   │ open    │ number  │   237 │    233 │
 │ cms_hospitals  │ open    │ number  │    11 │     11 │

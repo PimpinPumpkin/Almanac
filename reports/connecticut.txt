@@ -175,17 +175,17 @@
 │ open    │ dmv_ct              │   2419 │
 │ open    │ dmv_ny              │    143 │
 │ open    │ dos_ny_salons       │    160 │
-│ open    │ elicense_ct         │   7624 │
+│ open    │ elicense_ct         │   7605 │
 │ open    │ epa_ust_open        │    256 │
 │ open    │ fdic_locations      │    999 │
-│ open    │ hrsa_health_centers │     60 │
+│ open    │ hrsa_health_centers │     58 │
 │ open    │ irs_eo              │   2219 │
 │ open    │ nces_schools        │    754 │
 │ open    │ ncua_branches       │     83 │
 │ open    │ nppes_orgs          │    706 │
 │ open    │ osm_check_date      │    573 │
 │ open    │ sla_ny              │    650 │
-│ open    │ snap_current        │   1560 │
+│ open    │ snap_current        │   1581 │
 │ open    │ snap_history        │     54 │
 └─────────┴─────────────────────┴────────┘
   27 rows                      3 columns

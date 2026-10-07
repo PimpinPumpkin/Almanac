@@ -100,7 +100,7 @@
 │ tax_ny_tobacco      │ open    │       2 │       0 │
 │ tdlr_tx             │ open    │     632 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  58 rows (40 shown)                      4 columns
+  59 rows (40 shown)                      4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │

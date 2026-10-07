@@ -100,7 +100,7 @@
 │ tax_ny_tobacco     │ open    │       3 │       0 │
 │ tdlr_tx            │ open    │    2138 │       0 │
 └────────────────────┴─────────┴─────────┴─────────┘
-  59 rows (40 shown)                     4 columns
+  60 rows (40 shown)                     4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -162,7 +162,7 @@
 │ closed  │ osm_lifecycle       │     56 │
 │ closed  │ wikidata_p576       │      2 │
 │ open    │ abc_ar              │      7 │
-│ open    │ able_ok             │   3671 │
+│ open    │ able_ok             │   3680 │
 │ open    │ atc_mo              │      1 │
 │ open    │ atp                 │  10152 │
 │ open    │ cms_hospitals       │     90 │
@@ -175,7 +175,7 @@
 │ open    │ ncua_branches       │     79 │
 │ open    │ nppes_orgs          │    864 │
 │ open    │ osm_check_date      │    893 │
-│ open    │ snap_current        │   3666 │
+│ open    │ snap_current        │   3657 │
 │ open    │ snap_history        │     83 │
 └─────────┴─────────────────────┴────────┘
   21 rows                      3 columns

@@ -100,7 +100,7 @@
 │ tax_ny_tobacco         │ open    │      22 │       0 │
 │ tdlr_tx                │ open    │     752 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  72 rows (40 shown)                         4 columns
+  73 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────┬─────────┬─────────┬───────┬────────┐
 │     source      │  state  │  rule   │ rows  │ places │
@@ -156,32 +156,32 @@
 │ status  │    status_source    │ places │
 │ varchar │       varchar       │ int64  │
 ├─────────┼─────────────────────┼────────┤
-│ closed  │ fdic_history        │   1064 │
-│ closed  │ fsq_closed          │   6083 │
+│ closed  │ fdic_history        │   1065 │
+│ closed  │ fsq_closed          │   6082 │
 │ closed  │ osm_history         │    629 │
 │ closed  │ osm_lifecycle       │    404 │
 │ closed  │ wikidata_p576       │      5 │
 │ open    │ abc_ar              │      1 │
-│ open    │ abt_fl              │  18740 │
-│ open    │ atp                 │  33163 │
+│ open    │ abt_fl              │  19079 │
+│ open    │ atp                 │  33162 │
 │ open    │ biz_lasvegas        │      1 │
 │ open    │ cms_hospitals       │    189 │
-│ open    │ dbpr_fl_food        │    558 │
-│ open    │ dbpr_fl_lodging     │   2199 │
-│ open    │ dbpr_fl_restaurant  │  26678 │
-│ open    │ dbpr_fl_salon       │  12046 │
-│ open    │ dbpr_fl_vet         │   1154 │
+│ open    │ dbpr_fl_food        │    559 │
+│ open    │ dbpr_fl_lodging     │   2194 │
+│ open    │ dbpr_fl_restaurant  │  26550 │
+│ open    │ dbpr_fl_salon       │  12060 │
+│ open    │ dbpr_fl_vet         │   1156 │
 │ open    │ epa_ust_open        │   1278 │
 │ open    │ fdic_locations      │   4405 │
 │ open    │ hrsa_health_centers │    130 │
-│ open    │ irs_eo              │   7444 │
+│ open    │ irs_eo              │   7543 │
 │ open    │ led_co              │      1 │
-│ open    │ nces_schools        │   3463 │
+│ open    │ nces_schools        │   3364 │
 │ open    │ ncua_branches       │    545 │
 │ open    │ nppes_orgs          │   5625 │
 │ open    │ osm_check_date      │   2870 │
 │ open    │ rev_pa              │      1 │
-│ open    │ snap_current        │  11007 │
+│ open    │ snap_current        │  10785 │
 │ open    │ snap_history        │    365 │
 └─────────┴─────────────────────┴────────┘
   27 rows                      3 columns
@@ -203,11 +203,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │   1460 │
-│ (none)             │ open    │  17122 │
-│ (none)             │ unknown │ 342127 │
+│ (none)             │ open    │  17123 │
+│ (none)             │ unknown │ 342126 │
 │ open               │ closed  │   6369 │
-│ open               │ open    │ 102563 │
-│ open               │ unknown │ 859974 │
+│ open               │ open    │ 102562 │
+│ open               │ unknown │ 859975 │
 │ permanently_closed │ closed  │     74 │
 │ permanently_closed │ open    │    370 │
 │ permanently_closed │ unknown │  56896 │

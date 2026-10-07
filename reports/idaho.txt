@@ -168,12 +168,12 @@
 │ open    │ fdic_locations      │    655 │
 │ open    │ hrsa_health_centers │     40 │
 │ open    │ irs_eo              │    618 │
-│ open    │ isp_id_liquor       │   2651 │
+│ open    │ isp_id_liquor       │   2634 │
 │ open    │ nces_schools        │    611 │
 │ open    │ ncua_branches       │    125 │
 │ open    │ nppes_orgs          │    620 │
 │ open    │ osm_check_date      │    366 │
-│ open    │ snap_current        │   1337 │
+│ open    │ snap_current        │   1354 │
 │ open    │ snap_history        │     25 │
 └─────────┴─────────────────────┴────────┘
   19 rows                      3 columns

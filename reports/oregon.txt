@@ -172,9 +172,9 @@
 │ open    │ nces_schools        │   1130 │
 │ open    │ ncua_branches       │    246 │
 │ open    │ nppes_orgs          │    844 │
-│ open    │ olcc_or             │   7756 │
+│ open    │ olcc_or             │   7761 │
 │ open    │ osm_check_date      │   3188 │
-│ open    │ snap_current        │   2980 │
+│ open    │ snap_current        │   2975 │
 │ open    │ snap_history        │     71 │
 └─────────┴─────────────────────┴────────┘
   20 rows                      3 columns

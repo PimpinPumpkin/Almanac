@@ -182,9 +182,9 @@
 │ open    │ epa_ust_open        │    824 │
 │ open    │ fdic_locations      │   4335 │
 │ open    │ hrsa_health_centers │     56 │
-│ open    │ irs_eo              │   3271 │
+│ open    │ irs_eo              │   3272 │
 │ open    │ li_phl              │      1 │
-│ open    │ nces_schools        │   1798 │
+│ open    │ nces_schools        │   1797 │
 │ open    │ ncua_branches       │    130 │
 │ open    │ nppes_orgs          │   1748 │
 │ open    │ osm_check_date      │   2353 │

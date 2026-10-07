@@ -196,11 +196,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    717 │
-│ (none)             │ open    │   7274 │
-│ (none)             │ unknown │ 143257 │
+│ (none)             │ open    │   7275 │
+│ (none)             │ unknown │ 143256 │
 │ open               │ closed  │   3036 │
-│ open               │ open    │  34653 │
-│ open               │ unknown │ 370864 │
+│ open               │ open    │  34652 │
+│ open               │ unknown │ 370865 │
 │ permanently_closed │ closed  │     34 │
 │ permanently_closed │ open    │    104 │
 │ permanently_closed │ unknown │  14685 │

@@ -164,7 +164,7 @@
 │ closed  │ osm_lifecycle       │    201 │
 │ open    │ abca_dc_active      │    774 │
 │ open    │ atp                 │    999 │
-│ open    │ bbl_dc              │   2931 │
+│ open    │ bbl_dc              │   2941 │
 │ open    │ cms_hospitals       │      8 │
 │ open    │ epa_ust_open        │     47 │
 │ open    │ fdic_locations      │    348 │
@@ -176,7 +176,7 @@
 │ open    │ ncua_branches       │     33 │
 │ open    │ nppes_orgs          │    121 │
 │ open    │ osm_check_date      │    413 │
-│ open    │ snap_current        │    734 │
+│ open    │ snap_current        │    724 │
 │ open    │ snap_history        │     14 │
 └─────────┴─────────────────────┴────────┘
   21 rows                      3 columns

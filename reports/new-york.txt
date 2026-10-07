@@ -44,8 +44,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │  14166 │
-│ open    │ 168731 │
-│ unknown │ 989565 │
+│ open    │ 168730 │
+│ unknown │ 989566 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -53,8 +53,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │  11603 │
-│ open    │ 160650 │
-│ unknown │ 933280 │
+│ open    │ 160649 │
+│ unknown │ 933281 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -172,7 +172,7 @@
 │ open    │ atp                 │  25503 │
 │ open    │ cms_hospitals       │    161 │
 │ open    │ dcwp_nyc            │   2734 │
-│ open    │ dmv_ny              │  14974 │
+│ open    │ dmv_ny              │  14971 │
 │ open    │ doh_ny_food         │   4899 │
 │ open    │ dohmh_nyc           │  13538 │
 │ open    │ dos_ny_salons       │  15597 │
@@ -180,19 +180,19 @@
 │ open    │ epa_ust_open        │   1402 │
 │ open    │ fdic_locations      │   7357 │
 │ open    │ hrsa_health_centers │    242 │
-│ open    │ irs_eo              │   8839 │
+│ open    │ irs_eo              │   8840 │
 │ open    │ led_co              │      1 │
-│ open    │ nces_schools        │   3225 │
+│ open    │ nces_schools        │   3224 │
 │ open    │ ncua_branches       │    469 │
 │ open    │ nppes_orgs          │   2208 │
 │ open    │ ocm_ny              │    261 │
 │ open    │ osm_check_date      │   4669 │
 │ open    │ rev_pa              │      5 │
 │ open    │ rev_pa_tobacco      │      3 │
-│ open    │ sla_ny              │  31990 │
-│ open    │ snap_current        │  16086 │
+│ open    │ sla_ny              │  31856 │
+│ open    │ snap_current        │  16219 │
 │ open    │ snap_history        │    381 │
-│ open    │ tax_ny_tobacco      │   1015 │
+│ open    │ tax_ny_tobacco      │   1018 │
 └─────────┴─────────────────────┴────────┘
   32 rows                      3 columns
 == closing signals against independent evidence
@@ -213,11 +213,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │   2022 │
-│ (none)             │ open    │  14863 │
-│ (none)             │ unknown │ 266714 │
+│ (none)             │ open    │  14864 │
+│ (none)             │ unknown │ 266713 │
 │ open               │ closed  │  11263 │
-│ open               │ open    │ 101944 │
-│ open               │ unknown │ 619065 │
+│ open               │ open    │ 101942 │
+│ open               │ unknown │ 619067 │
 │ permanently_closed │ closed  │    114 │
 │ permanently_closed │ open    │    512 │
 │ permanently_closed │ unknown │  43238 │

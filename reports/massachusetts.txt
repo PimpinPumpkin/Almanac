@@ -176,9 +176,9 @@
 │ open    │ fdic_locations        │   2725 │
 │ open    │ hrsa_health_centers   │     90 │
 │ open    │ irs_eo                │   4139 │
-│ open    │ isd_boston_food       │   1238 │
+│ open    │ isd_boston_food       │   1229 │
 │ open    │ isd_boston_inspection │     81 │
-│ open    │ lb_boston             │   1229 │
+│ open    │ lb_boston             │   1235 │
 │ open    │ lcc_ne                │      1 │
 │ open    │ led_co                │      1 │
 │ open    │ nces_schools          │   1459 │
@@ -186,7 +186,7 @@
 │ open    │ nppes_orgs            │   1303 │
 │ open    │ osm_check_date        │   3282 │
 │ open    │ sla_ny                │     44 │
-│ open    │ snap_current          │   7238 │
+│ open    │ snap_current          │   7241 │
 │ open    │ snap_history          │    193 │
 │ open    │ tabc_tx               │      1 │
 └─────────┴───────────────────────┴────────┘

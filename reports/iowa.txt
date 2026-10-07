@@ -79,7 +79,6 @@
 │      ·                 │  ·      │       · │       · │
 │      ·                 │  ·      │       · │       · │
 │      ·                 │  ·      │       · │       · │
-│ fdic_locations         │ open    │    2041 │    1898 │
 │ hrsa_health_centers    │ open    │     130 │      26 │
 │ irs_eo                 │ open    │   48183 │    2395 │
 │ isp_id_liquor          │ open    │       9 │       0 │
@@ -96,11 +95,12 @@
 │ rev_pa_tobacco         │ open    │       1 │       0 │
 │ snap_current           │ open    │    3981 │    3576 │
 │ snap_history           │ open    │    4000 │    2207 │
+│ sux_food               │ open    │       1 │       0 │
 │ tabc_tx                │ open    │      46 │       0 │
 │ tax_ny_tobacco         │ open    │       2 │       0 │
 │ tdlr_tx                │ open    │      72 │       1 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  64 rows (40 shown)                         4 columns
+  65 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────┬─────────┬─────────┬───────┬────────┐
 │     source      │  state  │  rule   │ rows  │ places │

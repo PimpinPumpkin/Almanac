@@ -40,8 +40,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   9877 │
-│ open    │  79169 │
-│ unknown │ 666945 │
+│ open    │  79170 │
+│ unknown │ 666944 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -49,8 +49,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   8299 │
-│ open    │  73077 │
-│ unknown │ 630148 │
+│ open    │  73078 │
+│ unknown │ 630147 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -110,7 +110,7 @@
 │ abc_ar                 │ open    │ number  │     1 │      1 │
 │ atc_mo                 │ open    │ address │     2 │      2 │
 │ atp                    │ open    │ near    │  1262 │   1245 │
-│ atp                    │ open    │ number  │ 26889 │  25079 │
+│ atp                    │ open    │ number  │ 26889 │  25080 │
 │ atp                    │ open    │ self    │  3952 │   3952 │
 │ atp                    │ open    │ spot    │    84 │     80 │
 │ bacp_chicago           │ open    │ address │    71 │     71 │
@@ -132,7 +132,7 @@
 │     ·                  │  ·      │    ·    │     · │      · │
 │ nppes_orgs             │ open    │ address │ 21144 │  17494 │
 │ osm_check_date         │ open    │ near    │   918 │    909 │
-│ osm_check_date         │ open    │ number  │  6386 │   6284 │
+│ osm_check_date         │ open    │ number  │  6386 │   6283 │
 │ osm_check_date         │ open    │ self    │  2335 │   2335 │
 │ osm_check_date         │ open    │ spot    │   149 │    147 │
 │ osm_history            │ closed  │ id      │  1126 │   1126 │
@@ -157,8 +157,8 @@
 │ status  │     status_source      │ places │
 │ varchar │        varchar         │ int64  │
 ├─────────┼────────────────────────┼────────┤
-│ closed  │ bacp_chicago_cancelled │   1338 │
-│ closed  │ cdph_chicago_oob       │   1563 │
+│ closed  │ bacp_chicago_cancelled │   1339 │
+│ closed  │ cdph_chicago_oob       │   1562 │
 │ closed  │ fdic_history           │    660 │
 │ closed  │ fsq_closed             │   4628 │
 │ closed  │ osm_history            │   1002 │
@@ -166,21 +166,21 @@
 │ closed  │ wikidata_p576          │     15 │
 │ open    │ abc_ar                 │      1 │
 │ open    │ atc_mo                 │      2 │
-│ open    │ atp                    │  25003 │
-│ open    │ bacp_chicago           │  18512 │
+│ open    │ atp                    │  25004 │
+│ open    │ bacp_chicago           │  18661 │
 │ open    │ cdph_chicago           │   3429 │
 │ open    │ childcare_wi           │      4 │
 │ open    │ cms_hospitals          │    137 │
 │ open    │ dor_wi_liquor          │      3 │
 │ open    │ epa_ust_open           │   1126 │
 │ open    │ fdic_locations         │   4514 │
-│ open    │ hrsa_health_centers    │    155 │
-│ open    │ irs_eo                 │   5927 │
-│ open    │ nces_schools           │   2286 │
+│ open    │ hrsa_health_centers    │    152 │
+│ open    │ irs_eo                 │   5925 │
+│ open    │ nces_schools           │   2288 │
 │ open    │ ncua_branches          │    254 │
 │ open    │ nppes_orgs             │   2678 │
 │ open    │ osm_check_date         │   4761 │
-│ open    │ snap_current           │  10133 │
+│ open    │ snap_current           │   9987 │
 │ open    │ snap_history           │    244 │
 └─────────┴────────────────────────┴────────┘
   25 rows                         3 columns
@@ -204,8 +204,8 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │   1413 │
-│ (none)             │ open    │   9899 │
-│ (none)             │ unknown │ 180746 │
+│ (none)             │ open    │   9900 │
+│ (none)             │ unknown │ 180745 │
 │ open               │ closed  │   7718 │
 │ open               │ open    │  54040 │
 │ open               │ unknown │ 422139 │
