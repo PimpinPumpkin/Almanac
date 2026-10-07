@@ -1,7 +1,7 @@
 # Vela Almanac
 
-An open table of places in the United States, with dated evidence of whether
-each one is still open.
+An open, continuously updated table of places in the United States, with dated evidence of whether
+each one is still open. Pulls from business license databases, FDIC records, etc.
 
 Three open datasets already list most US places. Vela Almanac merges them and adds
 the part none of them has: for each place, the records that say it was open
