@@ -31,6 +31,13 @@ if ls "$EVIDENCE_DIR"/*.parquet >/dev/null 2>&1; then
   EV_SQL="$EV_SQL union all select $EV_COLS from read_parquet('$EVIDENCE_DIR/*.parquet')"
 fi
 
+# OpenPOIs covers the US only. A failed read leaves the build without it.
+if [ "$COUNTRY" = US ] && [ ! -s "$OUT/openpois.parquet" ]; then
+  step openpois; signals/openpois.sh "$REGION" >/dev/null || rm -f "$OUT/openpois.parquet"
+fi
+OPENPOIS_SQL="select null::varchar as overture_id, null::varchar as osm_type, null::bigint as osm_id, null::double as conf_mean, null::varchar as event, null::date as event_date where false"
+[ -s "$OUT/openpois.parquet" ] && OPENPOIS_SQL="select overture_id, osm_type, osm_id, conf_mean, event, event_date from '$OUT/openpois.parquet'"
+
 step wikidata
 duckdb -noheader -csv -c "select distinct wikidata from '$OUT/osm.parquet' where wikidata is not null" \
   | python3 signals/wikidata_p576.py > "$OUT/p576.csv"
@@ -66,6 +73,7 @@ alter table osm add column if not exists siret varchar;
 $CLIP
 create table p576 as select qid, date from read_csv('$OUT/p576.csv', header = true, auto_detect = false,
   columns = {qid: 'varchar', date: 'date'});
+create table openpois as $OPENPOIS_SQL;
 create table fsq_closed as
   select * from '$FSQ_FILE'
   where lat between $S and $N and lng between $W and $E;
@@ -108,12 +116,13 @@ jq -n --arg region "$REGION" --arg build_date "$BUILD_DATE" \
   --argjson bbox "[$W, $S, $E, $N]" \
   --arg overture "$(cat "$OUT/overture.release")" --arg atp "$(cat "$OUT/atp.run")" \
   --arg osm "$(cat "$OUT/osm.date")" --arg fsq "${FSQ_RELEASE:-2025-02-06}" \
+  --arg openpois "$(cat "$OUT/openpois.version" 2>/dev/null || true)" \
   --argjson core "$(entry "$PUB/core-$REGION.parquet" core "ODbL-1.0")" \
   --argjson full "$(entry "$PUB/places-$REGION.parquet" full "ODbL-1.0")" \
   '{dataset: "Vela Almanac", license: "ODbL-1.0",
     credit: "Vela Almanac, (c) its contributors. Open Database License 1.0. https://github.com/PimpinPumpkin/vela-almanac",
     notice: "https://github.com/PimpinPumpkin/vela-almanac/blob/main/NOTICE",
     region: $region, build_date: $build_date, bbox: $bbox,
-    sources: {overture: $overture, alltheplaces: $atp, openstreetmap: $osm, foursquare_os_places: $fsq},
+    sources: {overture: $overture, alltheplaces: $atp, openstreetmap: $osm, foursquare_os_places: $fsq, openpois: $openpois},
     files: [$core, $full]}' > "$PUB/manifest-$REGION.json"
 step done

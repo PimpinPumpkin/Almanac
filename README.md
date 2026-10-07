@@ -62,7 +62,8 @@ as [releases](https://github.com/PimpinPumpkin/vela-almanac/releases).
   businesses and landmarks, AllThePlaces chain locations.
 - **Evidence layer**: public records that say a specific place was open or
   closed on a specific date. Today: Foursquare closing dates, OSM lifecycle
-  tags and survey dates, Wikidata dissolution dates, FDIC bank branches and
+  tags and survey dates, OSM edit history (through OpenPOIs), Wikidata
+  dissolution dates, FDIC bank branches and
   branch closings, USDA SNAP authorized stores, CMS hospitals, NCES public
   schools, NPPES health care organizations, IRS exempt organizations, alcohol
   licenses in California and the District of Columbia, and presence in a

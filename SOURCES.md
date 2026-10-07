@@ -41,6 +41,14 @@ adapter is merged. If a source states no license, the entry says so.
   `FSQ_PLACES_GLOB` and `FSQ_RELEASE` for that; no token is stored in the repo.
 - Used for: `date_closed`, joined on the Foursquare id Overture carries.
 
+### OpenPOIs (Henry Spatial Analysis)
+- License: ODbL-1.0 for the data. Full layer only.
+- Fetched from: `https://s3.us-west-2.amazonaws.com/us-west-2.opendata.source.coop/henryspatialanalysis/openpois/latest/conflated-parquet/`
+- Project: https://github.com/henryspatialanalysis/openpois
+- Used for: OSM edit history events matched to Overture places (closed),
+  and its confidence as the open score of places with no other evidence,
+  when 0.80 or more. US only.
+
 ### Wikidata
 - License: CC0-1.0.
 - Fetched from: `https://query.wikidata.org/sparql`
@@ -137,6 +145,3 @@ checked by this project.
   state. Colorado, Missouri, Oregon and Florida have not been fetched.
 - Health inspections and city business licenses: many city portals state no
   license. Each one gets an entry here saying what it states before it is used.
-- OpenPOIs (https://github.com/henryspatialanalysis/openpois): data under the
-  ODbL. Its per-place confidence, modeled from OSM edit history, is a
-  candidate input to `open_score`.

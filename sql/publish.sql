@@ -22,15 +22,17 @@ create or replace macro license_of(source) as
 --   same, but it overrode an
 --   older closing record          0.80 * 0.90 ^ years
 --   no evidence                   0.75, or 0.30 when Overture says permanently_closed
---                                 or when missing_license is true
+--                                 or when missing_license is true, or OpenPOIs'
+--                                 confidence when that is 0.80 or more
 -- A stale open record never scores below the no-evidence value.
-create or replace macro open_score(status, status_date, conflict, overture_status, missing_license, build_date) as
+create or replace macro open_score(status, status_date, conflict, overture_status, missing_license, conf, build_date) as
   round(case
     when status = 'closed' then 0.10
     when status_date is not null then greatest(
       case when conflict then 0.80 else 0.97 end * pow(0.90, greatest(build_date - status_date, 0) / 365.25),
       case when conflict then 0.50 else 0.75 end)
     when overture_status = 'permanently_closed' or missing_license then 0.30
+    when conf >= 0.80 then conf
     else 0.75
   end, 2);
 
@@ -39,7 +41,7 @@ create or replace macro open_score(status, status_date, conflict, overture_statu
 create or replace table license_list as
   select * from (values ('DC', 'abca_dc_active')) t(region, source);
 
-create or replace macro published(place, member, status) as table (
+create or replace macro published(place, member, status, conf) as table (
   with m as (
     select place_id,
            list(struct_pack(source, id := source_id) order by source, source_id) as sources,
@@ -50,7 +52,8 @@ create or replace macro published(place, member, status) as table (
          p.address, p.city, p.region, p.postcode, p.phone, p.website,
          coalesce(s.status, 'unknown') as status, s.status_date, s.status_source,
          open_score(coalesce(s.status, 'unknown'), s.status_date, coalesce(s.conflict, false),
-                    p.overture_status, coalesce(ml.missing, false), (select build_date from params)) as open_score,
+                    p.overture_status, coalesce(ml.missing, false), cf.conf, (select build_date from params)) as open_score,
+         round(cf.conf, 2) as openpois_conf,
          ml.missing as missing_license,
          p.overture_status,
          m.sources,
@@ -64,6 +67,7 @@ create or replace macro published(place, member, status) as table (
   from query_table(place) p
   join m on m.place_id = p.id
   left join query_table(status) s on s.place_id = p.id
+  left join query_table(conf) cf on cf.place_id = p.id
   -- true: a bar in a state with a license list, and no active license matched it.
   -- null: the question does not apply to this place.
   left join (
@@ -76,7 +80,7 @@ create or replace macro published(place, member, status) as table (
 );
 
 create or replace table out_core as
-  select * from published('core_place', 'core_member', 'core_status');
+  select * from published('core_place', 'core_member', 'core_status', 'core_conf');
 
 -- The full layer: core places with OSM folded in, then the places only OSM has.
 create or replace table full_place as
@@ -94,4 +98,4 @@ create or replace table full_member as
   select * from core_member union all select * from osm_member;
 
 create or replace table out_full as
-  select * from published('full_place', 'full_member', 'full_status');
+  select * from published('full_place', 'full_member', 'full_status', 'full_conf');

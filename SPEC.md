@@ -44,6 +44,7 @@ Both layers have the same columns.
 | status_date | date | date of the evidence that decided the status |
 | status_source | string | source of that evidence |
 | open_score | double | rough chance the place is open on the build date, 0 to 1, section 7 |
+| openpois_conf | double | OpenPOIs' confidence that the place exists and is open, full layer only, null when OpenPOIs does not list it |
 | missing_license | boolean | true for a bar in a state with a complete license list when no active license matched it. Null where the question does not apply. Section 7. |
 | overture_status | string | Overture's own operating_status, carried as is. It has no date and does not feed status. |
 | sources | list of {source, id} | every source row this place was built from |
@@ -251,6 +252,7 @@ evidence. It is a rule of thumb with stated parts, not a fitted model.
 | newest evidence is open but it overrode an older closing record | 0.80 x 0.90 ^ years, never below 0.50 |
 | no evidence, Overture says permanently_closed | 0.30 |
 | no evidence, `missing_license` is true | 0.30 |
+| no evidence, OpenPOIs confidence 0.80 or more (full layer) | that confidence |
 | no evidence otherwise | 0.75 |
 
 The 0.90 a year assumes about one business in ten closes each year. The
@@ -271,6 +273,33 @@ what the evidence says and no better than the evidence. The 0.75 for no
 evidence is likely low: among places with no core evidence that OSM can
 speak to, 1,899 were surveyed open and 261 tagged closed (88% open), though
 mappers survey open places more readily than they tag closed ones.
+
+### OpenPOIs
+
+OpenPOIs publishes two things this build does not compute: events from
+OSM's edit history matched to Overture places, and a calibrated confidence
+per place. Both were checked in the District of Columbia box against the
+core layer, which uses no OSM data.
+
+History events as closures: 390 places. Independent evidence said open
+after the event 7 times and closed 99 times, the best ratio of any closing
+signal here. It adds about 280 closures to the box's 2,150. A sample of 36
+that no other source had flagged read as real closures.
+
+Confidence, against places this build knows about:
+
+| OpenPOIs confidence | places | known open | known closed |
+| --- | ---: | ---: | ---: |
+| under 0.2 | 567 | 17 | 151 |
+| 0.4 to 0.6 | 23,707 | 929 | 310 |
+| 0.6 to 0.8 | 26,791 | 1,299 | 1,037 |
+| 0.8 and up | 18,728 | 4,102 | 255 |
+
+The bottom band is the history events again. The top band is reliable. The
+middle does not separate open from closed (the 0.6 band has more known
+closures than the 0.4 band), so only the top band is used: a place with no
+evidence and a confidence of 0.80 or more takes that confidence as its
+`open_score`. In the box that lifts 12,700 places off the flat 0.75.
 
 ### Missing license
 
@@ -307,6 +336,7 @@ matched by address and only a quarter find their place.
 | --- | --- | --- | --- |
 | fsq_closed | closed | Foursquare `date_closed` | Foursquare id carried in the Overture row |
 | osm_lifecycle | closed | `end_date` tag if it parses, else the feature's last edit (an upper bound) | the OSM feature's own merge |
+| osm_history | closed | day of the edit | OpenPOIs matched an OSM feature to the Overture place, and that feature was later deleted, lost its main tag, or was renamed to something else. Joined by Overture id. Full layer only. |
 | wikidata_p576 | closed | P576 value | `wikidata` tag on a merged OSM feature, offices excluded |
 | fdic_history | closed | effective date of change code 721 | matcher |
 | fdic_locations | open | run date of the list | matcher |

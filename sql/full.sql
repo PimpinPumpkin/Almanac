@@ -57,6 +57,14 @@ create or replace table osm_evidence as
   join p576 w on w.qid = o.wikidata
   where o.category not like 'office=%'
   union all
+  -- OSM edit history, by way of OpenPOIs: the OSM feature matched to this
+  -- Overture place was deleted, lost its main tag, or was renamed to
+  -- something else on that day. (A lifecycle prefix being added is left to
+  -- the osm_lifecycle rows above.)
+  select k.place_id, 'osm_history', h.overture_id, 'closed', h.event_date, 'id', 0.0, h.event, null
+  from openpois h join ovt_canon k on k.id = 'ovt:' || h.overture_id
+  where h.event in ('hard_delete', 'primary_tag_deleted', 'substantial_rename') and h.event_date is not null
+  union all
   -- France: an OSM feature tagged with its SIRET takes that establishment's
   -- record directly, no matching needed
   select m.place_id, r.source, r.source_id, r.state, r.date, 'id', 0.0, r.name, r.address
@@ -71,3 +79,10 @@ create or replace table full_evidence as
 
 create or replace table full_status as
   select * from status_of('full_evidence', (select build_date from params), (select recent_days from params));
+
+-- OpenPOIs' confidence per place, for the open score of places with no evidence.
+create or replace table full_conf as
+  select k.place_id, max(h.conf_mean) as conf
+  from openpois h join ovt_canon k on k.id = 'ovt:' || h.overture_id
+  where h.conf_mean is not null group by 1;
+create or replace table core_conf as select * from full_conf where false;
