@@ -99,11 +99,15 @@ Done when "everything else" passes 15% in states with two or more of these.
   also what will measure id churn.
 - **4.2 Tests on every push.** Done: matcher tests, a syntax check of every
   script, and a check that every adapter is documented.
-- **4.3 A failed state retries on its own** and the release notes say which
-  states, if any, are a month old.
-- **4.4 Source watch.** The build reports when a source's layout or row
-  count shifts by more than a set amount, so a silent upstream change does
-  not ship.
+- **4.3 Failures.** Done: a state whose build fails is tried once more,
+  and the release notes name any state left out. A source whose adapter
+  fails keeps last run's file, so one portal being down does not stop the
+  build.
+- **4.4 Source watch.** Done: each build compares every register file with
+  the one before. A file that lost more than half its rows is not used
+  (last run's is), a file that moved by more than a fifth is flagged, and
+  the list rides along as `source-watch.txt` and in the release notes.
+  Still to do: notice a layout change that keeps the row count.
 
 - **4.5 Held records.** Done for Missouri's "out of business" list and
   Colorado's expired and surrendered list: each

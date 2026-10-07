@@ -1,0 +1,28 @@
+name: Keep caches
+
+# GitHub drops a cache nobody has read for seven days, and the build runs
+# monthly. Reading the geocoder answers and last run's register files once
+# a week keeps them, so the build does not geocode a million addresses again.
+on:
+  schedule:
+    - cron: "0 9 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  touch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/cache/geocode
+          key: geocode-keep
+          restore-keys: geocode-
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/cache/evidence
+          key: evidence-keep
+          restore-keys: evidence-
+      - run: du -sh data/cache/* 2>/dev/null || echo "no caches yet"

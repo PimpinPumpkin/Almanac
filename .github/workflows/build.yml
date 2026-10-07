@@ -57,6 +57,12 @@ jobs:
           path: data/cache/geocode
           key: geocode-${{ github.run_id }}
           restore-keys: geocode-
+      # Last run's register files. If a source is down this month, its last file is used again.
+      - uses: actions/cache@v4
+        with:
+          path: data/cache/evidence
+          key: evidence-${{ github.run_id }}
+          restore-keys: evidence-
       - name: Bring forward the held records from the last release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -70,10 +76,12 @@ jobs:
       - name: Keep what the state jobs need
         run: |
           mkdir -p shared/atp shared/census
-          mv data/cache/evidence data/cache/fsq shared/
+          cp -R data/cache/evidence shared/
+          mv data/cache/fsq shared/
           mv data/cache/atp/us-*.parquet shared/atp/
           mv data/cache/census/states.parquet shared/census/
           tar -czf held.tar.gz -C data/cache/held .
+          cp data/cache/watch/sources.txt source-watch.txt
       - uses: actions/upload-artifact@v4
         with:
           name: shared
@@ -82,7 +90,9 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: held
-          path: held.tar.gz
+          path: |
+            held.tar.gz
+            source-watch.txt
           retention-days: 3
 
   build:
@@ -113,7 +123,8 @@ jobs:
           path: data/cache
       - name: Build
         run: |
-          ./build.sh "${{ matrix.region }}"
+          # one more try after a pause, for a download that failed
+          ./build.sh "${{ matrix.region }}" || { sleep 300; ./build.sh "${{ matrix.region }}"; }
           mkdir -p reports && ./stats.sh "${{ matrix.region }}" > "reports/${{ matrix.region }}.txt"
       - uses: actions/upload-artifact@v4
         with:
@@ -168,8 +179,17 @@ jobs:
         if: ${{ inputs.regions == '' }}
         run: |
           notes="Vela Almanac build of $BUILD_DATE. One core and one places file per state, plus manifests. Credit and source notices: https://github.com/${{ github.repository }}/blob/main/NOTICE"
+          # say which states and sources, if any, are not from this month
+          want="$(awk -F'\t' '!/^#/ && $7 != "" && $7 != "-" {print $1}' regions.tsv | sort)"
+          have="$(ls data/out | sed -n 's/^manifest-\(.*\)\.json$/\1/p' | sort)"
+          missing="$(comm -23 <(echo "$want") <(echo "$have") | tr '\n' ' ')"
+          [ -z "${missing// }" ] || notes="$notes"$'\n\n'"States that failed to build and are not in this release: $missing"
+          if grep -q CHECK data/out/source-watch.txt 2>/dev/null; then
+            notes="$notes"$'\n\n'"Sources to check:"$'\n'"$(grep CHECK data/out/source-watch.txt)"
+          fi
           if gh release view "$BUILD_DATE" >/dev/null 2>&1; then
             gh release upload "$BUILD_DATE" data/out/* --clobber
+            gh release edit "$BUILD_DATE" --notes "$notes"
           else
             gh release create "$BUILD_DATE" data/out/* --title "$BUILD_DATE" --notes "$notes"
           fi

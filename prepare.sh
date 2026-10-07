@@ -6,10 +6,18 @@
 # the per-state jobs.
 source "$(dirname "$0")/lib/common.sh"
 cd "$ROOT"
+# One source being down must not stop the build. A failed adapter leaves
+# last run's file in place, and the watch report says so.
+mkdir -p "$CACHE/evidence" "$CACHE/watch"
+rm -rf "$CACHE/evidence.prev" && cp -R "$CACHE/evidence" "$CACHE/evidence.prev"
+failed=()
 for adapter in adapters/*.py; do
   echo "== $adapter"
-  python3 "$adapter"
+  python3 "$adapter" || { echo "FAILED: $adapter"; failed+=("$(basename "$adapter" .py)"); }
 done
+echo "== source watch"
+python3 tools/source_watch.py "$CACHE/evidence" "$CACHE/evidence.prev" "$CACHE/watch/sources.txt" ${failed[@]+"${failed[@]}"}
+rm -rf "$CACHE/evidence.prev"
 echo "== foursquare closing dates"; signals/fsq_closed.sh >/dev/null
 echo "== alltheplaces";             base/atp.sh us >/dev/null
 echo "== state outlines";           state_outlines

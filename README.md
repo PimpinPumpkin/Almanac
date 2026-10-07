@@ -181,6 +181,13 @@ every state's files as a GitHub release named for the build date, then
 redraws the coverage map. A run started by hand with a list of regions is a
 test and publishes nothing.
 
+One source being down does not stop a build. A register whose fetch fails,
+or whose file comes back less than half the size it was, keeps last
+month's file, and the release notes and `source-watch.txt` say which. A
+state that fails twice is left out and named in the notes.
+`keep-caches.yml` reads the build's caches once a week so GitHub keeps
+them between monthly runs.
+
 ## Output
 
 `data/out/core-<region>.parquet`, `data/out/places-<region>.parquet` and
