@@ -8,6 +8,7 @@ create or replace macro license_of(source) as
     when source like 'osm%' then 'ODbL-1.0'
     when source like 'abca_dc%' then 'CC-BY-4.0'
     when source = 'abc_ca' then 'none-stated'
+    when source = 'sla_ny' then 'OPEN-NY-terms'
     when source = 'sirene' then 'etalab-2.0'
     -- everything else is a US federal register
     else 'US-public-domain'
@@ -39,7 +40,7 @@ create or replace macro open_score(status, status_date, conflict, overture_statu
 -- States whose active alcohol license list is complete and carries positions,
 -- so that finding no license for a bar means something. See SPEC.md section 7.
 create or replace table license_list as
-  select * from (values ('DC', 'abca_dc_active')) t(region, source);
+  select * from (values ('DC', 'abca_dc_active'), ('NY', 'sla_ny')) t(region, source);
 
 create or replace macro published(place, member, status, conf) as table (
   with m as (

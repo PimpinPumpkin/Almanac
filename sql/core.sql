@@ -150,7 +150,8 @@ create or replace table storefront_source as
   select * from (values
     ('fdic_locations', 'bank'),
     ('snap_current', 'grocery_or_convenience_store'),
-    ('abca_dc_active', 'licensed_premises')) t(source, category);
+    ('abca_dc_active', 'licensed_premises'),
+    ('sla_ny', 'licensed_premises')) t(source, category);
 
 create or replace table born as
   with unmatched as (
@@ -160,6 +161,8 @@ create or replace table born as
       and not exists (select 1 from core_evidence e where e.source = r.source and e.source_id = r.source_id)
       -- a license held for a premises that has no name yet
       and r.name not ilike 'tbd%'
+      -- a name that ends in a legal form is the company, not the sign on the door
+      and not regexp_matches(lower(r.name), '\b(inc|incorporated|corp|corporation|llc|lp|llp|ltd)\.?\s*[0-9]*$')
   ),
   lookalike as (
     select distinct u.id
@@ -167,10 +170,11 @@ create or replace table born as
     join (select p.nn, p.hn, p.lat, p.lng, cell_y(p.lat) + dy.d as cy, cell_x(p.lng) + dx.d as cx
           from core_place p, (values (-1), (0), (1)) dy(d), (values (-1), (0), (1)) dx(d)) p
       on p.cy = u.cy and p.cx = u.cx
-    where dist_m(u.lat, u.lng, p.lat, p.lng) <= 80
-      and (name_sim(u.nn, p.nn) >= 0.9 or jaro_winkler_similarity(u.nn, p.nn) >= 0.7
+    where (dist_m(u.lat, u.lng, p.lat, p.lng) <= 200 and name_sim(u.nn, p.nn) >= 0.9)
+       or (dist_m(u.lat, u.lng, p.lat, p.lng) <= 80
+      and (jaro_winkler_similarity(u.nn, p.nn) >= 0.7
            -- same door and same first word: "Silk Lounge" and "Silk Restaurant and Lounge"
-           or (u.hn = p.hn and split_part(u.nn, ' ', 1) = split_part(p.nn, ' ', 1)))
+           or (u.hn = p.hn and split_part(u.nn, ' ', 1) = split_part(p.nn, ' ', 1))))
   )
   select 'alm:' || u.source || '/' || u.source_id as place_id, u.*
   from unmatched u

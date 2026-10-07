@@ -30,13 +30,14 @@ These rules do not change from item to item.
 
 The categories where a register can make coverage complete.
 
-- **1.1 State alcohol license lists.** One adapter per state. Texas and New
-  York are confirmed reachable without a key. Then Florida, Colorado,
+- **1.1 State alcohol license lists.** One adapter per state. Done:
+  California, DC, New York. Texas is reachable but states no license.
+  Then Florida, Colorado,
   Missouri, Oregon, Washington, Pennsylvania, Illinois, and on through
   every state that publishes one. Done for a state when its bars pass 40%
   with a status.
 - **1.2 Missing license flag** for each of those states whose list has
-  positions (today: DC only).
+  positions (today: DC and New York).
 - **1.3 Restaurant inspections.** Statewide feeds first (Florida, New York),
   then large cities and counties (New York City, Chicago, which has an
   explicit "out of business" result, Los Angeles County, King County).

@@ -112,6 +112,15 @@ adapter is merged. If a source states no license, the entry says so.
   address. The file gives no date for surrenders or revocations, so there is
   no closed evidence from it.
 
+### New York State Liquor Authority, active licenses
+- License: OPEN-NY Terms of Use (2013). Free reuse for any lawful purpose,
+  no attribution or share-alike required. The license is revocable by the
+  State and comes with an indemnity clause; it is not a standard open
+  license.
+- Fetched from: `https://data.ny.gov/resource/9s3h-dpkz.json`
+- Used for: active licenses with a premises (open), with positions. Also
+  mints missing places and drives the missing-license flag in New York.
+
 ### District of Columbia ABCA liquor licenses
 - License: CC-BY-4.0, as stated on opendata.dc.gov. Attribution is in NOTICE.
   Open question: whether CC-BY-4.0 data may sit inside an ODbL database
@@ -145,9 +154,8 @@ Survey of what comes next, in order. None of these has been fetched or
 checked by this project.
 
 - More state alcohol license lists. Texas (data.texas.gov, dataset
-  7hf9-qc9f) and New York (data.ny.gov, dataset 9s3h-dpkz) were fetched once
-  to confirm they answer without a key; both carry addresses and status or
-  expiration dates. No adapter yet, because no test region lies in either
-  state. Colorado, Missouri, Oregon and Florida have not been fetched.
+  7hf9-qc9f) answers without a key and has status and dates, but neither
+  the dataset nor the portal states a license, so it waits for the owner.
+  Colorado, Missouri, Oregon and Florida have not been fetched.
 - Health inspections and city business licenses: many city portals state no
   license. Each one gets an entry here saying what it states before it is used.

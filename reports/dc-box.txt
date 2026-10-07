@@ -13,9 +13,9 @@
 │ alltheplaces -> overture │ near              │    97 │
 │ alltheplaces -> overture │ number            │  2678 │
 │ alltheplaces -> overture │ spot              │    15 │
-│ osm -> core              │ near              │  2637 │
-│ osm -> core              │ number            │  7502 │
-│ osm -> core              │ spot              │   206 │
+│ osm -> core              │ near              │  2636 │
+│ osm -> core              │ number            │  7497 │
+│ osm -> core              │ spot              │   208 │
 │ overture duplicates      │ number, same name │   303 │
 └──────────────────────────┴───────────────────┴───────┘
 == places out
@@ -23,16 +23,16 @@
 │ core  │  full  │ osm_only │ atp_only │ from_registers │
 │ int64 │ int64  │  int64   │  int64   │     int64      │
 ├───────┼────────┼──────────┼──────────┼────────────────┤
-│ 94823 │ 101123 │     6300 │      444 │            494 │
+│ 94776 │ 101080 │     6304 │      444 │            447 │
 └───────┴────────┴──────────┴──────────┴────────────────┘
 == places minted from a register
 ┌────────────────┬────────┐
 │     source     │ places │
 │    varchar     │ int64  │
 ├────────────────┼────────┤
-│ abca_dc_active │    263 │
+│ abca_dc_active │    249 │
 │ fdic_locations │     19 │
-│ snap_current   │    212 │
+│ snap_current   │    179 │
 └────────────────┴────────┘
 == status, full layer
 ┌─────────┬────────┐
@@ -40,7 +40,7 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2424 │
-│ open    │   9556 │
+│ open    │   9513 │
 │ unknown │  89143 │
 └─────────┴────────┘
 == status, core layer (no OSM)
@@ -49,7 +49,7 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1852 │
-│ open    │   8576 │
+│ open    │   8529 │
 │ unknown │  84395 │
 └─────────┴────────┘
 == register records in the box and how many found a place
@@ -58,7 +58,7 @@
 │      varchar      │ varchar │  int64  │  int64  │
 ├───────────────────┼─────────┼─────────┼─────────┤
 │ abc_ca            │ open    │     220 │       0 │
-│ abca_dc_active    │ open    │    2075 │    1791 │
+│ abca_dc_active    │ open    │    2075 │    1778 │
 │ abca_dc_cancelled │ closed  │     337 │     236 │
 │ cms_hospitals     │ open    │      91 │      10 │
 │ epa_ust_open      │ open    │     517 │     160 │
@@ -68,18 +68,19 @@
 │ nces_schools      │ open    │     358 │     146 │
 │ ncua_branches     │ open    │     649 │      62 │
 │ nppes_orgs        │ open    │   63269 │    2346 │
-│ snap_current      │ open    │     801 │     700 │
-│ snap_history      │ open    │     810 │     518 │
+│ sla_ny            │ open    │      14 │       0 │
+│ snap_current      │ open    │     801 │     670 │
+│ snap_history      │ open    │     810 │     521 │
 └───────────────────┴─────────┴─────────┴─────────┘
-  13 rows                               4 columns
+  14 rows                               4 columns
 == evidence by source and rule (places is distinct places)
 ┌───────────────────┬─────────┬─────────┬───────┬────────┐
 │      source       │  state  │  rule   │ rows  │ places │
 │      varchar      │ varchar │ varchar │ int64 │ int64  │
 ├───────────────────┼─────────┼─────────┼───────┼────────┤
 │ abca_dc_active    │ open    │ near    │     8 │      8 │
-│ abca_dc_active    │ open    │ number  │  1517 │   1492 │
-│ abca_dc_active    │ open    │ self    │   263 │    263 │
+│ abca_dc_active    │ open    │ number  │  1518 │   1493 │
+│ abca_dc_active    │ open    │ self    │   249 │    249 │
 │ abca_dc_active    │ open    │ spot    │    44 │     44 │
 │ abca_dc_cancelled │ closed  │ near    │     6 │      6 │
 │ abca_dc_cancelled │ closed  │ number  │   226 │    226 │
@@ -103,21 +104,21 @@
 │ nces_schools      │ open    │ number  │   139 │    138 │
 │ ncua_branches     │ open    │ address │    63 │     58 │
 │ nppes_orgs        │ open    │ address │  2562 │   1976 │
-│ osm_check_date    │ open    │ near    │   445 │    444 │
+│ osm_check_date    │ open    │ near    │   444 │    443 │
 │ osm_check_date    │ open    │ number  │  1838 │   1835 │
-│ osm_check_date    │ open    │ self    │   704 │    704 │
+│ osm_check_date    │ open    │ self    │   705 │    705 │
 │ osm_check_date    │ open    │ spot    │    41 │     41 │
 │ osm_history       │ closed  │ id      │   390 │    390 │
 │ osm_lifecycle     │ closed  │ near    │    57 │     57 │
 │ osm_lifecycle     │ closed  │ number  │   158 │    158 │
 │ osm_lifecycle     │ closed  │ self    │   123 │    123 │
 │ osm_lifecycle     │ closed  │ spot    │     8 │      8 │
-│ snap_current      │ open    │ near    │    10 │     10 │
-│ snap_current      │ open    │ number  │   508 │    508 │
-│ snap_current      │ open    │ self    │   212 │    212 │
+│ snap_current      │ open    │ near    │    11 │     11 │
+│ snap_current      │ open    │ number  │   510 │    510 │
+│ snap_current      │ open    │ self    │   179 │    179 │
 │ snap_current      │ open    │ spot    │     5 │      5 │
-│ snap_history      │ open    │ near    │    11 │     11 │
-│ snap_history      │ open    │ number  │   538 │    537 │
+│ snap_history      │ open    │ near    │    12 │     12 │
+│ snap_history      │ open    │ number  │   540 │    539 │
 │ snap_history      │ open    │ spot    │     6 │      6 │
 │ wikidata_p576     │ closed  │ number  │     2 │      2 │
 └───────────────────┴─────────┴─────────┴───────┴────────┘
@@ -132,17 +133,17 @@
 │ closed  │ fsq_closed        │   1418 │
 │ closed  │ osm_history       │    352 │
 │ closed  │ osm_lifecycle     │    288 │
-│ open    │ abca_dc_active    │   1635 │
+│ open    │ abca_dc_active    │   1622 │
 │ open    │ atp               │   2892 │
 │ open    │ cms_hospitals     │     13 │
 │ open    │ epa_ust_open      │    124 │
 │ open    │ fdic_locations    │    337 │
-│ open    │ irs_eo            │   2682 │
-│ open    │ nces_schools      │    140 │
+│ open    │ irs_eo            │   2681 │
+│ open    │ nces_schools      │    141 │
 │ open    │ ncua_branches     │     48 │
 │ open    │ nppes_orgs        │    310 │
 │ open    │ osm_check_date    │    850 │
-│ open    │ snap_current      │    489 │
+│ open    │ snap_current      │    459 │
 │ open    │ snap_history      │     36 │
 └─────────┴───────────────────┴────────┘
   17 rows                    3 columns

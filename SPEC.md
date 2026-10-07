@@ -168,11 +168,14 @@ business (often a store and the money transfer counter inside it). The
 looser cases are rejected, section 9.
 
 **Places minted from a register.** Some registers list the storefront
-itself: FDIC branches, SNAP authorized stores, DC licensed premises. A row
+itself: FDIC branches, SNAP authorized stores, DC and New York licensed
+premises. A row
 from one of them becomes a new place when it is open, has a position,
 matched no place, and no listed place within 80 m has a similar name
 (leading words, Jaro-Winkler 0.7 or more, or same house number and same
-first word). Registers without positions (California licenses, NCUA) do
+first word), and no place within 200 m has the same name. A register name
+that ends in a legal form (Inc, Corp, LLC) is a company, not a sign, and
+does not become a place. Registers without positions (California licenses, NCUA) do
 not mint. The place gets the register's name as written, a coarse category
 (bank, grocery_or_convenience_store, licensed_premises), and the register
 row as its first evidence.
@@ -220,6 +223,9 @@ rows are the same place.
 | DC alcohol license cancellations | number | 40 of 40 | |
 | NCUA credit union offices | address | 38 of 40 | both misses are a church's credit union landing on the church |
 | EPA fuel tank sites | all | 30 of 30 (Kentucky) | |
+| New York alcohol licenses | number | 40 of 40 (New York City) | |
+| | spot | 20 of 20 | mostly Queens addresses, where "30-08" and "3008" are the same door |
+| | near | 11 of 12 | the miss is a hotel landing on a place named only "New York" |
 | OSM lifecycle features to places | all | 40 of 40 (DC), 36 of 36 (Sacramento) | |
 
 ## 7. Status rules
@@ -324,9 +330,16 @@ rate is likely higher than the 11% measured. Checking for another license
 at the same address did not separate the two groups (bars with one: 9 open,
 85 closed).
 
+The same test in a New York City box, with the state's license list:
+
+| bars in the box | places | another source says open | another source says closed |
+| --- | ---: | ---: | ---: |
+| matched an active license | 1,033 | 79 | 10 |
+| matched none | 2,801 | 31 | 545 |
+
 So the result is a flag and a lower score, not a status: `missing_license`
 is true and `open_score` is 0.30 when there is no other evidence. In DC
-that covers 390 bars. Restaurants and liquor stores are left alone: a
+that covers 390 bars. New York is on the list too. Restaurants and liquor stores are left alone: a
 restaurant can run without a license, and liquor stores showed no signal
 (2 open, 2 closed). California is not on the list because its licenses are
 matched by address and only a quarter find their place.
@@ -348,6 +361,7 @@ matched by address and only a quarter find their place.
 | cms_hospitals | open | the dataset's modified date | matcher, by address |
 | nppes_orgs | open | later of last update and certification date | matcher, by address |
 | abc_ca | open | the export's Updated date | matcher, by address |
+| sla_ny | open | day the dataset was last updated | matcher |
 | abca_dc_active | open | day the layer was last loaded | matcher |
 | abca_dc_cancelled | closed | day the layer was last loaded (an upper bound) | matcher; restaurants, taverns, nightclubs and clubs only |
 | ncua_branches | open | the quarter's cycle date | matcher, by address |
