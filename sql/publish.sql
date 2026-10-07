@@ -6,7 +6,10 @@ create or replace macro license_of(source) as
     when source in ('fsq', 'fsq_closed') then 'Apache-2.0'
     when source in ('atp', 'wikidata_p576') then 'CC0-1.0'
     when source like 'osm%' then 'ODbL-1.0'
-    when source like 'fdic%' or source like 'snap%' then 'US-public-domain'
+    when source like 'abca_dc%' then 'CC-BY-4.0'
+    when source = 'abc_ca' then 'none-stated'
+    -- everything else is a US federal register
+    else 'US-public-domain'
   end;
 
 -- open_score: a rough chance, 0 to 1, that the place is open on the build date.

@@ -14,7 +14,11 @@ order by 1, 2;
 .print == places out
 select (select count(*) from out_core) as core, (select count(*) from out_full) as "full",
        (select count(*) from osm_only) as osm_only,
-       (select count(*) from core_place where id like 'atp:%') as atp_only;
+       (select count(*) from core_place where id like 'atp:%') as atp_only,
+       (select count(*) from born) as from_registers;
+
+.print == places minted from a register
+select source, count(*) as places from born group by 1 order by 1;
 
 .print == status, full layer
 select status, count(*) as places from out_full group by 1 order by 1;

@@ -69,6 +69,8 @@ published yet.
   schools, NPPES health care organizations, IRS exempt organizations, alcohol
   licenses in California and the District of Columbia, and presence in a
   chain's own store locator.
+- **New places from registers**: a bank branch, SNAP store or licensed
+  premises that none of the three base datasets lists is added as a place.
 - **Output**: one row per place with a stable id, merged attributes, every
   source id it was built from, a status of open, closed or unknown with
   the date and source of the evidence that decided it, and an `open_score`
@@ -80,8 +82,6 @@ published yet.
 - Not complete on status. Most places have no dated evidence and are
   `unknown`. In the District of Columbia test box, 11% of places get a
   status. `unknown` means nobody has said, not "probably open".
-- Not a source of new places from registers. A bank branch or licensed
-  premises that the base layer lacks is not added yet.
 - Maintained by the Vela Maps project (github.com/PimpinPumpkin/Vela).
   Anyone can use it, and nothing in it depends on Vela: readers fetch the
   published files.

@@ -138,5 +138,54 @@ create or replace table core_evidence as
   union all
   select * from matched_evidence('core_place');
 
+-- Places minted from a register. Some registers list the storefront itself:
+-- a bank branch, a store authorized for SNAP, a licensed premises. A row
+-- from one of those becomes a new place when it is open, has a position,
+-- matched nothing, and no listed place within 80 m has a name anywhere near
+-- its own (the matcher's near misses are mostly the same place under a
+-- longer name, and must not be added twice).
+create or replace table storefront_source as
+  select * from (values
+    ('fdic_locations', 'bank'),
+    ('snap_current', 'grocery_or_convenience_store'),
+    ('abca_dc_active', 'licensed_premises')) t(source, category);
+
+create or replace table born as
+  with unmatched as (
+    select r.*, s.category
+    from register_pos r join storefront_source s using (source)
+    where r.state = 'open'
+      and not exists (select 1 from core_evidence e where e.source = r.source and e.source_id = r.source_id)
+      -- a license held for a premises that has no name yet
+      and r.name not ilike 'tbd%'
+  ),
+  lookalike as (
+    select distinct u.id
+    from (select *, cell_y(lat) as cy, cell_x(lng) as cx from unmatched) u
+    join (select p.nn, p.hn, p.lat, p.lng, cell_y(p.lat) + dy.d as cy, cell_x(p.lng) + dx.d as cx
+          from core_place p, (values (-1), (0), (1)) dy(d), (values (-1), (0), (1)) dx(d)) p
+      on p.cy = u.cy and p.cx = u.cx
+    where dist_m(u.lat, u.lng, p.lat, p.lng) <= 80
+      and (name_sim(u.nn, p.nn) >= 0.9 or jaro_winkler_similarity(u.nn, p.nn) >= 0.7
+           -- same door and same first word: "Silk Lounge" and "Silk Restaurant and Lounge"
+           or (u.hn = p.hn and split_part(u.nn, ' ', 1) = split_part(p.nn, ' ', 1)))
+  )
+  select 'alm:' || u.source || '/' || u.source_id as place_id, u.*
+  from unmatched u
+  where u.id not in (select id from lookalike)
+  -- one register can list a premises twice, and two registers can list the same shop
+  qualify row_number() over (partition by u.nn, u.hn, cell_y(u.lat), cell_x(u.lng) order by u.source, u.source_id) = 1;
+
+insert into core_place
+  select place_id, name, category, null, null,
+         split_part(address, ', ', 1), nullif(split_part(address, ', ', 2), ''),
+         nullif(regexp_extract(address, ', ([A-Z]{2}) [0-9]{5}', 1), ''), zip, null, null,
+         lat, lng, null, nn, hn, false, zip, sk
+  from born;
+insert into core_member
+  select place_id, source, source_id, 'self', 0.0, 1.0 from born;
+insert into core_evidence
+  select place_id, source, source_id, state, date, 'self', 0.0, name, address from born;
+
 create or replace table core_status as
   select * from status_of('core_evidence', (select build_date from params), (select recent_days from params));

@@ -20,6 +20,8 @@ The build order is fixed by licensing (section 8), not by convenience.
    match, or become new places.
 3. Evidence that does not come from OSM is attached. The result is the
    **core layer**.
+   Open storefront rows from registers that matched nothing are added as
+   places here too (section 6).
 4. **OpenStreetMap** named features join the core place they match, or become
    new places. OSM evidence is attached. The result is the **full layer**.
 
@@ -62,8 +64,8 @@ An id is the id of the source row the place is anchored on, with a prefix:
 - `atp:<spider>/<ref>` for a place only AllThePlaces has. `ref` is the
   chain's own store number.
 - `osm:<n|w|r><OSM id>` for a place only OSM has.
-- `alm:<hash of source and source_id>` is reserved for places minted from a
-  register row. Nothing mints these yet.
+- `alm:<source>/<source_id>` for a place minted from a register row
+  (section 6).
 
 Nothing is renumbered between builds, so a reader can diff two monthly files
 on `id`. When Overture listings are merged as duplicates, the smallest id of
@@ -163,6 +165,22 @@ itself, but only the strictest case merges: same house number, within
 merges 303 of 94,188 rows; 40 merged pairs were read and all 40 are the same
 business (often a store and the money transfer counter inside it). The
 looser cases are rejected, section 9.
+
+**Places minted from a register.** Some registers list the storefront
+itself: FDIC branches, SNAP authorized stores, DC licensed premises. A row
+from one of them becomes a new place when it is open, has a position,
+matched no place, and no listed place within 80 m has a similar name
+(leading words, Jaro-Winkler 0.7 or more, or same house number and same
+first word). Registers without positions (California licenses, NCUA) do
+not mint. The place gets the register's name as written, a coarse category
+(bank, grocery_or_convenience_store, licensed_premises), and the register
+row as its first evidence.
+
+In the District of Columbia box this adds about 520 places to 94,000.
+Forty were read against their most similar neighbor: 39 were new, 1 was a
+second listing of a place under a longer name (that case is now caught).
+About one in five then picked up an OSM feature in the full layer, which
+is independent confirmation that the place exists.
 
 **Join shape.** Candidates come from a grid hash join: cells are 0.004
 degrees of latitude by 0.008 of longitude, one side is copied into its nine
