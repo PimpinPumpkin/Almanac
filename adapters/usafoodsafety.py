@@ -5,9 +5,13 @@ foodsafety_<st>  a food establishment, open as of the day of its most
                  recent inspection.
 
 One source per state: Alaska, Arkansas, Iowa, Kansas, North Dakota,
-Pennsylvania, South Dakota, Vermont, Wyoming. Each state offers a search
+Pennsylvania, South Dakota, Vermont. (Wyoming runs the same system but its
+search answers with a server error; it is on the follow-up list.) Each state offers a search
 page and no file. The page is asked county by county and its result pages
-read, fifteen establishments a page, two seconds apart. That is thousands
+read, fifteen establishments a page, two seconds apart. A search shows at
+most 500 establishments, so a county that hits the limit is asked again
+by inspection date, the last two years split in halves until each piece
+fits. That is thousands
 of requests a state, so this reader runs on its own schedule, one state a
 job (.github/workflows/crawl.yml), not in the monthly build.
 
@@ -20,6 +24,7 @@ State public records. No license stated. None of the sites has a
 robots.txt.
 """
 import datetime
+import hashlib
 import html
 import os
 import re
@@ -39,17 +44,18 @@ STATES = {
     "PA": ("https://www.pafoodsafety.pa.gov", "Web/", "Pennsylvania"),
     "SD": ("https://sddoh.safefoodinspection.com", "", "South Dakota"),
     "VT": ("https://vtdoh.safefoodinspection.com", "", "Vermont"),
-    "WY": ("https://wda.safefoodinspection.com", "", "Wyoming"),
 }
 M = "ctl00$MainContent$"
 HIDDEN = re.compile(r'<input type="hidden" name="([^"]+)"[^>]*value="([^"]*)"')
 SELECT = r'<select name="%s".*?</select>'
 OPTION = re.compile(r'<option(?: selected="selected")? value="([^"]*)"[^>]*>([^<]*)')
 FOUND = re.compile(r"(\d+) record\(s\) found")
-# one establishment: name, address line, most recent inspection date, and its key further down the row
+# one establishment: name, address line and most recent inspection date
 ROW = re.compile(
     r'<tr class="Grid(?:Alt)?Item"[^>]*>\s*<td width="20%">\s*(.*?)<BR><div[^>]*>(.*?)</div>.*?</td>'
-    r'<td align="center" width="10%">(\d\d/\d\d/\d{4})</td>.*?Key="(\d+)"', re.S | re.I)
+    r'<td align="center" width="10%">(\d\d/\d\d/\d{4})</td>', re.S | re.I)
+# a search never returns more than this many establishments
+CAP = 500
 PER_PAGE = 15
 
 
@@ -58,13 +64,32 @@ def options(page, name):
     return [(v, html.unescape(t).strip()) for v, t in OPTION.findall(m.group(0))] if m else []
 
 
+FIELD = re.compile(r'<(input|select)([^>]*name="(ctl00\$MainContent\$[^"]+)"[^>]*)>(.*?</select>)?', re.S)
+CHOSEN = re.compile(r'<option selected="selected" value="([^"]*)"')
+FIRST = re.compile(r'<option value="([^"]*)"')
+
+
 def form_for(page, state_id, county_id):
+    """The search form as the page shows it, with the state and county filled in. The states run
+    different versions of the system with different fields, so the form is read off the page."""
     form = {k: html.unescape(v) for k, v in HIDDEN.findall(page)}
+    for tag, attrs, name, body in FIELD.findall(page):
+        if name in form:
+            continue
+        if tag == "select":
+            chosen = CHOSEN.search(body) or FIRST.search(body)
+            form[name] = html.unescape(chosen.group(1)) if chosen else ""
+        elif 'type="checkbox"' in attrs:
+            if 'checked="checked"' in attrs:
+                form[name] = "on"
+        elif 'type="text"' in attrs:
+            form[name] = ""
+    form.pop(M + "chkDisplayMap", None)
+    form.pop(M + "chkRadius", None)
     form.update({"__EVENTTARGET": "", "__EVENTARGUMENT": "", M + "hfUseRadius": "false",
-                 M + "txtEstablistmentName": "", M + "txtStreetAddress": "", M + "txtCity": "", M + "txtZip": "",
-                 M + "wucStateCountiesFS$ddlState": state_id, M + "wucStateCountiesFS$ddlCountyGroup": "",
-                 M + "wucStateCountiesFS$ddlCounty": county_id,
-                 M + "dteInspectionBeginDate$txtDate": "", M + "dteInspectionEndDate$txtDate": ""})
+                 M + "wucStateCountiesFS$ddlState": state_id, M + "wucStateCountiesFS$ddlCounty": county_id})
+    if M + "wucStateCountiesFS$ddlCountyGroup" in form:
+        form[M + "wucStateCountiesFS$ddlCountyGroup"] = ""
     return form
 
 
@@ -78,36 +103,65 @@ def read_state(st):
     counties = [(v, t) for v, t in options(start, M + "wucStateCountiesFS$ddlCounty") if v]
     if not state_id or not counties:
         raise SystemExit("%s: the search form no longer lists %s and its counties" % (source, state_name))
-    out = Writer(source)
+    today = datetime.date.today()
+    newest = {}
     expected = read = 0
-    for county_id, county in counties:
-        # a fresh form for each county, then that county's pages in order
+
+    def search(county_id, begin, end):
+        """Read one county's establishments inspected between two days (or ever, with no days given).
+        A search that hits the cap is split in two and asked again."""
+        nonlocal expected, read
         form = form_for(site.fetch(path).decode("utf-8", "replace"), state_id, county_id)
         form[M + "btnSearch"] = "Search"
+        if begin:
+            form[M + "dteInspectionBeginDate$txtDate"] = begin.strftime("%m/%d/%Y")
+            form[M + "dteInspectionEndDate$txtDate"] = end.strftime("%m/%d/%Y")
+        page = site.fetch(path, form=form).decode("utf-8", "replace")
+        found = FOUND.search(page)
+        found = int(found.group(1)) if found else 0
+        if found >= CAP:
+            if not begin:
+                begin, end = today - datetime.timedelta(days=730), today
+            if (end - begin).days >= 1:
+                middle = begin + (end - begin) // 2
+                search(county_id, begin, middle)
+                search(county_id, middle + datetime.timedelta(days=1), end)
+                return
+        expected += found
         page_no = 1
         while True:
-            page = site.fetch(path, form=form).decode("utf-8", "replace")
-            if page_no == 1:
-                found = FOUND.search(page)
-                expected += int(found.group(1)) if found else 0
             rows = ROW.findall(page)
-            for name, where, when, key in rows:
+            for name, where, when in rows:
                 read += 1
-                place = street_city(html.unescape(re.sub(r"<[^>]+>", " ", where)))
-                if not place or place[2] != st:
-                    out.drop("no usable address")
-                    continue
-                out.row(source, key, html.unescape(re.sub(r"<[^>]+>", " ", name)).strip(),
-                        address(place[0], place[1], "%s %s" % (st, place[3])), None, None, "open",
-                        datetime.datetime.strptime(when, "%m/%d/%Y").date().isoformat())
+                name = html.unescape(re.sub(r"<[^>]+>", " ", name)).strip()
+                where = " ".join(html.unescape(re.sub(r"<[^>]+>", " ", where)).split())
+                when = datetime.datetime.strptime(when, "%m/%d/%Y").date().isoformat()
+                key = hashlib.sha1(("%s|%s" % (name, where)).upper().encode()).hexdigest()[:16]
+                if key not in newest or when > newest[key][0]:
+                    newest[key] = (when, name, where)
             page_no += 1
             if not rows or "Page$%d" % page_no not in page:
                 break
             form = form_for(page, state_id, county_id)
+            if begin:
+                form[M + "dteInspectionBeginDate$txtDate"] = begin.strftime("%m/%d/%Y")
+                form[M + "dteInspectionEndDate$txtDate"] = end.strftime("%m/%d/%Y")
             form.update({"__EVENTTARGET": M + "gvInspections", "__EVENTARGUMENT": "Page$%d" % page_no})
-    if expected and read < expected * 0.8:
+            page = site.fetch(path, form=form).decode("utf-8", "replace")
+
+    for county_id, county in counties:
+        search(county_id, None, None)
+    # some establishments have never been inspected and show no date; they are not counted as read
+    if not read or read < expected * 0.6:
         # the layout changed or the site cut the crawl short: keep the last file
         raise SystemExit("%s: read %d of the %d establishments the site reported" % (source, read, expected))
+    out = Writer(source)
+    for key, (when, name, where) in newest.items():
+        place = street_city(where)
+        if not place or place[2] != st:
+            out.drop("no usable address")
+            continue
+        out.row(source, key, name, address(place[0], place[1], "%s %s" % (st, place[3])), None, None, "open", when)
     out.close(geocode=True)
 
 

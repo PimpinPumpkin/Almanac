@@ -29,7 +29,7 @@ jobs:
       - id: plan
         run: |
           states="${{ inputs.states }}"
-          [ -n "$states" ] || states="AK AR IA KS ND PA SD VT WY"
+          [ -n "$states" ] || states="AK AR IA KS ND PA SD VT"
           echo "states=$(printf '%s\n' $states | jq -R . | jq -cs .)" >> "$GITHUB_OUTPUT"
 
   read:

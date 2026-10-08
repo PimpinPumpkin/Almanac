@@ -47,6 +47,9 @@ Nothing is done to get around these. They may open up, or answer a request.
 
 ## Search forms not crawled yet
 
+- **Wyoming food inspections** (`wda.safefoodinspection.com`): the same
+  system as eight states already read, but every search answers with a
+  server error. Try again later.
 - **Georgia restaurants** (`ga.healthinspections.us`): an open data feed,
   five establishments a request, so several thousand requests. Fits the
   slow workflow.

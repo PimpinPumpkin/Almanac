@@ -352,7 +352,7 @@ None states a license; rows are marked `none-stated`.
   for its CSV six months at a time (800 requests). No robots.txt. The
   inspector column is not read. Asking for two years at once fails
   without an error for the largest counties, which is why it is split.
-- The "Food Safety" inspection system nine states share
+- The "Food Safety" inspection system eight states share
   (`.../Inspection/PublicInspectionSearch.aspx`), read county by county,
   15 establishments a page, by `adapters/usafoodsafety.py` on its own
   schedule (`.github/workflows/crawl.yml`):
@@ -360,8 +360,9 @@ None states a license; rows are marked `none-stated`.
   `foodserviceprod.adh.arkansas.gov`, Iowa `iowa.safefoodinspection.com`,
   Kansas `foodsafety.kda.ks.gov`, North Dakota `fims.doh.nd.gov`,
   Pennsylvania `www.pafoodsafety.pa.gov`, South Dakota
-  `sddoh.safefoodinspection.com`, Vermont `vtdoh.safefoodinspection.com`,
-  Wyoming `wda.safefoodinspection.com`. None has a robots.txt. Phone
+  `sddoh.safefoodinspection.com`, Vermont `vtdoh.safefoodinspection.com`.
+  None has a robots.txt. A search shows at most 500 establishments;
+  Pennsylvania's large counties are split by inspection date to fit. Phone
   numbers are not read.
 - Mapped and not read yet: Georgia's statewide system
   (`ga.healthinspections.us/stateofgeorgia/`, five establishments a
