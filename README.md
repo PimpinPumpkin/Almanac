@@ -58,7 +58,7 @@ in [COVERAGE.md](COVERAGE.md). Both are made by `tools/coverage_map.py`.
 
 What the Almanac lists today, how much of it has a dated open or closed
 record, and which public register can close the gap. Counts are from the
-2026-10-08 build of all 50 states and DC: 19.5 million places, 12.1% of them
+2026-10-08 build of all 50 states and DC: 19.5 million places, 12.2% of them
 with a dated status.
 
 | Category | Listed | Has a dated status | What it comes from, and what comes next | Can it be complete? |
@@ -66,14 +66,14 @@ with a dated status.
 | Banks and credit unions | 214,171 | 66% | FDIC branches and closings, NCUA credit union offices (built) | Yes |
 | Fast food and chain restaurants | 128,001 | 65% | Chain store locators (built) | Yes, for chains with a locator |
 | Gas stations | 170,281 | 49% | Chain locators, EPA fuel tank registry (built) | Mostly |
-| Grocery and convenience stores | 237,240 | 48% | SNAP authorized stores, chain locators (built) | Mostly |
+| Grocery and convenience stores | 237,240 | 49% | SNAP authorized stores, chain locators (built) | Mostly |
 | Pharmacies | 63,379 | 40% | Chain locators, NPPES, pharmacy boards in California, Texas and Ohio, Connecticut licenses (built) | Mostly |
-| Schools | 433,885 | 22% | NCES public schools (built). The category also holds preschools, private and trade schools, which NCES public data does not cover | Public schools yes |
-| Restaurants and cafes, independent | 1,199,857 | 32% | Foursquare closing dates, OSM, alcohol licenses in 21 states and DC, inspections or food licenses statewide in Florida, Michigan, New York, North Carolina and South Carolina and in a dozen cities (built), eight more states read from their search pages on a slower schedule | State by state, never everywhere |
-| Hotels | 115,010 | 20% | Chain locators (built). Next: state lodging licenses where published | Chains yes, independents patchy |
+| Schools | 433,885 | 23% | NCES public schools (built). The category also holds preschools, private and trade schools, which NCES public data does not cover | Public schools yes |
+| Restaurants and cafes, independent | 1,199,857 | 33% | Foursquare closing dates, OSM, alcohol licenses in 21 states and DC, inspections or food licenses statewide in Florida, Michigan, New York, North Carolina and South Carolina and in a dozen cities, and eight more states read from their search pages on a slower schedule (built) | State by state, never everywhere |
+| Hotels | 115,010 | 21% | Chain locators (built). Next: state lodging licenses where published | Chains yes, independents patchy |
 | Hospitals | 53,985 | 14% | CMS hospitals, NPPES (built). The category also holds departments and clinics listed as hospitals | Real hospitals yes |
 | Museums | 37,105 | 12% | IRS exempt organizations (built) | Partly |
-| Bars | 160,333 | 26% | Foursquare, OSM, alcohol licenses in 21 states and DC (built), four of them read through a search form or the state's own export | Where the state publishes its list, about half today. See below |
+| Bars | 160,333 | 27% | Foursquare, OSM, alcohol licenses in 21 states and DC (built), four of them read through a search form or the state's own export | Where the state publishes its list, about half today. See below |
 | Everything else | 16,412,326 | 8% | Salons, repair shops, offices, clinics, churches. NPPES, IRS exempt organizations, sales tax and business licenses in four states and a dozen cities, salon and repair shop licenses in five states, child care centers in twelve (built) | No. This is the long tail |
 | EV chargers | | | Not handled yet. The federal station list needs a free API key | Yes, if a key is allowed |
 | Parks | | | OSM. Parks rarely close, so a listing is most of the job | Listing yes, status not needed |
@@ -84,7 +84,7 @@ Bars and restaurants depend on whether the state publishes a license
 list or inspections. Where it does, it helps but does not finish the job:
 bars with a status are 51% in the District of Columbia, 49% in Nebraska,
 41% in New York, North Carolina, Washington and Idaho, 36% in Texas and
-33% in California, against 26% nationally. Most of the rest are bar listings that
+33% in California, against 27% nationally. Most of the rest are bar listings that
 match no license at all. In DC and New York those get a low `open_score`
 and a `missing_license` flag, not a closed status (SPEC.md section 7).
 
@@ -123,7 +123,7 @@ section 10). It is not in the monthly release yet.
 
 - Not a new survey. Every fact comes from a source listed in `SOURCES.md`.
 - Not complete on status. Most places have no dated evidence and are
-  `unknown`. Nationally 12.1% of places get a status. `unknown` means nobody
+  `unknown`. Nationally 12.2% of places get a status. `unknown` means nobody
   has said, not "probably open".
 - Maintained by the Vela Maps project (github.com/PimpinPumpkin/Vela).
   Anyone can use it, and nothing in it depends on Vela: readers fetch the

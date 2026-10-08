@@ -30,6 +30,12 @@ def features(layer, where="1=1", fields="*", geometry=True):
              "returnGeometry": "true" if geometry else "false",
              "resultOffset": offset, "resultRecordCount": size}
         body = json.loads(get(layer + "/query?" + urllib.parse.urlencode(q)))
+        if "error" in body and offset == 0 and "agination" in str(body["error"]):
+            # an old server that cannot page: ask once, plainly, and refuse a cut-off answer
+            del q["resultOffset"], q["resultRecordCount"]
+            body = json.loads(get(layer + "/query?" + urllib.parse.urlencode(q)))
+            if body.get("exceededTransferLimit"):
+                raise SystemExit("%s: more rows than one request returns, and the server cannot page" % layer)
         if "error" in body:
             raise SystemExit("%s: %s" % (layer, body["error"]))
         feats = body.get("features", [])
