@@ -164,9 +164,9 @@
 │ open    │ abc_ky              │      2 │
 │ open    │ abt_fl              │      1 │
 │ open    │ atp                 │  25605 │
-│ open    │ bop_oh              │   1500 │
+│ open    │ bop_oh              │   1496 │
 │ open    │ cms_hospitals       │    160 │
-│ open    │ cph_columbus_food   │   3392 │
+│ open    │ cph_columbus_food   │   3396 │
 │ open    │ elicense_ct         │      1 │
 │ open    │ epa_ust_open        │   1195 │
 │ open    │ fdic_locations      │   3134 │
@@ -199,11 +199,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    912 │
-│ (none)             │ open    │   8822 │
-│ (none)             │ unknown │ 136631 │
+│ (none)             │ open    │   8821 │
+│ (none)             │ unknown │ 136632 │
 │ open               │ closed  │   3929 │
-│ open               │ open    │  39656 │
-│ open               │ unknown │ 379808 │
+│ open               │ open    │  39657 │
+│ open               │ unknown │ 379807 │
 │ permanently_closed │ closed  │     72 │
 │ permanently_closed │ open    │    127 │
 │ permanently_closed │ unknown │  16007 │

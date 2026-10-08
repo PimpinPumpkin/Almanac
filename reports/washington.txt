@@ -165,7 +165,7 @@
 │ open    │ abc_nc              │      1 │
 │ open    │ atp                 │  14389 │
 │ open    │ biz_lasvegas        │      1 │
-│ open    │ biz_seattle         │   4827 │
+│ open    │ biz_seattle         │   4832 │
 │ open    │ childcare_wa        │   1035 │
 │ open    │ cms_hospitals       │     91 │
 │ open    │ dol_wa              │   1432 │
@@ -181,7 +181,7 @@
 │ open    │ nppes_orgs          │   1382 │
 │ open    │ olcc_or             │      6 │
 │ open    │ osm_check_date      │   9729 │
-│ open    │ snap_current        │   2792 │
+│ open    │ snap_current        │   2787 │
 │ open    │ snap_history        │    104 │
 └─────────┴─────────────────────┴────────┘
   27 rows                      3 columns
@@ -203,11 +203,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    714 │
-│ (none)             │ open    │   6396 │
-│ (none)             │ unknown │  90550 │
+│ (none)             │ open    │   6395 │
+│ (none)             │ unknown │  90551 │
 │ open               │ closed  │   3419 │
-│ open               │ open    │  38488 │
-│ open               │ unknown │ 234140 │
+│ open               │ open    │  38489 │
+│ open               │ unknown │ 234139 │
 │ permanently_closed │ closed  │     95 │
 │ permanently_closed │ open    │    145 │
 │ permanently_closed │ unknown │  11708 │

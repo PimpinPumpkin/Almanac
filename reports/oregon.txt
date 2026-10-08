@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2928 │
-│ open    │  28358 │
-│ unknown │ 235801 │
+│ open    │  28357 │
+│ unknown │ 235802 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2007 │
-│ open    │  24452 │
-│ unknown │ 217340 │
+│ open    │  24451 │
+│ unknown │ 217341 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -108,7 +108,7 @@
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ abc_ar         │ open    │ near    │     1 │      1 │
 │ abc_ar         │ open    │ number  │    19 │     19 │
-│ atp            │ open    │ near    │   204 │    203 │
+│ atp            │ open    │ near    │   204 │    202 │
 │ atp            │ open    │ number  │  9103 │   8238 │
 │ atp            │ open    │ self    │  1636 │   1636 │
 │ atp            │ open    │ spot    │    24 │     24 │
@@ -162,7 +162,7 @@
 │ closed  │ osm_lifecycle       │    442 │
 │ closed  │ wikidata_p576       │      4 │
 │ open    │ abc_ar              │      2 │
-│ open    │ atp                 │   8729 │
+│ open    │ atp                 │   8728 │
 │ open    │ cms_hospitals       │     54 │
 │ open    │ epa_ust_open        │    269 │
 │ open    │ fdic_locations      │    920 │
@@ -172,9 +172,9 @@
 │ open    │ nces_schools        │   1130 │
 │ open    │ ncua_branches       │    246 │
 │ open    │ nppes_orgs          │    843 │
-│ open    │ olcc_or             │   7751 │
+│ open    │ olcc_or             │   7749 │
 │ open    │ osm_check_date      │   3186 │
-│ open    │ snap_current        │   2983 │
+│ open    │ snap_current        │   2985 │
 │ open    │ snap_history        │     71 │
 └─────────┴─────────────────────┴────────┘
   20 rows                      3 columns
@@ -196,12 +196,12 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    471 │
-│ (none)             │ open    │   3336 │
-│ (none)             │ unknown │  60539 │
-│ open               │ closed  │   2202 │
-│ open               │ open    │  19799 │
-│ open               │ unknown │ 149239 │
-│ permanently_closed │ closed  │     34 │
+│ (none)             │ open    │   3337 │
+│ (none)             │ unknown │  60538 │
+│ open               │ closed  │   2203 │
+│ open               │ open    │  19797 │
+│ open               │ unknown │ 149240 │
+│ permanently_closed │ closed  │     33 │
 │ permanently_closed │ open    │     39 │
-│ permanently_closed │ unknown │   4860 │
+│ permanently_closed │ unknown │   4861 │
 └────────────────────┴─────────┴────────┘

@@ -40,8 +40,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   9877 │
-│ open    │  79164 │
-│ unknown │ 666950 │
+│ open    │  79163 │
+│ unknown │ 666951 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -49,8 +49,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   8299 │
-│ open    │  73073 │
-│ unknown │ 630152 │
+│ open    │  73072 │
+│ unknown │ 630153 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -66,7 +66,7 @@
 │ able_ok                │ open    │      25 │       0 │
 │ abt_fl                 │ open    │     382 │       0 │
 │ agm_ny                 │ open    │       8 │       0 │
-│ atc_mo                 │ open    │    4783 │       2 │
+│ atc_mo                 │ open    │    4785 │       2 │
 │ bablo_me               │ open    │       7 │       0 │
 │ bacp_chicago           │ open    │   37139 │   19167 │
 │ bacp_chicago_cancelled │ closed  │    5977 │    2108 │
@@ -110,7 +110,7 @@
 │ abc_ar                 │ open    │ number  │     1 │      1 │
 │ atc_mo                 │ open    │ address │     2 │      2 │
 │ atp                    │ open    │ near    │  1262 │   1245 │
-│ atp                    │ open    │ number  │ 26889 │  25080 │
+│ atp                    │ open    │ number  │ 26889 │  25079 │
 │ atp                    │ open    │ self    │  3952 │   3952 │
 │ atp                    │ open    │ spot    │    84 │     80 │
 │ bacp_chicago           │ open    │ address │    71 │     71 │
@@ -166,8 +166,8 @@
 │ closed  │ wikidata_p576          │     15 │
 │ open    │ abc_ar                 │      1 │
 │ open    │ atc_mo                 │      2 │
-│ open    │ atp                    │  25004 │
-│ open    │ bacp_chicago           │  18411 │
+│ open    │ atp                    │  25003 │
+│ open    │ bacp_chicago           │  18431 │
 │ open    │ cdph_chicago           │   3429 │
 │ open    │ childcare_wi           │      4 │
 │ open    │ cms_hospitals          │    137 │
@@ -175,13 +175,13 @@
 │ open    │ epa_ust_open           │   1126 │
 │ open    │ fdic_locations         │   4514 │
 │ open    │ foodsafety_ia          │      1 │
-│ open    │ hrsa_health_centers    │    155 │
+│ open    │ hrsa_health_centers    │    156 │
 │ open    │ irs_eo                 │   5923 │
 │ open    │ nces_schools           │   2290 │
 │ open    │ ncua_branches          │    254 │
 │ open    │ nppes_orgs             │   2672 │
 │ open    │ osm_check_date         │   4760 │
-│ open    │ snap_current           │  10234 │
+│ open    │ snap_current           │  10213 │
 │ open    │ snap_history           │    244 │
 └─────────┴────────────────────────┴────────┘
   26 rows                         3 columns
@@ -208,8 +208,8 @@
 │ (none)             │ open    │   9898 │
 │ (none)             │ unknown │ 180747 │
 │ open               │ closed  │   7718 │
-│ open               │ open    │  54037 │
-│ open               │ unknown │ 422142 │
+│ open               │ open    │  54036 │
+│ open               │ unknown │ 422143 │
 │ permanently_closed │ closed  │    215 │
 │ permanently_closed │ open    │    264 │
 │ permanently_closed │ unknown │  22777 │

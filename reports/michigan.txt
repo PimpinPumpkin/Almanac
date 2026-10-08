@@ -165,22 +165,22 @@
 │ open    │ abc_ar              │      1 │
 │ open    │ atp                 │  15137 │
 │ open    │ cdph_chicago        │  10578 │
-│ open    │ childcare_mi        │   1766 │
+│ open    │ childcare_mi        │   1795 │
 │ open    │ childcare_wi        │      1 │
 │ open    │ cms_hospitals       │     87 │
-│ open    │ det_biz             │    370 │
+│ open    │ det_biz             │    361 │
 │ open    │ det_liquor          │    168 │
 │ open    │ dor_wi_liquor       │      1 │
 │ open    │ epa_ust_open        │   1287 │
 │ open    │ fdic_locations      │   5081 │
 │ open    │ hrsa_health_centers │     93 │
 │ open    │ irs_eo              │   4363 │
-│ open    │ mdard_mi_food       │  18841 │
+│ open    │ mdard_mi_food       │  18812 │
 │ open    │ nces_schools        │   1400 │
 │ open    │ ncua_branches       │    712 │
 │ open    │ nppes_orgs          │   1909 │
 │ open    │ osm_check_date      │   1723 │
-│ open    │ snap_current        │  15116 │
+│ open    │ snap_current        │  15125 │
 │ open    │ snap_history        │    294 │
 └─────────┴─────────────────────┴────────┘
   25 rows                      3 columns

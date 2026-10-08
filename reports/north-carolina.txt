@@ -166,7 +166,7 @@
 │ open    │ atp                 │  21287 │
 │ open    │ cms_hospitals       │     64 │
 │ open    │ dbpr_fl_restaurant  │      1 │
-│ open    │ dhhs_nc_inspections │  10225 │
+│ open    │ dhhs_nc_inspections │  10226 │
 │ open    │ dph_sc_food         │      3 │
 │ open    │ epa_ust_open        │   1309 │
 │ open    │ fdic_locations      │   3674 │
@@ -176,7 +176,7 @@
 │ open    │ ncua_branches       │    428 │
 │ open    │ nppes_orgs          │   2099 │
 │ open    │ osm_check_date      │   3894 │
-│ open    │ snap_current        │  10355 │
+│ open    │ snap_current        │  10354 │
 │ open    │ snap_history        │    220 │
 └─────────┴─────────────────────┴────────┘
   22 rows                      3 columns
@@ -198,11 +198,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    714 │
-│ (none)             │ open    │   8330 │
-│ (none)             │ unknown │ 142204 │
+│ (none)             │ open    │   8331 │
+│ (none)             │ unknown │ 142203 │
 │ open               │ closed  │   3023 │
-│ open               │ open    │  50732 │
-│ open               │ unknown │ 354798 │
+│ open               │ open    │  50731 │
+│ open               │ unknown │ 354799 │
 │ permanently_closed │ closed  │     33 │
 │ permanently_closed │ open    │    143 │
 │ permanently_closed │ unknown │  14647 │

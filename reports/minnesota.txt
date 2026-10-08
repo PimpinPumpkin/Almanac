@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2396 │
-│ open    │  30996 │
-│ unknown │ 296099 │
+│ open    │  30997 │
+│ unknown │ 296098 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -163,8 +163,8 @@
 │ closed  │ wikidata_p576       │      2 │
 │ open    │ atp                 │  11329 │
 │ open    │ biz_de              │      1 │
-│ open    │ childcare_mn        │   1130 │
-│ open    │ childcare_wi        │      9 │
+│ open    │ childcare_mn        │   1132 │
+│ open    │ childcare_wi        │      7 │
 │ open    │ cms_hospitals       │    112 │
 │ open    │ epa_ust_open        │    437 │
 │ open    │ fdic_locations      │   2230 │
@@ -178,7 +178,7 @@
 │ open    │ nces_schools        │   1107 │
 │ open    │ ncua_branches       │    252 │
 │ open    │ nppes_orgs          │   1273 │
-│ open    │ osm_check_date      │   2221 │
+│ open    │ osm_check_date      │   2222 │
 │ open    │ snap_current        │   3149 │
 │ open    │ snap_history        │     45 │
 └─────────┴─────────────────────┴────────┘
@@ -204,8 +204,8 @@
 │ (none)             │ open    │   4689 │
 │ (none)             │ unknown │  75814 │
 │ open               │ closed  │   1850 │
-│ open               │ open    │  20046 │
-│ open               │ unknown │ 189389 │
+│ open               │ open    │  20047 │
+│ open               │ unknown │ 189388 │
 │ permanently_closed │ closed  │     25 │
 │ permanently_closed │ open    │     72 │
 │ permanently_closed │ unknown │   7926 │

@@ -132,7 +132,7 @@
 │     ·               │  ·      │  ·      │     · │      · │
 │     ·               │  ·      │  ·      │     · │      · │
 │ nppes_orgs          │ open    │ address │ 11795 │  10353 │
-│ osm_check_date      │ open    │ near    │  1210 │   1204 │
+│ osm_check_date      │ open    │ near    │  1210 │   1203 │
 │ osm_check_date      │ open    │ number  │  3580 │   3551 │
 │ osm_check_date      │ open    │ self    │  1602 │   1602 │
 │ osm_check_date      │ open    │ spot    │   105 │    105 │
@@ -174,8 +174,8 @@
 │ open    │ epa_ust_open        │   1272 │
 │ open    │ fdic_locations      │   3566 │
 │ open    │ hrsa_health_centers │     84 │
-│ open    │ irs_eo              │   4085 │
-│ open    │ nces_schools        │   1767 │
+│ open    │ irs_eo              │   4083 │
+│ open    │ nces_schools        │   1769 │
 │ open    │ ncua_branches       │    297 │
 │ open    │ nppes_orgs          │   1670 │
 │ open    │ osm_check_date      │   3090 │
@@ -201,11 +201,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    739 │
-│ (none)             │ open    │   5714 │
-│ (none)             │ unknown │ 102805 │
+│ (none)             │ open    │   5716 │
+│ (none)             │ unknown │ 102803 │
 │ open               │ closed  │   3345 │
-│ open               │ open    │  29148 │
-│ open               │ unknown │ 279654 │
+│ open               │ open    │  29146 │
+│ open               │ unknown │ 279656 │
 │ permanently_closed │ closed  │     57 │
 │ permanently_closed │ open    │    119 │
 │ permanently_closed │ unknown │  13940 │

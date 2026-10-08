@@ -43,9 +43,9 @@
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   6260 │
-│ open    │ 127611 │
-│ unknown │ 577181 │
+│ closed  │   6261 │
+│ open    │ 127614 │
+│ unknown │ 577177 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -53,8 +53,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   4612 │
-│ open    │ 118994 │
-│ unknown │ 535848 │
+│ open    │ 118997 │
+│ unknown │ 535845 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -164,12 +164,12 @@
 │ closed  │ fdic_history        │    820 │
 │ closed  │ fsq_closed          │   3731 │
 │ closed  │ osm_history         │    813 │
-│ closed  │ osm_lifecycle       │    886 │
+│ closed  │ osm_lifecycle       │    887 │
 │ closed  │ wikidata_p576       │     10 │
 │ open    │ abc_ar              │      1 │
 │ open    │ abc_ca              │      1 │
 │ open    │ agm_ny              │    946 │
-│ open    │ atp                 │  17186 │
+│ open    │ atp                 │  17190 │
 │ open    │ biz_de              │      3 │
 │ open    │ cms_hospitals       │    108 │
 │ open    │ dmv_ny              │    769 │
@@ -178,20 +178,20 @@
 │ open    │ dph_de              │    974 │
 │ open    │ epa_ust_open        │    636 │
 │ open    │ fdic_locations      │   3553 │
-│ open    │ foodsafety_pa       │   7620 │
+│ open    │ foodsafety_pa       │   7618 │
 │ open    │ hrsa_health_centers │    162 │
-│ open    │ irs_eo              │   6668 │
+│ open    │ irs_eo              │   6669 │
 │ open    │ lcc_ne              │      1 │
-│ open    │ li_phl              │   2071 │
-│ open    │ nces_schools        │    358 │
-│ open    │ ncua_branches       │    430 │
+│ open    │ li_phl              │   2060 │
+│ open    │ nces_schools        │    357 │
+│ open    │ ncua_branches       │    429 │
 │ open    │ nppes_orgs          │   2019 │
-│ open    │ osm_check_date      │   6006 │
-│ open    │ plcb_pa             │   7620 │
-│ open    │ rev_pa              │  57867 │
-│ open    │ rev_pa_tobacco      │   3726 │
+│ open    │ osm_check_date      │   6007 │
+│ open    │ plcb_pa             │   7631 │
+│ open    │ rev_pa              │  57868 │
+│ open    │ rev_pa_tobacco      │   3719 │
 │ open    │ sla_ny              │   1100 │
-│ open    │ snap_current        │   7027 │
+│ open    │ snap_current        │   7034 │
 │ open    │ snap_history        │    120 │
 └─────────┴─────────────────────┴────────┘
   32 rows                      3 columns
@@ -204,7 +204,7 @@
 │ fdic_history  │    967 │              92 │              37 │
 │ fsq_closed    │   3992 │             174 │             122 │
 │ osm_history   │    942 │             112 │              87 │
-│ osm_lifecycle │    991 │              93 │              58 │
+│ osm_lifecycle │    991 │              92 │              58 │
 │ wikidata_p576 │     12 │               2 │               0 │
 └───────────────┴────────┴─────────────────┴─────────────────┘
 == Overture operating_status against our status
@@ -215,10 +215,10 @@
 │ (none)             │ closed  │   1119 │
 │ (none)             │ open    │  15918 │
 │ (none)             │ unknown │ 150556 │
-│ open               │ closed  │   4554 │
-│ open               │ open    │  93819 │
-│ open               │ unknown │ 365027 │
+│ open               │ closed  │   4555 │
+│ open               │ open    │  93823 │
+│ open               │ unknown │ 365022 │
 │ permanently_closed │ closed  │     56 │
-│ permanently_closed │ open    │    546 │
-│ permanently_closed │ unknown │  15606 │
+│ permanently_closed │ open    │    545 │
+│ permanently_closed │ unknown │  15607 │
 └────────────────────┴─────────┴────────┘

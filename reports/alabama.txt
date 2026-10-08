@@ -161,10 +161,10 @@
 │ closed  │ osm_history         │    229 │
 │ closed  │ osm_lifecycle       │    164 │
 │ closed  │ wikidata_p576       │      4 │
+│ open    │ abt_fl              │      1 │
 │ open    │ atp                 │  12118 │
 │ open    │ cms_hospitals       │     76 │
 │ open    │ cpa_tx              │      1 │
-│ open    │ dbpr_fl_restaurant  │      1 │
 │ open    │ epa_ust_open        │    909 │
 │ open    │ fdic_locations      │   1888 │
 │ open    │ hrsa_health_centers │     88 │
@@ -197,11 +197,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    311 │
-│ (none)             │ open    │   3741 │
-│ (none)             │ unknown │  71815 │
+│ (none)             │ open    │   3742 │
+│ (none)             │ unknown │  71814 │
 │ open               │ closed  │   1090 │
-│ open               │ open    │  17232 │
-│ open               │ unknown │ 161728 │
+│ open               │ open    │  17231 │
+│ open               │ unknown │ 161729 │
 │ permanently_closed │ closed  │      9 │
 │ permanently_closed │ open    │     40 │
 │ permanently_closed │ unknown │   4607 │

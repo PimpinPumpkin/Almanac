@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2507 │
-│ open    │  38267 │
-│ unknown │ 369111 │
+│ open    │  38265 │
+│ unknown │ 369113 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2095 │
-│ open    │  36144 │
-│ unknown │ 342920 │
+│ open    │  36142 │
+│ unknown │ 342922 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -65,7 +65,7 @@
 │ able_ok                │ open    │      47 │       0 │
 │ abt_fl                 │ open    │     267 │       0 │
 │ agm_ny                 │ open    │       3 │       0 │
-│ atc_mo                 │ open    │     144 │       0 │
+│ atc_mo                 │ open    │     145 │       0 │
 │ bablo_me               │ open    │       6 │       0 │
 │ bacp_chicago           │ open    │      17 │       0 │
 │ bacp_chicago_cancelled │ closed  │       4 │       0 │
@@ -110,7 +110,7 @@
 │ abc_ky         │ open    │ near    │     1 │      1 │
 │ abc_nc         │ open    │ address │     1 │      1 │
 │ atp            │ open    │ near    │   350 │    345 │
-│ atp            │ open    │ number  │ 18148 │  16886 │
+│ atp            │ open    │ number  │ 18148 │  16884 │
 │ atp            │ open    │ self    │  1990 │   1990 │
 │ atp            │ open    │ spot    │    65 │     59 │
 │ childcare_tn   │ open    │ near    │    12 │     12 │
@@ -164,19 +164,19 @@
 │ open    │ abc_ar              │      3 │
 │ open    │ abc_ky              │      1 │
 │ open    │ abc_nc              │      1 │
-│ open    │ atp                 │  16031 │
+│ open    │ atp                 │  16029 │
 │ open    │ childcare_tn        │    925 │
 │ open    │ cms_hospitals       │     77 │
 │ open    │ epa_ust_open        │    742 │
 │ open    │ fdic_locations      │   2329 │
 │ open    │ hrsa_health_centers │     62 │
 │ open    │ irs_eo              │   2676 │
-│ open    │ nash_beer           │   1124 │
+│ open    │ nash_beer           │   1122 │
 │ open    │ nces_schools        │   1559 │
 │ open    │ ncua_branches       │    278 │
 │ open    │ nppes_orgs          │   1293 │
 │ open    │ osm_check_date      │   1732 │
-│ open    │ snap_current        │   3578 │
+│ open    │ snap_current        │   3580 │
 │ open    │ snap_history        │    102 │
 │ open    │ tda_tn_food         │   5754 │
 └─────────┴─────────────────────┴────────┘
@@ -199,11 +199,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    451 │
-│ (none)             │ open    │   5370 │
-│ (none)             │ unknown │  96445 │
+│ (none)             │ open    │   5369 │
+│ (none)             │ unknown │  96446 │
 │ open               │ closed  │   1895 │
-│ open               │ open    │  26539 │
-│ open               │ unknown │ 236266 │
+│ open               │ open    │  26538 │
+│ open               │ unknown │ 236267 │
 │ permanently_closed │ closed  │     28 │
 │ permanently_closed │ open    │     81 │
 │ permanently_closed │ unknown │   8864 │

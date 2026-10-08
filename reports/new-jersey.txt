@@ -23,7 +23,7 @@
 │  core  │  full  │ osm_only │ atp_only │ from_registers │
 │ int64  │ int64  │  int64   │  int64   │     int64      │
 ├────────┼────────┼──────────┼──────────┼────────────────┤
-│ 513204 │ 538293 │    25089 │     2435 │          49899 │
+│ 513205 │ 538294 │    25089 │     2435 │          49900 │
 └────────┴────────┴──────────┴──────────┴────────────────┘
 == places minted from a register
 ┌────────────────┬────────┐
@@ -33,7 +33,7 @@
 │ agm_ny         │   9294 │
 │ dmv_ny         │    927 │
 │ dohmh_nyc      │  21733 │
-│ dos_ny_salons  │   2412 │
+│ dos_ny_salons  │   2413 │
 │ dph_de         │   1115 │
 │ fdic_locations │   2509 │
 │ sla_ny         │   6697 │
@@ -45,7 +45,7 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   3822 │
-│ open    │  85598 │
+│ open    │  85599 │
 │ unknown │ 448873 │
 └─────────┴────────┘
 == status, core layer (no OSM)
@@ -54,7 +54,7 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   3207 │
-│ open    │  82556 │
+│ open    │  82557 │
 │ unknown │ 427441 │
 └─────────┴────────┘
 == register records in the box and how many found a place
@@ -177,7 +177,7 @@
 │ open    │ dcwp_nyc            │      1 │
 │ open    │ dmv_ny              │    927 │
 │ open    │ dohmh_nyc           │  21018 │
-│ open    │ dos_ny_salons       │   2415 │
+│ open    │ dos_ny_salons       │   2416 │
 │ open    │ dph_de              │   1113 │
 │ open    │ epa_ust_open        │    824 │
 │ open    │ fdic_locations      │   4335 │

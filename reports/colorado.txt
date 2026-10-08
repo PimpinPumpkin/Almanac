@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2985 │
-│ open    │  37156 │
-│ unknown │ 355701 │
+│ open    │  37154 │
+│ unknown │ 355703 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2135 │
-│ open    │  33468 │
-│ unknown │ 334217 │
+│ open    │  33466 │
+│ unknown │ 334219 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -65,13 +65,13 @@
 │ able_ok                │ open    │      68 │       0 │
 │ abt_fl                 │ open    │     456 │       0 │
 │ agm_ny                 │ open    │       4 │       1 │
-│ atc_mo                 │ open    │     122 │       0 │
+│ atc_mo                 │ open    │     123 │       0 │
 │ bablo_me               │ open    │      16 │       0 │
 │ bacp_chicago           │ open    │      19 │       0 │
 │ bacp_chicago_cancelled │ closed  │       4 │       0 │
 │ bbl_dc                 │ open    │       7 │       0 │
 │ biz_de                 │ open    │      57 │       0 │
-│ biz_denver             │ open    │    4684 │    3209 │
+│ biz_denver             │ open    │    4685 │    3206 │
 │ biz_lasvegas           │ open    │     173 │       0 │
 │ bop_oh                 │ open    │      19 │       0 │
 │ bop_tx                 │ open    │      42 │       0 │
@@ -114,7 +114,7 @@
 │ atp            │ open    │ spot    │   157 │     42 │
 │ biz_denver     │ open    │ address │    71 │     61 │
 │ biz_denver     │ open    │ near    │    27 │     24 │
-│ biz_denver     │ open    │ number  │  3220 │   2664 │
+│ biz_denver     │ open    │ number  │  3217 │   2662 │
 │ biz_denver     │ open    │ spot    │    20 │     19 │
 │ childcare_co   │ open    │ address │    99 │     99 │
 │ childcare_co   │ open    │ near    │     1 │      1 │
@@ -163,7 +163,7 @@
 │ closed  │ wikidata_p576       │      2 │
 │ open    │ agm_ny              │      1 │
 │ open    │ atp                 │  13075 │
-│ open    │ biz_denver          │   2529 │
+│ open    │ biz_denver          │   2672 │
 │ open    │ childcare_co        │   1098 │
 │ open    │ cms_hospitals       │     77 │
 │ open    │ cpa_tx              │      1 │
@@ -176,7 +176,7 @@
 │ open    │ ncua_branches       │    135 │
 │ open    │ nppes_orgs          │   1751 │
 │ open    │ osm_check_date      │   2975 │
-│ open    │ snap_current        │   3207 │
+│ open    │ snap_current        │   3062 │
 │ open    │ snap_history        │    102 │
 └─────────┴─────────────────────┴────────┘
   22 rows                      3 columns
@@ -198,11 +198,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    568 │
-│ (none)             │ open    │   5118 │
-│ (none)             │ unknown │  86743 │
+│ (none)             │ open    │   5119 │
+│ (none)             │ unknown │  86742 │
 │ open               │ closed  │   2219 │
-│ open               │ open    │  27411 │
-│ open               │ unknown │ 231150 │
+│ open               │ open    │  27408 │
+│ open               │ unknown │ 231153 │
 │ permanently_closed │ closed  │     49 │
 │ permanently_closed │ open    │    100 │
 │ permanently_closed │ unknown │  13767 │

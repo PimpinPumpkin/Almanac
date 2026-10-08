@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2591 │
-│ open    │  37338 │
-│ unknown │ 323733 │
+│ open    │  37339 │
+│ unknown │ 323732 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2119 │
-│ open    │  36154 │
-│ unknown │ 300744 │
+│ open    │  36155 │
+│ unknown │ 300743 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -65,7 +65,7 @@
 │ able_ok        │ open    │     348 │       0 │
 │ abt_fl         │ open    │     145 │       0 │
 │ agm_ny         │ open    │       4 │       0 │
-│ atc_mo         │ open    │   13076 │    7535 │
+│ atc_mo         │ open    │   13080 │    7537 │
 │ bablo_me       │ open    │       6 │       0 │
 │ bacp_chicago   │ open    │       8 │       0 │
 │ bbl_dc         │ open    │       5 │       0 │
@@ -107,12 +107,12 @@
 │    varchar     │ varchar │ varchar │ int64 │ int64  │
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ abc_ar         │ open    │ number  │     2 │      2 │
-│ atc_mo         │ open    │ address │   919 │    910 │
+│ atc_mo         │ open    │ address │   921 │    912 │
 │ atc_mo         │ open    │ near    │    58 │     57 │
-│ atc_mo         │ open    │ number  │  6748 │   6666 │
+│ atc_mo         │ open    │ number  │  6748 │   6665 │
 │ atc_mo         │ open    │ spot    │    54 │     54 │
 │ atp            │ open    │ near    │   290 │    286 │
-│ atp            │ open    │ number  │ 14112 │  13110 │
+│ atp            │ open    │ number  │ 14112 │  13111 │
 │ atp            │ open    │ self    │  2294 │   2294 │
 │ atp            │ open    │ spot    │    49 │     47 │
 │ cms_hospitals  │ open    │ address │    11 │     11 │
@@ -161,8 +161,8 @@
 │ closed  │ osm_history         │    331 │
 │ closed  │ osm_lifecycle       │    154 │
 │ closed  │ wikidata_p576       │      4 │
-│ open    │ atc_mo              │   6612 │
-│ open    │ atp                 │  13607 │
+│ open    │ atc_mo              │   7684 │
+│ open    │ atp                 │  13608 │
 │ open    │ cms_hospitals       │     76 │
 │ open    │ epa_ust_open        │    677 │
 │ open    │ fdic_locations      │   3598 │
@@ -172,10 +172,10 @@
 │ open    │ irs_eo              │   2844 │
 │ open    │ lcb_wa              │      1 │
 │ open    │ nces_schools        │   1038 │
-│ open    │ ncua_branches       │    171 │
+│ open    │ ncua_branches       │    170 │
 │ open    │ nppes_orgs          │   1057 │
 │ open    │ osm_check_date      │    791 │
-│ open    │ snap_current        │   6650 │
+│ open    │ snap_current        │   5579 │
 │ open    │ snap_history        │    112 │
 └─────────┴─────────────────────┴────────┘
   21 rows                      3 columns
@@ -200,8 +200,8 @@
 │ (none)             │ open    │   4849 │
 │ (none)             │ unknown │  89602 │
 │ open               │ closed  │   1958 │
-│ open               │ open    │  23473 │
-│ open               │ unknown │ 204505 │
+│ open               │ open    │  23474 │
+│ open               │ unknown │ 204504 │
 │ permanently_closed │ closed  │     26 │
 │ permanently_closed │ open    │     62 │
 │ permanently_closed │ unknown │   5855 │

@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1266 │
-│ open    │  13582 │
-│ unknown │ 175428 │
+│ open    │  13584 │
+│ unknown │ 175426 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    791 │
-│ open    │  11350 │
-│ unknown │ 159634 │
+│ open    │  11352 │
+│ unknown │ 159632 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌─────────────────┬─────────┬─────────┬─────────┐
@@ -161,7 +161,7 @@
 │ closed  │ osm_history         │    317 │
 │ closed  │ osm_lifecycle       │    165 │
 │ closed  │ wikidata_p576       │      8 │
-│ open    │ atp                 │   6959 │
+│ open    │ atp                 │   6961 │
 │ open    │ childcare_co        │      1 │
 │ open    │ cms_hospitals       │    105 │
 │ open    │ epa_ust_open        │    338 │
@@ -182,7 +182,7 @@
 │    source     │ places │ says_open_after │ says_closed_too │
 │    varchar    │ int64  │      int64      │      int64      │
 ├───────────────┼────────┼─────────────────┼─────────────────┤
-│ fdic_history  │    105 │               6 │               9 │
+│ fdic_history  │    105 │               5 │               9 │
 │ fsq_closed    │    705 │               2 │              23 │
 │ osm_history   │    322 │               2 │              13 │
 │ osm_lifecycle │    173 │               6 │               9 │
@@ -197,8 +197,8 @@
 │ (none)             │ open    │   2161 │
 │ (none)             │ unknown │  44565 │
 │ open               │ closed  │    925 │
-│ open               │ open    │   8973 │
-│ open               │ unknown │ 108242 │
+│ open               │ open    │   8975 │
+│ open               │ unknown │ 108240 │
 │ permanently_closed │ closed  │     16 │
 │ permanently_closed │ open    │     36 │
 │ permanently_closed │ unknown │   5085 │

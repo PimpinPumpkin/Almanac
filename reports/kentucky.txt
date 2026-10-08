@@ -164,7 +164,7 @@
 │ closed  │ wikidata_p576       │      3 │
 │ open    │ abc_ar              │      1 │
 │ open    │ abc_ky              │   5296 │
-│ open    │ abc_ky_jefferson    │   1526 │
+│ open    │ abc_ky_jefferson    │   1520 │
 │ open    │ atc_mo              │      1 │
 │ open    │ atp                 │   9534 │
 │ open    │ cms_hospitals       │    107 │
@@ -177,7 +177,7 @@
 │ open    │ ncua_branches       │    128 │
 │ open    │ nppes_orgs          │    866 │
 │ open    │ osm_check_date      │    673 │
-│ open    │ snap_current        │   5143 │
+│ open    │ snap_current        │   5149 │
 │ open    │ snap_history        │     81 │
 └─────────┴─────────────────────┴────────┘
   22 rows                      3 columns

@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   4102 │
-│ open    │  56476 │
-│ unknown │ 575480 │
+│ open    │  56477 │
+│ unknown │ 575479 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   3255 │
-│ open    │  50644 │
-│ unknown │ 548306 │
+│ open    │  50645 │
+│ unknown │ 548305 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -108,7 +108,7 @@
 ├─────────────────────┼─────────┼─────────┼───────┼────────┤
 │ abc_ky              │ open    │ address │     1 │      1 │
 │ atp                 │ open    │ near    │   586 │    561 │
-│ atp                 │ open    │ number  │ 28366 │  25493 │
+│ atp                 │ open    │ number  │ 28366 │  25494 │
 │ atp                 │ open    │ self    │  2988 │   2988 │
 │ atp                 │ open    │ spot    │    68 │     67 │
 │ childcare_co        │ open    │ address │     1 │      1 │
@@ -162,7 +162,7 @@
 │ closed  │ osm_lifecycle       │    416 │
 │ closed  │ wikidata_p576       │     11 │
 │ open    │ abc_ky              │      1 │
-│ open    │ atp                 │  25621 │
+│ open    │ atp                 │  25622 │
 │ open    │ childcare_co        │      1 │
 │ open    │ cms_hospitals       │     91 │
 │ open    │ cpa_tx_tobacco      │      2 │
@@ -198,8 +198,8 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    759 │
-│ (none)             │ open    │   8272 │
-│ (none)             │ unknown │ 145053 │
+│ (none)             │ open    │   8273 │
+│ (none)             │ unknown │ 145052 │
 │ open               │ closed  │   3089 │
 │ open               │ open    │  35554 │
 │ open               │ unknown │ 379305 │
