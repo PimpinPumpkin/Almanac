@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    400 │
-│ open    │   3494 │
-│ unknown │  37799 │
+│ open    │   3528 │
+│ unknown │  37765 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    357 │
-│ open    │   3349 │
-│ unknown │  36436 │
+│ open    │   3381 │
+│ unknown │  36404 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌─────────────────────┬─────────┬─────────┬─────────┐
@@ -58,6 +58,9 @@
 ├─────────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar              │ open    │       9 │       1 │
 │ abc_ca              │ open    │      27 │       0 │
+│ abc_ks              │ open    │       2 │       0 │
+│ abc_ky              │ open    │      14 │       0 │
+│ abc_nc              │ open    │      12 │       0 │
 │ abc_nj              │ open    │       4 │       0 │
 │ abt_fl              │ open    │      20 │       0 │
 │ atc_mo              │ open    │       9 │       0 │
@@ -73,13 +76,9 @@
 │ dbpr_fl_salon       │ open    │       7 │       0 │
 │ dbpr_fl_vet         │ open    │       1 │       0 │
 │ dca_ca_auto         │ open    │       8 │       0 │
-│ dca_ca_pharmacy     │ open    │       2 │       0 │
-│ dca_ca_salon        │ open    │      38 │       0 │
-│ dmv_ny              │ open    │       1 │       0 │
-│ dol_wa              │ open    │       5 │       0 │
-│ dor_wi_liquor       │ open    │       2 │       0 │
-│ dos_ny_salons       │ open    │       2 │       0 │
-│ dph_sc_food         │ open    │       1 │       0 │
+│      ·              │  ·      │       · │       · │
+│      ·              │  ·      │       · │       · │
+│      ·              │  ·      │       · │       · │
 │ epa_ust_open        │ open    │     246 │     109 │
 │ fdic_history        │ closed  │     124 │      31 │
 │ fdic_locations      │ open    │     150 │     129 │
@@ -92,14 +91,16 @@
 │ nces_schools        │ open    │     123 │      91 │
 │ ncua_branches       │ open    │      53 │      17 │
 │ nppes_orgs          │ open    │   19281 │     877 │
+│ plcb_pa             │ open    │       6 │       0 │
 │ rev_pa              │ open    │      14 │       0 │
 │ rev_pa_tobacco      │ open    │       1 │       0 │
 │ snap_current        │ open    │     304 │     259 │
 │ snap_history        │ open    │     325 │     227 │
 │ tabc_tx             │ open    │      29 │       0 │
+│ tda_tn_food         │ open    │     788 │     307 │
 │ tdlr_tx             │ open    │      54 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  42 rows                                 4 columns
+  47 rows (40 shown)                      4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
@@ -125,10 +126,9 @@
 │ hrsa_health_centers │ open    │ number  │     5 │      5 │
 │ irs_eo              │ open    │ address │   532 │    502 │
 │ nash_beer           │ open    │ near    │    14 │     14 │
-│ nash_beer           │ open    │ number  │  1141 │   1122 │
-│ nash_beer           │ open    │ spot    │    16 │     16 │
-│ nces_schools        │ open    │ near    │     6 │      6 │
-│ nces_schools        │ open    │ number  │    91 │     90 │
+│     ·               │  ·      │  ·      │     · │      · │
+│     ·               │  ·      │  ·      │     · │      · │
+│     ·               │  ·      │  ·      │     · │      · │
 │ ncua_branches       │ open    │ number  │    18 │     18 │
 │ nppes_orgs          │ open    │ address │   922 │    749 │
 │ osm_check_date      │ open    │ near    │    40 │     40 │
@@ -146,8 +146,11 @@
 │ snap_history        │ open    │ near    │     1 │      1 │
 │ snap_history        │ open    │ number  │   252 │    252 │
 │ snap_history        │ open    │ spot    │     4 │      4 │
+│ tda_tn_food         │ open    │ address │    16 │     16 │
+│ tda_tn_food         │ open    │ near    │     4 │      4 │
+│ tda_tn_food         │ open    │ number  │   312 │    311 │
 └─────────────────────┴─────────┴─────────┴───────┴────────┘
-  41 rows                                        5 columns
+  44 rows (40 shown)                             5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -157,22 +160,23 @@
 │ closed  │ fsq_closed          │    322 │
 │ closed  │ osm_history         │     38 │
 │ closed  │ osm_lifecycle       │     10 │
-│ open    │ atp                 │   1212 │
+│ open    │ atp                 │   1185 │
 │ open    │ childcare_tn        │     62 │
 │ open    │ cms_hospitals       │      7 │
-│ open    │ epa_ust_open        │     34 │
+│ open    │ epa_ust_open        │     31 │
 │ open    │ fdic_locations      │    145 │
 │ open    │ hrsa_health_centers │      5 │
-│ open    │ irs_eo              │    425 │
-│ open    │ nash_beer           │   1151 │
+│ open    │ irs_eo              │    424 │
+│ open    │ nash_beer           │   1055 │
 │ open    │ nces_schools        │     90 │
 │ open    │ ncua_branches       │     14 │
 │ open    │ nppes_orgs          │    139 │
 │ open    │ osm_check_date      │     93 │
-│ open    │ snap_current        │    105 │
-│ open    │ snap_history        │     12 │
+│ open    │ snap_current        │     71 │
+│ open    │ snap_history        │      5 │
+│ open    │ tda_tn_food         │    202 │
 └─────────┴─────────────────────┴────────┘
-  18 rows                      3 columns
+  19 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -190,11 +194,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │     79 │
-│ (none)             │ open    │    458 │
-│ (none)             │ unknown │   9209 │
+│ (none)             │ open    │    459 │
+│ (none)             │ unknown │   9208 │
 │ open               │ closed  │    313 │
-│ open               │ open    │   2692 │
-│ open               │ unknown │  25681 │
+│ open               │ open    │   2723 │
+│ open               │ unknown │  25650 │
 │ permanently_closed │ closed  │      2 │
 │ permanently_closed │ open    │     14 │
 │ permanently_closed │ unknown │   1450 │

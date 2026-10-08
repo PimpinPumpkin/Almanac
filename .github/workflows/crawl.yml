@@ -1,0 +1,102 @@
+name: Slow registers
+
+# Registers that can only be read a page at a time through a search form,
+# thousands of requests each. Too slow for the monthly build, so they run a
+# week ahead of it, one state a job, and leave their files where the build
+# finds them (the same cache the build keeps its register files in).
+on:
+  schedule:
+    - cron: "0 6 24 * *"
+  workflow_dispatch:
+    inputs:
+      states:
+        description: "States to read, space separated (blank for all)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+env:
+  ALMANAC_CONTACT: "scheduled crawl"
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      states: ${{ steps.plan.outputs.states }}
+    steps:
+      - id: plan
+        run: |
+          states="${{ inputs.states }}"
+          [ -n "$states" ] || states="AK AR IA KS ND PA SD VT WY"
+          echo "states=$(printf '%s\n' $states | jq -R . | jq -cs .)" >> "$GITHUB_OUTPUT"
+
+  read:
+    needs: plan
+    runs-on: ubuntu-latest
+    # Pennsylvania alone is about four thousand pages
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        state: ${{ fromJson(needs.plan.outputs.states) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/cache/geocode
+          key: geocode-crawl
+          restore-keys: geocode-
+      - name: Read ${{ matrix.state }}
+        env:
+          FOODSAFETY_STATES: ${{ matrix.state }}
+        run: |
+          cp data/cache/geocode/census.csv before.csv 2>/dev/null || touch before.csv
+          python3 adapters/usafoodsafety.py
+          # only the geocoder answers this job added
+          comm -13 <(sort before.csv) <(sort data/cache/geocode/census.csv) > geocode-${{ matrix.state }}.csv
+          wc -l data/cache/evidence/foodsafety_*.csv geocode-${{ matrix.state }}.csv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crawl-${{ matrix.state }}
+          path: |
+            data/cache/evidence/foodsafety_*.csv
+            geocode-${{ matrix.state }}.csv
+          retention-days: 5
+
+  keep:
+    needs: read
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/cache/geocode
+          key: geocode-crawl
+          restore-keys: geocode-
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/cache/evidence
+          key: evidence-crawl
+          restore-keys: evidence-
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: crawl-*
+          path: got
+      - name: Put the new files with the rest
+        run: |
+          mkdir -p data/cache/evidence data/cache/geocode
+          find got -name 'foodsafety_*.csv' -exec cp {} data/cache/evidence/ \;
+          touch data/cache/geocode/census.csv
+          cat data/cache/geocode/census.csv $(find got -name 'geocode-*.csv') | sort -u > census.new
+          mv census.new data/cache/geocode/census.csv
+          ls -la data/cache/evidence | grep foodsafety || echo "no state finished"
+      - uses: actions/cache/save@v4
+        with:
+          path: data/cache/evidence
+          key: evidence-${{ github.run_id }}
+      - uses: actions/cache/save@v4
+        with:
+          path: data/cache/geocode
+          key: geocode-${{ github.run_id }}

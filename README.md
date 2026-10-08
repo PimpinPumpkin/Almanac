@@ -153,7 +153,8 @@ adapters/           one file per register. Federal: fdic, ncua, snap, epa_ust,
                     llb_baltimore, cph_columbus_food, mdard_mi_food, dph_sc_food,
                     mda_mn_food, dca_ca, dpor_va, pharmacy_boards, hrsa,
                     childcare_centers, city_layers, abc_nc, abc_ky,
-                    abc_ks, plcb_pa. France: sirene.sh
+                    abc_ks, plcb_pa, tda_tn_food, usafoodsafety (slow, on
+                    its own schedule). France: sirene.sh
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests
 reports/            numbers from the last build of each region
@@ -200,6 +201,11 @@ month's file, and the release notes and `source-watch.txt` say which. A
 state that fails twice is left out and named in the notes.
 `keep-caches.yml` reads the build's caches once a week so GitHub keeps
 them between monthly runs.
+
+`crawl.yml` runs on the 24th. It reads the registers that only offer a
+search page and take hours (state food inspection lookups, one state a
+job) and leaves their files in the same cache, where the build on the 1st
+picks them up.
 
 ## Output
 

@@ -55,6 +55,21 @@ def download(url, path):
     return path
 
 
+_PLACE = re.compile(
+    r"^(.*\b(?:street|st|avenue|ave|av|road|rd|drive|dr|boulevard|blvd|highway|hwy|route|rte|lane|ln|way|court|ct|"
+    r"place|pl|terrace|ter|parkway|pkwy|pike|circle|cir|trail|trl|plaza|square|sq|broadway|main|north|south|east|west|"
+    r"n|s|e|w|ne|nw|se|sw|(?:suite|ste|unit|apt|bldg|#)\s*[\w-]+|\d+)\.?)\s+([A-Za-z][A-Za-z .'-]+?),\s*([A-Z]{2})\s+(\d{5})",
+    re.I)
+
+
+def street_city(text):
+    """("street", "town", "ST", "12345") from "810 Bridge Street Humboldt, KS 66748", where nothing
+    separates the street from the town. The town is what follows the last street word, direction,
+    unit or number. None when the text does not end in a state and ZIP or cannot be split."""
+    m = _PLACE.match(" ".join((text or "").split()))
+    return (m.group(1), m.group(2), m.group(3).upper(), m.group(4)) if m else None
+
+
 def address(*parts):
     return ", ".join(p.strip() for p in parts if p and p.strip())
 

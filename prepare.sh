@@ -11,7 +11,11 @@ cd "$ROOT"
 mkdir -p "$CACHE/evidence" "$CACHE/watch"
 rm -rf "$CACHE/evidence.prev" && cp -R "$CACHE/evidence" "$CACHE/evidence.prev"
 failed=()
+# read a page at a time over hours, on their own schedule (.github/workflows/crawl.yml);
+# their files are already in the evidence folder
+SLOW=" usafoodsafety "
 for adapter in adapters/*.py; do
+  case "$SLOW" in *" $(basename "$adapter" .py) "*) echo "== $adapter (slow, not run here)"; continue ;; esac
   echo "== $adapter"
   python3 "$adapter" || { echo "FAILED: $adapter"; failed+=("$(basename "$adapter" .py)"); }
 done

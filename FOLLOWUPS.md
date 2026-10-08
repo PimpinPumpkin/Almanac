@@ -47,12 +47,26 @@ Nothing is done to get around these. They may open up, or answer a request.
 
 ## Search forms not crawled yet
 
-- **Minnesota AGED** liquor license lookup.
+- **Georgia restaurants** (`ga.healthinspections.us`): an open data feed,
+  five establishments a request, so several thousand requests. Fits the
+  slow workflow.
+- **Kentucky restaurants**, **Illinois counties**, **Salt Lake County** on
+  `public.cdpehs.com` (the same vendor as North Carolina, different pages).
+- **Alabama, Mississippi, Oklahoma, Maine** state restaurant score sites.
+- **Minnesota AGED** liquor license lookup (a JavaScript app).
 - **Illinois ILCC** license lookup (a Salesforce site).
-- **Tennessee retail food list** (657 pages; robots.txt disallows the site).
-- **Restaurant inspection portals** shared by several states and counties.
+- **Anchorage** and **Columbus**-style county portals (one request lists
+  every facility, but dates need a request per facility).
 - **Missouri professional registration downloads** (moved to a Salesforce page).
 - **South Carolina, Louisiana, Mississippi** alcohol license searches.
+
+## Closed portals (403 or a challenge page), nothing to do but ask
+
+- **inspections.myhealthdepartment.com**: Tennessee and Virginia
+  restaurants, Hawaii, Oregon, Cuyahoga County, El Paso and Weld County
+  CO, Orange County CA and more.
+- **Riverside, Santa Clara, St. Louis County, Baltimore County, Louisiana,
+  Rhode Island, New Hampshire** restaurant lookups.
 
 ## Held signals waiting for enough months to test
 

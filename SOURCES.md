@@ -341,6 +341,33 @@ corporation and agent columns are not read.
   - Michigan MLCC, Virginia ABC, Arizona DLLC, Alaska AMCO: the sites
     answer 403 or a challenge page to this project's fetches.
 
+### Food registers read a page at a time (2026-10-07)
+None states a license; rows are marked `none-stated`.
+- Tennessee Department of Agriculture retail food stores:
+  `https://tnlcp.lcp.tracefirst.com/public_weblinks/food-safety-retail`,
+  657 pages of 15. The site's robots.txt disallows the whole site; the
+  owner decided on 2026-10-07 to read public registers like this anyway.
+- The "Food Safety" inspection system nine states share
+  (`.../Inspection/PublicInspectionSearch.aspx`), read county by county,
+  15 establishments a page, by `adapters/usafoodsafety.py` on its own
+  schedule (`.github/workflows/crawl.yml`):
+  Alaska `adec.safefoodinspection.com`, Arkansas
+  `foodserviceprod.adh.arkansas.gov`, Iowa `iowa.safefoodinspection.com`,
+  Kansas `foodsafety.kda.ks.gov`, North Dakota `fims.doh.nd.gov`,
+  Pennsylvania `www.pafoodsafety.pa.gov`, South Dakota
+  `sddoh.safefoodinspection.com`, Vermont `vtdoh.safefoodinspection.com`,
+  Wyoming `wda.safefoodinspection.com`. None has a robots.txt. Phone
+  numbers are not read.
+- Mapped and not read yet: Georgia's statewide system
+  (`ga.healthinspections.us/stateofgeorgia/`, five establishments a
+  request); Kentucky, Illinois counties and Salt Lake County on
+  `public.cdpehs.com`; Alabama, Mississippi, Oklahoma and Maine state
+  sites. See FOLLOWUPS.md.
+- Closed to this project: `inspections.myhealthdepartment.com` (Tennessee
+  and Virginia restaurants, Hawaii, Oregon, Cuyahoga County and others)
+  answers 403; Riverside, Santa Clara, St. Louis County and Baltimore
+  County sit behind challenge pages.
+
 ### Statewide food establishment lists found on agency sites (2026-10-07)
 None states a license; rows are marked `none-stated`.
 - Michigan MDARD food service licenses, with positions:
