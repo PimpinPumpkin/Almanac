@@ -100,7 +100,7 @@
 │ tda_tn_food            │ open    │      24 │       0 │
 │ tdlr_tx                │ open    │     265 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  68 rows (40 shown)                         4 columns
+  73 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -165,7 +165,7 @@
 │ open    │ abc_nc              │      1 │
 │ open    │ atp                 │  14389 │
 │ open    │ biz_lasvegas        │      1 │
-│ open    │ biz_seattle         │   4829 │
+│ open    │ biz_seattle         │   4827 │
 │ open    │ childcare_wa        │   1035 │
 │ open    │ cms_hospitals       │     91 │
 │ open    │ dol_wa              │   1432 │
@@ -181,7 +181,7 @@
 │ open    │ nppes_orgs          │   1382 │
 │ open    │ olcc_or             │      6 │
 │ open    │ osm_check_date      │   9729 │
-│ open    │ snap_current        │   2790 │
+│ open    │ snap_current        │   2792 │
 │ open    │ snap_history        │    104 │
 └─────────┴─────────────────────┴────────┘
   27 rows                      3 columns
@@ -206,9 +206,9 @@
 │ (none)             │ open    │   6396 │
 │ (none)             │ unknown │  90550 │
 │ open               │ closed  │   3419 │
-│ open               │ open    │  38489 │
-│ open               │ unknown │ 234139 │
+│ open               │ open    │  38488 │
+│ open               │ unknown │ 234140 │
 │ permanently_closed │ closed  │     95 │
-│ permanently_closed │ open    │    144 │
-│ permanently_closed │ unknown │  11709 │
+│ permanently_closed │ open    │    145 │
+│ permanently_closed │ unknown │  11708 │
 └────────────────────┴─────────┴────────┘

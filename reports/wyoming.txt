@@ -79,7 +79,7 @@
 │       ·                │  ·      │       · │       · │
 │       ·                │  ·      │       · │       · │
 │       ·                │  ·      │       · │       · │
-│ fdic_locations         │ open    │     211 │     190 │
+│ foodsafety_sd          │ open    │      88 │       0 │
 │ hrsa_health_centers    │ open    │      23 │      12 │
 │ irs_eo                 │ open    │   18195 │     504 │
 │ isp_id_liquor          │ open    │      24 │       0 │
@@ -100,7 +100,7 @@
 │ tda_tn_food            │ open    │       8 │       0 │
 │ tdlr_tx                │ open    │      54 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  56 rows (40 shown)                         4 columns
+  62 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │

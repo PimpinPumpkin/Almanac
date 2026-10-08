@@ -78,6 +78,7 @@
 │ epa_ust_open        │ open    │     637 │     156 │
 │ fdic_history        │ closed  │     184 │      58 │
 │ fdic_locations      │ open    │     214 │     204 │
+│ foodsafety_ak       │ open    │       1 │       0 │
 │ hrsa_health_centers │ open    │     102 │      35 │
 │ irs_eo              │ open    │    9779 │     574 │
 │ isp_id_liquor       │ open    │      10 │       0 │
@@ -91,7 +92,7 @@
 │ snap_history        │ open    │     878 │     536 │
 │ tda_tn_food         │ open    │      14 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  34 rows                                 4 columns
+  35 rows                                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │

@@ -101,7 +101,7 @@
 │ tda_tn_food            │ open    │     683 │       0 │
 │ tdlr_tx                │ open    │     285 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  70 rows (40 shown)                         4 columns
+  76 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌──────────────────┬─────────┬─────────┬───────┬────────┐
 │      source      │  state  │  rule   │ rows  │ places │
@@ -164,7 +164,7 @@
 │ closed  │ wikidata_p576       │      3 │
 │ open    │ abc_ar              │      1 │
 │ open    │ abc_ky              │   5296 │
-│ open    │ abc_ky_jefferson    │   1506 │
+│ open    │ abc_ky_jefferson    │   1526 │
 │ open    │ atc_mo              │      1 │
 │ open    │ atp                 │   9534 │
 │ open    │ cms_hospitals       │    107 │
@@ -177,7 +177,7 @@
 │ open    │ ncua_branches       │    128 │
 │ open    │ nppes_orgs          │    866 │
 │ open    │ osm_check_date      │    673 │
-│ open    │ snap_current        │   5163 │
+│ open    │ snap_current        │   5143 │
 │ open    │ snap_history        │     81 │
 └─────────┴─────────────────────┴────────┘
   22 rows                      3 columns

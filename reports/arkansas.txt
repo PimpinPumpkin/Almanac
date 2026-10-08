@@ -38,9 +38,9 @@
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │    885 │
-│ open    │  18893 │
-│ unknown │ 163731 │
+│ closed  │    884 │
+│ open    │  22373 │
+│ unknown │ 160252 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    679 │
-│ open    │  17329 │
-│ unknown │ 150386 │
+│ open    │  20810 │
+│ unknown │ 146905 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌──────────────────┬─────────┬─────────┬─────────┐
@@ -100,7 +100,7 @@
 │ tda_tn_food      │ open    │    1271 │       0 │
 │ tdlr_tx          │ open    │     632 │       0 │
 └──────────────────┴─────────┴─────────┴─────────┘
-  65 rows (40 shown)                   4 columns
+  73 rows (40 shown)                   4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
@@ -112,7 +112,7 @@
 │ abc_ar              │ open    │ spot    │     6 │      6 │
 │ atc_mo              │ open    │ near    │     1 │      1 │
 │ atp                 │ open    │ near    │   209 │    207 │
-│ atp                 │ open    │ number  │  6809 │   6378 │
+│ atp                 │ open    │ number  │  6809 │   6379 │
 │ atp                 │ open    │ self    │   919 │    919 │
 │ atp                 │ open    │ spot    │    20 │     20 │
 │ cms_hospitals       │ open    │ address │     5 │      5 │
@@ -150,7 +150,7 @@
 │ snap_history        │ open    │ number  │  2080 │   2079 │
 │ snap_history        │ open    │ spot    │     8 │      8 │
 └─────────────────────┴─────────┴─────────┴───────┴────────┘
-  52 rows (40 shown)                             5 columns
+  56 rows (40 shown)                             5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -158,26 +158,27 @@
 ├─────────┼─────────────────────┼────────┤
 │ closed  │ fdic_history        │    141 │
 │ closed  │ fsq_closed          │    536 │
-│ closed  │ osm_history         │    147 │
+│ closed  │ osm_history         │    146 │
 │ closed  │ osm_lifecycle       │     61 │
-│ open    │ abc_ar              │   1907 │
+│ open    │ abc_ar              │   1610 │
 │ open    │ atc_mo              │      1 │
-│ open    │ atp                 │   6495 │
-│ open    │ cms_hospitals       │     44 │
+│ open    │ atp                 │   6421 │
+│ open    │ cms_hospitals       │     27 │
 │ open    │ cpa_tx              │      2 │
 │ open    │ dhhs_nc_inspections │      1 │
-│ open    │ epa_ust_open        │    641 │
+│ open    │ epa_ust_open        │    571 │
 │ open    │ fdic_locations      │   1791 │
+│ open    │ foodsafety_ar       │   4325 │
 │ open    │ hrsa_health_centers │    115 │
-│ open    │ irs_eo              │    936 │
-│ open    │ nces_schools        │    839 │
+│ open    │ irs_eo              │    857 │
+│ open    │ nces_schools        │    646 │
 │ open    │ ncua_branches       │     52 │
-│ open    │ nppes_orgs          │    696 │
-│ open    │ osm_check_date      │   1287 │
-│ open    │ snap_current        │   4011 │
-│ open    │ snap_history        │     75 │
+│ open    │ nppes_orgs          │    676 │
+│ open    │ osm_check_date      │   1219 │
+│ open    │ snap_current        │   4007 │
+│ open    │ snap_history        │     52 │
 └─────────┴─────────────────────┴────────┘
-  20 rows                      3 columns
+  21 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -186,7 +187,7 @@
 ├───────────────┼────────┼─────────────────┼─────────────────┤
 │ fdic_history  │    170 │               3 │               6 │
 │ fsq_closed    │    542 │               2 │              12 │
-│ osm_history   │    158 │              11 │               4 │
+│ osm_history   │    158 │              12 │               4 │
 │ osm_lifecycle │     67 │               4 │               2 │
 └───────────────┴────────┴─────────────────┴─────────────────┘
 == Overture operating_status against our status
@@ -195,12 +196,12 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    213 │
-│ (none)             │ open    │   2449 │
-│ (none)             │ unknown │  47277 │
-│ open               │ closed  │    621 │
-│ open               │ open    │  11860 │
-│ open               │ unknown │ 100092 │
+│ (none)             │ open    │   2850 │
+│ (none)             │ unknown │  46876 │
+│ open               │ closed  │    620 │
+│ open               │ open    │  14856 │
+│ open               │ unknown │  97097 │
 │ permanently_closed │ closed  │      9 │
-│ permanently_closed │ open    │     32 │
-│ permanently_closed │ unknown │   2199 │
+│ permanently_closed │ open    │     37 │
+│ permanently_closed │ unknown │   2194 │
 └────────────────────┴─────────┴────────┘

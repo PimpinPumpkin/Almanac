@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2330 │
-│ open    │  37438 │
-│ unknown │ 318920 │
+│ open    │  37439 │
+│ unknown │ 318919 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1601 │
-│ open    │  35361 │
-│ unknown │ 294065 │
+│ open    │  35362 │
+│ unknown │ 294064 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -100,7 +100,7 @@
 │ tda_tn_food            │ open    │      13 │       0 │
 │ tdlr_tx                │ open    │     279 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  71 rows (40 shown)                         4 columns
+  78 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -150,7 +150,7 @@
 │ wikidata_p576  │ closed  │ number  │     1 │      1 │
 │ wikidata_p576  │ closed  │ self    │     2 │      2 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  60 rows (40 shown)                        5 columns
+  61 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -168,10 +168,11 @@
 │ open    │ dor_wi_liquor       │   7798 │
 │ open    │ epa_ust_open        │    790 │
 │ open    │ fdic_locations      │   1988 │
+│ open    │ foodsafety_ia       │      1 │
 │ open    │ hrsa_health_centers │     33 │
 │ open    │ irs_eo              │   2947 │
-│ open    │ mke_food            │   1162 │
-│ open    │ mke_liquor          │    545 │
+│ open    │ mke_food            │   1192 │
+│ open    │ mke_liquor          │    515 │
 │ open    │ nces_schools        │   1508 │
 │ open    │ ncua_branches       │    359 │
 │ open    │ nppes_orgs          │   1098 │
@@ -180,7 +181,7 @@
 │ open    │ snap_history        │     93 │
 │ open    │ tabc_tx             │      1 │
 └─────────┴─────────────────────┴────────┘
-  23 rows                      3 columns
+  24 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -199,12 +200,12 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    437 │
-│ (none)             │ open    │   4342 │
-│ (none)             │ unknown │  81234 │
+│ (none)             │ open    │   4343 │
+│ (none)             │ unknown │  81233 │
 │ open               │ closed  │   1609 │
-│ open               │ open    │  26967 │
-│ open               │ unknown │ 204542 │
+│ open               │ open    │  26968 │
+│ open               │ unknown │ 204541 │
 │ permanently_closed │ closed  │     27 │
-│ permanently_closed │ open    │     76 │
-│ permanently_closed │ unknown │   7099 │
+│ permanently_closed │ open    │     75 │
+│ permanently_closed │ unknown │   7100 │
 └────────────────────┴─────────┴────────┘

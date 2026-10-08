@@ -100,7 +100,7 @@
 │ tda_tn_food      │ open    │    2127 │       0 │
 │ tdlr_tx          │ open    │     389 │       0 │
 └──────────────────┴─────────┴─────────┴─────────┘
-  76 rows (40 shown)                   4 columns
+  84 rows (40 shown)                   4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
@@ -166,7 +166,7 @@
 │ open    │ atp                 │  21287 │
 │ open    │ cms_hospitals       │     64 │
 │ open    │ dbpr_fl_restaurant  │      1 │
-│ open    │ dhhs_nc_inspections │  10226 │
+│ open    │ dhhs_nc_inspections │  10225 │
 │ open    │ dph_sc_food         │      3 │
 │ open    │ epa_ust_open        │   1309 │
 │ open    │ fdic_locations      │   3674 │
@@ -176,7 +176,7 @@
 │ open    │ ncua_branches       │    428 │
 │ open    │ nppes_orgs          │   2099 │
 │ open    │ osm_check_date      │   3894 │
-│ open    │ snap_current        │  10354 │
+│ open    │ snap_current        │  10355 │
 │ open    │ snap_history        │    220 │
 └─────────┴─────────────────────┴────────┘
   22 rows                      3 columns

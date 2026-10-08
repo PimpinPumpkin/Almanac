@@ -43,8 +43,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   3817 │
-│ open    │  36574 │
-│ unknown │ 376737 │
+│ open    │  36573 │
+│ unknown │ 376738 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -52,8 +52,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2961 │
-│ open    │  32556 │
-│ unknown │ 348044 │
+│ open    │  32555 │
+│ unknown │ 348045 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -104,7 +104,7 @@
 │ tda_tn_food    │ open    │       9 │       0 │
 │ tdlr_tx        │ open    │     167 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  76 rows (40 shown)                 4 columns
+  84 rows (40 shown)                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -113,7 +113,7 @@
 │ abc_ar         │ open    │ number  │     2 │      2 │
 │ agm_ny         │ open    │ self    │    37 │     37 │
 │ atp            │ open    │ near    │   291 │    289 │
-│ atp            │ open    │ number  │ 12048 │  10835 │
+│ atp            │ open    │ number  │ 12048 │  10834 │
 │ atp            │ open    │ self    │  1727 │   1727 │
 │ atp            │ open    │ spot    │    31 │     28 │
 │ childcare_ma   │ open    │ near    │    23 │     23 │
@@ -166,7 +166,7 @@
 │ closed  │ osm_lifecycle         │    368 │
 │ closed  │ wikidata_p576         │      9 │
 │ open    │ agm_ny                │     35 │
-│ open    │ atp                   │  11147 │
+│ open    │ atp                   │  11146 │
 │ open    │ childcare_ma          │   1258 │
 │ open    │ cms_hospitals         │    104 │
 │ open    │ dmv_ct                │      1 │
@@ -176,9 +176,9 @@
 │ open    │ fdic_locations        │   2725 │
 │ open    │ hrsa_health_centers   │     90 │
 │ open    │ irs_eo                │   4139 │
-│ open    │ isd_boston_food       │   1268 │
+│ open    │ isd_boston_food       │   1243 │
 │ open    │ isd_boston_inspection │     81 │
-│ open    │ lb_boston             │   1195 │
+│ open    │ lb_boston             │   1224 │
 │ open    │ lcc_ne                │      1 │
 │ open    │ led_co                │      1 │
 │ open    │ nces_schools          │   1459 │
@@ -186,7 +186,7 @@
 │ open    │ nppes_orgs            │   1299 │
 │ open    │ osm_check_date        │   3279 │
 │ open    │ sla_ny                │     44 │
-│ open    │ snap_current          │   7242 │
+│ open    │ snap_current          │   7238 │
 │ open    │ snap_history          │    193 │
 │ open    │ tabc_tx               │      1 │
 └─────────┴───────────────────────┴────────┘
@@ -209,11 +209,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    601 │
-│ (none)             │ open    │   4251 │
-│ (none)             │ unknown │  86613 │
+│ (none)             │ open    │   4252 │
+│ (none)             │ unknown │  86612 │
 │ open               │ closed  │   2940 │
-│ open               │ open    │  23429 │
-│ open               │ unknown │ 246476 │
+│ open               │ open    │  23427 │
+│ open               │ unknown │ 246478 │
 │ permanently_closed │ closed  │     39 │
 │ permanently_closed │ open    │     89 │
 │ permanently_closed │ unknown │  12211 │

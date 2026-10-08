@@ -76,12 +76,12 @@
 │ dbpr_fl_lodging     │ open    │       6 │       0 │
 │ dbpr_fl_restaurant  │ open    │      69 │       0 │
 │ dbpr_fl_salon       │ open    │      31 │       0 │
-│      ·              │  ·      │       · │       · │
-│      ·              │  ·      │       · │       · │
-│      ·              │  ·      │       · │       · │
-│ epa_ust_open        │ open    │    1776 │     464 │
-│ fdic_history        │ closed  │     501 │     129 │
-│ fdic_locations      │ open    │     690 │     625 │
+│       ·             │  ·      │       · │       · │
+│       ·             │  ·      │       · │       · │
+│       ·             │  ·      │       · │       · │
+│ foodsafety_ks       │ open    │      32 │       0 │
+│ foodsafety_sd       │ open    │      21 │       0 │
+│ foodsafety_vt       │ open    │       6 │       0 │
 │ hrsa_health_centers │ open    │     194 │      42 │
 │ irs_eo              │ open    │   19079 │     777 │
 │ isp_id_liquor       │ open    │    4131 │    2784 │
@@ -100,7 +100,7 @@
 │ tda_tn_food         │ open    │       2 │       0 │
 │ tdlr_tx             │ open    │      69 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  50 rows (40 shown)                      4 columns
+  56 rows (40 shown)                      4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │

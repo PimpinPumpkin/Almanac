@@ -104,7 +104,7 @@
 │ tda_tn_food    │ open    │      18 │       0 │
 │ tdlr_tx        │ open    │     238 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  72 rows (40 shown)                 4 columns
+  80 rows (40 shown)                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -175,17 +175,17 @@
 │ open    │ dmv_ct              │   2419 │
 │ open    │ dmv_ny              │    143 │
 │ open    │ dos_ny_salons       │    160 │
-│ open    │ elicense_ct         │   7608 │
+│ open    │ elicense_ct         │   7623 │
 │ open    │ epa_ust_open        │    256 │
 │ open    │ fdic_locations      │    999 │
-│ open    │ hrsa_health_centers │     57 │
+│ open    │ hrsa_health_centers │     58 │
 │ open    │ irs_eo              │   2219 │
 │ open    │ nces_schools        │    754 │
 │ open    │ ncua_branches       │     83 │
 │ open    │ nppes_orgs          │    705 │
 │ open    │ osm_check_date      │    573 │
 │ open    │ sla_ny              │    650 │
-│ open    │ snap_current        │   1579 │
+│ open    │ snap_current        │   1563 │
 │ open    │ snap_history        │     54 │
 └─────────┴─────────────────────┴────────┘
   27 rows                      3 columns

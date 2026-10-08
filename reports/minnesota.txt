@@ -100,7 +100,7 @@
 │ tda_tn_food            │ open    │       1 │       0 │
 │ tdlr_tx                │ open    │     164 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  76 rows (40 shown)                         4 columns
+  84 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -150,7 +150,7 @@
 │ snap_history   │ open    │ spot    │    17 │     17 │
 │ wikidata_p576  │ closed  │ self    │     2 │      2 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  60 rows (40 shown)                        5 columns
+  63 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -163,11 +163,13 @@
 │ closed  │ wikidata_p576       │      2 │
 │ open    │ atp                 │  11329 │
 │ open    │ biz_de              │      1 │
-│ open    │ childcare_mn        │   1133 │
-│ open    │ childcare_wi        │      6 │
+│ open    │ childcare_mn        │   1130 │
+│ open    │ childcare_wi        │      9 │
 │ open    │ cms_hospitals       │    112 │
-│ open    │ epa_ust_open        │    438 │
+│ open    │ epa_ust_open        │    437 │
 │ open    │ fdic_locations      │   2230 │
+│ open    │ foodsafety_ia       │      1 │
+│ open    │ foodsafety_sd       │      1 │
 │ open    │ hrsa_health_centers │     29 │
 │ open    │ irs_eo              │   3280 │
 │ open    │ mda_mn_food         │   3372 │
@@ -176,11 +178,11 @@
 │ open    │ nces_schools        │   1107 │
 │ open    │ ncua_branches       │    252 │
 │ open    │ nppes_orgs          │   1273 │
-│ open    │ osm_check_date      │   2222 │
+│ open    │ osm_check_date      │   2221 │
 │ open    │ snap_current        │   3149 │
 │ open    │ snap_history        │     45 │
 └─────────┴─────────────────────┴────────┘
-  23 rows                      3 columns
+  25 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -202,8 +204,8 @@
 │ (none)             │ open    │   4689 │
 │ (none)             │ unknown │  75814 │
 │ open               │ closed  │   1850 │
-│ open               │ open    │  20047 │
-│ open               │ unknown │ 189388 │
+│ open               │ open    │  20046 │
+│ open               │ unknown │ 189389 │
 │ permanently_closed │ closed  │     25 │
 │ permanently_closed │ open    │     72 │
 │ permanently_closed │ unknown │   7926 │

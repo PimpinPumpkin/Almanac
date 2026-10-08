@@ -102,7 +102,7 @@
 │ tda_tn_food       │ open    │      15 │       0 │
 │ tdlr_tx           │ open    │      92 │       0 │
 └───────────────────┴─────────┴─────────┴─────────┘
-  75 rows (40 shown)                    4 columns
+  81 rows (40 shown)                    4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -112,7 +112,7 @@
 │ abca_dc_active │ open    │ number  │     3 │      3 │
 │ abca_dc_active │ open    │ self    │  2008 │   2008 │
 │ atp            │ open    │ near    │   305 │    292 │
-│ atp            │ open    │ number  │ 12051 │  11073 │
+│ atp            │ open    │ number  │ 12051 │  11072 │
 │ atp            │ open    │ self    │  1784 │   1784 │
 │ atp            │ open    │ spot    │    44 │     39 │
 │ bbl_dc         │ open    │ address │     1 │      1 │
@@ -152,7 +152,7 @@
 │ wikidata_p576  │ closed  │ near    │     1 │      1 │
 │ wikidata_p576  │ closed  │ self    │     6 │      6 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  66 rows (40 shown)                        5 columns
+  67 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -164,13 +164,14 @@
 │ closed  │ osm_lifecycle       │    406 │
 │ closed  │ wikidata_p576       │      4 │
 │ open    │ abca_dc_active      │   2009 │
-│ open    │ atp                 │  11548 │
-│ open    │ bbl_dc              │     27 │
+│ open    │ atp                 │  11547 │
+│ open    │ bbl_dc              │     29 │
 │ open    │ biz_de              │      2 │
 │ open    │ cms_hospitals       │     33 │
 │ open    │ dph_de              │   2419 │
 │ open    │ epa_ust_open        │    489 │
 │ open    │ fdic_locations      │   2344 │
+│ open    │ foodsafety_pa       │      1 │
 │ open    │ hrsa_health_centers │     41 │
 │ open    │ irs_eo              │   3188 │
 │ open    │ llb_baltimore       │    626 │
@@ -180,10 +181,10 @@
 │ open    │ nppes_orgs          │   2058 │
 │ open    │ osm_check_date      │   2082 │
 │ open    │ rev_pa              │      2 │
-│ open    │ snap_current        │   6545 │
+│ open    │ snap_current        │   6543 │
 │ open    │ snap_history        │    126 │
 └─────────┴─────────────────────┴────────┘
-  24 rows                      3 columns
+  25 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -202,11 +203,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    440 │
-│ (none)             │ open    │   4243 │
-│ (none)             │ unknown │  71612 │
+│ (none)             │ open    │   4242 │
+│ (none)             │ unknown │  71613 │
 │ open               │ closed  │   2289 │
-│ open               │ open    │  19870 │
-│ open               │ unknown │ 193718 │
+│ open               │ open    │  19871 │
+│ open               │ unknown │ 193717 │
 │ permanently_closed │ closed  │     26 │
 │ permanently_closed │ open    │     87 │
 │ permanently_closed │ unknown │  10732 │

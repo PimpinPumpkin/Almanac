@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1132 │
-│ open    │  14575 │
-│ unknown │ 104881 │
+│ open    │  14576 │
+│ unknown │ 104880 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    946 │
-│ open    │  13879 │
-│ unknown │  94314 │
+│ open    │  13880 │
+│ unknown │  94313 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -100,7 +100,7 @@
 │ tda_tn_food    │ open    │       2 │       0 │
 │ tdlr_tx        │ open    │     110 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  66 rows (40 shown)                 4 columns
+  71 rows (40 shown)                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────┬─────────┬─────────┬───────┬────────┐
 │     source      │  state  │  rule   │ rows  │ places │
@@ -150,7 +150,7 @@
 │ snap_history    │ open    │ spot    │    10 │     10 │
 │ wikidata_p576   │ closed  │ self    │     3 │      3 │
 └─────────────────┴─────────┴─────────┴───────┴────────┘
-  55 rows (40 shown)                         5 columns
+  57 rows (40 shown)                         5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -168,6 +168,7 @@
 │ open    │ dor_wi_liquor       │      1 │
 │ open    │ epa_ust_open        │    316 │
 │ open    │ fdic_locations      │   1119 │
+│ open    │ foodsafety_ia       │      1 │
 │ open    │ hrsa_health_centers │     12 │
 │ open    │ irs_eo              │    994 │
 │ open    │ lcc_ne              │   3928 │
@@ -179,7 +180,7 @@
 │ open    │ snap_current        │   1023 │
 │ open    │ snap_history        │     28 │
 └─────────┴─────────────────────┴────────┘
-  22 rows                      3 columns
+  23 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -201,8 +202,8 @@
 │ (none)             │ open    │   1837 │
 │ (none)             │ unknown │  28695 │
 │ open               │ closed  │    880 │
-│ open               │ open    │  10327 │
-│ open               │ unknown │  63718 │
+│ open               │ open    │  10328 │
+│ open               │ unknown │  63717 │
 │ permanently_closed │ closed  │      4 │
 │ permanently_closed │ open    │     21 │
 │ permanently_closed │ unknown │   1586 │

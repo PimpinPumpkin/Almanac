@@ -100,7 +100,7 @@
 │ tda_tn_food            │ open    │       8 │       0 │
 │ tdlr_tx                │ open    │     467 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  69 rows (40 shown)                         4 columns
+  75 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -130,7 +130,7 @@
 │     ·          │  ·      │ ·       │    ·  │     ·  │
 │     ·          │  ·      │ ·       │    ·  │     ·  │
 │ osm_check_date │ open    │ near    │   720 │    715 │
-│ osm_check_date │ open    │ number  │  1626 │   1591 │
+│ osm_check_date │ open    │ number  │  1626 │   1590 │
 │ osm_check_date │ open    │ self    │   586 │    586 │
 │ osm_check_date │ open    │ spot    │    48 │     46 │
 │ osm_history    │ closed  │ id      │   331 │    331 │
@@ -199,9 +199,9 @@
 │ (none)             │ open    │   4587 │
 │ (none)             │ unknown │  86694 │
 │ open               │ closed  │   2300 │
-│ open               │ open    │  21021 │
-│ open               │ unknown │ 231690 │
+│ open               │ open    │  21020 │
+│ open               │ unknown │ 231691 │
 │ permanently_closed │ closed  │     34 │
-│ permanently_closed │ open    │     79 │
-│ permanently_closed │ unknown │  12679 │
+│ permanently_closed │ open    │     80 │
+│ permanently_closed │ unknown │  12678 │
 └────────────────────┴─────────┴────────┘

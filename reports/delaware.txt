@@ -77,11 +77,11 @@
 │ cpa_tx_tobacco      │ open    │       5 │       0 │
 │ dbpr_fl_food        │ open    │      32 │       0 │
 │ dbpr_fl_lodging     │ open    │       6 │       0 │
-│      ·              │  ·      │       · │       · │
-│      ·              │  ·      │       · │       · │
-│      ·              │  ·      │       · │       · │
-│ fdic_history        │ closed  │     303 │      49 │
-│ fdic_locations      │ open    │     335 │     307 │
+│       ·             │  ·      │       · │       · │
+│       ·             │  ·      │       · │       · │
+│       ·             │  ·      │       · │       · │
+│ foodsafety_pa       │ open    │     138 │       0 │
+│ foodsafety_sd       │ open    │       1 │       0 │
 │ hrsa_health_centers │ open    │      27 │       8 │
 │ irs_eo              │ open    │   20850 │     674 │
 │ lcb_wa              │ open    │       2 │       0 │
@@ -101,7 +101,7 @@
 │ tda_tn_food         │ open    │       5 │       0 │
 │ tdlr_tx             │ open    │       7 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  53 rows (40 shown)                      4 columns
+  55 rows (40 shown)                      4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │

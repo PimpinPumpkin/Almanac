@@ -100,7 +100,7 @@
 │ tda_tn_food            │ open    │      93 │       0 │
 │ tdlr_tx                │ open    │     751 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  79 rows (40 shown)                         4 columns
+  86 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────┬─────────┬─────────┬───────┬────────┐
 │     source      │  state  │  rule   │ rows  │ places │
@@ -112,7 +112,7 @@
 │ abt_fl          │ open    │ number  │ 28990 │  28545 │
 │ abt_fl          │ open    │ spot    │   131 │    130 │
 │ atp             │ open    │ near    │   870 │    809 │
-│ atp             │ open    │ number  │ 49008 │  43927 │
+│ atp             │ open    │ number  │ 49008 │  43926 │
 │ atp             │ open    │ self    │  5458 │   5458 │
 │ atp             │ open    │ spot    │   153 │    147 │
 │ biz_lasvegas    │ open    │ number  │     1 │      1 │
@@ -156,27 +156,27 @@
 │ status  │    status_source    │ places │
 │ varchar │       varchar       │ int64  │
 ├─────────┼─────────────────────┼────────┤
-│ closed  │ fdic_history        │   1065 │
-│ closed  │ fsq_closed          │   6082 │
+│ closed  │ fdic_history        │   1064 │
+│ closed  │ fsq_closed          │   6083 │
 │ closed  │ osm_history         │    629 │
 │ closed  │ osm_lifecycle       │    404 │
 │ closed  │ wikidata_p576       │      5 │
 │ open    │ abc_ar              │      1 │
-│ open    │ abt_fl              │  24380 │
-│ open    │ atp                 │  33164 │
+│ open    │ abt_fl              │  23130 │
+│ open    │ atp                 │  33165 │
 │ open    │ biz_lasvegas        │      1 │
 │ open    │ cms_hospitals       │    189 │
-│ open    │ dbpr_fl_food        │    559 │
-│ open    │ dbpr_fl_lodging     │   2353 │
-│ open    │ dbpr_fl_restaurant  │  25679 │
-│ open    │ dbpr_fl_salon       │  12045 │
+│ open    │ dbpr_fl_food        │    558 │
+│ open    │ dbpr_fl_lodging     │   2251 │
+│ open    │ dbpr_fl_restaurant  │  27028 │
+│ open    │ dbpr_fl_salon       │  12048 │
 │ open    │ dbpr_fl_vet         │   1155 │
 │ open    │ epa_ust_open        │   1278 │
 │ open    │ fdic_locations      │   4405 │
 │ open    │ hrsa_health_centers │    130 │
-│ open    │ irs_eo              │   7568 │
+│ open    │ irs_eo              │   7437 │
 │ open    │ led_co              │      1 │
-│ open    │ nces_schools        │   3339 │
+│ open    │ nces_schools        │   3470 │
 │ open    │ ncua_branches       │    545 │
 │ open    │ nppes_orgs          │   5620 │
 │ open    │ osm_check_date      │   2864 │
@@ -203,12 +203,12 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │   1460 │
-│ (none)             │ open    │  17123 │
-│ (none)             │ unknown │ 342126 │
-│ open               │ closed  │   6370 │
+│ (none)             │ open    │  17122 │
+│ (none)             │ unknown │ 342127 │
+│ open               │ closed  │   6369 │
 │ open               │ open    │ 102556 │
-│ open               │ unknown │ 859980 │
-│ permanently_closed │ closed  │     73 │
-│ permanently_closed │ open    │    370 │
-│ permanently_closed │ unknown │  56897 │
+│ open               │ unknown │ 859981 │
+│ permanently_closed │ closed  │     74 │
+│ permanently_closed │ open    │    371 │
+│ permanently_closed │ unknown │  56895 │
 └────────────────────┴─────────┴────────┘

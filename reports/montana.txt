@@ -100,7 +100,7 @@
 │ tda_tn_food    │ open    │       7 │       0 │
 │ tdlr_tx        │ open    │      24 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  65 rows (40 shown)                 4 columns
+  71 rows (40 shown)                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │

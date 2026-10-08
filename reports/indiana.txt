@@ -102,7 +102,7 @@
 │ tda_tn_food            │ open    │      15 │       0 │
 │ tdlr_tx                │ open    │     180 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  74 rows (40 shown)                         4 columns
+  81 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌──────────────────┬─────────┬─────────┬───────┬────────┐
 │      source      │  state  │  rule   │ rows  │ places │
@@ -198,11 +198,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    417 │
-│ (none)             │ open    │   4874 │
-│ (none)             │ unknown │  85536 │
+│ (none)             │ open    │   4873 │
+│ (none)             │ unknown │  85537 │
 │ open               │ closed  │   1723 │
-│ open               │ open    │  21765 │
-│ open               │ unknown │ 217077 │
+│ open               │ open    │  21766 │
+│ open               │ unknown │ 217076 │
 │ permanently_closed │ closed  │     19 │
 │ permanently_closed │ open    │     72 │
 │ permanently_closed │ unknown │   7224 │

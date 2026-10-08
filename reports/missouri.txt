@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2591 │
-│ open    │  37335 │
-│ unknown │ 323736 │
+│ open    │  37338 │
+│ unknown │ 323733 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2119 │
-│ open    │  36152 │
-│ unknown │ 300746 │
+│ open    │  36154 │
+│ unknown │ 300744 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -100,7 +100,7 @@
 │ tda_tn_food    │ open    │     108 │       0 │
 │ tdlr_tx        │ open    │     460 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  69 rows (40 shown)                 4 columns
+  75 rows (40 shown)                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -112,7 +112,7 @@
 │ atc_mo         │ open    │ number  │  6748 │   6666 │
 │ atc_mo         │ open    │ spot    │    54 │     54 │
 │ atp            │ open    │ near    │   290 │    286 │
-│ atp            │ open    │ number  │ 14112 │  13109 │
+│ atp            │ open    │ number  │ 14112 │  13110 │
 │ atp            │ open    │ self    │  2294 │   2294 │
 │ atp            │ open    │ spot    │    49 │     47 │
 │ cms_hospitals  │ open    │ address │    11 │     11 │
@@ -150,7 +150,7 @@
 │ wikidata_p576  │ closed  │ number  │     1 │      1 │
 │ wikidata_p576  │ closed  │ self    │     3 │      3 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  52 rows (40 shown)                        5 columns
+  54 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -161,11 +161,13 @@
 │ closed  │ osm_history         │    331 │
 │ closed  │ osm_lifecycle       │    154 │
 │ closed  │ wikidata_p576       │      4 │
-│ open    │ atc_mo              │   6607 │
-│ open    │ atp                 │  13606 │
+│ open    │ atc_mo              │   6612 │
+│ open    │ atp                 │  13607 │
 │ open    │ cms_hospitals       │     76 │
 │ open    │ epa_ust_open        │    677 │
 │ open    │ fdic_locations      │   3598 │
+│ open    │ foodsafety_ia       │      1 │
+│ open    │ foodsafety_ks       │      1 │
 │ open    │ hrsa_health_centers │    102 │
 │ open    │ irs_eo              │   2844 │
 │ open    │ lcb_wa              │      1 │
@@ -173,10 +175,10 @@
 │ open    │ ncua_branches       │    171 │
 │ open    │ nppes_orgs          │   1057 │
 │ open    │ osm_check_date      │    791 │
-│ open    │ snap_current        │   6655 │
+│ open    │ snap_current        │   6650 │
 │ open    │ snap_history        │    112 │
 └─────────┴─────────────────────┴────────┘
-  19 rows                      3 columns
+  21 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -195,8 +197,8 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    503 │
-│ (none)             │ open    │   4847 │
-│ (none)             │ unknown │  89604 │
+│ (none)             │ open    │   4849 │
+│ (none)             │ unknown │  89602 │
 │ open               │ closed  │   1958 │
 │ open               │ open    │  23473 │
 │ open               │ unknown │ 204505 │

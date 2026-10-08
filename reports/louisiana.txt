@@ -68,7 +68,7 @@
 │ bablo_me            │ open    │       1 │       0 │
 │ bacp_chicago        │ open    │       2 │       0 │
 │ bbl_dc              │ open    │      50 │       0 │
-│ biz_nola            │ open    │    8244 │    3607 │
+│ biz_nola            │ open    │    8244 │    3606 │
 │ bop_oh              │ open    │       2 │       0 │
 │ bop_tx              │ open    │      89 │       0 │
 │ childcare_co        │ open    │       5 │       0 │
@@ -100,7 +100,7 @@
 │ tda_tn_food         │ open    │      12 │       0 │
 │ tdlr_tx             │ open    │     918 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  61 rows (40 shown)                      4 columns
+  67 rows (40 shown)                      4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -108,11 +108,11 @@
 ├────────────────┼─────────┼─────────┼───────┼────────┤
 │ abc_ar         │ open    │ number  │     2 │      2 │
 │ atp            │ open    │ near    │   249 │    239 │
-│ atp            │ open    │ number  │ 11144 │  10047 │
+│ atp            │ open    │ number  │ 11144 │  10048 │
 │ atp            │ open    │ self    │  1039 │   1039 │
 │ atp            │ open    │ spot    │    29 │     23 │
 │ biz_nola       │ open    │ near    │    60 │     58 │
-│ biz_nola       │ open    │ number  │  3512 │   3456 │
+│ biz_nola       │ open    │ number  │  3511 │   3455 │
 │ biz_nola       │ open    │ spot    │    78 │     78 │
 │ cms_hospitals  │ open    │ address │    11 │     11 │
 │ cms_hospitals  │ open    │ near    │     1 │      1 │
@@ -162,19 +162,19 @@
 │ closed  │ osm_lifecycle       │    130 │
 │ closed  │ wikidata_p576       │      3 │
 │ open    │ abc_ar              │      1 │
-│ open    │ atp                 │   9605 │
-│ open    │ biz_nola            │   3521 │
+│ open    │ atp                 │   9606 │
+│ open    │ biz_nola            │   3589 │
 │ open    │ cms_hospitals       │    128 │
 │ open    │ cpa_tx              │      3 │
 │ open    │ epa_ust_open        │    862 │
 │ open    │ fdic_locations      │   1905 │
-│ open    │ hrsa_health_centers │     95 │
+│ open    │ hrsa_health_centers │     90 │
 │ open    │ irs_eo              │   1419 │
 │ open    │ nces_schools        │   1226 │
 │ open    │ ncua_branches       │    135 │
 │ open    │ nppes_orgs          │    836 │
 │ open    │ osm_check_date      │    703 │
-│ open    │ snap_current        │   5347 │
+│ open    │ snap_current        │   5283 │
 │ open    │ snap_history        │    223 │
 └─────────┴─────────────────────┴────────┘
   20 rows                      3 columns
@@ -196,11 +196,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    316 │
-│ (none)             │ open    │   3211 │
-│ (none)             │ unknown │  61507 │
+│ (none)             │ open    │   3212 │
+│ (none)             │ unknown │  61506 │
 │ open               │ closed  │   1264 │
-│ open               │ open    │  17797 │
-│ open               │ unknown │ 157251 │
+│ open               │ open    │  17796 │
+│ open               │ unknown │ 157252 │
 │ permanently_closed │ closed  │      7 │
 │ permanently_closed │ open    │     59 │
 │ permanently_closed │ unknown │   5411 │

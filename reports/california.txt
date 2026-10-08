@@ -101,7 +101,7 @@
 │ tda_tn_food            │ open    │     135 │       0 │
 │ tdlr_tx                │ open    │    2137 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  83 rows (40 shown)                         4 columns
+  91 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -163,29 +163,29 @@
 │ closed  │ osm_lifecycle       │   2705 │
 │ closed  │ wikidata_p576       │     22 │
 │ open    │ abc_ar              │     18 │
-│ open    │ abc_ca              │  42235 │
+│ open    │ abc_ca              │  41199 │
 │ open    │ abt_fl              │      1 │
-│ open    │ atp                 │  59375 │
+│ open    │ atp                 │  59380 │
 │ open    │ biz_de              │      1 │
-│ open    │ bot_sac             │   5540 │
+│ open    │ bot_sac             │   5586 │
 │ open    │ cdph_chicago        │      1 │
-│ open    │ childcare_ca        │   4164 │
+│ open    │ childcare_ca        │   4165 │
 │ open    │ cms_hospitals       │    226 │
-│ open    │ dca_ca_auto         │  20756 │
-│ open    │ dca_ca_pharmacy     │   4073 │
-│ open    │ dca_ca_salon        │  25248 │
+│ open    │ dca_ca_auto         │  20744 │
+│ open    │ dca_ca_pharmacy     │   4065 │
+│ open    │ dca_ca_salon        │  25222 │
 │ open    │ emd_sac             │   2630 │
 │ open    │ epa_ust_open        │   2129 │
 │ open    │ fdic_locations      │   6034 │
 │ open    │ hrsa_health_centers │    725 │
-│ open    │ irs_eo              │  13964 │
+│ open    │ irs_eo              │  13919 │
 │ open    │ lcb_wa              │      1 │
 │ open    │ led_co              │      2 │
-│ open    │ nces_schools        │   7764 │
+│ open    │ nces_schools        │   7810 │
 │ open    │ ncua_branches       │    934 │
-│ open    │ nppes_orgs          │   5301 │
-│ open    │ osm_check_date      │  14443 │
-│ open    │ snap_current        │  23498 │
+│ open    │ nppes_orgs          │   5300 │
+│ open    │ osm_check_date      │  14438 │
+│ open    │ snap_current        │  24533 │
 │ open    │ snap_history        │    588 │
 └─────────┴─────────────────────┴────────┘
   30 rows                      3 columns
@@ -207,12 +207,12 @@
 │      varchar       │ varchar │  int64  │
 ├────────────────────┼─────────┼─────────┤
 │ (none)             │ closed  │    2387 │
-│ (none)             │ open    │   26935 │
-│ (none)             │ unknown │  468133 │
+│ (none)             │ open    │   26934 │
+│ (none)             │ unknown │  468134 │
 │ open               │ closed  │   11508 │
-│ open               │ open    │  181802 │
-│ open               │ unknown │ 1243944 │
+│ open               │ open    │  181805 │
+│ open               │ unknown │ 1243941 │
 │ permanently_closed │ closed  │     260 │
-│ permanently_closed │ open    │     722 │
-│ permanently_closed │ unknown │   86580 │
+│ permanently_closed │ open    │     720 │
+│ permanently_closed │ unknown │   86582 │
 └────────────────────┴─────────┴─────────┘

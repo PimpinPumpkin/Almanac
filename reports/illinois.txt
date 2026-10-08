@@ -40,8 +40,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   9877 │
-│ open    │  79163 │
-│ unknown │ 666951 │
+│ open    │  79164 │
+│ unknown │ 666950 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -49,8 +49,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   8299 │
-│ open    │  73072 │
-│ unknown │ 630153 │
+│ open    │  73073 │
+│ unknown │ 630152 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -101,7 +101,7 @@
 │ tda_tn_food            │ open    │     107 │       0 │
 │ tdlr_tx                │ open    │     738 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  79 rows (40 shown)                         4 columns
+  85 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────────────┬─────────┬─────────┬───────┬────────┐
 │         source         │  state  │  rule   │ rows  │ places │
@@ -151,14 +151,14 @@
 │ wikidata_p576          │ closed  │ number  │     4 │      4 │
 │ wikidata_p576          │ closed  │ self    │    14 │     14 │
 └────────────────────────┴─────────┴─────────┴───────┴────────┘
-  68 rows (40 shown)                                5 columns
+  69 rows (40 shown)                                5 columns
 == what decided the status
 ┌─────────┬────────────────────────┬────────┐
 │ status  │     status_source      │ places │
 │ varchar │        varchar         │ int64  │
 ├─────────┼────────────────────────┼────────┤
-│ closed  │ bacp_chicago_cancelled │   1339 │
-│ closed  │ cdph_chicago_oob       │   1562 │
+│ closed  │ bacp_chicago_cancelled │   1338 │
+│ closed  │ cdph_chicago_oob       │   1563 │
 │ closed  │ fdic_history           │    660 │
 │ closed  │ fsq_closed             │   4628 │
 │ closed  │ osm_history            │   1002 │
@@ -167,23 +167,24 @@
 │ open    │ abc_ar                 │      1 │
 │ open    │ atc_mo                 │      2 │
 │ open    │ atp                    │  25004 │
-│ open    │ bacp_chicago           │  18539 │
+│ open    │ bacp_chicago           │  18411 │
 │ open    │ cdph_chicago           │   3429 │
 │ open    │ childcare_wi           │      4 │
 │ open    │ cms_hospitals          │    137 │
 │ open    │ dor_wi_liquor          │      3 │
 │ open    │ epa_ust_open           │   1126 │
 │ open    │ fdic_locations         │   4514 │
-│ open    │ hrsa_health_centers    │    154 │
-│ open    │ irs_eo                 │   5925 │
-│ open    │ nces_schools           │   2288 │
+│ open    │ foodsafety_ia          │      1 │
+│ open    │ hrsa_health_centers    │    155 │
+│ open    │ irs_eo                 │   5923 │
+│ open    │ nces_schools           │   2290 │
 │ open    │ ncua_branches          │    254 │
 │ open    │ nppes_orgs             │   2672 │
 │ open    │ osm_check_date         │   4760 │
-│ open    │ snap_current           │  10107 │
+│ open    │ snap_current           │  10234 │
 │ open    │ snap_history           │    244 │
 └─────────┴────────────────────────┴────────┘
-  25 rows                         3 columns
+  26 rows                         3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌────────────────────────┬────────┬─────────────────┬─────────────────┐
@@ -207,8 +208,8 @@
 │ (none)             │ open    │   9898 │
 │ (none)             │ unknown │ 180747 │
 │ open               │ closed  │   7718 │
-│ open               │ open    │  54036 │
-│ open               │ unknown │ 422143 │
+│ open               │ open    │  54037 │
+│ open               │ unknown │ 422142 │
 │ permanently_closed │ closed  │    215 │
 │ permanently_closed │ open    │    264 │
 │ permanently_closed │ unknown │  22777 │

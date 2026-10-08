@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    678 │
-│ open    │   8021 │
-│ unknown │  91063 │
+│ open    │   8022 │
+│ unknown │  91062 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    411 │
-│ open    │   6645 │
-│ unknown │  81289 │
+│ open    │   6646 │
+│ unknown │  81288 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌───────────────────────┬─────────┬─────────┬─────────┐
@@ -79,7 +79,7 @@
 │       ·               │  ·      │       · │       · │
 │       ·               │  ·      │       · │       · │
 │       ·               │  ·      │       · │       · │
-│ fdic_locations        │ open    │     556 │     536 │
+│ foodsafety_vt         │ open    │    1017 │       1 │
 │ hrsa_health_centers   │ open    │      96 │      13 │
 │ irs_eo                │ open    │   19361 │    1017 │
 │ isd_boston_food       │ open    │      62 │       0 │
@@ -100,7 +100,7 @@
 │ tax_ny_tobacco        │ open    │       2 │       0 │
 │ tdlr_tx               │ open    │     154 │       0 │
 └───────────────────────┴─────────┴─────────┴─────────┘
-  61 rows (40 shown)                        4 columns
+  65 rows (40 shown)                        4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -125,10 +125,10 @@
 │ fdic_locations │ open    │ number  │   288 │    286 │
 │ fdic_locations │ open    │ self    │   243 │    243 │
 │ fdic_locations │ open    │ spot    │     4 │      4 │
-│ fsq_closed     │ closed  │ id      │   345 │    345 │
-│     ·          │  ·      │ ·       │     · │      · │
-│     ·          │  ·      │ ·       │     · │      · │
-│     ·          │  ·      │ ·       │     · │      · │
+│ foodsafety_vt  │ open    │ number  │     1 │      1 │
+│      ·         │  ·      │  ·      │     · │      · │
+│      ·         │  ·      │  ·      │     · │      · │
+│      ·         │  ·      │  ·      │     · │      · │
 │ nces_schools   │ open    │ spot    │     2 │      2 │
 │ ncua_branches  │ open    │ address │    13 │     10 │
 │ ncua_branches  │ open    │ number  │    76 │     72 │
@@ -150,7 +150,7 @@
 │ snap_history   │ open    │ spot    │    14 │     14 │
 │ wikidata_p576  │ closed  │ near    │     2 │      2 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  44 rows (40 shown)                        5 columns
+  45 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -167,6 +167,7 @@
 │ open    │ cms_hospitals       │     22 │
 │ open    │ epa_ust_open        │    196 │
 │ open    │ fdic_locations      │    539 │
+│ open    │ foodsafety_vt       │      1 │
 │ open    │ hrsa_health_centers │     13 │
 │ open    │ irs_eo              │    869 │
 │ open    │ nces_schools        │    372 │
@@ -176,7 +177,7 @@
 │ open    │ snap_current        │   1383 │
 │ open    │ snap_history        │     50 │
 └─────────┴─────────────────────┴────────┘
-  19 rows                      3 columns
+  20 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -198,8 +199,8 @@
 │ (none)             │ open    │   1011 │
 │ (none)             │ unknown │  22983 │
 │ open               │ closed  │    474 │
-│ open               │ open    │   5073 │
-│ open               │ unknown │  55195 │
+│ open               │ open    │   5074 │
+│ open               │ unknown │  55194 │
 │ permanently_closed │ closed  │     12 │
 │ permanently_closed │ open    │     17 │
 │ permanently_closed │ unknown │   2120 │

@@ -11,8 +11,8 @@
 │         varchar          │      varchar      │ int64 │
 ├──────────────────────────┼───────────────────┼───────┤
 │ alltheplaces -> overture │ near              │  1301 │
-│ alltheplaces -> overture │ number            │ 71716 │
-│ alltheplaces -> overture │ spot              │   232 │
+│ alltheplaces -> overture │ number            │ 71715 │
+│ alltheplaces -> overture │ spot              │   233 │
 │ osm -> core              │ near              │ 41838 │
 │ osm -> core              │ number            │ 82465 │
 │ osm -> core              │ spot              │  1738 │
@@ -39,8 +39,8 @@
 │ varchar │  int64  │
 ├─────────┼─────────┤
 │ closed  │    9704 │
-│ open    │  269092 │
-│ unknown │ 1448541 │
+│ open    │  269093 │
+│ unknown │ 1448540 │
 └─────────┴─────────┘
 == status, core layer (no OSM)
 ┌─────────┬─────────┐
@@ -48,8 +48,8 @@
 │ varchar │  int64  │
 ├─────────┼─────────┤
 │ closed  │    8071 │
-│ open    │  257705 │
-│ unknown │ 1380425 │
+│ open    │  257706 │
+│ unknown │ 1380424 │
 └─────────┴─────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -100,7 +100,7 @@
 │ tda_tn_food    │ open    │      56 │       0 │
 │ tdlr_tx        │ open    │   56820 │   22676 │
 └────────────────┴─────────┴─────────┴─────────┘
-  78 rows (40 shown)                 4 columns
+  85 rows (40 shown)                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬────────┬────────┐
 │     source     │  state  │  rule   │  rows  │ places │
@@ -108,9 +108,9 @@
 ├────────────────┼─────────┼─────────┼────────┼────────┤
 │ abc_ar         │ open    │ number  │      3 │      3 │
 │ atp            │ open    │ near    │   1301 │   1244 │
-│ atp            │ open    │ number  │  71577 │  66402 │
+│ atp            │ open    │ number  │  71576 │  66401 │
 │ atp            │ open    │ self    │   8895 │   8895 │
-│ atp            │ open    │ spot    │    232 │    216 │
+│ atp            │ open    │ spot    │    233 │    217 │
 │ bop_tx         │ open    │ address │    626 │    626 │
 │ bop_tx         │ open    │ near    │     30 │     30 │
 │ bop_tx         │ open    │ number  │   3014 │   3013 │
@@ -150,7 +150,7 @@
 │ wikidata_p576  │ closed  │ self    │      1 │      1 │
 │ wikidata_p576  │ closed  │ spot    │      1 │      1 │
 └────────────────┴─────────┴─────────┴────────┴────────┘
-  71 rows (40 shown)                         5 columns
+  72 rows (40 shown)                         5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -162,26 +162,27 @@
 │ closed  │ osm_lifecycle       │    738 │
 │ closed  │ wikidata_p576       │      5 │
 │ open    │ abc_ar              │      2 │
-│ open    │ atp                 │  47428 │
+│ open    │ atp                 │  47427 │
 │ open    │ bop_tx              │   3671 │
 │ open    │ cms_hospitals       │    245 │
-│ open    │ cpa_tx              │ 123760 │
+│ open    │ cpa_tx              │ 122137 │
 │ open    │ cpa_tx_tobacco      │   9661 │
 │ open    │ epa_ust_open        │   2662 │
 │ open    │ fdic_locations      │   7945 │
+│ open    │ foodsafety_ar       │      1 │
 │ open    │ hrsa_health_centers │    210 │
-│ open    │ irs_eo              │   7297 │
-│ open    │ nces_schools        │   2271 │
+│ open    │ irs_eo              │   7287 │
+│ open    │ nces_schools        │   2281 │
 │ open    │ ncua_branches       │    825 │
 │ open    │ nppes_orgs          │   5136 │
-│ open    │ osm_check_date      │   7575 │
+│ open    │ osm_check_date      │   7576 │
 │ open    │ rev_pa              │      1 │
 │ open    │ snap_current        │  23280 │
 │ open    │ snap_history        │    467 │
-│ open    │ tabc_tx             │  10452 │
+│ open    │ tabc_tx             │  12075 │
 │ open    │ tdlr_tx             │  16204 │
 └─────────┴─────────────────────┴────────┘
-  24 rows                      3 columns
+  25 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -203,8 +204,8 @@
 │ (none)             │ open    │  37790 │
 │ (none)             │ unknown │ 424750 │
 │ open               │ closed  │   7319 │
-│ open               │ open    │ 201314 │
-│ open               │ unknown │ 899592 │
+│ open               │ open    │ 201315 │
+│ open               │ unknown │ 899591 │
 │ permanently_closed │ closed  │     81 │
 │ permanently_closed │ open    │    967 │
 │ permanently_closed │ unknown │  50633 │

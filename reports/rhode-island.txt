@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    454 │
-│ open    │   4936 │
-│ unknown │  58561 │
+│ open    │   4937 │
+│ unknown │  58560 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    354 │
-│ open    │   4648 │
-│ unknown │  55412 │
+│ open    │   4649 │
+│ unknown │  55411 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌─────────────────────┬─────────┬─────────┬─────────┐
@@ -79,7 +79,7 @@
 │       ·             │  ·      │       · │       · │
 │       ·             │  ·      │       · │       · │
 │       ·             │  ·      │       · │       · │
-│ fdic_locations      │ open    │     321 │     290 │
+│ foodsafety_pa       │ open    │     118 │       0 │
 │ hrsa_health_centers │ open    │      62 │      15 │
 │ irs_eo              │ open    │   13262 │     849 │
 │ isp_id_liquor       │ open    │       1 │       0 │
@@ -100,14 +100,14 @@
 │ tabc_tx             │ open    │      53 │       0 │
 │ tdlr_tx             │ open    │      50 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  58 rows (40 shown)                      4 columns
+  61 rows (40 shown)                      4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
 │       varchar       │ varchar │ varchar │ int64 │ int64  │
 ├─────────────────────┼─────────┼─────────┼───────┼────────┤
 │ atp                 │ open    │ near    │    40 │     39 │
-│ atp                 │ open    │ number  │  1927 │   1751 │
+│ atp                 │ open    │ number  │  1927 │   1752 │
 │ atp                 │ open    │ self    │   526 │    526 │
 │ atp                 │ open    │ spot    │     6 │      6 │
 │ cms_hospitals       │ open    │ near    │     1 │      1 │
@@ -161,7 +161,7 @@
 │ closed  │ osm_history         │     59 │
 │ closed  │ osm_lifecycle       │     41 │
 │ closed  │ wikidata_p576       │      1 │
-│ open    │ atp                 │   2032 │
+│ open    │ atp                 │   2033 │
 │ open    │ cms_hospitals       │     13 │
 │ open    │ epa_ust_open        │    100 │
 │ open    │ fdic_locations      │    294 │
@@ -196,8 +196,8 @@
 │ (none)             │ open    │    553 │
 │ (none)             │ unknown │  13318 │
 │ open               │ closed  │    339 │
-│ open               │ open    │   3191 │
-│ open               │ unknown │  39996 │
+│ open               │ open    │   3192 │
+│ open               │ unknown │  39995 │
 │ permanently_closed │ closed  │      5 │
 │ permanently_closed │ open    │     13 │
 │ permanently_closed │ unknown │   1886 │

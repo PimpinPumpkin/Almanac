@@ -43,18 +43,18 @@
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   6274 │
-│ open    │ 120741 │
-│ unknown │ 584037 │
+│ closed  │   6260 │
+│ open    │ 127611 │
+│ unknown │ 577181 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
 │ status  │ places │
 │ varchar │ int64  │
 ├─────────┼────────┤
-│ closed  │   4614 │
-│ open    │ 112063 │
-│ unknown │ 542777 │
+│ closed  │   4612 │
+│ open    │ 118994 │
+│ unknown │ 535848 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -105,7 +105,7 @@
 │ tda_tn_food            │ open    │      32 │       0 │
 │ tdlr_tx                │ open    │     403 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  79 rows (40 shown)                         4 columns
+  87 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -155,45 +155,46 @@
 │ wikidata_p576  │ closed  │ number  │     1 │      1 │
 │ wikidata_p576  │ closed  │ self    │     8 │      8 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  77 rows (40 shown)                        5 columns
+  81 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
 │ varchar │       varchar       │ int64  │
 ├─────────┼─────────────────────┼────────┤
 │ closed  │ fdic_history        │    820 │
-│ closed  │ fsq_closed          │   3732 │
-│ closed  │ osm_history         │    820 │
-│ closed  │ osm_lifecycle       │    892 │
+│ closed  │ fsq_closed          │   3731 │
+│ closed  │ osm_history         │    813 │
+│ closed  │ osm_lifecycle       │    886 │
 │ closed  │ wikidata_p576       │     10 │
 │ open    │ abc_ar              │      1 │
 │ open    │ abc_ca              │      1 │
 │ open    │ agm_ny              │    946 │
-│ open    │ atp                 │  17210 │
+│ open    │ atp                 │  17186 │
 │ open    │ biz_de              │      3 │
-│ open    │ cms_hospitals       │    113 │
+│ open    │ cms_hospitals       │    108 │
 │ open    │ dmv_ny              │    769 │
 │ open    │ doh_ny_food         │      1 │
 │ open    │ dos_ny_salons       │    638 │
 │ open    │ dph_de              │    974 │
-│ open    │ epa_ust_open        │    671 │
+│ open    │ epa_ust_open        │    636 │
 │ open    │ fdic_locations      │   3553 │
+│ open    │ foodsafety_pa       │   7620 │
 │ open    │ hrsa_health_centers │    162 │
-│ open    │ irs_eo              │   6959 │
+│ open    │ irs_eo              │   6668 │
 │ open    │ lcc_ne              │      1 │
-│ open    │ li_phl              │   2085 │
-│ open    │ nces_schools        │    425 │
-│ open    │ ncua_branches       │    429 │
-│ open    │ nppes_orgs          │   2027 │
-│ open    │ osm_check_date      │   6309 │
-│ open    │ plcb_pa             │   7606 │
-│ open    │ rev_pa              │  57872 │
-│ open    │ rev_pa_tobacco      │   3675 │
+│ open    │ li_phl              │   2071 │
+│ open    │ nces_schools        │    358 │
+│ open    │ ncua_branches       │    430 │
+│ open    │ nppes_orgs          │   2019 │
+│ open    │ osm_check_date      │   6006 │
+│ open    │ plcb_pa             │   7620 │
+│ open    │ rev_pa              │  57867 │
+│ open    │ rev_pa_tobacco      │   3726 │
 │ open    │ sla_ny              │   1100 │
-│ open    │ snap_current        │   7078 │
-│ open    │ snap_history        │    133 │
+│ open    │ snap_current        │   7027 │
+│ open    │ snap_history        │    120 │
 └─────────┴─────────────────────┴────────┘
-  31 rows                      3 columns
+  32 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -201,9 +202,9 @@
 │    varchar    │ int64  │      int64      │      int64      │
 ├───────────────┼────────┼─────────────────┼─────────────────┤
 │ fdic_history  │    967 │              92 │              37 │
-│ fsq_closed    │   3992 │             173 │             122 │
-│ osm_history   │    942 │             105 │              87 │
-│ osm_lifecycle │    991 │              87 │              58 │
+│ fsq_closed    │   3992 │             174 │             122 │
+│ osm_history   │    942 │             112 │              87 │
+│ osm_lifecycle │    991 │              93 │              58 │
 │ wikidata_p576 │     12 │               2 │               0 │
 └───────────────┴────────┴─────────────────┴─────────────────┘
 == Overture operating_status against our status
@@ -212,12 +213,12 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │   1119 │
-│ (none)             │ open    │  15298 │
-│ (none)             │ unknown │ 151176 │
-│ open               │ closed  │   4568 │
-│ open               │ open    │  87872 │
-│ open               │ unknown │ 370960 │
+│ (none)             │ open    │  15918 │
+│ (none)             │ unknown │ 150556 │
+│ open               │ closed  │   4554 │
+│ open               │ open    │  93819 │
+│ open               │ unknown │ 365027 │
 │ permanently_closed │ closed  │     56 │
-│ permanently_closed │ open    │    536 │
-│ permanently_closed │ unknown │  15616 │
+│ permanently_closed │ open    │    546 │
+│ permanently_closed │ unknown │  15606 │
 └────────────────────┴─────────┴────────┘

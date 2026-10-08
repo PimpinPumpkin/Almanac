@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1266 │
-│ open    │  13583 │
-│ unknown │ 175427 │
+│ open    │  13582 │
+│ unknown │ 175428 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    791 │
-│ open    │  11351 │
-│ unknown │ 159633 │
+│ open    │  11350 │
+│ unknown │ 159634 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌─────────────────┬─────────┬─────────┬─────────┐
@@ -100,7 +100,7 @@
 │ tax_ny_tobacco  │ open    │       1 │       0 │
 │ tdlr_tx         │ open    │      54 │       0 │
 └─────────────────┴─────────┴─────────┴─────────┘
-  59 rows (40 shown)                  4 columns
+  62 rows (40 shown)                  4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
@@ -161,7 +161,7 @@
 │ closed  │ osm_history         │    317 │
 │ closed  │ osm_lifecycle       │    165 │
 │ closed  │ wikidata_p576       │      8 │
-│ open    │ atp                 │   6960 │
+│ open    │ atp                 │   6959 │
 │ open    │ childcare_co        │      1 │
 │ open    │ cms_hospitals       │    105 │
 │ open    │ epa_ust_open        │    338 │
@@ -182,7 +182,7 @@
 │    source     │ places │ says_open_after │ says_closed_too │
 │    varchar    │ int64  │      int64      │      int64      │
 ├───────────────┼────────┼─────────────────┼─────────────────┤
-│ fdic_history  │    105 │               5 │               9 │
+│ fdic_history  │    105 │               6 │               9 │
 │ fsq_closed    │    705 │               2 │              23 │
 │ osm_history   │    322 │               2 │              13 │
 │ osm_lifecycle │    173 │               6 │               9 │
@@ -197,8 +197,8 @@
 │ (none)             │ open    │   2161 │
 │ (none)             │ unknown │  44565 │
 │ open               │ closed  │    925 │
-│ open               │ open    │   8974 │
-│ open               │ unknown │ 108241 │
+│ open               │ open    │   8973 │
+│ open               │ unknown │ 108242 │
 │ permanently_closed │ closed  │     16 │
 │ permanently_closed │ open    │     36 │
 │ permanently_closed │ unknown │   5085 │

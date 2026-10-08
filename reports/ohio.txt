@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   5342 │
-│ open    │  57759 │
-│ unknown │ 574249 │
+│ open    │  57760 │
+│ unknown │ 574248 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   4007 │
-│ open    │  54290 │
-│ unknown │ 534697 │
+│ open    │  54291 │
+│ unknown │ 534696 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -100,7 +100,7 @@
 │ tda_tn_food            │ open    │      29 │       0 │
 │ tdlr_tx                │ open    │     353 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  83 rows (40 shown)                         4 columns
+  89 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌───────────────────┬─────────┬─────────┬───────┬────────┐
 │      source       │  state  │  rule   │ rows  │ places │
@@ -109,7 +109,7 @@
 │ abc_ky            │ open    │ near    │     2 │      2 │
 │ abt_fl            │ open    │ address │     1 │      1 │
 │ atp               │ open    │ near    │   487 │    474 │
-│ atp               │ open    │ number  │ 28968 │  26334 │
+│ atp               │ open    │ number  │ 28968 │  26335 │
 │ atp               │ open    │ self    │  3840 │   3840 │
 │ atp               │ open    │ spot    │   104 │     98 │
 │ bop_oh            │ open    │ address │   133 │    133 │
@@ -163,10 +163,10 @@
 │ closed  │ wikidata_p576       │     12 │
 │ open    │ abc_ky              │      2 │
 │ open    │ abt_fl              │      1 │
-│ open    │ atp                 │  25604 │
-│ open    │ bop_oh              │   1492 │
+│ open    │ atp                 │  25605 │
+│ open    │ bop_oh              │   1500 │
 │ open    │ cms_hospitals       │    160 │
-│ open    │ cph_columbus_food   │   3400 │
+│ open    │ cph_columbus_food   │   3392 │
 │ open    │ elicense_ct         │      1 │
 │ open    │ epa_ust_open        │   1195 │
 │ open    │ fdic_locations      │   3134 │
@@ -199,14 +199,14 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    912 │
-│ (none)             │ open    │   8820 │
-│ (none)             │ unknown │ 136633 │
+│ (none)             │ open    │   8822 │
+│ (none)             │ unknown │ 136631 │
 │ open               │ closed  │   3929 │
 │ open               │ open    │  39656 │
 │ open               │ unknown │ 379808 │
 │ permanently_closed │ closed  │     72 │
-│ permanently_closed │ open    │    128 │
-│ permanently_closed │ unknown │  16006 │
+│ permanently_closed │ open    │    127 │
+│ permanently_closed │ unknown │  16007 │
 │ temporarily_closed │ unknown │      2 │
 └────────────────────┴─────────┴────────┘
   10 rows                     3 columns

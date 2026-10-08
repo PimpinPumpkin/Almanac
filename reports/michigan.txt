@@ -101,7 +101,7 @@
 │ tda_tn_food            │ open    │      23 │       0 │
 │ tdlr_tx                │ open    │     425 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  82 rows (40 shown)                         4 columns
+  90 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -165,22 +165,22 @@
 │ open    │ abc_ar              │      1 │
 │ open    │ atp                 │  15137 │
 │ open    │ cdph_chicago        │  10578 │
-│ open    │ childcare_mi        │   1778 │
+│ open    │ childcare_mi        │   1766 │
 │ open    │ childcare_wi        │      1 │
 │ open    │ cms_hospitals       │     87 │
-│ open    │ det_biz             │    362 │
+│ open    │ det_biz             │    370 │
 │ open    │ det_liquor          │    168 │
 │ open    │ dor_wi_liquor       │      1 │
 │ open    │ epa_ust_open        │   1287 │
 │ open    │ fdic_locations      │   5081 │
 │ open    │ hrsa_health_centers │     93 │
 │ open    │ irs_eo              │   4363 │
-│ open    │ mdard_mi_food       │  18829 │
+│ open    │ mdard_mi_food       │  18841 │
 │ open    │ nces_schools        │   1400 │
 │ open    │ ncua_branches       │    712 │
 │ open    │ nppes_orgs          │   1909 │
 │ open    │ osm_check_date      │   1723 │
-│ open    │ snap_current        │  15124 │
+│ open    │ snap_current        │  15116 │
 │ open    │ snap_history        │    294 │
 └─────────┴─────────────────────┴────────┘
   25 rows                      3 columns
@@ -202,11 +202,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    609 │
-│ (none)             │ open    │   7108 │
-│ (none)             │ unknown │ 120830 │
+│ (none)             │ open    │   7109 │
+│ (none)             │ unknown │ 120829 │
 │ open               │ closed  │   2965 │
-│ open               │ open    │  44130 │
-│ open               │ unknown │ 320319 │
+│ open               │ open    │  44129 │
+│ open               │ unknown │ 320320 │
 │ permanently_closed │ closed  │     45 │
 │ permanently_closed │ open    │    131 │
 │ permanently_closed │ unknown │  14153 │

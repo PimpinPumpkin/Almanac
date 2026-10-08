@@ -102,7 +102,7 @@
 │ tda_tn_food       │ open    │     182 │       0 │
 │ tdlr_tx           │ open    │     255 │       0 │
 └───────────────────┴─────────┴─────────┴─────────┘
-  78 rows (40 shown)                    4 columns
+  84 rows (40 shown)                    4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
@@ -174,8 +174,8 @@
 │ open    │ epa_ust_open        │   1272 │
 │ open    │ fdic_locations      │   3566 │
 │ open    │ hrsa_health_centers │     84 │
-│ open    │ irs_eo              │   4083 │
-│ open    │ nces_schools        │   1769 │
+│ open    │ irs_eo              │   4085 │
+│ open    │ nces_schools        │   1767 │
 │ open    │ ncua_branches       │    297 │
 │ open    │ nppes_orgs          │   1670 │
 │ open    │ osm_check_date      │   3090 │
@@ -201,11 +201,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    739 │
-│ (none)             │ open    │   5715 │
-│ (none)             │ unknown │ 102804 │
+│ (none)             │ open    │   5714 │
+│ (none)             │ unknown │ 102805 │
 │ open               │ closed  │   3345 │
-│ open               │ open    │  29147 │
-│ open               │ unknown │ 279655 │
+│ open               │ open    │  29148 │
+│ open               │ unknown │ 279654 │
 │ permanently_closed │ closed  │     57 │
 │ permanently_closed │ open    │    119 │
 │ permanently_closed │ unknown │  13940 │
