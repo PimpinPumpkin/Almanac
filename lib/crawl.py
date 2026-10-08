@@ -1,9 +1,10 @@
 """Polite fetching for registers that only offer a search form.
 
 A Site is one host. It reads the host's robots.txt first and refuses any
-path that file disallows, sends the project User-Agent, waits between
-requests, and retries a failed request a few times. It does nothing to get
-past a block: a 403, a challenge page or a CAPTCHA is the site saying no.
+path that file disallows (unless the owner has decided otherwise for that
+one site), sends the project User-Agent, waits between requests, and
+retries a failed request a few times. It does nothing to get past a block:
+a 403, a challenge page or a CAPTCHA is the site saying no, always.
 """
 import http.cookiejar
 import sys
@@ -23,8 +24,11 @@ class Refused(Exception):
 
 
 class Site:
-    def __init__(self, base, pause=2.0):
+    def __init__(self, base, pause=2.0, robots=True):
+        """robots=False is for a site whose robots.txt the project's owner has decided not to follow,
+        one site at a time, with the reason written in SOURCES.md. Everything else here still applies."""
         self.base = base.rstrip("/")
+        self.obey = robots
         self.pause = pause
         self.last = 0.0
         # some lookups keep the search in a session cookie
@@ -46,7 +50,7 @@ class Site:
     def fetch(self, path, form=None, tries=4, timeout=180):
         """GET path, or POST the form to it. Returns bytes."""
         url = urllib.parse.urljoin(self.base + "/", path.lstrip("/"))
-        if not self.robots.can_fetch(AGENT, url):
+        if self.obey and not self.robots.can_fetch(AGENT, url):
             raise Refused(url)
         data = urllib.parse.urlencode(form, doseq=True).encode() if form is not None else None
         for attempt in range(tries):

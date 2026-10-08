@@ -135,7 +135,10 @@ Rules for adapters:
   project User-Agent; wait at least two seconds between requests; never
   work around a block, a challenge page or a CAPTCHA; read only what the
   form shows the public. A site that says no is written down in
-  SOURCES.md and left alone.
+  FOLLOWUPS.md and left alone. One exception exists: the owner may decide,
+  one site at a time, to read a public register whose robots.txt says
+  otherwise (`Site(..., robots=False)`), and the decision and its reason
+  go in SOURCES.md. A 403 or a CAPTCHA is never worked around.
 - A record is evidence only if it says something about the premises. A
   record that only says something about paperwork is not (see SNAP end dates
   in section 9).
@@ -321,6 +324,7 @@ rows are the same place.
 | North Carolina alcohol permits (search form) | number | 29 of 30 (Charlotte) | the miss is a pharmacy counter taking the grocery's permit; geocoded |
 | Kentucky alcohol licenses (report page) | number | 29 of 30 (Kentucky) | geocoded |
 | Kansas alcohol licenses (search form) | number | 30 of 30 (Wichita) | geocoded |
+| Pennsylvania liquor licenses | number | 30 of 30 (Philadelphia) | premises names are often the company's, so a third find a place; geocoded |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -545,6 +549,7 @@ signal at all.
 | phx_liquor, nash_beer, mke_food, mke_liquor, anc_liquor, hsv_liquor, det_biz, det_liquor | open | day the layer was last edited or read, licenses in force | matcher |
 | sux_food | open | day of the site's newest inspection | matcher |
 | abc_nc, abc_ky, abc_ks | open | day the search was run, active retail licenses | matcher, positions from the Census geocoder |
+| plcb_pa | open | day the export was read, active retail licenses | matcher, positions from the Census geocoder |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |

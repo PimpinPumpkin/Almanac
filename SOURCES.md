@@ -329,11 +329,13 @@ corporation and agent columns are not read.
 - Kansas ABC: `https://www.kdor.ks.gov/apps/liquorlicensee/LiquorLicenseeSearch.aspx`,
   asked once per license group, 500 rows a page (about 20 requests).
   robots.txt allows the page.
+- Pennsylvania PLCB: the CSV of all licenses linked from its search page,
+  `https://plcbplus.pa.gov/pub/LicenseExport.aspx` (2 requests). The
+  site's robots.txt disallows everything except the search pages. The
+  owner decided on 2026-10-07 to read the export anyway: it is the board's
+  own public download button, and it is fetched once a month. Licenses in
+  safekeeping are held, not used.
 - Not read, because the site says no:
-  - Pennsylvania PLCB offers a CSV of all licenses at
-    `https://plcbplus.pa.gov/pub/LicenseExport.aspx`, linked from its
-    search page, but its robots.txt disallows everything except the search
-    pages themselves.
   - Tennessee's retail food list (`tnlcp.lcp.tracefirst.com`): robots.txt
     disallows the whole site.
   - Michigan MLCC, Virginia ABC, Arizona DLLC, Alaska AMCO: the sites

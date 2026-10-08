@@ -153,10 +153,11 @@ adapters/           one file per register. Federal: fdic, ncua, snap, epa_ust,
                     llb_baltimore, cph_columbus_food, mdard_mi_food, dph_sc_food,
                     mda_mn_food, dca_ca, dpor_va, pharmacy_boards, hrsa,
                     childcare_centers, city_layers, abc_nc, abc_ky,
-                    abc_ks. France: sirene.sh
+                    abc_ks, plcb_pa. France: sirene.sh
 sql/                lib.sql (matcher), core.sql, full.sql, status.sql, publish.sql
 tests/              matcher threshold tests
 reports/            numbers from the last build of each region
+FOLLOWUPS.md        sources to ask about, retry or test later
 tools/              coverage_map.py, which draws the by-state map and table
 docs/               the map, and the interactive page served by GitHub Pages
 build_all.sh        build every state in regions.tsv, on one machine

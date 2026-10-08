@@ -35,7 +35,9 @@ The categories where a register can make coverage complete.
   Arkansas, California, Colorado, Connecticut, DC, Florida, Idaho, Maine,
   Kansas, Kentucky, Missouri, Nebraska, New Jersey, New York, North
   Carolina, Oklahoma, Oregon, Texas, Washington, Wisconsin. Kansas,
-  Kentucky and North Carolina are read through their search forms. Massachusetts publishes a file but its site turns
+  Kentucky and North Carolina are read through their search forms, and
+  Pennsylvania from the board's own export. What could not be used is
+  listed in FOLLOWUPS.md. Massachusetts publishes a file but its site turns
   this project's fetches away, so it is left alone. The other states were searched on 2026-10-07
   and offer a search form only, block fetches, or sell the list (the
   findings are in SOURCES.md). Done for a state when its bars pass 40% with
@@ -221,6 +223,9 @@ Set by the owner on 2026-10-06.
   registers that only offer a search form (liquor licenses, restaurant
   inspections), because that is a bounded list of real places. This is not
   the website crawler for hours (8.3), which stays on hold.
+- **robots.txt.** Followed by default. The owner decides exceptions one site
+  at a time for public registers (first: Pennsylvania's license export,
+  2026-10-07). Blocks and CAPTCHAs are never worked around.
 - **Unvouched listings.** How a reader shows them (hide, dim, or both) is
   decided later, once the data is in. The columns are there.
 - **Clinical laboratories.** Worth adding, low priority.
