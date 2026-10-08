@@ -41,8 +41,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2983 │
-│ open    │  36831 │
-│ unknown │ 298557 │
+│ open    │  36822 │
+│ unknown │ 298566 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -50,8 +50,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2228 │
-│ open    │  34322 │
-│ unknown │ 277801 │
+│ open    │  34315 │
+│ unknown │ 277808 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌───────────────────┬─────────┬─────────┬─────────┐
@@ -60,6 +60,8 @@
 ├───────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar            │ open    │       8 │       0 │
 │ abc_ca            │ open    │      79 │       0 │
+│ abc_ky            │ open    │       3 │       0 │
+│ abc_nc            │ open    │      45 │       0 │
 │ abc_nj            │ open    │     132 │       0 │
 │ abca_dc_active    │ open    │    2075 │    2012 │
 │ abca_dc_cancelled │ closed  │     337 │       0 │
@@ -76,13 +78,9 @@
 │ bot_sac           │ open    │       5 │       0 │
 │ cdph_chicago      │ open    │       4 │       0 │
 │ childcare_co      │ open    │      17 │       0 │
-│ childcare_de      │ open    │     403 │       0 │
-│ childcare_nj      │ open    │      80 │       0 │
 │   ·               │  ·      │       · │       · │
 │   ·               │  ·      │       · │       · │
 │   ·               │  ·      │       · │       · │
-│ lcb_wa            │ open    │      31 │       0 │
-│ lcc_ne            │ open    │       3 │       0 │
 │ led_co            │ open    │      27 │       0 │
 │ li_phl            │ open    │       1 │       0 │
 │ llb_baltimore     │ open    │    1089 │     705 │
@@ -93,6 +91,7 @@
 │ nppes_orgs        │ open    │  130763 │   12997 │
 │ ocm_ny            │ open    │       1 │       0 │
 │ olcc_or           │ open    │      21 │       0 │
+│ plcb_pa           │ open    │      67 │       0 │
 │ rev_pa            │ open    │     416 │       2 │
 │ rev_pa_tobacco    │ open    │      11 │       0 │
 │ sla_ny            │ open    │      15 │       0 │
@@ -100,9 +99,10 @@
 │ snap_history      │ open    │    7116 │    2591 │
 │ tabc_tx           │ open    │     106 │       0 │
 │ tax_ny_tobacco    │ open    │       6 │       0 │
-│ tdlr_tx           │ open    │      93 │       0 │
+│ tda_tn_food       │ open    │      15 │       0 │
+│ tdlr_tx           │ open    │      92 │       0 │
 └───────────────────┴─────────┴─────────┴─────────┘
-  70 rows (40 shown)                    4 columns
+  75 rows (40 shown)                    4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -168,17 +168,17 @@
 │ open    │ bbl_dc              │     27 │
 │ open    │ biz_de              │      2 │
 │ open    │ cms_hospitals       │     33 │
-│ open    │ dph_de              │   2421 │
+│ open    │ dph_de              │   2419 │
 │ open    │ epa_ust_open        │    489 │
 │ open    │ fdic_locations      │   2344 │
 │ open    │ hrsa_health_centers │     41 │
 │ open    │ irs_eo              │   3188 │
 │ open    │ llb_baltimore       │    626 │
-│ open    │ moco_md             │   1962 │
+│ open    │ moco_md             │   1961 │
 │ open    │ nces_schools        │   1158 │
 │ open    │ ncua_branches       │    164 │
-│ open    │ nppes_orgs          │   2062 │
-│ open    │ osm_check_date      │   2084 │
+│ open    │ nppes_orgs          │   2058 │
+│ open    │ osm_check_date      │   2082 │
 │ open    │ rev_pa              │      2 │
 │ open    │ snap_current        │   6545 │
 │ open    │ snap_history        │    126 │
@@ -202,11 +202,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │    440 │
-│ (none)             │ open    │   4244 │
-│ (none)             │ unknown │  71611 │
+│ (none)             │ open    │   4243 │
+│ (none)             │ unknown │  71612 │
 │ open               │ closed  │   2289 │
-│ open               │ open    │  19875 │
-│ open               │ unknown │ 193713 │
+│ open               │ open    │  19870 │
+│ open               │ unknown │ 193718 │
 │ permanently_closed │ closed  │     26 │
 │ permanently_closed │ open    │     87 │
 │ permanently_closed │ unknown │  10732 │

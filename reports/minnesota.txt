@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   2396 │
-│ open    │  31002 │
-│ unknown │ 296093 │
+│ open    │  30996 │
+│ unknown │ 296099 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1755 │
-│ open    │  28440 │
-│ unknown │ 274918 │
+│ open    │  28437 │
+│ unknown │ 274921 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -58,6 +58,9 @@
 ├────────────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar                 │ open    │       8 │       0 │
 │ abc_ca                 │ open    │      95 │       0 │
+│ abc_ks                 │ open    │       4 │       0 │
+│ abc_ky                 │ open    │       4 │       0 │
+│ abc_nc                 │ open    │      51 │       0 │
 │ abc_nj                 │ open    │       1 │       0 │
 │ able_ok                │ open    │      18 │       0 │
 │ abt_fl                 │ open    │      79 │       0 │
@@ -73,14 +76,9 @@
 │ bot_sac                │ open    │      15 │       0 │
 │ cdph_chicago           │ open    │       7 │       0 │
 │ childcare_co           │ open    │       6 │       0 │
-│ childcare_mi           │ open    │       6 │       0 │
-│ childcare_mn           │ open    │    2394 │    1125 │
-│ childcare_wa           │ open    │       2 │       0 │
-│   ·                    │  ·      │       · │       · │
-│   ·                    │  ·      │       · │       · │
-│   ·                    │  ·      │       · │       · │
-│ lcc_ne                 │ open    │       4 │       0 │
-│ led_co                 │ open    │      29 │       0 │
+│    ·                   │  ·      │       · │       · │
+│    ·                   │  ·      │       · │       · │
+│    ·                   │  ·      │       · │       · │
 │ lou_food               │ open    │       2 │       0 │
 │ mda_mn_food            │ open    │    6032 │    3216 │
 │ mdard_mi_food          │ open    │      85 │       0 │
@@ -91,6 +89,7 @@
 │ ncua_branches          │ open    │     751 │     308 │
 │ nppes_orgs             │ open    │   76448 │    7960 │
 │ olcc_or                │ open    │      13 │       0 │
+│ plcb_pa                │ open    │      16 │       0 │
 │ rev_pa                 │ open    │      52 │       0 │
 │ sla_ny                 │ open    │      13 │       0 │
 │ snap_current           │ open    │    5101 │    4572 │
@@ -98,9 +97,10 @@
 │ sux_food               │ open    │     908 │       0 │
 │ tabc_tx                │ open    │     174 │       0 │
 │ tax_ny_tobacco         │ open    │       5 │       0 │
-│ tdlr_tx                │ open    │     165 │       0 │
+│ tda_tn_food            │ open    │       1 │       0 │
+│ tdlr_tx                │ open    │     164 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  70 rows (40 shown)                         4 columns
+  76 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -163,21 +163,21 @@
 │ closed  │ wikidata_p576       │      2 │
 │ open    │ atp                 │  11329 │
 │ open    │ biz_de              │      1 │
-│ open    │ childcare_mn        │   1130 │
-│ open    │ childcare_wi        │      8 │
+│ open    │ childcare_mn        │   1133 │
+│ open    │ childcare_wi        │      6 │
 │ open    │ cms_hospitals       │    112 │
 │ open    │ epa_ust_open        │    438 │
 │ open    │ fdic_locations      │   2230 │
-│ open    │ hrsa_health_centers │     30 │
+│ open    │ hrsa_health_centers │     29 │
 │ open    │ irs_eo              │   3280 │
-│ open    │ mda_mn_food         │   2530 │
+│ open    │ mda_mn_food         │   3372 │
 │ open    │ mpls_food           │    630 │
 │ open    │ mpls_liquor         │    388 │
 │ open    │ nces_schools        │   1107 │
 │ open    │ ncua_branches       │    252 │
-│ open    │ nppes_orgs          │   1276 │
-│ open    │ osm_check_date      │   2225 │
-│ open    │ snap_current        │   3991 │
+│ open    │ nppes_orgs          │   1273 │
+│ open    │ osm_check_date      │   2222 │
+│ open    │ snap_current        │   3149 │
 │ open    │ snap_history        │     45 │
 └─────────┴─────────────────────┴────────┘
   23 rows                      3 columns
@@ -202,9 +202,9 @@
 │ (none)             │ open    │   4689 │
 │ (none)             │ unknown │  75814 │
 │ open               │ closed  │   1850 │
-│ open               │ open    │  20050 │
-│ open               │ unknown │ 189385 │
+│ open               │ open    │  20047 │
+│ open               │ unknown │ 189388 │
 │ permanently_closed │ closed  │     25 │
-│ permanently_closed │ open    │     73 │
-│ permanently_closed │ unknown │   7925 │
+│ permanently_closed │ open    │     72 │
+│ permanently_closed │ unknown │   7926 │
 └────────────────────┴─────────┴────────┘

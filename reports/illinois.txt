@@ -40,8 +40,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   9877 │
-│ open    │  79169 │
-│ unknown │ 666945 │
+│ open    │  79163 │
+│ unknown │ 666951 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -49,8 +49,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   8299 │
-│ open    │  73077 │
-│ unknown │ 630148 │
+│ open    │  73072 │
+│ unknown │ 630153 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────────────┬─────────┬─────────┬─────────┐
@@ -59,13 +59,16 @@
 ├────────────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar                 │ open    │      18 │       1 │
 │ abc_ca                 │ open    │      95 │       0 │
+│ abc_ks                 │ open    │       6 │       0 │
+│ abc_ky                 │ open    │     669 │       0 │
+│ abc_nc                 │ open    │      52 │       0 │
 │ abc_nj                 │ open    │      22 │       0 │
 │ able_ok                │ open    │      25 │       0 │
 │ abt_fl                 │ open    │     382 │       0 │
 │ agm_ny                 │ open    │       8 │       0 │
 │ atc_mo                 │ open    │    4783 │       2 │
 │ bablo_me               │ open    │       7 │       0 │
-│ bacp_chicago           │ open    │   37140 │   19167 │
+│ bacp_chicago           │ open    │   37139 │   19167 │
 │ bacp_chicago_cancelled │ closed  │    5977 │    2108 │
 │ bbl_dc                 │ open    │      17 │       0 │
 │ biz_de                 │ open    │     323 │       0 │
@@ -74,14 +77,9 @@
 │ bop_oh                 │ open    │      22 │       0 │
 │ bop_tx                 │ open    │      61 │       0 │
 │ bot_sac                │ open    │      59 │       0 │
-│ cdph_chicago           │ open    │   15299 │   12087 │
-│ cdph_chicago_oob       │ closed  │    5628 │    2500 │
-│ childcare_co           │ open    │      27 │       0 │
-│     ·                  │  ·      │       · │       · │
-│     ·                  │  ·      │       · │       · │
-│     ·                  │  ·      │       · │       · │
-│ lb_boston              │ open    │      64 │       0 │
-│ lcb_wa                 │ open    │      17 │       0 │
+│   ·                    │  ·      │       · │       · │
+│   ·                    │  ·      │       · │       · │
+│   ·                    │  ·      │       · │       · │
 │ lcc_ne                 │ open    │      30 │       0 │
 │ led_co                 │ open    │      38 │       0 │
 │ lou_food               │ open    │       5 │       0 │
@@ -92,6 +90,7 @@
 │ nppes_orgs             │ open    │  196459 │   19799 │
 │ ocm_ny                 │ open    │       5 │       0 │
 │ olcc_or                │ open    │      18 │       0 │
+│ plcb_pa                │ open    │      75 │       0 │
 │ rev_pa                 │ open    │     239 │       0 │
 │ rev_pa_tobacco         │ open    │       5 │       0 │
 │ sla_ny                 │ open    │      30 │       0 │
@@ -99,9 +98,10 @@
 │ snap_history           │ open    │   12068 │    6140 │
 │ tabc_tx                │ open    │     647 │       0 │
 │ tax_ny_tobacco         │ open    │      20 │       0 │
+│ tda_tn_food            │ open    │     107 │       0 │
 │ tdlr_tx                │ open    │     738 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  73 rows (40 shown)                         4 columns
+  79 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────────────┬─────────┬─────────┬───────┬────────┐
 │         source         │  state  │  rule   │ rows  │ places │
@@ -110,7 +110,7 @@
 │ abc_ar                 │ open    │ number  │     1 │      1 │
 │ atc_mo                 │ open    │ address │     2 │      2 │
 │ atp                    │ open    │ near    │  1262 │   1245 │
-│ atp                    │ open    │ number  │ 26889 │  25079 │
+│ atp                    │ open    │ number  │ 26889 │  25080 │
 │ atp                    │ open    │ self    │  3952 │   3952 │
 │ atp                    │ open    │ spot    │    84 │     80 │
 │ bacp_chicago           │ open    │ address │    71 │     71 │
@@ -132,7 +132,7 @@
 │     ·                  │  ·      │    ·    │     · │      · │
 │ nppes_orgs             │ open    │ address │ 21144 │  17494 │
 │ osm_check_date         │ open    │ near    │   918 │    909 │
-│ osm_check_date         │ open    │ number  │  6386 │   6283 │
+│ osm_check_date         │ open    │ number  │  6386 │   6284 │
 │ osm_check_date         │ open    │ self    │  2335 │   2335 │
 │ osm_check_date         │ open    │ spot    │   149 │    147 │
 │ osm_history            │ closed  │ id      │  1126 │   1126 │
@@ -166,21 +166,21 @@
 │ closed  │ wikidata_p576          │     15 │
 │ open    │ abc_ar                 │      1 │
 │ open    │ atc_mo                 │      2 │
-│ open    │ atp                    │  25003 │
-│ open    │ bacp_chicago           │  18615 │
+│ open    │ atp                    │  25004 │
+│ open    │ bacp_chicago           │  18539 │
 │ open    │ cdph_chicago           │   3429 │
 │ open    │ childcare_wi           │      4 │
 │ open    │ cms_hospitals          │    137 │
 │ open    │ dor_wi_liquor          │      3 │
 │ open    │ epa_ust_open           │   1126 │
 │ open    │ fdic_locations         │   4514 │
-│ open    │ hrsa_health_centers    │    153 │
-│ open    │ irs_eo                 │   5923 │
-│ open    │ nces_schools           │   2290 │
+│ open    │ hrsa_health_centers    │    154 │
+│ open    │ irs_eo                 │   5925 │
+│ open    │ nces_schools           │   2288 │
 │ open    │ ncua_branches          │    254 │
-│ open    │ nppes_orgs             │   2678 │
-│ open    │ osm_check_date         │   4761 │
-│ open    │ snap_current           │  10032 │
+│ open    │ nppes_orgs             │   2672 │
+│ open    │ osm_check_date         │   4760 │
+│ open    │ snap_current           │  10107 │
 │ open    │ snap_history           │    244 │
 └─────────┴────────────────────────┴────────┘
   25 rows                         3 columns
@@ -204,11 +204,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │   1413 │
-│ (none)             │ open    │   9899 │
-│ (none)             │ unknown │ 180746 │
+│ (none)             │ open    │   9898 │
+│ (none)             │ unknown │ 180747 │
 │ open               │ closed  │   7718 │
-│ open               │ open    │  54040 │
-│ open               │ unknown │ 422139 │
+│ open               │ open    │  54036 │
+│ open               │ unknown │ 422143 │
 │ permanently_closed │ closed  │    215 │
 │ permanently_closed │ open    │    264 │
 │ permanently_closed │ unknown │  22777 │

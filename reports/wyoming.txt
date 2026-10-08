@@ -58,6 +58,9 @@
 ├────────────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar                 │ open    │      20 │       0 │
 │ abc_ca                 │ open    │      31 │       0 │
+│ abc_ks                 │ open    │       4 │       0 │
+│ abc_ky                 │ open    │       1 │       0 │
+│ abc_nc                 │ open    │      12 │       0 │
 │ able_ok                │ open    │       8 │       0 │
 │ abt_fl                 │ open    │      57 │       0 │
 │ agm_ny                 │ open    │       8 │       0 │
@@ -73,14 +76,9 @@
 │ cpa_tx_tobacco         │ open    │      50 │       0 │
 │ dbpr_fl_food           │ open    │      30 │       0 │
 │ dbpr_fl_lodging        │ open    │       5 │       0 │
-│ dbpr_fl_restaurant     │ open    │      82 │       0 │
-│ dbpr_fl_salon          │ open    │      39 │       0 │
-│ dbpr_fl_vet            │ open    │       3 │       0 │
-│      ·                 │  ·      │       · │       · │
-│      ·                 │  ·      │       · │       · │
-│      ·                 │  ·      │       · │       · │
-│ epa_ust_open           │ open    │     619 │     244 │
-│ fdic_history           │ closed  │      83 │      25 │
+│       ·                │  ·      │       · │       · │
+│       ·                │  ·      │       · │       · │
+│       ·                │  ·      │       · │       · │
 │ fdic_locations         │ open    │     211 │     190 │
 │ hrsa_health_centers    │ open    │      23 │      12 │
 │ irs_eo                 │ open    │   18195 │     504 │
@@ -92,15 +90,17 @@
 │ ncua_branches          │ open    │      96 │      51 │
 │ nppes_orgs             │ open    │   32515 │    1270 │
 │ olcc_or                │ open    │       9 │       0 │
+│ plcb_pa                │ open    │      19 │       0 │
 │ rev_pa                 │ open    │      33 │       0 │
 │ sla_ny                 │ open    │      14 │       0 │
 │ snap_current           │ open    │     400 │     336 │
 │ snap_history           │ open    │     391 │     293 │
 │ tabc_tx                │ open    │      79 │       0 │
 │ tax_ny_tobacco         │ open    │       7 │       0 │
+│ tda_tn_food            │ open    │       8 │       0 │
 │ tdlr_tx                │ open    │      54 │       0 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  50 rows (40 shown)                         4 columns
+  56 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │

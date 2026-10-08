@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    713 │
-│ open    │   6493 │
-│ unknown │  74568 │
+│ open    │   6492 │
+│ unknown │  74569 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    585 │
-│ open    │   5505 │
-│ unknown │  70408 │
+│ open    │   5504 │
+│ unknown │  70409 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌─────────────────────┬─────────┬─────────┬─────────┐
@@ -89,8 +89,9 @@
 │ olcc_or             │ open    │      18 │       0 │
 │ snap_current        │ open    │     847 │     698 │
 │ snap_history        │ open    │     878 │     536 │
+│ tda_tn_food         │ open    │      14 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  33 rows                                 4 columns
+  34 rows                                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
@@ -156,7 +157,7 @@
 │ open    │ irs_eo              │    439 │
 │ open    │ nces_schools        │    267 │
 │ open    │ ncua_branches       │     47 │
-│ open    │ nppes_orgs          │    154 │
+│ open    │ nppes_orgs          │    153 │
 │ open    │ osm_check_date      │    940 │
 │ open    │ snap_current        │    733 │
 │ open    │ snap_history        │     34 │
@@ -183,8 +184,8 @@
 │ (none)             │ open    │    724 │
 │ (none)             │ unknown │  18997 │
 │ open               │ closed  │    528 │
-│ open               │ open    │   4424 │
-│ open               │ unknown │  48947 │
+│ open               │ open    │   4423 │
+│ open               │ unknown │  48948 │
 │ permanently_closed │ closed  │     11 │
 │ permanently_closed │ open    │      9 │
 │ permanently_closed │ unknown │   1803 │

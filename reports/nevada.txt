@@ -52,55 +52,55 @@
 │ unknown │ 152462 │
 └─────────┴────────┘
 == register records in the box and how many found a place
-┌─────────────────────┬─────────┬─────────┬─────────┐
-│       source        │  state  │ records │ matched │
-│       varchar       │ varchar │  int64  │  int64  │
-├─────────────────────┼─────────┼─────────┼─────────┤
-│ abc_ar              │ open    │      15 │       0 │
-│ abc_ca              │ open    │    4687 │       2 │
-│ able_ok             │ open    │      14 │       0 │
-│ abt_fl              │ open    │     101 │       0 │
-│ agm_ny              │ open    │       3 │       0 │
-│ atc_mo              │ open    │      34 │       0 │
-│ bablo_me            │ open    │       1 │       0 │
-│ bbl_dc              │ open    │      18 │       0 │
-│ biz_de              │ open    │      22 │       0 │
-│ biz_lasvegas        │ open    │   15730 │    6112 │
-│ bop_oh              │ open    │       3 │       0 │
-│ bop_tx              │ open    │       7 │       0 │
-│ bot_sac             │ open    │     122 │       0 │
-│ cdph_chicago        │ open    │       3 │       0 │
-│ childcare_az        │ open    │      26 │       0 │
-│ childcare_ca        │ open    │     695 │       0 │
-│ childcare_co        │ open    │      13 │       0 │
-│ childcare_wa        │ open    │       1 │       0 │
-│ cms_hospitals       │ open    │      91 │      34 │
-│ cpa_tx              │ open    │     497 │       0 │
-│   ·                 │  ·      │      ·  │       · │
-│   ·                 │  ·      │      ·  │       · │
-│   ·                 │  ·      │      ·  │       · │
-│ hrsa_health_centers │ open    │     323 │      17 │
-│ irs_eo              │ open    │   37533 │     968 │
-│ isp_id_liquor       │ open    │      10 │       0 │
-│ kc_wa_food          │ open    │       1 │       0 │
-│ lcb_wa              │ open    │       4 │       0 │
-│ lcc_ne              │ open    │       8 │       0 │
-│ led_co              │ open    │      54 │       0 │
-│ moco_md             │ open    │      12 │       0 │
-│ nces_schools        │ open    │    1727 │     291 │
-│ ncua_branches       │ open    │     313 │      85 │
-│ nppes_orgs          │ open    │   64616 │    4208 │
-│ ocm_ny              │ open    │       1 │       0 │
-│ olcc_or             │ open    │      18 │       0 │
-│ rev_pa              │ open    │      44 │       0 │
-│ sla_ny              │ open    │      13 │       0 │
-│ snap_current        │ open    │    4507 │    4193 │
-│ snap_history        │ open    │    4271 │    1454 │
-│ tabc_tx             │ open    │     106 │       0 │
-│ tax_ny_tobacco      │ open    │       5 │       0 │
-│ tdlr_tx             │ open    │      57 │       0 │
-└─────────────────────┴─────────┴─────────┴─────────┘
-  63 rows (40 shown)                      4 columns
+┌────────────────┬─────────┬─────────┬─────────┐
+│     source     │  state  │ records │ matched │
+│    varchar     │ varchar │  int64  │  int64  │
+├────────────────┼─────────┼─────────┼─────────┤
+│ abc_ar         │ open    │      15 │       0 │
+│ abc_ca         │ open    │    4687 │       2 │
+│ abc_ky         │ open    │      11 │       0 │
+│ abc_nc         │ open    │       4 │       0 │
+│ able_ok        │ open    │      14 │       0 │
+│ abt_fl         │ open    │     101 │       0 │
+│ agm_ny         │ open    │       3 │       0 │
+│ atc_mo         │ open    │      34 │       0 │
+│ bablo_me       │ open    │       1 │       0 │
+│ bbl_dc         │ open    │      18 │       0 │
+│ biz_de         │ open    │      22 │       0 │
+│ biz_lasvegas   │ open    │   15730 │    6112 │
+│ bop_oh         │ open    │       3 │       0 │
+│ bop_tx         │ open    │       7 │       0 │
+│ bot_sac        │ open    │     122 │       0 │
+│ cdph_chicago   │ open    │       3 │       0 │
+│ childcare_az   │ open    │      26 │       0 │
+│ childcare_ca   │ open    │     695 │       0 │
+│ childcare_co   │ open    │      13 │       0 │
+│ childcare_wa   │ open    │       1 │       0 │
+│      ·         │  ·      │       · │       · │
+│      ·         │  ·      │       · │       · │
+│      ·         │  ·      │       · │       · │
+│ isp_id_liquor  │ open    │      10 │       0 │
+│ kc_wa_food     │ open    │       1 │       0 │
+│ lcb_wa         │ open    │       4 │       0 │
+│ lcc_ne         │ open    │       8 │       0 │
+│ led_co         │ open    │      54 │       0 │
+│ moco_md        │ open    │      12 │       0 │
+│ nces_schools   │ open    │    1727 │     291 │
+│ ncua_branches  │ open    │     313 │      85 │
+│ nppes_orgs     │ open    │   64616 │    4208 │
+│ ocm_ny         │ open    │       1 │       0 │
+│ olcc_or        │ open    │      18 │       0 │
+│ plcb_pa        │ open    │      20 │       0 │
+│ rev_pa         │ open    │      44 │       0 │
+│ sla_ny         │ open    │      13 │       0 │
+│ snap_current   │ open    │    4507 │    4193 │
+│ snap_history   │ open    │    4271 │    1454 │
+│ tabc_tx        │ open    │     106 │       0 │
+│ tax_ny_tobacco │ open    │       5 │       0 │
+│ tda_tn_food    │ open    │       3 │       0 │
+│ tdlr_tx        │ open    │      57 │       0 │
+└────────────────┴─────────┴─────────┴─────────┘
+  68 rows (40 shown)                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -163,7 +163,7 @@
 │ closed  │ wikidata_p576       │      1 │
 │ open    │ abc_ca              │      2 │
 │ open    │ atp                 │   6341 │
-│ open    │ biz_lasvegas        │   5821 │
+│ open    │ biz_lasvegas        │   5824 │
 │ open    │ cms_hospitals       │     28 │
 │ open    │ epa_ust_open        │    239 │
 │ open    │ fdic_locations      │    645 │
@@ -173,7 +173,7 @@
 │ open    │ ncua_branches       │     58 │
 │ open    │ nppes_orgs          │    520 │
 │ open    │ osm_check_date      │    351 │
-│ open    │ snap_current        │   4253 │
+│ open    │ snap_current        │   4250 │
 │ open    │ snap_history        │     86 │
 └─────────┴─────────────────────┴────────┘
   19 rows                      3 columns

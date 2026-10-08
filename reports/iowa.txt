@@ -58,6 +58,8 @@
 ├────────────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar                 │ open    │      20 │       1 │
 │ abc_ca                 │ open    │      47 │       0 │
+│ abc_ks                 │ open    │       5 │       0 │
+│ abc_nc                 │ open    │      28 │       0 │
 │ abc_nj                 │ open    │      16 │       0 │
 │ able_ok                │ open    │       8 │       0 │
 │ abt_fl                 │ open    │      51 │       0 │
@@ -74,13 +76,9 @@
 │ bot_sac                │ open    │       1 │       0 │
 │ cdph_chicago           │ open    │       3 │       0 │
 │ childcare_co           │ open    │       5 │       0 │
-│ childcare_wa           │ open    │       3 │       0 │
-│ childcare_wi           │ open    │      34 │       1 │
 │      ·                 │  ·      │       · │       · │
 │      ·                 │  ·      │       · │       · │
 │      ·                 │  ·      │       · │       · │
-│ hrsa_health_centers    │ open    │     130 │      26 │
-│ irs_eo                 │ open    │   48183 │    2395 │
 │ isp_id_liquor          │ open    │       9 │       0 │
 │ kc_wa_food             │ open    │       9 │       0 │
 │ lcb_wa                 │ open    │      15 │       0 │
@@ -91,6 +89,7 @@
 │ ncua_branches          │ open    │     501 │     230 │
 │ nppes_orgs             │ open    │   54425 │    4830 │
 │ olcc_or                │ open    │      16 │       0 │
+│ plcb_pa                │ open    │      37 │       0 │
 │ rev_pa                 │ open    │      51 │       0 │
 │ rev_pa_tobacco         │ open    │       1 │       0 │
 │ snap_current           │ open    │    3981 │    3576 │
@@ -98,9 +97,10 @@
 │ sux_food               │ open    │       1 │       0 │
 │ tabc_tx                │ open    │      46 │       0 │
 │ tax_ny_tobacco         │ open    │       2 │       0 │
+│ tda_tn_food            │ open    │      15 │       0 │
 │ tdlr_tx                │ open    │      72 │       1 │
 └────────────────────────┴─────────┴─────────┴─────────┘
-  65 rows (40 shown)                         4 columns
+  70 rows (40 shown)                         4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────┬─────────┬─────────┬───────┬────────┐
 │     source      │  state  │  rule   │ rows  │ places │

@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1685 │
-│ open    │  26012 │
-│ unknown │ 237962 │
+│ open    │  26009 │
+│ unknown │ 237965 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1396 │
-│ open    │  24929 │
-│ unknown │ 224650 │
+│ open    │  24928 │
+│ unknown │ 224651 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌─────────────────────┬─────────┬─────────┬─────────┐
@@ -58,6 +58,8 @@
 ├─────────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar              │ open    │      48 │       2 │
 │ abc_ca              │ open    │      29 │       0 │
+│ abc_ky              │ open    │      19 │       0 │
+│ abc_nc              │ open    │      13 │       0 │
 │ abc_nj              │ open    │       6 │       0 │
 │ able_ok             │ open    │      22 │       0 │
 │ abt_fl              │ open    │     188 │       0 │
@@ -74,13 +76,9 @@
 │ cms_hospitals       │ open    │     230 │     122 │
 │ cpa_tx              │ open    │    7027 │       4 │
 │ cpa_tx_tobacco      │ open    │     693 │       0 │
-│ dbpr_fl_food        │ open    │     138 │       0 │
-│ dbpr_fl_lodging     │ open    │      29 │       0 │
-│      ·              │  ·      │       · │       · │
-│      ·              │  ·      │       · │       · │
-│      ·              │  ·      │       · │       · │
-│ fdic_history        │ closed  │    1645 │     294 │
-│ fdic_locations      │ open    │    1937 │    1843 │
+│       ·             │  ·      │      ·  │       · │
+│       ·             │  ·      │      ·  │       · │
+│       ·             │  ·      │      ·  │       · │
 │ hrsa_health_centers │ open    │     348 │     107 │
 │ irs_eo              │ open    │   40902 │    1810 │
 │ isp_id_liquor       │ open    │       3 │       0 │
@@ -92,15 +90,17 @@
 │ ncua_branches       │ open    │     651 │     254 │
 │ nppes_orgs          │ open    │   80334 │    7098 │
 │ olcc_or             │ open    │      32 │       0 │
+│ plcb_pa             │ open    │      16 │       0 │
 │ rev_pa              │ open    │      42 │       0 │
 │ sla_ny              │ open    │       5 │       0 │
 │ snap_current        │ open    │    5705 │    5193 │
 │ snap_history        │ open    │    6142 │    3160 │
 │ tabc_tx             │ open    │    1054 │       0 │
 │ tax_ny_tobacco      │ open    │       7 │       0 │
-│ tdlr_tx             │ open    │     922 │       0 │
+│ tda_tn_food         │ open    │      12 │       0 │
+│ tdlr_tx             │ open    │     918 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  56 rows (40 shown)                      4 columns
+  61 rows (40 shown)                      4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -163,18 +163,18 @@
 │ closed  │ wikidata_p576       │      3 │
 │ open    │ abc_ar              │      1 │
 │ open    │ atp                 │   9605 │
-│ open    │ biz_nola            │   3520 │
+│ open    │ biz_nola            │   3521 │
 │ open    │ cms_hospitals       │    128 │
 │ open    │ cpa_tx              │      3 │
 │ open    │ epa_ust_open        │    862 │
 │ open    │ fdic_locations      │   1905 │
-│ open    │ hrsa_health_centers │     93 │
+│ open    │ hrsa_health_centers │     95 │
 │ open    │ irs_eo              │   1419 │
 │ open    │ nces_schools        │   1226 │
 │ open    │ ncua_branches       │    135 │
-│ open    │ nppes_orgs          │    837 │
-│ open    │ osm_check_date      │    705 │
-│ open    │ snap_current        │   5350 │
+│ open    │ nppes_orgs          │    836 │
+│ open    │ osm_check_date      │    703 │
+│ open    │ snap_current        │   5347 │
 │ open    │ snap_history        │    223 │
 └─────────┴─────────────────────┴────────┘
   20 rows                      3 columns
@@ -199,8 +199,8 @@
 │ (none)             │ open    │   3211 │
 │ (none)             │ unknown │  61507 │
 │ open               │ closed  │   1264 │
-│ open               │ open    │  17799 │
-│ open               │ unknown │ 157249 │
+│ open               │ open    │  17797 │
+│ open               │ unknown │ 157251 │
 │ permanently_closed │ closed  │      7 │
 │ permanently_closed │ open    │     59 │
 │ permanently_closed │ unknown │   5411 │

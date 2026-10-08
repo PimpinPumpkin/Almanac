@@ -23,7 +23,7 @@
 │  core  │  full  │ osm_only │ atp_only │ from_registers │
 │ int64  │ int64  │  int64   │  int64   │     int64      │
 ├────────┼────────┼──────────┼──────────┼────────────────┤
-│ 513200 │ 538289 │    25089 │     2435 │          49895 │
+│ 513204 │ 538293 │    25089 │     2435 │          49899 │
 └────────┴────────┴──────────┴──────────┴────────────────┘
 == places minted from a register
 ┌────────────────┬────────┐
@@ -36,7 +36,7 @@
 │ dos_ny_salons  │   2412 │
 │ dph_de         │   1115 │
 │ fdic_locations │   2509 │
-│ sla_ny         │   6693 │
+│ sla_ny         │   6697 │
 │ snap_current   │   5212 │
 └────────────────┴────────┘
 == status, full layer
@@ -45,8 +45,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   3822 │
-│ open    │  85603 │
-│ unknown │ 448864 │
+│ open    │  85598 │
+│ unknown │ 448873 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -54,8 +54,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   3207 │
-│ open    │  82561 │
-│ unknown │ 427432 │
+│ open    │  82556 │
+│ unknown │ 427441 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌────────────────┬─────────┬─────────┬─────────┐
@@ -64,6 +64,9 @@
 ├────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar         │ open    │      25 │       1 │
 │ abc_ca         │ open    │      87 │       0 │
+│ abc_ks         │ open    │      15 │       0 │
+│ abc_ky         │ open    │      69 │       0 │
+│ abc_nc         │ open    │      60 │       0 │
 │ abc_nj         │ open    │    7384 │    3766 │
 │ able_ok        │ open    │      25 │       1 │
 │ abt_fl         │ open    │     412 │       0 │
@@ -79,16 +82,11 @@
 │ bop_tx         │ open    │      37 │       0 │
 │ bot_sac        │ open    │       2 │       0 │
 │ childcare_co   │ open    │      21 │       0 │
-│ childcare_de   │ open    │     220 │       0 │
-│ childcare_nj   │ open    │    4083 │    1940 │
-│ childcare_wa   │ open    │      12 │       0 │
-│     ·          │  ·      │       · │       · │
-│     ·          │  ·      │       · │       · │
-│     ·          │  ·      │       · │       · │
-│ kc_wa_food     │ open    │      67 │       0 │
-│ lcb_wa         │ open    │      44 │       0 │
+│   ·            │  ·      │       · │       · │
+│   ·            │  ·      │       · │       · │
+│   ·            │  ·      │       · │       · │
 │ led_co         │ open    │      42 │       0 │
-│ li_phl         │ open    │    7841 │       1 │
+│ li_phl         │ open    │    7843 │       1 │
 │ llb_baltimore  │ open    │       8 │       0 │
 │ mda_mn_food    │ open    │       2 │       0 │
 │ moco_md        │ open    │      11 │       0 │
@@ -97,16 +95,18 @@
 │ nppes_orgs     │ open    │  194456 │   14360 │
 │ ocm_ny         │ open    │     246 │       0 │
 │ olcc_or        │ open    │       5 │       0 │
+│ plcb_pa        │ open    │    4255 │       1 │
 │ rev_pa         │ open    │   65485 │      11 │
 │ rev_pa_tobacco │ open    │    5225 │       0 │
-│ sla_ny         │ open    │   17942 │    6696 │
+│ sla_ny         │ open    │   17948 │    6700 │
 │ snap_current   │ open    │   14998 │    8410 │
 │ snap_history   │ open    │   15962 │    3308 │
 │ tabc_tx        │ open    │     387 │       0 │
 │ tax_ny_tobacco │ open    │    3490 │       1 │
-│ tdlr_tx        │ open    │     368 │       0 │
+│ tda_tn_food    │ open    │      36 │       0 │
+│ tdlr_tx        │ open    │     367 │       0 │
 └────────────────┴─────────┴─────────┴─────────┘
-  69 rows (40 shown)                 4 columns
+  75 rows (40 shown)                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌────────────────┬─────────┬─────────┬───────┬────────┐
 │     source     │  state  │  rule   │ rows  │ places │
@@ -132,19 +132,19 @@
 │ cms_hospitals  │ open    │ number  │    48 │     48 │
 │ dcwp_nyc       │ open    │ number  │     5 │      3 │
 │ dmv_ny         │ open    │ self    │   927 │    927 │
-│   ·            │  ·      │  ·      │     · │      · │
-│   ·            │  ·      │  ·      │     · │      · │
-│   ·            │  ·      │  ·      │     · │      · │
-│ osm_check_date │ open    │ spot    │    54 │     53 │
+│   ·            │  ·      │ ·       │    ·  │     ·  │
+│   ·            │  ·      │ ·       │    ·  │     ·  │
+│   ·            │  ·      │ ·       │    ·  │     ·  │
 │ osm_history    │ closed  │ id      │   382 │    382 │
 │ osm_lifecycle  │ closed  │ near    │    53 │     53 │
 │ osm_lifecycle  │ closed  │ number  │    64 │     64 │
 │ osm_lifecycle  │ closed  │ self    │   147 │    147 │
+│ plcb_pa        │ open    │ number  │     1 │      1 │
 │ rev_pa         │ open    │ near    │     2 │      2 │
 │ rev_pa         │ open    │ number  │     8 │      8 │
 │ rev_pa         │ open    │ spot    │     1 │      1 │
 │ sla_ny         │ open    │ number  │     3 │      3 │
-│ sla_ny         │ open    │ self    │  6693 │   6693 │
+│ sla_ny         │ open    │ self    │  6697 │   6697 │
 │ snap_current   │ open    │ near    │    37 │     37 │
 │ snap_current   │ open    │ number  │  3377 │   3371 │
 │ snap_current   │ open    │ self    │  5212 │   5212 │
@@ -156,7 +156,7 @@
 │ wikidata_p576  │ closed  │ near    │     6 │      6 │
 │ wikidata_p576  │ closed  │ self    │     6 │      6 │
 └────────────────┴─────────┴─────────┴───────┴────────┘
-  72 rows (40 shown)                        5 columns
+  73 rows (40 shown)                        5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -170,26 +170,26 @@
 │ open    │ abc_ar              │      1 │
 │ open    │ abc_nj              │   3801 │
 │ open    │ able_ok             │      1 │
-│ open    │ agm_ny              │   8971 │
+│ open    │ agm_ny              │   8963 │
 │ open    │ atp                 │  15252 │
 │ open    │ childcare_nj        │   1964 │
 │ open    │ cms_hospitals       │     56 │
 │ open    │ dcwp_nyc            │      1 │
 │ open    │ dmv_ny              │    927 │
-│ open    │ dohmh_nyc           │  21019 │
+│ open    │ dohmh_nyc           │  21018 │
 │ open    │ dos_ny_salons       │   2415 │
 │ open    │ dph_de              │   1113 │
 │ open    │ epa_ust_open        │    824 │
 │ open    │ fdic_locations      │   4335 │
 │ open    │ hrsa_health_centers │     56 │
 │ open    │ irs_eo              │   3271 │
-│ open    │ li_phl              │      1 │
 │ open    │ nces_schools        │   1798 │
 │ open    │ ncua_branches       │    130 │
 │ open    │ nppes_orgs          │   1748 │
 │ open    │ osm_check_date      │   2353 │
+│ open    │ plcb_pa             │      1 │
 │ open    │ rev_pa              │     11 │
-│ open    │ sla_ny              │   6696 │
+│ open    │ sla_ny              │   6700 │
 │ open    │ snap_current        │   8654 │
 │ open    │ snap_history        │    205 │
 └─────────┴─────────────────────┴────────┘

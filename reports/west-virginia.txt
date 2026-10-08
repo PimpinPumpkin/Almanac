@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    556 │
-│ open    │  14525 │
-│ unknown │  88726 │
+│ open    │  14526 │
+│ unknown │  88725 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    409 │
-│ open    │  13904 │
-│ unknown │  77541 │
+│ open    │  13905 │
+│ unknown │  77540 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌───────────────────────┬─────────┬─────────┬─────────┐
@@ -58,6 +58,8 @@
 ├───────────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar                │ open    │      10 │       0 │
 │ abc_ca                │ open    │      12 │       0 │
+│ abc_ky                │ open    │     214 │       1 │
+│ abc_nc                │ open    │      70 │       1 │
 │ abc_nj                │ open    │       6 │       0 │
 │ abt_fl                │ open    │      33 │       0 │
 │ agm_ny                │ open    │       2 │       0 │
@@ -74,12 +76,9 @@
 │ dbpr_fl_lodging       │ open    │       9 │       0 │
 │ dbpr_fl_restaurant    │ open    │      42 │       0 │
 │ dbpr_fl_salon         │ open    │      13 │       0 │
-│ dbpr_fl_vet           │ open    │       5 │       0 │
-│ dca_ca_auto           │ open    │       6 │       0 │
-│      ·                │  ·      │       · │       · │
-│      ·                │  ·      │       · │       · │
-│      ·                │  ·      │       · │       · │
-│ hrsa_health_centers   │ open    │     517 │      89 │
+│   ·                   │  ·      │       · │       · │
+│   ·                   │  ·      │       · │       · │
+│   ·                   │  ·      │       · │       · │
 │ irs_eo                │ open    │   34344 │     893 │
 │ isd_boston_food       │ open    │       2 │       0 │
 │ isd_boston_inspection │ open    │       3 │       0 │
@@ -91,6 +90,7 @@
 │ nces_schools          │ open    │    2364 │     598 │
 │ ncua_branches         │ open    │     643 │      95 │
 │ nppes_orgs            │ open    │   51391 │    2627 │
+│ plcb_pa               │ open    │    3269 │       0 │
 │ rev_pa                │ open    │   45569 │       0 │
 │ rev_pa_tobacco        │ open    │    2934 │       0 │
 │ sla_ny                │ open    │       4 │       0 │
@@ -100,12 +100,14 @@
 │ tax_ny_tobacco        │ open    │       4 │       0 │
 │ tdlr_tx               │ open    │     185 │       0 │
 └───────────────────────┴─────────┴─────────┴─────────┘
-  52 rows (40 shown)                        4 columns
+  56 rows (40 shown)                        4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
 │       varchar       │ varchar │ varchar │ int64 │ int64  │
 ├─────────────────────┼─────────┼─────────┼───────┼────────┤
+│ abc_ky              │ open    │ number  │     1 │      1 │
+│ abc_nc              │ open    │ address │     1 │      1 │
 │ atp                 │ open    │ near    │   162 │    152 │
 │ atp                 │ open    │ number  │  4205 │   3844 │
 │ atp                 │ open    │ self    │   518 │    518 │
@@ -124,8 +126,6 @@
 │ fdic_locations      │ open    │ spot    │     6 │      6 │
 │ fsq_closed          │ closed  │ id      │   351 │    351 │
 │ hrsa_health_centers │ open    │ near    │     3 │      2 │
-│ hrsa_health_centers │ open    │ number  │    86 │     82 │
-│ hrsa_health_centers │ open    │ spot    │     2 │      2 │
 │       ·             │  ·      │  ·      │     · │      · │
 │       ·             │  ·      │  ·      │     · │      · │
 │       ·             │  ·      │  ·      │     · │      · │
@@ -150,7 +150,7 @@
 │ wikidata_p576       │ closed  │ near    │     2 │      2 │
 │ wikidata_p576       │ closed  │ self    │     2 │      2 │
 └─────────────────────┴─────────┴─────────┴───────┴────────┘
-  45 rows (40 shown)                             5 columns
+  47 rows (40 shown)                             5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -161,6 +161,8 @@
 │ closed  │ osm_history         │     81 │
 │ closed  │ osm_lifecycle       │     55 │
 │ closed  │ wikidata_p576       │      4 │
+│ open    │ abc_ky              │      1 │
+│ open    │ abc_nc              │      1 │
 │ open    │ atp                 │   3723 │
 │ open    │ bop_oh              │      1 │
 │ open    │ cms_hospitals       │     46 │
@@ -172,10 +174,10 @@
 │ open    │ ncua_branches       │     81 │
 │ open    │ nppes_orgs          │    268 │
 │ open    │ osm_check_date      │    443 │
-│ open    │ snap_current        │   6152 │
+│ open    │ snap_current        │   6151 │
 │ open    │ snap_history        │     59 │
 └─────────┴─────────────────────┴────────┘
-  18 rows                      3 columns
+  20 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -197,8 +199,8 @@
 │ (none)             │ open    │   1290 │
 │ (none)             │ unknown │  24762 │
 │ open               │ closed  │    360 │
-│ open               │ open    │   5845 │
-│ open               │ unknown │  50759 │
+│ open               │ open    │   5846 │
+│ open               │ unknown │  50758 │
 │ permanently_closed │ closed  │      8 │
 │ permanently_closed │ open    │     12 │
 │ permanently_closed │ unknown │   1802 │

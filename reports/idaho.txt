@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    530 │
-│ open    │  11251 │
-│ unknown │ 107001 │
+│ open    │  11249 │
+│ unknown │ 107003 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    399 │
-│ open    │  10664 │
-│ unknown │  99953 │
+│ open    │  10662 │
+│ unknown │  99955 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌─────────────────────┬─────────┬─────────┬─────────┐
@@ -58,6 +58,7 @@
 ├─────────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar              │ open    │      11 │       1 │
 │ abc_ca              │ open    │      65 │       0 │
+│ abc_ks              │ open    │       1 │       0 │
 │ abc_nj              │ open    │       2 │       0 │
 │ able_ok             │ open    │      22 │       0 │
 │ abt_fl              │ open    │      50 │       0 │
@@ -75,11 +76,9 @@
 │ dbpr_fl_lodging     │ open    │       6 │       0 │
 │ dbpr_fl_restaurant  │ open    │      69 │       0 │
 │ dbpr_fl_salon       │ open    │      31 │       0 │
-│ dbpr_fl_vet         │ open    │       3 │       0 │
 │      ·              │  ·      │       · │       · │
 │      ·              │  ·      │       · │       · │
 │      ·              │  ·      │       · │       · │
-│ elicense_ct         │ open    │       3 │       0 │
 │ epa_ust_open        │ open    │    1776 │     464 │
 │ fdic_history        │ closed  │     501 │     129 │
 │ fdic_locations      │ open    │     690 │     625 │
@@ -98,9 +97,10 @@
 │ snap_current        │ open    │    1699 │    1512 │
 │ snap_history        │ open    │    1734 │     828 │
 │ tabc_tx             │ open    │      96 │       0 │
+│ tda_tn_food         │ open    │       2 │       0 │
 │ tdlr_tx             │ open    │      69 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  48 rows (40 shown)                      4 columns
+  50 rows (40 shown)                      4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
@@ -168,12 +168,12 @@
 │ open    │ fdic_locations      │    655 │
 │ open    │ hrsa_health_centers │     40 │
 │ open    │ irs_eo              │    618 │
-│ open    │ isp_id_liquor       │   2651 │
+│ open    │ isp_id_liquor       │   2972 │
 │ open    │ nces_schools        │    611 │
 │ open    │ ncua_branches       │    125 │
-│ open    │ nppes_orgs          │    620 │
+│ open    │ nppes_orgs          │    618 │
 │ open    │ osm_check_date      │    366 │
-│ open    │ snap_current        │   1337 │
+│ open    │ snap_current        │   1016 │
 │ open    │ snap_history        │     25 │
 └─────────┴─────────────────────┴────────┘
   19 rows                      3 columns
@@ -198,8 +198,8 @@
 │ (none)             │ open    │   1500 │
 │ (none)             │ unknown │  29726 │
 │ open               │ closed  │    365 │
-│ open               │ open    │   7634 │
-│ open               │ unknown │  67302 │
+│ open               │ open    │   7632 │
+│ open               │ unknown │  67304 │
 │ permanently_closed │ closed  │     19 │
 │ permanently_closed │ open    │     21 │
 │ permanently_closed │ unknown │   2604 │

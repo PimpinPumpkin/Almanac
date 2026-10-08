@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │   1266 │
-│ open    │  13585 │
-│ unknown │ 175425 │
+│ open    │  13583 │
+│ unknown │ 175427 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,66 +48,66 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    791 │
-│ open    │  11352 │
-│ unknown │ 159632 │
+│ open    │  11351 │
+│ unknown │ 159633 │
 └─────────┴────────┘
 == register records in the box and how many found a place
-┌────────────────────┬─────────┬─────────┬─────────┐
-│       source       │  state  │ records │ matched │
-│      varchar       │ varchar │  int64  │  int64  │
-├────────────────────┼─────────┼─────────┼─────────┤
-│ abc_ca             │ open    │     118 │       0 │
-│ abc_nj             │ open    │       2 │       0 │
-│ abt_fl             │ open    │      23 │       0 │
-│ atc_mo             │ open    │       2 │       0 │
-│ bbl_dc             │ open    │      14 │       0 │
-│ biz_de             │ open    │       5 │       0 │
-│ biz_denver         │ open    │       1 │       0 │
-│ biz_lasvegas       │ open    │     223 │       0 │
-│ bop_oh             │ open    │       3 │       0 │
-│ bop_tx             │ open    │       1 │       0 │
-│ childcare_az       │ open    │       1 │       0 │
-│ childcare_co       │ open    │      12 │       1 │
-│ childcare_wa       │ open    │       3 │       0 │
-│ cms_hospitals      │ open    │      62 │      38 │
-│ cpa_tx             │ open    │     289 │       0 │
-│ cpa_tx_tobacco     │ open    │      33 │       0 │
-│ dbpr_fl_food       │ open    │      13 │       0 │
-│ dbpr_fl_lodging    │ open    │       1 │       0 │
-│ dbpr_fl_restaurant │ open    │      25 │       0 │
-│ dbpr_fl_salon      │ open    │      16 │       0 │
-│   ·                │  ·      │       · │       · │
-│   ·                │  ·      │       · │       · │
-│   ·                │  ·      │       · │       · │
-│ irs_eo             │ open    │   28319 │     955 │
-│ isp_id_liquor      │ open    │      23 │       0 │
-│ kc_wa_food         │ open    │      32 │       0 │
-│ lcb_wa             │ open    │      34 │       0 │
-│ lcc_ne             │ open    │       1 │       0 │
-│ led_co             │ open    │      79 │       0 │
-│ li_phl             │ open    │       3 │       0 │
-│ mda_mn_food        │ open    │       5 │       0 │
-│ moco_md            │ open    │      59 │       0 │
-│ nces_schools       │ open    │    1162 │     460 │
-│ ncua_branches      │ open    │     571 │     356 │
-│ nppes_orgs         │ open    │   43066 │    3970 │
-│ olcc_or            │ open    │      28 │       0 │
-│ rev_pa             │ open    │      35 │       0 │
-│ sla_ny             │ open    │       1 │       0 │
-│ snap_current       │ open    │    1581 │    1331 │
-│ snap_history       │ open    │    1617 │    1124 │
-│ tabc_tx            │ open    │      54 │       0 │
-│ tax_ny_tobacco     │ open    │       1 │       0 │
-│ tdlr_tx            │ open    │      54 │       0 │
-└────────────────────┴─────────┴─────────┴─────────┘
-  55 rows (40 shown)                     4 columns
+┌─────────────────┬─────────┬─────────┬─────────┐
+│     source      │  state  │ records │ matched │
+│     varchar     │ varchar │  int64  │  int64  │
+├─────────────────┼─────────┼─────────┼─────────┤
+│ abc_ca          │ open    │     118 │       0 │
+│ abc_ky          │ open    │       1 │       0 │
+│ abc_nc          │ open    │       6 │       0 │
+│ abc_nj          │ open    │       2 │       0 │
+│ abt_fl          │ open    │      23 │       0 │
+│ atc_mo          │ open    │       2 │       0 │
+│ bbl_dc          │ open    │      14 │       0 │
+│ biz_de          │ open    │       5 │       0 │
+│ biz_denver      │ open    │       1 │       0 │
+│ biz_lasvegas    │ open    │     223 │       0 │
+│ bop_oh          │ open    │       3 │       0 │
+│ bop_tx          │ open    │       1 │       0 │
+│ childcare_az    │ open    │       1 │       0 │
+│ childcare_co    │ open    │      12 │       1 │
+│ childcare_wa    │ open    │       3 │       0 │
+│ cms_hospitals   │ open    │      62 │      38 │
+│ cpa_tx          │ open    │     289 │       0 │
+│ cpa_tx_tobacco  │ open    │      33 │       0 │
+│ dbpr_fl_food    │ open    │      13 │       0 │
+│ dbpr_fl_lodging │ open    │       1 │       0 │
+│       ·         │  ·      │       · │       · │
+│       ·         │  ·      │       · │       · │
+│       ·         │  ·      │       · │       · │
+│ isp_id_liquor   │ open    │      23 │       0 │
+│ kc_wa_food      │ open    │      32 │       0 │
+│ lcb_wa          │ open    │      34 │       0 │
+│ lcc_ne          │ open    │       1 │       0 │
+│ led_co          │ open    │      79 │       0 │
+│ li_phl          │ open    │       3 │       0 │
+│ mda_mn_food     │ open    │       5 │       0 │
+│ moco_md         │ open    │      59 │       0 │
+│ nces_schools    │ open    │    1162 │     460 │
+│ ncua_branches   │ open    │     571 │     356 │
+│ nppes_orgs      │ open    │   43066 │    3970 │
+│ olcc_or         │ open    │      28 │       0 │
+│ plcb_pa         │ open    │      17 │       0 │
+│ rev_pa          │ open    │      35 │       0 │
+│ sla_ny          │ open    │       1 │       0 │
+│ snap_current    │ open    │    1581 │    1331 │
+│ snap_history    │ open    │    1617 │    1124 │
+│ tabc_tx         │ open    │      54 │       0 │
+│ tax_ny_tobacco  │ open    │       1 │       0 │
+│ tdlr_tx         │ open    │      54 │       0 │
+└─────────────────┴─────────┴─────────┴─────────┘
+  59 rows (40 shown)                  4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
 │       varchar       │ varchar │ varchar │ int64 │ int64  │
 ├─────────────────────┼─────────┼─────────┼───────┼────────┤
 │ atp                 │ open    │ near    │   178 │    168 │
-│ atp                 │ open    │ number  │  6854 │   6158 │
+│ atp                 │ open    │ number  │  6854 │   6159 │
 │ atp                 │ open    │ self    │  1099 │   1099 │
 │ atp                 │ open    │ spot    │    28 │     26 │
 │ childcare_co        │ open    │ address │     1 │      1 │
@@ -170,8 +170,8 @@
 │ open    │ irs_eo              │    782 │
 │ open    │ nces_schools        │    480 │
 │ open    │ ncua_branches       │    180 │
-│ open    │ nppes_orgs          │    644 │
-│ open    │ osm_check_date      │   2013 │
+│ open    │ nppes_orgs          │    643 │
+│ open    │ osm_check_date      │   2012 │
 │ open    │ snap_current        │   1468 │
 │ open    │ snap_history        │    158 │
 └─────────┴─────────────────────┴────────┘
@@ -197,8 +197,8 @@
 │ (none)             │ open    │   2161 │
 │ (none)             │ unknown │  44565 │
 │ open               │ closed  │    925 │
-│ open               │ open    │   8976 │
-│ open               │ unknown │ 108239 │
+│ open               │ open    │   8974 │
+│ open               │ unknown │ 108241 │
 │ permanently_closed │ closed  │     16 │
 │ permanently_closed │ open    │     36 │
 │ permanently_closed │ unknown │   5085 │

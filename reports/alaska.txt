@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    254 │
-│ open    │   3313 │
-│ unknown │  47920 │
+│ open    │   3312 │
+│ unknown │  47921 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │    198 │
-│ open    │   2973 │
-│ unknown │  41707 │
+│ open    │   2972 │
+│ unknown │  41708 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌─────────────────────┬─────────┬─────────┬─────────┐
@@ -58,6 +58,7 @@
 ├─────────────────────┼─────────┼─────────┼─────────┤
 │ abc_ar              │ open    │      10 │       0 │
 │ abc_ca              │ open    │      36 │       0 │
+│ abc_nc              │ open    │       3 │       0 │
 │ able_ok             │ open    │       9 │       0 │
 │ abt_fl              │ open    │       9 │       0 │
 │ agm_ny              │ open    │       2 │       0 │
@@ -75,11 +76,9 @@
 │ dca_ca_auto         │ open    │      13 │       0 │
 │ dca_ca_pharmacy     │ open    │       4 │       0 │
 │ dca_ca_salon        │ open    │       7 │       0 │
-│ dcwp_nyc            │ open    │       5 │       0 │
-│    ·                │  ·      │       · │       · │
-│    ·                │  ·      │       · │       · │
-│    ·                │  ·      │       · │       · │
-│ dph_sc_food         │ open    │       1 │       0 │
+│      ·              │  ·      │       · │       · │
+│      ·              │  ·      │       · │       · │
+│      ·              │  ·      │       · │       · │
 │ elicense_ct         │ open    │      17 │       0 │
 │ epa_ust_open        │ open    │     431 │     122 │
 │ fdic_history        │ closed  │      53 │      20 │
@@ -92,6 +91,7 @@
 │ nces_schools        │ open    │     501 │     342 │
 │ ncua_branches       │ open    │     106 │      64 │
 │ nppes_orgs          │ open    │   16249 │    1585 │
+│ plcb_pa             │ open    │       1 │       0 │
 │ rev_pa              │ open    │       3 │       0 │
 │ sla_ny              │ open    │      12 │       0 │
 │ snap_current        │ open    │     495 │     413 │
@@ -100,7 +100,7 @@
 │ tax_ny_tobacco      │ open    │       4 │       0 │
 │ tdlr_tx             │ open    │      73 │       0 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  45 rows (40 shown)                      4 columns
+  48 rows (40 shown)                      4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
@@ -170,7 +170,7 @@
 │ open    │ irs_eo              │    456 │
 │ open    │ nces_schools        │    362 │
 │ open    │ ncua_branches       │     52 │
-│ open    │ nppes_orgs          │    228 │
+│ open    │ nppes_orgs          │    227 │
 │ open    │ osm_check_date      │    229 │
 │ open    │ snap_current        │    450 │
 │ open    │ snap_history        │      8 │
@@ -194,8 +194,8 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │     32 │
-│ (none)             │ open    │    585 │
-│ (none)             │ unknown │  14186 │
+│ (none)             │ open    │    584 │
+│ (none)             │ unknown │  14187 │
 │ open               │ closed  │    205 │
 │ open               │ open    │   2081 │
 │ open               │ unknown │  26951 │
