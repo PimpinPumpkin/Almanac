@@ -347,6 +347,11 @@ None states a license; rows are marked `none-stated`.
   `https://tnlcp.lcp.tracefirst.com/public_weblinks/food-safety-retail`,
   657 pages of 15. The site's robots.txt disallows the whole site; the
   owner decided on 2026-10-07 to read public registers like this anyway.
+- North Carolina environmental health inspections, all 100 counties:
+  `https://public.cdpehs.com/NCENVPBL/`, each county's search page asked
+  for its CSV six months at a time (800 requests). No robots.txt. The
+  inspector column is not read. Asking for two years at once fails
+  without an error for the largest counties, which is why it is split.
 - The "Food Safety" inspection system nine states share
   (`.../Inspection/PublicInspectionSearch.aspx`), read county by county,
   15 establishments a page, by `adapters/usafoodsafety.py` on its own
@@ -361,7 +366,7 @@ None states a license; rows are marked `none-stated`.
 - Mapped and not read yet: Georgia's statewide system
   (`ga.healthinspections.us/stateofgeorgia/`, five establishments a
   request); Kentucky, Illinois counties and Salt Lake County on
-  `public.cdpehs.com`; Alabama, Mississippi, Oklahoma and Maine state
+  `public.cdpehs.com` (other pages of the vendor North Carolina uses); Alabama, Mississippi, Oklahoma and Maine state
   sites. See FOLLOWUPS.md.
 - Closed to this project: `inspections.myhealthdepartment.com` (Tennessee
   and Virginia restaurants, Hawaii, Oregon, Cuyahoga County and others)

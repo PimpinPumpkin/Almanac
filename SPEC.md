@@ -327,6 +327,7 @@ rows are the same place.
 | Pennsylvania liquor licenses | number | 30 of 30 (Philadelphia) | premises names are often the company's, so a third find a place; geocoded |
 | Tennessee retail food stores (paged list) | number | 29 of 30 (Nashville) | geocoded |
 | Vermont food inspections (shared Food Safety system) | number | 30 of 30 (Burlington) | the same reader serves eight more states; geocoded |
+| North Carolina inspections (county search pages) | number | 30 of 30 (Charlotte) | 38,000 establishments; geocoded |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -554,6 +555,7 @@ signal at all.
 | plcb_pa | open | day the export was read, active retail licenses | matcher, positions from the Census geocoder |
 | tda_tn_food | open | day the list was read, current licenses | matcher, positions from the Census geocoder |
 | foodsafety_ak, _ar, _ia, _ks, _nd, _pa, _sd, _vt, _wy | open | day of the establishment's most recent inspection | matcher, positions from the Census geocoder |
+| dhhs_nc_inspections | open | day of the establishment's newest inspection in the last two years | matcher, positions from the Census geocoder |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |
