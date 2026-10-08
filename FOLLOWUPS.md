@@ -47,6 +47,12 @@ Nothing is done to get around these. They may open up, or answer a request.
 
 ## Search forms not crawled yet
 
+- **Pennsylvania's local health departments** (Philadelphia, Allegheny,
+  Chester, Erie and about a hundred more). The state lookup has a
+  jurisdiction list for them; the reader only gets the Department of
+  Agriculture's 43,000 establishments so far. Philadelphia box: 200 rows.
+- **South Dakota inside Sioux Falls** is the city's own list (already read);
+  the state list has almost nothing there, as expected.
 - **Wyoming food inspections** (`wda.safefoodinspection.com`): the same
   system as eight states already read, but every search answers with a
   server error. Try again later.

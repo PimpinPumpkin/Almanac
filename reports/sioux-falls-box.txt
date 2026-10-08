@@ -39,8 +39,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │     77 │
-│ open    │   1711 │
-│ unknown │  10774 │
+│ open    │   1714 │
+│ unknown │  10771 │
 └─────────┴────────┘
 == status, core layer (no OSM)
 ┌─────────┬────────┐
@@ -48,8 +48,8 @@
 │ varchar │ int64  │
 ├─────────┼────────┤
 │ closed  │     58 │
-│ open    │   1661 │
-│ unknown │  10336 │
+│ open    │   1664 │
+│ unknown │  10333 │
 └─────────┴────────┘
 == register records in the box and how many found a place
 ┌─────────────────────┬─────────┬─────────┬─────────┐
@@ -63,6 +63,7 @@
 │ epa_ust_open        │ open    │     125 │      73 │
 │ fdic_history        │ closed  │      86 │      30 │
 │ fdic_locations      │ open    │      95 │      88 │
+│ foodsafety_sd       │ open    │      77 │       3 │
 │ hrsa_health_centers │ open    │       1 │       1 │
 │ irs_eo              │ open    │    1752 │     186 │
 │ mda_mn_food         │ open    │       1 │       0 │
@@ -73,7 +74,7 @@
 │ snap_history        │ open    │     169 │     123 │
 │ sux_food            │ open    │     935 │     687 │
 └─────────────────────┴─────────┴─────────┴─────────┘
-  16 rows                                 4 columns
+  17 rows                                 4 columns
 == evidence by source and rule (places is distinct places)
 ┌─────────────────────┬─────────┬─────────┬───────┬────────┐
 │       source        │  state  │  rule   │ rows  │ places │
@@ -92,6 +93,8 @@
 │ fdic_locations      │ open    │ number  │    80 │     78 │
 │ fdic_locations      │ open    │ self    │     7 │      7 │
 │ fdic_locations      │ open    │ spot    │     2 │      2 │
+│ foodsafety_sd       │ open    │ address │     3 │      3 │
+│ foodsafety_sd       │ open    │ number  │     1 │      1 │
 │ fsq_closed          │ closed  │ id      │    43 │     43 │
 │ hrsa_health_centers │ open    │ number  │     1 │      1 │
 │ irs_eo              │ open    │ address │   194 │    183 │
@@ -117,7 +120,7 @@
 │ sux_food            │ open    │ number  │   721 │    662 │
 │ sux_food            │ open    │ spot    │     6 │      5 │
 └─────────────────────┴─────────┴─────────┴───────┴────────┘
-  37 rows                                        5 columns
+  39 rows                                        5 columns
 == what decided the status
 ┌─────────┬─────────────────────┬────────┐
 │ status  │    status_source    │ places │
@@ -131,16 +134,17 @@
 │ open    │ cms_hospitals       │      2 │
 │ open    │ epa_ust_open        │     41 │
 │ open    │ fdic_locations      │     88 │
+│ open    │ foodsafety_sd       │      4 │
 │ open    │ hrsa_health_centers │      1 │
 │ open    │ irs_eo              │    147 │
 │ open    │ nces_schools        │      7 │
 │ open    │ ncua_branches       │     11 │
-│ open    │ nppes_orgs          │     70 │
+│ open    │ nppes_orgs          │     69 │
 │ open    │ osm_check_date      │     17 │
 │ open    │ snap_current        │    126 │
 │ open    │ sux_food            │    447 │
 └─────────┴─────────────────────┴────────┘
-  16 rows                      3 columns
+  17 rows                      3 columns
 == closing signals against independent evidence
 == (says_open_after: a different source saw the place open after the closing date)
 ┌───────────────┬────────┬─────────────────┬─────────────────┐
@@ -158,11 +162,11 @@
 │      varchar       │ varchar │ int64  │
 ├────────────────────┼─────────┼────────┤
 │ (none)             │ closed  │     14 │
-│ (none)             │ open    │    261 │
-│ (none)             │ unknown │   2706 │
+│ (none)             │ open    │    262 │
+│ (none)             │ unknown │   2705 │
 │ open               │ closed  │     56 │
-│ open               │ open    │   1225 │
-│ open               │ unknown │   7272 │
+│ open               │ open    │   1227 │
+│ open               │ unknown │   7270 │
 │ permanently_closed │ closed  │      2 │
 │ permanently_closed │ open    │      6 │
 │ permanently_closed │ unknown │    337 │

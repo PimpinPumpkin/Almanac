@@ -326,7 +326,7 @@ rows are the same place.
 | Kansas alcohol licenses (search form) | number | 30 of 30 (Wichita) | geocoded |
 | Pennsylvania liquor licenses | number | 30 of 30 (Philadelphia) | premises names are often the company's, so a third find a place; geocoded |
 | Tennessee retail food stores (paged list) | number | 29 of 30 (Nashville) | geocoded |
-| Vermont food inspections (shared Food Safety system) | number | 30 of 30 (Burlington) | the same reader serves seven more states; geocoded |
+| Vermont and Kansas food inspections (shared Food Safety system) | number | 30 of 30 each (Burlington, Wichita) | the same reader serves six more states, 112,000 establishments in all; geocoded |
 | North Carolina inspections (county search pages) | number | 30 of 30 (Charlotte) | 38,000 establishments; geocoded |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
