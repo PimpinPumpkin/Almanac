@@ -63,9 +63,19 @@ def locate(addresses, cache_dir, ua):
     path = os.path.join(cache_dir, "census.csv")
     known = {}
     if os.path.exists(path):
+        bad = 0
         with open(path, newline="") as f:
-            for a, lat, lng in csv.reader(f):
-                known[a] = (lat, lng) if lat else None
+            for row in csv.reader(f):
+                # a line that is not address, lat, lng (a damaged cache) is dropped, not fatal
+                if len(row) != 3:
+                    bad += 1
+                    continue
+                known[row[0]] = (row[1], row[2]) if row[1] else None
+        if bad:
+            print("geocode cache: dropped %d damaged lines" % bad, file=sys.stderr)
+            with open(path + ".part", "w", newline="") as f:
+                csv.writer(f).writerows([a, pos[0] if pos else "", pos[1] if pos else ""] for a, pos in known.items())
+            os.replace(path + ".part", path)
     todo = sorted({a for a in addresses if a not in known and ADDRESS.match(a)})
     batches = [todo[i:i + BATCH] for i in range(0, len(todo), BATCH)]
 

@@ -55,7 +55,7 @@ jobs:
           cp data/cache/geocode/census.csv before.csv 2>/dev/null || touch before.csv
           python3 adapters/usafoodsafety.py
           # only the geocoder answers this job added
-          comm -13 <(sort before.csv) <(sort data/cache/geocode/census.csv) > geocode-${{ matrix.state }}.csv
+          python3 tools/geocode_merge.py --new geocode-${{ matrix.state }}.csv before.csv data/cache/geocode/census.csv
           wc -l data/cache/evidence/foodsafety_*.csv geocode-${{ matrix.state }}.csv
       - uses: actions/upload-artifact@v4
         with:
@@ -70,6 +70,7 @@ jobs:
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/cache/restore@v4
         with:
           path: data/cache/geocode
@@ -88,8 +89,7 @@ jobs:
         run: |
           mkdir -p data/cache/evidence data/cache/geocode
           find got -name 'foodsafety_*.csv' -exec cp {} data/cache/evidence/ \;
-          touch data/cache/geocode/census.csv
-          cat data/cache/geocode/census.csv $(find got -name 'geocode-*.csv') | sort -u > census.new
+          python3 tools/geocode_merge.py census.new data/cache/geocode/census.csv $(find got -name 'geocode-*.csv')
           mv census.new data/cache/geocode/census.csv
           ls -la data/cache/evidence | grep foodsafety || echo "no state finished"
       - uses: actions/cache/save@v4
