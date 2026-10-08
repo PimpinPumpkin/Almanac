@@ -127,6 +127,15 @@ Rules for adapters:
   register file last run and is not in it this run, dated the day it was
   first missed (`tools/source_watch.py`). Held until it has been tested
   like any other closure signal.
+- Some registers offer a search form and no file. An adapter may page
+  through such a form when the form can list the whole register in a
+  bounded number of requests (by county or by license type), and only
+  under these rules, which `lib/crawl.py` enforces where it can: read the
+  site's robots.txt first and stay out of anything it disallows; send the
+  project User-Agent; wait at least two seconds between requests; never
+  work around a block, a challenge page or a CAPTCHA; read only what the
+  form shows the public. A site that says no is written down in
+  SOURCES.md and left alone.
 - A record is evidence only if it says something about the premises. A
   record that only says something about paperwork is not (see SNAP end dates
   in section 9).
@@ -309,6 +318,9 @@ rows are the same place.
 | Child care centers, ten states | number | 20 of 20 in each of AZ, CA, DE, MA, MI, MN, NJ, TN, VT, WI | a program inside a school matches the school |
 | Phoenix, Nashville, Anchorage and Huntsville alcohol licenses; Detroit business and liquor licenses; Sioux Falls food sites | number | 25 of 25 each | |
 | Milwaukee food and alcohol licenses | number | 49 of 50 | the miss is a campus library taking the college's bakery license |
+| North Carolina alcohol permits (search form) | number | 29 of 30 (Charlotte) | the miss is a pharmacy counter taking the grocery's permit; geocoded |
+| Kentucky alcohol licenses (report page) | number | 29 of 30 (Kentucky) | geocoded |
+| Kansas alcohol licenses (search form) | number | 30 of 30 (Wichita) | geocoded |
 | Pennsylvania retail sales licenses | number | 28 of 30 (Philadelphia) | both misses are a hospital department taking the hospital's license |
 | Delaware business licenses | number | 30 of 30 (Delaware) | geocoded; took the state from 8% of places with a status to 19% |
 | Texas salon and barber establishments | number | 20 of 20 (Houston) | geocoded; nail salons in the box went from 7% with a status to 52% |
@@ -532,6 +544,7 @@ signal at all.
 | childcare_az, _ca, _de, _ma, _mi, _mn, _nj, _tn, _vt, _wi | open | day the layer was last edited, or read; centers only | matcher |
 | phx_liquor, nash_beer, mke_food, mke_liquor, anc_liquor, hsv_liquor, det_biz, det_liquor | open | day the layer was last edited or read, licenses in force | matcher |
 | sux_food | open | day of the site's newest inspection | matcher |
+| abc_nc, abc_ky, abc_ks | open | day the search was run, active retail licenses | matcher, positions from the Census geocoder |
 | rev_pa | open | day the dataset was last updated, unexpired licenses only | matcher |
 | biz_de | open | day the dataset was last updated, current licenses only | matcher, positions from the Census geocoder |
 | tdlr_tx | open | day the dataset was last updated, unexpired establishment licenses only | matcher, positions from the Census geocoder |

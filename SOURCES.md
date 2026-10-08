@@ -317,6 +317,28 @@ licensee, owner, manager or phone columns, and nothing creates a place.
   Louisiana, Kansas, Utah, Vermont (search forms or blocked pages), and
   Indiana (sold per record).
 
+### State alcohol registers read through their search forms (2026-10-07)
+None states a license; rows are marked `none-stated`. Owner, licensee,
+corporation and agent columns are not read.
+- North Carolina ABC Commission: `https://abc2.nc.gov/Search/Permit`, asked
+  once per county for active permits, reading the form's own spreadsheet
+  export (200 requests). No robots.txt.
+- Kentucky ABC: `https://abcportal.ky.gov/BelleExternal/ReportGenerator/Reports`,
+  the "All Active Licenses" report for the whole state, reading its CSV
+  export (4 requests). No robots.txt.
+- Kansas ABC: `https://www.kdor.ks.gov/apps/liquorlicensee/LiquorLicenseeSearch.aspx`,
+  asked once per license group, 500 rows a page (about 20 requests).
+  robots.txt allows the page.
+- Not read, because the site says no:
+  - Pennsylvania PLCB offers a CSV of all licenses at
+    `https://plcbplus.pa.gov/pub/LicenseExport.aspx`, linked from its
+    search page, but its robots.txt disallows everything except the search
+    pages themselves.
+  - Tennessee's retail food list (`tnlcp.lcp.tracefirst.com`): robots.txt
+    disallows the whole site.
+  - Michigan MLCC, Virginia ABC, Arizona DLLC, Alaska AMCO: the sites
+    answer 403 or a challenge page to this project's fetches.
+
 ### Statewide food establishment lists found on agency sites (2026-10-07)
 None states a license; rows are marked `none-stated`.
 - Michigan MDARD food service licenses, with positions:

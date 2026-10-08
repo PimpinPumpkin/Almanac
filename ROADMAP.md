@@ -33,8 +33,9 @@ The categories where a register can make coverage complete.
 
 - **1.1 State alcohol license lists.** One adapter per state. Done:
   Arkansas, California, Colorado, Connecticut, DC, Florida, Idaho, Maine,
-  Missouri, Nebraska, New Jersey, New York, Oklahoma, Oregon, Texas,
-  Washington, Wisconsin. Massachusetts publishes a file but its site turns
+  Kansas, Kentucky, Missouri, Nebraska, New Jersey, New York, North
+  Carolina, Oklahoma, Oregon, Texas, Washington, Wisconsin. Kansas,
+  Kentucky and North Carolina are read through their search forms. Massachusetts publishes a file but its site turns
   this project's fetches away, so it is left alone. The other states were searched on 2026-10-07
   and offer a search form only, block fetches, or sell the list (the
   findings are in SOURCES.md). Done for a state when its bars pass 40% with
@@ -216,6 +217,14 @@ Set by the owner on 2026-10-06.
   be added, marked `none-stated` on every row they touch. Anything else
   with no stated license is asked about first.
 - **Order.** Section 1 first.
+- **Search-form registers.** Decided 2026-10-07: build crawlers for the state
+  registers that only offer a search form (liquor licenses, restaurant
+  inspections), because that is a bounded list of real places. This is not
+  the website crawler for hours (8.3), which stays on hold.
+- **Unvouched listings.** How a reader shows them (hide, dim, or both) is
+  decided later, once the data is in. The columns are there.
+- **Clinical laboratories.** Worth adding, low priority.
+- **France and other countries.** Parked.
 - **New York outside the city.** Buffalo is the test area for sources that
   leave New York City out (2026-10-07).
 - **Git history** stays as it is; no rewrite (2026-10-07).

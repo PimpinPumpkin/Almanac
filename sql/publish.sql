@@ -12,7 +12,8 @@ create or replace macro license_of(source) as
                     'dor_wi_liquor', 'isp_id_liquor', 'lcb_wa', 'abc_nj', 'lcc_ne', 'bablo_me', 'abc_ar', 'able_ok',
                     'biz_lasvegas', 'dchd_omaha_food', 'mpls_food', 'mpls_liquor', 'llb_baltimore', 'cph_columbus_food',
                     'mdard_mi_food', 'dph_sc_food', 'mda_mn_food', 'dpor_va', 'bop_tx', 'bop_oh',
-                    'phx_liquor', 'nash_beer', 'anc_liquor', 'sux_food', 'hsv_liquor', 'det_biz', 'det_liquor')
+                    'phx_liquor', 'nash_beer', 'anc_liquor', 'sux_food', 'hsv_liquor', 'det_biz', 'det_liquor',
+                    'abc_nc', 'abc_ky', 'abc_ks')
          or source like 'dca_ca_%' or (source like 'childcare_%' and source not in ('childcare_ca', 'childcare_co'))
          or source like 'dbpr_fl_%' then 'none-stated'
     when source in ('sla_ny', 'dmv_ny', 'dos_ny_salons', 'agm_ny', 'tax_ny_tobacco', 'ocm_ny', 'doh_ny_food') then 'OPEN-NY-terms'
